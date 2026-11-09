@@ -1,0 +1,9 @@
+{
+  "name": "coded-ai-hr",
+  "private": true,
+  "type": "module",
+  "description": "CODED \u00b7 AI Fundamentals for HR workshop site (static, in public/) with a staff password on /staff.",
+  "dependencies": {
+    "@vercel/functions": "^3.10.4"
+  }
+}

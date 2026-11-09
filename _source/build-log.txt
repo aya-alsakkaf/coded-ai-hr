@@ -1,0 +1,47 @@
+   37705  mutla-leave-policy-2026.docx
+   37618  mutla-copilot-leave-answer.docx
+   37760  mutla-case-note-unredacted.docx
+   37582  mutla-jd-hr-officer-2019.docx
+   37881  mutla-jd-template-2026.docx
+   38655  mutla-role-information-2026.docx
+   37747  mutla-catchup-jd-draft.docx
+   37771  mutla-prompt-bank-template.docx
+   37627  mutla-allowances-policy-v3.docx
+   37685  mutla-allowances-policy-v4.docx
+   37865  mutla-job-evaluation-factors.docx
+   37868  mutla-je-evidence-notes.docx
+   39472  mutla-email-thread-attendance.docx
+   38516  mutla-meeting-transcript-staffing.docx
+   37946  mutla-investigation-notes.docx
+   24475  mutla-hr-trackers-q3-2026.xlsx
+   38339  mutla-policy-change-brief.docx
+   37771  mutla-case-je-reevaluation-request.docx
+   38049  mutla-case-compensation-allowance-update.docx
+   38005  mutla-case-manpower-new-section.docx
+   37731  mutla-case-personnel-attendance-change.docx
+   37976  mutla-case-ld-training-requests.docx
+   37707  mutla-attendance-rules-2026.docx
+   37504  mutla-training-policy-2026.docx
+   39406  mutla-catchup-prompt-bank.docx
+   38371  mutla-capstone-je-salary.docx
+   38118  mutla-capstone-compensation.docx
+   38296  mutla-capstone-manpower.docx
+   37984  mutla-capstone-personnel.docx
+   38355  mutla-capstone-ld.docx
+   39502  mutla-capstone-fresh-input.docx
+31 files in /home/claude/coded-ai-hr/_source/files
+deck 1 61 slides 460 KB
+deck 2 64 slides 460 KB
+deck 3 40 slides 413 KB
+13 public pages · 165 slides
+18 staff pages
+37 redirects -> vercel.json · package.json coded-ai-hr
+survey pre 24 questions 661 chars
+survey post 24 questions 699 chars
+survey final 22 questions 333 chars
+39 pages checked · PROBLEMS: 0
+patched: pre 24 · post 24 · final 25 questions
+CLASS-PLAN.md written
+--- validator re-run after patch.py, 2026-11-09T18:12:18Z
+39 pages checked · PROBLEMS: 0
+done

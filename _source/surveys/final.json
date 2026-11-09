@@ -1,0 +1,571 @@
+{
+ "name": "CODED · AI Fundamentals for HR: Final Satisfaction Survey",
+ "description": "End-of-workshop satisfaction survey for the CODED Professionals open workshop \"AI Fundamentals for HR\", 3 days (17 to 19 November 2026, CODED, Alsharekh room). Taken at the end of Day 3 after the POST MAP test, about 5 minutes. Same 6-point agreement scale as other CODED programs (1 = Strongly disagree ... 6 = Strongly agree). Bilingual EN/AR.",
+ "audience": "teacher_student",
+ "isAnonymous": false,
+ "folderId": "a8f8146d-144f-47ed-9121-ef8e437f2f11",
+ "sections": [
+  {
+   "id": "s_1",
+   "title": {
+    "en": "Your feedback",
+    "ar": "رأيك"
+   },
+   "order": 0
+  },
+  {
+   "id": "s_learn",
+   "title": {
+    "en": "What you can do now",
+    "ar": "ما أصبحت قادراً عليه"
+   },
+   "order": 1
+  },
+  {
+   "id": "s_team",
+   "title": {
+    "en": "Education Team",
+    "ar": "فريق التدريب"
+   },
+   "order": 2
+  },
+  {
+   "id": "s_comments",
+   "title": {
+    "en": "Comments",
+    "ar": "ملاحظات"
+   },
+   "order": 3
+  }
+ ],
+ "questions": [
+  {
+   "id": "intro",
+   "type": "statement",
+   "required": false,
+   "sectionId": "s_1",
+   "label": {
+    "en": "For each statement, tap a number from 1 to 6. 1 = Strongly disagree · 2 = Disagree · 3 = Somewhat disagree · 4 = Somewhat agree · 5 = Agree · 6 = Strongly agree. The last recommend question uses 0 to 10.",
+    "ar": "لكل عبارة، اختر رقماً من 1 إلى 6. 1 = لا أوافق بشدة · 2 = لا أوافق · 3 = لا أوافق إلى حدٍّ ما · 4 = أوافق إلى حدٍّ ما · 5 = أوافق · 6 = أوافق بشدة. سؤال التوصية الأخير من 0 إلى 10."
+   },
+   "order": 0
+  },
+  {
+   "id": "q_company",
+   "type": "text",
+   "label": {
+    "en": "Your company",
+    "ar": "اسم الشركة"
+   },
+   "required": false,
+   "sectionId": "s_1",
+   "order": 1
+  },
+  {
+   "id": "q_2",
+   "type": "scale",
+   "label": {
+    "en": "The workshop met my expectations as a learning experience.",
+    "ar": "لبّت ورشة العمل توقعاتي كتجربة تعليمية."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 2
+  },
+  {
+   "id": "q_1",
+   "type": "scale",
+   "label": {
+    "en": "I am satisfied with the workshop overall.",
+    "ar": "أنا راضٍ عن ورشة العمل بشكل عام."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 3
+  },
+  {
+   "id": "q_3",
+   "type": "scale",
+   "label": {
+    "en": "The content was high quality and relevant to my HR work.",
+    "ar": "كان المحتوى عالي الجودة وذا صلة بعملي في الموارد البشرية."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 4
+  },
+  {
+   "id": "q_9",
+   "type": "scale",
+   "label": {
+    "en": "The hands-on parts, such as the job descriptions, policy comparisons, the HR tracker, the HR assistant and the capstone, helped me apply what I learned.",
+    "ar": "ساعدتني الأجزاء التطبيقية، مثل الأوصاف الوظيفية ومقارنة السياسات وجدول الموارد البشرية ومساعد الموارد البشرية والمشروع الختامي، على تطبيق ما تعلّمته."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 5
+  },
+  {
+   "id": "q_materials",
+   "type": "scale",
+   "label": {
+    "en": "The workshop website, the cheat sheet, the safe-use card and the take-home guide were clear and useful.",
+    "ar": "كانت مواد ورشة العمل (الموقع وورقة المراجعة السريعة وبطاقة الاستخدام الآمن ودليل ما بعد ورشة العمل) واضحةً ومفيدة."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 6
+  },
+  {
+   "id": "q_pace",
+   "type": "scale",
+   "label": {
+    "en": "The length and pace of the 3 days were right for me.",
+    "ar": "كانت مدة الأيام الثلاثة ووتيرتها مناسبة لي."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 7
+  },
+  {
+   "id": "q_logistics",
+   "type": "scale",
+   "label": {
+    "en": "The venue, the daily timing and access to Microsoft Copilot worked well for me.",
+    "ar": "كان المكان والتوقيت اليومي وإمكانية الوصول إلى Microsoft Copilot مناسباً لي."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 8
+  },
+  {
+   "id": "q_4",
+   "type": "scale",
+   "label": {
+    "en": "I can explain how Copilot produces an answer, what it can see, and why I check it.",
+    "ar": "أستطيع أن أشرح كيف يُنتج Copilot إجابته، وما الذي يمكنه رؤيته، ولماذا أتحقق منها."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 9
+  },
+  {
+   "id": "q_5",
+   "type": "scale",
+   "label": {
+    "en": "I can decide which HR tasks Copilot can support, and keep personal, salary and case details out of prompts.",
+    "ar": "أستطيع أن أحدد مهام الموارد البشرية التي يمكن أن يدعمها Copilot، وأبقي التفاصيل الشخصية وتفاصيل الرواتب والحالات خارج الطلبات."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 10
+  },
+  {
+   "id": "q_can3",
+   "type": "scale",
+   "label": {
+    "en": "I can write a request with the five inputs: instructions, context, data, tone and approved sources.",
+    "ar": "أستطيع كتابة طلب يتضمن المدخلات الخمسة: التعليمات والسياق والبيانات والأسلوب والمصادر المعتمدة."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 11
+  },
+  {
+   "id": "q_can4",
+   "type": "scale",
+   "label": {
+    "en": "I can use Copilot in Word, Outlook, Teams, Excel and PowerPoint for HR documents, messages, meeting records and summaries, and check every figure.",
+    "ar": "أستطيع استخدام Copilot في Word وOutlook وTeams وExcel وPowerPoint لمستندات الموارد البشرية والرسائل ومحاضر الاجتماعات والملخصات، وأتحقق من كل رقم."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 12
+  },
+  {
+   "id": "q_can5",
+   "type": "scale",
+   "label": {
+    "en": "I can build and test a simple HR assistant in Agent Builder.",
+    "ar": "أستطيع بناء مساعد بسيط للموارد البشرية في Agent Builder واختباره."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 13
+  },
+  {
+   "id": "q_can6",
+   "type": "scale",
+   "label": {
+    "en": "I can build a reusable prompt set for one recurring task in my unit, and test it with a colleague.",
+    "ar": "أستطيع بناء مجموعة طلبات قابلة لإعادة الاستخدام لمهمة متكررة في وحدتي، واختبارها مع زميل."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 14
+  },
+  {
+   "id": "q_ai",
+   "type": "scale",
+   "label": {
+    "en": "I check Copilot's numbers and sentences before I use them.",
+    "ar": "أتحقق من أرقام Copilot وعباراته قبل أن أستخدمها."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 15
+  },
+  {
+   "id": "q_safe",
+   "type": "scale",
+   "label": {
+    "en": "I know which data must never go into Copilot.",
+    "ar": "أعرف البيانات التي لا يجوز إدخالها إلى Copilot أبداً."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 16
+  },
+  {
+   "id": "q_10",
+   "type": "scale",
+   "label": {
+    "en": "I will use what I learned, and the tools from the workshop, in my work.",
+    "ar": "سأطبّق ما تعلّمته والأدوات التي حصلت عليها في ورشة العمل في عملي."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 17
+  },
+  {
+   "id": "q_6",
+   "type": "scale",
+   "label": {
+    "en": "The instructor delivered the workshop effectively, and the teaching style was clear and easy to follow.",
+    "ar": "قدّم المدرّب ورشة العمل بفعالية، وكان أسلوب التدريس واضحاً وسهل المتابعة."
+   },
+   "required": true,
+   "sectionId": "s_team",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 18
+  },
+  {
+   "id": "q_7",
+   "type": "scale",
+   "label": {
+    "en": "The instructor and facilitators were knowledgeable, professional, and available to help me.",
+    "ar": "كان المدرّب والميسّرون متمكنين ومحترفين ومتاحين لمساعدتي."
+   },
+   "required": true,
+   "sectionId": "s_team",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 19
+  },
+  {
+   "id": "q_11",
+   "type": "scale",
+   "label": {
+    "en": "I would recommend this workshop to a colleague.",
+    "ar": "أنصح زملائي بورشة العمل هذه."
+   },
+   "required": true,
+   "sectionId": "s_team",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 20
+  },
+  {
+   "id": "q_nps",
+   "type": "scale",
+   "label": {
+    "en": "How likely are you to recommend this workshop to a colleague?",
+    "ar": "ما مدى احتمال أن تنصح زميلاً بورشة العمل هذه؟"
+   },
+   "required": true,
+   "sectionId": "s_team",
+   "scaleConfig": {
+    "min": 0,
+    "max": 10,
+    "minLabel": {
+     "en": "Not at all likely",
+     "ar": "غير محتمل إطلاقاً"
+    },
+    "maxLabel": {
+     "en": "Extremely likely",
+     "ar": "محتمل جداً"
+    }
+   },
+   "order": 21
+  },
+  {
+   "id": "q_12",
+   "type": "textarea",
+   "label": {
+    "en": "Which part of the 3 days was most useful to you, and why?",
+    "ar": "ما الجزء الأكثر فائدة لك خلال الأيام الثلاثة، ولماذا؟"
+   },
+   "required": false,
+   "sectionId": "s_comments",
+   "order": 22
+  },
+  {
+   "id": "q_13",
+   "type": "textarea",
+   "label": {
+    "en": "What would you change or add to make the workshop better?",
+    "ar": "ما الذي تقترح تغييره أو إضافته لتحسين ورشة العمل؟"
+   },
+   "required": false,
+   "sectionId": "s_comments",
+   "order": 23
+  },
+  {
+   "id": "q_8",
+   "type": "textarea",
+   "label": {
+    "en": "General comments and suggestions",
+    "ar": "ملاحظات واقتراحات عامة"
+   },
+   "required": false,
+   "sectionId": "s_comments",
+   "order": 24
+  }
+ ],
+ "_update": {
+  "brandingTitle": {
+   "en": "AI Fundamentals for HR · Final Satisfaction Survey",
+   "ar": "أساسيات الذكاء الاصطناعي للموارد البشرية · استبيان الرضا الختامي"
+  },
+  "brandingSubtitle": {
+   "en": "CODED Professionals",
+   "ar": "CODED للمحترفين"
+  },
+  "clientName": "",
+  "cohortName": "AIFHR-Nov/Nov-26",
+  "slug": "coded-ai-fundamentals-for-hr-final-satisfaction-survey"
+ }
+}

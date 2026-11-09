@@ -1,0 +1,102 @@
+ok      404.html 1440px (19 text checked)
+   note: 6 text items under the worst stop of a gradient (check the screenshot by eye): "The address may be old or mistyped. Pick a page below." 3.82:1 · "404" 3.86:1
+ok      404.html 390px (19 text checked)
+   note: 6 text items under the worst stop of a gradient (check the screenshot by eye): "The address may be old or mistyped. Pick a page below." 3.82:1 · "404" 3.86:1
+ok      coded-ai-hr-cheat-sheet.html 1440px (64 text checked)
+   note: 5 text items under the worst stop of a gradient (check the screenshot by eye): "The five inputs, six HR requests that work, the four-point r" 3.82:1 · "Cheat sheet · all 3 days" 3.86:1
+ok      coded-ai-hr-cheat-sheet.html 390px (36 text checked)
+   note: 5 text items under the worst stop of a gradient (check the screenshot by eye): "The five inputs, six HR requests that work, the four-point r" 3.82:1 · "Cheat sheet · all 3 days" 3.86:1
+ok      coded-ai-hr-day-1-deck.html 1440px 
+ok      coded-ai-hr-day-1-deck.html 390px 
+ok      coded-ai-hr-day-1.html 1440px (120 text checked)
+   note: 23 text items under the worst stop of a gradient (check the screenshot by eye): "Day 1 · Tue 17 Nov · 09:10" 3.58:1 · "How Copilot writes, what it can see, what never goes in a pr" 3.82:1
+ok      coded-ai-hr-day-1.html 390px (112 text checked)
+   note: 15 text items under the worst stop of a gradient (check the screenshot by eye): "Day 1 · Tue 17 Nov · 09:10" 3.58:1 · "How Copilot writes, what it can see, what never goes in a pr" 3.82:1
+ok      coded-ai-hr-day-2-deck.html 1440px 
+ok      coded-ai-hr-day-2-deck.html 390px 
+ok      coded-ai-hr-day-2.html 1440px (129 text checked)
+   note: 26 text items under the worst stop of a gradient (check the screenshot by eye): "Slides" 4.34:1 · "Copy" 4.34:1
+ok      coded-ai-hr-day-2.html 390px (112 text checked)
+   note: 9 text items under the worst stop of a gradient (check the screenshot by eye): "Slides" 4.34:1 · "Copy" 4.34:1
+ok      coded-ai-hr-day-3-deck.html 1440px 
+ok      coded-ai-hr-day-3-deck.html 390px 
+ok      coded-ai-hr-day-3.html 1440px (142 text checked)
+   note: 33 text items under the worst stop of a gradient (check the screenshot by eye): "Save tested prompts in the Prompt Gallery, build an HR assis" 2.44:1 · "Day 3 · Reusable HR Assistants and Applied Capstone" 2.47:1
+ok      coded-ai-hr-day-3.html 390px (127 text checked)
+   note: 18 text items under the worst stop of a gradient (check the screenshot by eye): "Save tested prompts in the Prompt Gallery, build an HR assis" 2.44:1 · "Day 3 · Reusable HR Assistants and Applied Capstone" 2.47:1
+ok      coded-ai-hr-lab-day-1.html 1440px (43 text checked)
+   note: 5 text items under the worst stop of a gradient (check the screenshot by eye): "Work through the steps at your own pace after Task 1.1. Your" 3.82:1 · "Day 1 · lab" 3.86:1
+ok      coded-ai-hr-lab-day-1.html 390px (35 text checked)
+   note: 5 text items under the worst stop of a gradient (check the screenshot by eye): "Work through the steps at your own pace after Task 1.1. Your" 3.82:1 · "Day 1 · lab" 3.86:1
+ok      coded-ai-hr-lab-day-2.html 1440px (42 text checked)
+ok      coded-ai-hr-lab-day-2.html 390px (34 text checked)
+ok      coded-ai-hr-lab-day-3.html 1440px (41 text checked)
+   note: 6 text items under the worst stop of a gradient (check the screenshot by eye): "Use this list before the peer test at 13:30. Mark each step " 2.44:1 · "Day 3 · lab" 2.47:1
+ok      coded-ai-hr-lab-day-3.html 390px (33 text checked)
+   note: 6 text items under the worst stop of a gradient (check the screenshot by eye): "Use this list before the peer test at 13:30. Mark each step " 2.44:1 · "Day 3 · lab" 2.47:1
+ok      coded-ai-hr-prompt-sheet-day-1.html 1440px (239 text checked)
+   note: 6 text items under the worst stop of a gradient (check the screenshot by eye): "Every prompt from today, in teaching order. Click COPY, then" 3.82:1 · "COPY" 3.82:1
+ok      coded-ai-hr-prompt-sheet-day-1.html 390px (239 text checked)
+   note: 6 text items under the worst stop of a gradient (check the screenshot by eye): "Every prompt from today, in teaching order. Click COPY, then" 3.82:1 · "COPY" 3.82:1
+ok      coded-ai-hr-prompt-sheet-day-2.html 1440px (303 text checked)
+ok      coded-ai-hr-prompt-sheet-day-2.html 390px (303 text checked)
+ok      coded-ai-hr-prompt-sheet-day-3.html 1440px (175 text checked)
+   note: 7 text items under the worst stop of a gradient (check the screenshot by eye): "Every prompt from today, in teaching order. Click COPY, then" 2.44:1 · "COPY" 2.44:1
+ok      coded-ai-hr-prompt-sheet-day-3.html 390px (175 text checked)
+   note: 7 text items under the worst stop of a gradient (check the screenshot by eye): "Every prompt from today, in teaching order. Click COPY, then" 2.44:1 · "COPY" 2.44:1
+ok      coded-ai-hr-safe-use-card.html 1440px (49 text checked)
+ok      coded-ai-hr-safe-use-card.html 390px (44 text checked)
+ok      coded-ai-hr-take-home-guide.html 1440px (29 text checked)
+ok      coded-ai-hr-take-home-guide.html 390px (29 text checked)
+ok      coded-ai-hr.html 1440px (106 text checked)
+   note: 1 text items under the worst stop of a gradient (check the screenshot by eye): "Explore the workshop →" 2.76:1
+ok      coded-ai-hr.html 390px (106 text checked)
+   note: 1 text items under the worst stop of a gradient (check the screenshot by eye): "Explore the workshop →" 2.76:1
+ok      index.html 1440px (106 text checked)
+   note: 1 text items under the worst stop of a gradient (check the screenshot by eye): "Explore the workshop →" 2.76:1
+ok      index.html 390px (106 text checked)
+   note: 1 text items under the worst stop of a gradient (check the screenshot by eye): "Explore the workshop →" 2.76:1
+ok      staff/coded-ai-hr-answer-key-day-1.html 1440px (140 text checked)
+ok      staff/coded-ai-hr-answer-key-day-1.html 390px (140 text checked)
+ok      staff/coded-ai-hr-answer-key-day-2.html 1440px (209 text checked)
+ok      staff/coded-ai-hr-answer-key-day-2.html 390px (209 text checked)
+ok      staff/coded-ai-hr-answer-key-day-3.html 1440px (187 text checked)
+ok      staff/coded-ai-hr-answer-key-day-3.html 390px (187 text checked)
+ok      staff/coded-ai-hr-backup-day-1.html 1440px (156 text checked)
+ok      staff/coded-ai-hr-backup-day-1.html 390px (156 text checked)
+ok      staff/coded-ai-hr-backup-day-2.html 1440px (266 text checked)
+ok      staff/coded-ai-hr-backup-day-2.html 390px (266 text checked)
+ok      staff/coded-ai-hr-backup-day-3.html 1440px (101 text checked)
+ok      staff/coded-ai-hr-backup-day-3.html 390px (101 text checked)
+ok      staff/coded-ai-hr-day-1-deck.html 1440px 
+ok      staff/coded-ai-hr-day-1-deck.html 390px 
+ok      staff/coded-ai-hr-day-2-deck.html 1440px 
+ok      staff/coded-ai-hr-day-2-deck.html 390px 
+ok      staff/coded-ai-hr-day-3-deck.html 1440px 
+ok      staff/coded-ai-hr-day-3-deck.html 390px 
+ok      staff/coded-ai-hr-facilitator-kit.html 1440px (274 text checked)
+ok      staff/coded-ai-hr-facilitator-kit.html 390px (274 text checked)
+ok      staff/coded-ai-hr-lab-key-day-1.html 1440px (30 text checked)
+ok      staff/coded-ai-hr-lab-key-day-1.html 390px (30 text checked)
+ok      staff/coded-ai-hr-lab-key-day-2.html 1440px (25 text checked)
+ok      staff/coded-ai-hr-lab-key-day-2.html 390px (25 text checked)
+ok      staff/coded-ai-hr-lab-key-day-3.html 1440px (31 text checked)
+ok      staff/coded-ai-hr-lab-key-day-3.html 390px (31 text checked)
+ok      staff/coded-ai-hr-lesson-plan.html 1440px (731 text checked)
+ok      staff/coded-ai-hr-lesson-plan.html 390px (731 text checked)
+ok      staff/coded-ai-hr-notes-day-1.html 1440px (673 text checked)
+ok      staff/coded-ai-hr-notes-day-1.html 390px (673 text checked)
+ok      staff/coded-ai-hr-notes-day-2.html 1440px (708 text checked)
+ok      staff/coded-ai-hr-notes-day-2.html 390px (708 text checked)
+ok      staff/coded-ai-hr-notes-day-3.html 1440px (445 text checked)
+ok      staff/coded-ai-hr-notes-day-3.html 390px (445 text checked)
+ok      staff/coded-ai-hr-runbook-day-1.html 1440px (251 text checked)
+ok      staff/coded-ai-hr-runbook-day-1.html 390px (251 text checked)
+ok      staff/coded-ai-hr-runbook-day-2.html 1440px (321 text checked)
+ok      staff/coded-ai-hr-runbook-day-2.html 390px (321 text checked)
+ok      staff/coded-ai-hr-runbook-day-3.html 1440px (172 text checked)
+ok      staff/coded-ai-hr-runbook-day-3.html 390px (172 text checked)
+ok      staff/index.html 1440px (124 text checked)
+ok      staff/index.html 390px (124 text checked)
+PAGES PROBLEMS: 0
+pages exit 0

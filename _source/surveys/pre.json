@@ -1,0 +1,896 @@
+{
+ "name": "CODED · AI Fundamentals for HR: MAP Test PRE (Day 1)",
+ "description": "MAP Skills Test for the CODED Professionals open workshop \"AI Fundamentals for HR\", 3 days, 17 to 19 November 2026, 09:00 to 15:00, CODED, Alsharekh room. Day 1 (Tue 17 Nov 2026): Directing Copilot for Reliable HR Work · Day 2 (Wed 18 Nov 2026): Copilot Across HR Documents, Communication and Reporting · Day 3 (Thu 19 Nov 2026): Reusable HR Assistants and Applied Capstone. PRE sitting: Day 1, Tue 17 Nov, 09:10, before teaching. The POST sitting (Day 3, Thu 19 Nov, 14:20) has the identical questions. Part 1: 6 confidence self-ratings (never scored). Part 2: 14 knowledge questions (Day 1: 5, Day 2: 5, Day 3: 4). About 10 minutes. Not graded. Answer key: 1 b · 2 c · 3 c · 4 a · 5 d · 6 b · 7 a · 8 c · 9 b · 10 d · 11 a · 12 b · 13 d · 14 c.",
+ "audience": "teacher_student",
+ "isAnonymous": false,
+ "folderId": "a8f8146d-144f-47ed-9121-ef8e437f2f11",
+ "sections": [
+  {
+   "id": "s_1",
+   "title": {
+    "en": "Before you start",
+    "ar": "قبل أن تبدأ"
+   },
+   "description": {
+    "en": "Please read this, then give us your name, work email and company so that we can match your two sittings.",
+    "ar": "يُرجى قراءة ما يلي، ثم تزويدنا باسمك وبريدك الإلكتروني للعمل واسم شركتك لكي نطابق بين محاولتيك."
+   },
+   "order": 0
+  },
+  {
+   "id": "s_2",
+   "title": {
+    "en": "Part 1: Confidence",
+    "ar": "الجزء 1: الثقة"
+   },
+   "description": {
+    "en": "Rate each statement 1 to 5. 1 = No idea / never done it. 3 = Could attempt with help. 5 = Could do it confidently on my own. There are no right answers here.",
+    "ar": "قيّم كل عبارة من 1 إلى 5. 1 = لا أعرف / لم أفعله من قبل. 3 = أستطيع المحاولة بمساعدة. 5 = أستطيع فعله بثقة وحدي. لا توجد إجابات صحيحة هنا."
+   },
+   "order": 1
+  },
+  {
+   "id": "s_3",
+   "title": {
+    "en": "Part 2: Day 1, Directing Copilot for Reliable HR Work",
+    "ar": "الجزء 2: اليوم 1، توجيه Copilot لعمل موثوق في الموارد البشرية"
+   },
+   "description": {
+    "en": "Five questions. Choose the one best answer. Mutla Oil Company is a fictional company.",
+    "ar": "خمسة أسئلة. اختر أفضل إجابة واحدة. شركة Mutla Oil Company شركة خيالية."
+   },
+   "order": 2
+  },
+  {
+   "id": "s_4",
+   "title": {
+    "en": "Part 2: Day 2, Copilot Across HR Documents, Communication and Reporting",
+    "ar": "الجزء 2: اليوم 2، Copilot في مستندات الموارد البشرية والتواصل والتقارير"
+   },
+   "description": {
+    "en": "Five questions. Choose the one best answer.",
+    "ar": "خمسة أسئلة. اختر أفضل إجابة واحدة."
+   },
+   "order": 3
+  },
+  {
+   "id": "s_5",
+   "title": {
+    "en": "Part 2: Day 3, Reusable HR Assistants and Applied Capstone",
+    "ar": "الجزء 2: اليوم 3، مساعدات الموارد البشرية القابلة لإعادة الاستخدام والمشروع الختامي"
+   },
+   "description": {
+    "en": "Four questions. Choose the one best answer.",
+    "ar": "أربعة أسئلة. اختر أفضل إجابة واحدة."
+   },
+   "order": 4
+  }
+ ],
+ "questions": [
+  {
+   "id": "q_intro",
+   "type": "statement",
+   "label": {
+    "en": "This short test has 14 knowledge questions and takes about 10 minutes. Work alone, and do not use an AI tool or search. If you are not sure, choose the answer you think is most likely; there is no penalty for a wrong answer. You take this same test at the start of Day 1 and at the end of Day 3. It is not graded: it shows us how much you learned in the workshop.",
+    "ar": "يتضمن هذا الاختبار القصير 14 سؤالاً معرفياً ويستغرق نحو 10 دقائق. اعمل بمفردك، ولا تستخدم أي أداة ذكاء اصطناعي أو محرك بحث. إذا لم تكن متأكداً، فاختر الإجابة التي تراها الأرجح؛ لا توجد عقوبة على الإجابة الخاطئة. ستؤدي هذا الاختبار نفسه في بداية اليوم 1 وفي نهاية اليوم 3. لا يُحتسب هذا الاختبار في أي تقييم: إنه يبيّن لنا مقدار ما تعلّمته في ورشة العمل."
+   },
+   "required": false,
+   "sectionId": "s_1",
+   "order": 1
+  },
+  {
+   "id": "q_name",
+   "type": "text",
+   "label": {
+    "en": "Your full name",
+    "ar": "اسمك الكامل"
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "order": 2
+  },
+  {
+   "id": "q_email",
+   "type": "email",
+   "label": {
+    "en": "Your work email. We use it only to match your two sittings.",
+    "ar": "بريدك الإلكتروني للعمل. نستخدمه فقط لمطابقة محاولتيك."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "order": 3
+  },
+  {
+   "id": "q_company",
+   "type": "text",
+   "label": {
+    "en": "Your company",
+    "ar": "اسم الشركة"
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "order": 4
+  },
+  {
+   "id": "q_r1",
+   "type": "scale",
+   "label": {
+    "en": "I can explain how Copilot produces an answer, what it can see, and why I check it.",
+    "ar": "أستطيع أن أشرح كيف يُنتج Copilot إجابته، وما الذي يمكنه رؤيته، ولماذا أتحقق منها."
+   },
+   "required": true,
+   "sectionId": "s_2",
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   },
+   "order": 5
+  },
+  {
+   "id": "q_r2",
+   "type": "scale",
+   "label": {
+    "en": "I can decide which HR tasks Copilot can support, and keep personal, salary and case details out of prompts.",
+    "ar": "أستطيع أن أحدد مهام الموارد البشرية التي يمكن أن يدعمها Copilot، وأبقي التفاصيل الشخصية وتفاصيل الرواتب والحالات خارج الطلبات."
+   },
+   "required": true,
+   "sectionId": "s_2",
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   },
+   "order": 6
+  },
+  {
+   "id": "q_r3",
+   "type": "scale",
+   "label": {
+    "en": "I can write a request with the five inputs: instructions, context, data, tone and approved sources.",
+    "ar": "أستطيع كتابة طلب يتضمن المدخلات الخمسة: التعليمات والسياق والبيانات والأسلوب والمصادر المعتمدة."
+   },
+   "required": true,
+   "sectionId": "s_2",
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   },
+   "order": 7
+  },
+  {
+   "id": "q_r4",
+   "type": "scale",
+   "label": {
+    "en": "I can use Copilot in Word, Outlook, Teams, Excel and PowerPoint for HR documents, messages, meeting records and summaries, and check every figure.",
+    "ar": "أستطيع استخدام Copilot في Word وOutlook وTeams وExcel وPowerPoint لمستندات الموارد البشرية والرسائل ومحاضر الاجتماعات والملخصات، وأتحقق من كل رقم."
+   },
+   "required": true,
+   "sectionId": "s_2",
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   },
+   "order": 8
+  },
+  {
+   "id": "q_r5",
+   "type": "scale",
+   "label": {
+    "en": "I can build and test a simple HR assistant in Agent Builder.",
+    "ar": "أستطيع بناء مساعد بسيط للموارد البشرية في Agent Builder واختباره."
+   },
+   "required": true,
+   "sectionId": "s_2",
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   },
+   "order": 9
+  },
+  {
+   "id": "q_r6",
+   "type": "scale",
+   "label": {
+    "en": "I can build a reusable prompt set for one recurring task in my unit, and test it with a colleague.",
+    "ar": "أستطيع بناء مجموعة طلبات قابلة لإعادة الاستخدام لمهمة متكررة في وحدتي، واختبارها مع زميل."
+   },
+   "required": true,
+   "sectionId": "s_2",
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   },
+   "order": 10
+  },
+  {
+   "id": "q_1",
+   "type": "select",
+   "label": {
+    "en": "1. Copilot tells an employee that a medical certificate is needed only after 5 days of sick leave. Mutla's leave policy says after 2 days. Why can this happen?",
+    "ar": "1. أخبر Copilot موظفاً أن الشهادة الطبية لا تُطلب إلا بعد 5 أيام من الإجازة المرضية. سياسة الإجازات في Mutla تنص على أنها تُطلب بعد يومين. لماذا يمكن أن يحدث هذا؟"
+   },
+   "required": true,
+   "sectionId": "s_3",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Copilot copied the number from another employee's chat",
+      "ar": "نسخ Copilot الرقم من محادثة موظف آخر"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "It predicts likely words, and nothing checked the policy",
+      "ar": "يتوقع الكلمات المرجحة، ولم يتحقق شيء من السياسة"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "The question did not say which kind of leave",
+      "ar": "لم يحدد السؤال نوع الإجازة"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "The policy file was too long for Copilot to read in full",
+      "ar": "كان ملف السياسة أطول من أن يقرأه Copilot كاملاً"
+     }
+    }
+   ],
+   "order": 11
+  },
+  {
+   "id": "q_2",
+   "type": "select",
+   "label": {
+    "en": "2. Hessa uses Copilot with a Microsoft 365 Copilot license. Which files can it use to answer her?",
+    "ar": "2. تستخدم حصة Copilot مع ترخيص Microsoft 365 Copilot. ما الملفات التي يمكنه استخدامها للإجابة عليها؟"
+   },
+   "required": true,
+   "sectionId": "s_3",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Every file on the company SharePoint, including restricted HR folders",
+      "ar": "كل ملف على SharePoint في الشركة، بما فيها مجلدات الموارد البشرية المقيدة"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Only the files she uploads in this chat",
+      "ar": "الملفات التي ترفعها في هذه المحادثة فقط"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Only files, emails and chats she already has permission to open",
+      "ar": "الملفات والرسائل والمحادثات التي لديها صلاحية فتحها فقط"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Public websites only, never company files",
+      "ar": "المواقع العامة فقط، وليس ملفات الشركة أبداً"
+     }
+    }
+   ],
+   "order": 12
+  },
+  {
+   "id": "q_3",
+   "type": "select",
+   "label": {
+    "en": "3. Which task stays with authorized HR staff and is not handed to Copilot?",
+    "ar": "3. أي مهمة تبقى لدى موظفي الموارد البشرية المخوّلين ولا تُسند إلى Copilot؟"
+   },
+   "required": true,
+   "sectionId": "s_3",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Drafting a job description from approved role information",
+      "ar": "صياغة وصف وظيفي من معلومات الدور المعتمدة"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Summarizing a long leave policy with section numbers",
+      "ar": "تلخيص سياسة إجازات طويلة مع أرقام البنود"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Deciding the grade of a re-evaluated job",
+      "ar": "تحديد درجة وظيفة أعيد تقييمها"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Changing the tone of a staff announcement",
+      "ar": "تغيير أسلوب إعلان موجّه للموظفين"
+     }
+    }
+   ],
+   "order": 13
+  },
+  {
+   "id": "q_4",
+   "type": "select",
+   "label": {
+    "en": "4. Khaled wants Copilot to summarize a grievance letter that names the employee, her manager and her civil ID. What does he do first?",
+    "ar": "4. يريد خالد أن يلخّص Copilot رسالة تظلّم تذكر اسم الموظفة واسم مديرها ورقم بطاقتها المدنية. ما الذي يفعله أولاً؟"
+   },
+   "required": true,
+   "sectionId": "s_3",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Replace the names and remove the civil ID before he uploads it",
+      "ar": "يستبدل الأسماء ويحذف رقم البطاقة المدنية قبل رفعها"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Ask Copilot, in the prompt, to keep the whole letter strictly confidential",
+      "ar": "يطلب من Copilot في الطلب نفسه أن يُبقي الرسالة كلها سرية تماماً"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Open a new chat so that the letter stays private",
+      "ar": "يفتح محادثة جديدة حتى تبقى الرسالة خاصة"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Shorten the letter so that Copilot reads it faster",
+      "ar": "يختصر الرسالة حتى يقرأها Copilot أسرع"
+     }
+    }
+   ],
+   "order": 14
+  },
+  {
+   "id": "q_5",
+   "type": "select",
+   "label": {
+    "en": "5. Copilot's job description lists duties that are not in Mutla's role information. Which input was missing?",
+    "ar": "5. يتضمن الوصف الوظيفي الذي كتبه Copilot مهاماً غير موجودة في معلومات الدور لدى Mutla. أي مُدخل كان ناقصاً؟"
+   },
+   "required": true,
+   "sectionId": "s_3",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "A friendlier tone",
+      "ar": "أسلوب أكثر وداً"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Context about who will read the job description",
+      "ar": "سياق عن الأشخاص الذين سيقرؤون الوصف الوظيفي"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "A longer instruction",
+      "ar": "تعليمات أطول"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Data: the approved role information",
+      "ar": "البيانات: معلومات الدور المعتمدة"
+     }
+    }
+   ],
+   "order": 15
+  },
+  {
+   "id": "q_6",
+   "type": "select",
+   "label": {
+    "en": "6. Noura must tell unit heads what changed between the 2025 and 2026 training policies. Which request is best?",
+    "ar": "6. على نورة أن تخبر رؤساء الوحدات بما تغيّر بين سياستي التدريب لعامي 2025 و2026. أي طلب هو الأفضل؟"
+   },
+   "required": true,
+   "sectionId": "s_4",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "\"Is the 2026 policy better than the 2025 one?\"",
+      "ar": "\"هل سياسة 2026 أفضل من سياسة 2025؟\""
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "\"List each difference and the section it is in.\"",
+      "ar": "\"اذكر كل فرق والبند الذي ورد فيه.\""
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "\"Summarize the 2026 training policy for unit heads.\"",
+      "ar": "\"لخّص سياسة التدريب لعام 2026 لرؤساء الوحدات.\""
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "\"Rewrite the 2026 policy in the words of the 2025 one.\"",
+      "ar": "\"أعد كتابة سياسة 2026 بكلمات سياسة 2025.\""
+     }
+    }
+   ],
+   "order": 16
+  },
+  {
+   "id": "q_7",
+   "type": "select",
+   "label": {
+    "en": "7. A colleague asks Copilot to organize evidence for a Safety Officer job against the factors. The output ends with \"This job should move up one grade.\" What should happen?",
+    "ar": "7. يطلب زميل من Copilot ترتيب أدلة وظيفة مسؤول سلامة حسب العوامل. ينتهي الناتج بعبارة \"يجب رفع هذه الوظيفة درجة واحدة.\" ما الذي يجب أن يحدث؟"
+   },
+   "required": true,
+   "sectionId": "s_4",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Remove the line and send the evidence to the evaluation committee",
+      "ar": "حذف العبارة وإرسال الأدلة إلى لجنة التقييم"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Keep the line, because Copilot followed every approved evaluation factor",
+      "ar": "إبقاء العبارة لأن Copilot اتبع كل عوامل التقييم المعتمدة"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Ask Copilot to explain the line, then keep it",
+      "ar": "طلب شرح العبارة من Copilot ثم إبقاؤها"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Send the line to the job holder to confirm it",
+      "ar": "إرسال العبارة إلى شاغل الوظيفة ليؤكدها"
+     }
+    }
+   ],
+   "order": 17
+  },
+  {
+   "id": "q_8",
+   "type": "select",
+   "label": {
+    "en": "8. Hessa asks Copilot to make the Eid holiday notice warmer. The new version no longer says when the office reopens. Which request would have stopped this?",
+    "ar": "8. تطلب حصة من Copilot أن يجعل إعلان عطلة العيد أكثر دفئاً. لم تعد النسخة الجديدة تذكر موعد عودة المكتب إلى العمل. أي طلب كان سيمنع ذلك؟"
+   },
+   "required": true,
+   "sectionId": "s_4",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "\"Make it warmer, and keep the original greeting at the top.\"",
+      "ar": "\"اجعله أكثر دفئاً، واحتفظ بالتحية الأصلية في أعلاه.\""
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "\"Make it warmer, and keep it the same length as before.\"",
+      "ar": "\"اجعله أكثر دفئاً، واحتفظ بطوله كما كان.\""
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "\"Make it warmer, and change no day or time in it.\"",
+      "ar": "\"اجعله أكثر دفئاً، ولا تغيّر أي يوم أو وقت فيه.\""
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "\"Make it warmer, and keep the original headings and layout.\"",
+      "ar": "\"اجعله أكثر دفئاً، واحتفظ بالعناوين والتنسيق الأصليين.\""
+     }
+    }
+   ],
+   "order": 18
+  },
+  {
+   "id": "q_9",
+   "type": "select",
+   "label": {
+    "en": "9. Khaled's notes on a late delivery to the main stores go into an HR case file. Which line of Copilot's draft can stay?",
+    "ar": "9. تدخل ملاحظات خالد عن تأخر شحنة إلى المخازن الرئيسية في ملف حالة لدى الموارد البشرية. أي سطر من مسودة Copilot يمكن أن يبقى؟"
+   },
+   "required": true,
+   "sectionId": "s_4",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "\"The stores team is to blame for the three-hour delay.\"",
+      "ar": "\"فريق المخازن هو المسؤول عن التأخير لمدة ثلاث ساعات.\""
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "\"10 November, 14:00: the truck arrived late (gate log).\"",
+      "ar": "\"10 نوفمبر، 14:00: وصلت الشاحنة متأخرة (سجل البوابة).\""
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "\"The stores supervisor should be moved to another shift.\"",
+      "ar": "\"يجب نقل مشرف المخازن إلى نوبة عمل أخرى.\""
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "\"The driver's account is more believable than the clerk's.\"",
+      "ar": "\"رواية السائق أكثر مصداقية من رواية الموظف في المخزن.\""
+     }
+    }
+   ],
+   "order": 19
+  },
+  {
+   "id": "q_10",
+   "type": "select",
+   "label": {
+    "en": "10. Khaled asks Copilot how many employees joined Mutla in Q3. Copilot says 247. The HR system's checked total is 239. What does he do first?",
+    "ar": "10. يسأل خالد Copilot عن عدد الموظفين الذين انضموا إلى Mutla في الربع الثالث. يقول Copilot إن العدد 247. الإجمالي المدقق في نظام الموارد البشرية هو 239. ماذا يفعل أولاً؟"
+   },
+   "required": true,
+   "sectionId": "s_4",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Use 247, because Copilot read every row of the file",
+      "ar": "يستخدم 247 لأن Copilot قرأ كل صف في الملف"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Report 243, the number halfway between the two",
+      "ar": "يذكر 243، الرقم الذي يقع في منتصف المسافة بين الرقمين"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Ask Copilot to round both numbers to the nearest ten",
+      "ar": "يطلب من Copilot تقريب الرقمين إلى أقرب عشرة"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Ask for the rows it counted and find the 8 extra",
+      "ar": "يطلب الصفوف التي عدّها ويبحث عن الـ 8 الزائدة"
+     }
+    }
+   ],
+   "order": 20
+  },
+  {
+   "id": "q_11",
+   "type": "select",
+   "label": {
+    "en": "11. Three Personnel officers each write their own request for the monthly reminder to managers about leave requests waiting for approval. The results differ. What should they do?",
+    "ar": "11. يكتب ثلاثة موظفين في وحدة شؤون الموظفين كلٌّ منهم طلبه الخاص للتذكير الشهري للمديرين بطلبات الإجازة التي تنتظر الموافقة. وتختلف النتائج. ماذا يفعلون؟"
+   },
+   "required": true,
+   "sectionId": "s_5",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Save one tested request in the Prompt Gallery and share it with the team",
+      "ar": "يحفظون طلباً مختبراً في Prompt Gallery ويشاركونه"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Keep the request in each person's own chat history and copy it from there",
+      "ar": "يحتفظ كل شخص بالطلب في سجل محادثاته وينسخه من هناك"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Put the request in the starter prompts of one agent",
+      "ar": "يضعون الطلب في طلبات البداية لوكيل واحد"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Write a new request each time, so that it fits the case",
+      "ar": "يكتبون طلباً جديداً في كل مرة ليناسب الحالة"
+     }
+    }
+   ],
+   "order": 21
+  },
+  {
+   "id": "q_12",
+   "type": "select",
+   "label": {
+    "en": "12. Employees ask your HR assistant for advice on their own disciplinary cases. In Agent Builder, where do you add the line that stops this and refers them to HR?",
+    "ar": "12. يسأل الموظفون مساعد الموارد البشرية عن نصيحة في قضاياهم التأديبية. أين تضيف في Agent Builder السطر الذي يمنع ذلك ويحيلهم إلى الموارد البشرية؟"
+   },
+   "required": true,
+   "sectionId": "s_5",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Knowledge",
+      "ar": "المعرفة (Knowledge)"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Instructions",
+      "ar": "التعليمات (Instructions)"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Starter prompts",
+      "ar": "طلبات البداية (Starter prompts)"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Description",
+      "ar": "الوصف (Description)"
+     }
+    }
+   ],
+   "order": 22
+  },
+  {
+   "id": "q_13",
+   "type": "select",
+   "label": {
+    "en": "13. A supervisor asks the HR assistant: \"Which person in my team took the most sick days this year?\" What is the right response?",
+    "ar": "13. يسأل مشرف مساعد الموارد البشرية: \"من الشخص في فريقي الذي أخذ أكثر أيام إجازة مرضية هذا العام؟\" ما الاستجابة الصحيحة؟"
+   },
+   "required": true,
+   "sectionId": "s_5",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "It answers from the leave policy file",
+      "ar": "يجيب من ملف سياسة الإجازات"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "It estimates from the team's leave balances",
+      "ar": "يقدّر الإجابة من أرصدة إجازات الفريق"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "It asks for the team's employee numbers, then answers",
+      "ar": "يطلب الأرقام الوظيفية للفريق ثم يجيب"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "It declines and refers the person to HR",
+      "ar": "يرفض ويحيل السائل إلى الموارد البشرية"
+     }
+    }
+   ],
+   "order": 23
+  },
+  {
+   "id": "q_14",
+   "type": "select",
+   "label": {
+    "en": "14. A colleague runs your prompt set on a new case with no instructions from you, and it fails. What does this tell you?",
+    "ar": "14. شغّل زميلك مجموعة طلباتك على حالة جديدة دون أي تعليمات منك، وفشلت. ماذا يخبرك هذا؟"
+   },
+   "required": true,
+   "sectionId": "s_5",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Your colleague did not use the prompt set the way you meant",
+      "ar": "لم يستخدم زميلك مجموعة الطلبات بالطريقة التي قصدتها"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Copilot cannot be trusted for HR work",
+      "ar": "لا يمكن الوثوق بـ Copilot في عمل الموارد البشرية"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "The prompt set depends on something only you know",
+      "ar": "مجموعة الطلبات تعتمد على شيء تعرفه أنت فقط"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "The new case was too hard to test fairly",
+      "ar": "كانت الحالة الجديدة أصعب من أن تكون اختباراً عادلاً"
+     }
+    }
+   ],
+   "order": 24
+  }
+ ],
+ "_update": {
+  "brandingTitle": {
+   "en": "AI Fundamentals for HR · MAP Test: PRE (Day 1)",
+   "ar": "أساسيات الذكاء الاصطناعي للموارد البشرية · اختبار MAP: القبلي (اليوم 1)"
+  },
+  "brandingSubtitle": {
+   "en": "CODED Professionals",
+   "ar": "CODED للمحترفين"
+  },
+  "clientName": "",
+  "cohortName": "AIFHR-Nov/Nov-26",
+  "slug": "coded-ai-fundamentals-for-hr-map-test-pre-day-1"
+ }
+}

@@ -1,0 +1,1041 @@
+[
+{
+"n": 1,
+"id": "cover3",
+"kind": "cover",
+"title": "Cover",
+"topic": "open",
+"kit": [
+"CODED · Professionals",
+"Thursday 19 Nov",
+"09:00-15:00",
+"AI Fundamentals for HR",
+"Reusable HR Assistants and Applied Capstone",
+"Save tested prompts in the Prompt Gallery, build an HR assistant in Agent Builder, then complete a new case and pass a colleague's peer test.",
+"CODED, Alsharekh room, Frontend Campus",
+"Kuwait"
+],
+"chrome": [
+"Day",
+"of",
+"We start shortly",
+"Press → to begin",
+"Kuwait",
+"×"
+]
+},
+{
+"n": 2,
+"id": "outcomes3",
+"kind": "outcomes",
+"title": "Outcomes",
+"topic": "open",
+"kit": [
+"Find, adapt and save prompts in the Prompt Gallery.",
+"Build an HR assistant and test it with a normal, an incomplete and a sensitive question.",
+"Complete a new case by chaining two Copilot apps and reviewing every output.",
+"Hand your prompt set to a colleague who can run it with no instructions."
+],
+"chrome": [
+"Outcomes for today",
+"By the end of Day",
+"you will be able to:"
+]
+},
+{
+"n": 3,
+"id": "road3",
+"kind": "road",
+"title": "Today's map",
+"topic": "open",
+"kit": [
+"One company. Five HR units.",
+"Every exercise uses Mutla Oil Company, a fictional Kuwaiti oil and gas company with five HR units. A lunch and Dhuhr break each day.",
+"09:00-09:10",
+"Callback quiz",
+"Three questions on Day 2",
+"09:10-09:40",
+"Block 1 · Reuse before you rebuild: the Prompt Gallery",
+"Find, adapt, save, share · Task 3.1",
+"09:40-10:40",
+"Block 2 · Build an HR assistant with Agent Builder",
+"Instructions, knowledge, three tests · Task 3.2",
+"10:55-11:10",
+"Capstone briefing",
+"Your new case, core and extension, the self-check",
+"11:10-11:35",
+"Capstone build, part 1",
+"Plan and first requests · Task 3.3",
+"12:15-13:30",
+"Capstone build, part 2",
+"Outputs, review, the prompt set · Task 3.3",
+"13:30-13:50",
+"Peer test",
+"A colleague runs it with no instructions · Task 3.4",
+"14:05-14:20",
+"One-minute share-outs",
+"What broke and how you fixed it",
+"14:20-14:40",
+"Post-MAP test, then the final survey",
+"Two QR codes",
+"14:40-15:00",
+"Close and certificates",
+"The habit, one last time"
+],
+"chrome": [
+"The shape of Day"
+]
+},
+{
+"n": 4,
+"id": "e0rule",
+"kind": "rule",
+"title": "Five apps. One review before anything goes out.",
+"topic": "e0",
+"kit": [
+"Callback · Day 2",
+"Five apps. One review before anything goes out.",
+"Yesterday: one case, four outputs, every one checked for accuracy, confidentiality, neutrality and source alignment."
+],
+"chrome": []
+},
+{
+"n": 5,
+"id": "e0chk1",
+"kind": "check",
+"title": "Quick check",
+"topic": "e0",
+"kit": [
+"A draft for the Job Evaluation committee includes a pay figure that Copilot worked out. What do you do?",
+"Remove it; people decide pay",
+"Move it to a note at the end of the draft",
+"Round it to a clean number"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 6,
+"id": "e0chk2",
+"kind": "check",
+"title": "Quick check",
+"topic": "e0",
+"kit": [
+"Yesterday the manpower vacancies were too low. Which check found the cause?",
+"Sorting the sheet by date",
+"Comparing approved positions with the structure",
+"Counting the rows in each sheet against last month's file"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 7,
+"id": "e0chk3",
+"kind": "check",
+"title": "Quick check",
+"topic": "e0",
+"kit": [
+"From investigation notes, Copilot writes “Employee C was careless.” What do you do?",
+"Keep it if the manager agrees",
+"Soften it to “may have been careless”",
+"Remove it: it is a judgment, not an event"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 8,
+"id": "e1story",
+"kind": "story",
+"title": "Block 1 · Reuse before you rebuild",
+"topic": "e1",
+"kit": [
+"Block 1 · Reuse before you rebuild",
+"Thursday 12 November, 09:10",
+"Mutla's L&D team sends course nominations every month. Five people write the same email five different ways, and one always forgets the closing date.",
+"Write it once. Test it. Share it.",
+"Find, adapt and save prompts in the Prompt Gallery.",
+"01"
+],
+"chrome": [
+"The starting point",
+"By the end of this block:"
+]
+},
+{
+"n": 9,
+"id": "e1an",
+"kind": "rule",
+"title": "A shared recipe book for the whole kitchen.",
+"topic": "e1",
+"kit": [
+"Block 1 · the picture",
+"A shared recipe book for the whole kitchen.",
+"Every cook makes the dish the same way, because everyone uses the same tested recipe."
+],
+"chrome": []
+},
+{
+"n": 10,
+"id": "e1t1",
+"kind": "term",
+"title": "The Prompt Gallery: find, save, share.",
+"topic": "e1",
+"kit": [
+"Block 1 · the idea",
+"The Prompt Gallery: find, save, share.",
+"Prompt Gallery",
+"In Copilot, the Prompt Gallery has Suggested prompts from Microsoft, Your Prompts that you saved, and Teams: prompts shared with your team.",
+"Like the recipe book…",
+"…a tested request saved for everyone.",
+"Suggested is a start. Add the five inputs before you save."
+],
+"chrome": [
+"The idea"
+]
+},
+{
+"n": 11,
+"id": "e1pp",
+"kind": "player",
+"title": "Demo 3.1 · playback",
+"topic": "e1",
+"kit": [
+"Demo 3.1",
+"Adapt a suggested prompt",
+"Copilot Chat",
+"Test a prompt on a fictional file before you share it with your team.",
+"Suggested prompt",
+"Draft an email to my team about an upcoming training course.",
+"Instructions",
+"You are a training coordinator at Mutla. Draft a course nomination email.",
+"Context",
+"To line managers; nominations close 30 days before the course.",
+"Data",
+"Use the course name, dates and seats I paste below.",
+"Tone",
+"Friendly, short, one clear action.",
+"Approved sources",
+"Follow mutla-training-policy-2026.docx, section 5.",
+"Where",
+"What is there",
+"Suggested",
+"Prompts from Microsoft",
+"Your Prompts",
+"Prompts you saved",
+"Teams",
+"Prompts shared with your team",
+"Suggested is a start, not an answer.",
+"Add the five inputs, then save.",
+"Share the tested ones with your team.",
+"mutla-training-policy-2026.docx"
+],
+"chrome": [
+"Prompt playback",
+"Example",
+"typical result",
+"the perfect run",
+"fictional data",
+"Press",
+"to build the prompt, one part at a time",
+"file attached",
+"files attached",
+"Message",
+"The formula",
+"Send",
+"Result",
+"Decision",
+"Back",
+"Replay",
+"Next",
+"next step",
+"back",
+"replay",
+"Space",
+"Enter",
+"R",
+"Playback of the ideal run. The live tool may word it differently. All figures are fictional training data.",
+"Word",
+"Excel",
+"PowerPoint",
+"PDF",
+"Email",
+"Text",
+"file",
+"W",
+"X",
+"P",
+"CSV",
+"T",
+"F"
+]
+},
+{
+"n": 12,
+"id": "e1chk",
+"kind": "check",
+"title": "Quick check",
+"topic": "e1",
+"kit": [
+"Before you share a request in the Prompt Gallery, what must it have?",
+"A long title",
+"The five inputs and a check, tested",
+"Your name, today's date and the team it is for"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 13,
+"id": "e1names",
+"kind": "list",
+"title": "Name each prompt by its task.",
+"topic": "e1",
+"kit": [
+"Block 1 · name it so you find it",
+"Name each prompt by its task.",
+"A month from now, the name is all you remember.",
+"JD · draft from the role sheet",
+"Policy · compare two versions",
+"Thread · decisions and owners",
+"Review · four-point check"
+],
+"chrome": []
+},
+{
+"n": 14,
+"id": "e1task",
+"kind": "task",
+"title": "Your turn 3.1",
+"topic": "e1",
+"kit": [
+"Task 3.1",
+"on your own",
+"Copilot Chat · Prompt Gallery",
+"Name each prompt by its task, so you find it in a month.",
+"Share one prompt with a team, if your account has one.",
+"mutla-prompt-bank-template.docx",
+"mutla-catchup-prompt-bank.docx",
+"Open your Prompt Bank (or mutla-catchup-prompt-bank.docx if you missed a day).",
+"Pick your three best tested requests.",
+"Save each one in the Prompt Gallery under Your Prompts, with a clear name.",
+"Organize the Prompt Bank by task: Draft, Compare, Summarize, Review.",
+"Three tested requests saved under Your Prompts and a Prompt Bank organized by task.",
+"Your turn: save your best three.",
+"Block 1 · Prompt Gallery"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"You hand in",
+"Where we are",
+"Gallery",
+"Agent",
+"Capstone",
+"Peer test"
+]
+},
+{
+"n": 15,
+"id": "e2story",
+"kind": "story",
+"title": "Block 2 · Build an HR assistant",
+"topic": "e2",
+"kit": [
+"Block 2 · Build an HR assistant",
+"Thursday 12 November, 09:40",
+"Fatma answers the same 20 policy questions every week, by email and by phone. Carry-over days. Transport allowance. Permissions. Nomination deadlines.",
+"The same answer, twenty times a week.",
+"Build an HR assistant from approved policies, and test it three ways.",
+"02"
+],
+"chrome": [
+"The starting point",
+"By the end of this block:"
+]
+},
+{
+"n": 16,
+"id": "e2an",
+"kind": "rule",
+"title": "A new receptionist with a binder and a script.",
+"topic": "e2",
+"kit": [
+"Block 2 · the picture",
+"A new receptionist with a binder and a script.",
+"The binder holds the approved policies. The script says what to answer, what never to answer, and when to call HR."
+],
+"chrome": []
+},
+{
+"n": 17,
+"id": "e2scene",
+"kind": "scene",
+"title": "The script, the binder, and the phone to HR.",
+"topic": "e2",
+"kit": [
+"Block 2 · the picture, drawn",
+"The script, the binder, and the phone to HR.",
+"The assistant answers from the approved binder, follows the script, and passes anything personal to HR.",
+"Instructions · Knowledge · Refer to HR.",
+"Assistant",
+"Policies",
+"Script",
+"HR",
+"Employee"
+],
+"chrome": []
+},
+{
+"n": 18,
+"id": "e2t1",
+"kind": "term",
+"title": "Instructions: the script.",
+"topic": "e2",
+"kit": [
+"Block 2 · the idea",
+"Instructions: the script.",
+"Instructions",
+"What the assistant is, what it answers, its tone, what it must not answer, and when to refer the person to HR. Up to 8,000 characters.",
+"Like the receptionist's script…",
+"…it decides what may be said and when to pass the call.",
+"Write the must-not lines first."
+],
+"chrome": [
+"The idea"
+]
+},
+{
+"n": 19,
+"id": "e2t2",
+"kind": "term",
+"title": "Knowledge: the approved binder.",
+"topic": "e2",
+"kit": [
+"Block 2 · the idea",
+"Knowledge: the approved binder.",
+"Knowledge",
+"The files the assistant answers from. In Agent Builder you can upload up to 20 files from your device, or point to SharePoint. Approved files only.",
+"Like the binder…",
+"…every policy goes in with its dates.",
+"Both allowance versions go in, each with the date it applies."
+],
+"chrome": [
+"The idea"
+]
+},
+{
+"n": 20,
+"id": "e2steps",
+"kind": "list",
+"title": "Build it in six steps.",
+"topic": "e2",
+"kit": [
+"Block 2 · step by step",
+"Build it in six steps.",
+"Agents are limited on a basic label. Use the fallback on the task slide if Agent Builder is missing.",
+"New agent in Microsoft 365 Copilot, then Configure.",
+"Name and description: Mutla HR Policy Helper, one line on what it does.",
+"Instructions: paste the script from the prompt sheet.",
+"Knowledge: upload the five approved policy files.",
+"Starter prompts: two common questions.",
+"Try it, fix, then Create."
+],
+"chrome": []
+},
+{
+"n": 21,
+"id": "e2tests",
+"kind": "table",
+"title": "Test it with hard questions.",
+"topic": "e2",
+"kit": [
+"Block 2 · three tests",
+"Test it with hard questions.",
+"Normal, incomplete, sensitive. Before anyone else uses it.",
+"Test",
+"Question",
+"Pass if",
+"Normal",
+"How many days of unused annual leave can I carry over?",
+"Pass, if it gives the rule and cites section 4",
+"Incomplete",
+"How much is my transport allowance?",
+"Pass, if it asks for the grade, then gives both rules",
+"Sensitive",
+"What is Ahmad's salary?",
+"Pass, if it declines and refers"
+],
+"chrome": []
+},
+{
+"n": 22,
+"id": "e2never",
+"kind": "cards",
+"title": "Three things it must never do.",
+"topic": "e2",
+"kit": [
+"Block 2 · what it must never do",
+"Three things it must never do.",
+"If it does any of these in Try it, fix the instructions.",
+"Never",
+"Name a salary",
+"No pay or allowance of a named person.",
+"Never",
+"Decide a case",
+"No exception, no approval, no warning.",
+"Ask first",
+"Guess a situation",
+"Ask for the grade or the case before answering."
+],
+"chrome": []
+},
+{
+"n": 23,
+"id": "e2pp",
+"kind": "player",
+"title": "Demo 3.2 · playback",
+"topic": "e2",
+"kit": [
+"Demo 3.2",
+"The assistant's instructions, part by part",
+"Agent Builder",
+"Test with a normal, an incomplete and a sensitive question before anyone else uses it.",
+"Role",
+"You are Mutla HR Policy Helper. You answer Mutla employees' questions about leave, allowances, attendance and training.",
+"Scope",
+"Answer only from the knowledge files. Give the policy name and section for every answer. Allowances: version 3 applies until version 4 starts on 1 January 2027. Give today's rule first, then the change and its date.",
+"Tone",
+"Polite, short, plain English.",
+"Must not answer",
+"Never give or guess the salary, allowance or personal data of a named person. Never decide a case.",
+"Refer to HR",
+"If a question needs a personal record, a decision or is not in the files, say so and refer the person to the right HR unit.",
+"Ask first",
+"If the answer depends on the person's grade or situation, ask for it before you answer.",
+"Test",
+"Question",
+"Pass if",
+"Normal",
+"How many days of unused annual leave can I carry over?",
+"Pass, if it gives the rule and cites section 4",
+"Incomplete",
+"How much is my transport allowance?",
+"Pass, if it asks for the grade, then gives both rules",
+"Sensitive",
+"What is Ahmad's salary?",
+"Pass, if it declines and refers",
+"Knowledge: five policy files, each with its dates.",
+"Must not answer: named salaries, decisions.",
+"Refer: personal records go to HR.",
+"mutla-leave-policy-2026.docx",
+"mutla-allowances-policy-v3.docx",
+"mutla-allowances-policy-v4.docx",
+"mutla-attendance-rules-2026.docx",
+"mutla-training-policy-2026.docx"
+],
+"chrome": [
+"Prompt playback",
+"Example",
+"typical result",
+"the perfect run",
+"fictional data",
+"Press",
+"to build the prompt, one part at a time",
+"file attached",
+"files attached",
+"Message",
+"The formula",
+"Send",
+"Result",
+"Decision",
+"Back",
+"Replay",
+"Next",
+"next step",
+"back",
+"replay",
+"Space",
+"Enter",
+"R",
+"Playback of the ideal run. The live tool may word it differently. All figures are fictional training data.",
+"Word",
+"Excel",
+"PowerPoint",
+"PDF",
+"Email",
+"Text",
+"file",
+"W",
+"X",
+"P",
+"CSV",
+"T",
+"F"
+]
+},
+{
+"n": 24,
+"id": "e2chk",
+"kind": "check",
+"title": "Quick check",
+"topic": "e2",
+"kit": [
+"Which part of the assistant holds the approved policies it answers from?",
+"Instructions",
+"Description",
+"Knowledge"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 25,
+"id": "e2task",
+"kind": "task",
+"title": "Your turn 3.2",
+"topic": "e2",
+"kit": [
+"Task 3.2",
+"on your own",
+"Agent Builder",
+"If it answers the salary question, add a clearer line under Must not answer.",
+"Extend the assistant to a second scenario: new joiners in their first month, with questions about leave, allowances and their first training course. Add two starter prompts for it, then run a fourth test with a question the files do not cover. It must refer the person to HR.",
+"mutla-leave-policy-2026.docx",
+"mutla-allowances-policy-v3.docx",
+"mutla-allowances-policy-v4.docx",
+"mutla-attendance-rules-2026.docx",
+"mutla-training-policy-2026.docx",
+"New agent → Configure. Name it and write a one-line description.",
+"Paste the instructions from Demo 3.2 on the prompt sheet. Add the five policy files under Knowledge.",
+"In Try it, ask the three test questions. Write a test log: question, answer, pass or fix.",
+"Fix one instruction that failed, then test again. Create the agent.",
+"Test · Normal",
+"How many days of unused annual leave can I carry over?",
+"Test · Incomplete",
+"How much is my transport allowance?",
+"Test · Sensitive",
+"What is Ahmad's salary?",
+"Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
+"Your turn: build the Mutla HR Policy Helper.",
+"Block 2 · Agent Builder"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"Copy",
+"copy, paste, then check",
+"is on your",
+"prompt sheet",
+"If the tool is slow, continue from the backup on the screen.",
+"Where we are",
+"Gallery",
+"Agent",
+"Capstone",
+"Peer test"
+]
+},
+{
+"n": 26,
+"id": "e2chk2",
+"kind": "check",
+"title": "Quick check",
+"topic": "e2",
+"kit": [
+"In Try it, the assistant answers a question about overtime pay. No overtime policy is in Knowledge. What now?",
+"Add: answer only from the files, or refer to HR",
+"Fine. The answer sounds right, so mark it as a pass",
+"Add more starter prompts"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 27,
+"id": "e2deb",
+"kind": "rule",
+"title": "A test you did not run is a problem you meet later.",
+"topic": "e2",
+"kit": [
+"Block 2 · debrief",
+"A test you did not run is a problem you meet later.",
+"Run the three tests again after every change to the instructions or the files. Then let one colleague try it before your unit does."
+],
+"chrome": []
+},
+{
+"n": 28,
+"id": "e3story",
+"kind": "story",
+"title": "Capstone",
+"topic": "e3",
+"kit": [
+"Capstone",
+"Thursday 19 November, 10:55",
+"Your manager asks for one recurring task you will do faster from next month, in a way a colleague could run while you are on leave. You have a new case, Copilot, and 100 minutes.",
+"A new case proves the method.",
+"Complete a new case by chaining two Copilot apps, and save a prompt set a colleague can run.",
+"·"
+],
+"chrome": [
+"The starting point",
+"By the end of this block:"
+]
+},
+{
+"n": 29,
+"id": "e3cases",
+"kind": "table",
+"title": "Your track. A case you have not seen.",
+"topic": "e3",
+"kit": [
+"Capstone · the five cases",
+"Your track. A case you have not seen.",
+"New to you on purpose: it tests the method, not your memory.",
+"Track",
+"Case",
+"File",
+"Job Evaluation and Salary Scaling",
+"Three job descriptions for the new Finance structure",
+"mutla-capstone-je-salary.docx",
+"Compensation",
+"Answering allowance questions every month",
+"mutla-capstone-compensation.docx",
+"Manpower",
+"The monthly vacancy report for Production",
+"mutla-capstone-manpower.docx",
+"Personnel and Administration",
+"Monthly leave-balance reminders and exceptions",
+"mutla-capstone-personnel.docx",
+"Learning and Development",
+"Course feedback summaries and nominations",
+"mutla-capstone-ld.docx"
+],
+"chrome": []
+},
+{
+"n": 30,
+"id": "e3core",
+"kind": "list",
+"title": "Core for everyone. Extension if you finish.",
+"topic": "e3",
+"kit": [
+"Capstone · core and extension",
+"Core for everyone. Extension if you finish.",
+"At 13:30 a colleague from another unit runs your set with no instructions.",
+"Core: plan the steps, chain at least two Copilot apps, five-input requests grounded in the case files.",
+"Core: review every output with the four-point check.",
+"Core: save the requests as a prompt set in Word.",
+"Extension: connect it to your HR assistant, or add a starter prompt."
+],
+"chrome": []
+},
+{
+"n": 31,
+"id": "e3self",
+"kind": "list",
+"title": "Five checks before the peer test.",
+"topic": "e3",
+"kit": [
+"Capstone · the self-check",
+"Five checks before the peer test.",
+"The same list is on the Day 3 lab page.",
+"Every request has the five inputs.",
+"Every request names its approved files.",
+"No personal, salary or case detail in any prompt.",
+"Every figure and date checked against the case file.",
+"A person decides: no grade, exception or blame in any output."
+],
+"chrome": []
+},
+{
+"n": 32,
+"id": "e3task",
+"kind": "task",
+"title": "Your turn 3.3",
+"topic": "e3",
+"kit": [
+"Task 3.3",
+"on your own",
+"Copilot Chat + the apps",
+"Start with the plan request. It turns the case into steps.",
+"Connect the workflow to your HR assistant, or turn one request into a starter prompt.",
+"mutla-capstone-je-salary.docx",
+"mutla-capstone-compensation.docx",
+"mutla-capstone-manpower.docx",
+"mutla-capstone-personnel.docx",
+"mutla-capstone-ld.docx",
+"mutla-jd-template-2026.docx",
+"mutla-job-evaluation-factors.docx",
+"mutla-leave-policy-2026.docx",
+"mutla-allowances-policy-v4.docx",
+"mutla-training-policy-2026.docx",
+"mutla-prompt-bank-template.docx",
+"Open the capstone case for your track. It is new to you. Part 1 runs to 11:35; part 2 runs 12:15 to 13:30.",
+"Plan the steps: which outputs, which app, which files.",
+"Write five-input requests for each step. Chain at least two Copilot apps.",
+"Review every output with the four-point check.",
+"Save the requests as a reusable prompt set in Word.",
+"Plan the workflow",
+"You are an HR officer at Mutla. Read the attached capstone case. List the steps to complete this recurring task with Copilot: for each step, the output, the app, the files and the check. Do not do the task yet.",
+"Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
+"Your turn: a tested workflow, part 1.",
+"Capstone"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"Copy",
+"copy, paste, then check",
+"is on your",
+"prompt sheet",
+"If the tool is slow, continue from the backup on the screen.",
+"Where we are",
+"Gallery",
+"Agent",
+"Capstone",
+"Peer test"
+]
+},
+{
+"n": 33,
+"id": "e4build",
+"kind": "timer",
+"title": "Outputs, review, the prompt set.",
+"topic": "e4",
+"kit": [
+"Capstone · build, part 2",
+"Outputs, review, the prompt set.",
+"Finish your outputs, review each one, and save the requests as a prompt set. The peer test starts at 13:30."
+],
+"chrome": [
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time"
+]
+},
+{
+"n": 34,
+"id": "e4rule",
+"kind": "rule",
+"title": "If a colleague needs you to explain it, it is not finished.",
+"topic": "e4",
+"kit": [
+"Peer test",
+"If a colleague needs you to explain it, it is not finished.",
+"Hand your prompt set to someone from another unit. Say nothing. Watch where they stop."
+],
+"chrome": []
+},
+{
+"n": 35,
+"id": "e4task",
+"kind": "task",
+"title": "Your turn 3.4",
+"topic": "e4",
+"kit": [
+"Task 3.4",
+"in pairs",
+"A colleague + Copilot",
+"Watch where your colleague stops to ask. That is your fix.",
+"Run a second colleague's set.",
+"mutla-capstone-fresh-input.docx",
+"Swap with a colleague from a different unit.",
+"Run their prompt set on their track's fresh input in mutla-capstone-fresh-input.docx. Ask them nothing.",
+"Write down where it failed or where you had to guess.",
+"Swap back. Fix your set and write the fix into it.",
+"One fix written into your prompt set.",
+"Your turn: peer test.",
+"Peer test"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"You hand in",
+"Where we are",
+"Gallery",
+"Agent",
+"Capstone",
+"Peer test"
+]
+},
+{
+"n": 36,
+"id": "e4fixes",
+"kind": "list",
+"title": "The fixes most sets need.",
+"topic": "e4",
+"kit": [
+"Peer test · common fixes",
+"The fixes most sets need.",
+"Each fix is a missing input, not a new task.",
+"Name the files each request needs.",
+"Say what to do when data is missing.",
+"Add the output format.",
+"End with the check."
+],
+"chrome": []
+},
+{
+"n": 37,
+"id": "e5share",
+"kind": "timer",
+"title": "One minute each: what broke, and the fix.",
+"topic": "e5",
+"kit": [
+"Share-outs · 14:05",
+"One minute each: what broke, and the fix.",
+"Say what your colleague could not do, and what you changed. One minute."
+],
+"chrome": [
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time"
+]
+},
+{
+"n": 38,
+"id": "e6map",
+"kind": "map",
+"title": "MAP test · after",
+"topic": "e6",
+"kit": [
+"Post-MAP test",
+"Final satisfaction survey",
+"Day 3 · Thu 19 Nov · 14:20",
+"Day 3 · Thu 19 Nov · 14:30",
+"14 questions, the same as on Day 1. Not graded. Phone only: no notes, no search, no AI. Then scan the second code for the final survey.",
+"after"
+],
+"chrome": [
+"MAP test",
+"Scan the QR code.",
+"minutes",
+"Scan with your phone",
+"Time",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time"
+]
+},
+{
+"n": 39,
+"id": "w3",
+"kind": "wrap",
+"title": "Wrap-up",
+"topic": "close",
+"kit": [
+"Build it once. Test it. Let a colleague run it.",
+"Your first week: one five-input request a day. Your first month: one tested set for your unit.",
+"1",
+"You built",
+"An HR assistant, a capstone workflow and a tested prompt set.",
+"2",
+"You found",
+"Where your work depended on you, and fixed it.",
+"3",
+"The habit",
+"Copilot drafts. You check. Authorized HR staff decide."
+],
+"chrome": [
+"Today",
+"wrap-up",
+"Next"
+]
+},
+{
+"n": 40,
+"id": "close3",
+"kind": "close",
+"title": "Close",
+"topic": "close",
+"kit": [
+"Copilot drafts. People decide.",
+"Thank you. Copilot drafts. You check. Authorized HR staff decide."
+],
+"chrome": [
+"Day",
+"close",
+"×"
+]
+}
+]

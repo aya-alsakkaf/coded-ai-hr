@@ -1,0 +1,13 @@
+ok      coded-ai-hr-day-1-deck.html 60 slides, 5 COPY, 7 timers 
+   note: 17 text items under the worst stop of a gradient: check those slide shots by eye
+ok      coded-ai-hr-day-2-deck.html 62 slides, 9 COPY, 7 timers 
+   note: 23 text items under the worst stop of a gradient: check those slide shots by eye
+ok      coded-ai-hr-day-3-deck.html 40 slides, 4 COPY, 7 timers 
+   note: 9 text items under the worst stop of a gradient: check those slide shots by eye
+ok      staff/coded-ai-hr-day-1-deck.html 60 slides, 5 COPY, 7 timers 
+   note: 17 text items under the worst stop of a gradient: check those slide shots by eye
+ok      staff/coded-ai-hr-day-2-deck.html 62 slides, 9 COPY, 7 timers 
+   note: 23 text items under the worst stop of a gradient: check those slide shots by eye
+ok      staff/coded-ai-hr-day-3-deck.html 40 slides, 4 COPY, 7 timers 
+   note: 9 text items under the worst stop of a gradient: check those slide shots by eye
+DECKS PROBLEMS: 0 · slide shots in _source/qa-shots/round1/decks
