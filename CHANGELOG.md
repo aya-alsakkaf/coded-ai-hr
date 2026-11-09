@@ -11,3 +11,7 @@
 - QA rounds 1 to 3 failed and were fixed in the kit (see `_source/QA-REPORT.md` and `_source/qa-round*-levels-5-8.md`):
   product facts on the three Copilot license labels, MAP questions re-stemmed so no stem or option repeats a public slide,
   quick checks rebalanced, the HR assistant given both allowance versions, the capstone run as 25 + 75 minutes, and wording fixes.
+- QA rounds 4 and 5 fixed in the kit. Round 5 scored 9.60 overall with MAP tests at 7.0, so the QA loop did not pass.
+  Aya chose to ship with the round 5 fixes (CLAUDE.md, Decision 22).
+- Shipped: the three surveys published in the portal, the repo pushed to GitHub (aya-alsakkaf/coded-ai-hr) and deployed on Vercel
+  at https://coded-ai-hr.vercel.app. Every live check passed (`_source/QA-REPORT.md`, Level 9).

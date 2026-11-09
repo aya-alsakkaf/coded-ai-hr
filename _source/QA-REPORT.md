@@ -75,3 +75,12 @@ b2chk2 (which detail can stay); b1t3 and b1lic name the M365 Copilot (Premium) l
 listing Outlook as a data source; Demo 2.2 names "Summary by Copilot". Same answer letters. Portal drafts updated to match.
 
 Ship decision: after round 5, Aya chose to ship the build with the round 5 fixes, without a sixth audit (9 Nov 2026).
+
+## Level 9 · Live (9 Nov 2026, https://coded-ai-hr.vercel.app) · PASS
+
+- `/` 200 (the hub), with the robots meta tag and `X-Robots-Tag: noindex, nofollow`.
+- `/slides1` follows to the Day 1 deck: 200, 61 slides, noindex. `/prompt-sheet-day-3` and `/take-home-guide` (old kit addresses) follow to their pages: 200.
+- `mutla-hr-trackers-q3-2026.xlsx` 200 with the spreadsheet content type.
+- `/pre`, `/post` and `/survey` 307 to the published portal forms.
+- `/staff` 503 "Staff pages are locked" until STAFF_PASSWORD is set in Vercel.
+- `/_source/HANDOFF.md` 404 with the branded page.
