@@ -4,33 +4,34 @@ Tue 17 to Thu 19 November 2026 · 09:00-15:00 · CODED, Alsharekh room, Frontend
 
 Generated from the kit (`_source/kit/content.py` and `content_demos.py`) by `_source/class_plan.py`. Do not edit by hand.
 
-## Day 1: Directing Copilot for Reliable HR Work
+## Day 1: Copilot Foundations for HR Documents and Communication
 
-The request decides the answer. You check it.
+Ask clearly. Check everything. People decide.
 
 | Time | Block | What happens |
 | --- | --- | --- |
-| 09:00-09:10 | Welcome and sign-in check | Open Copilot Chat and read the license label under your name |
-| 09:10-09:20 | Pre-MAP test | 10 minutes. Scan the QR code. It also checks your laptop |
-| 09:20-09:30 | Opener: one job description, two requests | The same role, a weak and a strong request |
-| 09:30-10:30 | Block 1 · How Copilot produces an answer | Next-word prediction, what Copilot can see · Task 1.1 |
+| 09:00-09:10 | Welcome and sign-in check | CODED, your trainer, and the label under your name |
+| 09:10-09:20 | Pre-MAP test | 10 minutes. Scan the QR code on the screen |
+| 09:20-09:30 | Opener: one job description, two requests | The same role, a one-line request and a full one, live |
+| 09:30-10:30 | Block 1 · How generative AI and Copilot work | Next-word prediction, what Copilot can see, what stays with people · Task 1.1 |
 | 10:30-10:45 | Break |  |
-| 10:45-11:35 | Block 2 · Rules before the first request | What stays with people, green, amber, red · Task 1.2 |
+| 10:45-11:35 | Block 2 · Writing a clear prompt | The prompt checklist: seven parts · Task 1.2 |
 | 11:35-12:15 | Lunch and Dhuhr prayer |  |
-| 12:15-13:35 | Block 3 · The five inputs of a reliable request | Instructions, context, data, tone, approved sources · Task 1.3 |
-| 13:35-13:50 | Break |  |
-| 13:50-14:35 | Block 4 · Grounding and checking | Ask for the source of every line · Task 1.4 |
-| 14:35-14:50 | Integration: your first Prompt Bank entry | Save it, then read one aloud |
-| 14:50-15:00 | Wrap and the hook for Day 2 | What you built, the habit |
+| 12:15-13:20 | Block 3 · Draft, fix and check in Word | Follow-up instructions and the source of every line · Tasks 1.3 and 1.4 |
+| 13:20-13:35 | Break |  |
+| 13:35-14:40 | Block 4 · From policy to people: Word, then Outlook | A policy summary, then one message for three readers · Tasks 1.5 and 1.6 |
+| 14:40-15:00 | Prompt Bank and wrap | Save two requests, and where Copilot sits |
 
 **Tasks**
 
 | Task | Title | Minutes | Who | Files | Point |
 | --- | --- | --- | --- | --- | --- |
 | Task 1.1 | Spot the confident mistakes | 12 | in pairs | mutla-leave-policy-2026.docx, mutla-copilot-leave-answer.docx | Check every number against the approved source before it reaches an employee. |
-| Task 1.2 | Redact a case note | 12 | on your own | mutla-case-note-unredacted.docx | Replace names with roles. Remove IDs, numbers, salaries and medical details. |
-| Task 1.3 | One job description, three ways | 25 | on your own | mutla-role-information-2026.docx, mutla-jd-template-2026.docx, mutla-jd-hr-officer-2019.docx | Five inputs: instructions, context, data, tone, approved sources. |
-| Task 1.4 | Check, fix and save | 15 | on your own | mutla-catchup-jd-draft.docx, mutla-role-information-2026.docx, mutla-jd-template-2026.docx, mutla-prompt-bank-template.docx | A request you have checked is worth saving. |
+| Task 1.2 | Rewrite weak requests | 14 | on your own, then swap | mutla-leave-policy-2026.docx, mutla-allowances-policy-v4.docx, mutla-training-policy-2026.docx | Seven parts: role, context, task, data, constraints, tone, output format. |
+| Task 1.3 | Your job description: draft, fix, check | 22 | on your own | mutla-role-information-2026.docx, mutla-jd-template-2026.docx, mutla-jd-hr-officer-2019.docx | Draft with the checklist. Fix with follow-ups. Check every line. |
+| Task 1.4 | An experience letter: draft, fix, check | 15 | on your own | mutla-experience-letter-requests.docx | Flag, then decide. Copilot lists the problem; a person fixes it. |
+| Task 1.5 | The allowances policy for staff | 15 | on your own | mutla-allowances-policy-v4.docx, mutla-allowances-policy-v3.docx | Section numbers, numbers as written, and the date it applies. |
+| Task 1.6 | Announce and reply in Outlook | 17 | on your own | mutla-email-thread-attendance.docx | Change the tone for each reader. Keep every date and rule. |
 
 ## Day 2: Copilot Across HR Documents, Communication and Reporting
 

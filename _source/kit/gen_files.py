@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""The 31 fictional sample files for AI Fundamentals for HR (Mutla Oil Company).
+"""The fictional sample files for AI Fundamentals for HR (Mutla Oil Company).
     python3 gen_files.py OUTDIR        (the kit keeps them in ../files; the site copies them unchanged)
 Names never change once built: participants download them. Every fact and number comes from data.py.
 The planted problems are deliberate: three wrong leave statements, six sensitive items in the case note,
@@ -206,12 +206,22 @@ BANK_SECTIONS = ["Draft", "Compare", "Summarize", "Review"]
 def bank_intro():
     return [("p", "Save every request that worked, so you never start from a blank page. One line per entry:"),
             ("b", "Task: what you needed, in a few words."),
-            ("b", "Request: the full request, with the five inputs (" + ", ".join(a.lower() for a, _b, _c in D.INPUTS) + ")."),
+            ("b", "Request: the full request, with the seven parts of the prompt checklist (" + ", ".join(a.lower() for a, _b, _c in D.INPUTS) + ")."),
             ("b", "Files: the approved files you attached."),
             ("b", "Check: how you checked the result before it went out.")]
 doc(F["bank"], "My HR Prompt Bank",
     bank_intro() + [("kv", ("Name", "____________________")), ("kv", ("Unit track", "____________________"))] +
     [x for h in BANK_SECTIONS for x in (("h", h), ("t", [BANK_HEAD] + [[""] * 4] * 2, BANK_W, 1.6))])
+
+# 8b · experience letters (Task 1.4): the approved template and its rules, the HR system record, three requests (two with planted problems)
+doc(F["letters"], "Experience letter requests: November 2026", [
+    ("i", "Personnel and Administration. Three requests arrived this week. Use the template and its rules for every letter."),
+    ("h", "1. The approved template"), ("p", D.LETTER_TEMPLATE),
+    ("box", ("Template rules", D.LETTER_RULES)),
+    ("h", "2. The HR system record"),
+    ("t", [["Employee code", "Name", "Job title", "Unit", "Start date", "End date"]] + [list(r) for r in D.LETTER_RECORD], [2.4, 3.2, 3.2, 3.2, 2.6, 2.6]),
+    ("h", "3. The requests"),
+] + [x for code, name, text in D.LETTER_REQUESTS for x in (("lbl", f"{code} · {name}"), ("p", f"“{text}”"))])
 
 # ================================================================== DAY 2
 # 9 and 10 · allowances policy v3 and v4 (only the title and the sections differ)

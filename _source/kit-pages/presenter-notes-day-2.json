@@ -16,21 +16,21 @@
 "flat": "09:00. · Do: Welcome back. · Sign-in check: Copilot Chat open, the tracker and the thread file downloaded. · The callback quiz comes after today's map. · If the room is silent: ask one person which request they tried at work last night. · Say: “Yesterday you wrote five-input requests and traced every line to its source. Today the same habit goes into five apps.”"
 },
 {
-"say": "Four things you will do yourself today, on fictional Mutla files.",
-"do": "Read the four outcomes. Ask which one matters most for their unit.",
+"say": "These are the four things you will be able to do by the end of today, on fictional Mutla files. Which one matters most for your own job? Tell your neighbor in one sentence.",
+"do": "Read the outcomes. Ask which one matters most for their own job.",
 "expect": "Most people pick the checking outcome.",
-"silent": "pick the one you use most and say why.",
+"silent": "pick the one you use most yourself and say why.",
 "fallback": null,
 "more": [],
 "time": null,
 "t": "open",
 "k": "outcomes",
 "h": "Outcomes",
-"flat": "Do: Read the four outcomes. Ask which one matters most for their unit. · Expect: Most people pick the checking outcome. · If the room is silent: pick the one you use most and say why. · Say: “Four things you will do yourself today, on fictional Mutla files.”"
+"flat": "Do: Read the outcomes. Ask which one matters most for their own job. · Expect: Most people pick the checking outcome. · If the room is silent: pick the one you use most yourself and say why. · Say: “These are the four things you will be able to do by the end of today, on fictional Mutla files. Which one matters most for your own job? Tell your neighbor in one sentence.”"
 },
 {
-"say": "Mutla Oil Company is made up, so you can make mistakes safely. Pick the unit track closest to your job.",
-"do": "Point to the breaks: the cup button starts the break clock.",
+"say": "This is our day. Mutla Oil Company has five HR units, the same as many real HR departments. Pick the unit closest to your own job: you will use it in the tasks. When I press the cup button, the break clock starts.",
+"do": "(Point to each block, then to the breaks.)",
 "expect": null,
 "silent": "ask which block they expect to be hardest.",
 "fallback": null,
@@ -39,7 +39,7 @@
 "t": "open",
 "k": "road",
 "h": "Road: the shape of Day 2",
-"flat": "Do: Point to the breaks: the cup button starts the break clock. · If the room is silent: ask which block they expect to be hardest. · Say: “Mutla Oil Company is made up, so you can make mistakes safely. Pick the unit track closest to your job.”"
+"flat": "Do: (Point to each block, then to the breaks.) · If the room is silent: ask which block they expect to be hardest. · Say: “This is our day. Mutla Oil Company has five HR units, the same as many real HR departments. Pick the unit closest to your own job: you will use it in the tasks. When I press the cup button, the break clock starts.”"
 },
 {
 "say": "Three quick questions on yesterday. Then Word.",

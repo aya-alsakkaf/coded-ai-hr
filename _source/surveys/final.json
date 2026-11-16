@@ -134,8 +134,8 @@
    "id": "q_9",
    "type": "scale",
    "label": {
-    "en": "The hands-on parts, such as the job descriptions, policy comparisons, the HR tracker, the HR assistant and the capstone, helped me apply what I learned.",
-    "ar": "ساعدتني الأجزاء التطبيقية، مثل الأوصاف الوظيفية ومقارنة السياسات وجدول الموارد البشرية ومساعد الموارد البشرية والمشروع الختامي، على تطبيق ما تعلّمته."
+    "en": "The hands-on parts, such as the job descriptions, the announcements, the HR tracker, the process map and the HR agent, helped me apply what I learned.",
+    "ar": "ساعدتني الأجزاء التطبيقية، مثل الأوصاف الوظيفية والإعلانات وجدول الموارد البشرية وخريطة العملية ووكيل الموارد البشرية، على تطبيق ما تعلّمته."
    },
    "required": true,
    "sectionId": "s_1",
@@ -249,8 +249,8 @@
    "id": "q_5",
    "type": "scale",
    "label": {
-    "en": "I can decide which HR tasks Copilot can support, and keep personal, salary and case details out of prompts.",
-    "ar": "أستطيع أن أحدد مهام الموارد البشرية التي يمكن أن يدعمها Copilot، وأبقي التفاصيل الشخصية وتفاصيل الرواتب والحالات خارج الطلبات."
+    "en": "I can write a request with role, context, task, data, constraints, tone and output format, and fix a weak draft with follow-up instructions.",
+    "ar": "أستطيع كتابة طلب يتضمن الدور والسياق والمهمة والبيانات والقيود والأسلوب وشكل الناتج، وتحسين مسودة ضعيفة بتعليمات متابعة."
    },
    "required": true,
    "sectionId": "s_learn",
@@ -272,8 +272,8 @@
    "id": "q_can3",
    "type": "scale",
    "label": {
-    "en": "I can write a request with the five inputs: instructions, context, data, tone and approved sources.",
-    "ar": "أستطيع كتابة طلب يتضمن المدخلات الخمسة: التعليمات والسياق والبيانات والأسلوب والمصادر المعتمدة."
+    "en": "I can use Copilot in Word and Outlook to draft HR documents and messages, and change the tone for each reader.",
+    "ar": "أستطيع استخدام Copilot في Word وOutlook لصياغة مستندات الموارد البشرية ورسائلها، وتغيير الأسلوب بحسب كل قارئ."
    },
    "required": true,
    "sectionId": "s_learn",
@@ -295,8 +295,8 @@
    "id": "q_can4",
    "type": "scale",
    "label": {
-    "en": "I can use Copilot in Word, Outlook, Teams, Excel and PowerPoint for HR documents, messages, meeting records and summaries, and check every figure.",
-    "ar": "أستطيع استخدام Copilot في Word وOutlook وTeams وExcel وPowerPoint لمستندات الموارد البشرية والرسائل ومحاضر الاجتماعات والملخصات، وأتحقق من كل رقم."
+    "en": "I can keep personal, salary and case details out of prompts.",
+    "ar": "أستطيع إبقاء التفاصيل الشخصية وتفاصيل الرواتب والحالات خارج الطلبات."
    },
    "required": true,
    "sectionId": "s_learn",
@@ -318,8 +318,8 @@
    "id": "q_can5",
    "type": "scale",
    "label": {
-    "en": "I can build and test a simple HR assistant in Agent Builder.",
-    "ar": "أستطيع بناء مساعد بسيط للموارد البشرية في Agent Builder واختباره."
+    "en": "I can use Copilot for meeting notes, follow-ups, Excel figures and PowerPoint summaries, and check every figure.",
+    "ar": "أستطيع استخدام Copilot لملاحظات الاجتماعات والمتابعات وأرقام Excel وملخصات PowerPoint، وأتحقق من كل رقم."
    },
    "required": true,
    "sectionId": "s_learn",
@@ -341,8 +341,8 @@
    "id": "q_can6",
    "type": "scale",
    "label": {
-    "en": "I can build a reusable prompt set for one recurring task in my unit, and test it with a colleague.",
-    "ar": "أستطيع بناء مجموعة طلبات قابلة لإعادة الاستخدام لمهمة متكررة في وحدتي، واختبارها مع زميل."
+    "en": "I can map an HR process, build and test a simple HR agent, and tell when a Power Automate flow is needed.",
+    "ar": "أستطيع رسم مسار عملية في الموارد البشرية، وبناء وكيل بسيط للموارد البشرية واختباره، وتحديد متى نحتاج إلى مسار عمل في Power Automate."
    },
    "required": true,
    "sectionId": "s_learn",

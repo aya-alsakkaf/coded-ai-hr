@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microsoft Copilot for HR teams
+AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microsoft Copilot (and a Power Automate demo) for HR teams
 (Tue 17 to Thu 19 November 2026, 09:00-15:00, CODED, Alsharekh room, Frontend Campus). Cohort AIFHR-Nov/Nov-26.
 
 ## How this repo works
@@ -36,8 +36,7 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
    The portal lists another trainer on the cohort; Aya teaches it. Update the cohort in the portal if needed.
 5. The practice company is Mutla Oil Company, an oil and gas company with five HR unit tracks: Job Evaluation and Salary Scaling,
    Compensation, Manpower, Personnel and Administration, Learning and Development.
-6. The five inputs of a request: Instructions, Context, Data, Tone, Approved sources. The four-point review: Accuracy,
-   Confidentiality, Neutrality, Source alignment.
+6. (Replaced by Decision 24.) The four-point review: Accuracy, Confidentiality, Neutrality, Source alignment.
 7. The portal model surveys from other teams could not be read (not_found_or_denied). The surveys were built from the
    builder's bundled standards and the engine payloads, then patched for an open workshop by `_source/surveys/patch.py`
    (company field, q_4/q_5 ids, q_ai, q_safe and the 0 to 10 recommend item).
@@ -65,3 +64,15 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
     b1t3 and b1lic name the M365 Copilot (Premium) label. These fixes are not yet audited.
 22. After round 5, Aya chose "Ship now as it is" (9 Nov 2026): the three surveys are published and the site deployed with the
     round 5 fixes, without a sixth audit.
+23. 16 Nov 2026: the outline is now the public program page (PDF "AI Fundamentals for HR: Using Copilot and Power Automate").
+    Aya approved a plan with two changes from it: protecting employee data and the green, amber, red triage move to the
+    start of Day 2; Day 3 builds agents in Agent Builder, and Power Automate is a trainer demo, not a build.
+24. The prompt checklist replaces the five inputs: Role, Context, Task, Data, Constraints, Tone, Output format
+    (the outline's own words). Microsoft's Goal, Context, Source, Expectations map onto it (data.py GCSE).
+25. Aya's content rules (16 Nov 2026) apply to every change: live demos only (no prompt-player slides), speaker notes written
+    as scripts with stage directions in brackets, two exercises per build block, tool comparisons at the end of a day,
+    a welcome slide about CODED and the trainer, "DRAFT · Reviewed by: ___" on outputs, nothing printed.
+26. Engine changes for three-layer hints, no "Your turn" on day pages and COPY on the project page wait for Aya's OK.
+    The Day 1 lab already holds `hints` and `prompt` fields for that change; the engine shows the first hint today.
+27. The MAP has 14 questions: Day 1 six, Day 2 five, Day 3 three. Answer key in content.py (MAP_KEY). PRE and POST in the
+    portal are updated only after Aya confirms the change.

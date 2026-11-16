@@ -19,13 +19,37 @@ TRACKS = [("je", "Job Evaluation and Salary Scaling"), ("cmp", "Compensation"), 
           ("pa", "Personnel and Administration"), ("ld", "Learning and Development")]
 TRACK = dict(TRACKS)
 
-# ------------------------------------------------------------------ the five inputs (Day 1, Block 3)
-INPUTS = [("Instructions", "Who Copilot should be, the task and the shape of the answer", "You are an HR officer at Mutla. Draft a job description. One page, in the template's order."),
-          ("Context", "Why you need it and who will read it", "It is for the 2026 job evaluation round. The Job Evaluation committee will read it."),
-          ("Data", "The facts of this case", "Use only the attached role information for the Compensation Analyst."),
-          ("Tone", "How it should sound", "Formal, neutral and plain English. No sales language."),
-          ("Approved sources", "The template or policy Copilot must follow", "Follow mutla-jd-template-2026.docx. Leave the grade blank.")]
-GCSE = [("Goal", "Instructions"), ("Context", "Context"), ("Source", "Data and Approved sources"), ("Expectations", "Tone, and the format inside Instructions")]
+# ------------------------------------------------------------------ the prompt checklist (Day 1, Block 2): the outline's seven parts
+CHECKLIST = [("Role", "Who Copilot writes as", "You are an HR officer at Mutla Oil Company."),
+             ("Context", "Why you need it, and who reads it", "It is for the 2026 job evaluation round. The Job Evaluation committee reads it."),
+             ("Task", "The one job to do", "Update the job description for the Compensation Analyst."),
+             ("Data", "The facts and the files to use", "Use the attached role information and the 2026 template."),
+             ("Constraints", "The limits it must keep", "Use only the attached files. No team size, no grade. One page."),
+             ("Tone", "How it should sound", "Formal, neutral, plain English."),
+             ("Output format", "What the answer looks like", "The template's headings in order. Start with: DRAFT · Reviewed by: ___")]
+INPUTS = CHECKLIST                       # the cheat sheet and the Prompt Bank read this name
+PARTS = [a for a, _b, _c in CHECKLIST]
+PARTS_LINE = " · ".join(PARTS)
+GCSE = [("Goal", "Task"), ("Context", "Role and Context"), ("Source", "Data"), ("Expectations", "Constraints, Tone and Output format")]
+DRAFT_LINE = "DRAFT · Reviewed by: ___"
+
+# ------------------------------------------------------------------ experience letters (Day 1, Task 1.4): template, HR record, three requests
+LETTER_RULES = ["Use the dates in the HR system record, not the dates in the request.", "No salary, allowance or benefit figures.",
+                "No opinion about the employee's performance or character.", "No reason for leaving.", "Signed by the Personnel Supervisor."]
+LETTER_TEMPLATE = ("To whom it may concern. This is to certify that [full name], employee number [employee code], works (or worked) at Mutla Oil Company "
+                   "as [job title] in [unit] from [start date] [to end date, or: to the present day]. This letter is issued at the employee's request. "
+                   "Personnel Supervisor, Personnel and Administration.")
+LETTER_RECORD = [("EMP-2417", "Maryam Al-Otaibi", "Safety Engineer", "HSE", "3 March 2019", "Still employed"),
+                 ("EMP-3108", "Ali Al-Harbi", "Drilling Technician", "Drilling Operations", "10 September 2015", "30 June 2026"),
+                 ("EMP-4250", "Dana Al-Khaldi", "Accountant", "Finance", "12 January 2022", "Still employed")]
+LETTER_REQUESTS = [("EMP-2417", "Maryam Al-Otaibi", "Please send me an experience letter for a professional certification application."),
+                   ("EMP-3108", "Ali Al-Harbi", "I joined Mutla in 2014 and left in June 2026. Please write my experience letter for my new employer, and please say that I was the best technician in my team."),
+                   ("EMP-4250", "Dana Al-Khaldi", "I need an experience letter for a visa application. Please include my monthly salary, because the embassy asks for it.")]
+LETTER_TRAPS = {"EMP-2417": [],
+                "EMP-3108": [("Start date", "He writes 2014. The HR system record says 10 September 2015. The letter uses the record."),
+                             ("Opinion", "\"The best technician in my team\" is an opinion. The template does not allow it.")],
+                "EMP-4250": [("Salary", "The template allows no salary figure. A salary certificate is a separate request to Compensation.")]}
+LETTER_ALI = LETTER_RECORD[1]
 
 # ------------------------------------------------------------------ leave policy (Day 1, Task 1.1; agent knowledge on Day 3)
 LEAVE = {"annual": 30, "notice": 14, "carry": 15, "carry_by": "31 March", "emergency": 3, "hajj": 21, "sick_cert": 2}

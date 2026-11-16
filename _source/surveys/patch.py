@@ -35,7 +35,7 @@ def mapfix(name, sitting):
     u["en"] = u["en"].replace("MAP Test PRE", "MAP Test: PRE").replace("MAP Test POST", "MAP Test: POST")
     days = " · ".join(f"Day {d} ({DATES[d]}): {TITLES[d]}" for d in (1, 2, 3))
     p["description"] = (f"MAP Skills Test for the CODED Professionals open workshop \"{C.TITLE}\", 3 days, 17 to 19 November 2026, 09:00 to 15:00, CODED, Alsharekh room. "
-                        f"{days}. {sitting} Part 1: 6 confidence self-ratings (never scored). Part 2: 14 knowledge questions (Day 1: 5, Day 2: 5, Day 3: 4). "
+                        f"{days}. {sitting} Part 1: {len(C.CONFIDENCE)} confidence self-ratings (never scored). Part 2: {len(C.MAP)} knowledge questions (" + ", ".join(f"Day {d}: {sum(1 for q in C.MAP if q['day'] == d)}" for d in (1, 2, 3)) + "). "
                         f"About 10 minutes. Not graded. Answer key: {C.MAP_KEY}.")
     save(name, p)
 

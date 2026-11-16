@@ -1,5 +1,21 @@
 # Changelog
 
+## 16 November 2026 · Day 1 rebuilt to the updated outline (round A)
+
+- The outline changed to the public program page "AI Fundamentals for HR: Using Copilot and Power Automate" (PDF, 16 Nov).
+  Aya approved a plan on top of it: data protection moves to Day 2; Day 3 builds agents in Agent Builder and shows
+  Power Automate as a trainer demo only (CLAUDE.md, Decisions 23 to 27).
+- Day 1 rewritten: Copilot Foundations for HR Documents and Communication. Welcome slide about CODED and the trainer;
+  how generative AI and Copilot work, with what stays with people; the prompt checklist (role, context, task, data,
+  constraints, tone, output format); follow-up instructions and the source trace; a job description and an experience
+  letter in Word; a policy summary and one announcement for three readers in Outlook; the Prompt Bank. 64 slides, Tasks 1.1 to 1.6.
+- Every Day 1 demo runs live in Copilot (no prompt-player playback). Notes are trainer scripts with stage directions in brackets.
+- New sample file: mutla-experience-letter-requests.docx (template, HR system record, three requests, two planted problems).
+- The Day 1 lab is now one step per task, with hints, the files under each step and a check.
+- The 14 MAP questions and the 6 confidence items are rewritten for the new three days (key in content.py, MAP_KEY).
+  The portal PRE and POST tests are updated only after Aya confirms.
+- Days 2 and 3 are unchanged in this round. They are rebuilt next.
+
 ## 9 November 2026 · First build
 
 - Built from the approved handoff (`_source/HANDOFF.md`) for the outline "AI Essentials for Modern HR", run as
