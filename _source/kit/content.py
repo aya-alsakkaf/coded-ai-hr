@@ -468,7 +468,7 @@ LABS = {
          "do": ["From a prompt: ask PowerPoint (or Copilot Chat) for five slides on Q3 training requests and your Task 2.7 check, with no file. Circle every number it made up.",
                 "From a document: save your Task 2.8 summary as a Word file. In PowerPoint, Copilot > Create a presentation from file. Or ask Copilot Chat for a five-slide outline with speaker notes.",
                 "Check every number on every slide against your summary. Then delete the first deck."],
-         "hints": ["Check the training count and the payroll items on every slide where they appear.", "Ask for a title and three bullets per slide, plus two sentences of speaker notes."],
+         "hints": ["Check the training count and your Task 2.7 items on every slide where they appear.", "Ask for a title and three bullets per slide, plus two sentences of speaker notes."],
          "prompt": "Turn the attached summary into a five-slide outline for the Head of HR's meeting, with speaker notes. Use only the attached summary. Keep every number exactly as written. Clear and practical. Five slides: a title and three bullets each, plus two sentences of speaker notes per slide.",
          "check": {"kind": "note", "label": "Paste your five slide titles"},
          "answer": [("p", "Every number on the slides matches the summary; the last slide gives the next step.")]},

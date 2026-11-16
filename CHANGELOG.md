@@ -11,7 +11,7 @@
   from a prompt with one from a document; Task 2.11 is fix the messy deck or your track's slides. Block 6 timings adjusted.
 - Every file has a description (`FILE_ABOUT`). Lab steps start with it; Day 2 and Day 3 working files open with an "About this
   file" box or sheet. Day 1 files and agent knowledge files are byte for byte the same.
-- Day 2 lab: one step per option (16 steps). Day 3: the second-agent notes now cover both choices. A few Day 2 and 3 lines reworded.
+- Day 2 lab: one step per option (15 steps). Day 3: the second-agent notes now cover both choices. A few Day 2 and 3 lines reworded.
 
 ## 16 November 2026 · Day 1 wording pass (humanizer)
 
