@@ -20,13 +20,54 @@ F = {
  "stories": "mutla-process-stories.docx", "maptpl": "mutla-process-map-template.docx",
  "card": "mutla-workflow-card-template.docx", "palog": "mutla-training-request-log.xlsx",
  "payroll": "mutla-payroll-check-oct-nov-2026.xlsx", "onboard": "mutla-onboarding-checklist-2026.docx",
+ "overtime": "mutla-overtime-export-oct-2026.xlsx", "otmemo": "mutla-overtime-memo-draft.docx",
+ "q3report": "mutla-hr-quarterly-report-q3-2026.docx", "messydeck": "mutla-q3-hr-update-messy.pptx",
 }
 CASE_FILES = [D.CASES[k]["file"] for k, _n in D.TRACKS]
 CAP_FILES = [D.CAPSTONE[k]["file"] for k, _n in D.TRACKS]
 ALL_FILES = [F["leave"], F["answer"], F["case"], F["oldjd"], F["tpl"], F["roles"], F["catchjd"], F["bank"], F["letters"],
-             F["v3"], F["v4"], F["thread"], F["transcript"], F["trackers"], F["payroll"], F["brief"]] + CASE_FILES + [F["stories"], F["maptpl"],
+             F["v3"], F["v4"], F["thread"], F["transcript"], F["trackers"], F["payroll"], F["overtime"], F["brief"], F["otmemo"], F["q3report"], F["messydeck"]] + CASE_FILES + [F["stories"], F["maptpl"],
              F["attendance"], F["training"], F["factors"], F["onboard"], F["card"], F["palog"], F["catchbank"]]
 assert len(ALL_FILES) == len(set(ALL_FILES))
+
+# What each file is for: what it is, who uses it at Mutla, and where it is used in the workshop. Lab steps and the "About this file" box use it.
+FILE_ABOUT = {
+ F["leave"]: ("Mutla's approved leave policy: annual, emergency, sick and Hajj leave, and carry-over.", "Every employee; Personnel answers questions from it.", "Day 1 demos and Task 1.1; the HR assistant's knowledge on Day 3."),
+ F["answer"]: ("An answer Copilot wrote to an employee's leave questions. Nobody has checked it yet.", "Personnel, before the answer is sent.", "Task 1.1: check it against the leave policy."),
+ F["case"]: ("An Employee Relations case note about a phased return to work. It still has personal details in it.", "Employee Relations and Personnel.", "Task 2.1: remove the personal details before anything goes to Copilot."),
+ F["oldjd"]: ("An old job description from 2019, in the old format.", "Job Evaluation, as background only.", "Task 1.3: an example of the old style. Do not copy from it."),
+ F["tpl"]: ("The approved 2026 job description template: the headings, in order, and the rules.", "Everyone who writes a job description.", "Tasks 1.3 and 3.4."),
+ F["roles"]: ("The approved duties for one role in each HR unit. The source for every job description.", "Job Evaluation and line managers.", "Demo 1.0 and Task 1.3."),
+ F["catchjd"]: ("A job description Copilot drafted. It looks finished but has not been checked.", "Anyone who needs to check a draft.", "Demo 1.3b, and a catch-up file for Task 1.3."),
+ F["bank"]: ("An empty Prompt Bank: four columns for the requests you want to keep.", "You, after the workshop.", "End of Day 1."),
+ F["letters"]: ("Three experience letter requests, the HR system record for each person and the letter rules.", "Personnel and Administration.", "Task 1.4."),
+ F["v3"]: ("The allowances policy in force today, version 3.", "Compensation, and every employee who gets an allowance.", "Task 1.5; the HR assistant's knowledge on Day 3."),
+ F["v4"]: ("The new allowances policy, version 4, approved this year.", "Compensation, and every employee who gets an allowance.", "Task 1.5; the HR assistant's knowledge on Day 3."),
+ F["thread"]: ("Thirty emails in which managers agreed the new attendance rules. Some early ideas were changed later.", "Personnel and Administration, before the staff announcement.", "Task 1.6."),
+ F["transcript"]: ("The Teams transcript of a staffing meeting about the new Drilling Support section.", "The people at the meeting, and Manpower.", "Tasks 2.3 and 2.4: recap and follow up."),
+ F["trackers"]: ("The Q3 HR trackers exported from the HR system: training requests, manpower and control totals.", "L&D and Manpower, before the quarterly report.", "Demo 2.6 and Task 2.6."),
+ F["payroll"]: ("October and November payroll for one payroll group, and the list of approved changes for November.", "Compensation and Personnel, before the bank file is sent.", "Task 2.7, option A."),
+ F["overtime"]: (f"The {D.OT_MONTH} overtime claims as the time and attendance system exported them, before anyone cleaned them, and the approved totals.", "Personnel and Administration checks it; Compensation pays from it.", "Task 2.7, option B: clean it, chart it, check it."),
+ F["brief"]: ("A one-page brief on the new attendance rules for line managers, with the pilot result.", "Line managers and the Head of HR.", "Demos 2.8, 2.10 and 2.11."),
+ F["otmemo"]: ("A Production Superintendent's first draft of a memo to staff about overtime, and the approved overtime rules.", "Personnel checks it before it goes to staff.", "Task 2.9, option B: rewrite it in plain English."),
+ F["q3report"]: ("The HR quarterly report for July to September 2026: people, recruitment, attendance, training, pay and risks.", "The HR Director, then the Management Committee.", "Task 2.9, option C: summarize it."),
+ F["messydeck"]: ("A nine-slide Q3 HR update that someone made in a hurry: too much text, repeated slides, a wrong number and personal data.", "It was meant for the Management Committee.", "Task 2.11, option A: fix it."),
+ F["stories"]: ("Five short stories of how HR work is done today, one for each HR unit.", "You, to practice mapping a process.", "Demo 3.6 and Tasks 3.6 and 3.7."),
+ F["maptpl"]: ("An empty table for a process map: step, who, in, out, wait, problem.", "You, to map a process.", "Tasks 3.6 and 3.7."),
+ F["card"]: ("An empty card for an improved workflow: trigger, inputs, steps, approvals, what you removed.", "You, to plan a better process.", "Task 3.8 (optional)."),
+ F["palog"]: ("The training request log that the Power Automate flow fills in, one row per request.", "Learning and Development.", "The Power Automate video (Demo 3.5)."),
+ F["attendance"]: ("The approved attendance rules: start times, core hours and permissions.", "Every employee; Personnel answers questions from it.", "Day 2 tasks; the HR assistant's knowledge on Day 3."),
+ F["training"]: ("The training policy: how employees request and attend training.", "Learning and Development, line managers and employees.", "Day 1 Task 1.2; the HR assistant's knowledge on Day 3."),
+ F["factors"]: ("The five factors the Job Evaluation committee uses to compare jobs.", "Job Evaluation and Salary Scaling.", "Task 3.4: the Job Description Coach's knowledge."),
+ F["onboard"]: ("The checklist for a new joiner's first day, first week and first month.", "Personnel and Administration, and every new joiner.", "Task 3.4: the Onboarding Buddy's knowledge."),
+ F["catchbank"]: ("Eight requests that were tested in class, ready to copy.", "Anyone who missed a task or wants a model.", "Catch-up file for every day."),
+}
+for _k, _n in D.TRACKS: FILE_ABOUT[D.CASES[_k]["file"]] = (f"The {_n} case: {D.CASES[_k]['title'].lower()}. The facts, the people, the meeting and the open question.", f"{_n}.", "Tasks 2.2, 2.5 and 2.11.")
+assert set(FILE_ABOUT) == set(ALL_FILES), set(ALL_FILES) ^ set(FILE_ABOUT)
+BOX_FILES = [F["case"], F["transcript"], F["trackers"], F["payroll"], F["overtime"], F["otmemo"], F["q3report"], F["messydeck"],
+             F["stories"], F["maptpl"], F["card"], F["palog"], F["catchbank"]] + CASE_FILES
+def about_lines(f): w, who, use = FILE_ABOUT[f]; return [f"What it is: {w}", f"Who uses it at Mutla: {who}", f"In this workshop: {use}"]
+def about(f): return f"{f}: {FILE_ABOUT[f][0]}"
 
 # prompt sheet sections: sec -> (day, name)
 BLOCK = {1: (1, "Opener"), 2: (1, "Block 1 · How Copilot works"), 3: (1, "Block 2 · A clear prompt"),
@@ -516,9 +557,11 @@ demo("t25", day=2, skill="2.5", sec=8, title="Your track's message", tool="Copil
 
 demo("d26", day=2, skill="2.6", sec=9, title="Ask the tracker, then see the rows", tool="Copilot Chat · Excel", files=[F["trackers"]],
  setup=[f"[T] Attach {F['trackers']} to a new chat, or open it in Excel with Copilot (a saved .xlsx workbook).", "[T] Paste the count request. Open the Control totals sheet on the screen.",
-        "[T] Put the two totals side by side. Ask the room what could make a total too high."],
- prompts=[("Count and compare", joined(TRACKER))],
- expected=f"Copilot counts {D.TRAIN_ROWS_EXPORT} rows. The Control totals sheet says {D.TRAIN_TRUE}. The difference is {D.TRAIN_DUPES}.",
+        "[T] Put the two totals side by side. Ask the room what could make a total too high.", "[T] Run the chart request. Point to the axis (from zero) and to the gap in every unit."],
+ prompts=[("Count and compare", joined(TRACKER)),
+          ("A chart you can check", "Make a clustered column chart by unit: the Training sheet count next to the Control totals count. Start the axis at zero. Do not change any data.")],
+ expected=(f"Copilot counts {D.TRAIN_ROWS_EXPORT} rows. The Control totals sheet says {D.TRAIN_TRUE}. The difference is {D.TRAIN_DUPES}. "
+           "On the chart, every unit's bar is 1 to 3 higher than its control bar: the problem is spread across the units, so look for repeated rows."),
  say="Copilot counted every row correctly. The rows were wrong. Only the check found it.",
  point="Ask, see the rows, then check against the control total.",
  backup=[("h", "Typical result"), tbl(["Count", "Number"], [("Rows in the Training sheet", str(D.TRAIN_ROWS_EXPORT)), ("Control total", str(D.TRAIN_TRUE)), ("Difference", str(D.TRAIN_DUPES))])],
@@ -542,26 +585,38 @@ demo("t26", day=2, skill="2.6", sec=9, title="Training requests: find the duplic
 PAYREQ = ("Compare the October and November sheets by employee code. List every code whose total changed, and every code that is in only one month. "
           "Then check each line of the Movements sheet against November. For each item, say whether the Movements sheet explains it. "
           "Do not recalculate any salary. Do not fix anything.")
-demo("t27", day=2, skill="2.7", sec=9, title="Payroll: compare two months", tool="Copilot Chat + Excel", files=[F["payroll"]], kind="task", hands_on=True, minutes=12, solo="in pairs",
- setup=["Attach the payroll file. It has employee codes and no names, so it is an amber task: use your company's approved account.",
-        "Run the request below. Copilot compares October with November, then checks the Movements sheet.",
-        "Check each item yourself in Excel. Mark it explained (on the Movements sheet) or to confirm.",
-        "Write one line for each item to confirm. Change no salary."],
- prompts=[("Two months and the movements", PAYREQ)],
- expected=("Four differences between the months. The Movements sheet explains three of them: " + "; ".join(f"{c} ({w.split(':')[0].lower()})" for c, w in D.PAY_EXPLAINED) +
-           ". Three items need a person to confirm: " + " ".join(f"{c}: {w}" for c, w, _a in D.PAY_ISSUES)),
- say="A payroll system calculates the salaries. Copilot is a second pair of eyes before the file goes to the bank: it lists what changed and asks why.",
- point="List every change. Check it against the approved movements. Ask why; never recalculate.",
- backup=[("h", "Items to confirm"), tbl(["Employee code", "What is wrong", "Next step"], D.PAY_ISSUES), ("h", "Explained by the Movements sheet"), tbl(["Employee code", "Movement"], D.PAY_EXPLAINED)],
- answer=[("h", "The three planted items"), tbl(["Employee code", "What is wrong", "Next step"], D.PAY_ISSUES),
-         ("note", "Comparing the two months finds only EMP-3346. The leaver did not change, and the missing joiner is in neither month: only the Movements sheet shows them. Accept any wording that asks a person to confirm and changes no salary.")],
- deliverable="Three payroll items to confirm, one line each.",
- fallback="If upload fails, pairs sort both months by employee code in Excel and compare them side by side.",
- hint="Comparing the two months finds one problem. The Movements sheet finds the other two.",
- stretch=["Finished early? Open the trackers file. On the Manpower sheet, total vacancies look too low. Find out why."])
+OTREQ = ("List every cleaning problem in the Overtime sheet: unit names written in more than one way, hours stored as text, "
+         f"dates in other formats, blank or repeated rows, and any day above {D.OT_MAX_DAY} hours. Give the row numbers. Do not change anything.")
+OTCHART = ("From the cleaned copy, make a column chart of overtime hours by unit. Start the axis at zero and put the total under the chart. "
+           "Then compare each unit's total with the Control totals sheet and list every unit that does not match. Do not change any hours.")
+_OT_TOT = [(u, f"{D.OT_CLEAN_TOTALS[u]:g}", f"{D.OT_CONTROL[u]:g}", f"{D.OT_CLEAN_TOTALS[u] - D.OT_CONTROL[u]:g}") for u in D.OT_UNITS]
+demo("t27", day=2, skill="2.7", sec=9, title="Payroll, or clean and chart", tool="Copilot Chat + Excel", files=[F["payroll"], F["overtime"]], kind="task", hands_on=True, minutes=12, solo="in pairs",
+ setup=["Choose one. A: payroll, October against November. B: the October overtime export.",
+        "A: run request A. Check each item in Excel. One line per item to confirm. Change no salary.",
+        "B: run request B, or Data > Clean Data. Fix a copy, chart hours by unit, compare with Control totals. Change no hours."],
+ prompts=[("A · Two months and the movements", PAYREQ), ("B · The cleaning problems", OTREQ)],
+ stretch_prompts=[("B · The chart and the check", OTCHART)],
+ expected=("A: four differences between the months. The Movements sheet explains three of them: " + "; ".join(f"{c} ({w.split(':')[0].lower()})" for c, w in D.PAY_EXPLAINED) +
+           ". Three items need a person to confirm: " + " ".join(f"{c}: {w}" for c, w, _a in D.PAY_ISSUES) +
+           f" B: six kinds of problem (unit names, hours as text, dates, a repeated claim, a blank row, two days above {D.OT_MAX_DAY} hours). After cleaning, "
+           "three units match the control totals. " + " ".join(f"{u}: {g}" for u, g, _w in D.OT_GAPS)),
+ say="Two kinds of check. Payroll: what changed, and is it approved? Overtime: is the data clean enough to count? Either way, Copilot finds it and a person confirms it.",
+ point="Clean it, count it, check it against a reference. Never fix a number yourself.",
+ backup=[("h", "A · Items to confirm"), tbl(["Employee code", "What is wrong", "Next step"], D.PAY_ISSUES), ("h", "A · Explained by the Movements sheet"), tbl(["Employee code", "Movement"], D.PAY_EXPLAINED),
+         ("h", "B · After cleaning, against the control totals"), tbl(["Unit", "Clean total (hours)", "Control total (hours)", "Gap"], _OT_TOT)],
+ answer=[("h", "A · The three planted items"), tbl(["Employee code", "What is wrong", "Next step"], D.PAY_ISSUES),
+         ("note", "Comparing the two months finds only EMP-3346. The leaver did not change, and the missing joiner is in neither month: only the Movements sheet shows them. Accept any wording that asks a person to confirm and changes no salary."),
+         ("h", "B · The planted problems"), tbl(["Problem", "Rows", "Fix"], D.OT_ISSUES),
+         ("h", "B · The two gaps"), tbl(["Unit", "What the rows show", "Who confirms"], D.OT_GAPS), tbl(["Unit", "Clean total (hours)", "Control total (hours)", "Gap"], _OT_TOT),
+         ("note", "Accept a chart with one bar per unit (five bars), the axis from zero and the total under it. A chart with eight or more bars still has unit names written two ways.")],
+ deliverable="A: three payroll items to confirm. B: a clean copy, a chart of hours by unit, and one line for each gap.",
+ fallback="If upload fails: A, sort both months by employee code and compare them side by side. B, filter the Unit column and look at every name in the list.",
+ hint="A: the Movements sheet finds two of the three. B: a unit written two ways becomes two bars.",
+ stretch=["Do the other option. Or open the trackers file: on the Manpower sheet, total vacancies look too low. Find out why."])
 
 demo("d28", day=2, skill="2.8", sec=10, title="A finding into a note for management", tool="Copilot Chat · Word", files=[F["brief"]],
- setup=[f"[T] Attach {F['brief']} to a new chat, or open it in Word with Copilot.", "[T] Paste the request. Read the three bullets aloud.", "[T] Check the percentage and the weeks by hand in the brief."],
+ setup=[f"[T] Attach {F['brief']} to a new chat, or open it in Word with Copilot.", "[T] Paste the request. Read the three bullets aloud.", "[T] Check the percentage and the weeks by hand in the brief.",
+        "[T] In Word: select the second bullet, then Copilot > Rewrite. Show the versions. Keep one only if the numbers did not change."],
  prompts=[("A note for the Head of HR", joined(PILOT))],
  expected=f"A title and three bullets: late arrivals fell by {AT['pilot_drop']}% in an {AT['pilot_weeks']}-week pilot in the {AT['pilot_unit']}; one division and eight weeks only; the rules start for everyone on {AT['start']}.",
  say="Managers read the first three lines. Put the finding there, with its limits.",
@@ -570,8 +625,8 @@ demo("d28", day=2, skill="2.8", sec=10, title="A finding into a note for managem
  fallback="Show the backup bullets on the trainer screen.",
  hint="What does the pilot not show?")
 
-demo("t28", day=2, skill="2.8", sec=10, title="A management summary in Word", tool="Copilot Chat · Word", files=[F["trackers"], F["payroll"]], kind="task", hands_on=True, minutes=12, solo="on your own",
- setup=["Use your results from Tasks 2.6 and 2.7: the corrected training count and the payroll items to confirm. Missing one? Ask the trainer.",
+demo("t28", day=2, skill="2.8", sec=10, title="A management summary in Word", tool="Copilot Chat · Word", files=[F["trackers"], F["payroll"], F["overtime"]], kind="task", hands_on=True, minutes=12, solo="on your own",
+ setup=["Use your results from Tasks 2.6 and 2.7: the corrected training count, and the payroll or overtime items to confirm. Missing one? Ask the trainer.",
         "Write your own checklist request for a half-page summary for the Head of HR: what you found, what you corrected, and what still needs a person to confirm.",
         "Check every number and employee code by hand. Make sure it starts with the DRAFT line."],
  prompts=[],
@@ -584,43 +639,58 @@ demo("t28", day=2, skill="2.8", sec=10, title="A management summary in Word", to
  fallback="Nothing from before lunch? Show the backup tables on the trainer screen.",
  hint="Say what the file showed, what is correct, and who must confirm what is still open.")
 
-demo("t29", day=2, skill="2.9", sec=10, title="Three lines for the HR team", tool="Copilot Chat · Word or Teams", files=[], kind="task", hands_on=True, minutes=10, solo="on your own",
- setup=["Use your summary from Task 2.8.", "Write your checklist request: turn it into a three-line update for the HR team channel.",
-        "Keep every number. Take out every employee code: a team channel is wider than the Head of HR.", "Read the three lines against your summary. Is anything changed or lost?"],
+Q = D.Q3
+demo("t29", day=2, skill="2.9", sec=10, title="Rewrite or summarize", tool="Copilot Chat · Word", files=[F["otmemo"], F["q3report"]], kind="task", hands_on=True, minutes=10, solo="on your own",
+ setup=["Choose one. A: your Task 2.8 summary as three lines for the HR team channel. B: rewrite the overtime memo for staff. C: summarize the Q3 HR report.",
+        "A: keep every number. Take out every employee code: a team channel is wider than the Head of HR.",
+        "B: in Word, select one paragraph at a time and use Rewrite, or use Copilot Chat. The approved rules at the end of the file win.",
+        "C: ask Copilot for five bullets for the HR Director, each with its section number. Check three numbers by hand."],
  prompts=[],
- expected=f"Three short lines: the training count is {D.TRAIN_TRUE}, not {D.TRAIN_ROWS_EXPORT}; three November payroll items are with Compensation and Personnel to confirm; the next step. No employee codes.",
- say="The same facts for a wider reader. Shorter, and with less personal detail.",
- point="Same numbers, fewer words, no employee codes.",
- backup=[("h", "A typical update"), ("ul", [f"Q3 training requests: {D.TRAIN_TRUE} after removing duplicates (the file showed {D.TRAIN_ROWS_EXPORT}).", "November payroll: three items are with Compensation and Personnel to confirm before the bank file.", "Next: the same two checks before every report and payroll run."])],
- answer=[("h", "Check the update for"), ("ul", ["Three lines, every number as in the summary.", "No employee codes and no names.", "No blame on a unit or a person."])],
- deliverable="A three-line update for the HR team, with no employee codes.",
- fallback="No summary from Task 2.8: use the backup on the trainer screen.",
- hint="Who reads a team channel? Leave out anything that points to one employee.")
+ expected=(f"A: three short lines: the training count is {D.TRAIN_TRUE}, not {D.TRAIN_ROWS_EXPORT}; three November payroll items are with Compensation and Personnel to confirm; the next step. No employee codes. "
+           f"B: a plain notice under 150 words with the five approved rules. The memo's 5 hours a day and 10 days are flagged and replaced by {D.OT_MAX_DAY} hours and {D.OT_CLAIM_DAYS} working days. "
+           f"C: five bullets, each with its section: headcount {Q['hc_end']:,}, {Q['vac_filled']} vacancies filled, {D.TRAIN_TRUE} training requests, the attendance pilot and the allowances change, every number as in the report."),
+ say="Three ways Copilot changes words you already have: shorter for a new reader, plainer for staff, or short enough to read in one minute.",
+ point="Rewrite the words. Keep the facts.",
+ backup=[("h", "A · A typical update"), ("ul", [f"Q3 training requests: {D.TRAIN_TRUE} after removing duplicates (the file showed {D.TRAIN_ROWS_EXPORT}).", "November payroll: three items are with Compensation and Personnel to confirm before the bank file.", "Next: the same two checks before every report and payroll run."]),
+         ("h", "B · The approved overtime rules"), tbl(["Rule", "Approved"], D.OT_RULES),
+         ("h", "C · Numbers to check in the report"), tbl(["Figure", "In the report"], [("Headcount, 30 September", f"{Q['hc_end']:,} (section 2)"), ("Vacancies filled in Q3", f"{Q['vac_filled']} (section 3)"),
+          ("Training requests", f"{D.TRAIN_TRUE} (section 5)"), ("Attendance pilot", f"{D.ATT['pilot_drop']}% fewer late arrivals (section 4)"), ("Job evaluations waiting", f"{Q['je_wait']} (section 7)")])],
+ answer=[("h", "A · Check the update for"), ("ul", ["Three lines, every number as in the summary.", "No employee codes and no names.", "No blame on a unit or a person."]),
+         ("h", "B · Two rules the memo gets wrong"), tbl(["Rule", "The memo", "Approved"], D.OT_MEMO_WRONG),
+         ("note", "Accept a rewrite that uses the approved rules and says the memo differed, so the Superintendent can confirm. A rewrite that keeps 5 hours or 10 days has copied the error."),
+         ("h", "C · A good summary"), ("ul", ["Five bullets, each with its section number.", "Every number as written in the report.", "The open risks named (section 8), not only the good news.", "No new facts and no opinions."])],
+ deliverable="A: three lines with no employee codes. B: the memo rewritten, with the two differences flagged. C: five bullets with section numbers.",
+ fallback="No summary from Task 2.8: use the backup on the trainer screen, or choose B or C.",
+ hint="A: who reads a team channel? B: the approved rules win. C: every bullet needs its section.")
 
-demo("d210", day=2, skill="2.10", sec=11, title="A brief into five slides", tool="Copilot Chat · PowerPoint", files=[F["brief"]],
- setup=["[T] In PowerPoint with Copilot: Create a presentation from a file, and pick the brief. In Copilot Chat: attach the brief and paste the request.",
-        "[T] Read the slide titles aloud. Check the times and the pilot number on the slides against the brief."],
- prompts=[("Five slides", joined(DECK))],
- expected=f"Five slides: why the change, the new times, permissions, the pilot result ({AT['pilot_drop']}% fewer late arrivals in {AT['pilot_weeks']} weeks), and where to send questions.",
- say="A deck is the document made visible. Same facts, fewer words.",
- point="Every number on a slide matches its source.",
+DECK_PROMPT = f"Create a five-slide presentation for {D.COMPANY} line managers about the new attendance rules."
+demo("d210", day=2, skill="2.10", sec=11, title="From a prompt, then from a document", tool="Copilot Chat · PowerPoint", files=[F["brief"]],
+ setup=["[T] First, from a prompt only: in PowerPoint, Copilot > Create a presentation about..., with the one-line request and no file. Read the times on the slides aloud.",
+        "[T] Then from a document: Create a presentation from file, and pick the brief. In Copilot Chat: attach the brief and paste the full request.",
+        "[T] Put the two decks side by side. Check the times and the pilot number against the brief."],
+ prompts=[("From a prompt only", DECK_PROMPT), ("From the brief", joined(DECK))],
+ expected=(f"From the prompt: tidy slides with times and rules Copilot made up (often a start between 7:00 and 9:00) and no pilot result. "
+           f"From the brief: five slides: why the change, the new times, permissions, the pilot result ({AT['pilot_drop']}% fewer late arrivals in {AT['pilot_weeks']} weeks), and where to send questions."),
+ say="A prompt gives you a structure. A document gives you the facts. For HR slides you need both.",
+ point="From a prompt: a structure. From a document: the facts. Check every number.",
  backup=[("h", "Typical outline"), ("ol", ["Why we are changing attendance rules", f"Your new day: start {AT['flex_from']} to {AT['flex_to']}, core {AT['core_from']} to {AT['core_to']}",
           f"Permissions: {AT['permissions']} a month, up to {AT['perm_hours']} hours", f"The pilot: {AT['pilot_drop']}% fewer late arrivals", "Questions: Personnel and Administration"])],
  fallback="Show the backup outline on the trainer screen.",
- hint="Check the times and the pilot number against the brief.")
+ hint="Which deck has times that are not in the brief?")
 
-demo("t210", day=2, skill="2.10", sec=11, title="Five slides from your summary", tool="Copilot Chat · PowerPoint", files=[], kind="task", hands_on=True, minutes=12, solo="on your own",
- setup=["Save your Task 2.8 summary as a Word file.", "In PowerPoint with Copilot: Create a presentation from a file, and pick your summary. In Copilot Chat: attach it and ask for a five-slide outline with speaker notes.",
-        "Check every number on every slide against your summary."],
+demo("t210", day=2, skill="2.10", sec=11, title="From a prompt, then from your summary", tool="Copilot Chat · PowerPoint", files=[], kind="task", hands_on=True, minutes=14, solo="on your own",
+ setup=["From a prompt: ask for five slides on Q3 training requests and your Task 2.7 check, with no file. Circle every number it made up.",
+        "From a document: save your Task 2.8 summary as a Word file. Create a presentation from it, or ask Copilot Chat for a five-slide outline with speaker notes.",
+        "Check every number on every slide against your summary. Delete the first deck."],
  prompts=[],
- expected="Five slides (or an outline) with the corrected figures, the reasons and the next step, every number matching the summary.",
+ expected="The prompt-only deck has numbers Copilot made up. The deck from the summary has the corrected figures, the reasons and the next step, every number matching the summary.",
  say="Fast to make, quick to check. Read every number once.",
  point="Every number on a slide matches the summary.",
  backup=[("h", "The figures every slide must match"), ("ul", [f"Q3 training requests: {D.TRAIN_TRUE}.", "November payroll: three items to confirm (EMP-3346, EMP-2731, EMP-5114)."])],
  answer=[("h", "Facts to check"), ("ul", [f"Q3 training requests: {D.TRAIN_TRUE}.", "The three payroll items, by employee code.", "The reason for each one.", "No blame."])],
  deliverable="Five slides, or a five-slide outline, each number checked.",
  fallback="Without Copilot in PowerPoint, the outline from Copilot Chat is enough.",
- hint="Check the training count and the three employee codes on every slide where they appear.")
+ hint="Check the training count and every Task 2.7 figure on every slide where they appear.")
 
 DECK_EDIT = five([["Task", "In the deck you just made, add a slide after slide 2 called \"What changes for managers\" with three bullets. Then rewrite slide 4 in plain English for line managers. Then add two sentences of speaker notes to every slide."],
                   ["Constraints", "Use only the facts already in the deck and the brief. Change no date, time or number."],
@@ -636,18 +706,23 @@ demo("d211", day=2, skill="2.11", sec=11, title="Edit a deck with Copilot", tool
  fallback="Show the backup on the trainer screen. Without Copilot in PowerPoint, run the request in Copilot Chat on the outline.",
  hint="Did any time or number change during the edits?")
 
-demo("t211", day=2, skill="2.11", sec=11, title="Slides for your track's meeting", tool="PowerPoint · Copilot Chat", files=CASE_FILES, kind="task", hands_on=True, minutes=18, solo="on your own",
- setup=["Use your agenda and brief from Task 2.2, and your track's case file.", "Write your checklist request for four slides for that meeting, with speaker notes.",
-        "Then ask for one edit: a slide for the meeting's open question, written as a question for the room.", "Check every date and number against the case file. Add the DRAFT line to the first slide."],
+demo("t211", day=2, skill="2.11", sec=11, title="Fix a messy deck, or build your own", tool="PowerPoint · Copilot Chat", files=[F["messydeck"]] + CASE_FILES, kind="task", hands_on=True, minutes=18, solo="on your own",
+ setup=["Choose one. A: fix the messy Q3 HR update. B: slides for your track's meeting, from your Task 2.2 agenda and brief.",
+        "A: delete the About box on slide 1. Ask Copilot for a fix list, slide by slide. Then fix in rounds: merge, cut text, remove personal data, add notes.",
+        "A: check every number against your checked figures and the brief. Mark anything with no source.",
+        "B: four slides with speaker notes, and one slide that asks the open question. Check every date and number against the case file."],
  prompts=[],
- expected="Four or five slides that follow the agenda, a slide that asks the open question, speaker notes, and every date and number as in the case file.",
- say="Your own meeting, on screen. You already did the thinking this morning.",
- point="Follow the agenda. Ask the open question. Check every number.",
- backup=[("h", "The open question in each case")] + [("p", f"<b>{n}:</b> {OPENQ[k]}") for k, n in D.TRACKS],
- answer=[("h", "Check the slides for"), ("ul", ["They follow the agenda from Task 2.2.", "The open question is asked, not answered.", "Every date and number matches the case file.", "Job Evaluation: no grade on any slide."])],
- deliverable="Four or five slides with speaker notes for your track's meeting.",
- fallback="No agenda from Task 2.2: ask Copilot for one from the case file first, then the slides.",
- hint="Which question in your case is not decided yet? Give it its own slide.",
+ stretch_prompts=[("A · A fix list, slide by slide", "Review the attached deck slide by slide. For each slide, list what to fix: too much text, a repeated slide, a number with no source, personal data, and missing speaker notes. Do not change anything yet.")],
+ expected=(f"A: nine slides become eight: one training slide with {D.TRAIN_TRUE}, no names or salaries, the pilot at {AT['pilot_drop']}% for one division, owners or [to confirm] on the next steps, and speaker notes throughout. "
+           "B: a deck that follows the agenda, a slide that asks the open question, speaker notes, and every date and number as in the case file."),
+ say="Most decks you get at work are not new. Someone made them in a hurry, and you have to fix them. Or you build your own meeting's slides from this morning's work.",
+ point="Fix in rounds. Check every number after each round.",
+ backup=[("h", "A · What to fix in the messy deck"), tbl(["Slide", "Problem", "Fix"], D.MESSY_FIXES), ("h", "B · The open question in each case")] + [("p", f"<b>{n}:</b> {OPENQ[k]}") for k, n in D.TRACKS],
+ answer=[("h", "A · The planted problems"), tbl(["Slide", "Problem", "Fix"], D.MESSY_FIXES),
+         ("h", "B · Check the slides for"), ("ul", ["They follow the agenda from Task 2.2.", "The open question is asked, not answered.", "Every date and number matches the case file.", "Job Evaluation: no grade on any slide."])],
+ deliverable="A: the fixed deck, with notes on every slide. B: four or five slides with speaker notes for your track's meeting.",
+ fallback="Without Copilot in PowerPoint: A, paste the fix list from Copilot Chat and edit by hand. B, ask Copilot Chat for the outline first.",
+ hint="A: which slides say the same thing? B: which question is not decided yet?",
  stretch=[f"Turn the onboarding checklist ({F['onboard']}) into a five-slide welcome deck for new joiners."])
 
 # ===================================================================== DAY 3 · HR Agents and an Introduction to Power Automate
@@ -858,12 +933,16 @@ AI_DEMOS = [k for k, v in DEMOS.items() if v.get("kind") in ("player", "showcase
 # lab prompts that live in this file: filled into the Day 2 and Day 3 labs (content.py cannot import this file)
 CHECKCARD = DEMOS["t38"]["prompts"][0][1]
 assert " a flow " not in CHECKCARD
-_FILL = {"RECAP": joined(RECAP), "MAP_FILE": joined(MAP_FILE), "AGENT": joined(AGENT), "COACH": joined(COACH), "CHECKCARD": CHECKCARD, "PAYREQ": PAYREQ,
+_FILL = {"RECAP": joined(RECAP), "MAP_FILE": joined(MAP_FILE), "AGENT": joined(AGENT), "COACH": joined(COACH), "CHECKCARD": CHECKCARD, "PAYREQ": PAYREQ, "OTREQ": OTREQ,
          "COACH_BUDDY": "Job Description Coach: " + joined(COACH) + "\n\nOnboarding Buddy: " + joined(BUDDY)}
 for _L in C.LABS.values():
     for _s in _L["steps"]:
         if str(_s.get("prompt", "")).startswith("FILL:"): _s["prompt"] = _FILL[_s["prompt"][5:]]
         _s["templates"] = [(a, _FILL[b[5:]] if b.startswith("FILL:") else b) for a, b in _s.get("templates", [])]
+        _fs = _s.get("files", [])                                  # say what each file is, before the first step
+        _ab = (["About your track's case file: the facts, the people, the meeting and the open question for your HR unit."] if set(CASE_FILES) <= set(_fs) else [])
+        _ab += [f"About {f}: {FILE_ABOUT[f][0]}" for f in _fs if f not in CASE_FILES]
+        if _ab and not str(_s["do"][0]).startswith("About "): _s["do"] = _ab + list(_s["do"])
 
 # hub stat strip: the card sort is not a prompt demo
 C.HUB["stats"] = [(len(C.DAYS), "days"), (None, "slides"), (sum(1 for v in DEMOS.values() if v.get("hands_on")), "hands-on tasks"),

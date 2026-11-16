@@ -9,7 +9,7 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
   The last step (`validate_site.py`) must print `PROBLEMS: 0`.
 - `_source/build/` is the CODED workshop engine. Never edit an engine file. Kit-only changes.
 - `_source/kit/data.py` holds every fact (names, numbers, planted errors). `content.py` and `content_demos.py` hold the words.
-  `build_deck.py` orders the slides. `gen_files.py` writes the 31 sample files into `_source/files/`.
+  `build_deck.py` orders the slides. `gen_files.py` writes the 34 sample files into `_source/files/`.
 - Survey payloads: `build.sh` runs `surveys.py`, which overwrites them. Always run `python3 _source/surveys/patch.py` after a build
   (it is safe to run more than once), then push the patched payloads to the portal drafts.
 - A push to `main` redeploys production on Vercel.
@@ -88,4 +88,11 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
     Slides: Day 1 69, Day 2 55, Day 3 46. The Power Automate demo is a recorded video: a placeholder until Aya asks to build
     and film the flow, after Copilot access is fixed with the CODED admin team.
 30. Survey access: yousif.d@, moudhi@, ahmadmaher@ and ghareeb@joincoded.com are invited to PRE, POST and the final survey.
-
+31. 17 Nov 2026 (Aya: tasks for each app's features, realistic data, a description for every document): Day 2 adds four files
+    (overtime export, overtime memo, Q3 HR report, a messy deck) and choices inside the second task of each app block:
+    Task 2.7 payroll or clean and chart the overtime export; Task 2.9 three lines, rewrite the memo, or summarize the report;
+    Task 2.10 from a prompt, then from a document (14 min); Task 2.11 fix the messy deck or your track's slides. Demo 2.6 adds a
+    check chart, Demo 2.8 shows Rewrite in Word, Demo 2.10 compares a prompt-only deck with one from the brief. Slide counts unchanged.
+    `FILE_ABOUT` describes every file; lab steps open with the description; working files from Day 2 and 3 open with an
+    "About this file" box (Word) or sheet (Excel). Day 1 files and the agent knowledge files did not change, so Copilot does not
+    read the box. This replaces Decision 9: Excel now includes one chart, checked against a control total.

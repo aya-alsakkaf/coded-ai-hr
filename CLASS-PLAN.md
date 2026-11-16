@@ -45,10 +45,10 @@ Safe data, checked figures and clear slides.
 | 10:45-11:00 | Break |  |
 | 11:00-11:35 | Block 3 · Follow-ups and reminders in Outlook | Same owners, same dates · Tasks 2.4 and 2.5 |
 | 11:35-12:15 | Lunch and Dhuhr prayer |  |
-| 12:15-13:00 | Block 4 · Excel: figures you can check | A control total; payroll month against month · Tasks 2.6 and 2.7 |
-| 13:00-13:35 | Block 5 · Word: a summary for management | Finding, limits, next step · Tasks 2.8 and 2.9 |
+| 12:15-13:00 | Block 4 · Excel: figures you can check | A control total, a chart, payroll or cleaning data · Tasks 2.6 and 2.7 |
+| 13:00-13:35 | Block 5 · Word: a summary for management | Draft, rewrite, summarize · Tasks 2.8 and 2.9 |
 | 13:35-13:50 | Break |  |
-| 13:50-14:50 | Block 6 · PowerPoint: from document to deck | Create, edit in rounds, check every slide · Tasks 2.10 and 2.11 |
+| 13:50-14:50 | Block 6 · PowerPoint: from document to deck | From a prompt, from a document, fix a messy deck · Tasks 2.10 and 2.11 |
 | 14:50-15:00 | Which app for which job, and wrap | Word, Outlook, Teams, Excel, PowerPoint |
 
 **Tasks**
@@ -61,11 +61,11 @@ Safe data, checked figures and clear slides.
 | Task 2.4 | Follow up the staffing meeting | 12 | on your own | mutla-meeting-transcript-staffing.docx | Follow up today. Remind before the deadline, not after. |
 | Task 2.5 | Your track's message | 10 | on your own | mutla-case-je-reevaluation-request.docx, mutla-case-compensation-allowance-update.docx, mutla-case-manpower-new-section.docx, mutla-case-personnel-attendance-change.docx, mutla-case-ld-training-requests.docx | The right reader, the facts as written, nothing promised. |
 | Task 2.6 | Training requests: find the duplicates | 12 | in pairs | mutla-hr-trackers-q3-2026.xlsx | Too high: look for duplicates. Then check them yourself. |
-| Task 2.7 | Payroll: compare two months | 12 | in pairs | mutla-payroll-check-oct-nov-2026.xlsx | List every change. Check it against the approved movements. Ask why; never recalculate. |
-| Task 2.8 | A management summary in Word | 12 | on your own | mutla-hr-trackers-q3-2026.xlsx, mutla-payroll-check-oct-nov-2026.xlsx | Corrected figures, the reason, no blame. |
-| Task 2.9 | Three lines for the HR team | 10 | on your own |  | Same numbers, fewer words, no employee codes. |
-| Task 2.10 | Five slides from your summary | 12 | on your own |  | Every number on a slide matches the summary. |
-| Task 2.11 | Slides for your track's meeting | 18 | on your own | mutla-case-je-reevaluation-request.docx, mutla-case-compensation-allowance-update.docx, mutla-case-manpower-new-section.docx, mutla-case-personnel-attendance-change.docx, mutla-case-ld-training-requests.docx | Follow the agenda. Ask the open question. Check every number. |
+| Task 2.7 | Payroll, or clean and chart | 12 | in pairs | mutla-payroll-check-oct-nov-2026.xlsx, mutla-overtime-export-oct-2026.xlsx | Clean it, count it, check it against a reference. Never fix a number yourself. |
+| Task 2.8 | A management summary in Word | 12 | on your own | mutla-hr-trackers-q3-2026.xlsx, mutla-payroll-check-oct-nov-2026.xlsx, mutla-overtime-export-oct-2026.xlsx | Corrected figures, the reason, no blame. |
+| Task 2.9 | Rewrite or summarize | 10 | on your own | mutla-overtime-memo-draft.docx, mutla-hr-quarterly-report-q3-2026.docx | Rewrite the words. Keep the facts. |
+| Task 2.10 | From a prompt, then from your summary | 14 | on your own |  | Every number on a slide matches the summary. |
+| Task 2.11 | Fix a messy deck, or build your own | 18 | on your own | mutla-q3-hr-update-messy.pptx, mutla-case-je-reevaluation-request.docx, mutla-case-compensation-allowance-update.docx, mutla-case-manpower-new-section.docx, mutla-case-personnel-attendance-change.docx, mutla-case-ld-training-requests.docx | Fix in rounds. Check every number after each round. |
 
 ## Day 3: HR Agents, Workflows and an Introduction to Power Automate
 

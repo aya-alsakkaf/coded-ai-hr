@@ -19,4 +19,13 @@ Notes for the plugin owners from this build. Nothing here blocks the workshop.
 9. **Engine change, approved by Aya on 16 Nov 2026 (`_source/build/pages.py`).** Lab steps take `hints` (shown in layers: a hint,
    another hint, then the step's `prompt` with COPY), `templates` [(label, text)] with COPY, and the lab takes `name` and `lede_html`.
    `DAY_NO_TASKS = True` hides the "Your turn" list on day pages. Old kits keep their behavior. Suggest: fold these into the engine.
+10. **Task slide with a custom title.** `deck.task(..., title=...)` adds the title to the kit words twice (once as `title`, once as
+    `ttl`), so the validator reports "kit words missing on the site". This kit names its tasks so the default title reads well
+    ("Your turn: payroll, or clean and chart."). Suggest: add the title to `kit` once.
+11. **File descriptions on the site (waits for Aya's OK).** The day page lists every sample file as "Fictional file", and lab steps
+    show only the file name. The kit now has `FILE_ABOUT` in `content_demos.py` (what it is, who uses it, where it is used). A small
+    change in `pages.py` could show the first part under each file name. Until then the kit puts the description in the lab step
+    text and in an "About this file" box inside the working files.
+12. **Flaky contrast check.** `qa.cjs pages` sometimes reports one COPY button at 4.31:1 on a long lab page at 390 px; the same page
+    passes on a second run. The button is white on #2F74D6 (4.57:1). It looks like a reveal animation caught mid-fade.
 

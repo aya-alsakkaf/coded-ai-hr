@@ -1,5 +1,18 @@
 # Changelog
 
+## 17 November 2026 · App features on Day 2, file descriptions
+
+- Four new fictional files: `mutla-overtime-export-oct-2026.xlsx` (40 claims with six kinds of cleaning problem and approved
+  totals), `mutla-overtime-memo-draft.docx` (a long memo with two rules that differ from the approved rules in its annex),
+  `mutla-hr-quarterly-report-q3-2026.docx` (three pages, nine sections) and `mutla-q3-hr-update-messy.pptx` (nine slides, eight
+  planted problems). 34 sample files.
+- Excel: Demo 2.6 adds a check chart; Task 2.7 is payroll or clean, chart and check the overtime export. Word: Demo 2.8 shows
+  Rewrite; Task 2.9 is three lines, rewrite the memo, or summarize the report. PowerPoint: Demo 2.10 and Task 2.10 compare a deck
+  from a prompt with one from a document; Task 2.11 is fix the messy deck or your track's slides. Block 6 timings adjusted.
+- Every file has a description (`FILE_ABOUT`). Lab steps start with it; Day 2 and Day 3 working files open with an "About this
+  file" box or sheet. Day 1 files and agent knowledge files are byte for byte the same.
+- Day 2 lab: one step per option (16 steps). Day 3: the second-agent notes now cover both choices. A few Day 2 and 3 lines reworded.
+
 ## 16 November 2026 · Day 1 wording pass (humanizer)
 
 - Day 1 slides and speaker notes rewritten in plainer words: fewer slogans and "not X but Y" lines, no dramatic fragments

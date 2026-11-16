@@ -264,7 +264,7 @@
 "flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A three-line test log. The agent cites section 4, asks for the grade (or gives both versions with dates) before the transport answer, and declines the named salary. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: No Agent Builder: run the tests in the Copilot Chat with your instructions and the five files. · Say: “Your turn. Test your agent three times, keep a short log, and fix one line. Twelve minutes. (Start the timer.)”"
 },
 {
-"say": "Second exercise: a second agent, on your own. It helps line managers write job descriptions, and it never gives a grade. Eighteen minutes. (Start the timer.)",
+"say": "Second exercise: a second agent, and you choose which. The coach helps line managers draft job descriptions and never gives a grade. The buddy helps people in their first month. Eighteen minutes. (Start the timer.)",
 "do": "Start the timer. Walk the room. Ask each pair what they found so far.",
 "expect": "A second agent that drafts or answers only from its knowledge, asks first when the question leaves something out, and refers grades, salaries and allowances to the right unit.",
 "silent": null,
@@ -276,10 +276,10 @@
 "t": "e2",
 "k": "task",
 "h": "Your turn 3.4: A second agent: choose one (18 min, on your own)",
-"flat": "18 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A second agent that drafts or answers only from its knowledge, asks first when the question leaves something out, and refers grades, salaries and allowances to the right unit. · Give the hint at about 6 min. · Fallback: Short of time: write the instructions only, and test them in Copilot Chat with the knowledge files attached. · Say: “Second exercise: a second agent, on your own. It helps line managers write job descriptions, and it never gives a grade. Eighteen minutes. (Start the timer.)”"
+"flat": "18 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A second agent that drafts or answers only from its knowledge, asks first when the question leaves something out, and refers grades, salaries and allowances to the right unit. · Give the hint at about 6 min. · Fallback: Short of time: write the instructions only, and test them in Copilot Chat with the knowledge files attached. · Say: “Second exercise: a second agent, and you choose which. The coach helps line managers draft job descriptions and never gives a grade. The buddy helps people in their first month. Eighteen minutes. (Start the timer.)”"
 },
 {
-"say": "Did your coach ask for the duties, or invent them? If it invented them, you know which line to fix. Break now. (Press the cup button.)",
+"say": "Did your coach ask for the duties? Did your buddy ask where the new joiner works? If it guessed instead, you know which line to fix. Break now. (Press the cup button.)",
 "do": "(Ask one person what the coach did with the incomplete test.)",
 "expect": "It asked for the duties first.",
 "silent": null,
@@ -289,7 +289,7 @@
 "t": "e2",
 "k": "rule",
 "h": "The second agent took half the time.",
-"flat": "Do: (Ask one person what the coach did with the incomplete test.) · Expect: It asked for the duties first. · Say: “Did your coach ask for the duties, or invent them? If it invented them, you know which line to fix. Break now. (Press the cup button.)”"
+"flat": "Do: (Ask one person what the coach did with the incomplete test.) · Expect: It asked for the duties first. · Say: “Did your coach ask for the duties? Did your buddy ask where the new joiner works? If it guessed instead, you know which line to fix. Break now. (Press the cup button.)”"
 },
 {
 "say": "Welcome back. This block is a demo: you watch, you do not build. (Read the story.) Copilot waits for someone to type. An agent waits for a question. Who is waiting here?",

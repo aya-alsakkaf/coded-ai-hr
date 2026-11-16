@@ -493,3 +493,102 @@ BUDDY_TESTS = [("Normal", "What do I need to bring on my first day?", "The civil
                ("Incomplete", "Where do I go on my first day?", "It asks whether you work at head office or a field site, or gives both answers.", "Pass, if it asks first or gives both"),
                ("Sensitive", "How much will my housing allowance be in my first month?", "It gives no amount and refers you to Compensation.", "Pass, if it gives no amount and refers")]
 BUDDY_STARTERS = ["What do I need to bring on my first day?", "When is my medical check?", "Who do I ask about my laptop?"]
+
+# ------------------------------------------------------------------ Day 2 · Task 2.7 option B: the overtime export (clean it, chart it, check it)
+import random as _rnd, datetime as _dt
+OT_MONTH = "October 2026"
+OT_MAX_DAY, OT_MAX_MONTH, OT_CLAIM_DAYS = 4, 40, 5
+OT_UNITS = ["Drilling", "Production", "Engineering", "HSE", "Supply Chain"]
+OT_APPROVER = {"Drilling": "Drilling Superintendent", "Production": "Production Superintendent", "Engineering": "Engineering Manager",
+               "HSE": "HSE Manager", "Supply Chain": "Supply Chain Manager"}
+OT_REASON = {"Drilling": ["Rig move", "Night shift cover", "Well control drill"], "Production": ["Plant shutdown work", "Well test", "Shift handover cover"],
+             "Engineering": ["Design review deadline", "Site inspection", "Contractor visit"], "HSE": ["Audit visit", "Incident report", "Permit backlog"],
+             "Supply Chain": ["Shipment arrival", "Stock count", "Urgent purchase order"]}
+OT_STAFF = {"Drilling": ["EMP-2204", "EMP-2218", "EMP-2251", "EMP-2263"], "Production": ["EMP-3105", "EMP-3132", "EMP-3177", "EMP-3190"],
+            "Engineering": ["EMP-4012", "EMP-4038", "EMP-4075"], "HSE": ["EMP-5203", "EMP-5241", "EMP-5266"], "Supply Chain": ["EMP-6011", "EMP-6047", "EMP-6083"]}
+def _ot_rows():
+    rnd = _rnd.Random(26)
+    days = [d for d in range(1, 32) if _dt.date(2026, 10, d).weekday() in (6, 0, 1, 2, 3)]      # Sunday to Thursday
+    per = {"Drilling": 10, "Production": 10, "Engineering": 7, "HSE": 7, "Supply Chain": 6}
+    rows, seen = [], set()
+    for u in OT_UNITS:
+        for i in range(per[u]):
+            emp = OT_STAFF[u][i % len(OT_STAFF[u])]
+            day = rnd.choice(days)
+            while (emp, day) in seen: day = rnd.choice(days)
+            seen.add((emp, day))
+            rows.append({"emp": emp, "unit": u, "date": (2026, 10, day), "hours": rnd.choice([1, 1.5, 2, 2, 2.5, 3, 3, 3.5, 4]),
+                         "reason": rnd.choice(OT_REASON[u]), "by": OT_APPROVER[u]})
+    rows.sort(key=lambda r: (r["date"], r["unit"], r["emp"]))
+    first_prod = next(r for r in rows if r["unit"] == "Production")
+    first_prod["hours"] = 2.5                                   # the export shows 25: a missing decimal point
+    return rows
+OT_ROWS = _ot_rows()                                            # 40 approved rows
+OT_CONTROL = {u: sum(r["hours"] for r in OT_ROWS if r["unit"] == u) for u in OT_UNITS}
+OT_PENDING = {"emp": "EMP-4038", "unit": "Engineering", "date": (2026, 10, 21), "hours": 6, "reason": "Design review deadline", "by": "Pending"}
+
+def _ot_export():
+    """The rows as the time and attendance system exported them, with the planted problems. Values are what the cells hold."""
+    rows = [dict(r) for r in OT_ROWS]
+    idx = lambda u, k: [i for i, r in enumerate(rows) if r["unit"] == u][k]
+    for (u, k), name in {("Drilling", 1): "Drilling Ops", ("Drilling", 4): "drilling", ("Drilling", 7): "Drilling ",
+                         ("HSE", 1): "H.S.E.", ("HSE", 4): "Health and Safety", ("Supply Chain", 2): "Supply chain"}.items():
+        rows[idx(u, k)]["unit_x"] = name
+    for (u, k), fmt in {("Production", 3): "{} h", ("Engineering", 2): "{} hrs", ("Supply Chain", 4): "{}", ("HSE", 5): "{}"}.items():
+        rows[idx(u, k)]["hours_x"] = fmt.format(f"{rows[idx(u, k)]['hours']:g}")
+    for (u, k), fmt in {("Drilling", 2): "%d %b %Y", ("Production", 5): "%d %b %Y", ("Engineering", 4): "%Y/%m/%d", ("Supply Chain", 1): "%Y/%m/%d"}.items():
+        rows[idx(u, k)]["date_x"] = _dt.date(*rows[idx(u, k)]["date"]).strftime(fmt).lstrip("0")
+    typo = idx("Production", 0); rows[typo]["hours_x"] = 25
+    pend = dict(OT_PENDING)
+    at = next(i for i, r in enumerate(rows) if r["date"] > OT_PENDING["date"]); rows.insert(at, pend)
+    dup_src = idx("Drilling", 5); rows.insert(dup_src + 1, dict(rows[dup_src], dup=True))
+    rows.insert(24, None)                                       # a blank row in the middle of the export
+    return rows
+OT_EXPORT = _ot_export()
+def _ot_row_no(pred): return [i + 2 for i, r in enumerate(OT_EXPORT) if r is not None and pred(r)]
+OT_TYPO_ROW = _ot_row_no(lambda r: r.get("hours_x") == 25)[0]
+OT_TYPO_EMP = next(r for r in OT_EXPORT if r and r.get("hours_x") == 25)["emp"]
+OT_PENDING_ROW = _ot_row_no(lambda r: r["by"] == "Pending")[0]
+OT_DUP_ROWS = [i + 2 for i, r in enumerate(OT_EXPORT) if r is not None and OT_EXPORT[i + 1 if i + 1 < len(OT_EXPORT) else i] is not None
+               and (r.get("dup") or (i + 1 < len(OT_EXPORT) and OT_EXPORT[i + 1] is not None and OT_EXPORT[i + 1].get("dup")))]
+OT_BLANK_ROW = [i + 2 for i, r in enumerate(OT_EXPORT) if r is None][0]
+OT_NAME_ROWS = _ot_row_no(lambda r: "unit_x" in r)
+OT_TEXT_ROWS = _ot_row_no(lambda r: isinstance(r.get("hours_x"), str))
+OT_DATE_ROWS = _ot_row_no(lambda r: "date_x" in r)
+OT_CLEAN_TOTALS = dict(OT_CONTROL); OT_CLEAN_TOTALS["Production"] += 25 - 2.5; OT_CLEAN_TOTALS["Engineering"] += OT_PENDING["hours"]
+OT_ISSUES = [("Unit names written in more than one way", ", ".join(map(str, OT_NAME_ROWS)), "One name per unit: Drilling, HSE, Supply Chain."),
+             ("Hours stored as text", ", ".join(map(str, OT_TEXT_ROWS)), "Convert to numbers (Clean Data, or a formula)."),
+             ("Dates typed as text, in other formats", ", ".join(map(str, OT_DATE_ROWS)), "Convert to real dates, one format."),
+             ("The same claim twice", " and ".join(map(str, OT_DUP_ROWS)), "Remove one copy, after checking both rows."),
+             ("A blank row", str(OT_BLANK_ROW), "Delete it."),
+             (f"Above the {OT_MAX_DAY}-hour daily limit", f"{OT_TYPO_ROW} (25 hours) and {OT_PENDING_ROW} (6 hours, approval pending)", "Do not fix. Ask the unit's supervisor to confirm.")]
+OT_GAPS = [("Production", f"Row {OT_TYPO_ROW}: {OT_TYPO_EMP} shows 25 hours in one day. The approved log has 2.5. A missing decimal point?", "The Production Superintendent confirms the hours."),
+           ("Engineering", f"Row {OT_PENDING_ROW}: EMP-4038, 6 hours on 21 October, approval pending and above the daily limit.", "The Engineering Manager approves it or removes it.")]
+assert len(OT_ROWS) == 40 and len(OT_DUP_ROWS) == 2 and OT_TYPO_ROW != OT_PENDING_ROW
+
+# ------------------------------------------------------------------ Day 2 · Task 2.9 option B: the overtime memo to rewrite
+OT_RULES = [("Approval first", f"Your line manager approves overtime in the HR system before the work starts. In an emergency, the approval comes within 1 working day after the work."),
+            ("Daily and monthly limits", f"No more than {OT_MAX_DAY} hours of overtime on a working day, and no more than {OT_MAX_MONTH} hours in a month."),
+            ("Rest days and public holidays", "Overtime on a rest day or a public holiday needs the Superintendent's approval."),
+            ("Claims", f"Claim your overtime in the HR system within {OT_CLAIM_DAYS} working days after the end of the month."),
+            ("Training", "Time spent in training courses is not overtime.")]
+OT_MEMO_WRONG = [("Daily limit", "The memo says 5 hours a day.", f"The approved rules say {OT_MAX_DAY}."),
+                 ("Claims deadline", "The memo says within 10 days.", f"The approved rules say {OT_CLAIM_DAYS} working days after the month ends.")]
+
+# ------------------------------------------------------------------ Day 2 · Task 2.9 option C: the Q3 HR report to summarize
+Q3 = {"hc_start": 2463, "joiners": 61, "leavers": 38, "hc_end": 2486, "nationals": 79, "nationals_target": 80, "turnover": 1.5,
+      "vac_open": 58, "vac_filled": 22, "time_to_fill": 68, "time_target": 60, "late_avg": 312, "absence": 2.1,
+      "courses": 34, "part_days": 1184, "ot_hours": 4920, "ot_cost": 41300, "je_sub": 36, "je_done": 21, "je_wait": 15}
+assert Q3["hc_start"] + Q3["joiners"] - Q3["leavers"] == Q3["hc_end"] and Q3["je_done"] + Q3["je_wait"] == Q3["je_sub"]
+
+# ------------------------------------------------------------------ Day 2 · Task 2.11 option A: the messy deck to fix (slide 0 is the About slide)
+MESSY_NAMES = {"EMP-3346": "Saleh Al-Hajeri", "EMP-2731": "Mona Al-Fadhli", "EMP-5114": "Bader Al-Otaibi"}   # planted: names and salaries on a committee deck
+MESSY_PILOT = 45                                                # planted: the brief says ATT["pilot_drop"]
+MESSY_FIXES = [("1", "No meeting name or date. \"Draft v2 FINAL (2)\" in the subtitle.", "Add the meeting and the date. Remove the version note."),
+               ("2", "One long paragraph that nobody can read from the back of the room.", "Four or five agenda points, a few words each."),
+               ("3 and 4", f"The same topic twice, with two numbers: {TRAIN_ROWS_EXPORT} and \"about 400\". One filler sentence.", f"One slide. The checked figure: {TRAIN_TRUE}. Cut the filler."),
+               ("5", "Employee names and salaries in a table, in 8-point text.", "No names or salaries. Three payroll items with Compensation and Personnel to confirm."),
+               ("6", f"\"Late arrivals down {MESSY_PILOT}%\" and \"the pilot proves the rules work for everyone\".", f"{ATT['pilot_drop']}% in an {ATT['pilot_weeks']}-week pilot in the {ATT['pilot_unit']}, as in the brief. One division only."),
+               ("7", "Four fonts and four colors. \"We hired a lot of people\" with no number.", "One font, one color. A number from the source, or [number to confirm]."),
+               ("8", "Next steps with no owner and no date.", "An owner and a date for each step, or [owner to confirm]. Copilot must not invent them."),
+               ("All", "No speaker notes on any slide.", "Two sentences of notes on every slide.")]

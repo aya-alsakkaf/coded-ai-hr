@@ -15,7 +15,7 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 import data as D
 import content as C
-from content_demos import F, CASE_FILES, ALL_FILES, DEMOS, JD_CMP, TRACE, THREAD, RECAP, TRACKER, DECK, COMPARE, LETTER_FLAG, joined
+from content_demos import F, CASE_FILES, ALL_FILES, DEMOS, JD_CMP, TRACE, THREAD, RECAP, TRACKER, DECK, COMPARE, LETTER_FLAG, joined, BOX_FILES, about_lines
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "files")
 os.makedirs(OUT, exist_ok=True)
@@ -79,6 +79,7 @@ def doc(name, title, blocks, top=None):
     d = Document()
     st = d.styles["Normal"]; st.font.name = "Calibri"; st.font.size = Pt(11)
     hr = d.sections[0].header.paragraphs[0].add_run(HEADER); hr.font.size = Pt(8); hr.font.color.rgb = GREY
+    if name in BOX_FILES: _box(d, ABOUT_TITLE, about_lines(name))
     if top:
         tr = d.add_paragraph().add_run(top); tr.bold = True; tr.font.size = Pt(9.5); tr.font.color.rgb = GREY
     d.add_heading(title, 1)
@@ -106,6 +107,15 @@ def doc(name, title, blocks, top=None):
     cp.author = "CODED"; cp.title = title; cp.created = FIXED; cp.modified = FIXED; cp.last_modified_by = "CODED"
     cp.comments = "Fictional training file made by CODED."
     path = os.path.join(OUT, name); d.save(path); _stable(path); WRITTEN.append(name)
+
+ABOUT_TITLE = "About this file (a note for the workshop, not part of the document)"
+def _about_first(wb, name, extra=()):
+    """An "About this file" sheet in front of the data sheets, open when the workbook opens."""
+    ns = wb.create_sheet("About this file", 0)
+    ns.append(["About this file"]); ns["A1"].font = Font(bold=True, size=13)
+    for line in about_lines(name) + list(extra) + [D.FICTION]: ns.append([line])
+    ns.column_dimensions["A"].width = 120; wb.active = 0
+    for sh in wb.worksheets: sh.sheet_view.tabSelected = sh.title == "About this file"
 
 def policy(name, title, sections, intro):
     doc(name, title, [("p", intro)] + [x for n, t, s in sections for x in (("h", f"Section {n}. {t}"), ("p", s))])
@@ -384,15 +394,10 @@ def trackers(path):
     for c in cs[cs.max_row]: c.font = Font(bold=True)
     for col, w in zip("ABCD", (30, 20, 10, 12)): cs.column_dimensions[col].width = w
 
-    ns = wb.create_sheet("Notes")
-    ns.append(["About this file"]); ns["A1"].font = Font(bold=True)
-    for line in ["Training: training requests for Q3 2026 (July to September), exported from the HR system.",
-                 "One row = one training request.",
+    _about_first(wb, F["trackers"], ["Training: training requests for Q3 2026 (July to September), exported from the HR system. One row = one training request.",
                  "Manpower: approved positions, filled positions and vacancies by section, exported from the HR system.",
                  "Control totals: the checked figures from the HR system. Compare any total from the other sheets with them.",
-                 "Employee codes only. No names, salaries or personal data.", D.FICTION]:
-        ns.append([line])
-    ns.column_dimensions["A"].width = 110
+                 "Employee codes only. No names, salaries or personal data."])
     for sh in wb.worksheets: sh.oddHeader.center.text = HEADER
     wb.properties.creator = "CODED"; wb.properties.lastModifiedBy = "CODED"; wb.properties.title = "HR trackers Q3 2026"
     wb.properties.created = FIXED; wb.properties.modified = FIXED
@@ -554,11 +559,8 @@ def palog(path):
     t.tableStyleInfo = TableStyleInfo(name="TableStyleMedium2", showRowStripes=True); ws.add_table(t)
     for col, w in zip("ABCDEFGH", (13, 18, 15, 26, 17, 11, 14, 18)): ws.column_dimensions[col].width = w
     ws.freeze_panes = "A2"
-    ns = wb.create_sheet("Read me")
-    for line in ["The Power Automate demo adds one row to the table TrainingRequests for each form response.",
-                 "Employee codes only. No names, salaries or personal data.", D.FICTION]:
-        ns.append([line])
-    ns.column_dimensions["A"].width = 100
+    _about_first(wb, F["palog"], ["The Power Automate flow adds one row to the table TrainingRequests (sheet Log) for each form response.",
+                 "Employee codes only. No names, salaries or personal data."])
     for sh in wb.worksheets: sh.oddHeader.center.text = HEADER
     wb.properties.creator = "CODED"; wb.properties.lastModifiedBy = "CODED"; wb.properties.title = "Training request log"
     wb.properties.created = FIXED; wb.properties.modified = FIXED
@@ -587,12 +589,8 @@ def payroll(path):
     mv.append(["Movement", "Employee code", "Unit", "Details"]); _head(mv, 1)
     for r in D.PAY_MOVES: mv.append(list(r))
     for col, w in zip("ABCD", (14, 15, 15, 70)): mv.column_dimensions[col].width = w
-    ns = wb.create_sheet("Read me")
-    for line in ["October and November 2026 payroll for one HR payroll group, before the November bank file is sent.",
-                 "Movements lists every change approved by Personnel and Compensation for November.",
-                 "Employee codes only. No names. Use only your company's approved Copilot account.", D.FICTION]:
-        ns.append([line])
-    ns.column_dimensions["A"].width = 100
+    _about_first(wb, F["payroll"], ["October and November: one row per employee. Movements: every change approved by Personnel and Compensation for November.",
+                 "Employee codes only. No names. Use only your company's approved Copilot account."])
     for sh in wb.worksheets: sh.oddHeader.center.text = HEADER
     wb.properties.creator = "CODED"; wb.properties.lastModifiedBy = "CODED"; wb.properties.title = "Payroll check: October and November 2026"
     wb.properties.created = FIXED; wb.properties.modified = FIXED
@@ -625,6 +623,185 @@ doc(F["onboard"], "New joiner onboarding checklist 2026", [
            ["Courses and e-learning", "Learning and Development"], ["Laptop and email", "IT Service Desk"], ["Medical check", "Medical Services"]], [7.0, 9.0]),
     ("box", ("Not in this checklist", ["Salary, grade, allowance amounts and contract terms. Ask Personnel and Administration or Compensation."])),
 ])
+
+# 32 · the overtime export (Day 2, Task 2.7 option B): as the system exported it, with the approved totals
+def overtime(path):
+    from openpyxl.worksheet.table import Table, TableStyleInfo
+    wb = openpyxl.Workbook(); ws = wb.active; ws.title = "Overtime"
+    head = ["Employee code", "Unit", "Date", "Hours", "Reason", "Approved by"]
+    ws.append(head); _head(ws, 1)
+    for r in D.OT_EXPORT:
+        if r is None: ws.append([None] * len(head)); continue
+        ws.append([r["emp"], r.get("unit_x", r["unit"]), r.get("date_x") or dt.datetime(*r["date"]), r.get("hours_x", r["hours"]), r["reason"], r["by"]])
+    for row in ws.iter_rows(min_row=2):
+        if isinstance(row[2].value, dt.datetime): row[2].number_format = "dd/mm/yyyy"
+    tb = Table(displayName="OvertimeOctober", ref=f"A1:F{ws.max_row}")
+    tb.tableStyleInfo = TableStyleInfo(name="TableStyleLight9", showRowStripes=True); ws.add_table(tb)
+    for col, w in zip("ABCDEF", (15, 18, 13, 9, 24, 26)): ws.column_dimensions[col].width = w
+    ws.freeze_panes = "A2"
+    cs = wb.create_sheet("Control totals")
+    cs.append([f"Approved overtime hours · {D.OT_MONTH}"]); cs["A1"].font = Font(bold=True, size=13)
+    cs.append(["From the overtime approvals log in the HR system: hours that a manager approved."])
+    cs.append([])
+    cs.append(["Unit", "Approved hours"]); _head(cs, cs.max_row)
+    for u in D.OT_UNITS: cs.append([u, D.OT_CONTROL[u]])
+    cs.append(["All units", sum(D.OT_CONTROL.values())]); cs.cell(cs.max_row, 1).font = Font(bold=True); cs.cell(cs.max_row, 2).font = Font(bold=True)
+    for col, w in zip("AB", (26, 16)): cs.column_dimensions[col].width = w
+    _about_first(wb, F["overtime"], [f"Overtime: one row per claim, exactly as the time and attendance system exported it for {D.OT_MONTH}. Nobody has cleaned it yet.",
+                 "Control totals: the hours each unit's manager approved. The cleaned Overtime sheet should add up to the same figures.",
+                 f"Mutla's rules: no more than {D.OT_MAX_DAY} hours of overtime on a working day, and no more than {D.OT_MAX_MONTH} hours in a month.",
+                 "Employee codes only. No names or salaries."])
+    for sh in wb.worksheets: sh.oddHeader.center.text = HEADER
+    wb.properties.creator = "CODED"; wb.properties.lastModifiedBy = "CODED"; wb.properties.title = f"Overtime export: {D.OT_MONTH}"
+    wb.properties.created = FIXED; wb.properties.modified = FIXED
+    wb.save(path); _stable(path)
+    chk = openpyxl.load_workbook(path)
+    assert chk.sheetnames == ["About this file", "Overtime", "Control totals"] and chk["Overtime"].max_row == len(D.OT_EXPORT) + 1
+    assert chk["Overtime"].cell(D.OT_TYPO_ROW, 4).value == 25 and chk["Overtime"].cell(D.OT_PENDING_ROW, 6).value == "Pending"
+    assert all(chk["Overtime"].cell(r, 1).value is None for r in [D.OT_BLANK_ROW])
+overtime(os.path.join(OUT, F["overtime"])); WRITTEN.append(F["overtime"])
+
+# 33 · the overtime memo (Day 2, Task 2.9 option B): a long first draft, and the approved rules it must follow
+doc(F["otmemo"], "Draft memo: overtime (to check before it goes to staff)", [
+    ("kv", ("From", "Production Superintendent, Production Operations")), ("kv", ("To", "All Production Operations staff")),
+    ("kv", ("Date", "Draft of 2 November 2026")), ("kv", ("Subject", "Overtime: important, please read")),
+    ("p", "Dear all,"),
+    ("p", "It has been brought to the attention of management that there have been a number of issues in relation to the overtime that has been worked and claimed in the recent period, "
+          "and it is therefore considered necessary that all staff are reminded of the procedures that are to be followed in respect of overtime going forward, in order that the situation "
+          "can be improved and the number of claims that are rejected by Personnel can be reduced as much as possible."),
+    ("p", "Overtime must not be worked unless it has been approved, and the approval should be given by your line manager, and it should be in the HR system, and this should happen before "
+          "the overtime is worked, except where there is an emergency situation, in which case the approval may be obtained afterwards, but it should not be left for a long time."),
+    ("p", "Please note that it is not permitted to work more than 5 hours of overtime in any one working day, and the total for the month should not go over 40 hours, and claims that go over "
+          "these limits will not be accepted by Personnel and will be returned to the employee, which causes delays for everyone concerned."),
+    ("p", "With regard to the claiming of overtime, all claims are to be entered into the HR system within 10 days, and it should be noted that late claims cause problems for Payroll, "
+          "as has been mentioned in previous communications on a number of occasions."),
+    ("p", "Overtime that is worked on rest days and on public holidays is a separate matter and requires the approval of the Superintendent, as was also the case before. Attendance at "
+          "training courses is not considered to be overtime and should not be claimed as such, even if the course goes beyond normal working hours."),
+    ("p", "Your cooperation in this matter is appreciated, and any questions can be directed to me or to Personnel and Administration in the usual way. Thank you for your attention to this important matter."),
+    ("h", "Annex: approved overtime rules"),
+    ("i", "Personnel and Administration · approved 1 September 2026 · these rules apply to all day staff"),
+    ("t", [["Rule", "Approved rule"]] + [list(r) for r in D.OT_RULES], [5.0, 11.0]),
+])
+
+# 34 · the Q3 HR quarterly report (Day 2, Task 2.9 option C): long enough to need a summary
+Q = D.Q3
+doc(F["q3report"], "HR Quarterly Report: Q3 2026 (July to September)", [
+    ("i", "HR Directorate · prepared by HR Planning for the HR Director · draft for the Management Committee, 12 November 2026"),
+    ("h", "1. Purpose and scope"),
+    ("p", f"This report gives the HR Director the main people figures for the third quarter of 2026, from 1 July to 30 September. It covers the whole of {D.COMPANY}: "
+          "headcount and movements, recruitment, attendance and leave, learning and development, compensation and payroll, and job evaluation. Section 8 lists the risks "
+          "and open issues, and section 9 proposes the priorities for the fourth quarter. All figures come from the HR system unless the text says otherwise."),
+    ("h", "2. Headcount and movements"),
+    ("p", f"Headcount grew by {Q['hc_end'] - Q['hc_start']} in the quarter. Most joiners were field staff for Production Operations and Drilling. Kuwaiti nationals are "
+          f"{Q['nationals']}% of all employees, one point below the company target of {Q['nationals_target']}%."),
+    ("t", [["Measure", "Q3 2026"], ["Headcount on 30 June 2026", f"{Q['hc_start']:,}"], ["Joiners", str(Q["joiners"])], ["Leavers", str(Q["leavers"])],
+           ["Headcount on 30 September 2026", f"{Q['hc_end']:,}"], ["Turnover in the quarter", f"{Q['turnover']}%"]], [9.0, 5.0]),
+    ("p", f"Of the {Q['joiners']} joiners, 24 were graduates and 37 were experienced hires. Of the {Q['leavers']} leavers, 14 retired, 17 resigned and 7 reached the end of a fixed-term contract. "
+          "Exit interviews were held with 15 of the 17 people who resigned. The most common reason given was an offer with a higher salary elsewhere."),
+    ("h", "3. Recruitment"),
+    ("p", f"On 30 September, {Q['vac_open']} vacancies were open across the company. Recruitment filled {Q['vac_filled']} vacancies in the quarter. The average time to fill a vacancy "
+          f"was {Q['time_to_fill']} days, against a target of {Q['time_target']} days. The longest open vacancy is the Production Engineer role in Production Operations, open since 14 May 2026 "
+          "and waiting for a salary approval from Compensation."),
+    ("t", [["Division", "Open on 30 September", "Filled in Q3"], ["Production Operations", "17", "6"], ["Drilling", "12", "5"], ["Engineering", "9", "4"], ["HSE", "6", "3"],
+           ["Support functions", "14", "4"], ["All divisions", str(Q["vac_open"]), str(Q["vac_filled"])]], [6.5, 5.0, 4.0]),
+    ("p", "Field roles take longest to fill because candidates must pass the site medical and the safety induction before an offer is final."),
+    ("h", "4. Attendance and leave"),
+    ("p", f"Late arrivals averaged {Q['late_avg']} a month across the company. The absence rate (sick leave and unplanned absence) was {Q['absence']}% of working days, the same as in Q2. "
+          f"In an {D.ATT['pilot_weeks']}-week pilot in the {D.ATT['pilot_unit']}, flexible start times reduced late arrivals by {D.ATT['pilot_drop']}%. Management approved the new attendance "
+          f"rules for all day staff from {D.ATT['start']}. The pilot covered one division only, so Personnel will measure late arrivals again three months after the start."),
+    ("p", "Two questions are still open: working hours in Ramadan, and whether the rules apply to field staff on rotation. Manpower is checking the second question."),
+    ("h", "5. Learning and development"),
+    ("p", f"Learning and Development received {D.TRAIN_TRUE} training requests in the quarter, after the request log was checked against the HR system. It delivered {Q['courses']} courses, "
+          f"for a total of {Q['part_days']:,} participant days. The approved cost of the requests was KWD {D.TRAIN_COST:,}. HSE courses were the largest group, followed by technical courses "
+          "for Production and Drilling, and the new line manager program."),
+    ("p", "Course feedback averaged 4.3 out of 5. The lowest scores were for courses delivered online to field sites, where the connection was often slow."),
+    ("h", "6. Compensation and payroll"),
+    ("p", f"The Allowances Policy version 4 was approved in the quarter and applies from {D.ALLOW_V4_DATE}. The maximum housing allowance rises from KWD {D.ALLOW['housing_v3']} "
+          f"to KWD {D.ALLOW['housing_v4']} a month, and the transport allowance now covers grades {D.ALLOW['transport_v4']} instead of {D.ALLOW['transport_v3']}. Version 3 applies until then."),
+    ("p", f"Overtime in the quarter was {Q['ot_hours']:,} hours, at a cost of KWD {Q['ot_cost']:,}. Payroll now checks each month's changes against the approved movements before the bank file is sent."),
+    ("h", "7. Job evaluation"),
+    ("p", f"In the 2026 job evaluation round, {Q['je_sub']} jobs were submitted. The committee has evaluated {Q['je_done']}. The other {Q['je_wait']} are waiting for the committee's next meeting. "
+          "Grades are set only by the committee; line managers receive the result in writing."),
+    ("h", "8. Risks and open issues"),
+    ("b", "Data quality: some exports from the HR system contained repeated rows. Every figure in this report was checked against the HR system's control totals."),
+    ("b", "Attendance rules: Ramadan hours and field staff on rotation are not decided yet."),
+    ("b", f"Time to fill is above the {Q['time_target']}-day target, mainly in Production Operations."),
+    ("b", "Payroll: changes without an approved movement must be confirmed before each bank file."),
+    ("h", "9. Priorities for Q4 2026"),
+    ("b", f"Start the new attendance rules on {D.ATT['start']}, and answer the two open questions before then."),
+    ("b", f"Prepare the allowances change for {D.ALLOW_V4_DATE}: system setup, staff communication and payroll testing."),
+    ("b", "Close the 2026 job evaluation round."),
+    ("b", f"Bring the average time to fill down to {Q['time_target']} days."),
+    ("b", "Check every export against a control total before it goes into a report."),
+])
+
+# 35 · the messy deck (Day 2, Task 2.11 option A): the planted problems are in data.py MESSY_FIXES
+def messydeck(path):
+    from pptx import Presentation
+    from pptx.util import Inches, Pt as PPt
+    from pptx.dml.color import RGBColor as PRGB
+    import content_demos as CD
+    pr = Presentation(); pr.slide_width, pr.slide_height = Inches(13.333), Inches(7.5)
+    title_only, title_sub, blank = pr.slide_layouts[5], pr.slide_layouts[0], pr.slide_layouts[6]
+    def box(sl, x, y, w, h, lines, size=18, font="Calibri", color=None, bold=False):
+        tf = sl.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h)).text_frame; tf.word_wrap = True
+        for i, ln in enumerate(lines):
+            para = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+            r = para.add_run(); r.text = ln; r.font.size = PPt(size); r.font.name = font; r.font.bold = bold
+            if color: r.font.color.rgb = PRGB.from_string(color)
+        return tf
+    def ttl(text, font="Calibri", size=36):
+        sl = pr.slides.add_slide(title_only); sl.shapes.title.text = text
+        for r in sl.shapes.title.text_frame.paragraphs[0].runs: r.font.name = font; r.font.size = PPt(size)
+        return sl
+    # 1 · title, with the About box
+    sl = pr.slides.add_slide(title_sub); sl.shapes.title.text = "Q3 HR UPDATE!!!"; sl.placeholders[1].text = "HR Department · draft v2 FINAL (2)"
+    ab = box(sl, 0.6, 5.9, 12.1, 1.3, ["About this file (delete this box before you start)"] + CD.about_lines(F["messydeck"]), size=11, color="555F6D")
+    ab.paragraphs[0].runs[0].font.bold = True
+    # 2 · a wall of text
+    sl = ttl("Agenda / Overview")
+    box(sl, 0.7, 1.6, 12, 5, ["In this presentation we will be going through the main HR topics for the third quarter of the year, starting with training, where there were a lot of "
+        "requests this quarter, and then moving on to payroll, where some issues were found in November that need to be looked at, and after that the attendance pilot, which had "
+        "very good results, and then recruitment, where we hired a lot of people, and finally the next steps that we think should be taken by the HR Department and by management "
+        "in the coming months, after which there will be time for questions from the committee members if there is time left at the end."], size=20)
+    # 3 and 4 · the same topic twice, with two numbers
+    sl = ttl("Training")
+    box(sl, 0.7, 1.8, 12, 1.4, [f"Q3 training requests: {D.TRAIN_ROWS_EXPORT}"], size=44, bold=True, color="1F4E79")
+    box(sl, 0.7, 3.6, 12, 2, ["Training is very important for all our employees and we remain committed to developing our people across every division of the company."], size=22)
+    sl = ttl("Training (2)")
+    box(sl, 0.7, 1.7, 12, 4, ["About 400 training requests were received in Q3.", "Most of them were approved.", "Training is very important for our people."], size=24)
+    # 5 · names and salaries, in 8-point text
+    sl = ttl("Payroll November")
+    oct_ = {r[0]: r for r in D.PAY_OCT}
+    rows = [["Employee", "Code", "What happened", "Amount (KWD)"],
+            [D.MESSY_NAMES["EMP-3346"], "EMP-3346", "Basic salary increased", "1,250 to 1,450"],
+            [D.MESSY_NAMES["EMP-2731"], "EMP-2731", "Left 31 Oct, still paid in Nov", f"{oct_['EMP-2731'][2]:,} basic"],
+            [D.MESSY_NAMES["EMP-5114"], "EMP-5114", "Joined 1 Nov, not paid", "980 basic"]]
+    tb = sl.shapes.add_table(len(rows), 4, Inches(0.7), Inches(1.7), Inches(9), Inches(1.6)).table
+    for i, rw in enumerate(rows):
+        for j, v in enumerate(rw):
+            c = tb.cell(i, j); c.text = v
+            for para in c.text_frame.paragraphs:
+                for r in para.runs: r.font.size = PPt(8)
+    # 6 · a wrong number and a claim the pilot cannot support
+    sl = ttl("Attendance pilot")
+    box(sl, 0.7, 1.8, 12, 1.3, [f"Late arrivals down {D.MESSY_PILOT}%!!"], size=48, bold=True, color="C00000")
+    box(sl, 0.7, 3.5, 12, 1.5, ["The pilot proves the new rules work for everyone."], size=26)
+    # 7 · four fonts, four colors, no number
+    sl = ttl("Recruitment", font="Times New Roman")
+    for k, (ln, f, col) in enumerate([("We hired a lot of people this quarter.", "Comic Sans MS", "7030A0"), ("Some vacancies are still open.", "Arial Black", "00B050"),
+                                      ("Time to fill is getting better.", "Courier New", "FF6600"), ("More hiring is planned.", "Georgia", "0070C0")]):
+        box(sl, 0.7, 1.7 + k * 1.0, 12, 0.9, [ln], size=24, font=f, color=col)
+    # 8 · next steps with no owner and no date
+    sl = ttl("Next steps")
+    box(sl, 0.7, 1.7, 12, 4, ["Fix payroll", "More training", "Better attendance", "Hire more people"], size=28)
+    # 9
+    sl = ttl("Questions???", size=54)
+    pr.core_properties.author = "CODED"; pr.core_properties.title = "Q3 HR update (draft)"; pr.core_properties.created = FIXED; pr.core_properties.modified = FIXED
+    pr.core_properties.last_modified_by = "CODED"; pr.core_properties.comments = "Fictional training file made by CODED."
+    pr.save(path); _stable(path)
+    chk = Presentation(path); assert len(chk.slides) == 9 and not any(s.has_notes_slide and s.notes_slide.notes_text_frame.text.strip() for s in chk.slides)
+messydeck(os.path.join(OUT, F["messydeck"])); WRITTEN.append(F["messydeck"])
 
 # ------------------------------------------------------------------ every file in ALL_FILES, nothing more
 assert sorted(WRITTEN) == sorted(ALL_FILES), f"gen_files: wrote {sorted(set(WRITTEN) ^ set(ALL_FILES))} out of step with ALL_FILES"
