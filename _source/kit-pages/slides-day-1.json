@@ -74,7 +74,7 @@
 "topic": "open",
 "kit": [
 "Explain why Copilot can write a confident sentence that is wrong, what it can see, and which HR decisions stay with people.",
-"Write a request with the prompt checklist: role, context, task, data, constraints, tone and output format.",
+"Write a request with the prompt checklist: context, task, data, constraints and format.",
 "Improve a weak draft with follow-up instructions, and ask for the source of every line.",
 "Draft HR documents in Word and messages in Outlook, and change the tone for each reader without changing the facts."
 ],
@@ -104,10 +104,10 @@
 "The same role, a one-line request and a full one, live",
 "09:30-10:30",
 "Block 1 · How generative AI and Copilot work",
-"Next-word prediction, what Copilot can see, what stays with people · Task 1.1",
+"What AI is, where LLMs fit, next-word prediction, what Copilot can see, what stays with people · Task 1.1",
 "10:45-11:35",
 "Block 2 · Writing a clear prompt",
-"The prompt checklist: seven parts · Task 1.2",
+"The prompt checklist: five parts · Task 1.2",
 "12:15-13:20",
 "Block 3 · Draft, fix and check in Word",
 "Follow-up instructions and the source of every line · Tasks 1.3 and 1.4",
@@ -165,10 +165,10 @@
 "topic": "b1",
 "kit": [
 "Block 1 · How generative AI and Copilot work",
-"Monday 2 November, 08:40",
-"Fatma in Personnel asks Copilot: “How many days of leave can staff carry over?” The answer comes at once: 30 days. Mutla's policy says 15.",
-"Confident, fast and wrong.",
-"See why Copilot can write a confident sentence that is wrong.",
+"This week",
+"Hands up: how many of you used an AI tool this week? At work or at home. What did you use it for, and which tool was it?",
+"AI is already in your week.",
+"Say what AI is, where Copilot fits, and why it can write a confident sentence that is wrong.",
 "01"
 ],
 "chrome": [
@@ -178,6 +178,96 @@
 },
 {
 "n": 9,
+"id": "b1ai",
+"kind": "term",
+"title": "First: what is AI?",
+"topic": "b1",
+"kit": [
+"Block 1 · the word",
+"First: what is AI?",
+"Artificial intelligence (AI)",
+"Computer systems that do tasks which usually need a person's judgment: they recognize, predict, sort or create.",
+"Normal software follows rules a person wrote…",
+"…AI learns patterns from examples.",
+"AI is a big family of tools, and Copilot is one member of it."
+],
+"chrome": [
+"The idea"
+]
+},
+{
+"n": 10,
+"id": "b1ex",
+"kind": "list",
+"title": "AI you used before Copilot.",
+"topic": "b1",
+"kit": [
+"Block 1 · AI you already use",
+"AI you used before Copilot.",
+"These tools sort, recognize and predict. None of them writes you a letter.",
+"Email: the spam filter decides which messages are junk.",
+"Phone: face unlock recognizes your face.",
+"Maps: the app predicts traffic and your arrival time.",
+"Bank: an alert flags an unusual card payment as possible fraud."
+],
+"chrome": []
+},
+{
+"n": 11,
+"id": "b1fam",
+"kind": "cards",
+"title": "So where do ChatGPT, Claude and Copilot fit?",
+"topic": "b1",
+"kit": [
+"Block 1 · where LLMs fit",
+"So where do ChatGPT, Claude and Copilot fit?",
+"Every LLM is AI. Not every AI is an LLM.",
+"Artificial intelligence",
+"The whole family",
+"Spam filters, face unlock, maps, fraud alerts, and everything below.",
+"Machine learning",
+"AI that learns from data",
+"Most AI today: it finds patterns in examples.",
+"Large language models",
+"Machine learning on text",
+"It learned from huge amounts of text, so it can write. ChatGPT, Claude, Gemini, and the models inside Copilot."
+],
+"chrome": []
+},
+{
+"n": 12,
+"id": "b1llmdef",
+"kind": "term",
+"title": "LLM: Large Language Model.",
+"topic": "b1",
+"kit": [
+"Block 1 · the name",
+"LLM: Large Language Model.",
+"LLM",
+"Large: it learned from a huge amount of text. Language: it works with words. Model: a program that learned patterns from examples.",
+"A spam filter sorts the email you have…",
+"…an LLM writes new text, one word at a time.",
+"Each kind of AI makes its own kind of mistake, so each needs its own check."
+],
+"chrome": [
+"The idea"
+]
+},
+{
+"n": 13,
+"id": "b1fatma",
+"kind": "rule",
+"title": "Fast, confident and wrong.",
+"topic": "b1",
+"kit": [
+"Block 1 · a story",
+"Fast, confident and wrong.",
+"Monday 2 November, 08:40. Fatma in Personnel asks Copilot how many days of leave staff can carry over. The answer comes at once: 30 days. Mutla's policy says 15."
+],
+"chrome": []
+},
+{
+"n": 14,
 "id": "b1an",
 "kind": "rule",
 "title": "Your phone keyboard guesses your next word.",
@@ -190,7 +280,7 @@
 "chrome": []
 },
 {
-"n": 10,
+"n": 15,
 "id": "b1t1",
 "kind": "term",
 "title": "What Copilot really does.",
@@ -209,7 +299,7 @@
 ]
 },
 {
-"n": 11,
+"n": 16,
 "id": "b1llm",
 "kind": "llm",
 "title": "It writes by guessing the next word.",
@@ -264,7 +354,7 @@
 ]
 },
 {
-"n": 12,
+"n": 17,
 "id": "b1t2",
 "kind": "term",
 "title": "Fluent and wrong.",
@@ -283,7 +373,7 @@
 ]
 },
 {
-"n": 13,
+"n": 18,
 "id": "b1chk1",
 "kind": "check",
 "title": "Quick check",
@@ -304,7 +394,7 @@
 ]
 },
 {
-"n": 14,
+"n": 19,
 "id": "b1key",
 "kind": "rule",
 "title": "A colleague with your keycard.",
@@ -317,7 +407,7 @@
 "chrome": []
 },
 {
-"n": 15,
+"n": 20,
 "id": "b1t3",
 "kind": "term",
 "title": "What Copilot can see.",
@@ -336,7 +426,7 @@
 ]
 },
 {
-"n": 16,
+"n": 21,
 "id": "b1lic",
 "kind": "table",
 "title": "Read the label under your name.",
@@ -361,7 +451,7 @@
 "chrome": []
 },
 {
-"n": 17,
+"n": 22,
 "id": "b1chk2",
 "kind": "check",
 "title": "Quick check",
@@ -382,7 +472,7 @@
 ]
 },
 {
-"n": 18,
+"n": 23,
 "id": "b1live",
 "kind": "list",
 "title": "The same question, with and without the policy.",
@@ -398,7 +488,7 @@
 "chrome": []
 },
 {
-"n": 19,
+"n": 24,
 "id": "b1chk3",
 "kind": "check",
 "title": "Quick check",
@@ -419,7 +509,7 @@
 ]
 },
 {
-"n": 20,
+"n": 25,
 "id": "b1task",
 "kind": "task",
 "title": "Your turn 1.1",
@@ -468,7 +558,7 @@
 ]
 },
 {
-"n": 21,
+"n": 26,
 "id": "b1deb",
 "kind": "rule",
 "title": "Fluent is not the same as correct.",
@@ -481,7 +571,7 @@
 "chrome": []
 },
 {
-"n": 22,
+"n": 27,
 "id": "b1groups",
 "kind": "cards",
 "title": "Sort the task before you type.",
@@ -503,7 +593,7 @@
 "chrome": []
 },
 {
-"n": 23,
+"n": 28,
 "id": "b1t4",
 "kind": "term",
 "title": "Some decisions stay with people.",
@@ -522,7 +612,7 @@
 ]
 },
 {
-"n": 24,
+"n": 29,
 "id": "b1sort",
 "kind": "sort",
 "title": "Which group? Tap a card.",
@@ -547,7 +637,7 @@
 ]
 },
 {
-"n": 25,
+"n": 30,
 "id": "b1chk4",
 "kind": "check",
 "title": "Quick check",
@@ -568,7 +658,7 @@
 ]
 },
 {
-"n": 26,
+"n": 31,
 "id": "b1files",
 "kind": "rule",
 "title": "Today: practice files only.",
@@ -581,7 +671,7 @@
 "chrome": []
 },
 {
-"n": 27,
+"n": 32,
 "id": "b2story",
 "kind": "story",
 "title": "Block 2 · Writing a clear prompt",
@@ -600,7 +690,7 @@
 ]
 },
 {
-"n": 28,
+"n": 33,
 "id": "b2an",
 "kind": "rule",
 "title": "Brief Copilot like a new colleague.",
@@ -608,29 +698,26 @@
 "kit": [
 "Block 2 · the picture",
 "Brief Copilot like a new colleague.",
-"On their first day, a new colleague needs to know who they write as, why, what to do, with which facts, within which limits, in what voice and in what shape."
+"On their first day, a new colleague needs the background, the job, the facts, the limits, and what the result should look like."
 ],
 "chrome": []
 },
 {
-"n": 29,
+"n": 34,
 "id": "b2check",
 "kind": "table",
-"title": "Seven parts before you press Send.",
+"title": "Five parts before you press Send.",
 "topic": "b2",
 "kit": [
 "Block 2 · the prompt checklist",
-"Seven parts before you press Send.",
-"Role · Context · Task · Data · Constraints · Tone · Output format.",
+"Five parts before you press Send.",
+"Context · Task · Data · Constraints · Format.",
 "Part",
 "It tells Copilot",
 "Example",
-"Role",
-"Who Copilot writes as",
-"You are an HR officer at Mutla Oil Company.",
 "Context",
-"Why you need it, and who reads it",
-"It is for the 2026 job evaluation round. The Job Evaluation committee reads it.",
+"Who you are, who reads it, and why",
+"You are an HR officer at Mutla Oil Company. It is for the 2026 job evaluation round, and the committee reads it.",
 "Task",
 "The one job to do",
 "Update the job description for the Compensation Analyst.",
@@ -640,17 +727,14 @@
 "Constraints",
 "The limits it must keep",
 "Use only the attached files. No team size, no grade. One page.",
-"Tone",
-"How it should sound",
-"Formal, neutral, plain English.",
-"Output format",
-"What the answer looks like",
-"The template's headings in order. Start with: DRAFT · Reviewed by: ___"
+"Format",
+"How it looks and sounds",
+"Formal and neutral. The template's headings in order. Start with: DRAFT · Reviewed by: ___"
 ],
 "chrome": []
 },
 {
-"n": 30,
+"n": 35,
 "id": "b2t1",
 "kind": "term",
 "title": "Constraints: the limits.",
@@ -669,15 +753,15 @@
 ]
 },
 {
-"n": 31,
+"n": 36,
 "id": "b2live",
 "kind": "list",
-"title": "Seven short sentences, typed live.",
+"title": "Five short parts, typed live.",
 "topic": "b2",
 "kit": [
 "Demo 1.2 · live in Copilot Chat",
-"Seven short sentences, typed live.",
-"Role, context, task, data, constraints, tone, output format.",
+"Five short parts, typed live.",
+"Context, task, data, constraints, format.",
 "What I will show: A reminder to all staff about carrying over leave, built one part at a time.",
 "Watch for: The number and the date in the email. Do they match section 4?",
 "Files: mutla-leave-policy-2026.docx"
@@ -685,16 +769,16 @@
 "chrome": []
 },
 {
-"n": 32,
+"n": 37,
 "id": "b2chk",
 "kind": "check",
 "title": "Quick check",
 "topic": "b2",
 "kit": [
 "Copilot's email adds a rule from section 3 that you did not ask for. Which part of the checklist would stop it?",
-"Tone: friendly and clear",
+"Format: friendly and clear",
 "Constraints: use only section 4",
-"Role: a Personnel officer"
+"Context: you are a Personnel officer"
 ],
 "chrome": [
 "Quick check",
@@ -706,7 +790,7 @@
 ]
 },
 {
-"n": 33,
+"n": 38,
 "id": "b2task",
 "kind": "task",
 "title": "Your turn 1.2",
@@ -715,20 +799,20 @@
 "Task 1.2",
 "on your own, then swap",
 "Copilot Chat",
-"For each weak request ask seven questions: who, why, what, with what, within what limits, in what voice, in what shape.",
+"For each weak request ask five questions: who is it for and why, what exactly, with which facts, within which limits, and in what shape?",
 "Rewrite a third weak request, from a unit that is not yours.",
 "mutla-leave-policy-2026.docx",
 "mutla-allowances-policy-v4.docx",
 "mutla-training-policy-2026.docx",
 "Pick two weak requests: one close to your unit, and one more.",
-"Rewrite each with all seven parts. Name the file to attach.",
+"Rewrite each with all five parts. Name the file to attach.",
 "Swap with a neighbor. Then run one rewrite in Copilot Chat and check it.",
 "Write an email about the training course.",
 "Summarize the allowances policy.",
 "Make the vacancy report.",
 "Reply to this employee about his leave.",
 "Check this job description.",
-"Two rewrites with all seven parts.",
+"Two rewrites with all five parts.",
 "Your turn: rewrite weak requests.",
 "Block 2 · Writing a clear prompt"
 ],
@@ -754,20 +838,20 @@
 ]
 },
 {
-"n": 34,
+"n": 39,
 "id": "b2deb",
 "kind": "rule",
-"title": "Seven parts beat one clever sentence.",
+"title": "A full brief works better than one clever sentence.",
 "topic": "b2",
 "kit": [
 "Block 2 · debrief",
-"Seven parts beat one clever sentence.",
+"A full brief works better than one clever sentence.",
 "The best rewrites in the room were not long for the sake of it. Each line answered a question Copilot would otherwise guess."
 ],
 "chrome": []
 },
 {
-"n": 35,
+"n": 40,
 "id": "b3story",
 "kind": "story",
 "title": "Block 3 · Draft, fix and check in Word",
@@ -786,7 +870,7 @@
 ]
 },
 {
-"n": 36,
+"n": 41,
 "id": "b3t1",
 "kind": "term",
 "title": "Fix it. Do not start again.",
@@ -805,7 +889,7 @@
 ]
 },
 {
-"n": 37,
+"n": 42,
 "id": "b3fu",
 "kind": "cards",
 "title": "Three follow-ups you will use every week.",
@@ -827,7 +911,7 @@
 "chrome": []
 },
 {
-"n": 38,
+"n": 43,
 "id": "b3live1",
 "kind": "list",
 "title": "One draft, three follow-ups.",
@@ -843,7 +927,7 @@
 "chrome": []
 },
 {
-"n": 39,
+"n": 44,
 "id": "b3an",
 "kind": "rule",
 "title": "An auditor ticks every line against a receipt.",
@@ -856,7 +940,7 @@
 "chrome": []
 },
 {
-"n": 40,
+"n": 45,
 "id": "b3t2",
 "kind": "term",
 "title": "Ask Copilot to show its receipts.",
@@ -875,7 +959,7 @@
 ]
 },
 {
-"n": 41,
+"n": 46,
 "id": "b3fail",
 "kind": "cards",
 "title": "Three failures to look for.",
@@ -897,7 +981,7 @@
 "chrome": []
 },
 {
-"n": 42,
+"n": 47,
 "id": "b3live2",
 "kind": "list",
 "title": "Every line, with its source.",
@@ -913,7 +997,7 @@
 "chrome": []
 },
 {
-"n": 43,
+"n": 48,
 "id": "b3chk",
 "kind": "check",
 "title": "Quick check",
@@ -934,7 +1018,7 @@
 ]
 },
 {
-"n": 44,
+"n": 49,
 "id": "b3task",
 "kind": "task",
 "title": "Your turn 1.3",
@@ -949,7 +1033,7 @@
 "mutla-jd-template-2026.docx",
 "mutla-jd-hr-officer-2019.docx",
 "Pick your unit track. Find your track's role in the role information file.",
-"Write your own checklist request (all seven parts). Attach the role information and the 2026 template.",
+"Write your own checklist request (all five parts). Attach the role information and the 2026 template.",
 "Read the draft. Send two follow-up instructions that fix what is weak.",
 "Run the source-trace request below. Delete or fix every NOT IN SOURCE line.",
 "Check by hand: count the duties against the role sheet. Is the grade blank? Does it start with DRAFT · Reviewed by: ___?",
@@ -985,7 +1069,7 @@
 ]
 },
 {
-"n": 45,
+"n": 50,
 "id": "b3chk2",
 "kind": "check",
 "title": "Quick check",
@@ -1006,7 +1090,7 @@
 ]
 },
 {
-"n": 46,
+"n": 51,
 "id": "b3task2",
 "kind": "task",
 "title": "Your turn 1.4",
@@ -1054,7 +1138,7 @@
 ]
 },
 {
-"n": 47,
+"n": 52,
 "id": "b3deb",
 "kind": "rule",
 "title": "The record decides the dates. You decide the letter.",
@@ -1067,7 +1151,7 @@
 "chrome": []
 },
 {
-"n": 48,
+"n": 53,
 "id": "b4story",
 "kind": "story",
 "title": "Block 4 · From policy to people",
@@ -1086,7 +1170,7 @@
 ]
 },
 {
-"n": 49,
+"n": 54,
 "id": "b4t1",
 "kind": "term",
 "title": "A summary you can check.",
@@ -1105,7 +1189,7 @@
 ]
 },
 {
-"n": 50,
+"n": 55,
 "id": "b4live1",
 "kind": "list",
 "title": "The leave policy, for new joiners.",
@@ -1121,7 +1205,7 @@
 "chrome": []
 },
 {
-"n": 51,
+"n": 56,
 "id": "b4task1",
 "kind": "task",
 "title": "Your turn 1.5",
@@ -1164,7 +1248,7 @@
 ]
 },
 {
-"n": 52,
+"n": 57,
 "id": "b4chk",
 "kind": "check",
 "title": "Quick check",
@@ -1185,7 +1269,7 @@
 ]
 },
 {
-"n": 53,
+"n": 58,
 "id": "b4t2",
 "kind": "term",
 "title": "Turn the tone dial. Keep the facts.",
@@ -1204,7 +1288,7 @@
 ]
 },
 {
-"n": 54,
+"n": 59,
 "id": "b4live2",
 "kind": "list",
 "title": "One reminder, three readers.",
@@ -1220,7 +1304,7 @@
 "chrome": []
 },
 {
-"n": 55,
+"n": 60,
 "id": "b4task2",
 "kind": "task",
 "title": "Your turn 1.6",
@@ -1238,7 +1322,7 @@
 "Write a reply to Mubarak's request in message 29. Do not promise an exception.",
 "Check every date and time by hand against message 24.",
 "Decisions first (step 2)",
-"Summarize the attached email thread: every decision, then the open questions. I am writing the staff announcement and must not miss a decision. Use only mutla-email-thread-attendance.docx. If a later message changed an earlier one, use the later decision and say so. Leave out personal notes that are not decisions. A table: decision, owner, date, message number. Then a list of open questions.",
+"I am writing the staff announcement and must not miss a decision. Summarize the attached email thread: every decision, then the open questions. Use only mutla-email-thread-attendance.docx. If a later message changed an earlier one, use the later decision and say so. Leave out personal notes that are not decisions. A table: decision, owner, date, message number. Then a list of open questions.",
 "Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
 "Your turn: announce and reply in Outlook.",
 "Block 4 · From policy to people"
@@ -1269,7 +1353,7 @@
 ]
 },
 {
-"n": 56,
+"n": 61,
 "id": "b4chk2",
 "kind": "check",
 "title": "Quick check",
@@ -1290,7 +1374,7 @@
 ]
 },
 {
-"n": 57,
+"n": 62,
 "id": "b4chk3",
 "kind": "check",
 "title": "Quick check",
@@ -1311,7 +1395,7 @@
 ]
 },
 {
-"n": 58,
+"n": 63,
 "id": "b4deb",
 "kind": "rule",
 "title": "Warmer, never different.",
@@ -1324,7 +1408,7 @@
 "chrome": []
 },
 {
-"n": 59,
+"n": 64,
 "id": "b5bank",
 "kind": "list",
 "title": "A request you checked is worth saving.",
@@ -1334,14 +1418,14 @@
 "A request you checked is worth saving.",
 "Tomorrow you start from your bank, not from a blank page.",
 "Task: what it is for, in one line.",
-"Request: the seven parts, with [brackets] for what changes each time.",
+"Request: the five parts, with [brackets] for what changes each time.",
 "Files: which approved files it needs.",
 "Check: how you check the result."
 ],
 "chrome": []
 },
 {
-"n": 60,
+"n": 65,
 "id": "b5go",
 "kind": "timer",
 "title": "Save two entries, then read one to a neighbor.",
@@ -1360,7 +1444,7 @@
 ]
 },
 {
-"n": 61,
+"n": 66,
 "id": "b5seats",
 "kind": "list",
 "title": "One checklist, many seats.",
@@ -1377,7 +1461,7 @@
 "chrome": []
 },
 {
-"n": 62,
+"n": 67,
 "id": "b5gcse",
 "kind": "table",
 "title": "The same idea, in Microsoft's words.",
@@ -1391,16 +1475,16 @@
 "Goal",
 "Task",
 "Context",
-"Role and Context",
+"Context",
 "Source",
 "Data",
 "Expectations",
-"Constraints, Tone and Output format"
+"Constraints and Format"
 ],
 "chrome": []
 },
 {
-"n": 63,
+"n": 68,
 "id": "w1",
 "kind": "wrap",
 "title": "Wrap-up",
@@ -1425,7 +1509,7 @@
 ]
 },
 {
-"n": 64,
+"n": 69,
 "id": "close1",
 "kind": "close",
 "title": "Close",

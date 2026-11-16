@@ -1,6 +1,6 @@
 {
  "name": "CODED · AI Fundamentals for HR: MAP Test POST (Day 3)",
- "description": "MAP Skills Test for the CODED Professionals open workshop \"AI Fundamentals for HR\", 3 days, 17 to 19 November 2026, 09:00 to 15:00, CODED, Alsharekh room. Day 1 (Tue 17 Nov 2026): Copilot Foundations for HR Documents and Communication · Day 2 (Wed 18 Nov 2026): Meetings, Reporting and Mapping Your HR Workflow · Day 3 (Thu 19 Nov 2026): HR Agents and an Introduction to Power Automate. POST sitting: Day 3, Thu 19 Nov, 14:20, before the final satisfaction survey. The PRE sitting (Day 1, Tue 17 Nov, 09:10) has the identical questions. Part 1: 6 confidence self-ratings (never scored). Part 2: 14 knowledge questions (Day 1: 6, Day 2: 5, Day 3: 3). About 10 minutes. Not graded. Answer key: 1 b · 2 c · 3 c · 4 d · 5 a · 6 c · 7 a · 8 b · 9 d · 10 d · 11 b · 12 b · 13 d · 14 c.",
+ "description": "MAP Skills Test for the CODED Professionals open workshop \"AI Fundamentals for HR\", 3 days, 17 to 19 November 2026, 09:00 to 15:00, CODED, Alsharekh room. Day 1 (Tue 17 Nov 2026): Copilot Foundations for HR Documents and Communication · Day 2 (Wed 18 Nov 2026): Meetings, Reporting and Presentations · Day 3 (Thu 19 Nov 2026): HR Agents, Workflows and an Introduction to Power Automate. POST sitting: Day 3, Thu 19 Nov, 14:20, before the final satisfaction survey. The PRE sitting (Day 1, Tue 17 Nov, 09:10) has the identical questions. Part 1: 6 confidence self-ratings (never scored). Part 2: 14 knowledge questions (Day 1: 6, Day 2: 4, Day 3: 4). About 10 minutes. Not graded. Answer key: 1 b · 2 c · 3 c · 4 d · 5 a · 6 c · 7 a · 8 b · 9 d · 10 d · 11 b · 12 b · 13 d · 14 c.",
  "audience": "teacher_student",
  "isAnonymous": false,
  "folderId": "a8f8146d-144f-47ed-9121-ef8e437f2f11",
@@ -44,24 +44,24 @@
   {
    "id": "s_4",
    "title": {
-    "en": "Part 2: Day 2, Meetings, Reporting and Mapping Your HR Workflow",
-    "ar": "الجزء 2: اليوم 2، الاجتماعات والتقارير ورسم مسار عمل الموارد البشرية"
+    "en": "Part 2: Day 2, Meetings, Reporting and Presentations",
+    "ar": "الجزء 2: اليوم 2، الاجتماعات والتقارير والعروض التقديمية"
    },
    "description": {
-    "en": "Five questions. Choose the one best answer.",
-    "ar": "خمسة أسئلة. اختر أفضل إجابة واحدة."
+    "en": "Four questions. Choose the one best answer.",
+    "ar": "أربعة أسئلة. اختر أفضل إجابة واحدة."
    },
    "order": 3
   },
   {
    "id": "s_5",
    "title": {
-    "en": "Part 2: Day 3, HR Agents and an Introduction to Power Automate",
-    "ar": "الجزء 2: اليوم 3، وكلاء الموارد البشرية ومقدمة في Power Automate"
+    "en": "Part 2: Day 3, HR Agents, Workflows and an Introduction to Power Automate",
+    "ar": "الجزء 2: اليوم 3، وكلاء الموارد البشرية ومسارات العمل ومقدمة في Power Automate"
    },
    "description": {
-    "en": "Three questions. Choose the one best answer.",
-    "ar": "ثلاثة أسئلة. اختر أفضل إجابة واحدة."
+    "en": "Four questions. Choose the one best answer.",
+    "ar": "أربعة أسئلة. اختر أفضل إجابة واحدة."
    },
    "order": 4
   }
@@ -138,8 +138,8 @@
    "id": "q_r2",
    "type": "scale",
    "label": {
-    "en": "I can write a request with role, context, task, data, constraints, tone and output format, and fix a weak draft with follow-up instructions.",
-    "ar": "أستطيع كتابة طلب يتضمن الدور والسياق والمهمة والبيانات والقيود والأسلوب وشكل الناتج، وتحسين مسودة ضعيفة بتعليمات متابعة."
+    "en": "I can write a request with context, task, data, constraints and format, and fix a weak draft with follow-up instructions.",
+    "ar": "أستطيع كتابة طلب يتضمن السياق والمهمة والبيانات والقيود والشكل، وتحسين مسودة ضعيفة بتعليمات متابعة."
    },
    "required": true,
    "sectionId": "s_2",
@@ -398,8 +398,8 @@
      "id": "opt_a",
      "value": "a",
      "label": {
-      "en": "Tone: a friendlier voice",
-      "ar": "الأسلوب (Tone): صياغة أكثر وداً"
+      "en": "Format: a friendlier tone",
+      "ar": "الشكل (Format): أسلوب أكثر وداً"
      }
     },
     {
@@ -414,8 +414,8 @@
      "id": "opt_c",
      "value": "c",
      "label": {
-      "en": "Output format: the template's headings",
-      "ar": "شكل الناتج (Output format): عناوين القالب"
+      "en": "Constraints: one page at most",
+      "ar": "القيود (Constraints): صفحة واحدة كحد أقصى"
      }
     },
     {
@@ -707,7 +707,7 @@
     "ar": "11. تصل طلبات التدريب بالبريد الإلكتروني. تطبع المنسقة كل طلب ليوقعه المدير، ثم تكتبه في جدول المتابعة. ماذا تُظهر خريطة هذه العملية؟"
    },
    "required": true,
-   "sectionId": "s_4",
+   "sectionId": "s_5",
    "options": [
     {
      "id": "opt_a",

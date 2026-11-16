@@ -1,6 +1,6 @@
 [
 {
-"say": "Good morning, and welcome back. Yesterday you learned to ask clearly and check everything. Today we protect people's data, run meetings, check numbers, and look at whole processes. Please open Copilot Chat while I start.",
+"say": "Good morning, and welcome back. Yesterday you learned to ask clearly and check everything. Today we protect people's data, run meetings, check numbers, and finish with Word and PowerPoint. Please open Copilot Chat while I start.",
 "do": "(Before 09:00: check that every laptop has Copilot Chat open, and that people downloaded today's files from the Day 2 page.)",
 "expect": null,
 "silent": null,
@@ -12,7 +12,7 @@
 "t": "open",
 "k": "cover",
 "h": "Cover: welcome",
-"flat": "09:00. · Do: (Before 09:00: check that every laptop has Copilot Chat open, and that people downloaded today's files from the Day 2 page.) · Housekeeping: breaks at 10:45 and 13:35, lunch and Dhuhr at 11:35. · Say: “Good morning, and welcome back. Yesterday you learned to ask clearly and check everything. Today we protect people's data, run meetings, check numbers, and look at whole processes. Please open Copilot Chat while I start.”"
+"flat": "09:00. · Do: (Before 09:00: check that every laptop has Copilot Chat open, and that people downloaded today's files from the Day 2 page.) · Housekeeping: breaks at 10:45 and 13:35, lunch and Dhuhr at 11:35. · Say: “Good morning, and welcome back. Yesterday you learned to ask clearly and check everything. Today we protect people's data, run meetings, check numbers, and finish with Word and PowerPoint. Please open Copilot Chat while I start.”"
 },
 {
 "say": "These are the four things you will be able to do by the end of today, on fictional Mutla files. Which one matters most for your own job? Tell your neighbor in one sentence.",
@@ -50,7 +50,7 @@
 "time": "09:00-09:10",
 "t": "c0",
 "k": "rule",
-"h": "Seven parts in. A source for every line out.",
+"h": "A full brief in, a source for every line out.",
 "flat": "09:00-09:10. · Do: (Ask for hands.) Who used Copilot at work after yesterday's session? · Expect: One or two hands. · Say: “Good morning. Before anything new, three questions on yesterday. Answer with your hands, and do not look at your notes.”"
 },
 {
@@ -91,6 +91,19 @@
 "k": "check",
 "h": "Quick check",
 "flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option C. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “Last one. (Tap after hands.) Good. Today starts with the question we left open yesterday: what may go into a prompt at all?”"
+},
+{
+"say": "Before we start, one slide that connects the three days. Each row is HR work you already do. The middle column is how most teams do it today. (Point to two rows.) Which row is closest to your own job? (Take two answers.)",
+"do": null,
+"expect": "Policy questions and meetings, most often.",
+"silent": null,
+"fallback": null,
+"more": [],
+"time": "3 min",
+"t": "c0",
+"k": "table",
+"h": "The same HR work, done the AI way.",
+"flat": "3 min. · Expect: Policy questions and meetings, most often. · Say: “Before we start, one slide that connects the three days. Each row is HR work you already do. The middle column is how most teams do it today. (Point to two rows.) Which row is closest to your own job? (Take two answers.)”"
 },
 {
 "say": "Yesterday I asked you to use practice files only. Today you learn why, and what to do with real work. (Read the story.) Stop Fatma. What should she do before she presses Send? Call it out.",
@@ -488,22 +501,24 @@
 "flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: 14 request IDs appear twice. The corrected count is 398. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: If upload fails, pairs use Conditional Formatting and Remove Duplicates on a copy in Excel. · Say: “Your turn, in pairs. Find the rows behind the difference with Copilot, then prove it yourself in Excel. Twelve minutes. (Start the timer.)”"
 },
 {
-"say": "Second exercise, same pairs. This time the total is too low. Twelve minutes. (Start the timer.)",
+"say": "Second exercise, same pairs: payroll. Two months side by side, and a list of the approved changes. The payroll file has employee codes and no names. Twelve minutes. (Start the timer.)",
 "do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "The file gives 25 vacancies. Drilling Support shows 0 approved positions instead of 12, so the true total is 37.",
+"expect": "Four differences between the months. The Movements sheet explains three of them: EMP-1462 (promotion); EMP-7785 (housing allowance stops); EMP-5108 (new joiner, added correctly). Three items need a person to confirm: EMP-3346: Basic salary rose from 1,250 to 1,450. No movement explains it. EMP-2731: Left on 31 October 2026, still paid in November. EMP-5114: Joined on 1 November 2026, missing from November.",
 "silent": null,
-"fallback": "If upload fails, pairs compare the two sheets by hand.",
+"fallback": "If upload fails, pairs sort both months by employee code in Excel and compare them side by side.",
 "more": [
-"Give the hint at about 4 min."
+"Give the hint at about 4 min.",
+"Fast finishers have an extra task on the slide.",
+"Comparing the months finds only one problem. The leaver and the missing joiner show up only against the Movements sheet."
 ],
 "time": "12 min work, then share",
 "t": "c4",
 "k": "task",
-"h": "Your turn 2.7: Vacancies: find the missing value (12 min, in pairs)",
-"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: The file gives 25 vacancies. Drilling Support shows 0 approved positions instead of 12, so the true total is 37. · Give the hint at about 4 min. · Fallback: If upload fails, pairs compare the two sheets by hand. · Say: “Second exercise, same pairs. This time the total is too low. Twelve minutes. (Start the timer.)”"
+"h": "Your turn 2.7: Payroll: compare two months (12 min, in pairs)",
+"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Four differences between the months. The Movements sheet explains three of them: EMP-1462 (promotion); EMP-7785 (housing allowance stops); EMP-5108 (new joiner, added correctly). Three items need a person to confirm: EMP-3346: Basic salary rose from 1,250 to 1,450. No movement explains it. EMP-2731: Left on 31 October 2026, still paid in November. EMP-5114: Joined on 1 November 2026, missing from November. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Comparing the months finds only one problem. The leaver and the missing joiner show up only against the Movements sheet. · Fallback: If upload fails, pairs sort both months by employee code in Excel and compare them side by side. · Say: “Second exercise, same pairs: payroll. Two months side by side, and a list of the approved changes. The payroll file has employee codes and no names. Twelve minutes. (Start the timer.)”"
 },
 {
-"say": "Which figure goes to the Head of HR? (Tap after hands.) The corrected one, and one sentence on why it changed.",
+"say": "(Tap after hands.) Copilot is good at finding the question. A person answers it.",
 "do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option B.",
 "silent": "ask one table to choose together, then tap their choice.",
@@ -513,11 +528,11 @@
 "t": "c4",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “Which figure goes to the Head of HR? (Tap after hands.) The corrected one, and one sentence on why it changed.”"
+"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “(Tap after hands.) Copilot is good at finding the question. A person answers it.”"
 },
 {
-"say": "This is the most important idea of the afternoon. A correct calculation on wrong data gives a wrong answer, and it looks perfect. The control total is your friend.",
-"do": "(Ask each pair for one sentence: what was wrong, and how they proved it.)",
+"say": "Two points from this block. First, the payroll system calculates salaries; Copilot should never recalculate them. It is a second pair of eyes before the file goes to the bank. Second, a fixed rule, like flag any change above a set amount, catches big numbers. Copilot can also say which change has no approved reason behind it, and ask why.",
+"do": "(Ask each pair for one sentence: what was wrong, and how they found it.)",
 "expect": null,
 "silent": null,
 "fallback": null,
@@ -525,8 +540,8 @@
 "time": null,
 "t": "c4",
 "k": "rule",
-"h": "Copilot counted right. The rows were wrong.",
-"flat": "Do: (Ask each pair for one sentence: what was wrong, and how they proved it.) · Say: “This is the most important idea of the afternoon. A correct calculation on wrong data gives a wrong answer, and it looks perfect. The control total is your friend.”"
+"h": "Copilot finds the change. A person confirms the reason.",
+"flat": "Do: (Ask each pair for one sentence: what was wrong, and how they found it.) · Say: “Two points from this block. First, the payroll system calculates salaries; Copilot should never recalculate them. It is a second pair of eyes before the file goes to the bank. Second, a fixed rule, like flag any change above a set amount, catches big numbers. Copilot can also say which change has no approved reason behind it, and ask why.”"
 },
 {
 "say": "You found two wrong figures. That is only useful if someone reads it. Managers read the first three lines and stop. So we put the finding, what it does not show, and the next step right at the top.",
@@ -557,52 +572,37 @@
 "flat": "5 min, live. · Expect: A title and three bullets: late arrivals fell by 38% in an 8-week pilot in the Finance division; one division and eight weeks only; the rules start for everyone on Tuesday 1 December 2026. · Click steps: (1) Attach mutla-policy-change-brief.docx to a new chat, or open it in Word with Copilot. (2) Paste the request. Read the three bullets aloud. (3) Check the percentage and the weeks by hand in the brief. · Fallback: Show the backup bullets on the trainer screen. The backup is on the Day 2 backup results page, Demo 2.8. · Say: “(Run the request.) Three bullets. The second one is the one I like: one division, eight weeks. A result with its limits is a result people can trust. (Check the percentage in the brief.) Same as the source.”"
 },
 {
-"say": "Your turn. The two figures you fixed before lunch now go to the person who signs the report. Write it short. Ten minutes. (Start the timer.)",
+"say": "Your turn. What you found before lunch now goes to the person who signs the report. Write it short. Twelve minutes. (Start the timer.)",
 "do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "A short summary: 398 training requests (not 412, duplicates removed) and 37 vacancies (not 25, one section entered as 0), with no blame.",
+"expect": "A short summary: 398 training requests (not 412, duplicates removed) and three November payroll items to confirm before the file goes to the bank, with no blame.",
 "silent": null,
-"fallback": "No corrected figures: show the two figures from the backup on the trainer screen.",
+"fallback": "Nothing from before lunch? Show the backup tables on the trainer screen.",
+"more": [
+"Give the hint at about 4 min."
+],
+"time": "12 min work, then share",
+"t": "c5",
+"k": "task",
+"h": "Your turn 2.8: A management summary in Word (12 min, on your own)",
+"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A short summary: 398 training requests (not 412, duplicates removed) and three November payroll items to confirm before the file goes to the bank, with no blame. · Give the hint at about 4 min. · Fallback: Nothing from before lunch? Show the backup tables on the trainer screen. · Say: “Your turn. What you found before lunch now goes to the person who signs the report. Write it short. Twelve minutes. (Start the timer.)”"
+},
+{
+"say": "Second exercise. The same facts for the whole HR team, in three lines. A team channel is a wider audience, so the employee codes come out. Ten minutes. (Start the timer.)",
+"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"expect": "Three short lines: the training count is 398, not 412; three November payroll items are with Compensation and Personnel to confirm; the next step. No employee codes.",
+"silent": null,
+"fallback": "No summary from Task 2.8: use the backup on the trainer screen.",
 "more": [
 "Give the hint at about 3 min."
 ],
 "time": "10 min work, then share",
 "t": "c5",
 "k": "task",
-"h": "Your turn 2.8: A management summary in Word (10 min, on your own)",
-"flat": "10 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A short summary: 398 training requests (not 412, duplicates removed) and 37 vacancies (not 25, one section entered as 0), with no blame. · Give the hint at about 3 min. · Fallback: No corrected figures: show the two figures from the backup on the trainer screen. · Say: “Your turn. The two figures you fixed before lunch now go to the person who signs the report. Write it short. Ten minutes. (Start the timer.)”"
+"h": "Your turn 2.9: Three lines for the HR team (10 min, on your own)",
+"flat": "10 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Three short lines: the training count is 398, not 412; three November payroll items are with Compensation and Personnel to confirm; the next step. No employee codes. · Give the hint at about 3 min. · Fallback: No summary from Task 2.8: use the backup on the trainer screen. · Say: “Second exercise. The same facts for the whole HR team, in three lines. A team channel is a wider audience, so the employee codes come out. Ten minutes. (Start the timer.)”"
 },
 {
-"say": "(Run it in PowerPoint, or in Copilot Chat.) Five slides in a minute. Now the slow part, which is my part: (check each time and number against the brief). A deck travels further than any document. One wrong number on a slide is seen by everyone in the room.",
-"do": null,
-"expect": "Five slides: why the change, the new times, permissions, the pilot result (38% fewer late arrivals in 8 weeks), and where to send questions.",
-"silent": null,
-"fallback": "Show the backup outline on the trainer screen. The backup is on the Day 2 backup results page, Demo 2.9.",
-"more": [
-"Click steps: (1) In PowerPoint with Copilot: Create a presentation from a file, and pick the brief. In Copilot Chat: attach the brief and paste the request. (2) Read the slide titles aloud. Check the times and the pilot number on the slides against the brief."
-],
-"time": "5 min, live",
-"t": "c5",
-"k": "list",
-"h": "A brief into five slides.",
-"flat": "5 min, live. · Expect: Five slides: why the change, the new times, permissions, the pilot result (38% fewer late arrivals in 8 weeks), and where to send questions. · Click steps: (1) In PowerPoint with Copilot: Create a presentation from a file, and pick the brief. In Copilot Chat: attach the brief and paste the request. (2) Read the slide titles aloud. Check the times and the pilot number on the slides against the brief. · Fallback: Show the backup outline on the trainer screen. The backup is on the Day 2 backup results page, Demo 2.9. · Say: “(Run it in PowerPoint, or in Copilot Chat.) Five slides in a minute. Now the slow part, which is my part: (check each time and number against the brief). A deck travels further than any document. One wrong number on a slide is seen by everyone in the room.”"
-},
-{
-"say": "Last exercise of the block. Your summary becomes five slides. Check every number on every slide. Ten minutes. (Start the timer.)",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "Five slides (or an outline) with the corrected figures, the reasons and the next step, every number matching the summary.",
-"silent": null,
-"fallback": "Without Copilot in PowerPoint, the outline from Copilot Chat is enough.",
-"more": [
-"Give the hint at about 3 min."
-],
-"time": "10 min work, then share",
-"t": "c5",
-"k": "task",
-"h": "Your turn 2.9: Five slides from your summary (10 min, on your own)",
-"flat": "10 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Five slides (or an outline) with the corrected figures, the reasons and the next step, every number matching the summary. · Give the hint at about 3 min. · Fallback: Without Copilot in PowerPoint, the outline from Copilot Chat is enough. · Say: “Last exercise of the block. Your summary becomes five slides. Check every number on every slide. Ten minutes. (Start the timer.)”"
-},
-{
-"say": "(Tap after hands.) The checked figure wins, on every page and every slide. Break now. (Press the cup button.)",
+"say": "(Tap after hands.) The rule from this morning again: the wider the audience, the less personal detail. Break now. (Press the cup button.)",
 "do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option B.",
 "silent": "ask one table to choose together, then tap their choice.",
@@ -612,24 +612,113 @@
 "t": "c5",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “(Tap after hands.) The checked figure wins, on every page and every slide. Break now. (Press the cup button.)”"
+"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “(Tap after hands.) The rule from this morning again: the wider the audience, the less personal detail. Break now. (Press the cup button.)”"
 },
 {
-"say": "Last part of today, and it is a different kind of thinking. Until now we made one document faster. Now we look at the whole road a request travels. (Read the story.) Nobody in this story was lazy. So where did three weeks go?",
+"say": "Last block of today, and a tool many of you asked about: PowerPoint. (Read the story.) How long does a ten-slide deck take you today?",
 "do": null,
-"expect": "Waiting for signatures, emails, printing.",
+"expect": "Two hours, half a day.",
 "silent": null,
 "fallback": null,
 "more": [],
-"time": "13:50-14:20",
+"time": "13:50-14:50",
 "t": "c6",
 "k": "story",
-"h": "Block 6 · From one task to a workflow",
-"flat": "13:50-14:20. · Expect: Waiting for signatures, emails, printing. · Say: “Last part of today, and it is a different kind of thinking. Until now we made one document faster. Now we look at the whole road a request travels. (Read the story.) Nobody in this story was lazy. So where did three weeks go?”"
+"h": "Block 6 · PowerPoint: from document to deck",
+"flat": "13:50-14:50. · Expect: Two hours, half a day. · Say: “Last block of today, and a tool many of you asked about: PowerPoint. (Read the story.) How long does a ten-slide deck take you today?”"
 },
 {
-"say": "Imagine you are invisible and you follow that request around the building. Every time it stops, you write down why. That list of stops is a process map, and it is what we build today.",
+"say": "Four things to know. It can build a first deck from a document, edit it in rounds, and summarize a deck you received. If your label does not include Copilot in PowerPoint, Copilot Chat writes the outline and you paste it in. The result is the same: a first draft you check.",
 "do": null,
+"expect": null,
+"silent": null,
+"fallback": null,
+"more": [
+"Copilot in PowerPoint needs the M365 Copilot (Basic) or (Premium) label. Everyone else: Copilot Chat for the outline, then Designer in PowerPoint."
+],
+"time": "6 min",
+"t": "c6",
+"k": "list",
+"h": "What Copilot can do in PowerPoint.",
+"flat": "6 min. · Copilot in PowerPoint needs the M365 Copilot (Basic) or (Premium) label. Everyone else: Copilot Chat for the outline, then Designer in PowerPoint. · Say: “Four things to know. It can build a first deck from a document, edit it in rounds, and summarize a deck you received. If your label does not include Copilot in PowerPoint, Copilot Chat writes the outline and you paste it in. The result is the same: a first draft you check.”"
+},
+{
+"say": "(Run it in PowerPoint, or in Copilot Chat.) Five slides in a minute. Now the slow part, which is my part: (check each time and number against the brief). A deck travels further than any document. One wrong number on a slide is seen by everyone in the room.",
+"do": null,
+"expect": "Five slides: why the change, the new times, permissions, the pilot result (38% fewer late arrivals in 8 weeks), and where to send questions.",
+"silent": null,
+"fallback": "Show the backup outline on the trainer screen. The backup is on the Day 2 backup results page, Demo 2.10.",
+"more": [
+"Click steps: (1) In PowerPoint with Copilot: Create a presentation from a file, and pick the brief. In Copilot Chat: attach the brief and paste the request. (2) Read the slide titles aloud. Check the times and the pilot number on the slides against the brief."
+],
+"time": "6 min, live",
+"t": "c6",
+"k": "list",
+"h": "A brief into five slides.",
+"flat": "6 min, live. · Expect: Five slides: why the change, the new times, permissions, the pilot result (38% fewer late arrivals in 8 weeks), and where to send questions. · Click steps: (1) In PowerPoint with Copilot: Create a presentation from a file, and pick the brief. In Copilot Chat: attach the brief and paste the request. (2) Read the slide titles aloud. Check the times and the pilot number on the slides against the brief. · Fallback: Show the backup outline on the trainer screen. The backup is on the Day 2 backup results page, Demo 2.10. · Say: “(Run it in PowerPoint, or in Copilot Chat.) Five slides in a minute. Now the slow part, which is my part: (check each time and number against the brief). A deck travels further than any document. One wrong number on a slide is seen by everyone in the room.”"
+},
+{
+"say": "Your turn. Your summary from Task 2.8 becomes five slides. Check every number on every slide. Twelve minutes. (Start the timer.)",
+"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"expect": "Five slides (or an outline) with the corrected figures, the reasons and the next step, every number matching the summary.",
+"silent": null,
+"fallback": "Without Copilot in PowerPoint, the outline from Copilot Chat is enough.",
+"more": [
+"Give the hint at about 4 min."
+],
+"time": "12 min work, then share",
+"t": "c6",
+"k": "task",
+"h": "Your turn 2.10: Five slides from your summary (12 min, on your own)",
+"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Five slides (or an outline) with the corrected figures, the reasons and the next step, every number matching the summary. · Give the hint at about 4 min. · Fallback: Without Copilot in PowerPoint, the outline from Copilot Chat is enough. · Say: “Your turn. Your summary from Task 2.8 becomes five slides. Check every number on every slide. Twelve minutes. (Start the timer.)”"
+},
+{
+"say": "(Run the edit request on the deck from Demo 2.10.) A new slide, a plainer slide, notes everywhere. After every round of edits, I check the numbers again, because each round is a new draft.",
+"do": null,
+"expect": "A new slide 3 with three bullets for managers, a plainer slide 4, and speaker notes on every slide. The times (6:30 to 8:00) and the pilot result (38%) are unchanged.",
+"silent": null,
+"fallback": "Show the backup on the trainer screen. Without Copilot in PowerPoint, run the request in Copilot Chat on the outline. The backup is on the Day 2 backup results page, Demo 2.11.",
+"more": [
+"Click steps: (1) Stay in the deck from Demo 2.10. Open Copilot in PowerPoint. (Without it: paste the outline into Copilot Chat with the same request.) (2) Paste the edit request. Show the new slide, the rewritten slide and the notes. (3) Use Designer for a layout if it is available. Then check every number on screen against the brief."
+],
+"time": "6 min, live",
+"t": "c6",
+"k": "list",
+"h": "Edit the deck in rounds.",
+"flat": "6 min, live. · Expect: A new slide 3 with three bullets for managers, a plainer slide 4, and speaker notes on every slide. The times (6:30 to 8:00) and the pilot result (38%) are unchanged. · Click steps: (1) Stay in the deck from Demo 2.10. Open Copilot in PowerPoint. (Without it: paste the outline into Copilot Chat with the same request.) (2) Paste the edit request. Show the new slide, the rewritten slide and the notes. (3) Use Designer for a layout if it is available. Then check every number on screen against the brief. · Fallback: Show the backup on the trainer screen. Without Copilot in PowerPoint, run the request in Copilot Chat on the outline. The backup is on the Day 2 backup results page, Demo 2.11. · Say: “(Run the edit request on the deck from Demo 2.10.) A new slide, a plainer slide, notes everywhere. After every round of edits, I check the numbers again, because each round is a new draft.”"
+},
+{
+"say": "Second exercise: your own meeting. Your agenda and brief from this morning become four or five slides, with the open question on its own slide. Eighteen minutes. (Start the timer.)",
+"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"expect": "Four or five slides that follow the agenda, a slide that asks the open question, speaker notes, and every date and number as in the case file.",
+"silent": null,
+"fallback": "No agenda from Task 2.2: ask Copilot for one from the case file first, then the slides.",
+"more": [
+"Give the hint at about 6 min.",
+"Fast finishers have an extra task on the slide."
+],
+"time": "18 min work, then share",
+"t": "c6",
+"k": "task",
+"h": "Your turn 2.11: Slides for your track's meeting (18 min, on your own)",
+"flat": "18 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Four or five slides that follow the agenda, a slide that asks the open question, speaker notes, and every date and number as in the case file. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: No agenda from Task 2.2: ask Copilot for one from the case file first, then the slides. · Say: “Second exercise: your own meeting. Your agenda and brief from this morning become four or five slides, with the open question on its own slide. Eighteen minutes. (Start the timer.)”"
+},
+{
+"say": "(Tap after hands.) The checked figure wins, on every page and every slide.",
+"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"expect": "Option B.",
+"silent": "ask one table to choose together, then tap their choice.",
+"fallback": null,
+"more": [],
+"time": "1 min",
+"t": "c6",
+"k": "check",
+"h": "Quick check",
+"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “(Tap after hands.) The checked figure wins, on every page and every slide.”"
+},
+{
+"say": "Look at the speaker notes. If a colleague had to present your deck tomorrow, could they? That is the test.",
+"do": "(Ask one person to show one slide and its notes.)",
 "expect": null,
 "silent": null,
 "fallback": null,
@@ -637,121 +726,8 @@
 "time": null,
 "t": "c6",
 "k": "rule",
-"h": "Follow one form from desk to desk.",
-"flat": "Say: “Imagine you are invisible and you follow that request around the building. Every time it stops, you write down why. That list of stops is a process map, and it is what we build today.”"
-},
-{
-"say": "Four problems hide in most HR processes. (Go row by row, and ask the room for one example from their own unit for each.) The last column is the question you ask at every step of a map.",
-"do": null,
-"expect": "Approvals for delay, retyping into trackers for duplication.",
-"silent": null,
-"fallback": null,
-"more": [],
-"time": "5 min",
-"t": "c6",
-"k": "table",
-"h": "Four problems to look for.",
-"flat": "5 min. · Expect: Approvals for delay, retyping into trackers for duplication. · Say: “Four problems hide in most HR processes. (Go row by row, and ask the room for one example from their own unit for each.) The last column is the question you ask at every step of a map.”"
-},
-{
-"say": "A map turns a feeling into facts. Nobody can act on “it is slow”. Everybody can act on “step three waits three days”. One rule for today: do not improve anything yet. A map of how it should work hides how it really works.",
-"do": null,
-"expect": null,
-"silent": null,
-"fallback": null,
-"more": [],
-"time": null,
-"t": "c6",
-"k": "term",
-"h": "Map it as it is.",
-"flat": "Say: “A map turns a feeling into facts. Nobody can act on “it is slow”. Everybody can act on “step three waits three days”. One rule for today: do not improve anything yet. A map of how it should work hides how it really works.”"
-},
-{
-"say": "(Run the request.) Read the table with me. Copilot flagged the wait for the manager and the prices asked twice. Now the last row: who tells the trainer the room? Nobody. A step nobody owns is still a step, and it is often the one that fails.",
-"do": null,
-"expect": "Five or six steps. Delay: the manager's approval after three days. Duplicated effort: prices copied by hand, then asked for again by Procurement. Unclear ownership: nobody tells the trainer the room. A person decides: the manager approves the choice.",
-"silent": null,
-"fallback": "Show the backup table on the trainer screen. The backup is on the Day 2 backup results page, Demo 2.10.",
-"more": [
-"Click steps: (1) Open a new Copilot Chat. Paste the request: the story is inside it. (2) Read the table aloud. Ask the room which problem Copilot missed, if any. (3) Point out that Copilot flags the problems and does not fix them."
-],
-"time": "5 min, live",
-"t": "c6",
-"k": "list",
-"h": "A story into a step table.",
-"flat": "5 min, live. · Expect: Five or six steps. Delay: the manager's approval after three days. Duplicated effort: prices copied by hand, then asked for again by Procurement. Unclear ownership: nobody tells the trainer the room. A person decides: the manager approves the choice. · Click steps: (1) Open a new Copilot Chat. Paste the request: the story is inside it. (2) Read the table aloud. Ask the room which problem Copilot missed, if any. (3) Point out that Copilot flags the problems and does not fix them. · Fallback: Show the backup table on the trainer screen. The backup is on the Day 2 backup results page, Demo 2.10. · Say: “(Run the request.) Read the table with me. Copilot flagged the wait for the manager and the prices asked twice. Now the last row: who tells the trainer the room? Nobody. A step nobody owns is still a step, and it is often the one that fails.”"
-},
-{
-"say": "Your turn, in pairs. Story 1 in the process stories file: a training request. Copilot drafts the map; you check it against the story. Twelve minutes. (Start the timer.)",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "About nine steps. Delays: the manager (4 to 6 days) and L&D (up to a week). Duplicated effort: printing, scanning and typing twice. Repetitive step: sending the Word form each time. Unclear ownership: nobody chases late approvals. A person decides: the line manager and L&D.",
-"silent": null,
-"fallback": "If Copilot is slow, map the story by hand in the template.",
-"more": [
-"Give the hint at about 4 min.",
-"Fast finishers have an extra task on the slide."
-],
-"time": "12 min work, then share",
-"t": "c6",
-"k": "task",
-"h": "Your turn 2.10: Map the training request (12 min, in pairs)",
-"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: About nine steps. Delays: the manager (4 to 6 days) and L&D (up to a week). Duplicated effort: printing, scanning and typing twice. Repetitive step: sending the Word form each time. Unclear ownership: nobody chases late approvals. A person decides: the line manager and L&D. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: If Copilot is slow, map the story by hand in the template. · Say: “Your turn, in pairs. Story 1 in the process stories file: a training request. Copilot drafts the map; you check it against the story. Twelve minutes. (Start the timer.)”"
-},
-{
-"say": "(Tap after hands.) Every approval is a human decision. Mark it, because tomorrow it must stay with a person.",
-"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
-"expect": "Option B.",
-"silent": "ask one table to choose together, then tap their choice.",
-"fallback": null,
-"more": [],
-"time": "1 min",
-"t": "c6",
-"k": "check",
-"h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “(Tap after hands.) Every approval is a human decision. Mark it, because tomorrow it must stay with a person.”"
-},
-{
-"say": "Now your own. If you have a process at work that wastes your time, map that one, with roles only, no names. If not, take your track's story. Either way, keep this map: tomorrow's final project starts from it.",
-"do": null,
-"expect": null,
-"silent": null,
-"fallback": null,
-"more": [],
-"time": "14:20-14:50",
-"t": "c7",
-"k": "list",
-"h": "Your process, mapped.",
-"flat": "14:20-14:50. · Say: “Now your own. If you have a process at work that wastes your time, map that one, with roles only, no names. If not, take your track's story. Either way, keep this map: tomorrow's final project starts from it.”"
-},
-{
-"say": "Twenty minutes. Map it as it is. (Start the timer, then walk the room and ask each person: where does it wait?)",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "A step table from request to completion with an owner for each step, the waits, the four kinds of problem flagged and the human decisions marked.",
-"silent": null,
-"fallback": "Short of time: map the first five steps well.",
-"more": [
-"Give the hint at about 6 min."
-],
-"time": "20 min work, then share",
-"t": "c7",
-"k": "task",
-"h": "Your turn 2.11: Map your own HR process (20 min, on your own)",
-"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A step table from request to completion with an owner for each step, the waits, the four kinds of problem flagged and the human decisions marked. · Give the hint at about 6 min. · Fallback: Short of time: map the first five steps well. · Say: “Twenty minutes. Map it as it is. (Start the timer, then walk the room and ask each person: where does it wait?)”"
-},
-{
-"say": "Swap with someone from a different unit. They should understand your process without asking you anything. Seven minutes. (Start the timer.)",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "Every map comes back with one fix: usually a step with no owner, a missing wait, or a decision that was not marked.",
-"silent": null,
-"fallback": "Odd number: a group of three, in a circle.",
-"more": [
-"Give the hint at about 3 min."
-],
-"time": "7 min work, then share",
-"t": "c7",
-"k": "task",
-"h": "Your turn 2.12: Swap and check a map (7 min, in pairs)",
-"flat": "7 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Every map comes back with one fix: usually a step with no owner, a missing wait, or a decision that was not marked. · Give the hint at about 3 min. · Fallback: Odd number: a group of three, in a circle. · Say: “Swap with someone from a different unit. They should understand your process without asking you anything. Seven minutes. (Start the timer.)”"
+"h": "Copilot builds the deck. You check every slide.",
+"flat": "Do: (Ask one person to show one slide and its notes.) · Say: “Look at the speaker notes. If a colleague had to present your deck tomorrow, could they? That is the test.”"
 },
 {
 "say": "Here is today on one slide. Six jobs, the app that fits, and the one check you never skip. Take a photo if you like; it is also on the cheat sheet. Which row will you use first at work?",
@@ -767,7 +743,7 @@
 "flat": "14:50-15:00. · Expect: Recaps and follow-ups. · Say: “Here is today on one slide. Six jobs, the app that fits, and the one check you never skip. Take a photo if you like; it is also on the cheat sheet. Which row will you use first at work?”"
 },
 {
-"say": "Look at what you made today. (Read the three cards.) Tomorrow we build tools that other people can use, and you improve the process you just mapped. Bring your map.",
+"say": "Look at what you made today. (Read the three cards.) Tomorrow we build tools that other people can use, and we look at whole HR processes, not single tasks.",
 "do": "Ask two people what they will use first at work.",
 "expect": null,
 "silent": "say what you will use yourself first.",
@@ -777,10 +753,10 @@
 "t": "close",
 "k": "wrap",
 "h": "Day wrap-up",
-"flat": "Do: Ask two people what they will use first at work. · If the room is silent: say what you will use yourself first. · Say: “Look at what you made today. (Read the three cards.) Tomorrow we build tools that other people can use, and you improve the process you just mapped. Bring your map.”"
+"flat": "Do: Ask two people what they will use first at work. · If the room is silent: say what you will use yourself first. · Say: “Look at what you made today. (Read the three cards.) Tomorrow we build tools that other people can use, and we look at whole HR processes, not single tasks.”"
 },
 {
-"say": "Thank you for a full day. Please bring your process map tomorrow: the final project starts from it. See you at 9:00.",
+"say": "Thank you for a full day. Tomorrow you build your own agents. See you at 9:00.",
 "do": "Recap the day in one line.",
 "expect": null,
 "silent": null,
@@ -790,6 +766,6 @@
 "t": "close",
 "k": "close",
 "h": "Close",
-"flat": "last 5 min. · Do: Recap the day in one line. · Say: “Thank you for a full day. Please bring your process map tomorrow: the final project starts from it. See you at 9:00.”"
+"flat": "last 5 min. · Do: Recap the day in one line. · Say: “Thank you for a full day. Tomorrow you build your own agents. See you at 9:00.”"
 }
 ]

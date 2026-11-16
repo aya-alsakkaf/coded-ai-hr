@@ -1,19 +1,19 @@
 [
 {
-"say": "Good morning, and welcome to the last day. Today your best requests become tools that other people can use, and you improve the process you mapped yesterday.",
-"do": "(Before 09:00: open Agent Builder on the presenting laptop, and run the Power Automate demo flow once end to end.)",
+"say": "Good morning, and welcome to the last day. Today your best requests become tools that other people can use, and after lunch we look at a whole HR process.",
+"do": "(Before 09:00: open Agent Builder on the presenting laptop, and check that the Power Automate demo video plays with sound.)",
 "expect": null,
 "silent": null,
 "fallback": null,
 "more": [
 "Remind the room: post-MAP and survey at 14:20, certificates at 14:40.",
-"Ask everyone to open yesterday's process map."
+"Ask everyone to download today's files from the Day 3 page."
 ],
 "time": "09:00",
 "t": "open",
 "k": "cover",
 "h": "Cover: welcome",
-"flat": "09:00. · Do: (Before 09:00: open Agent Builder on the presenting laptop, and run the Power Automate demo flow once end to end.) · Remind the room: post-MAP and survey at 14:20, certificates at 14:40. · Ask everyone to open yesterday's process map. · Say: “Good morning, and welcome to the last day. Today your best requests become tools that other people can use, and you improve the process you mapped yesterday.”"
+"flat": "09:00. · Do: (Before 09:00: open Agent Builder on the presenting laptop, and check that the Power Automate demo video plays with sound.) · Remind the room: post-MAP and survey at 14:20, certificates at 14:40. · Ask everyone to download today's files from the Day 3 page. · Say: “Good morning, and welcome to the last day. Today your best requests become tools that other people can use, and after lunch we look at a whole HR process.”"
 },
 {
 "say": "These are the four things you will be able to do by the end of today, on fictional Mutla files. Which one matters most for your own job? Tell your neighbor in one sentence.",
@@ -43,7 +43,7 @@
 },
 {
 "say": "Good morning, and welcome to the last day. Three quick questions on yesterday first.",
-"do": "(Ask for hands.) Who has their process map from yesterday open?",
+"do": "(Ask for hands.) Who used Copilot at work after yesterday?",
 "expect": null,
 "silent": null,
 "fallback": null,
@@ -51,8 +51,8 @@
 "time": "09:00-09:10",
 "t": "e0",
 "k": "rule",
-"h": "Safe data. Checked figures. A clear map.",
-"flat": "09:00-09:10. · Do: (Ask for hands.) Who has their process map from yesterday open? · Say: “Good morning, and welcome to the last day. Three quick questions on yesterday first.”"
+"h": "Safe data, checked figures, clear slides.",
+"flat": "09:00-09:10. · Do: (Ask for hands.) Who used Copilot at work after yesterday? · Say: “Good morning, and welcome to the last day. Three quick questions on yesterday first.”"
 },
 {
 "say": "(Tap after hands.) Red. If the names come out, the task can change color.",
@@ -151,17 +151,17 @@
 {
 "say": "(Build it step by step, reading each field aloud.) Name. Description. Now the instructions: look, it is the checklist, part by part. (Upload the five files.) Knowledge. (Add the starter prompts, then ask the first one.) Fifteen days, the deadline and section 4. Our first agent.",
 "do": null,
-"expect": "An agent with a name, a description, instructions in seven parts, five knowledge files and three starter prompts. In the test pane it answers the carry-over question: up to 15 days, used by 31 March, leave policy section 4.",
+"expect": "An agent with a name, a description, instructions in five parts, five knowledge files and three starter prompts. In the test pane it answers the carry-over question: up to 15 days, used by 31 March, leave policy section 4.",
 "silent": null,
 "fallback": "If Agent Builder is off on the account, paste the same instructions into Copilot Chat, attach the five files, and ask the same question. The backup is on the Day 3 backup results page, Demo 3.1.",
 "more": [
-"Click steps: (1) In Microsoft 365 Copilot, choose Create agent. Open the Configure tab. (2) Name: Mutla HR Policy Helper. Description: answers staff questions from Mutla's HR policies. (3) Paste the instructions. Read the seven parts aloud as you scroll. (4) Under Knowledge, upload the five policy files. Add the three starter prompts. (5) In the test pane, ask the first starter prompt. Point to the section number in the answer."
+"Click steps: (1) In Microsoft 365 Copilot, choose Create agent. Open the Configure tab. (2) Name: Mutla HR Policy Helper. Description: answers staff questions from Mutla's HR policies. (3) Paste the instructions. Read the five parts aloud as you scroll. (4) Under Knowledge, upload the five policy files. Add the three starter prompts. (5) In the test pane, ask the first starter prompt. Point to the section number in the answer."
 ],
 "time": "8 min, live",
 "t": "e1",
 "k": "list",
 "h": "An HR agent, built live.",
-"flat": "8 min, live. · Expect: An agent with a name, a description, instructions in seven parts, five knowledge files and three starter prompts. In the test pane it answers the carry-over question: up to 15 days, used by 31 March, leave policy section 4. · Click steps: (1) In Microsoft 365 Copilot, choose Create agent. Open the Configure tab. (2) Name: Mutla HR Policy Helper. Description: answers staff questions from Mutla's HR policies. (3) Paste the instructions. Read the seven parts aloud as you scroll. (4) Under Knowledge, upload the five policy files. Add the three starter prompts. (5) In the test pane, ask the first starter prompt. Point to the section number in the answer. · Fallback: If Agent Builder is off on the account, paste the same instructions into Copilot Chat, attach the five files, and ask the same question. The backup is on the Day 3 backup results page, Demo 3.1. · Say: “(Build it step by step, reading each field aloud.) Name. Description. Now the instructions: look, it is the checklist, part by part. (Upload the five files.) Knowledge. (Add the starter prompts, then ask the first one.) Fifteen days, the deadline and section 4. Our first agent.”"
+"flat": "8 min, live. · Expect: An agent with a name, a description, instructions in five parts, five knowledge files and three starter prompts. In the test pane it answers the carry-over question: up to 15 days, used by 31 March, leave policy section 4. · Click steps: (1) In Microsoft 365 Copilot, choose Create agent. Open the Configure tab. (2) Name: Mutla HR Policy Helper. Description: answers staff questions from Mutla's HR policies. (3) Paste the instructions. Read the five parts aloud as you scroll. (4) Under Knowledge, upload the five policy files. Add the three starter prompts. (5) In the test pane, ask the first starter prompt. Point to the section number in the answer. · Fallback: If Agent Builder is off on the account, paste the same instructions into Copilot Chat, attach the five files, and ask the same question. The backup is on the Day 3 backup results page, Demo 3.1. · Say: “(Build it step by step, reading each field aloud.) Name. Description. Now the instructions: look, it is the checklist, part by part. (Upload the five files.) Knowledge. (Add the starter prompts, then ask the first one.) Fifteen days, the deadline and section 4. Our first agent.”"
 },
 {
 "say": "(Tap after hands.) Constraints. If you remember one thing when you write instructions, write the never-rules there.",
@@ -177,9 +177,9 @@
 "flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “(Tap after hands.) Constraints. If you remember one thing when you write instructions, write the never-rules there.”"
 },
 {
-"say": "Your turn. Before you open Agent Builder, write the instructions in a document, all seven parts. Twelve minutes. (Start the timer.)",
+"say": "Your turn. Before you open Agent Builder, write the instructions in a document, all five parts. Twelve minutes. (Start the timer.)",
 "do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "Instructions in seven parts: answer only from the five files with the section; v3 until 31 December 2026 and v4 from 1 January 2027; ask for the grade first when it matters; never a named person's pay or data; refer anything else to the right HR unit.",
+"expect": "Instructions in five parts: answer only from the five files with the section; v3 until 31 December 2026 and v4 from 1 January 2027; ask for the grade first when it matters; never a named person's pay or data; refer anything else to the right HR unit.",
 "silent": null,
 "fallback": "Short of time: use the instructions from the Day 3 lab page, and change one line to make them yours.",
 "more": [
@@ -189,7 +189,7 @@
 "t": "e1",
 "k": "task",
 "h": "Your turn 3.1: Write the agent's instructions (12 min, on your own)",
-"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Instructions in seven parts: answer only from the five files with the section; v3 until 31 December 2026 and v4 from 1 January 2027; ask for the grade first when it matters; never a named person's pay or data; refer anything else to the right HR unit. · Give the hint at about 4 min. · Fallback: Short of time: use the instructions from the Day 3 lab page, and change one line to make them yours. · Say: “Your turn. Before you open Agent Builder, write the instructions in a document, all seven parts. Twelve minutes. (Start the timer.)”"
+"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Instructions in five parts: answer only from the five files with the section; v3 until 31 December 2026 and v4 from 1 January 2027; ask for the grade first when it matters; never a named person's pay or data; refer anything else to the right HR unit. · Give the hint at about 4 min. · Fallback: Short of time: use the instructions from the Day 3 lab page, and change one line to make them yours. · Say: “Your turn. Before you open Agent Builder, write the instructions in a document, all five parts. Twelve minutes. (Start the timer.)”"
 },
 {
 "say": "Second exercise: build it. Paste your instructions, upload the five files, add three starter prompts, and ask one normal question. Fifteen minutes. (Start the timer.)",
@@ -266,17 +266,17 @@
 {
 "say": "Second exercise: a second agent, on your own. It helps line managers write job descriptions, and it never gives a grade. Eighteen minutes. (Start the timer.)",
 "do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "A second agent that drafts in the template's order from the given duties only, asks for the duties when none are given, and refers any grade question to the committee.",
+"expect": "A second agent that drafts or answers only from its knowledge, asks first when the question leaves something out, and refers grades, salaries and allowances to the right unit.",
 "silent": null,
-"fallback": "Short of time: write the instructions only, and test them in Copilot Chat with the two files attached.",
+"fallback": "Short of time: write the instructions only, and test them in Copilot Chat with the knowledge files attached.",
 "more": [
 "Give the hint at about 6 min."
 ],
 "time": "18 min work, then share",
 "t": "e2",
 "k": "task",
-"h": "Your turn 3.4: A second agent: the Job Description Coach (18 min, on your own)",
-"flat": "18 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A second agent that drafts in the template's order from the given duties only, asks for the duties when none are given, and refers any grade question to the committee. · Give the hint at about 6 min. · Fallback: Short of time: write the instructions only, and test them in Copilot Chat with the two files attached. · Say: “Second exercise: a second agent, on your own. It helps line managers write job descriptions, and it never gives a grade. Eighteen minutes. (Start the timer.)”"
+"h": "Your turn 3.4: A second agent: choose one (18 min, on your own)",
+"flat": "18 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A second agent that drafts or answers only from its knowledge, asks first when the question leaves something out, and refers grades, salaries and allowances to the right unit. · Give the hint at about 6 min. · Fallback: Short of time: write the instructions only, and test them in Copilot Chat with the knowledge files attached. · Say: “Second exercise: a second agent, on your own. It helps line managers write job descriptions, and it never gives a grade. Eighteen minutes. (Start the timer.)”"
 },
 {
 "say": "Did your coach ask for the duties, or invent them? If it invented them, you know which line to fix. Break now. (Press the cup button.)",
@@ -331,21 +331,20 @@
 "flat": "Say: “Four words, and you can read any flow. Watch for them in the demo: I will say each one aloud when it appears.”"
 },
 {
-"say": "(Show the form, then the flow, naming each step.) Now I submit a request on my phone. (Submit.) Look at the log: a new row, waiting. (Open the approval and approve it.) The manager decides. The flow only carried the request to him. (Show the email and the updated row.) Nothing was typed twice, nothing was printed, and nobody had to chase.",
-"do": null,
-"expect": "One form response becomes one row in the TrainingRequests table, one approval request to the line manager, and one email to the employee with the result. The manager approves; the flow only carries the request.",
+"say": "This is a recorded demo, so you can see every step clearly. (Play.) A form arrives. A row appears in the log. The approval goes to the line manager, and the flow waits. The manager decides; the flow only carried the request to him. Then the email goes out and the row changes to Approved. Nothing was typed twice, nothing was printed, and nobody had to chase.",
+"do": "(Play the demo video. Pause after the approval step and ask: which step did a person do?)",
+"expect": null,
 "silent": null,
-"fallback": "If the flow does not run, show the run history from the rehearsal, then the backup table on the trainer screen. The backup is on the Day 3 backup results page, Demo 3.5.",
+"fallback": "Placeholder until the video is recorded: walk through the six steps on this slide, one row at a time.",
 "more": [
-"Click steps: (1) Show the training request form in Microsoft Forms: employee code, course name, course start date, reason (one sentence), line manager's work email. (2) Open the flow in Power Automate. Name each step aloud: trigger: When a new response is submitted (Microsoft Forms); action: Get response details (Microsoft Forms); action: Add a row into a table (Excel Online); action: Start and wait for an approval (Approvals); condition: Outcome is equal to Approve; action: Send an email (V2) (Outlook). (3) On your phone, submit the form with employee code EMP-1739 and the course Excel for HR reporting. (4) Open the log in Excel: a new row with status Waiting. Open the approval in Outlook or Teams and approve it. (5) Show the email to the employee, and the row now marked Approved.",
-"Rehearse before 09:00. The first approval in a new environment can take a few minutes to set up.",
+"Placeholder: the demo video is not recorded yet. It will be recorded once Copilot and Power Automate access is fixed.",
 "Approvals use the Approvals connector. Forms, Excel Online and Outlook are standard connectors."
 ],
-"time": "15 min, live",
+"time": "15 min, video",
 "t": "e3",
-"k": "list",
+"k": "table",
 "h": "From a form to an email.",
-"flat": "15 min, live. · Expect: One form response becomes one row in the TrainingRequests table, one approval request to the line manager, and one email to the employee with the result. The manager approves; the flow only carries the request. · Click steps: (1) Show the training request form in Microsoft Forms: employee code, course name, course start date, reason (one sentence), line manager's work email. (2) Open the flow in Power Automate. Name each step aloud: trigger: When a new response is submitted (Microsoft Forms); action: Get response details (Microsoft Forms); action: Add a row into a table (Excel Online); action: Start and wait for an approval (Approvals); condition: Outcome is equal to Approve; action: Send an email (V2) (Outlook). (3) On your phone, submit the form with employee code EMP-1739 and the course Excel for HR reporting. (4) Open the log in Excel: a new row with status Waiting. Open the approval in Outlook or Teams and approve it. (5) Show the email to the employee, and the row now marked Approved. · Rehearse before 09:00. The first approval in a new environment can take a few minutes to set up. · Approvals use the Approvals connector. Forms, Excel Online and Outlook are standard connectors. · Fallback: If the flow does not run, show the run history from the rehearsal, then the backup table on the trainer screen. The backup is on the Day 3 backup results page, Demo 3.5. · Say: “(Show the form, then the flow, naming each step.) Now I submit a request on my phone. (Submit.) Look at the log: a new row, waiting. (Open the approval and approve it.) The manager decides. The flow only carried the request to him. (Show the email and the updated row.) Nothing was typed twice, nothing was printed, and nobody had to chase.”"
+"flat": "15 min, video. · Do: (Play the demo video. Pause after the approval step and ask: which step did a person do?) · Placeholder: the demo video is not recorded yet. It will be recorded once Copilot and Power Automate access is fixed. · Approvals use the Approvals connector. Forms, Excel Online and Outlook are standard connectors. · Fallback: Placeholder until the video is recorded: walk through the six steps on this slide, one row at a time. · Say: “This is a recorded demo, so you can see every step clearly. (Play.) A form arrives. A row appears in the log. The approval goes to the line manager, and the flow waits. The manager decides; the flow only carried the request to him. Then the email goes out and the row changes to Approved. Nothing was typed twice, nothing was printed, and nobody had to chase.”"
 },
 {
 "say": "A flow touches company data and runs without you, so it is not a personal tool. Your IT team decides what is allowed. And every flow needs an owner: a flow nobody owns breaks quietly on the day its builder goes on leave.",
@@ -374,7 +373,7 @@
 "flat": "4 min. · Say: “So why did we need Power Automate here, and not the agent you built this morning? Because nobody is asking a question. The work is moving between people and systems, on its own, every time. That is the signal for a flow.”"
 },
 {
-"say": "(Tap after hands.) Approving. Lunch and Dhuhr now. After lunch, you improve your own process.",
+"say": "(Tap after hands.) Approving. Lunch and Dhuhr now. After lunch, we look at a whole HR process, step by step.",
 "do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option B.",
 "silent": "ask one table to choose together, then tap their choice.",
@@ -384,76 +383,159 @@
 "t": "e3",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “(Tap after hands.) Approving. Lunch and Dhuhr now. After lunch, you improve your own process.”"
+"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “(Tap after hands.) Approving. Lunch and Dhuhr now. After lunch, we look at a whole HR process, step by step.”"
 },
 {
-"say": "This is the final project, and you have already done most of the thinking: yesterday's map. Now you make it better, using everything from the three days. Then you build one piece of it and test it. Everything is on the Final project page, with hints.",
+"say": "Welcome back. This morning you made single tasks faster with agents. Now we look at the whole road a request travels. (Read the story.) Nobody in this story was lazy. So where did three weeks go?",
 "do": null,
-"expect": null,
+"expect": "Waiting for signatures, emails, printing.",
 "silent": null,
 "fallback": null,
 "more": [],
 "time": "12:15-13:35",
 "t": "e4",
-"k": "list",
-"h": "Your map, made better.",
-"flat": "12:15-13:35. · Say: “This is the final project, and you have already done most of the thinking: yesterday's map. Now you make it better, using everything from the three days. Then you build one piece of it and test it. Everything is on the Final project page, with hints.”"
+"k": "story",
+"h": "Block 4 · From one task to a workflow",
+"flat": "12:15-13:35. · Expect: Waiting for signatures, emails, printing. · Say: “Welcome back. This morning you made single tasks faster with agents. Now we look at the whole road a request travels. (Read the story.) Nobody in this story was lazy. So where did three weeks go?”"
 },
 {
-"say": "Here is the training request from yesterday, improved. (Read each row.) Look at the steps: two people still approve, a flow carries the form and the log, Copilot drafted the email text once, and an agent answers the policy questions. And look at what was removed. That is the shape your card should have.",
+"say": "Imagine you are invisible and you follow that request around the building. Every time it stops, you write down why. That list of stops is a process map, and it is what we build today.",
 "do": null,
 "expect": null,
 "silent": null,
 "fallback": null,
 "more": [],
-"time": "10 min",
-"t": "e4",
-"k": "table",
-"h": "A training request, improved.",
-"flat": "10 min. · Say: “Here is the training request from yesterday, improved. (Read each row.) Look at the steps: two people still approve, a flow carries the form and the log, Copilot drafted the email text once, and an agent answers the policy questions. And look at what was removed. That is the shape your card should have.”"
-},
-{
-"say": "Part 1. Thirty minutes. (Start the timer, then walk the room and ask each person: which step did you remove, and who approves now?)",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "A complete workflow card: trigger, inputs, steps each marked Person, Copilot, Agent or Flow, the human decisions, one owner per step, outputs, and what was removed.",
-"silent": null,
-"fallback": "No map from Day 2: use your track's story in the process stories file.",
-"more": [
-"Give the hint at about 10 min."
-],
-"time": "30 min work, then share",
-"t": "e4",
-"k": "task",
-"h": "Your turn 3.6: Final project, part 1: redesign your process (30 min, on your own)",
-"flat": "30 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A complete workflow card: trigger, inputs, steps each marked Person, Copilot, Agent or Flow, the human decisions, one owner per step, outputs, and what was removed. · Give the hint at about 10 min. · Fallback: No map from Day 2: use your track's story in the process stories file. · Say: “Part 1. Thirty minutes. (Start the timer, then walk the room and ask each person: which step did you remove, and who approves now?)”"
-},
-{
-"say": "Part 2. Thirty-five minutes. One piece, three tests, then submit. (Start the timer.)",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "A submitted workflow card with one working piece (a request or agent instructions) and a three-line test log.",
-"silent": null,
-"fallback": "If the submission link is not working, participants save the card with their name and the trainer collects the files.",
-"more": [
-"Give the hint at about 11 min."
-],
-"time": "35 min work, then share",
-"t": "e4",
-"k": "task",
-"h": "Your turn 3.7: Final project, part 2: build, test, submit (35 min, on your own)",
-"flat": "35 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A submitted workflow card with one working piece (a request or agent instructions) and a three-line test log. · Give the hint at about 11 min. · Fallback: If the submission link is not working, participants save the card with their name and the trainer collects the files. · Say: “Part 2. Thirty-five minutes. One piece, three tests, then submit. (Start the timer.)”"
-},
-{
-"say": "Five minutes to submit. (Show the submission link on the screen. Walk the room and help anyone stuck on it.) Break now. When you come back, think of one sentence: which step did you remove, and why? (Press the cup button.)",
-"do": null,
-"expect": null,
-"silent": null,
-"fallback": null,
-"more": [],
-"time": "13:30-13:35",
+"time": null,
 "t": "e4",
 "k": "rule",
-"h": "Submitted? Then get ready to share.",
-"flat": "13:30-13:35. · Say: “Five minutes to submit. (Show the submission link on the screen. Walk the room and help anyone stuck on it.) Break now. When you come back, think of one sentence: which step did you remove, and why? (Press the cup button.)”"
+"h": "Follow one form from desk to desk.",
+"flat": "Say: “Imagine you are invisible and you follow that request around the building. Every time it stops, you write down why. That list of stops is a process map, and it is what we build today.”"
+},
+{
+"say": "Four problems hide in most HR processes. (Go row by row, and ask the room for one example from their own unit for each.) The last column is the question you ask at every step of a map.",
+"do": null,
+"expect": "Approvals for delay, retyping into trackers for duplication.",
+"silent": null,
+"fallback": null,
+"more": [],
+"time": "5 min",
+"t": "e4",
+"k": "table",
+"h": "Four problems to look for.",
+"flat": "5 min. · Expect: Approvals for delay, retyping into trackers for duplication. · Say: “Four problems hide in most HR processes. (Go row by row, and ask the room for one example from their own unit for each.) The last column is the question you ask at every step of a map.”"
+},
+{
+"say": "A map turns a feeling into facts. Nobody can act on “it is slow”. Everybody can act on “step three waits three days”. One rule: do not improve anything yet. A map of how it should work hides how it really works.",
+"do": null,
+"expect": null,
+"silent": null,
+"fallback": null,
+"more": [],
+"time": null,
+"t": "e4",
+"k": "term",
+"h": "Map it as it is.",
+"flat": "Say: “A map turns a feeling into facts. Nobody can act on “it is slow”. Everybody can act on “step three waits three days”. One rule: do not improve anything yet. A map of how it should work hides how it really works.”"
+},
+{
+"say": "(Run the request.) Read the table with me. Copilot flagged the wait for the manager and the prices asked twice. Now the last row: who tells the trainer the room? Nobody. A step nobody owns is still a step, and it is often the one that fails.",
+"do": null,
+"expect": "Five or six steps. Delay: the manager's approval after three days. Duplicated effort: prices copied by hand, then asked for again by Procurement. Unclear ownership: nobody tells the trainer the room. A person decides: the manager approves the choice.",
+"silent": null,
+"fallback": "Show the backup table on the trainer screen. The backup is on the Day 3 backup results page, Demo 3.6.",
+"more": [
+"Click steps: (1) Open a new Copilot Chat. Paste the request: the story is inside it. (2) Read the table aloud. Ask the room which problem Copilot missed, if any. (3) Point out that Copilot flags the problems and does not fix them."
+],
+"time": "5 min, live",
+"t": "e4",
+"k": "list",
+"h": "A story into a step table.",
+"flat": "5 min, live. · Expect: Five or six steps. Delay: the manager's approval after three days. Duplicated effort: prices copied by hand, then asked for again by Procurement. Unclear ownership: nobody tells the trainer the room. A person decides: the manager approves the choice. · Click steps: (1) Open a new Copilot Chat. Paste the request: the story is inside it. (2) Read the table aloud. Ask the room which problem Copilot missed, if any. (3) Point out that Copilot flags the problems and does not fix them. · Fallback: Show the backup table on the trainer screen. The backup is on the Day 3 backup results page, Demo 3.6. · Say: “(Run the request.) Read the table with me. Copilot flagged the wait for the manager and the prices asked twice. Now the last row: who tells the trainer the room? Nobody. A step nobody owns is still a step, and it is often the one that fails.”"
+},
+{
+"say": "Your turn, in pairs. Story 1 in the process stories file: a training request. Copilot drafts the map; you check it against the story. Twelve minutes. (Start the timer.)",
+"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"expect": "About nine steps. Delays: the manager (4 to 6 days) and L&D (up to a week). Duplicated effort: printing, scanning and typing twice. Repetitive step: sending the Word form each time. Unclear ownership: nobody chases late approvals. A person decides: the line manager and L&D.",
+"silent": null,
+"fallback": "If Copilot is slow, map the story by hand in the template.",
+"more": [
+"Give the hint at about 4 min.",
+"Fast finishers have an extra task on the slide."
+],
+"time": "12 min work, then share",
+"t": "e4",
+"k": "task",
+"h": "Your turn 3.6: Map the training request (12 min, in pairs)",
+"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: About nine steps. Delays: the manager (4 to 6 days) and L&D (up to a week). Duplicated effort: printing, scanning and typing twice. Repetitive step: sending the Word form each time. Unclear ownership: nobody chases late approvals. A person decides: the line manager and L&D. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: If Copilot is slow, map the story by hand in the template. · Say: “Your turn, in pairs. Story 1 in the process stories file: a training request. Copilot drafts the map; you check it against the story. Twelve minutes. (Start the timer.)”"
+},
+{
+"say": "(Tap after hands.) Every approval is a human decision. Mark it, because it must stay with a person when you improve the process.",
+"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"expect": "Option B.",
+"silent": "ask one table to choose together, then tap their choice.",
+"fallback": null,
+"more": [],
+"time": "1 min",
+"t": "e4",
+"k": "check",
+"h": "Quick check",
+"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “(Tap after hands.) Every approval is a human decision. Mark it, because it must stay with a person when you improve the process.”"
+},
+{
+"say": "Now your own. If you have a process at work that wastes your time, map that one, with roles only, no names. If not, take your track's story.",
+"do": null,
+"expect": null,
+"silent": null,
+"fallback": null,
+"more": [],
+"time": null,
+"t": "e4",
+"k": "list",
+"h": "Your process, mapped.",
+"flat": "Say: “Now your own. If you have a process at work that wastes your time, map that one, with roles only, no names. If not, take your track's story.”"
+},
+{
+"say": "Twenty minutes. Map it as it is. (Start the timer, then walk the room and ask each person: where does it wait?)",
+"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"expect": "A step table from request to completion with an owner for each step, the waits, the four kinds of problem flagged and the human decisions marked.",
+"silent": null,
+"fallback": "Short of time: map the first five steps well.",
+"more": [
+"Give the hint at about 6 min."
+],
+"time": "20 min work, then share",
+"t": "e4",
+"k": "task",
+"h": "Your turn 3.7: Map your own HR process (20 min, on your own)",
+"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A step table from request to completion with an owner for each step, the waits, the four kinds of problem flagged and the human decisions marked. · Give the hint at about 6 min. · Fallback: Short of time: map the first five steps well. · Say: “Twenty minutes. Map it as it is. (Start the timer, then walk the room and ask each person: where does it wait?)”"
+},
+{
+"say": "Optional, if the block is on time: improve your map. Mark each step Person, Copilot or Agent, and take out two problems. Twenty-five minutes. (Start the timer.)",
+"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"expect": "A workflow card: every step marked Person, Copilot or Agent with one owner, every decision with a person, two problems removed, and, if time allows, one tested piece.",
+"silent": "Running late? Skip this slide and go to the debrief, then the comparison after the break.",
+"fallback": "Short of time: skip this task and go to the comparison. The trainer decides.",
+"more": [
+"Give the hint at about 8 min."
+],
+"time": "25 min work, then share",
+"t": "e4",
+"k": "task",
+"h": "Your turn 3.8: Optional: improve your map (25 min, on your own)",
+"flat": "25 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A workflow card: every step marked Person, Copilot or Agent with one owner, every decision with a person, two problems removed, and, if time allows, one tested piece. · Give the hint at about 8 min. · If the room is silent: Running late? Skip this slide and go to the debrief, then the comparison after the break. · Fallback: Short of time: skip this task and go to the comparison. The trainer decides. · Say: “Optional, if the block is on time: improve your map. Mark each step Person, Copilot or Agent, and take out two problems. Twenty-five minutes. (Start the timer.)”"
+},
+{
+"say": "Look at the steps you marked Copilot or Agent. Each one is a step you know how to build now, with this morning's agents. Break now. (Press the cup button.)",
+"do": "(Ask two people: which step in your process waits the longest, and who could change that?)",
+"expect": null,
+"silent": null,
+"fallback": null,
+"more": [],
+"time": "7 min",
+"t": "e4",
+"k": "rule",
+"h": "One owner per step. A person for every decision.",
+"flat": "7 min. · Do: (Ask two people: which step in your process waits the longest, and who could change that?) · Say: “Look at the steps you marked Copilot or Agent. Each one is a step you know how to build now, with this morning's agents. Break now. (Press the cup button.)”"
 },
 {
 "say": "Three days, three tools, side by side. (Go row by row.) The second row is the one to remember: one-off, many questions, same steps. When you are unsure, ask who starts it and how often it happens.",
@@ -498,14 +580,14 @@
 "say": "One minute each. I will start with mine, so you can see how short it is.",
 "do": "(Go round the room fast. Keep to one minute each.)",
 "expect": null,
-"silent": "Share your own example first: the training request, the printing step removed, the manager still approves.",
+"silent": "Share your own example first: the training request map, the printing step, and the manager who still approves.",
 "fallback": null,
 "more": [],
 "time": "14:05-14:20",
 "t": "e6",
 "k": "timer",
-"h": "One minute each: one process, one improvement.",
-"flat": "14:05-14:20. · Do: (Go round the room fast. Keep to one minute each.) · If the room is silent: Share your own example first: the training request, the printing step removed, the manager still approves. · Say: “One minute each. I will start with mine, so you can see how short it is.”"
+"h": "One minute each: one agent or one map.",
+"flat": "14:05-14:20. · Do: (Go round the room fast. Keep to one minute each.) · If the room is silent: Share your own example first: the training request map, the printing step, and the manager who still approves. · Say: “One minute each. I will start with mine, so you can see how short it is.”"
 },
 {
 "say": "Answer honestly. If you are not sure, pick your best guess. This measures the workshop, not you.",

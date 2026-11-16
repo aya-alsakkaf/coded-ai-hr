@@ -206,7 +206,7 @@ BANK_SECTIONS = ["Draft", "Compare", "Summarize", "Review"]
 def bank_intro():
     return [("p", "Save every request that worked, so you never start from a blank page. One line per entry:"),
             ("b", "Task: what you needed, in a few words."),
-            ("b", "Request: the full request, with the seven parts of the prompt checklist (" + ", ".join(a.lower() for a, _b, _c in D.INPUTS) + ")."),
+            ("b", "Request: the full request, with the five parts of the prompt checklist (" + ", ".join(a.lower() for a, _b, _c in D.INPUTS) + ")."),
             ("b", "Files: the approved files you attached."),
             ("b", "Check: how you checked the result before it went out.")]
 doc(F["bank"], "My HR Prompt Bank",
@@ -505,7 +505,7 @@ doc(F["catchbank"], "Catch-up Prompt Bank: eight tested requests",
     [("i", "Use this bank if you missed a day. Every request has been tested on the Mutla files.")] + bank_intro() +
     [x for h in BANK_SECTIONS for x in (("h", h), ("t", [BANK_HEAD] + [list(e) for e in CATCH[h]], BANK_W))])
 
-# 26 · five process stories (Day 2, Tasks 2.10 and 2.11): as-is, with the four problems hidden in each
+# 26 · five process stories (Day 3, Tasks 3.6 and 3.7): as-is, with the four problems hidden in each
 STORY_ORDER = ["ld", "pa", "cmp", "mp", "je"]
 assert sorted(STORY_ORDER) == sorted(D.STORIES) and STORY_ORDER[0] == "ld"
 doc(F["stories"], "HR process stories: how the work is done today", [
@@ -514,10 +514,10 @@ doc(F["stories"], "HR process stories: how the work is done today", [
 ] + [x for i, k in enumerate(STORY_ORDER, 1) for x in
      [("h", f"Story {i}: {D.STORIES[k]['title']}"), ("lbl", f"Owner: {D.STORIES[k]['owner']}")] + [("p", line) for line in D.STORIES[k]["story"]]])
 
-# 27 · the process map template (Day 2): the step table, empty
+# 27 · the process map template (Day 3): the step table, empty
 MAP_W = [1.2, 2.2, 3.6, 2.0, 2.0, 1.6, 2.2, 1.6]
 doc(F["maptpl"], "Process map template", [
-    ("p", "Map one HR process as it runs today, from the request to the result. One row for each step. Do not improve it yet: that is Day 3."),
+    ("p", "Map one HR process as it runs today, from the request to the result. One row for each step. Do not improve it yet: that is Task 3.8."),
     ("kv", ("Process", "")), ("kv", ("Track", "")), ("kv", ("Mapped by", "")),
     ("t", [D.MAP_COLS] + [[""] * len(D.MAP_COLS) for _ in range(10)], MAP_W, 0.9),
     ("h", "Mark these in the Problem column"),
@@ -529,10 +529,10 @@ doc(F["maptpl"], "Process map template", [
     ("b", "Roles only: no real names and no real data."),
 ])
 
-# 28 · the workflow card template (Day 3 final project), with the filled-in example
+# 28 · the workflow card template (Day 3, Task 3.8), with the filled-in example
 assert len(D.CARD_FIELDS) == len(D.CARD_EXAMPLE) == 9
-doc(F["card"], "Final project: improved workflow card", [
-    ("p", "Turn your process map into a better process. Mark each step Person, Copilot, Agent or Flow. Keep every approval and decision with a person."),
+doc(F["card"], "Improved workflow card", [
+    ("p", "Turn your process map into a better process. Mark each step Person, Copilot or Agent. Keep every approval and decision with a person."),
     ("h", "Your card"),
     ("t", [["Card line", "Your process"]] + [[f, ""] for f in D.CARD_FIELDS], [5.6, 10.4], 1.2),
     ("h", "Your tests"),
@@ -540,8 +540,8 @@ doc(F["card"], "Final project: improved workflow card", [
     ("pb",),
     ("h", "A filled-in example: a training request"),
     ("t", [["Card line", "Example"]] + [[a, b] for a, b in zip(D.CARD_FIELDS, D.CARD_EXAMPLE)], [5.6, 10.4]),
-    ("h", "Submit"),
-    ("p", "Submit your card and your tested piece on the CODED platform, with the link your trainer shares. Start the card with: " + D.DRAFT_LINE),
+    ("h", "Before you share it"),
+    ("p", "One owner for every step, every decision with a person, no real names or data. Start the card with: " + D.DRAFT_LINE),
 ])
 
 # 29 · the training request log (Day 3, Power Automate demo): one Excel table the flow adds rows to
@@ -566,6 +566,65 @@ def palog(path):
     chk = openpyxl.load_workbook(path)
     assert "TrainingRequests" in chk["Log"].tables and chk["Log"].max_row == len(D.PA_LOG) + 1
 palog(os.path.join(OUT, F["palog"])); WRITTEN.append(F["palog"])
+
+# 30 · the payroll cross-check (Day 2, Task 2.7): October, November and the approved movements; employee codes only
+def payroll(path):
+    wb = openpyxl.Workbook()
+    for title, rows in (("October", D.PAY_OCT), ("November", D.PAY_NOV)):
+        ws = wb.active if title == "October" else wb.create_sheet(title)
+        ws.title = title; ws.append(D.PAY_HEAD); _head(ws, 1)
+        for r in rows:
+            n = ws.max_row + 1
+            ws.append(list(r) + [f"=SUM(C{n}:F{n})"])
+        t = ws.max_row + 1
+        ws.append(["Total", "", f"=SUM(C2:C{t-1})", f"=SUM(D2:D{t-1})", f"=SUM(E2:E{t-1})", f"=SUM(F2:F{t-1})", f"=SUM(G2:G{t-1})"])
+        for c in ws[t]: c.font = openpyxl.styles.Font(bold=True)
+        for row in ws.iter_rows(min_row=2, min_col=3, max_col=7):
+            for c in row: c.number_format = "#,##0"
+        for col, w in zip("ABCDEFG", (15, 15, 13, 14, 16, 12, 13)): ws.column_dimensions[col].width = w
+        ws.freeze_panes = "A2"
+    mv = wb.create_sheet("Movements")
+    mv.append(["Movement", "Employee code", "Unit", "Details"]); _head(mv, 1)
+    for r in D.PAY_MOVES: mv.append(list(r))
+    for col, w in zip("ABCD", (14, 15, 15, 70)): mv.column_dimensions[col].width = w
+    ns = wb.create_sheet("Read me")
+    for line in ["October and November 2026 payroll for one HR payroll group, before the November bank file is sent.",
+                 "Movements lists every change approved by Personnel and Compensation for November.",
+                 "Employee codes only. No names. Use only your company's approved Copilot account.", D.FICTION]:
+        ns.append([line])
+    ns.column_dimensions["A"].width = 100
+    for sh in wb.worksheets: sh.oddHeader.center.text = HEADER
+    wb.properties.creator = "CODED"; wb.properties.lastModifiedBy = "CODED"; wb.properties.title = "Payroll check: October and November 2026"
+    wb.properties.created = FIXED; wb.properties.modified = FIXED
+    wb.save(path); _stable(path)
+    chk = openpyxl.load_workbook(path)
+    assert chk["November"].max_row == len(D.PAY_NOV) + 2 and chk["Movements"].max_row == len(D.PAY_MOVES) + 1
+payroll(os.path.join(OUT, F["payroll"])); WRITTEN.append(F["payroll"])
+
+# 31 · the onboarding checklist (Day 3, Task 3.4 option: the Onboarding Buddy's knowledge)
+doc(F["onboard"], "New joiner onboarding checklist 2026", [
+    ("i", "Personnel and Administration · Approved 1 September 2026 · Version 2"),
+    ("h", "1. Before the first day"),
+    ("b", "Personnel prepares the ID card by the Thursday before the start date."),
+    ("b", "IT sets up the laptop and email account 2 working days before the start date."),
+    ("b", "Learning and Development emails the first-day agenda in the week before the start date."),
+    ("h", "2. The first day"),
+    ("b", "Head office staff: orientation from 8:00 to 13:00 in Training Room 2, head office."),
+    ("b", "Field site staff: report at 6:30 to the HSE office of the site named in the offer letter. The site safety induction comes first."),
+    ("b", "Bring your civil ID and your offer letter."),
+    ("b", "Collect your ID card at the Personnel counter (head office) or from the site administrator (field sites)."),
+    ("h", "3. The first week"),
+    ("b", "Medical check at Medical Services within 5 working days of the start date. Book it at the Medical Services desk."),
+    ("b", "Give the bank details form to Payroll within 3 working days, so that the first salary is paid on time."),
+    ("b", "Meet your line manager to agree your first 90-day goals."),
+    ("h", "4. The first month"),
+    ("b", "Complete two e-learning courses by the end of week 2: Code of Conduct, and HSE Induction."),
+    ("b", "The probation period is 6 months. Your line manager confirms it in writing."),
+    ("h", "5. Who to ask"),
+    ("t", [["Topic", "Ask"], ["ID card, contract, letters", "Personnel and Administration"], ["Salary and allowances", "Compensation"],
+           ["Courses and e-learning", "Learning and Development"], ["Laptop and email", "IT Service Desk"], ["Medical check", "Medical Services"]], [7.0, 9.0]),
+    ("box", ("Not in this checklist", ["Salary, grade, allowance amounts and contract terms. Ask Personnel and Administration or Compensation."])),
+])
 
 # ------------------------------------------------------------------ every file in ALL_FILES, nothing more
 assert sorted(WRITTEN) == sorted(ALL_FILES), f"gen_files: wrote {sorted(set(WRITTEN) ^ set(ALL_FILES))} out of step with ALL_FILES"

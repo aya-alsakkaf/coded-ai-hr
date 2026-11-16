@@ -74,10 +74,18 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
     a welcome slide about CODED and the trainer, "DRAFT · Reviewed by: ___" on outputs, nothing printed.
 26. Engine changes for three-layer hints, no "Your turn" on day pages and COPY on the project page wait for Aya's OK.
     The Day 1 lab already holds `hints` and `prompt` fields for that change; the engine shows the first hint today.
-27. The MAP has 14 questions: Day 1 six, Day 2 five, Day 3 three. Answer key in content.py (MAP_KEY). PRE and POST in the
+27. The MAP has 14 questions: Day 1 six, Day 2 four, Day 3 four (q11 moved to Day 3 on 16 Nov). Answer key in content.py (MAP_KEY). PRE and POST in the
     portal are updated only after Aya confirms the change.
 28. 16 Nov 2026: Days 2 and 3 rebuilt (round B). Day 2: safe data first, meetings, follow-ups, Excel, summary and slides, then
     process maps (Tasks 2.1 to 2.12). Day 3: two agents in Agent Builder, a trainer-only Power Automate demo, the final project
     (Tasks 3.6 and 3.7) and Copilot, agent or flow. Slides: Day 1 64, Day 2 57, Day 3 40. The Day 3 lab is the Final project page.
     The engine changes in Decision 26 are approved and in place. The final project submission form in the portal is not created
     yet: until it exists, the page says the trainer shares the link (`PROJECT_SUBMIT` in content.py).
+29. 16 Nov 2026 (round C, Aya): the prompt checklist has five parts (Context, Task, Data, Constraints, Format); `five()` in
+    content_demos.py folds Role into Context and Tone plus Output format into Format, so the request words do not change.
+    Day 2 is "Meetings, Reporting and Presentations" (PowerPoint gets Block 6); the workflow mapping moved to Day 3, Block 4
+    ("HR Agents, Workflows and an Introduction to Power Automate"). The final project is optional (Task 3.8), agents only.
+    Slides: Day 1 69, Day 2 55, Day 3 46. The Power Automate demo is a recorded video: a placeholder until Aya asks to build
+    and film the flow, after Copilot access is fixed with the CODED admin team.
+30. Survey access: yousif.d@, moudhi@, ahmadmaher@ and ghareeb@joincoded.com are invited to PRE, POST and the final survey.
+

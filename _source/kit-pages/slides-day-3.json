@@ -10,8 +10,8 @@
 "Thursday 19 Nov",
 "09:00-15:00",
 "AI Fundamentals for HR",
-"HR Agents and an Introduction to Power Automate",
-"Build and test two HR agents in Agent Builder, watch a Power Automate flow run from form to email, then improve the process you mapped on Day 2.",
+"HR Agents, Workflows and an Introduction to Power Automate",
+"Build and test two HR agents in Agent Builder, watch a Power Automate flow run from form to email, and map an HR process from request to result.",
 "CODED, Alsharekh room, Frontend Campus",
 "Kuwait"
 ],
@@ -34,7 +34,7 @@
 "Write an agent's instructions with the prompt checklist, and build it in Agent Builder with approved files.",
 "Test an agent with a normal, an incomplete and a sensitive question, and fix one line at a time.",
 "Explain what a Power Automate flow does, and when an agent or Copilot cannot do the job.",
-"Improve an HR process, keep every decision with a person, and build and test one piece of it."
+"Map an HR process from request to result, and mark the delays, duplicates, owners and human decisions."
 ],
 "chrome": [
 "Outcomes for today",
@@ -59,19 +59,19 @@
 "Instructions, knowledge, starter prompts · Tasks 3.1 and 3.2",
 "10:05-10:45",
 "Block 2 · Test, fix and build a second agent",
-"Normal, incomplete, sensitive · Tasks 3.3 and 3.4",
+"Normal, incomplete, sensitive; your choice of agent · Tasks 3.3 and 3.4",
 "11:00-11:35",
 "Block 3 · Power Automate: a trainer demo",
 "Trigger, actions, a condition, a person who approves",
 "12:15-13:35",
-"Final project · Improve your HR process",
-"Redesign it, build one piece, test it, submit · Tasks 3.6 and 3.7",
+"Block 4 · From one task to a workflow",
+"Delays, duplicates, owners, human decisions · Tasks 3.6 and 3.7, Task 3.8 if time allows",
 "13:50-14:05",
 "Copilot, agent or flow?",
 "The tools side by side, and a card sort",
 "14:05-14:20",
 "One-minute share-outs",
-"One process, one improvement",
+"One agent or one map",
 "14:20-14:40",
 "Post-MAP test, then the final survey",
 "Two QR codes",
@@ -87,12 +87,12 @@
 "n": 4,
 "id": "e0rule",
 "kind": "rule",
-"title": "Safe data. Checked figures. A clear map.",
+"title": "Safe data, checked figures, clear slides.",
 "topic": "e0",
 "kit": [
 "Callback · Day 2",
-"Safe data. Checked figures. A clear map.",
-"Yesterday you redacted a note, recapped a meeting into actions, checked two figures and mapped a process. Three questions, then today."
+"Safe data, checked figures, clear slides.",
+"Yesterday you redacted a note, recapped a meeting into actions, checked a training count and a payroll file, and built two decks. Three questions, then today."
 ],
 "chrome": []
 },
@@ -229,7 +229,7 @@
 "Five parts. You know four already.",
 "An agent answers. It does not send, route or approve.",
 "Name and description: what it is for, in one line.",
-"Instructions: the seven checklist parts, written once.",
+"Instructions: the five checklist parts, written once.",
 "Knowledge: the approved files it answers from.",
 "Starter prompts and the test pane: how people start, and how you test it."
 ],
@@ -288,11 +288,11 @@
 "mutla-allowances-policy-v4.docx",
 "mutla-attendance-rules-2026.docx",
 "mutla-training-policy-2026.docx",
-"Open a blank document. Write the instructions for Mutla HR Policy Helper with the seven checklist parts.",
+"Open a blank document. Write the instructions for Mutla HR Policy Helper with the five checklist parts.",
 "Say which files it may use, and the dates of the two allowances versions.",
 "Say what it must never answer, when it must ask first, and where it refers people.",
 "Read it as if you were the agent. Could you answer a question you are not sure about?",
-"The agent's instructions, in seven parts.",
+"The agent's instructions, in five parts.",
 "Your turn: write the agent&#x27;s instructions.",
 "Block 1 · Build an HR agent"
 ],
@@ -313,7 +313,7 @@
 "Agent",
 "Test",
 "Flow",
-"Project",
+"Map",
 "Compare"
 ]
 },
@@ -327,7 +327,7 @@
 "Task 3.2",
 "on your own",
 "Agent Builder",
-"If the answer has no section number, check the Output format line in your instructions.",
+"If the answer has no section number, check the Format line in your instructions.",
 "mutla-leave-policy-2026.docx",
 "mutla-allowances-policy-v3.docx",
 "mutla-allowances-policy-v4.docx",
@@ -368,7 +368,7 @@
 "Agent",
 "Test",
 "Flow",
-"Project",
+"Map",
 "Compare"
 ]
 },
@@ -477,7 +477,7 @@
 "Agent",
 "Test",
 "Flow",
-"Project",
+"Map",
 "Compare"
 ]
 },
@@ -491,21 +491,20 @@
 "Task 3.4",
 "on your own",
 "Agent Builder",
-"The incomplete test has no duties. What must the coach do before it writes?",
+"The incomplete test leaves something out. What must your agent ask before it answers?",
 "mutla-jd-template-2026.docx",
 "mutla-job-evaluation-factors.docx",
-"Create a second agent: Mutla Job Description Coach. It helps line managers draft job descriptions.",
-"Write its instructions with the seven checklist parts. Knowledge: the 2026 template and the job evaluation factors.",
-"Run the three tests below and log them.",
+"mutla-onboarding-checklist-2026.docx",
+"Choose one. The Job Description Coach helps line managers draft job descriptions. The Onboarding Buddy answers new joiners from the onboarding checklist.",
+"Write its instructions with the checklist. Knowledge: the 2026 template and the evaluation factors, or the onboarding checklist.",
+"Run its three tests (on the prompt sheet and the Day 3 lab page) and log them.",
 "Fix one line if a test fails, and test again.",
-"Test · Normal",
-"Help me write the job description for a Payroll Officer. Duties: check monthly payroll changes; answer employee pay questions; prepare the payroll report; keep payroll records; work with Compensation on allowances.",
-"Test · Incomplete",
-"Write a job description for a Payroll Officer.",
-"Test · Sensitive",
-"What grade should the Payroll Officer job get?",
+"Coach: three tests, one at a time",
+"Help me write the job description for a Payroll Officer. Duties: check monthly payroll changes; answer employee pay questions; prepare the payroll report; keep payroll records; work with Compensation on allowances. | Write a job description for a Payroll Officer. | What grade should the Payroll Officer job get?",
+"Buddy: three tests, one at a time",
+"What do I need to bring on my first day? | Where do I go on my first day? | How much will my housing allowance be in my first month?",
 "Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
-"Your turn: a second agent: the Job Description Coach.",
+"Your turn: a second agent: choose one.",
 "Block 2 · Test, fix and build a second agent"
 ],
 "chrome": [
@@ -529,7 +528,7 @@
 "Agent",
 "Test",
 "Flow",
-"Project",
+"Map",
 "Compare"
 ]
 },
@@ -615,16 +614,34 @@
 {
 "n": 25,
 "id": "e3live",
-"kind": "list",
+"kind": "table",
 "title": "From a form to an email.",
 "topic": "e3",
 "kit": [
-"Demo 3.5 · live in Power Automate · Forms · Excel · Outlook",
+"Demo 3.5 · video demo in Power Automate",
 "From a form to an email.",
-"Trigger, actions, a condition. A person still decides.",
-"What I will show: A training request flow: a form, a row in the log, an approval, a condition and an email.",
-"Watch for: Which step a person does. Everything else runs by itself.",
-"Files: mutla-training-request-log.xlsx"
+"Video: the recorded demo plays here.",
+"Step",
+"App",
+"What it does",
+"Trigger: When a new response is submitted",
+"Microsoft Forms",
+"The training request form",
+"Action: Get response details",
+"Microsoft Forms",
+"Reads the answers",
+"Action: Add a row into a table",
+"Excel Online",
+"Logs the request in TrainingRequests",
+"Action: Start and wait for an approval",
+"Approvals",
+"Sends it to the line manager and waits",
+"Condition: Outcome is equal to Approve",
+"Control",
+"Splits the flow: approved or not",
+"Action: Send an email (V2)",
+"Outlook",
+"Tells the employee the result"
 ],
 "chrome": []
 },
@@ -685,66 +702,122 @@
 },
 {
 "n": 29,
-"id": "e4brief",
-"kind": "list",
-"title": "Your map, made better.",
+"id": "e4story",
+"kind": "story",
+"title": "Block 4 · From one task to a workflow",
 "topic": "e4",
 "kit": [
-"Final project · improve your HR process",
-"Your map, made better.",
-"Every decision about a person stays with a person.",
-"Start from your Day 2 map, or your track's story.",
-"Mark each step: Person, Copilot, Agent or Flow.",
-"Remove at least two problems. Give every step one owner.",
-"Build one piece, test it three ways, and submit on the CODED platform."
+"Block 4 · From one task to a workflow",
+"Thursday 22 October, 10:00",
+"An engineer asked for a safety course on 1 October. His approval arrives today, 22 October. The course started on 20 October.",
+"Three weeks for one signature.",
+"See an HR task as a workflow, and find where time and effort are lost.",
+"04"
 ],
-"chrome": []
+"chrome": [
+"The starting point",
+"By the end of this block:"
+]
 },
 {
 "n": 30,
-"id": "e4ex",
-"kind": "table",
-"title": "A training request, improved.",
+"id": "e4an",
+"kind": "rule",
+"title": "Follow one form from desk to desk.",
 "topic": "e4",
 "kit": [
-"Final project · an example",
-"A training request, improved.",
-"The full example card is on page 2 of the template.",
-"Card line",
-"Example",
-"Trigger",
-"The employee submits a training request form.",
-"Steps",
-"1 Form (Flow) · 2 Log the request (Flow) · 3 Line manager approves (Person) · 4 L&D approves (Person) · 5 Email the result (Flow, text drafted once with Copilot) · 6 Answer policy questions (Agent)",
-"Decisions",
-"The line manager and L&D approve. The flow never approves.",
-"Removed",
-"No printing or scanning, no typing twice, a reminder after 2 working days instead of nobody chasing."
+"Block 4 · the picture",
+"Follow one form from desk to desk.",
+"Walk behind one training request for three weeks. You would see where it waits, who types it again, and where it gets lost."
 ],
 "chrome": []
 },
 {
 "n": 31,
+"id": "e4prob",
+"kind": "table",
+"title": "Four problems to look for.",
+"topic": "e4",
+"kit": [
+"Block 4 · four problems",
+"Four problems to look for.",
+"Find them first. Fix them after.",
+"Problem",
+"What it looks like",
+"Ask",
+"Delay",
+"A step waits for days, often for one person.",
+"How long does it wait, and for whom?",
+"Duplicated effort",
+"The same information is typed, printed or checked more than once.",
+"Who types or checks it again?",
+"Unclear ownership",
+"Nobody is sure who does the next step, or who chases it.",
+"Who does the next step? Who chases it?",
+"Repetitive step",
+"The same manual action every time, with no judgment in it.",
+"Is there any judgment in it?"
+],
+"chrome": []
+},
+{
+"n": 32,
+"id": "e4t1",
+"kind": "term",
+"title": "Map it as it is.",
+"topic": "e4",
+"kit": [
+"Block 4 · the idea",
+"Map it as it is.",
+"Process map",
+"A table of every step from request to result: who does it, what goes in and comes out, how long it waits, the problem, and whether a person must decide.",
+"“The process is slow.”",
+"“Step 3 waits three days for one approval.”",
+"Map it as it is first. Improve it after."
+],
+"chrome": [
+"The idea"
+]
+},
+{
+"n": 33,
+"id": "e4live",
+"kind": "list",
+"title": "A story into a step table.",
+"topic": "e4",
+"kit": [
+"Demo 3.6 · live in Copilot Chat",
+"A story into a step table.",
+"Map it as it is. Flag the problems. Do not fix them yet.",
+"What I will show: A five-sentence story about booking an external trainer, turned into a step table.",
+"Watch for: The flags in the Problem column, and the step that nobody owns.",
+"Files: none: the request is on the prompt sheet"
+],
+"chrome": []
+},
+{
+"n": 34,
 "id": "e4task1",
 "kind": "task",
 "title": "Your turn 3.6",
 "topic": "e4",
 "kit": [
 "Task 3.6",
-"on your own",
-"Word + Copilot Chat",
-"Start with the steps you marked as a problem. Which one disappears, and which one becomes a flow?",
-"mutla-workflow-card-template.docx",
+"in pairs",
+"Copilot Chat + Word",
+"Find the step that nobody owns.",
+"Count the days from the request to the decision in the worst case.",
 "mutla-process-stories.docx",
-"Open your map from Task 2.11 and the workflow card template.",
-"For each step, decide: Person, Copilot, Agent or Flow. Keep every approval and decision with a person.",
-"Remove the delays, duplicates and repeated steps you flagged. Give every step one owner.",
-"Fill in every line of the workflow card. Ask Copilot to check the card for a missing owner or decision, then check it yourself.",
-"Check my card",
-"Check the attached workflow card. List any step with no owner, any decision that is given to Copilot, an agent or a flow instead of a person, and any problem from the map that is still in the process. Do not rewrite the card.",
+"mutla-process-map-template.docx",
+"Open the process stories file. Read story 1, the training request.",
+"Run the request below to draft the step table.",
+"Check it by hand against the story. Add any step or problem Copilot missed.",
+"Copy the final table into the map template.",
+"Map story 1",
+"Turn process story 1 in the attached file into a step table. Use only story 1 in the attached file. Do not improve the process. Only map it. Flag each step that has a delay, duplicated effort, unclear ownership or a repetitive step. Mark every step where a person must decide. A table: step, who, what happens, input, output, wait, problem, a person decides?",
 "Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
-"Your turn: final project, part 1: redesign your process.",
-"Final project"
+"Your turn: map the training request.",
+"Block 4 · From one task to a workflow"
 ],
 "chrome": [
 "Your turn",
@@ -767,12 +840,50 @@
 "Agent",
 "Test",
 "Flow",
-"Project",
+"Map",
 "Compare"
 ]
 },
 {
-"n": 32,
+"n": 35,
+"id": "e4chk",
+"kind": "check",
+"title": "Quick check",
+"topic": "e4",
+"kit": [
+"In your map, the line manager signs every training request. What does that step need?",
+"Problem: repetitive step",
+"“A person decides?”: Yes",
+"Wait: 0 days"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 36,
+"id": "e4brief",
+"kind": "list",
+"title": "Your process, mapped.",
+"topic": "e4",
+"kit": [
+"Block 4 · map your own HR process",
+"Your process, mapped.",
+"Map it first. If there is time, you improve it in Task 3.8.",
+"Choose: your track's story (2 to 5), or a process from your own work, written with roles only.",
+"Map: from the request to the result, one row per step.",
+"Flag: delays, duplicated effort, unclear ownership, repetitive steps.",
+"Mark: every step where a person must decide."
+],
+"chrome": []
+},
+{
+"n": 37,
 "id": "e4task2",
 "kind": "task",
 "title": "Your turn 3.7",
@@ -780,16 +891,17 @@
 "kit": [
 "Task 3.7",
 "on your own",
-"Copilot Chat or Agent Builder",
-"Pick the step that happens most often. That is where the piece saves the most time.",
-"mutla-workflow-card-template.docx",
-"Pick one step on your card marked Copilot or Agent. Build it: a checklist request, or agent instructions.",
-"Test it three ways: a normal case, an incomplete case and a sensitive case. Log the results.",
-"Fix one line and test again. Add the piece and the test log to your card.",
-"Submit the card on the CODED platform, with the link the trainer shares.",
-"Your workflow card, one tested piece, submitted on the CODED platform.",
-"Your turn: final project, part 2: build, test, submit.",
-"Final project"
+"Copilot Chat + Word",
+"Start where the request starts, and stop when the requester has the result.",
+"mutla-process-stories.docx",
+"mutla-process-map-template.docx",
+"Choose: your track's story (stories 2 to 5) or a process from your own work. For your own work, write the story with roles only: no names, no real data.",
+"Write your own checklist request to turn the story into a step table. Flag the problems; do not fix them.",
+"Check the table by hand. Mark every step where a person must decide.",
+"Save the map. If there is time, you improve it in Task 3.8.",
+"A map of one HR process, with problems and human decisions marked.",
+"Your turn: map your own HR process.",
+"Block 4 · From one task to a workflow"
 ],
 "chrome": [
 "Your turn",
@@ -808,25 +920,72 @@
 "Agent",
 "Test",
 "Flow",
-"Project",
+"Map",
 "Compare"
 ]
 },
 {
-"n": 33,
-"id": "e4done",
-"kind": "rule",
-"title": "Submitted? Then get ready to share.",
+"n": 38,
+"id": "e4task3",
+"kind": "task",
+"title": "Your turn 3.8",
 "topic": "e4",
 "kit": [
-"Final project · submit",
-"Submitted? Then get ready to share.",
-"Use the submission link on the screen. After the break, you have one minute to share one improvement."
+"Task 3.8",
+"on your own",
+"Word + Copilot Chat or Agent Builder",
+"Start with the steps you marked as a problem. Which can disappear, and which can Copilot or an agent help with?",
+"mutla-workflow-card-template.docx",
+"Mark each step on your map: Person, Copilot or Agent. Keep every approval and decision with a person.",
+"Remove at least two problems you flagged. Give every step one owner.",
+"Fill in the workflow card. Run the check request below, then check the card yourself.",
+"If time is left: build the piece for one Copilot or Agent step, and test it once.",
+"Check my card",
+"Check the attached workflow card. List any step with no owner, any decision that is given to Copilot or an agent instead of a person, and any problem from the map that is still in the process. Do not rewrite the card.",
+"Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
+"Your turn: optional: improve your map.",
+"Block 4 · From one task to a workflow"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"Copy",
+"copy, paste, then check",
+"is on your",
+"prompt sheet",
+"If the tool is slow, continue from the backup on the screen.",
+"Where we are",
+"Agent",
+"Test",
+"Flow",
+"Map",
+"Compare"
+]
+},
+{
+"n": 39,
+"id": "e4deb",
+"kind": "rule",
+"title": "One owner per step. A person for every decision.",
+"topic": "e4",
+"kit": [
+"Block 4 · debrief",
+"One owner per step. A person for every decision.",
+"The maps that helped most named one role for each step, showed every wait, and marked each approval as a human decision."
 ],
 "chrome": []
 },
 {
-"n": 34,
+"n": 40,
 "id": "e5cmp",
 "kind": "table",
 "title": "Three tools. Three different jobs.",
@@ -862,13 +1021,13 @@
 "chrome": []
 },
 {
-"n": 35,
+"n": 41,
 "id": "e5sort",
 "kind": "sort",
 "title": "Copilot, agent or flow? Tap a card.",
 "topic": "e5",
 "kit": [
-"Demo 3.8 · card sort",
+"Demo 3.9 · card sort",
 "Copilot, agent or flow? Tap a card.",
 "Draft a one-off reply to an employee's complaint",
 "Answer the same leave questions for 300 employees",
@@ -887,7 +1046,7 @@
 ]
 },
 {
-"n": 36,
+"n": 42,
 "id": "e5chk",
 "kind": "check",
 "title": "Quick check",
@@ -908,15 +1067,15 @@
 ]
 },
 {
-"n": 37,
+"n": 43,
 "id": "e6share",
 "kind": "timer",
-"title": "One minute each: one process, one improvement.",
+"title": "One minute each: one agent or one map.",
 "topic": "e6",
 "kit": [
 "Share-outs · 14:05",
-"One minute each: one process, one improvement.",
-"Say which process you chose, which step you removed or changed, and who still decides."
+"One minute each: one agent or one map.",
+"Show your agent's best test, or the biggest problem in your map and who still decides."
 ],
 "chrome": [
 "+1 min",
@@ -927,7 +1086,7 @@
 ]
 },
 {
-"n": 38,
+"n": 44,
 "id": "e7map",
 "kind": "map",
 "title": "MAP test · after",
@@ -954,7 +1113,7 @@
 ]
 },
 {
-"n": 39,
+"n": 45,
 "id": "w3",
 "kind": "wrap",
 "title": "Wrap-up",
@@ -964,7 +1123,7 @@
 "Your first week: one green task a day. Your first month: one agent or one mapped process for your unit.",
 "1",
 "You built",
-"Two tested HR agents and an improved workflow card with one tested piece.",
+"Two tested HR agents and a map of one HR process.",
 "2",
 "You saw",
 "A flow that carries a request from a form to an email, with a person who approves.",
@@ -979,7 +1138,7 @@
 ]
 },
 {
-"n": 40,
+"n": 46,
 "id": "close3",
 "kind": "close",
 "title": "Close",

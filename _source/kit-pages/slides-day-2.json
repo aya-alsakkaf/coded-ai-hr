@@ -10,8 +10,8 @@
 "Wednesday 18 Nov",
 "09:00-15:00",
 "AI Fundamentals for HR",
-"Meetings, Reporting and Mapping Your HR Workflow",
-"Protecting employee data, meetings and follow-ups, Excel figures you can check, summaries and slides, and a map of one HR process from request to result.",
+"Meetings, Reporting and Presentations",
+"Protecting employee data, meetings and follow-ups, Excel figures you can check, summaries in Word, and decks in PowerPoint.",
 "CODED, Alsharekh room, Frontend Campus",
 "Kuwait"
 ],
@@ -33,8 +33,8 @@
 "kit": [
 "Sort any HR task as green, amber or red, and redact a note before Copilot sees it.",
 "Prepare a meeting, recap it into actions, owners and deadlines, and follow it up in Outlook.",
-"Check every Excel figure against a control total, and every slide against its source.",
-"Map an HR process from request to result, and mark the delays, duplicates, owners and human decisions."
+"Check Excel figures against a control total or a list of approved changes.",
+"Turn checked facts into a Word summary and a PowerPoint deck, and check every number on every slide."
 ],
 "chrome": [
 "Outcomes for today",
@@ -53,7 +53,7 @@
 "Every exercise uses Mutla Oil Company, a fictional Kuwaiti oil and gas company with five HR units. A lunch and Dhuhr break each day.",
 "09:00-09:10",
 "Callback quiz",
-"Three questions on Day 1",
+"Three questions on Day 1, and the old way and the AI way",
 "09:10-09:45",
 "Block 1 · Protecting employee data",
 "Green, amber, red; redact, then ask · Task 2.1",
@@ -65,16 +65,13 @@
 "Same owners, same dates · Tasks 2.4 and 2.5",
 "12:15-13:00",
 "Block 4 · Excel: figures you can check",
-"Ask, see the rows, check the control total · Tasks 2.6 and 2.7",
+"A control total; payroll month against month · Tasks 2.6 and 2.7",
 "13:00-13:35",
-"Block 5 · From findings to a summary and slides",
-"A management summary in Word, five slides · Tasks 2.8 and 2.9",
-"13:50-14:20",
-"Block 6 · From one task to a workflow",
-"Delay, duplicated effort, unclear ownership, repetitive steps · Task 2.10",
-"14:20-14:50",
-"Block 7 · Map your own HR process",
-"Your track's story or your own work · Tasks 2.11 and 2.12",
+"Block 5 · Word: a summary for management",
+"Finding, limits, next step · Tasks 2.8 and 2.9",
+"13:50-14:50",
+"Block 6 · PowerPoint: from document to deck",
+"Create, edit in rounds, check every slide · Tasks 2.10 and 2.11",
 "14:50-15:00",
 "Which app for which job, and wrap",
 "Word, Outlook, Teams, Excel, PowerPoint"
@@ -87,11 +84,11 @@
 "n": 4,
 "id": "c0rule",
 "kind": "rule",
-"title": "Seven parts in. A source for every line out.",
+"title": "A full brief in, a source for every line out.",
 "topic": "c0",
 "kit": [
 "Callback · Day 1",
-"Seven parts in. A source for every line out.",
+"A full brief in, a source for every line out.",
 "Yesterday you wrote with the checklist, fixed drafts with follow-ups and traced lines to their source. Three quick questions, then today."
 ],
 "chrome": []
@@ -104,9 +101,9 @@
 "topic": "c0",
 "kit": [
 "Copilot's job description adds a team of six that is not in the role information. Which part of the checklist was weak?",
-"Tone: it should sound more formal",
+"Format: it should sound more formal",
 "Constraints: add no duty or team size",
-"Role: write as an HR officer"
+"Context: you are an HR officer"
 ],
 "chrome": [
 "Quick check",
@@ -161,6 +158,47 @@
 },
 {
 "n": 8,
+"id": "c0old",
+"kind": "table",
+"title": "The same HR work, done the AI way.",
+"topic": "c0",
+"kit": [
+"Callback · the old way and the AI way",
+"The same HR work, done the AI way.",
+"Copilot takes the drafting and checking steps. Decisions stay with HR.",
+"HR job",
+"Today",
+"With Copilot",
+"When",
+"Job descriptions",
+"Copy last year's and edit by hand",
+"Draft from the template and role sheet, then trace every line",
+"Day 1",
+"Policy questions",
+"Staff email HR; HR answers each one",
+"An agent answers with the section; HR handles the cases",
+"Days 1 and 3",
+"Meetings",
+"Notes that nobody sends",
+"A recap with owners and dates, sent the same day",
+"Day 2",
+"Payroll checks",
+"Compare two months by eye",
+"Copilot lists each change; a person confirms why",
+"Day 2",
+"Onboarding",
+"New joiners email the same questions",
+"An onboarding agent answers from the checklist",
+"Day 3",
+"Training requests",
+"Printed, signed, scanned, typed twice",
+"Mapped, then improved step by step",
+"Day 3"
+],
+"chrome": []
+},
+{
+"n": 9,
 "id": "c1story",
 "kind": "story",
 "title": "Block 1 · Protecting employee data",
@@ -179,7 +217,7 @@
 ]
 },
 {
-"n": 9,
+"n": 10,
 "id": "c1an",
 "kind": "rule",
 "title": "A traffic light before every prompt.",
@@ -192,7 +230,7 @@
 "chrome": []
 },
 {
-"n": 10,
+"n": 11,
 "id": "c1safe",
 "kind": "cards",
 "title": "Look at the light before you type.",
@@ -214,7 +252,7 @@
 "chrome": []
 },
 {
-"n": 11,
+"n": 12,
 "id": "c1sort",
 "kind": "sort",
 "title": "Green, amber or red? Tap a card.",
@@ -239,7 +277,7 @@
 ]
 },
 {
-"n": 12,
+"n": 13,
 "id": "c1t1",
 "kind": "term",
 "title": "Redact first. Then ask.",
@@ -258,7 +296,7 @@
 ]
 },
 {
-"n": 13,
+"n": 14,
 "id": "c1chk1",
 "kind": "check",
 "title": "Quick check",
@@ -279,7 +317,7 @@
 ]
 },
 {
-"n": 14,
+"n": 15,
 "id": "c1live",
 "kind": "list",
 "title": "Redact first. Then ask.",
@@ -295,7 +333,7 @@
 "chrome": []
 },
 {
-"n": 15,
+"n": 16,
 "id": "c1task",
 "kind": "task",
 "title": "Your turn 2.1",
@@ -339,12 +377,12 @@
 "Meetings",
 "Outlook",
 "Excel",
-"Reports",
-"Map"
+"Word",
+"PowerPoint"
 ]
 },
 {
-"n": 16,
+"n": 17,
 "id": "c1deb",
 "kind": "rule",
 "title": "Six details out. The case is still clear.",
@@ -357,7 +395,7 @@
 "chrome": []
 },
 {
-"n": 17,
+"n": 18,
 "id": "c2story",
 "kind": "story",
 "title": "Block 2 · Before and after the meeting",
@@ -376,7 +414,7 @@
 ]
 },
 {
-"n": 18,
+"n": 19,
 "id": "c2when",
 "kind": "table",
 "title": "Copilot drafts the page around the meeting.",
@@ -401,7 +439,7 @@
 "chrome": []
 },
 {
-"n": 19,
+"n": 20,
 "id": "c2live1",
 "kind": "list",
 "title": "Agenda, brief and discussion points.",
@@ -417,7 +455,7 @@
 "chrome": []
 },
 {
-"n": 20,
+"n": 21,
 "id": "c2task1",
 "kind": "task",
 "title": "Your turn 2.2",
@@ -458,12 +496,12 @@
 "Meetings",
 "Outlook",
 "Excel",
-"Reports",
-"Map"
+"Word",
+"PowerPoint"
 ]
 },
 {
-"n": 21,
+"n": 22,
 "id": "c2t1",
 "kind": "term",
 "title": "What, who, by when.",
@@ -482,7 +520,7 @@
 ]
 },
 {
-"n": 22,
+"n": 23,
 "id": "c2live2",
 "kind": "list",
 "title": "Notes into decisions and actions.",
@@ -498,7 +536,7 @@
 "chrome": []
 },
 {
-"n": 23,
+"n": 24,
 "id": "c2chk",
 "kind": "check",
 "title": "Quick check",
@@ -519,7 +557,7 @@
 ]
 },
 {
-"n": 24,
+"n": 25,
 "id": "c2task2",
 "kind": "task",
 "title": "Your turn 2.3",
@@ -556,12 +594,12 @@
 "Meetings",
 "Outlook",
 "Excel",
-"Reports",
-"Map"
+"Word",
+"PowerPoint"
 ]
 },
 {
-"n": 25,
+"n": 26,
 "id": "c2deb",
 "kind": "rule",
 "title": "The open question stays open.",
@@ -574,7 +612,7 @@
 "chrome": []
 },
 {
-"n": 26,
+"n": 27,
 "id": "c3story",
 "kind": "story",
 "title": "Block 3 · Follow-ups and reminders",
@@ -593,7 +631,7 @@
 ]
 },
 {
-"n": 27,
+"n": 28,
 "id": "c3live",
 "kind": "list",
 "title": "A follow-up and a reminder.",
@@ -609,7 +647,7 @@
 "chrome": []
 },
 {
-"n": 28,
+"n": 29,
 "id": "c3task1",
 "kind": "task",
 "title": "Your turn 2.4",
@@ -647,12 +685,12 @@
 "Meetings",
 "Outlook",
 "Excel",
-"Reports",
-"Map"
+"Word",
+"PowerPoint"
 ]
 },
 {
-"n": 29,
+"n": 30,
 "id": "c3task2",
 "kind": "task",
 "title": "Your turn 2.5",
@@ -692,12 +730,12 @@
 "Meetings",
 "Outlook",
 "Excel",
-"Reports",
-"Map"
+"Word",
+"PowerPoint"
 ]
 },
 {
-"n": 30,
+"n": 31,
 "id": "c3chk",
 "kind": "check",
 "title": "Quick check",
@@ -718,7 +756,7 @@
 ]
 },
 {
-"n": 31,
+"n": 32,
 "id": "c3deb",
 "kind": "rule",
 "title": "Polite. Specific. On time.",
@@ -731,7 +769,7 @@
 "chrome": []
 },
 {
-"n": 32,
+"n": 33,
 "id": "c4story",
 "kind": "story",
 "title": "Block 4 · Excel: figures you can check",
@@ -750,7 +788,7 @@
 ]
 },
 {
-"n": 33,
+"n": 34,
 "id": "c4three",
 "kind": "cards",
 "title": "Ask. See the rows. Check.",
@@ -758,7 +796,7 @@
 "kit": [
 "Block 4 · three steps",
 "Ask. See the rows. Check.",
-"Too high: look for duplicates. Too low: look for a missing value.",
+"Always check against a reference: a control total, or the list of approved changes.",
 "Ask",
 "One clear question",
 "One sheet, one measure, one period.",
@@ -772,7 +810,7 @@
 "chrome": []
 },
 {
-"n": 34,
+"n": 35,
 "id": "c4live",
 "kind": "list",
 "title": "Ask the tracker, then see the rows.",
@@ -788,7 +826,7 @@
 "chrome": []
 },
 {
-"n": 35,
+"n": 36,
 "id": "c4task1",
 "kind": "task",
 "title": "Your turn 2.6",
@@ -831,12 +869,12 @@
 "Meetings",
 "Outlook",
 "Excel",
-"Reports",
-"Map"
+"Word",
+"PowerPoint"
 ]
 },
 {
-"n": 36,
+"n": 37,
 "id": "c4task2",
 "kind": "task",
 "title": "Your turn 2.7",
@@ -845,15 +883,17 @@
 "Task 2.7",
 "in pairs",
 "Copilot Chat + Excel",
-"One new section shows 0 approved positions.",
-"mutla-hr-trackers-q3-2026.xlsx",
-"Run the request below on the Manpower sheet.",
-"Compare each section's approved positions with the approved structure on the Control totals sheet.",
-"Find why the total is too low. Write the corrected total, and why.",
-"Manpower: vacancies",
-"In the Manpower sheet, calculate total vacancies (approved positions minus filled). Show the result by section. Then compare each section with the Control totals sheet and list any difference. Do not fix anything.",
+"Comparing the two months finds one problem. The Movements sheet finds the other two.",
+"Finished early? Open the trackers file. On the Manpower sheet, total vacancies look too low. Find out why.",
+"mutla-payroll-check-oct-nov-2026.xlsx",
+"Attach the payroll file. It has employee codes and no names, so it is an amber task: use your company's approved account.",
+"Run the request below. Copilot compares October with November, then checks the Movements sheet.",
+"Check each item yourself in Excel. Mark it explained (on the Movements sheet) or to confirm.",
+"Write one line for each item to confirm. Change no salary.",
+"Two months and the movements",
+"Compare the October and November sheets by employee code. List every code whose total changed, and every code that is in only one month. Then check each line of the Movements sheet against November. For each item, say whether the Movements sheet explains it. Do not recalculate any salary. Do not fix anything.",
 "Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
-"Your turn: vacancies: find the missing value.",
+"Your turn: payroll: compare two months.",
 "Block 4 · Excel: figures you can check"
 ],
 "chrome": [
@@ -878,21 +918,21 @@
 "Meetings",
 "Outlook",
 "Excel",
-"Reports",
-"Map"
+"Word",
+"PowerPoint"
 ]
 },
 {
-"n": 37,
+"n": 38,
 "id": "c4chk",
 "kind": "check",
 "title": "Quick check",
 "topic": "c4",
 "kit": [
-"The file gives 25 vacancies. One new section's approved positions are entered as 0; the structure says 12. What do you report?",
-"25, because Copilot counted every row",
-"37, and why the file showed 25",
-"31, halfway between the two"
+"Copilot finds that one employee's basic salary rose by KWD 200, and no approved change explains it. What do you do?",
+"Set it back to last month's salary",
+"Ask Compensation to confirm the reason before the bank file goes",
+"Accept it, because the total adds up"
 ],
 "chrome": [
 "Quick check",
@@ -904,20 +944,20 @@
 ]
 },
 {
-"n": 38,
+"n": 39,
 "id": "c4deb",
 "kind": "rule",
-"title": "Copilot counted right. The rows were wrong.",
+"title": "Copilot finds the change. A person confirms the reason.",
 "topic": "c4",
 "kit": [
 "Block 4 · debrief",
-"Copilot counted right. The rows were wrong.",
-"Both totals were calculated correctly from bad rows. Only the control total showed the problem."
+"Copilot finds the change. A person confirms the reason.",
+"Both files needed a reference: the control total, and the list of approved changes. Without it, a correct count of wrong rows looks perfect, and a missing joiner looks like nothing at all."
 ],
 "chrome": []
 },
 {
-"n": 39,
+"n": 40,
 "id": "c5t1",
 "kind": "term",
 "title": "Three lines a manager reads.",
@@ -936,7 +976,7 @@
 ]
 },
 {
-"n": 40,
+"n": 41,
 "id": "c5live1",
 "kind": "list",
 "title": "A finding into a note for management.",
@@ -952,7 +992,7 @@
 "chrome": []
 },
 {
-"n": 41,
+"n": 42,
 "id": "c5task1",
 "kind": "task",
 "title": "Your turn 2.8",
@@ -961,14 +1001,15 @@
 "Task 2.8",
 "on your own",
 "Copilot Chat · Word",
-"Say what the file showed, what is correct, and why.",
+"Say what the file showed, what is correct, and who must confirm what is still open.",
 "mutla-hr-trackers-q3-2026.xlsx",
-"Use your two corrected figures from Tasks 2.6 and 2.7. Missing one? Ask the trainer.",
-"Write your own checklist request for a half-page summary for the Head of HR: what was found, what was corrected, and why.",
-"Check both figures by hand. Make sure it starts with the DRAFT line.",
+"mutla-payroll-check-oct-nov-2026.xlsx",
+"Use your results from Tasks 2.6 and 2.7: the corrected training count and the payroll items to confirm. Missing one? Ask the trainer.",
+"Write your own checklist request for a half-page summary for the Head of HR: what you found, what you corrected, and what still needs a person to confirm.",
+"Check every number and employee code by hand. Make sure it starts with the DRAFT line.",
 "A half-page management summary in Word.",
 "Your turn: a management summary in Word.",
-"Block 5 · Summary and slides"
+"Block 5 · Word summaries"
 ],
 "chrome": [
 "Your turn",
@@ -988,25 +1029,9 @@
 "Meetings",
 "Outlook",
 "Excel",
-"Reports",
-"Map"
+"Word",
+"PowerPoint"
 ]
-},
-{
-"n": 42,
-"id": "c5live2",
-"kind": "list",
-"title": "A brief into five slides.",
-"topic": "c5",
-"kit": [
-"Demo 2.9 · live in Copilot Chat · PowerPoint",
-"A brief into five slides.",
-"Every number on a slide matches its source.",
-"What I will show: The policy brief turned into a five-slide outline with speaker notes.",
-"Watch for: Every time and the pilot result, compared with the brief.",
-"Files: mutla-policy-change-brief.docx"
-],
-"chrome": []
 },
 {
 "n": 43,
@@ -1017,14 +1042,15 @@
 "kit": [
 "Task 2.9",
 "on your own",
-"Copilot Chat · PowerPoint",
-"Two numbers. Check each one on every slide where it appears.",
-"Save your Task 2.8 summary as a Word file.",
-"In PowerPoint with Copilot: Create a presentation from a file, and pick your summary. In Copilot Chat: attach it and ask for a five-slide outline with speaker notes.",
-"Check every number on every slide against your summary.",
-"Five slides, or a five-slide outline, each number checked.",
-"Your turn: five slides from your summary.",
-"Block 5 · Summary and slides"
+"Copilot Chat · Word or Teams",
+"Who reads a team channel? Leave out anything that points to one employee.",
+"Use your summary from Task 2.8.",
+"Write your checklist request: turn it into a three-line update for the HR team channel.",
+"Keep every number. Take out every employee code: a team channel is wider than the Head of HR.",
+"Read the three lines against your summary. Is anything changed or lost?",
+"A three-line update for the HR team, with no employee codes.",
+"Your turn: three lines for the HR team.",
+"Block 5 · Word summaries"
 ],
 "chrome": [
 "Your turn",
@@ -1044,8 +1070,8 @@
 "Meetings",
 "Outlook",
 "Excel",
-"Reports",
-"Map"
+"Word",
+"PowerPoint"
 ]
 },
 {
@@ -1054,6 +1080,182 @@
 "kind": "check",
 "title": "Quick check",
 "topic": "c5",
+"kit": [
+"Your three-line update for the HR team channel still names EMP-3346. What do you do?",
+"Keep it: the channel is inside HR",
+"Take the code out; Compensation already has it",
+"Add the name too, so it is clearer"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 45,
+"id": "c6story",
+"kind": "story",
+"title": "Block 6 · PowerPoint: from document to deck",
+"topic": "c6",
+"kit": [
+"Block 6 · PowerPoint: from document to deck",
+"Thursday 5 November, 13:50",
+"The Head of HR asks for the attendance update as slides for Sunday's managers' meeting. Noura has the brief in Word. Building ten slides by hand takes her the whole afternoon.",
+"The facts are ready. The slides are not.",
+"Turn an approved document into a deck, edit it with Copilot, and check every number on every slide.",
+"06"
+],
+"chrome": [
+"The starting point",
+"By the end of this block:"
+]
+},
+{
+"n": 46,
+"id": "c6can",
+"kind": "list",
+"title": "What Copilot can do in PowerPoint.",
+"topic": "c6",
+"kit": [
+"Block 6 · Copilot in PowerPoint",
+"What Copilot can do in PowerPoint.",
+"Copilot builds the slides. You check every number on every slide.",
+"Create a deck from a Word file or a request.",
+"Edit: add a slide, rewrite a slide for a different reader, add speaker notes.",
+"Summarize a long deck someone sent you, slide by slide.",
+"Without it: ask Copilot Chat for the outline, then paste it into PowerPoint and use Designer for the layout."
+],
+"chrome": []
+},
+{
+"n": 47,
+"id": "c6live1",
+"kind": "list",
+"title": "A brief into five slides.",
+"topic": "c6",
+"kit": [
+"Demo 2.10 · live in Copilot Chat · PowerPoint",
+"A brief into five slides.",
+"Every number on a slide matches its source.",
+"What I will show: The policy brief turned into a five-slide outline with speaker notes.",
+"Watch for: Every time and the pilot result, compared with the brief.",
+"Files: mutla-policy-change-brief.docx"
+],
+"chrome": []
+},
+{
+"n": 48,
+"id": "c6task1",
+"kind": "task",
+"title": "Your turn 2.10",
+"topic": "c6",
+"kit": [
+"Task 2.10",
+"on your own",
+"Copilot Chat · PowerPoint",
+"Check the training count and the three employee codes on every slide where they appear.",
+"Save your Task 2.8 summary as a Word file.",
+"In PowerPoint with Copilot: Create a presentation from a file, and pick your summary. In Copilot Chat: attach it and ask for a five-slide outline with speaker notes.",
+"Check every number on every slide against your summary.",
+"Five slides, or a five-slide outline, each number checked.",
+"Your turn: five slides from your summary.",
+"Block 6 · PowerPoint: from document to deck"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"You hand in",
+"Where we are",
+"Data",
+"Meetings",
+"Outlook",
+"Excel",
+"Word",
+"PowerPoint"
+]
+},
+{
+"n": 49,
+"id": "c6live2",
+"kind": "list",
+"title": "Edit the deck in rounds.",
+"topic": "c6",
+"kit": [
+"Demo 2.11 · live in PowerPoint · Copilot Chat",
+"Edit the deck in rounds.",
+"Edit in rounds. Check every number after each round.",
+"What I will show: One request that adds a slide for managers, rewrites a slide in plainer words and adds speaker notes.",
+"Watch for: Whether any time or number changed while Copilot edited.",
+"Files: mutla-policy-change-brief.docx"
+],
+"chrome": []
+},
+{
+"n": 50,
+"id": "c6task2",
+"kind": "task",
+"title": "Your turn 2.11",
+"topic": "c6",
+"kit": [
+"Task 2.11",
+"on your own",
+"PowerPoint · Copilot Chat",
+"Which question in your case is not decided yet? Give it its own slide.",
+"Turn the onboarding checklist (mutla-onboarding-checklist-2026.docx) into a five-slide welcome deck for new joiners.",
+"mutla-case-je-reevaluation-request.docx",
+"mutla-case-compensation-allowance-update.docx",
+"mutla-case-manpower-new-section.docx",
+"mutla-case-personnel-attendance-change.docx",
+"mutla-case-ld-training-requests.docx",
+"Use your agenda and brief from Task 2.2, and your track's case file.",
+"Write your checklist request for four slides for that meeting, with speaker notes.",
+"Then ask for one edit: a slide for the meeting's open question, written as a question for the room.",
+"Check every date and number against the case file. Add the DRAFT line to the first slide.",
+"Four or five slides with speaker notes for your track's meeting.",
+"Your turn: slides for your track&#x27;s meeting.",
+"Block 6 · PowerPoint: from document to deck"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"You hand in",
+"Where we are",
+"Data",
+"Meetings",
+"Outlook",
+"Excel",
+"Word",
+"PowerPoint"
+]
+},
+{
+"n": 51,
+"id": "c6chk",
+"kind": "check",
+"title": "Quick check",
+"topic": "c6",
 "kit": [
 "Slide 3 says Q3 training requests: 412. Your checked summary says 398. What do you do?",
 "Keep both numbers, with a footnote",
@@ -1070,275 +1272,20 @@
 ]
 },
 {
-"n": 45,
-"id": "c6story",
-"kind": "story",
-"title": "Block 6 · From one task to a workflow",
-"topic": "c6",
-"kit": [
-"Block 6 · From one task to a workflow",
-"Thursday 22 October, 10:00",
-"An engineer asked for a safety course on 1 October. His approval arrives today, 22 October. The course started on 20 October.",
-"Three weeks for one signature.",
-"See an HR task as a workflow, and find where time and effort are lost.",
-"06"
-],
-"chrome": [
-"The starting point",
-"By the end of this block:"
-]
-},
-{
-"n": 46,
-"id": "c6an",
-"kind": "rule",
-"title": "Follow one form from desk to desk.",
-"topic": "c6",
-"kit": [
-"Block 6 · the picture",
-"Follow one form from desk to desk.",
-"Walk behind one training request for three weeks. You would see where it waits, who types it again, and where it gets lost."
-],
-"chrome": []
-},
-{
-"n": 47,
-"id": "c6prob",
-"kind": "table",
-"title": "Four problems to look for.",
-"topic": "c6",
-"kit": [
-"Block 6 · four problems",
-"Four problems to look for.",
-"Find them first. Fix them tomorrow.",
-"Problem",
-"What it looks like",
-"Ask",
-"Delay",
-"A step waits for days, often for one person.",
-"How long does it wait, and for whom?",
-"Duplicated effort",
-"The same information is typed, printed or checked more than once.",
-"Who types or checks it again?",
-"Unclear ownership",
-"Nobody is sure who does the next step, or who chases it.",
-"Who does the next step? Who chases it?",
-"Repetitive step",
-"The same manual action every time, with no judgment in it.",
-"Is there any judgment in it?"
-],
-"chrome": []
-},
-{
-"n": 48,
-"id": "c6t1",
-"kind": "term",
-"title": "Map it as it is.",
-"topic": "c6",
-"kit": [
-"Block 6 · the idea",
-"Map it as it is.",
-"Process map",
-"A table of every step from request to result: who does it, what goes in and comes out, how long it waits, the problem, and whether a person must decide.",
-"“The process is slow.”",
-"“Step 3 waits three days for one approval.”",
-"Map it as it is. Improve it tomorrow."
-],
-"chrome": [
-"The idea"
-]
-},
-{
-"n": 49,
-"id": "c6live",
-"kind": "list",
-"title": "A story into a step table.",
-"topic": "c6",
-"kit": [
-"Demo 2.10 · live in Copilot Chat",
-"A story into a step table.",
-"Map it as it is. Flag the problems. Do not fix them yet.",
-"What I will show: A five-sentence story about booking an external trainer, turned into a step table.",
-"Watch for: The flags in the Problem column, and the step that nobody owns.",
-"Files: none: the request is on the prompt sheet"
-],
-"chrome": []
-},
-{
-"n": 50,
-"id": "c6task",
-"kind": "task",
-"title": "Your turn 2.10",
-"topic": "c6",
-"kit": [
-"Task 2.10",
-"in pairs",
-"Copilot Chat + Word",
-"Find the step that nobody owns.",
-"Count the days from the request to the decision in the worst case.",
-"mutla-process-stories.docx",
-"mutla-process-map-template.docx",
-"Open the process stories file. Read story 1, the training request.",
-"Run the request below to draft the step table.",
-"Check it by hand against the story. Add any step or problem Copilot missed.",
-"Copy the final table into the map template.",
-"Map story 1",
-"Turn process story 1 in the attached file into a step table. Use only story 1 in the attached file. Do not improve the process. Only map it. Flag each step that has a delay, duplicated effort, unclear ownership or a repetitive step. Mark every step where a person must decide. A table: step, who, what happens, input, output, wait, problem, a person decides?",
-"Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
-"Your turn: map the training request.",
-"Block 6 · From one task to a workflow"
-],
-"chrome": [
-"Your turn",
-"Finished early?",
-"What to look for",
-"Weak prompt",
-"Your rewrite",
-"points",
-"+1 min",
-"Reset",
-"Your time",
-"min",
-"Time",
-"Copy",
-"copy, paste, then check",
-"is on your",
-"prompt sheet",
-"If the tool is slow, continue from the backup on the screen.",
-"Where we are",
-"Data",
-"Meetings",
-"Outlook",
-"Excel",
-"Reports",
-"Map"
-]
-},
-{
-"n": 51,
-"id": "c6chk",
-"kind": "check",
-"title": "Quick check",
-"topic": "c6",
-"kit": [
-"In your map, the line manager signs every training request. What does that step need?",
-"Problem: repetitive step",
-"“A person decides?”: Yes",
-"Wait: 0 days"
-],
-"chrome": [
-"Quick check",
-"A",
-"B",
-"C",
-"Correct",
-"Not quite"
-]
-},
-{
 "n": 52,
-"id": "c7brief",
-"kind": "list",
-"title": "Your process, mapped.",
-"topic": "c7",
+"id": "c6deb",
+"kind": "rule",
+"title": "Copilot builds the deck. You check every slide.",
+"topic": "c6",
 "kit": [
-"Block 7 · map your own HR process",
-"Your process, mapped.",
-"Tomorrow your final project starts from this map.",
-"Choose: your track's story (2 to 5), or a process from your own work, written with roles only.",
-"Map: from the request to the result, one row per step.",
-"Flag: delays, duplicated effort, unclear ownership, repetitive steps.",
-"Mark: every step where a person must decide."
+"Block 6 · debrief",
+"Copilot builds the deck. You check every slide.",
+"The decks that were ready to present had every number from the source, the open question asked on screen, and notes a colleague could present from."
 ],
 "chrome": []
 },
 {
 "n": 53,
-"id": "c7task1",
-"kind": "task",
-"title": "Your turn 2.11",
-"topic": "c7",
-"kit": [
-"Task 2.11",
-"on your own",
-"Copilot Chat + Word",
-"Start where the request starts, and stop when the requester has the result.",
-"mutla-process-stories.docx",
-"mutla-process-map-template.docx",
-"Choose: your track's story (stories 2 to 5) or a process from your own work. For your own work, write the story with roles only: no names, no real data.",
-"Write your own checklist request to turn the story into a step table. Flag the problems; do not fix them.",
-"Check the table by hand. Mark every step where a person must decide.",
-"Save the map. Tomorrow you improve it.",
-"A map of one HR process, with problems and human decisions marked.",
-"Your turn: map your own HR process.",
-"Block 7 · Map your own HR process"
-],
-"chrome": [
-"Your turn",
-"Finished early?",
-"What to look for",
-"Weak prompt",
-"Your rewrite",
-"points",
-"+1 min",
-"Reset",
-"Your time",
-"min",
-"Time",
-"You hand in",
-"Where we are",
-"Data",
-"Meetings",
-"Outlook",
-"Excel",
-"Reports",
-"Map"
-]
-},
-{
-"n": 54,
-"id": "c7task2",
-"kind": "task",
-"title": "Your turn 2.12",
-"topic": "c7",
-"kit": [
-"Task 2.12",
-"in pairs",
-"A colleague",
-"Look for a step owned by \"HR\" or \"the team\". Which role is it, really?",
-"mutla-process-map-template.docx",
-"Swap maps with a colleague from a different unit.",
-"Read their map with three questions: does every step have one owner? Is every wait and problem marked? Is every human decision marked?",
-"Write two notes on their map: one thing that is clear, one thing to fix.",
-"Swap back. Fix your map.",
-"Your map, fixed after a colleague's check.",
-"Your turn: swap and check a map.",
-"Block 7 · Map your own HR process"
-],
-"chrome": [
-"Your turn",
-"Finished early?",
-"What to look for",
-"Weak prompt",
-"Your rewrite",
-"points",
-"+1 min",
-"Reset",
-"Your time",
-"min",
-"Time",
-"You hand in",
-"Where we are",
-"Data",
-"Meetings",
-"Outlook",
-"Excel",
-"Reports",
-"Map"
-]
-},
-{
-"n": 55,
 "id": "c8apps",
 "kind": "table",
 "title": "Five apps. One habit.",
@@ -1363,29 +1310,29 @@
 "Excel, or Chat with the file",
 "Against a control total",
 "Brief management",
-"Word, then PowerPoint",
-"Every number matches",
-"Map a process",
-"Copilot Chat, then Word",
-"Map it as it is"
+"Word",
+"Finding, limits, next step",
+"Present to managers",
+"PowerPoint, or Chat for the outline",
+"Every number matches its source"
 ],
 "chrome": []
 },
 {
-"n": 56,
+"n": 54,
 "id": "w2",
 "kind": "wrap",
 "title": "Wrap-up",
 "topic": "close",
 "kit": [
-"Safe data, checked figures, a clear map.",
-"Tomorrow: two HR agents, a Power Automate demo, and the final project.",
+"Safe data, checked figures, clear slides.",
+"Tomorrow: two HR agents, a Power Automate demo, and how to map and improve an HR workflow.",
 "1",
 "You built",
-"A redacted note, a meeting pack and recap, two checked figures in a summary and slides, and a process map.",
+"A redacted note, a meeting pack and recap, a training count and a payroll check, a summary and two decks.",
 "2",
 "You found",
-"Six sensitive details, an idea nobody agreed, duplicates, a missing value and a step nobody owns.",
+"Six sensitive details, an idea nobody agreed, duplicate requests and three payroll items to confirm.",
 "3",
 "The habit",
 "Copilot drafts. You check. Authorized HR staff decide."
@@ -1397,14 +1344,14 @@
 ]
 },
 {
-"n": 57,
+"n": 55,
 "id": "close2",
 "kind": "close",
 "title": "Close",
 "topic": "close",
 "kit": [
 "Safe data. Checked figures.",
-"Tomorrow: two HR agents, a Power Automate demo, and the final project."
+"Tomorrow: two HR agents, a Power Automate demo, and a whole HR workflow."
 ],
 "chrome": [
 "Day",

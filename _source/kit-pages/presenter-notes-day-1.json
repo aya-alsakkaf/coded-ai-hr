@@ -99,17 +99,82 @@
 "flat": "5 min, live. · Expect: One line: a generic job description with invented duties, a team to manage and a senior grade. The checklist: Mutla's template order, the six duties from the role sheet, the grade left blank, and the DRAFT line at the top. · Click steps: (1) Open Copilot Chat in two browser tabs, signed in with the training account. (2) Tab 1: paste the one-line request, with no file. (3) Tab 2: attach mutla-jd-template-2026.docx and mutla-role-information-2026.docx, then paste the checklist request. (4) Put the two answers side by side. Read the duties and the grade line aloud. · Fallback: Show the backup results on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.0. · Say: “(Run the one-line request in tab 1.) Look at this. It sounds professional. Now read it slowly: a team to manage, a senior grade, duties nobody approved. (Run the full request in tab 2.) Same tool, same role. This one follows our template, uses only the six approved duties, and leaves the grade for the committee. The only thing that changed is what we gave Copilot. That is today's whole story.”"
 },
 {
-"say": "Block 1. Before we write a single request, we need to know how this tool works, because it explains every mistake you will see this week. (Read the story.) Has an AI tool ever given you a wrong number at work? Tell us in one sentence.",
-"do": null,
-"expect": "Two or three short stories.",
-"silent": "Share one of your own wrong-number stories.",
+"say": "Block 1. Before we write a single request, I want to know where you are. (Read the question.) Keep your hand up if you used it for work. Now tell me, in a few words: what did you use it for?",
+"do": "(Count the hands. Ask three people: what for, and which tool?)",
+"expect": "Most hands go up. ChatGPT, Copilot, translation, a photo app, maybe Google search.",
+"silent": "Write the tools they name on a sticky note. You come back to them on the next slides.",
 "fallback": null,
 "more": [],
 "time": "09:30-10:30",
 "t": "b1",
 "k": "story",
 "h": "Block 1 · How generative AI and Copilot work",
-"flat": "09:30-10:30. · Expect: Two or three short stories. · If the room is silent: Share one of your own wrong-number stories. · Say: “Block 1. Before we write a single request, we need to know how this tool works, because it explains every mistake you will see this week. (Read the story.) Has an AI tool ever given you a wrong number at work? Tell us in one sentence.”"
+"flat": "09:30-10:30. · Do: (Count the hands. Ask three people: what for, and which tool?) · Expect: Most hands go up. ChatGPT, Copilot, translation, a photo app, maybe Google search. · If the room is silent: Write the tools they name on a sticky note. You come back to them on the next slides. · Say: “Block 1. Before we write a single request, I want to know where you are. (Read the question.) Keep your hand up if you used it for work. Now tell me, in a few words: what did you use it for?”"
+},
+{
+"say": "Here is a simple definition. Normal software follows rules that a programmer wrote, step by step. AI learns from many examples. Show it thousands of junk emails, and it learns what junk looks like. Nobody writes the rule by hand.",
+"do": null,
+"expect": null,
+"silent": null,
+"fallback": null,
+"more": [],
+"time": "3 min",
+"t": "b1",
+"k": "term",
+"h": "First: what is AI?",
+"flat": "3 min. · Say: “Here is a simple definition. Normal software follows rules that a programmer wrote, step by step. AI learns from many examples. Show it thousands of junk emails, and it learns what junk looks like. Nobody writes the rule by hand.”"
+},
+{
+"say": "None of these is new. Your spam filter learned from millions of junk emails. Face unlock learned your face. Maps learned from traffic data. (Ask:) What else on your phone learns from you?",
+"do": null,
+"expect": "Photo search, keyboard suggestions, streaming recommendations.",
+"silent": null,
+"fallback": null,
+"more": [],
+"time": "3 min",
+"t": "b1",
+"k": "list",
+"h": "AI you used before Copilot.",
+"flat": "3 min. · Expect: Photo search, keyboard suggestions, streaming recommendations. · Say: “None of these is new. Your spam filter learned from millions of junk emails. Face unlock learned your face. Maps learned from traffic data. (Ask:) What else on your phone learns from you?”"
+},
+{
+"say": "Picture three circles, one inside the other. AI is the biggest. Inside it, machine learning: AI that learns from data. Inside that, the newest circle: large language models. ChatGPT, Claude, Gemini and the models behind Copilot all live in this small circle.",
+"do": null,
+"expect": null,
+"silent": "Point back to the tools from the first slide and ask which circle each one sits in.",
+"fallback": null,
+"more": [],
+"time": "3 min",
+"t": "b1",
+"k": "cards",
+"h": "So where do ChatGPT, Claude and Copilot fit?",
+"flat": "3 min. · If the room is silent: Point back to the tools from the first slide and ask which circle each one sits in. · Say: “Picture three circles, one inside the other. AI is the biggest. Inside it, machine learning: AI that learns from data. Inside that, the newest circle: large language models. ChatGPT, Claude, Gemini and the models behind Copilot all live in this small circle.”"
+},
+{
+"say": "LLM stands for large language model. Why do I make the difference so clear? Because when someone says the AI did it, you need to know which AI. A fraud filter can block your card by mistake. An LLM can write a wrong rule that sounds right. Different mistakes, different checks. For Copilot, the check is always the source document.",
+"do": null,
+"expect": null,
+"silent": null,
+"fallback": null,
+"more": [],
+"time": "3 min",
+"t": "b1",
+"k": "term",
+"h": "LLM: Large Language Model.",
+"flat": "3 min. · Say: “LLM stands for large language model. Why do I make the difference so clear? Because when someone says the AI did it, you need to know which AI. A fraud filter can block your card by mistake. An LLM can write a wrong rule that sounds right. Different mistakes, different checks. For Copilot, the check is always the source document.”"
+},
+{
+"say": "Now a real-looking story from HR. (Read it.) Has an AI tool ever given you a wrong number at work? One sentence each, two people.",
+"do": null,
+"expect": "Two short stories.",
+"silent": "Share one of your own wrong-number stories if the room is quiet.",
+"fallback": null,
+"more": [],
+"time": "2 min",
+"t": "b1",
+"k": "rule",
+"h": "Fast, confident and wrong.",
+"flat": "2 min. · Expect: Two short stories. · If the room is silent: Share one of your own wrong-number stories if the room is quiet. · Say: “Now a real-looking story from HR. (Read it.) Has an AI tool ever given you a wrong number at work? One sentence each, two people.”"
 },
 {
 "say": "Your keyboard does not know where you are. It only knows what people usually type after those words. Hold on to that idea.",
@@ -270,14 +335,14 @@
 "silent": null,
 "fallback": "If a pair cannot open the files, they read them on the Day 1 lab page.",
 "more": [
-"Give the hint at about 4 min.",
+"Give the hint at about 3 min.",
 "Fast finishers have an extra task on the slide."
 ],
-"time": "12 min work, then share",
+"time": "10 min work, then share",
 "t": "b1",
 "k": "task",
-"h": "Your turn 1.1: Spot the confident mistakes (12 min, in pairs)",
-"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Three mistakes: carry-over: the answer says “Staff can carry over up to 30 days of unused leave.” but Section 4: up to 15 days, used by 31 March; emergency leave: the answer says “Staff can take up to 5 days of emergency leave a year.” but Section 5: up to 3 days a year; notice for annual leave: the answer says “Staff should request annual leave at least 7 days before.” but Section 3: at least 14 days before. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: If a pair cannot open the files, they read them on the Day 1 lab page. · Say: “Your turn, in pairs. This answer was written by Copilot and it reads very well. Your job is to find what is wrong, by hand, with the policy open. No AI until you have checked. Twelve minutes. (Start the timer.)”"
+"h": "Your turn 1.1: Spot the confident mistakes (10 min, in pairs)",
+"flat": "10 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Three mistakes: carry-over: the answer says “Staff can carry over up to 30 days of unused leave.” but Section 4: up to 15 days, used by 31 March; emergency leave: the answer says “Staff can take up to 5 days of emergency leave a year.” but Section 5: up to 3 days a year; notice for annual leave: the answer says “Staff should request annual leave at least 7 days before.” but Section 3: at least 14 days before. · Give the hint at about 3 min. · Fast finishers have an extra task on the slide. · Fallback: If a pair cannot open the files, they read them on the Day 1 lab page. · Say: “Your turn, in pairs. This answer was written by Copilot and it reads very well. Your job is to find what is wrong, by hand, with the policy open. No AI until you have checked. Twelve minutes. (Start the timer.)”"
 },
 {
 "say": "Three wrong numbers, written in perfect English. If this had gone to an employee, nobody would have noticed until it was too late. Certainty is a writing style. It is not evidence.",
@@ -384,17 +449,17 @@
 "flat": "Expect: What to do, who it is for, which file, how it should look. · Say: “Think about a new colleague on their first morning. You would never say only “write a reminder” and walk away. You would brief them. What would you tell them? (Collect answers.) Everything you just said has a place in a request.”"
 },
 {
-"say": "Here is the whole checklist. Seven parts. Each one answers a question Copilot would otherwise guess: who am I, why, what, with what, within which limits, in what voice, in what shape. (Go row by row and ask the room for a second example of each.) You do not need to remember the order. You need to check that nothing is missing.",
+"say": "Here is the whole checklist: five parts. Each one answers a question Copilot would otherwise guess: who is asking and why, what to do, with which facts, within which limits, and what the result looks like. (Go row by row and ask the room for a second example of each.) You do not need to remember the order. You need to check that nothing is missing.",
 "do": null,
-"expect": "Constraints and output format are the parts people leave out.",
+"expect": "Constraints and Format are the parts people leave out.",
 "silent": null,
 "fallback": null,
 "more": [],
 "time": "12 min",
 "t": "b2",
 "k": "table",
-"h": "Seven parts before you press Send.",
-"flat": "12 min. · Expect: Constraints and output format are the parts people leave out. · Say: “Here is the whole checklist. Seven parts. Each one answers a question Copilot would otherwise guess: who am I, why, what, with what, within which limits, in what voice, in what shape. (Go row by row and ask the room for a second example of each.) You do not need to remember the order. You need to check that nothing is missing.”"
+"h": "Five parts before you press Send.",
+"flat": "12 min. · Expect: Constraints and Format are the parts people leave out. · Say: “Here is the whole checklist: five parts. Each one answers a question Copilot would otherwise guess: who is asking and why, what to do, with which facts, within which limits, and what the result looks like. (Go row by row and ask the room for a second example of each.) You do not need to remember the order. You need to check that nothing is missing.”"
 },
 {
 "say": "If you remember one part from this block, make it this one. Constraints are the fence. Without a fence, Copilot fills every gap with the most likely words, and in HR the most likely words are often someone else's policy.",
@@ -421,7 +486,7 @@
 "time": "5 min, live",
 "t": "b2",
 "k": "list",
-"h": "Seven short sentences, typed live.",
+"h": "Five short parts, typed live.",
 "flat": "5 min, live. · Expect: A subject line and a short email: up to 15 days carry over to next year; carried-over days must be used by 31 March; days not used by then are lost. The DRAFT line is at the top. No employee is named. · Click steps: (1) Open a new Copilot Chat. Attach the leave policy. (2) Type the request one part at a time, saying each part aloud before you type it. (3) Send it. Read the email against section 4 of the policy. · Fallback: Show the backup email on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.2. · Say: “Now I will fix Fatma's request, live, one part at a time. Tell me what to type for each part. (Type each part as the room suggests it, then send.) Read the email with me. Fifteen days, the deadline, nothing invented. Same tool as Fatma. A better brief.”"
 },
 {
@@ -438,9 +503,9 @@
 "flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “Quick check on the fence. (Wait for hands, then tap.) Exactly: constraints.”"
 },
 {
-"say": "Your turn. Here are five weak requests, one from each HR unit. Choose two: one from your own unit, plus any other. Give each of them all seven parts. Then swap: can your neighbor tell what Copilot will produce? Fourteen minutes. If you are stuck, the Day 1 lab page has hints. (Start the timer.)",
+"say": "Your turn. Here are five weak requests, one from each HR unit. Choose two: one from your own unit, plus any other. Give each of them all five parts. Then swap: can your neighbor tell what Copilot will produce? Fourteen minutes. If you are stuck, the Day 1 lab page has hints. (Start the timer.)",
 "do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "Two rewrites, each with a role, context, a single task, the data and file, constraints, a tone and an output format. Run on its file, the rewrite gives a usable draft.",
+"expect": "Two rewrites, each with context, a single task, the data and file, constraints and a format. Run on its file, the rewrite gives a usable draft.",
 "silent": null,
 "fallback": "If Copilot is slow, swap requests with a neighbor and judge each other's rewrites against the checklist.",
 "more": [
@@ -451,7 +516,7 @@
 "t": "b2",
 "k": "task",
 "h": "Your turn 1.2: Rewrite weak requests (14 min, on your own, then swap)",
-"flat": "14 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Two rewrites, each with a role, context, a single task, the data and file, constraints, a tone and an output format. Run on its file, the rewrite gives a usable draft. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: If Copilot is slow, swap requests with a neighbor and judge each other's rewrites against the checklist. · Say: “Your turn. Here are five weak requests, one from each HR unit. Choose two: one from your own unit, plus any other. Give each of them all seven parts. Then swap: can your neighbor tell what Copilot will produce? Fourteen minutes. If you are stuck, the Day 1 lab page has hints. (Start the timer.)”"
+"flat": "14 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Two rewrites, each with context, a single task, the data and file, constraints and a format. Run on its file, the rewrite gives a usable draft. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: If Copilot is slow, swap requests with a neighbor and judge each other's rewrites against the checklist. · Say: “Your turn. Here are five weak requests, one from each HR unit. Choose two: one from your own unit, plus any other. Give each of them all five parts. Then swap: can your neighbor tell what Copilot will produce? Fourteen minutes. If you are stuck, the Day 1 lab page has hints. (Start the timer.)”"
 },
 {
 "say": "Notice what made the strong ones strong. Not fancy words. Every part answered a question. Lunch now, and Dhuhr. We start again at 12:15 sharp.",
@@ -463,7 +528,7 @@
 "time": null,
 "t": "b2",
 "k": "rule",
-"h": "Seven parts beat one clever sentence.",
+"h": "A full brief works better than one clever sentence.",
 "flat": "Do: (Ask two people to read a rewrite aloud. Ask the room which part is strongest and which is missing.) · Expect: Most rewrites miss constraints or the output format at first. · Say: “Notice what made the strong ones strong. Not fancy words. Every part answered a question. Lunch now, and Dhuhr. We start again at 12:15 sharp.”"
 },
 {
@@ -588,7 +653,7 @@
 "flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option A. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “Quick check. (Tap after hands.) Sounding right is exactly what a hallucination looks like.”"
 },
 {
-"say": "Your turn, with your own unit's role. Write your own request: all seven parts, both files attached. Fix the draft with two follow-ups. Then run the source trace and check by hand. Twenty-two minutes. Hints are on the Day 1 lab page. (Start the timer.)",
+"say": "Your turn, with your own unit's role. Write your own request: all five parts, both files attached. Fix the draft with two follow-ups. Then run the source trace and check by hand. Twenty-two minutes. Hints are on the Day 1 lab page. (Start the timer.)",
 "do": "Start the timer. Walk the room. Ask each pair what they found so far.",
 "expect": "A one-page job description in the template's order: only the role sheet's six duties, no team size, a blank grade line, and the DRAFT line at the top. Two follow-ups that each name a problem and what to keep.",
 "silent": null,
@@ -601,7 +666,7 @@
 "t": "b3",
 "k": "task",
 "h": "Your turn 1.3: Your job description: draft, fix, check (22 min, on your own)",
-"flat": "22 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A one-page job description in the template's order: only the role sheet's six duties, no team size, a blank grade line, and the DRAFT line at the top. Two follow-ups that each name a problem and what to keep. · Give the hint at about 7 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone whose draft fails can check mutla-catchup-jd-draft.docx instead, from step 4. · Say: “Your turn, with your own unit's role. Write your own request: all seven parts, both files attached. Fix the draft with two follow-ups. Then run the source trace and check by hand. Twenty-two minutes. Hints are on the Day 1 lab page. (Start the timer.)”"
+"flat": "22 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A one-page job description in the template's order: only the role sheet's six duties, no team size, a blank grade line, and the DRAFT line at the top. Two follow-ups that each name a problem and what to keep. · Give the hint at about 7 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone whose draft fails can check mutla-catchup-jd-draft.docx instead, from step 4. · Say: “Your turn, with your own unit's role. Write your own request: all five parts, both files attached. Fix the draft with two follow-ups. Then run the source trace and check by hand. Twenty-two minutes. Hints are on the Day 1 lab page. (Start the timer.)”"
 },
 {
 "say": "Before the next task, one check. (Tap after hands.) Even your own best guess is still a guess about a grade.",

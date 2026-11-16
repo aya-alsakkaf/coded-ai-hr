@@ -1,5 +1,25 @@
 # Changelog
 
+## 16 November 2026 · Aya's evening changes (round C)
+
+- The prompt checklist has five parts, not seven: Context (who you are, who reads it, why), Task, Data, Constraints, Format.
+  Role sits inside Context; Tone and Output format are one Format. Every request, slide, lab step, cheat sheet line and the
+  MAP confidence item follow it. MAP q4 options reworded (answer still d).
+- Day 1, Block 1 now opens with who used AI this week, what AI is, AI people already use (spam filter, face unlock, maps,
+  fraud alerts), where LLMs fit (AI, machine learning, LLMs) and what LLM stands for, then the 30-day story and prediction.
+  69 slides. Task 1.1 runs 10 minutes.
+- Day 2 is now Meetings, Reporting and Presentations. The old way and the AI way (one slide after the callback).
+  Task 2.7 is the payroll cross-check (October against November and the approved movements; employee codes only; three
+  planted items). Block 5 is Word (a summary, then three lines for the HR team). Block 6 is PowerPoint (a deck from a
+  document, a deck edited in rounds, slides for your track's meeting). 55 slides.
+- Day 3 is now HR Agents, Workflows and an Introduction to Power Automate. Task 3.4 is a choice: the Job Description Coach
+  or the new Onboarding Buddy. The workflow mapping moved here from Day 2 (Block 4, 12:15) with Task 3.8, an optional
+  improvement marked Person, Copilot or Agent only. The Power Automate demo is a recorded video; the slide holds a
+  placeholder until it is recorded. 46 slides.
+- New sample files: mutla-payroll-check-oct-nov-2026.xlsx and mutla-onboarding-checklist-2026.docx (30 files).
+- Portal (with Aya's OK): PRE, POST and the final survey reworded for the five parts; Day 2 and Day 3 section titles renamed;
+  MAP q11 moved to the Day 3 section (6, 4, 4). Yousif, Moudhi, Ahmad Maher and Ghareeb invited to all three surveys.
+
 ## 16 November 2026 · Days 2 and 3 rebuilt to the updated outline (round B)
 
 - Day 2 rewritten: Meetings, Reporting and Mapping Your HR Workflow. Protecting employee data first (green, amber, red card sort;

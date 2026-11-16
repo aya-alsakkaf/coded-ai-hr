@@ -249,8 +249,8 @@
    "id": "q_5",
    "type": "scale",
    "label": {
-    "en": "I can write a request with role, context, task, data, constraints, tone and output format, and fix a weak draft with follow-up instructions.",
-    "ar": "أستطيع كتابة طلب يتضمن الدور والسياق والمهمة والبيانات والقيود والأسلوب وشكل الناتج، وتحسين مسودة ضعيفة بتعليمات متابعة."
+    "en": "I can write a request with context, task, data, constraints and format, and fix a weak draft with follow-up instructions.",
+    "ar": "أستطيع كتابة طلب يتضمن السياق والمهمة والبيانات والقيود والشكل، وتحسين مسودة ضعيفة بتعليمات متابعة."
    },
    "required": true,
    "sectionId": "s_learn",

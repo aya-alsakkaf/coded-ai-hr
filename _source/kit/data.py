@@ -19,18 +19,17 @@ TRACKS = [("je", "Job Evaluation and Salary Scaling"), ("cmp", "Compensation"), 
           ("pa", "Personnel and Administration"), ("ld", "Learning and Development")]
 TRACK = dict(TRACKS)
 
-# ------------------------------------------------------------------ the prompt checklist (Day 1, Block 2): the outline's seven parts
-CHECKLIST = [("Role", "Who Copilot writes as", "You are an HR officer at Mutla Oil Company."),
-             ("Context", "Why you need it, and who reads it", "It is for the 2026 job evaluation round. The Job Evaluation committee reads it."),
+# ------------------------------------------------------------------ the prompt checklist (Day 1, Block 2): five parts (Aya, 16 Nov 2026)
+# The outline lists seven (role, context, task, data, constraints, tone, output format). Role sits inside Context; Tone and Output format are one Format.
+CHECKLIST = [("Context", "Who you are, who reads it, and why", "You are an HR officer at Mutla Oil Company. It is for the 2026 job evaluation round, and the committee reads it."),
              ("Task", "The one job to do", "Update the job description for the Compensation Analyst."),
              ("Data", "The facts and the files to use", "Use the attached role information and the 2026 template."),
              ("Constraints", "The limits it must keep", "Use only the attached files. No team size, no grade. One page."),
-             ("Tone", "How it should sound", "Formal, neutral, plain English."),
-             ("Output format", "What the answer looks like", "The template's headings in order. Start with: DRAFT · Reviewed by: ___")]
+             ("Format", "How it looks and sounds", "Formal and neutral. The template's headings in order. Start with: DRAFT · Reviewed by: ___")]
 INPUTS = CHECKLIST                       # the cheat sheet and the Prompt Bank read this name
 PARTS = [a for a, _b, _c in CHECKLIST]
 PARTS_LINE = " · ".join(PARTS)
-GCSE = [("Goal", "Task"), ("Context", "Role and Context"), ("Source", "Data"), ("Expectations", "Constraints, Tone and Output format")]
+GCSE = [("Goal", "Task"), ("Context", "Context"), ("Source", "Data"), ("Expectations", "Constraints and Format")]
 DRAFT_LINE = "DRAFT · Reviewed by: ___"
 
 # ------------------------------------------------------------------ experience letters (Day 1, Task 1.4): template, HR record, three requests
@@ -418,18 +417,18 @@ STORY_KEY = {"pa": ["Delay: the letter waits on the supervisor's desk.", "Duplic
              "mp": ["Delay: the memo waits when someone is on leave.", "Duplicated effort: three emails to collect the facts; two files to check.", "Unclear ownership: nobody knows the latest version or where the request is.", "Person decides: Supervisor, Finance and the division head approve."],
              "je": ["Delay: a file that misses the agenda waits a month.", "Duplicated effort: printing copies; typing the result twice.", "Unclear ownership: nobody tells the unit the result first.", "Repetitive step: asking units again for missing documents. Person decides: the committee."]}
 # Day 3 · the improved workflow card (final project) and a filled-in example (the training request)
-CARD_FIELDS = ["Process and track", "Trigger: what starts it", "Inputs: what the request must contain", "Steps: each one marked Person, Copilot, Agent or Flow",
+CARD_FIELDS = ["Process and track", "Trigger: what starts it", "Inputs: what the request must contain", "Steps: each one marked Person, Copilot or Agent",
                "Decisions: which steps a person decides", "Owners: one owner for every step", "Outputs: what the requester gets, and what is logged",
                "Removed: the delays, duplicates and repeated steps you took out", "One piece you built: a Copilot request or agent instructions"]
 CARD_EXAMPLE = ["A training request · Learning and Development",
-                "The employee submits a training request form.",
+                "The employee sends the standard training request form by email.",
                 "Employee code, course name, course start date, reason, line manager's email. No names in free text.",
-                "1 Form (Flow) · 2 Log the request (Flow) · 3 Line manager approves (Person) · 4 L&D approves (Person) · 5 Email the result (Flow, text drafted once with Copilot) · 6 Answer policy questions (Agent)",
-                "The line manager and L&D approve. The flow never approves.",
-                "Employee: the request. Line manager: step 3. L&D: step 4. Training Coordinator: the flow and the log.",
-                "The employee gets an email with the decision. One row in the training request log.",
-                "No printing or scanning, no typing twice, a reminder after 2 working days instead of nobody chasing.",
-                "Agent instructions for the Training Policy Helper: answers from the training policy, refers personal cases to L&D."]
+                "1 Check the training policy (Agent) · 2 Send the standard form (Person) · 3 Line manager approves by reply (Person) · 4 L&D approves (Person) · 5 Send the result with a template drafted once (Copilot) · 6 Log the request once (Person)",
+                "The line manager and L&D approve. Copilot and the agent decide nothing.",
+                "Employee: the request. Line manager: step 3. L&D: step 4. Training Coordinator: steps 5 and 6, and the reminders.",
+                "The employee gets an email with the decision. One row in the training tracker.",
+                "No printing or scanning, no typing twice, and a reminder after 2 working days instead of nobody chasing.",
+                "Agent instructions for a Training Policy Helper: it answers from the training policy and refers personal cases to L&D."]
 # Day 3 · the second agent (Task 3.3): the Job Description Coach
 COACH_NAME = "Mutla Job Description Coach"
 COACH_TESTS = [("Normal", "Help me write the job description for a Payroll Officer. Duties: check monthly payroll changes; answer employee pay questions; prepare the payroll report; keep payroll records; work with Compensation on allowances.",
@@ -459,3 +458,38 @@ ORIENT = {"date": "Sunday 6 December 2026", "joiners": 18, "room": "Training Roo
 ORIENT_ACTIONS = [("Prepare the ID cards", "Fatma (Personnel)", "Thursday 3 December"), ("Set up 18 laptop accounts", "Hamad (IT)", "Wednesday 2 December"),
                   ("Send the agenda to the new joiners", "Noura (L&D)", "Monday 30 November"), ("Ask Medical Services about a same-day check", "Fatma (Personnel)", "No deadline set")]
 AGENT_STARTERS = ["How many days of leave can I carry over?", "When does allowances version 4 start?", "How do I ask for a training course?"]
+
+# ------------------------------------------------------------------ Day 2 · Task 2.7 payroll cross-check (employee codes only, no names)
+PAY_HEAD = ["Employee code", "Unit", "Basic (KWD)", "Housing (KWD)", "Transport (KWD)", "Other (KWD)", "Total (KWD)"]
+PAY_OCT = [("EMP-1041", "Production", 1380, 350, 90, 0), ("EMP-1462", "Drilling", 1600, 400, 90, 120), ("EMP-1755", "Drilling", 1120, 300, 80, 120),
+           ("EMP-2084", "HSE", 1450, 350, 90, 0), ("EMP-2290", "Production", 1290, 350, 80, 60), ("EMP-2731", "Production", 1040, 300, 80, 0),
+           ("EMP-3018", "Engineering", 1850, 450, 100, 0), ("EMP-3346", "Finance", 1250, 350, 80, 0), ("EMP-3721", "Finance", 990, 280, 80, 0),
+           ("EMP-4120", "Engineering", 1720, 400, 90, 60), ("EMP-4588", "HR", 1180, 300, 80, 0), ("EMP-5076", "Drilling", 1060, 300, 80, 120),
+           ("EMP-5532", "HSE", 1300, 350, 80, 0), ("EMP-6104", "Drilling", 1410, 350, 90, 120), ("EMP-6650", "IT", 1560, 400, 90, 0),
+           ("EMP-7013", "Supply Chain", 1090, 300, 80, 0), ("EMP-7785", "IT", 1270, 350, 80, 0), ("EMP-8102", "HR", 2100, 450, 120, 0)]
+PAY_MOVES = [("New joiner", "EMP-5108", "Engineering", "Starts 1 November 2026. Basic 1,150; housing 300; transport 80."),
+             ("New joiner", "EMP-5114", "HSE", "Starts 1 November 2026. Basic 980; housing 280; transport 80."),
+             ("Leaver", "EMP-2731", "Production", "Last working day 31 October 2026. No November salary."),
+             ("Promotion", "EMP-1462", "Drilling", "Basic 1,600 to 1,780 from 1 November 2026."),
+             ("Housing", "EMP-7785", "IT", "Moved into Mutla housing. Housing allowance stops from 1 November 2026.")]
+def _pay_nov():
+    rows = {r[0]: list(r) for r in PAY_OCT}
+    rows["EMP-1462"][2] = 1780        # promotion: explained
+    rows["EMP-7785"][3] = 0           # housing stops: explained
+    rows["EMP-3346"][2] = 1450        # PLANT 1: an increase that no movement explains
+    rows["EMP-5108"] = ["EMP-5108", "Engineering", 1150, 300, 80, 0]   # joiner added: explained
+    # PLANT 2: EMP-2731 left on 31 October and is still paid. PLANT 3: EMP-5114 joined on 1 November and is missing.
+    return [tuple(rows[k]) for k in sorted(rows)]
+PAY_NOV = _pay_nov()
+PAY_ISSUES = [("EMP-3346", "Basic salary rose from 1,250 to 1,450. No movement explains it.", "Ask Compensation to confirm the reason before the file goes to the bank."),
+              ("EMP-2731", "Left on 31 October 2026, still paid in November.", "Ask Personnel to confirm the last working day; remove only after confirmation."),
+              ("EMP-5114", "Joined on 1 November 2026, missing from November.", "Ask Personnel to confirm the start date and add the joiner.")]
+PAY_EXPLAINED = [("EMP-1462", "Promotion: basic 1,600 to 1,780"), ("EMP-7785", "Housing allowance stops: moved into Mutla housing"), ("EMP-5108", "New joiner, added correctly")]
+assert "EMP-2731" in {r[0] for r in PAY_NOV} and "EMP-5114" not in {r[0] for r in PAY_NOV}
+
+# ------------------------------------------------------------------ Day 3 · Task 3.4 option: the onboarding agent
+BUDDY_NAME = "Mutla Onboarding Buddy"
+BUDDY_TESTS = [("Normal", "What do I need to bring on my first day?", "The civil ID and the offer letter, with section 2 of the checklist.", "Pass, if it answers from the checklist"),
+               ("Incomplete", "Where do I go on my first day?", "It asks whether you work at head office or a field site, or gives both answers.", "Pass, if it asks first or gives both"),
+               ("Sensitive", "How much will my housing allowance be in my first month?", "It gives no amount and refers you to Compensation.", "Pass, if it gives no amount and refers")]
+BUDDY_STARTERS = ["What do I need to bring on my first day?", "When is my medical check?", "Who do I ask about my laptop?"]
