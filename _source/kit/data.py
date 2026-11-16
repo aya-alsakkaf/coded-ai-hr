@@ -361,3 +361,101 @@ TL_NOTES = [("Sunday 1 November, 07:30", "The tool checklist at the South Mutla 
 TL_OPINION = "Supervisor H: in my opinion Technician G never follows procedures."
 # MAP question 10 uses a fresh quarter, so it does not repeat the Day 2 story (Q3: 412 against 398)
 MAP_Q10 = {"quarter": "Q3", "count": 247, "control": 239}
+
+# ------------------------------------------------------------------ Day 2 afternoon: process stories (as-is), one per track; each hides the four problems
+PROBLEMS = [("Delay", "A step waits for days, often for one person."), ("Duplicated effort", "The same information is typed, printed or checked more than once."),
+            ("Unclear ownership", "Nobody is sure who does the next step, or who chases it."), ("Repetitive step", "The same manual action every time, with no judgment in it.")]
+MAP_COLS = ["Step", "Who", "What happens", "Input", "Output", "Wait", "Problem", "A person decides?"]
+STORIES = {
+ "ld": {"title": "A training request", "owner": "Learning and Development",
+        "story": ["An employee emails the Training Coordinator to ask for a course. The coordinator replies with a Word form.",
+                  "The employee fills in the form and emails it back. The coordinator prints it and puts it in the line manager's tray.",
+                  "The line manager signs the form when he has time, usually 4 to 6 working days later.",
+                  "The coordinator scans the signed form, emails it to L&D for approval, and types the request into the training tracker.",
+                  "L&D approves or declines by email, sometimes after a week.",
+                  "The coordinator emails the employee, then types the result into the tracker again.",
+                  "Nobody sends a reminder when the line manager or L&D is late. Twice this year, a nomination missed the 30-day deadline."],
+        "map": [("1", "Employee", "Emails a request for a course", "Course name", "Email", "", "", ""),
+                ("2", "Coordinator", "Replies with the Word form", "Email", "Blank form", "", "Repetitive step", ""),
+                ("3", "Employee", "Fills in the form, emails it back", "Blank form", "Filled form", "", "", ""),
+                ("4", "Coordinator", "Prints the form for the manager's tray", "Filled form", "Paper form", "", "Duplicated effort", ""),
+                ("5", "Line manager", "Signs the form", "Paper form", "Signed form", "4 to 6 days", "Delay", "Yes"),
+                ("6", "Coordinator", "Scans it, emails L&D, types it into the tracker", "Signed form", "Tracker row", "", "Duplicated effort", ""),
+                ("7", "L&D", "Approves or declines by email", "Email", "Decision", "Up to a week", "Delay", "Yes"),
+                ("8", "Coordinator", "Emails the employee, types the result again", "Decision", "Email, tracker row", "", "Duplicated effort", ""),
+                ("9", "Nobody", "Chases late approvals", "", "", "", "Unclear ownership", "")]},
+ "pa": {"title": "An HR letter request", "owner": "Personnel and Administration",
+        "story": ["Employees ask for letters by phone, by email or at the Personnel office counter.",
+                  "A Personnel officer writes each request on a sticky note or in a notebook.",
+                  "Each letter is typed from an old letter in a shared folder, so the wording changes every time.",
+                  "The officer checks the dates in the HR system, prints the letter and walks it to the Personnel Supervisor to sign. If she is out, the letter waits on her desk.",
+                  "When the letter is signed, the officer calls the employee to collect it.",
+                  "Nobody records when a letter was issued. When an employee asks where the letter is, three people look for it."]},
+ "cmp": {"title": "A remote-site allowance claim", "owner": "Compensation",
+         "story": ["An employee sends Compensation a scanned timesheet and an email asking for the remote-site allowance.",
+                   "A Compensation officer checks the days against the policy and types the claim into a spreadsheet.",
+                   "The field site supervisor must confirm the days, so Compensation emails him. He often replies a week later.",
+                   "The Compensation Supervisor approves the claim by email.",
+                   "The officer types the approved amount into the payroll change form, and Payroll types it again into the payroll system.",
+                   "A claim that arrives after the 20th of the month waits for the next payroll. Employees email to ask about their claim, and each officer answers from their own notes."]},
+ "mp": {"title": "A request for a new position", "owner": "Manpower",
+        "story": ["A line manager emails the Manpower Planning Officer to ask for a new position.",
+                  "The officer asks for the job title, the reason and the budget code, often in three separate emails.",
+                  "The officer checks the approved structure in one file and the budget in another, then writes a memo.",
+                  "The memo goes to the Manpower Planning Supervisor, then to Finance, then to the division head, one after another, by email. Each person forwards it with a new comment, so the latest version is hard to find.",
+                  "If someone is on leave, the memo waits.",
+                  "The line manager does not know where the request is, so he calls the officer every week."]},
+ "je": {"title": "A job re-evaluation request", "owner": "Job Evaluation and Salary Scaling",
+        "story": ["A unit emails the Job Evaluation team to ask for a job to be re-evaluated.",
+                  "The team asks for the current job description, an organization chart and a reason. Units often send only one of them, so the team asks again.",
+                  "A Job Evaluation specialist builds the evidence file by hand from emails and interview notes.",
+                  "The file goes to the committee secretary, who prints a copy for every member. The committee meets once a month; a file that misses the agenda waits a month.",
+                  "After the decision, the secretary writes the result in a letter, and the specialist types it again into the job evaluation records.",
+                  "The unit often hears the result from the employee before the letter arrives."]},
+}
+STORY_KEY = {"pa": ["Delay: the letter waits on the supervisor's desk.", "Duplicated effort: each letter retyped from an old one.", "Unclear ownership: nobody records issue, three people search.", "Repetitive step: writing requests on notes; calling to collect."],
+             "cmp": ["Delay: the site supervisor replies after a week; claims after the 20th wait a month.", "Duplicated effort: typed into a spreadsheet, the payroll form and the payroll system.", "Unclear ownership: each officer answers status questions from their own notes.", "Person decides: the supervisor confirms days; the Compensation Supervisor approves."],
+             "mp": ["Delay: the memo waits when someone is on leave.", "Duplicated effort: three emails to collect the facts; two files to check.", "Unclear ownership: nobody knows the latest version or where the request is.", "Person decides: Supervisor, Finance and the division head approve."],
+             "je": ["Delay: a file that misses the agenda waits a month.", "Duplicated effort: printing copies; typing the result twice.", "Unclear ownership: nobody tells the unit the result first.", "Repetitive step: asking units again for missing documents. Person decides: the committee."]}
+# Day 3 · the improved workflow card (final project) and a filled-in example (the training request)
+CARD_FIELDS = ["Process and track", "Trigger: what starts it", "Inputs: what the request must contain", "Steps: each one marked Person, Copilot, Agent or Flow",
+               "Decisions: which steps a person decides", "Owners: one owner for every step", "Outputs: what the requester gets, and what is logged",
+               "Removed: the delays, duplicates and repeated steps you took out", "One piece you built: a Copilot request or agent instructions"]
+CARD_EXAMPLE = ["A training request · Learning and Development",
+                "The employee submits a training request form.",
+                "Employee code, course name, course start date, reason, line manager's email. No names in free text.",
+                "1 Form (Flow) · 2 Log the request (Flow) · 3 Line manager approves (Person) · 4 L&D approves (Person) · 5 Email the result (Flow, text drafted once with Copilot) · 6 Answer policy questions (Agent)",
+                "The line manager and L&D approve. The flow never approves.",
+                "Employee: the request. Line manager: step 3. L&D: step 4. Training Coordinator: the flow and the log.",
+                "The employee gets an email with the decision. One row in the training request log.",
+                "No printing or scanning, no typing twice, a reminder after 2 working days instead of nobody chasing.",
+                "Agent instructions for the Training Policy Helper: answers from the training policy, refers personal cases to L&D."]
+# Day 3 · the second agent (Task 3.3): the Job Description Coach
+COACH_NAME = "Mutla Job Description Coach"
+COACH_TESTS = [("Normal", "Help me write the job description for a Payroll Officer. Duties: check monthly payroll changes; answer employee pay questions; prepare the payroll report; keep payroll records; work with Compensation on allowances.",
+                "The template's headings, only those five duties, the grade line blank, and the DRAFT line.", "Pass, if it uses only the given duties and leaves the grade blank"),
+               ("Incomplete", "Write a job description for a Payroll Officer.", "It asks for the duties first. It does not invent them.", "Pass, if it asks before it writes"),
+               ("Sensitive", "What grade should the Payroll Officer job get?", "It says the Job Evaluation committee decides, and refers the manager to Job Evaluation.", "Pass, if it gives no grade and refers")]
+# Day 3 · the Power Automate demo (trainer only): a training request flow
+PA_FORM = ["Employee code", "Course name", "Course start date", "Reason (one sentence)", "Line manager's work email"]
+PA_FLOW = [("Trigger", "Microsoft Forms", "When a new response is submitted", "The training request form"),
+           ("Action", "Microsoft Forms", "Get response details", "Reads the answers"),
+           ("Action", "Excel Online", "Add a row into a table", "Logs the request in TrainingRequests"),
+           ("Action", "Approvals", "Start and wait for an approval", "Sends it to the line manager and waits"),
+           ("Condition", "Control", "Outcome is equal to Approve", "Splits the flow: approved or not"),
+           ("Action", "Outlook", "Send an email (V2)", "Tells the employee the result")]
+PA_LOG = [("TR-27-0001", "16 November 2026", "EMP-1043", "Safety leadership", "11 January 2027", "Approved", "Line manager", "17 November 2026"),
+          ("TR-27-0002", "16 November 2026", "EMP-1739", "Excel for HR reporting", "18 January 2027", "Waiting", "", ""),
+          ("TR-27-0003", "17 November 2026", "EMP-2148", "Report writing in English", "25 January 2027", "Rejected", "Line manager", "18 November 2026")]
+PA_LOG_HEAD = ["Request ID", "Submitted", "Employee code", "Course", "Course start", "Status", "Decided by", "Decided on"]
+# Day 2 · a short meeting for Demo 2.2 and Demo 2.3 (pasted, not a file): the new joiners' orientation day
+ORIENT = {"date": "Sunday 6 December 2026", "joiners": 18, "room": "Training Room 2, head office",
+          "facts": ["18 new joiners start on Sunday 6 December 2026.", "The orientation day runs from 8:00 to 13:00 in Training Room 2, head office.",
+                    "Personnel and Administration prepares the ID cards; IT prepares 18 laptop accounts.", "L&D runs the welcome session and the safety briefing.",
+                    "Open question: can the Medical Services check be done on the same day?"],
+          "notes": ["Fatma (Personnel): the ID cards will be ready by Thursday 3 December.", "IT (Hamad): 18 laptop accounts, ready by Wednesday 2 December.",
+                    "Noura (L&D): I will send the agenda to the new joiners by Monday 30 November.", "Someone said we could also invite the CEO. Nobody agreed to ask.",
+                    "Medical Services check on the same day: not decided. Fatma will ask Medical Services."]}
+ORIENT_ACTIONS = [("Prepare the ID cards", "Fatma (Personnel)", "Thursday 3 December"), ("Set up 18 laptop accounts", "Hamad (IT)", "Wednesday 2 December"),
+                  ("Send the agenda to the new joiners", "Noura (L&D)", "Monday 30 November"), ("Ask Medical Services about a same-day check", "Fatma (Personnel)", "No deadline set")]
+AGENT_STARTERS = ["How many days of leave can I carry over?", "When does allowances version 4 start?", "How do I ask for a training course?"]

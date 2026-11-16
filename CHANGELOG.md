@@ -1,5 +1,25 @@
 # Changelog
 
+## 16 November 2026 · Days 2 and 3 rebuilt to the updated outline (round B)
+
+- Day 2 rewritten: Meetings, Reporting and Mapping Your HR Workflow. Protecting employee data first (green, amber, red card sort;
+  redact, then ask); a meeting prepared and recapped into actions; a follow-up and a reminder in Outlook; two Excel figures checked
+  against a control total; a management summary and five slides; the four workflow problems and a process map; each participant
+  maps one HR process. Ends with "which app for which job". 57 slides, Tasks 2.1 to 2.12, two exercises per build block.
+- Day 3 rewritten: HR Agents and an Introduction to Power Automate. The Mutla HR Policy Helper written with the prompt checklist,
+  built in Agent Builder and tested three ways; a second agent (Mutla Job Description Coach); a trainer-only Power Automate demo
+  (Forms, Excel log, approval, condition, email) with why a flow and not Copilot or an agent; the final project (improve the Day 2
+  map, build and test one piece, submit); Copilot, agent or flow side by side with a card sort. 40 slides, Tasks 3.1 to 3.7.
+- New sample files: mutla-process-stories.docx (five as-is processes, one per track), mutla-process-map-template.docx,
+  mutla-workflow-card-template.docx (with a filled-in example) and mutla-training-request-log.xlsx (table TrainingRequests).
+- Removed sample files no longer taught: the evidence notes, the investigation notes, the five capstone cases and the peer-test input.
+  The case files now name Tasks 2.2 and 2.5. The catch-up bank swaps the four-point review request for "flag, do not fix".
+- The Day 2 lab has one step per task; the Day 3 lab is the Final project page (the agent steps, then six project steps,
+  the track options and the example card).
+- Engine (approved 16 Nov): three-layer hints on lab pages, COPY templates on lab steps, lab names, and `DAY_NO_TASKS`
+  (no "Your turn" list on day pages). Logged in PLUGIN-FEEDBACK.md.
+- The MAP questions did not change. The portal survey titles for Days 2 and 3 already match.
+
 ## 16 November 2026 · Day 1 rebuilt to the updated outline (round A)
 
 - The outline changed to the public program page "AI Fundamentals for HR: Using Copilot and Power Automate" (PDF, 16 Nov).

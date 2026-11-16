@@ -15,7 +15,7 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 import data as D
 import content as C
-from content_demos import F, CASE_FILES, CAP_FILES, ALL_FILES, DEMOS, JD_CMP, TRACE, THREAD, RECAP, TRACKER, DECK, joined
+from content_demos import F, CASE_FILES, ALL_FILES, DEMOS, JD_CMP, TRACE, THREAD, RECAP, TRACKER, DECK, COMPARE, LETTER_FLAG, joined
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "files")
 os.makedirs(OUT, exist_ok=True)
@@ -241,22 +241,6 @@ doc(F["factors"], "Job Evaluation Factors", [
     ("b", "Facts only: no opinion about the level of the job."),
 ])
 
-# 12 · messy evidence notes: notes 2, 4, 5, 6, 7 carry D.JE_EVIDENCE; note 3 is noise; note 8 is the grade trap
-EV = {n: ev for _f, ev, n in D.JE_EVIDENCE}
-NOTES = {1: ["re-evaluation asked by the line manager (Manpower Planning Supervisor), October 2026", "reason given: the job has grown since the last job description"],
-         2: ["talked to the job holder on Tue", EV["Note 2"], "(he says the structure file changes often)"],
-         3: ["parking at the head office is full before 7:00", "job holder asked if HR can help with a parking space?? not for this file"],  # D.JE_TRAPS[0]
-         4: [EV["Note 4"], "September: 3 sections did not match, fixed before the report went out"],
-         5: [EV["Note 5"], "he does not approve requests himself"],
-         6: [EV["Note 6"], "mostly by email and Teams, some meetings"],
-         7: [EV["Note 7"], "mostly the North Mutla field office"],
-         8: ["line manager, at the end of the meeting:", "\"I think this job deserves grade 9\""]}  # D.JE_TRAPS[1]
-assert "grade 9" in D.JE_TRAPS[1][1] and "Parking" in D.JE_TRAPS[0][1]
-assert sorted(EV) == [f"Note {n}" for n in (2, 4, 5, 6, 7)]
-doc(F["evidence"], f"Evidence notes: {D.JE_ROLE} (re-evaluation, messy notes)",
-    [("i", "Collected by Job Evaluation and Salary Scaling. Rough notes, not checked yet.")] +
-    [x for n in range(1, 9) for x in [("h3", f"Note {n}")] + [("b", line) for line in NOTES[n]]])
-
 # 13 · the 30-message email thread
 YS, FA, KA = f"{D.HEAD} (HR Section Head)", f"{D.P['pa']} (Personnel and Administration)", f"{D.P['mp']} (Manpower)"
 AM, HK, NR = f"{D.P['cmp']} (Compensation)", f"{D.P['je']} (Job Evaluation and Salary Scaling)", f"{D.P['ld']} (Learning and Development)"
@@ -358,28 +342,6 @@ assert 25 <= len(LINES) <= 35
 doc(F["transcript"], f"Teams meeting transcript (exported): {D.NEW_SECTION} section staffing, Monday 16 November 2026, 10:00",
     [("kv", ("Organizer", YSn)), ("kv", ("Attendees", ", ".join([KAn, AMn, NRn, HKn]))), ("i", "Transcription started.")] +
     [("sp", x) for x in LINES] + [("i", "Transcription stopped.")])
-
-# 15 · synthetic investigation notes (roles only) with one opinion that must not become a finding
-LATE1, LATE2 = grab(r"(\d+) minutes", D.INV_EVENTS[0][1]), grab(r"by (\d+) minutes", D.INV_EVENTS[1][1])
-doc(F["inv"], "Investigation notes (synthetic, roles only): late shift handovers", [
-    ("p", "Case: late night-shift handovers at the North Mutla field office. Prepared by HR."),
-    ("h", "Events"),
-] + [("kv", (when, what)) for when, what in D.INV_EVENTS] + [
-    ("h", "Statements"),
-    ("h3", "Supervisor D"),
-    ("p", f"The handover on 1 November was {LATE1} minutes late, and on 3 November {LATE2} minutes late. I logged both in the shift log."),
-    ("p", "The night shift could not leave until the relief team arrived."),
-    ("h3", "Employee C"),
-    ("p", "On both days I came on the relief bus from the camp. The bus arrived late both times."),
-    ("p", "I went to the handover as soon as the bus arrived."),
-    ("h3", "Witness E"),
-    ("p", "I am a technician on the same shift. The relief bus has been late most weeks."),
-    ("p", "I do not know the exact times. Transport keeps the logs."),
-    ("h", "Emails received"),
-    ("kv", ("Line manager (email, 5 November)", f"“{D.INV_OPINION}”")),
-    ("h", "Still waiting for"),
-    ("b", "The bus arrival logs from Transport (asked on Sunday 8 November)."),
-], top="Synthetic training notes. People are named by role only.")
 
 # 16 · the HR trackers workbook: 412 training rows (14 duplicates), Manpower with one section at 0
 def _head(ws, row):
@@ -501,15 +463,13 @@ CASE_OUT = {
 }
 for k, n in D.TRACKS:
     cs_, co = D.CASES[k], CASE_OUT[k]
-    blocks = [("i", f"Case for Task 2.6 · {n} track"), ("h", "The facts")] + [("p", f"{i}. {x}") for i, x in enumerate(cs_["facts"], 1)]
+    blocks = [("i", f"Case for Tasks 2.2 and 2.5 · {n} track"), ("h", "The facts")] + [("p", f"{i}. {x}") for i, x in enumerate(cs_["facts"], 1)]
     if co["table"]: blocks += [("t", co["table"])]
-    blocks += [("h", "Your four outputs"),
-               ("p", "1. A Word summary of the case: the facts, the dates, who owns what and the open questions."),
-               ("p", f"2. An Outlook message to {co['to']}."),
-               ("p", f"3. A brief for {co['meet']}."),
-               ("p", f"4. An Excel summary or a PowerPoint briefing ({co['four']})."),
+    blocks += [("h", "Your two outputs"),
+               ("p", f"1. Task 2.2: an agenda, a background brief and three discussion points for {co['meet']}."),
+               ("p", f"2. Task 2.5: a message to {co['to']}."),
                ("h", "Before anything goes out"),
-               ("p", "Review every output: " + ", ".join(a.lower() for a, _b in C.CHECKS) + "."),
+               ("p", "Check every date and number against this file. No employee names. Start each output with: " + D.DRAFT_LINE),
                ("kv", ("Approved files to attach", ", ".join(["this case file"] + co["files"])))]
     doc(cs_["file"], cs_["title"], blocks)
 
@@ -530,116 +490,82 @@ policy(F["attendance"], f"{D.COMPANY} · Attendance Rules {D.YEAR} (approved)", 
 policy(F["training"], f"{D.COMPANY} · Training Policy {D.YEAR}", D.TRAINING_POLICY, "Owner: Learning and Development.")
 
 # 25 · the catch-up Prompt Bank: eight tested requests from content_demos
-_cmp_req, _rev_req = DEMOS["t21"]["prompts"][0], DEMOS["t26"]["prompts"][1]
-assert _cmp_req[0] == "Compare" and _rev_req[0] == "Review"
 CATCH = {
  "Draft": [("Draft a job description from the role sheet", joined(JD_CMP), f"{F['roles']}, {F['tpl']}", "Trace every duty to the role sheet. The grade line is blank."),
            ("Turn a brief into a five-slide outline", joined(DECK), F["brief"], "Every time, date and number matches the brief.")],
- "Compare": [("Compare two versions of a policy", _cmp_req[1], f"{F['v3']}, {F['v4']}", "Open both files. Check each change at its section number."),
+ "Compare": [("Compare two versions of a policy", COMPARE[1], f"{F['v3']}, {F['v4']}", "Open both files. Check each change at its section number."),
              ("Count tracker rows and compare with the control total", joined(TRACKER), F["trackers"], "The total matches the Control totals sheet, or you can name the rows behind the difference.")],
  "Summarize": [("Decisions and owners from a long email thread", joined(THREAD), F["thread"], "The start date matches the approval message. Every decision has its message number."),
                ("Recap a meeting transcript", joined(RECAP), F["transcript"], "Every owner and deadline matches the transcript. No action that nobody agreed.")],
  "Review": [("Trace each line of a draft to its source", joined(TRACE), f"Your draft (or {F['catchjd']}), {F['roles']}, {F['tpl']}", "Delete or check every NOT IN SOURCE line."),
-            ("Four-point review of any output", _rev_req[1], "Your draft and its source file", "Fix every problem it lists. Then read the output once more yourself.")],
+            ("Flag problems in a request, do not fix them", LETTER_FLAG[1], F["letters"], "You decide each point. Check the dates against the HR record yourself.")],
 }
 assert sum(len(v) for v in CATCH.values()) == 8 and list(CATCH) == BANK_SECTIONS
 doc(F["catchbank"], "Catch-up Prompt Bank: eight tested requests",
     [("i", "Use this bank if you missed a day. Every request has been tested on the Mutla files.")] + bank_intro() +
     [x for h in BANK_SECTIONS for x in (("h", h), ("t", [BANK_HEAD] + [list(e) for e in CATCH[h]], BANK_W))])
 
-# 26 to 30 · capstone cases, new to the participants, with the input data inside
-FIN_ROLES = [
- {"title": "Accounts Payable Officer", "unit": "Finance, Accounts Payable", "reports": "Accounts Payable Supervisor",
-  "purpose": "Checks and pays supplier invoices correctly and on time, in line with Mutla's finance procedures.",
-  "duties": ["Check supplier invoices against purchase orders and delivery notes", "Enter approved invoices in the finance system",
-             "Prepare the weekly payment list for approval", "Answer supplier questions about payments",
-             "Reconcile supplier statements each month", "Keep invoice and payment records complete"],
-  "quals": "Bachelor's degree in accounting or finance; 2 years in accounts payable; good Excel skills.",
-  "works": "Supply Chain, suppliers, Treasury."},
- {"title": "Treasury Analyst", "unit": "Finance, Treasury", "reports": "Treasury Supervisor",
-  "purpose": "Tracks Mutla's daily cash position and prepares cash forecasts, so that payments are made on time.",
-  "duties": ["Prepare the daily cash position report", "Prepare the monthly cash forecast", "Check bank statements against the finance system",
-             "Prepare payment runs for approval", "Track bank charges and report differences", "Keep treasury records up to date"],
-  "quals": "Bachelor's degree in finance or accounting; 3 years in treasury or banking; strong Excel skills.",
-  "works": "Accounts Payable, the company's banks, the Finance Manager."},
- {"title": "Budget Officer", "unit": "Finance, Budget and Planning", "reports": "Budget Supervisor",
-  "purpose": "Prepares and tracks the yearly budgets of Mutla's divisions, so that spending stays within approved limits.",
-  "duties": ["Collect budget requests from divisions", "Check budget requests against the budget guidelines", "Prepare the monthly budget report",
-             "Explain differences between the budget and actual spending", "Update budget figures after approved changes",
-             "Answer division questions about the budget process"],
-  "quals": "Bachelor's degree in finance, accounting or business; 2 years in budgeting or financial planning; strong Excel skills.",
-  "works": "Division heads, Accounts Payable, Treasury."},
-]
-PAYROLL = {"title": "Payroll Officer", "unit": "Finance, Payroll", "reports": "Payroll Supervisor",
-           "purpose": "Prepares Mutla's monthly payroll correctly and on time, from approved salary and allowance data.",
-           "duties": ["Collect monthly changes from Personnel and Administration and Compensation", "Enter approved salary and allowance changes in the payroll system",
-                      "Run payroll checks before each payment", "Prepare the monthly payroll report for the Payroll Supervisor",
-                      "Answer employee questions about their payslips", "Keep payroll records accurate and confidential"],
-           "quals": "Bachelor's degree in accounting or finance; 2 years in payroll; good Excel skills.",
-           "works": "Compensation, Personnel and Administration, Treasury."}
-assert [r["title"] for r in FIN_ROLES] == ["Accounts Payable Officer", "Treasury Analyst", "Budget Officer"]
+# 26 · five process stories (Day 2, Tasks 2.10 and 2.11): as-is, with the four problems hidden in each
+STORY_ORDER = ["ld", "pa", "cmp", "mp", "je"]
+assert sorted(STORY_ORDER) == sorted(D.STORIES) and STORY_ORDER[0] == "ld"
+doc(F["stories"], "HR process stories: how the work is done today", [
+    ("i", "Five stories, one for each HR unit track. Each one describes a process as it runs today, from the request to the result. Map it first. Do not improve it yet."),
+    ("t", [["Look for", "What it means"]] + [[a, b] for a, b in D.PROBLEMS], [4.5, 11.5]),
+] + [x for i, k in enumerate(STORY_ORDER, 1) for x in
+     [("h", f"Story {i}: {D.STORIES[k]['title']}"), ("lbl", f"Owner: {D.STORIES[k]['owner']}")] + [("p", line) for line in D.STORIES[k]["story"]]])
 
-Q_HEAD = ["Employee code", "Unit", "Received", "Question"]
-CMP_OCT = D.CMP_OCT
-CMP_NOV = D.CMP_NOV
+# 27 · the process map template (Day 2): the step table, empty
+MAP_W = [1.2, 2.2, 3.6, 2.0, 2.0, 1.6, 2.2, 1.6]
+doc(F["maptpl"], "Process map template", [
+    ("p", "Map one HR process as it runs today, from the request to the result. One row for each step. Do not improve it yet: that is Day 3."),
+    ("kv", ("Process", "")), ("kv", ("Track", "")), ("kv", ("Mapped by", "")),
+    ("t", [D.MAP_COLS] + [[""] * len(D.MAP_COLS) for _ in range(10)], MAP_W, 0.9),
+    ("h", "Mark these in the Problem column"),
+    ("t", [["Problem", "What it means"]] + [[a, b] for a, b in D.PROBLEMS], [4.5, 11.5]),
+    ("h", "Before you finish"),
+    ("b", "Every step has one owner (a role, not \"HR\" or \"the team\")."),
+    ("b", "Every wait has a length."),
+    ("b", "Every approval or decision is marked in the last column."),
+    ("b", "Roles only: no real names and no real data."),
+])
 
-V_HEAD = ["Position", "Section", "Date opened", "Status", "Blocker"]
-VAC_OCT = D.VAC_OCT
-VAC_NOV = D.VAC_NOV
-assert 8 <= len(VAC_OCT) <= 10 and 8 <= len(VAC_NOV) <= 10
-def _d(t): return f"{t[2]} {dt.date(*t).strftime('%B')} {t[0]}"
-def _vac(rows): return [V_HEAD] + [[p, s, _d(o), st, bl] for p, s, o, st, bl in rows]
-def _months(a, b): return (b[0] - a[0]) * 12 + (b[1] - a[1]) - (1 if b[2] < a[2] else 0)
-SEP_END = (2026, 9, 30)
-_sep = [r for r in VAC_OCT if r[2] <= SEP_END]
-_sep_long = sorted([r for r in _sep if _months(r[2], SEP_END) > 6], key=lambda r: r[2])
-assert len(_sep_long) == 2 and max(_months(r[2], SEP_END) for r in _sep if r not in _sep_long) < 6
+# 28 · the workflow card template (Day 3 final project), with the filled-in example
+assert len(D.CARD_FIELDS) == len(D.CARD_EXAMPLE) == 9
+doc(F["card"], "Final project: improved workflow card", [
+    ("p", "Turn your process map into a better process. Mark each step Person, Copilot, Agent or Flow. Keep every approval and decision with a person."),
+    ("h", "Your card"),
+    ("t", [["Card line", "Your process"]] + [[f, ""] for f in D.CARD_FIELDS], [5.6, 10.4], 1.2),
+    ("h", "Your tests"),
+    ("t", [["Test", "What you tried", "Result", "Fix"], ["Normal", "", "", ""], ["Incomplete", "", "", ""], ["Sensitive", "", "", ""]], [2.6, 5.4, 4.0, 4.0], 1.2),
+    ("pb",),
+    ("h", "A filled-in example: a training request"),
+    ("t", [["Card line", "Example"]] + [[a, b] for a, b in zip(D.CARD_FIELDS, D.CARD_EXAMPLE)], [5.6, 10.4]),
+    ("h", "Submit"),
+    ("p", "Submit your card and your tested piece on the CODED platform, with the link your trainer shares. Start the card with: " + D.DRAFT_LINE),
+])
 
-LB_HEAD = ["Employee code", "Unit", "Leave balance (days)", "Days planned (rest of 2026)"]
-LEAVE_OCT = D.LEAVE_OCT
-LEAVE_NOV = D.LEAVE_NOV
-assert len(LEAVE_OCT) == 12 and sum(1 for r in LEAVE_OCT if r[2] > D.LEAVE["carry"]) == 4
-def _lb(rows): return [LB_HEAD] + [[c, u, str(b), str(p)] for c, u, b, p in rows]
-
-FB_HEAD = ["Rating (1 to 5)", "Comment"]
-FEEDBACK = D.FEEDBACK
-FEEDBACK_NOV = D.FEEDBACK_NOV
-assert all(5 <= len(c) <= 6 and all(1 <= r <= 5 for r, _t in c) for _a, _b, _c2, c in FEEDBACK for c in [c])
-def _fb(course):
-    name, dates, trainer, rows = course
-    return [("h3", f"{name} · {dates}"), ("kv", ("Trainer", trainer)), ("t", [FB_HEAD] + [[str(r), t] for r, t in rows], [3.0, 13.0])]
-
-def _sep_example():
-    return [("h3", "Example: last month's report (September 2026)"),
-            ("i", f"Production vacancy report · September 2026. Open positions: {len(_sep)}. Open for more than 6 months: {len(_sep_long)}."),
-            ("t", [["Position", "Section", "Months open", "Status", "Blocker"]] +
-                  [[p, s, str(_months(o, SEP_END)), st, bl] for p, s, o, st, bl in _sep_long]),
-            ("i", "The full report lists every open position, oldest first. It ends with the blocked positions: one line each, with what is needed and who owns it.")]
-
-CAP_DATA = {
- "je": [x for r in FIN_ROLES for x in role_blocks(r, r["title"], "h3")],
- "cmp": [("p", "Questions sent to Compensation in October 2026."), ("t", [Q_HEAD] + CMP_OCT, [2.6, 2.4, 3.0, 8.0])],
- "mp": [("p", "Open positions in the Production division. Data as of 31 October 2026."), ("t", _vac(VAC_OCT))] + _sep_example(),
- "pa": [("p", "Leave balances from the HR system. Data as of 31 October 2026. Employee codes only."), ("t", _lb(LEAVE_OCT))],
- "ld": [("p", "Comments from the course feedback forms. Ratings: 1 = poor, 5 = excellent.")] + [x for c in FEEDBACK for x in _fb(c)],
-}
-for k, n in D.TRACKS:
-    cp_ = D.CAPSTONE[k]
-    doc(cp_["file"], cp_["title"],
-        [("i", f"Capstone case · {n} track · new to you"), ("h", "The task"), ("p", cp_["task"]), ("h", "What you get")] +
-        [("b", x) for x in cp_["inputs"]] + [("h", "The input data")] + CAP_DATA[k] + [RULES_LINE])
-
-# 31 · fresh inputs for the peer test: the second instance of each capstone, same shape
-FRESH_DATA = {
- "je": role_blocks(PAYROLL, PAYROLL["title"], "h3"),
- "cmp": [("p", "Questions sent to Compensation in November 2026."), ("t", [Q_HEAD] + CMP_NOV, [2.6, 2.4, 3.0, 8.0])],
- "mp": [("p", "Open positions in the Production division. Data as of 15 November 2026."), ("t", _vac(VAC_NOV))],
- "pa": [("p", "Leave balances from the HR system. Data as of 15 November 2026. Employee codes only."), ("t", _lb(LEAVE_NOV))],
- "ld": [("p", "Comments from the course feedback forms. Ratings: 1 = poor, 5 = excellent.")] + _fb(FEEDBACK_NOV),
-}
-doc(F["fresh"], "Peer test: fresh inputs",
-    [("p", "Run your colleague's prompt set on the input for their track. Ask them nothing. Write down where it failed or where you had to guess.")] +
-    [x for k, n in D.TRACKS for x in [("h", f"{n} track"), ("i", D.FRESH[k])] + FRESH_DATA[k]] + [RULES_LINE])
+# 29 · the training request log (Day 3, Power Automate demo): one Excel table the flow adds rows to
+def palog(path):
+    from openpyxl.worksheet.table import Table, TableStyleInfo
+    wb = openpyxl.Workbook(); ws = wb.active; ws.title = "Log"
+    ws.append(D.PA_LOG_HEAD); _head(ws, 1)
+    for r in D.PA_LOG: ws.append(list(r))
+    t = Table(displayName="TrainingRequests", ref=f"A1:{chr(64 + len(D.PA_LOG_HEAD))}{len(D.PA_LOG) + 1}")
+    t.tableStyleInfo = TableStyleInfo(name="TableStyleMedium2", showRowStripes=True); ws.add_table(t)
+    for col, w in zip("ABCDEFGH", (13, 18, 15, 26, 17, 11, 14, 18)): ws.column_dimensions[col].width = w
+    ws.freeze_panes = "A2"
+    ns = wb.create_sheet("Read me")
+    for line in ["The Power Automate demo adds one row to the table TrainingRequests for each form response.",
+                 "Employee codes only. No names, salaries or personal data.", D.FICTION]:
+        ns.append([line])
+    ns.column_dimensions["A"].width = 100
+    for sh in wb.worksheets: sh.oddHeader.center.text = HEADER
+    wb.properties.creator = "CODED"; wb.properties.lastModifiedBy = "CODED"; wb.properties.title = "Training request log"
+    wb.properties.created = FIXED; wb.properties.modified = FIXED
+    wb.save(path); _stable(path)
+    chk = openpyxl.load_workbook(path)
+    assert "TrainingRequests" in chk["Log"].tables and chk["Log"].max_row == len(D.PA_LOG) + 1
+palog(os.path.join(OUT, F["palog"])); WRITTEN.append(F["palog"])
 
 # ------------------------------------------------------------------ every file in ALL_FILES, nothing more
 assert sorted(WRITTEN) == sorted(ALL_FILES), f"gen_files: wrote {sorted(set(WRITTEN) ^ set(ALL_FILES))} out of step with ALL_FILES"

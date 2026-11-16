@@ -76,3 +76,8 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
     The Day 1 lab already holds `hints` and `prompt` fields for that change; the engine shows the first hint today.
 27. The MAP has 14 questions: Day 1 six, Day 2 five, Day 3 three. Answer key in content.py (MAP_KEY). PRE and POST in the
     portal are updated only after Aya confirms the change.
+28. 16 Nov 2026: Days 2 and 3 rebuilt (round B). Day 2: safe data first, meetings, follow-ups, Excel, summary and slides, then
+    process maps (Tasks 2.1 to 2.12). Day 3: two agents in Agent Builder, a trainer-only Power Automate demo, the final project
+    (Tasks 3.6 and 3.7) and Copilot, agent or flow. Slides: Day 1 64, Day 2 57, Day 3 40. The Day 3 lab is the Final project page.
+    The engine changes in Decision 26 are approved and in place. The final project submission form in the portal is not created
+    yet: until it exists, the page says the trainer shares the link (`PROJECT_SUBMIT` in content.py).

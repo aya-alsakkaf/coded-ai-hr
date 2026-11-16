@@ -16,3 +16,7 @@ Notes for the plugin owners from this build. Nothing here blocks the workshop.
 7. **Sort slide timer.** `deck.sortslide` hardcodes 8 minutes (`dur=480`). A `minutes` argument would let a kit match its lesson plan.
 8. **Task timer per part.** `deck.task` takes its timer from the task's total minutes. A task split around lunch needs a `minutes`
    override; this kit sets the value for one call and restores it.
+9. **Engine change, approved by Aya on 16 Nov 2026 (`_source/build/pages.py`).** Lab steps take `hints` (shown in layers: a hint,
+   another hint, then the step's `prompt` with COPY), `templates` [(label, text)] with COPY, and the lab takes `name` and `lede_html`.
+   `DAY_NO_TASKS = True` hides the "Your turn" list on day pages. Old kits keep their behavior. Suggest: fold these into the engine.
+

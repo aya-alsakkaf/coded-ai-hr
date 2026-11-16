@@ -1,6 +1,6 @@
 {
  "name": "CODED · AI Fundamentals for HR: MAP Test PRE (Day 1)",
- "description": "MAP Skills Test for the CODED Professionals open workshop \"AI Fundamentals for HR\", 3 days, 17 to 19 November 2026, 09:00 to 15:00, CODED, Alsharekh room. Day 1 (Tue 17 Nov 2026): Copilot Foundations for HR Documents and Communication · Day 2 (Wed 18 Nov 2026): Copilot Across HR Documents, Communication and Reporting · Day 3 (Thu 19 Nov 2026): Reusable HR Assistants and Applied Capstone. PRE sitting: Day 1, Tue 17 Nov, 09:10, before teaching. The POST sitting (Day 3, Thu 19 Nov, 14:20) has the identical questions. Part 1: 6 confidence self-ratings (never scored). Part 2: 14 knowledge questions (Day 1: 6, Day 2: 5, Day 3: 3). About 10 minutes. Not graded. Answer key: 1 b · 2 c · 3 c · 4 d · 5 a · 6 c · 7 a · 8 b · 9 d · 10 d · 11 b · 12 b · 13 d · 14 c.",
+ "description": "MAP Skills Test for the CODED Professionals open workshop \"AI Fundamentals for HR\", 3 days, 17 to 19 November 2026, 09:00 to 15:00, CODED, Alsharekh room. Day 1 (Tue 17 Nov 2026): Copilot Foundations for HR Documents and Communication · Day 2 (Wed 18 Nov 2026): Meetings, Reporting and Mapping Your HR Workflow · Day 3 (Thu 19 Nov 2026): HR Agents and an Introduction to Power Automate. PRE sitting: Day 1, Tue 17 Nov, 09:10, before teaching. The POST sitting (Day 3, Thu 19 Nov, 14:20) has the identical questions. Part 1: 6 confidence self-ratings (never scored). Part 2: 14 knowledge questions (Day 1: 6, Day 2: 5, Day 3: 3). About 10 minutes. Not graded. Answer key: 1 b · 2 c · 3 c · 4 d · 5 a · 6 c · 7 a · 8 b · 9 d · 10 d · 11 b · 12 b · 13 d · 14 c.",
  "audience": "teacher_student",
  "isAnonymous": false,
  "folderId": "a8f8146d-144f-47ed-9121-ef8e437f2f11",
@@ -44,7 +44,7 @@
   {
    "id": "s_4",
    "title": {
-    "en": "Part 2: Day 2, Copilot Across HR Documents, Communication and Reporting",
+    "en": "Part 2: Day 2, Meetings, Reporting and Mapping Your HR Workflow",
     "ar": "الجزء 2: اليوم 2، الاجتماعات والتقارير ورسم مسار عمل الموارد البشرية"
    },
    "description": {
@@ -56,7 +56,7 @@
   {
    "id": "s_5",
    "title": {
-    "en": "Part 2: Day 3, Reusable HR Assistants and Applied Capstone",
+    "en": "Part 2: Day 3, HR Agents and an Introduction to Power Automate",
     "ar": "الجزء 2: اليوم 3، وكلاء الموارد البشرية ومقدمة في Power Automate"
    },
    "description": {

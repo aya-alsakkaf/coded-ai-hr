@@ -162,7 +162,7 @@ def hub(nslides):
   <div><p>{p}</p>{('<ul class="leave">' + "".join(f'<li>{ico("check", 15, 2.5)}<span>{x}</span></li>' for x in lst) + "</ul>") if lst else ""}</div>
 </div></section>''' for eb, t, p, lst in HB.get("bands", []))
     sheets = "".join(f'<a class="ghost-btn" href="{sheetp(d)}.html">{ico("copy")} Day {d} {e(wk.SHEET["what"])} <span class="arr">→</span></a>' for d in DAYS)
-    labs = "".join(f'<a class="ghost-btn" href="{labp(d)}.html">{ico("flask")} Day {d} lab <span class="arr">→</span></a>' for d in DAYS if d in wk.LABS)
+    labs = "".join(f'<a class="ghost-btn" href="{labp(d)}.html">{ico("flask")} {e(lab_name(d))} <span class="arr">→</span></a>' for d in DAYS if d in wk.LABS)
     labs += (f'<a class="ghost-btn" href="{wk.practp()}.html">{ico("check")} Practice questions <span class="arr">→</span></a>' if wk.PRACTICE else "")
     maps = "".join(map_slot(k) for k in ("pre", "post", "survey") if k in wk.FORMS)
     body = f'''<header class="hero">
@@ -269,9 +269,9 @@ def daypage(d):
     keys = [k for k in wk.FORM_DAY.get(d, []) if k in wk.FORMS]
     side_map = (f'<section class="panel"><h3>{"Before you start" if "pre" in keys else "Before you leave"}</h3><p class="muted">Scan the QR code on the screen, or open the link on your phone.</p>'
                 f'<div class="map-list">{"".join(map_slot(k) for k in keys)}</div></section>') if keys else ""
-    lab = cta("flask", f"Day {d} lab", e(wk.LABS[d]["intro"]), f"{labp(d)}.html", "Open the lab", True) if d in wk.LABS else ""
+    lab = cta("flask", e(lab_name(d)), e(wk.LABS[d]["intro"]), f"{labp(d)}.html", "Open the " + e(lab_name(d)).replace(f"Day {d} ", "").lower(), True) if d in wk.LABS else ""
     ress = (res(f"{deckp(d)}.html", f"Day {d} slide deck", "Slides", "slides") + res(f"{sheetp(d)}.html", f"Day {d} {wk.SHEET['name'].lower()}", "Copy", "copy")
-            + (res(f"{labp(d)}.html", f"Day {d} lab", "Lab", "flask") if d in wk.LABS else "")
+            + (res(f"{labp(d)}.html", lab_name(d), "Lab", "flask") if d in wk.LABS else "")
             + (res(f"{wk.practp()}.html", "Practice questions", "Practice", "check") if wk.PRACTICE else "")
             + res(f'{P("cheat-sheet")}.html', "Cheat sheet", "Reference") + res(f'{cardp()}.html', wk.CARD["name"], "Reference", "shield")
             + res(f'{P("take-home-guide")}.html', "Take-home guide", "After the workshop", "home")
@@ -286,8 +286,8 @@ def daypage(d):
   {day_path(d)}
   <section class="panel rvl"><h2>Day brief</h2><p class="brief">{e(Dd["brief"])}</p><p class="muted" style="margin-top:12px"><b>You build today:</b> {e(Dd["artifact"])}.</p></section>
   <section class="panel rvl"><h2>Run of show</h2><p class="muted">{breaks_line(d)}</p><ol class="ros">{ros}</ol></section>
-  <section class="panel rvl"><h2>Your turn</h2><p class="muted">{nt} hands-on tasks. The timer runs on the main screen. {sheet_line}</p><div class="acts">{tasks}</div>
-    <p class="smallnote">{e(C.SAMPLE_NOTE)} {e(HB.get("day_tool_note", ""))}</p></section>
+  {"" if opt("DAY_NO_TASKS", False) else f'<section class="panel rvl"><h2>Your turn</h2><p class="muted">{nt} hands-on tasks. The timer runs on the main screen. {sheet_line}</p><div class="acts">{tasks}</div></section>'}
+  <section class="panel rvl"><p class="smallnote">{e(C.SAMPLE_NOTE)} {e(HB.get("day_tool_note", ""))}</p></section>
 </div>
 <aside class="d-side">
   <section class="panel"><h3>What you will be able to do</h3><ul class="leave">{"".join(f"<li>{ico('check', 15, 2.5)}<span>{x}</span></li>" for x in Dd["outcomes"])}</ul></section>
@@ -424,6 +424,21 @@ root.addEventListener('click',function(e){var b=e.target.closest('.lab-go');if(b
   if(e.target.closest('[data-r="reset"]')){st={done:{},notes:{},ok:{}};save();steps.forEach(function(s){var r=s.querySelector('.lab-res');if(r){r.textContent='';r.className='lab-res';}var f=s.querySelector('.lab-flag');if(f)f.value='';});paint();}});
 root.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.classList.contains('lab-flag')){e.preventDefault();check(e.target.closest('.lab-step'));}});
 load();paint();})();</script>"""
+def lab_name(d):
+    """The name of a day's lab page: LABS[d]["name"] (for example "Final project"), or "Day N lab"."""
+    return wk.LABS[d].get("name") or f"Day {d} lab"
+def hint_layers(s, i):
+    """Help in layers: Stuck? Show a hint, then Still stuck? Show another hint, then Still stuck? Show the prompt (with COPY).
+    Each layer sits inside the one before, so it opens only after the earlier one. Old kits with one "hint" keep one layer."""
+    hints = list(s.get("hints") or ([s["hint"]] if s.get("hint") else []))
+    layers = [("Stuck? Show a hint" if j == 0 else "Still stuck? Show another hint", f"<p>{e(h)}</p>") for j, h in enumerate(hints)]
+    if s.get("prompt"):
+        pid = f"labp{i}"
+        layers.append(("Still stuck? Show the prompt", f'<div class="sh-promptwrap"><pre id="{pid}">{e(s["prompt"])}</pre><button class="sh-copy" type="button" data-copy="{pid}">COPY</button></div>'))
+    out = ""
+    for summ, body in reversed(layers):
+        out = f'<details class="lab-hint"><summary>{summ}</summary>{body}{out}</details>'
+    return out
 def lab(d):
     L = wk.LABS[d]
     steps = ""
@@ -438,18 +453,21 @@ def lab(d):
             chk = (f'<div class="lab-check"><label for="{cid}">{e(ck["label"])}</label><textarea id="{cid}" rows="3"></textarea>'
                    f'<small class="lab-small">Saved in this browser only. The trainer checks it with you.</small></div>')
         files = "".join(f'<a href="{f}" download>{e(f)}</a>' for f in s.get("files", []))
+        tpl = "".join(f'<div class="sh-plab">{e(lb)}</div><div class="sh-promptwrap"><pre id="lab{d}-{i}-t{j}">{e(tx)}</pre><button class="sh-copy" type="button" data-copy="lab{d}-{i}-t{j}">COPY</button></div>'
+                      for j, (lb, tx) in enumerate(s.get("templates", [])))
         steps += (f'<article class="sh-card lab-step rvl" id="step{i}" data-step="{i}"><div class="sh-top"><span class="sh-blk">Step {i}</span>'
                   f'<label class="lab-done"><input type="checkbox"> Done</label></div><h3>{e(s["title"])}</h3>'
                   f'<ol class="lab-do">{"".join(f"<li>{e(x)}</li>" for x in s["do"])}</ol>' + (f'<div class="sh-files">{files}</div>' if files else "")
-                  + (f'<details class="lab-hint"><summary>Show a hint</summary><p>{e(s["hint"])}</p></details>' if s.get("hint") else "") + chk + "</article>")
+                  + tpl + hint_layers(s, f"{d}-{i}") + chk + "</article>")
     prog = (f'<div class="lab-prog panel"><span data-r="count">0 of {len(L["steps"])} done</span><div class="lab-bar"><i data-r="bar"></i></div>'
             f'<button class="lab-reset" type="button" data-r="reset">Reset my marks</button></div>')
     body = f'''<main>{topbar(f"Day {d}")}
-{dhero(d, f"Day {d} · lab", e(L["title"]), e(L["intro"]), [("flask", f"{len(L['steps'])} steps"), ("check", "A check on each step"), ("shield", "Saved in this browser")])}
+{dhero(d, f"Day {d} · " + e(lab_name(d)).replace(f"Day {d} ", ""), e(L["title"]), e(L["intro"]), [("flask", f"{len(L['steps'])} steps"), ("check", "A check on each step"), ("shield", "Saved in this browser")])}
+{L.get("lede_html", "")}
 <div class="wrap"><div class="sheet" data-lab="{wk.PFX}-lab-day-{d}" data-salt="{wk.PFX}">{prog}{steps}
 <p class="smallnote sheet-foot">{e(C.SAMPLE_NOTE)} Your marks and notes stay in this browser; nothing is sent. <a href="{dayp(d)}.html">Back to Day {d}</a></p></div></div>
 </main>{foot_mini()}'''
-    return page(f"Day {d} · Lab", f"Day {d} lab of {C.TITLE}: {L['title']}.", body, LAB_JS + TOPBAR_H_JS)
+    return page(f"Day {d} · {lab_name(d).replace(f'Day {d} ', '').capitalize()}", f"{lab_name(d)} of {C.TITLE}: {L['title']}.", body, LAB_JS + COPY_JS + TOPBAR_H_JS)
 
 # ------------------------------------------------------------------ practice questions (optional PRACTICE): scored in the browser, nothing sent
 def practice_hash(i, k): return hashlib.sha256(f"{wk.PFX}:pq{i}:{k}".encode()).hexdigest()

@@ -17,20 +17,23 @@ F = {
  "inv": "mutla-investigation-notes.docx", "trackers": "mutla-hr-trackers-q3-2026.xlsx", "brief": "mutla-policy-change-brief.docx",
  "attendance": "mutla-attendance-rules-2026.docx", "training": "mutla-training-policy-2026.docx", "catchbank": "mutla-catchup-prompt-bank.docx",
  "fresh": "mutla-capstone-fresh-input.docx", "letters": "mutla-experience-letter-requests.docx",
+ "stories": "mutla-process-stories.docx", "maptpl": "mutla-process-map-template.docx",
+ "card": "mutla-workflow-card-template.docx", "palog": "mutla-training-request-log.xlsx",
 }
 CASE_FILES = [D.CASES[k]["file"] for k, _n in D.TRACKS]
 CAP_FILES = [D.CAPSTONE[k]["file"] for k, _n in D.TRACKS]
 ALL_FILES = [F["leave"], F["answer"], F["case"], F["oldjd"], F["tpl"], F["roles"], F["catchjd"], F["bank"], F["letters"],
-             F["v3"], F["v4"], F["factors"], F["evidence"], F["thread"], F["transcript"], F["inv"], F["trackers"], F["brief"]] + CASE_FILES + \
-            [F["attendance"], F["training"], F["catchbank"]] + CAP_FILES + [F["fresh"]]
+             F["v3"], F["v4"], F["thread"], F["transcript"], F["trackers"], F["brief"]] + CASE_FILES + [F["stories"], F["maptpl"],
+             F["attendance"], F["training"], F["factors"], F["card"], F["palog"], F["catchbank"]]
 assert len(ALL_FILES) == len(set(ALL_FILES))
 
 # prompt sheet sections: sec -> (day, name)
 BLOCK = {1: (1, "Opener"), 2: (1, "Block 1 · How Copilot works"), 3: (1, "Block 2 · A clear prompt"),
          4: (1, "Block 3 · Word: draft, fix, check"), 5: (1, "Block 4 · Word, then Outlook"),
-         6: (2, "Block 1 · Word: policies and evaluation"), 7: (2, "Block 2 · Outlook: thread to message"), 8: (2, "Block 3 · Teams: meetings and notes"),
-         9: (2, "Block 4 · Excel: HR trackers"), 10: (2, "Block 5 · PowerPoint: briefings"), 11: (2, "Integration · One case"),
-         12: (3, "Block 1 · The Prompt Gallery"), 13: (3, "Block 2 · Agent Builder"), 14: (3, "Capstone")}
+         6: (2, "Block 1 · Protect employee data"), 7: (2, "Block 2 · Prepare and recap"), 8: (2, "Block 3 · Outlook follow-ups"),
+         9: (2, "Block 4 · Excel: check figures"), 10: (2, "Block 5 · Reports and slides"), 11: (2, "Block 6 · Map a workflow"),
+         12: (2, "Block 7 · Map your own process"), 13: (3, "Block 1 · Build an HR agent"), 14: (3, "Block 2 · Test, fix, build again"),
+         15: (3, "Block 3 · Power Automate demo"), 16: (3, "Final project"), 17: (3, "Copilot, agent or flow?")}
 
 DEMOS = {}
 def demo(did, **kw):
@@ -87,40 +90,6 @@ THREAD = [["Task", "Summarize the attached email thread: every decision, then th
           ["Output format", "A table: decision, owner, date, message number. Then a list of open questions."]]
 COMPARE = ("Compare", "Compare the two attached versions of the allowances policy. List every change, with its section number, in a table: section, version 3, version 4. "
                       "Quote the exact numbers. Do not summarize parts that did not change.")
-# Day 2 and Day 3 requests (rewritten with the checklist when those days are rebuilt)
-JE = [["Instructions", f"Organize the attached evidence notes for the {D.JE_ROLE} against the five evaluation factors. Give a table: factor, evidence, note number."],
-      ["Context", "The Job Evaluation committee will use it. You prepare the file; the committee decides."],
-      ["Data", f"Use only {F['evidence']}."],
-      ["Tone", "Neutral and factual. No opinion about the level of the job."],
-      ["Approved sources", f"Use the factor names in {F['factors']}. Add a last column, Level: for the committee. Do not suggest a grade."]]
-RECAP = [["Instructions", "Turn the attached meeting transcript into a recap: decisions, then a table of action, owner, deadline, then open questions."],
-         ["Context", "It goes to everyone at the meeting and to the HR Section Head."],
-         ["Data", f"Use only {F['transcript']}. Do not add actions nobody agreed."],
-         ["Tone", "Short, neutral, clear."],
-         ["Approved sources", "Use the names and dates exactly as said in the transcript."]]
-TRACKER = [["Instructions", f"How many training requests are in the Training sheet for Q3 2026? Give the count by unit, and show the formula or the rows you counted."],
-           ["Context", "The number goes in the quarterly report to the Head of L&D."],
-           ["Data", f"Use the attached {F['trackers']}, sheet Training."],
-           ["Tone", "Plain numbers, no commentary."],
-           ["Approved sources", "Then compare your total with the Control totals sheet and list any difference."]]
-DECK = [["Instructions", "Turn the attached brief into a five-slide outline for the line managers' meeting: a title and three bullets per slide, plus speaker notes."],
-        ["Context", "Line managers must explain the new attendance rules to their teams next week."],
-        ["Data", f"Use only {F['brief']}. Keep every date, time and number exactly as written."],
-        ["Tone", "Clear and practical, for busy managers."],
-        ["Approved sources", "End with a slide: where to send questions (Personnel and Administration)."]]
-GALLERY = [["Suggested prompt", "Draft an email to my team about an upcoming training course."],
-           ["Instructions", "You are a training coordinator at Mutla. Draft a course nomination email."],
-           ["Context", "To line managers; nominations close 30 days before the course."],
-           ["Data", "Use the course name, dates and seats I paste below."],
-           ["Tone", "Friendly, short, one clear action."],
-           ["Approved sources", f"Follow {F['training']}, section 5."]]
-AGENT = [["Role", f"You are {D.AGENT_NAME}. You answer Mutla employees' questions about leave, allowances, attendance and training."],
-         ["Scope", f"Answer only from the knowledge files. Give the policy name and section for every answer. Allowances: version 3 applies until version 4 starts on {D.ALLOW_V4_DATE}. Give today's rule first, then the change and its date."],
-         ["Tone", "Polite, short, plain English."],
-         ["Must not answer", "Never give or guess the salary, allowance or personal data of a named person. Never decide a case."],
-         ["Refer to HR", "If a question needs a personal record, a decision or is not in the files, say so and refer the person to the right HR unit."],
-         ["Ask first", "If the answer depends on the person's grade or situation, ask for it before you answer."]]
-
 LEAVE_RESULT = f"Up to {D.LEAVE['carry']} days of unused annual leave may be carried over. They must be used by {D.LEAVE['carry_by']} (section 4)."
 JD_RESULT_LINES = [DL, f"<b>Job title:</b> {R['title']} · <b>Unit:</b> {R['unit']} · <b>Reports to:</b> {R['reports']}",
                    f"<b>Purpose:</b> {R['purpose']}", "<b>Key duties:</b> " + "; ".join(R["duties"][:3]) + " …", "<b>Grade:</b> blank, for the Job Evaluation committee"]
@@ -338,326 +307,498 @@ demo("t16", day=1, skill="1.6", sec=5, title="Announce and reply in Outlook", to
  hint="The start date changed during the thread. The approved one is in message 24.",
  stretch=["Ask Copilot to check your three versions against each other: list any date, time or number that differs."])
 
-# ===================================================================== DAY 2
-demo("d21", day=2, skill="2.1", sec=6, title="Job-evaluation evidence, no grade", tool="Copilot Chat · Word", files=[F["evidence"], F["factors"]], kind="player",
- setup=[f"Open a new chat (or Copilot in Word). Attach {F['evidence']} and {F['factors']}.", "Paste the request. Check the last column is empty."],
- prompts=[("Evidence by factor", joined(JE))],
- expected=f"A five-row table for the {D.JE_ROLE}: one row per factor with the evidence and its note number, and an empty level column for the committee." + " Leave out " + " and ".join(f"{a} ({b.split(':')[0].lower()})" for a, b in D.JE_TRAPS) + ".",
- say="Copilot prepares the file. The committee decides the level. The empty column says that out loud.",
- point="Organize the evidence. Never assign the grade.",
- backup=[("h", "Typical result"), tbl(["Factor", "Evidence", "Note", "Level"], [(a, b, c, "for the committee") for a, b, c in D.JE_EVIDENCE]), ("h", "Left out on purpose"), tbl(["Note", "Why"], D.JE_TRAPS)],
- fallback="Show the backup table.",
- hint="Each row needs a note number. The level column stays empty.",
- player={"parts": JE,
-         "table": [["Factor", "Evidence", "Note"]] + [[a, b, c] for a, b, c in D.JE_EVIDENCE[:3]],
-         "best": 1, "reco": ["<b>Five factors</b>, each with evidence and a note number.", "<b>Level:</b> for the committee.", "<b>No grade</b>, no opinion."],
-         "control": "If Copilot suggests a grade, delete it. The committee decides."})
+# ===================================================================== DAY 2 · Meetings, Reporting and Mapping Your HR Workflow
+RED = [["Role", f"You are a Personnel officer at {D.COMPANY}."],
+       ["Context", "The note below is already redacted. It goes to the Personnel Supervisor."],
+       ["Task", "Turn the note into a short, neutral case summary for the HR file: what happened, the request and the next step."],
+       ["Data", "Employee A, a technician, was absent on two days in late October. [Medical detail removed.] Employee A asks to work at a different site for one month. Colleague B can cover the shift."],
+       ["Constraints", "Use only the note. Do not guess any removed detail. Name nobody."],
+       ["Tone", "Neutral, short, plain English."],
+       ["Output format", f"Three labeled lines, starting with: {DL}"]]
+O = D.ORIENT
+PREP = [["Role", f"You are a Personnel officer at {D.COMPANY}."],
+        ["Context", "We meet for 30 minutes on Monday to plan the orientation day for new joiners. Personnel, IT and L&D attend."],
+        ["Task", "Prepare an agenda, a one-paragraph background brief and three discussion points."],
+        ["Data", "The facts: " + " ".join(O["facts"])],
+        ["Constraints", "Use only these facts. Give each agenda item an owner and minutes that add up to 30. Turn each open question into a discussion point."],
+        ["Tone", "Short and practical."],
+        ["Output format", f"An agenda table (item, owner, minutes), then the brief, then the discussion points. Start with: {DL}"]]
+NOTES_REQ = [["Task", "Turn the meeting notes below into decisions, a table of action, owner and deadline, and the open questions."],
+             ["Data", "The notes: " + " ".join(O["notes"])],
+             ["Constraints", "Add no action that nobody agreed. If an action has no deadline, write: no deadline set."],
+             ["Output format", "Decisions, then the action table, then the open questions."]]
+RECAP = [["Role", f"You are an HR officer at {D.COMPANY}."],
+         ["Context", "The recap goes to everyone at the meeting and to the HR Section Head."],
+         ["Task", "Turn the attached meeting transcript into a recap."],
+         ["Data", f"Use only {F['transcript']}."],
+         ["Constraints", "Add no action that nobody agreed. Use names and dates exactly as said. List anything not decided as an open question."],
+         ["Tone", "Short, neutral, clear."],
+         ["Output format", f"Decisions, then a table of action, owner, deadline, then open questions. Start with: {DL}"]]
+FOLLOW = [["Task", "From the action table above, write a follow-up email to everyone at the meeting. Then write a short reminder to Noura about the agenda she promised."],
+          ["Constraints", "Keep every owner and date exactly as in the table. No blame. The reminder asks; it does not order."],
+          ["Tone", "Polite and short."],
+          ["Output format", f"Two emails, each with a subject line. Start each one with: {DL}"]]
+TRACKER = [["Task", "Count the training requests in the Training sheet for Q3 2026, by unit."],
+           ["Data", f"Use the attached {F['trackers']}, sheet Training."],
+           ["Constraints", "Show the formula or the rows you counted. Then compare your total with the Control totals sheet. Do not fix anything."],
+           ["Output format", "A table by unit, then the total, the control total and the difference."]]
+PILOT = [["Role", f"You are an HR analyst at {D.COMPANY}."],
+         ["Context", "The Head of HR wants one short note on the attendance pilot for the management meeting."],
+         ["Task", "Summarize the pilot result in the attached brief."],
+         ["Data", f"Use only {F['brief']}."],
+         ["Constraints", "Keep every number as written. Say what the pilot does not show."],
+         ["Tone", "Neutral and short."],
+         ["Output format", f"A title and three bullets. Start with: {DL}"]]
+DECK = [["Task", "Turn the attached brief into a five-slide outline for the line managers' meeting, with speaker notes."],
+        ["Data", f"Use only {F['brief']}."],
+        ["Constraints", "Keep every date, time and number exactly as written. End with a slide on where to send questions."],
+        ["Tone", "Clear and practical, for busy managers."],
+        ["Output format", "Five slides: a title and three bullets each, plus two sentences of speaker notes per slide."]]
+BOOK = ("To book an external trainer, the Training Coordinator emails three providers for prices. She copies each price into a spreadsheet by hand. "
+        "Her manager approves the choice by email, usually after three days. She then emails Procurement, who asks for the same three prices again. "
+        "Nobody tells the trainer the room number until the day before.")
+MAPREQ = [["Task", "Turn the process story below into a step table."],
+          ["Data", "The story: " + BOOK],
+          ["Constraints", "Do not improve the process. Only map it. Flag each step that has a delay, duplicated effort, unclear ownership or a repetitive step. Mark every step where a person must decide."],
+          ["Output format", "A table: step, who, what happens, input, output, wait, problem, a person decides?"]]
+MAP_FILE = [["Task", "Turn process story 1 in the attached file into a step table."],
+            ["Data", "Use only story 1 in the attached file."],
+            ["Constraints", "Do not improve the process. Only map it. Flag each step that has a delay, duplicated effort, unclear ownership or a repetitive step. Mark every step where a person must decide."],
+            ["Output format", "A table: step, who, what happens, input, output, wait, problem, a person decides?"]]
+AT = D.ATT
+L = D.STORIES["ld"]
 
-# ----- Demo 2.1b: compare two versions (a short excerpt, so Task 2.1 stays fresh)
-AT = D.ATT; AO = D.ATT_OLD
-CMP_PARTS = [["Instructions", "Compare the old and new attendance rules below. List every change in a table: section, old text, new text."],
-             ["Context", "Staff will ask what changed. I answer only from the approved text."],
-             ["Data", f"Old, section 2: work starts at {AO['start']} and ends at {AO['end']}. New, section 2: staff start between {AT['flex_from']} and {AT['flex_to']}; core hours are {AT['core_from']} to {AT['core_to']}; {AT['hours']} working hours a day. Old, section 3: {AO['permissions']} permissions a month. New, section 3: {AT['permissions']} permissions a month, up to {AT['perm_hours']} hours each."],
-             ["Tone", "Neutral. No opinion on which version is better."],
-             ["Approved sources", "Use only the two texts above. Write No change for any section that did not change."]]
-demo("d21c", day=2, skill="2.1b", sec=6, title="Compare two versions", tool="Copilot Chat · Word", files=[], kind="player",
- setup=["Open a new chat. Paste the request with both short texts in it.", "Check each row against the two texts."],
- prompts=[("Compare two versions", joined(CMP_PARTS))],
- expected=f"A table with two rows: section 2 (fixed {AO['start']} start becomes a {AT['flex_from']} to {AT['flex_to']} start with core hours) and section 3 ({AO['permissions']} permissions become {AT['permissions']}, up to {AT['perm_hours']} hours each).",
- say="A change you can point to has a section number. Without it, nobody can check.",
- point="Section, old text, new text: every change checkable.",
- backup=[("h", "Typical result"), tbl(["Section", "Old", "New"], [("2 · Hours", f"Start {AO['start']}, end {AO['end']}", f"Start {AT['flex_from']} to {AT['flex_to']}; core {AT['core_from']} to {AT['core_to']}"), ("3 · Permissions", f"{AO['permissions']} a month", f"{AT['permissions']} a month, up to {AT['perm_hours']} hours each")])],
- fallback="Show the backup table.",
- hint="Every row needs a section number. Check it in both texts.",
- player={"parts": CMP_PARTS,
-         "table": [["Section", "Old", "New"], ["2 · Hours", f"Start {AO['start']}", f"Start {AT['flex_from']} to {AT['flex_to']}"], ["3 · Permissions", f"{AO['permissions']} a month", f"{AT['permissions']}, up to {AT['perm_hours']} hours"]],
-         "best": 1, "reco": ["<b>Two changes</b>, each with its section.", "<b>Old and new text</b> side by side.", "<b>No opinion</b> on which is better."],
-         "control": "Open both texts and check every row yourself."})
+demo("d21", day=2, skill="2.1", sec=6, title="Green, amber or red: eight HR tasks", tool="Card sort", kind="sort",
+ setup=["[T] Read each card aloud. The room calls green, amber or red, then tap the card."],
+ prompts=[], expected="Red: anything with a civil ID, a named salary, medical details or a named person in a case. Amber: internal HR information with no names, in the company's approved Copilot account. Green: fictional files and your own drafting.",
+ say="The answer may be right and the decision still wrong. Look at the light before you type.", point="Policy first. Then green, amber or red.",
+ backup=[("h", "The card sort answers"), tbl(["Task", "Color"], [(t, c) for t, c in C.SORT])],
+ fallback="If the slide fails, read the cards from the backup table and ask for a show of hands.", hint="Ask: is there personal data? Is this my company's approved account?")
 
-demo("t21", day=2, skill="2.1", sec=6, title="What changed between v3 and v4", tool="Copilot Chat · Word", files=[F["v3"], F["v4"]], kind="task", hands_on=True, minutes=15, solo="in pairs",
- setup=[f"Attach {F['v3']} and {F['v4']} to a new chat.", "Run the compare request.", "Open both files. Check each change Copilot lists against the sections.", "Write a change table: section, version 3, version 4."],
- prompts=[("Compare", "Compare the two attached versions of the allowances policy. List every change, with its section number, in a table: section, version 3, version 4. Quote the exact numbers. Do not summarize parts that did not change.")],
- expected="Three changes: " + "; ".join(f"{a}: {b} → {c}" for a, b, c in D.ALLOW_CHANGES) + ". The later sections are renumbered because of the new section 5.",
- say="Your manager asked one question: what changed? Answer it with section numbers.",
- point="Compare versions with section numbers. Check each change in both files.",
- backup=[("h", "The three changes"), tbl(["Section", "Version 3", "Version 4"], D.ALLOW_CHANGES)],
- answer=[("h", "The three planted changes"), tbl(["Section", "Version 3", "Version 4"], D.ALLOW_CHANGES),
-         ("note", f"Also accept: the version date changed ({D.ALLOW_V3_DATE} → {D.ALLOW_V4_DATE}), and sections 5 and 6 of v3 became 6 and 7. These are not policy changes.")],
- deliverable="A change table with section numbers.",
- fallback="If Copilot misses a change, pairs compare sections 2, 3 and 5 by hand.",
- hint="The housing cap, the transport grades and one new section.",
- stretch=["Draft a three-line note to staff about the changes, every number unchanged."],
- stretch_prompts=[("Note to staff", "Write a three-line note to staff about these changes. Keep every number and date exactly as in version 4.")])
+demo("d21b", day=2, skill="2.1b", sec=6, title="Redact, then ask", tool="Copilot Chat",
+ setup=["[T] Show the note before redaction on the trainer screen only. Never paste it.", "[T] Redact it aloud: roles for names, no ID, phone, salary or medical detail.",
+        "[T] Open a new Copilot Chat. Paste the request with the redacted note in it. Read the summary: does it guess the removed detail?"],
+ prompts=[("Summarize a redacted note", joined(RED))],
+ expected="A three-line summary (what happened, the request, the next step) that names nobody and does not guess the removed detail.",
+ say="Copilot only ever sees the redacted note. The redaction happens before the prompt, not inside it.",
+ point="Redact first. Then ask.",
+ backup=[("h", "Typical result"), tbl(["Part", "Summary"], [("What happened", "Employee A was absent on two days in late October."), ("The request", "To work at a different site for one month."), ("Next step", "The Personnel Supervisor decides. Colleague B can cover the shift.")])],
+ fallback="Show the backup table on the trainer screen.",
+ hint="If the summary guesses a removed detail, add: do not guess anything removed.")
 
-demo("d22", day=2, skill="2.2", sec=7, title="A long thread into decisions", tool="Copilot Chat · Outlook", files=[F["thread"]], kind="player",
- setup=[f"Attach {F['thread']} to a new chat. (In Outlook with Copilot, open the thread and select Summary by Copilot, or Summarize, at the top of the thread.)", "Paste the request. Check the start date against message 24."],
- prompts=[("Decisions from the thread", joined(THREAD)), ("Reply to a staff question", "Draft a short, polite reply to a staff member who asks whether the core hours change. Use only the approved decisions in your summary. If the thread does not answer it, say so.")],
- expected=f"Four decisions with owners and dates. The start date is {D.ATT['start']} (message 24), not the {D.ATT['old_start']} that message 3 proposed. Two open questions: Ramadan hours and field staff on rotation." + " Two traps: " + " ".join(f"{a}: {b}" for a, b in D.THREAD_TRAPS) + f" Reply: from {D.ATT['start']}, core hours are {D.ATT['core_from']} to {D.ATT['core_to']} (message 24). The thread does not give the current hours, so the reply says so and refers the person to Personnel and Administration.",
- say="Thirty messages, four decisions. One early date was changed later. The summary must say which one stands.",
- point="Decisions, owners, dates, and which message says so.",
- backup=[("h", "Typical result"), tbl(["Decision", "Owner", "Date or source"], D.ATT_DECISIONS), ("h", "Open questions"), ("ul", D.ATT_OPEN),
-         ("h", "Typical reply to a staff question"), ("p", f"“Thank you for your question. From {D.ATT['start']}, core hours are {D.ATT['core_from']} to {D.ATT['core_to']}, as approved in message 24. The thread does not give the current hours, so please check them with Personnel and Administration.”")],
- fallback="Show the backup table.",
- hint="Find the message where the start date was approved.",
- player={"parts": THREAD, "table": [["Decision", "Owner", "When"]] + [list(x) for x in D.ATT_DECISIONS[:3]], "best": 0,
-         "reco": [f"<b>Start date:</b> {D.ATT['start']}, the later decision.", "<b>Open:</b> Ramadan hours, field staff.", "<b>Each decision</b> cites its message."],
-         "control": "Check the start date in message 24 before the announcement goes out."})
+demo("t21", day=2, skill="2.1", sec=6, title="Redact a case note", tool="Your eyes + Word", files=[F["case"]], kind="task", hands_on=True, minutes=11, solo="on your own",
+ setup=[f"Open {F['case']} in Word. Save a copy with -redacted at the end of the name.", "Find every detail that identifies a person or is sensitive.",
+        "Replace names with roles (Employee A, Colleague B). Remove the civil ID, phone number, salary and medical reason.", "Read it once more. Could anyone outside HR tell who this is?"],
+ prompts=[("Only on the redacted copy", "Read the attached note. List any detail that could still identify a person or is sensitive. Do not repeat the detail itself; give its paragraph number.")],
+ expected="Six items removed or replaced: " + "; ".join(f"{a.lower()} → {c}" for a, _b, c in D.CASE_SENSITIVE) + ".",
+ say="Redact first, then ask. Copilot can help you tidy the note only after nothing sensitive is left in it.",
+ point="Replace names with roles. Remove IDs, numbers, salaries and medical details.",
+ backup=[("h", "What a redacted note replaces"), tbl(["Sensitive item", "Replace with"], [(a, c) for a, _b, c in D.CASE_SENSITIVE])],
+ answer=[("h", "The six planted items"), tbl(["Item", "In the note", "Replace with"], D.CASE_SENSITIVE),
+         ("note", "The facts of the case (dates of absence, the request, the next step) stay in. Accept other neutral labels for people, used the same way throughout. Also accept a note that makes the dates or the unit general.")],
+ deliverable="A redacted copy of the case note that is safe to use with Copilot.",
+ fallback="If Word is not available, mark the items in the file preview and list them in a note.",
+ hint="Six items: two names, an ID number, a phone number, a salary and a medical reason.",
+ stretch=["On the redacted copy only, ask Copilot whether any personal detail is left."])
 
-demo("t22", day=2, skill="2.2", sec=7, title="Announce and reply", tool="Copilot Chat · Outlook", files=[F["thread"]], kind="task", hands_on=True, minutes=12, solo="on your own",
- setup=[f"Use {F['thread']} and your decisions summary.", "Request 1: the staff announcement, in a warm and clear tone, every date and rule unchanged.",
-        "Request 2: a reply to Mubarak's request in message 29.", "Check every time and date against the thread."],
- prompts=[("Announcement", f"Write a staff announcement about the new attendance rules from the attached thread. Use only the final decisions. Make it warm and clear; keep every date, time and rule as written. Under 150 words."),
-          ("Reply to Mubarak", "Write a short, polite reply to Mubarak's request in message 29. Use only the final rules in the thread. Do not promise an exception.")],
- expected=f"An announcement with {D.ATT['start']}, the {D.ATT['flex_from']} to {D.ATT['flex_to']} start, core hours {D.ATT['core_from']} to {D.ATT['core_to']} and the {D.ATT['permissions']} permissions. A reply to Mubarak: {D.MUBARAK_ANSWER}",
- say="Warmer, never different. The tone can change; the facts cannot.",
- point="Change the tone. Keep the facts.",
- backup=[("h", "Typical reply to Mubarak"), ("p", f"“Dear Mubarak, thank you for your message. Under the new rules, the earliest start is {D.ATT['flex_from']}. You can use one of your {D.ATT['permissions']} monthly permissions of up to {D.ATT['perm_hours']} hours, with your line manager's approval. Personnel and Administration”")],
- answer=[("h", "Traps in the thread"), tbl(["Where", "What to do"], D.THREAD_TRAPS), ("h", "Check the announcement for"), ("ul", [f"Start date {D.ATT['start']} (not {D.ATT['old_start']}).", f"Flexible start {D.ATT['flex_from']} to {D.ATT['flex_to']}.",
-          f"Core hours {D.ATT['core_from']} to {D.ATT['core_to']}; {D.ATT['hours']} working hours.", f"{D.ATT['permissions']} permissions a month, up to {D.ATT['perm_hours']} hours each.", "No promise about Ramadan hours."]),
-         ("h", "The reply to Mubarak"), ("p", D.MUBARAK_ANSWER)],
- deliverable="A staff announcement and a reply to Mubarak, every date and rule unchanged.",
- fallback="If the thread file will not open, use the decisions table on the slide.",
- hint="Mubarak's request is message 29. The earliest start is in message 24.",
- stretch=["Write a version of the announcement for line managers: what changes for them."])
+OPENQ = {"je": "The employee asks whether the grade will change. Only the committee decides.",
+         "cmp": "Employees will ask whether the change is automatic. It is: no request is needed.",
+         "mp": "Two technician positions: contract or permanent? Not decided.",
+         "pa": "How to handle exceptions to the new rules.",
+         "ld": "Which requests are still pending, with KWD 3,100 left in the Q4 budget."}
+CO = {"mp": "Recruitment, about the hiring order for the new section", "cmp": "the Compensation Supervisor, before the meeting with Finance",
+      "pa": "the line managers, on Monday 23 November, to agree how to handle exceptions", "ld": "the Head of Learning and Development, about the Q4 budget",
+      "je": "the Job Evaluation committee, on Thursday 10 December"}
+TO = {"mp": "Finance, about the manpower request", "cmp": "Finance, with the cost estimate", "pa": "the line managers, before their meeting",
+      "ld": "the line managers, about pending requests and the nomination deadline", "je": "the employee who asked whether the grade will change"}
+demo("d22", day=2, skill="2.2", sec=7, title="Agenda, brief and discussion points", tool="Copilot Chat · Word",
+ setup=["[T] Open a new Copilot Chat (or a new Word document with Copilot).", "[T] Paste the request: the meeting facts are inside it.",
+        "[T] Add up the minutes in the agenda aloud. Check that each open question became a discussion point."],
+ prompts=[("Prepare the meeting", joined(PREP))],
+ expected=f"An agenda with an owner for each item and 30 minutes in total, a short brief ({O['joiners']} new joiners on {O['date']}, {O['room']}), and three discussion points, one of them the Medical Services check.",
+ say="A meeting goes well when the page before it is good. Two minutes with Copilot, then you check the minutes add up.",
+ point="Agenda, brief, discussion points: from approved facts only.",
+ backup=[("h", "Typical agenda"), tbl(["Item", "Owner", "Minutes"], [("ID cards and laptop accounts", "Personnel and IT", "10"), ("Welcome session and safety briefing", "L&D", "10"), ("Medical Services check: same day?", "Personnel", "5"), ("Actions and owners", "Chair", "5")])],
+ fallback="Show the backup agenda on the trainer screen.",
+ hint="Do the minutes add up to 30?")
 
-demo("d23", day=2, skill="2.3", sec=8, title="A transcript into actions", tool="Copilot Chat · Teams", files=[F["transcript"]], kind="player",
- setup=[f"Attach {F['transcript']} to a new chat. (In Teams, Copilot recaps a meeting only when it was transcribed.)", "Paste the recap request. Check each owner and deadline."],
- prompts=[("Recap", joined(RECAP))],
+demo("t22", day=2, skill="2.2", sec=7, title="Prepare your track's meeting", tool="Copilot Chat · Word", files=CASE_FILES, kind="task", hands_on=True, minutes=15, solo="on your own",
+ setup=["Open the case file for your unit track. Find the meeting coming up in it.",
+        "Write your own checklist request: an agenda, a one-paragraph background brief and three discussion points. Attach the case file.",
+        "Check by hand: does every agenda item have an owner? Do the minutes add up? Is every fact in the case file?"],
+ prompts=[],
+ expected="An agenda with owners and minutes, a brief that uses only the case facts, and discussion points that include the case's open question.",
+ say="Same method as the demo, your own unit's meeting.",
+ point="A good meeting starts with a good page.",
+ backup=[("h", "The meeting in each case")] + [("p", f"<b>{n}:</b> {CO[k]}.") for k, n in D.TRACKS],
+ answer=[("h", "The meeting and the open question in each case"), tbl(["Track", "Meeting", "Open question to discuss"],
+         [(n, CO[k], OPENQ[k]) for k, n in D.TRACKS])],
+ deliverable="An agenda, a background brief and three discussion points for your track's meeting.",
+ fallback="If your case file will not open, use the Personnel and Administration case.",
+ hint="Turn the open question in your case into a discussion point.",
+ stretch=["Ask Copilot to list the facts the brief needs that the case file does not give. Do not let it invent them."])
+
+demo("d23", day=2, skill="2.3", sec=7, title="Notes into decisions and actions", tool="Copilot Chat",
+ setup=["[T] Open a new Copilot Chat. Paste the request: the notes are inside it.", "[T] Read the action table aloud. Ask the room: is there an action nobody agreed?"],
+ prompts=[("Notes into actions", joined(NOTES_REQ))],
+ expected="Four actions with owners; three have deadlines and one says no deadline set. The idea of inviting the CEO is not an action: nobody agreed. One open question: the Medical Services check.",
+ say="A recap records what was agreed. An idea that nobody agreed to is not an action, however good it sounds.",
+ point="Action, owner, deadline. Nothing nobody agreed.",
+ backup=[("h", "Typical action table"), tbl(["Action", "Owner", "Deadline"], D.ORIENT_ACTIONS)],
+ fallback="Show the backup table on the trainer screen.",
+ hint="Find the line that nobody agreed to.")
+
+demo("t23", day=2, skill="2.3", sec=7, title="Recap the staffing meeting", tool="Copilot Chat · Teams", files=[F["transcript"]], kind="task", hands_on=True, minutes=15, solo="on your own",
+ setup=[f"Attach {F['transcript']} to a new chat. (In Teams, Copilot recaps a meeting only when it was transcribed.)",
+        "Write your own checklist request for a recap: decisions, then action, owner and deadline, then open questions.",
+        "Check every owner and deadline by hand against the transcript. Delete anything nobody agreed."],
+ prompts=[],
  expected=f"Four actions with owners and deadlines for the new {D.NEW_SECTION} section, and one open question: whether two positions are contract or permanent.",
- say="A meeting nobody summarizes is a meeting nobody remembers. Action, owner, deadline.",
+ say="A meeting nobody summarizes is a meeting nobody remembers.",
  point="Every action has an owner and a deadline from the transcript.",
  backup=[("h", "Typical result"), tbl(["Action", "Owner", "Deadline"], D.STAFF_ACTIONS), ("h", "Open question"), ("ul", D.STAFF_OPEN)],
- fallback="Show the backup table.",
- hint="Check each owner's name and each date in the transcript.",
- player={"parts": RECAP, "table": [["Action", "Owner", "Deadline"]] + [list(x) for x in D.STAFF_ACTIONS[:3]], "best": 0,
-         "reco": [f"<b>{len(D.STAFF_ACTIONS)} actions</b>, each with an owner and a deadline.", "<b>Open:</b> contract or permanent for two positions.", "<b>Nothing added</b> that nobody agreed."],
-         "control": "Check every owner and deadline against the transcript before you send the recap."})
+ answer=[("h", "The actions"), tbl(["Action", "Owner", "Deadline"], D.STAFF_ACTIONS), ("h", "Open question"), ("ul", D.STAFF_OPEN),
+         ("note", "A recap that turns the open question into a decision (for example, \"two contract positions\") is wrong: it was not decided.")],
+ deliverable="A recap: decisions, an action table with owners and deadlines, and the open question.",
+ fallback="If the transcript will not open, use the backup table on the trainer screen.",
+ hint="One question in the meeting was not decided. It belongs in the open questions.",
+ stretch=["Ask Copilot to list every name and date in your recap with the transcript line it came from."])
 
-# ----- Demo 2.3b: a timeline, not a verdict (a short excerpt, so Task 2.3 stays fresh)
-TL_PARTS = [["Instructions", "Put the events in the notes below in date order, in a table: date and time, what happened, who reported it. Then list the open questions."],
-            ["Context", "The notes are for an HR case file. HR has made no finding."],
-            ["Data", " ".join(f"{a}: {b[:-1]} (source: {c})." for a, b, c in D.TL_NOTES) + " " + D.TL_OPINION],
-            ["Tone", "Neutral and factual. No blame and no words that judge a person."],
-            ["Approved sources", "Use only the notes above. An opinion is not an event: leave it out of the table."]]
-demo("d23c", day=2, skill="2.3b", sec=8, title="A timeline, not a verdict", tool="Copilot Chat · Word", files=[], kind="player",
- setup=["Open a new chat. Paste the request with the short notes in it.", "Check that no row judges a person."],
- prompts=[("Timeline and open questions", joined(TL_PARTS))],
- expected=f"A {len(D.TL_NOTES)}-row timeline in date order and two or three open questions. The supervisor's opinion is not in the table.",
- say="A timeline lists what happened. A verdict says who is wrong. Copilot writes the first. People decide the second.",
- point="Events and questions. No blame.",
- backup=[("h", "Typical result"), tbl(["Date and time", "What happened", "Source"], D.TL_NOTES), ("p", "<b>Open questions:</b> Was the broken printer reported? Who signs the checklist when it cannot be printed?"), ("p", "<b>Left out:</b> the supervisor's opinion. It is not an event.")],
- fallback="Show the backup table.",
- hint="Every row is an event with a date. No row says who is at fault.",
- player={"parts": TL_PARTS,
-         "table": [["Date and time", "What happened", "Source"]] + [[a, b, c] for a, b, c in D.TL_NOTES],
-         "best": 1, "reco": ["<b>Three events</b> in date order.", "<b>Open questions</b> at the end.", "<b>The opinion</b> stays out."],
-         "control": "Read every row against the notes. Delete any word that blames a person."})
+demo("d24", day=2, skill="2.4", sec=8, title="A follow-up and a reminder", tool="Copilot Chat · Outlook",
+ setup=["[T] Go back to the chat from Demo 2.3, with the action table.", "[T] Paste the follow-up request. Read both emails aloud.",
+        "[T] Point to each owner and date: did any change?", "[T] Where the account allows it, open a new email in Outlook and use Draft with Copilot with the same request."],
+ prompts=[("Follow-up and reminder", joined(FOLLOW))],
+ expected="A follow-up email to everyone with the four actions, owners and dates unchanged, and a polite two-line reminder to Noura about the agenda due on Monday 30 November.",
+ say="The recap is only useful when it reaches people. A follow-up today and a reminder before the deadline: two short emails.",
+ point="Same owners, same dates. Polite, never blaming.",
+ backup=[("h", "Typical reminder"), ("p", f"{DL}<br>Subject: Reminder: agenda for the new joiners<br>Dear Noura, a quick reminder that the agenda for the new joiners is due on Monday 30 November. Thank you. Fatma")],
+ fallback="Show the backup reminder on the trainer screen.",
+ hint="Check every owner and date against the table.")
 
-demo("t23", day=2, skill="2.3", sec=8, title="Timeline, not verdict", tool="Copilot Chat", files=[F["inv"]], kind="task", hands_on=True, minutes=12, solo="on your own",
- setup=[f"Attach {F['inv']} to a new chat. The notes use roles, not names.", "Run the timeline request.",
-        "Read the result for any finding, blame or recommended action. Delete it.", "Check each date against the notes."],
- prompts=[("Timeline and questions", "From the attached notes, make a timeline of events: date, time, what happened, source. Then list the open questions HR still needs to answer. Do not give a finding, do not say who is at fault, and do not recommend an action.")],
- expected=f"A five-row timeline from 1 to 8 November and four open questions. The manager's opinion (“{D.INV_OPINION}”) appears, if at all, only as what someone said, never as a finding.",
- say="Copilot organizes the facts. People investigate and decide. A timeline, not a verdict.",
- point="Timeline and open questions. No findings, no blame, no action.",
- backup=[("h", "Typical timeline"), tbl(["When", "What happened"], D.INV_EVENTS), ("h", "Open questions"), ("ul", D.INV_QUESTIONS)],
- answer=[("h", "Timeline"), tbl(["When", "What happened"], D.INV_EVENTS), ("h", "Open questions (accept similar)"), ("ul", D.INV_QUESTIONS),
-         ("note", f"The planted trap: the line “{D.INV_OPINION}” must not become a finding or a recommendation in the output.")],
- deliverable="A timeline and an open-questions list, with no conclusion in it.",
- fallback="If Copilot adds a conclusion, show the trap on the screen and delete it together.",
- hint="One line in the notes is an opinion. It must not become a finding.",
- stretch=[f"Write the agenda for the follow-up meeting from {F['transcript']}."],
- stretch_prompts=[("Agenda", "Write a 30-minute agenda for a follow-up meeting from the attached transcript: items, owner of each item, minutes.")])
+demo("t24", day=2, skill="2.4", sec=8, title="Follow up the staffing meeting", tool="Copilot Chat · Outlook", files=[F["transcript"]], kind="task", hands_on=True, minutes=12, solo="on your own",
+ setup=["Use your recap from Task 2.3. No recap? Copy the action table the trainer shows.",
+        "Write your own checklist request for a follow-up email to everyone at the meeting, with the action table.",
+        "Then write a polite reminder to Khaled about the action he owns, two days before its deadline.",
+        "Check every owner and date by hand against the transcript."],
+ prompts=[],
+ expected=f"A follow-up with the four actions, owners and deadlines unchanged, and a reminder to Khaled about the manpower request due {D.STAFF_ACTIONS[0][2]}, with no blame.",
+ say="Two short emails that make sure the meeting turns into work.",
+ point="Follow up today. Remind before the deadline, not after.",
+ backup=[("h", "The actions"), tbl(["Action", "Owner", "Deadline"], D.STAFF_ACTIONS)],
+ answer=[("h", "Check the emails for"), ("ul", ["All four actions, each with its owner and deadline as in the transcript.", f"The reminder names the manpower request and {D.STAFF_ACTIONS[0][2]}.", "No blame, no new task, no promise the meeting did not make.", "The open question stays open."])],
+ deliverable="A follow-up email to the meeting and a reminder to Khaled.",
+ fallback="No recap from Task 2.3: show the four actions from the backup on the trainer screen.",
+ hint="The reminder asks politely and gives the deadline. It does not blame.",
+ stretch=["Write the same reminder for a manager who has already missed a deadline. Keep it polite."])
 
-demo("d24", day=2, skill="2.4", sec=9, title="Ask the tracker, then see the rows", tool="Copilot Chat · Excel", files=[F["trackers"]], kind="player",
- setup=[f"Attach {F['trackers']} to a new chat, or open it in Excel with Copilot (a saved .xlsx workbook).", "Paste the request. Compare the total with the Control totals sheet."],
+demo("t25", day=2, skill="2.5", sec=8, title="Your track's message", tool="Copilot Chat · Outlook", files=CASE_FILES, kind="task", hands_on=True, minutes=10, solo="on your own",
+ setup=["Open your track's case file again. Find who needs a message, and why.", "Write your own checklist request for that message. Attach the case file.",
+        "Check every date and number by hand against the case file. No names of employees in the message."],
+ prompts=[],
+ expected="One message per track, with every date and number from the case file and nothing promised that the case does not say.",
+ say="A different reader and a different reason. Same checklist.",
+ point="The right reader, the facts as written, nothing promised.",
+ backup=[("h", "Who gets the message in each case")] + [("p", f"<b>{n}:</b> {TO[k]}.") for k, n in D.TRACKS],
+ answer=[("h", "The message in each case"), tbl(["Track", "To", "Must include"], [(n, TO[k], "; ".join(D.CASES[k]["facts"][-2:])) for k, n in D.TRACKS]),
+         ("note", "Job Evaluation: the reply must say that only the committee decides the grade, and give no grade.")],
+ deliverable="One message for your track's case, checked against the case file.",
+ fallback="Short of time: write the subject line and the first two sentences, then check them.",
+ hint="Who reads it, and what must they do after reading it?")
+
+demo("d26", day=2, skill="2.6", sec=9, title="Ask the tracker, then see the rows", tool="Copilot Chat · Excel", files=[F["trackers"]],
+ setup=[f"[T] Attach {F['trackers']} to a new chat, or open it in Excel with Copilot (a saved .xlsx workbook).", "[T] Paste the count request. Open the Control totals sheet on the screen.",
+        "[T] Put the two totals side by side. Ask the room what could make a total too high."],
  prompts=[("Count and compare", joined(TRACKER))],
- expected=f"Copilot counts {D.TRAIN_ROWS_EXPORT} rows. The Control totals sheet says {D.TRAIN_TRUE}. The difference, {D.TRAIN_DUPES}, is the duplicate request IDs.",
- say="Copilot counted every row correctly. The rows were wrong. Your check found it.",
+ expected=f"Copilot counts {D.TRAIN_ROWS_EXPORT} rows. The Control totals sheet says {D.TRAIN_TRUE}. The difference is {D.TRAIN_DUPES}.",
+ say="Copilot counted every row correctly. The rows were wrong. Only the check found it.",
  point="Ask, see the rows, then check against the control total.",
  backup=[("h", "Typical result"), tbl(["Count", "Number"], [("Rows in the Training sheet", str(D.TRAIN_ROWS_EXPORT)), ("Control total", str(D.TRAIN_TRUE)), ("Difference", str(D.TRAIN_DUPES))])],
  fallback="Show the backup table. If upload fails, use a PivotTable in Excel.",
- hint="A total that is too high: look for duplicate request IDs.",
- player={"parts": TRACKER, "table": [["Unit", "Rows"]] + [[u, str(D.TRAIN_BY_UNIT_EXPORT[u])] for u in D.UNITS[:4]], "best": 1,
-         "reco": [f"<b>Rows counted:</b> {D.TRAIN_ROWS_EXPORT}.", f"<b>Control total:</b> {D.TRAIN_TRUE}.", "<b>Next:</b> find the rows behind the difference."],
-         "control": "A total goes in a report only after it matches the control total."})
+ hint="A total that is too high: look for duplicate request IDs.")
 
-demo("t24", day=2, skill="2.4", sec=9, title="Two figures, checked", tool="Copilot Chat + Excel", files=[F["trackers"]], kind="task", hands_on=True, minutes=15, solo="in pairs",
- setup=[f"Attach {F['trackers']}. Run the count request on the Training sheet.", "Compare with the Control totals sheet. Ask Copilot for the rows behind the difference.",
-        "Then ask for total vacancies in the Manpower sheet. Compare with the Control totals sheet.", "Find why each figure is wrong. Check it in Excel yourself."],
- prompts=[("Training: the rows behind the difference", "The Training sheet total does not match the Control totals sheet. List every request ID that appears more than once, with its row numbers."),
-          ("Manpower: vacancies", "In the Manpower sheet, calculate total vacancies (approved positions minus filled). Show the result by section. Then compare with the Control totals sheet.")],
- expected=f"Training: {D.TRAIN_ROWS_EXPORT} rows, {D.TRAIN_DUPES} duplicate request IDs, true count {D.TRAIN_TRUE}. Manpower: {D.MP_VACANT_EXPORT} vacancies in the file; {D.MP_WRONG} shows 0 approved positions instead of {D.STAFF_POSITIONS}, so the true total is {D.MP_VACANT}.",
- say="Two numbers, two different reasons. Duplicates make a total too high; a missing value makes one too low.",
- point="Check every figure against a control total before it goes in a report.",
- backup=[("h", "The two figures"), tbl(["Figure", "In the file", "Correct", "Why"], [("Q3 training requests", str(D.TRAIN_ROWS_EXPORT), str(D.TRAIN_TRUE), f"{D.TRAIN_DUPES} duplicate request IDs"),
-                                                                             ("Total vacancies", str(D.MP_VACANT_EXPORT), str(D.MP_VACANT), f"{D.MP_WRONG}: approved positions entered as 0")])],
- answer=[("note", f"{D.MP_WRONG} opens later, but its {D.STAFF_POSITIONS} positions are approved in the structure, so they count. Accept {D.MP_VACANT_EXPORT} only if the participant flags the 0 approved and says why."), ("h", "The two planted problems"), tbl(["Figure", "In the file", "Correct", "Cause"], [("Q3 training requests", str(D.TRAIN_ROWS_EXPORT), str(D.TRAIN_TRUE), f"{D.TRAIN_DUPES} duplicate request IDs: " + ", ".join(D.TRAIN_DUP_IDS)),
-                                                                                         ("Total vacancies", str(D.MP_VACANT_EXPORT), str(D.MP_VACANT), f"{D.MP_WRONG}: approved positions 0, should be {D.STAFF_POSITIONS}")])],
- deliverable="The two corrected figures and the reason for each.",
- fallback="If upload fails, pairs use a PivotTable and Remove Duplicates in Excel.",
- hint="One total is too high and one is too low.",
+demo("t26", day=2, skill="2.6", sec=9, title="Training requests: find the duplicates", tool="Copilot Chat + Excel", files=[F["trackers"]], kind="task", hands_on=True, minutes=12, solo="in pairs",
+ setup=[f"Attach {F['trackers']}. Run the request below to find the duplicate request IDs.", "Check by hand in Excel: select the Request ID column, then Home > Conditional Formatting > Highlight Cells Rules > Duplicate Values.",
+        "Write the corrected total, and why it changed."],
+ prompts=[("The rows behind the difference", "The Training sheet total does not match the Control totals sheet. List every request ID that appears more than once, with its row numbers. Do not delete anything.")],
+ expected=f"{D.TRAIN_DUPES} request IDs appear twice. The corrected count is {D.TRAIN_TRUE}.",
+ say="Copilot finds the rows. Excel confirms them. You write the corrected figure.",
+ point="Too high: look for duplicates. Then check them yourself.",
+ backup=[("h", "The figure"), tbl(["Figure", "In the file", "Correct", "Why"], [("Q3 training requests", str(D.TRAIN_ROWS_EXPORT), str(D.TRAIN_TRUE), f"{D.TRAIN_DUPES} duplicate request IDs")])],
+ answer=[("h", "The planted problem"), tbl(["Figure", "In the file", "Correct", "Cause"], [("Q3 training requests", str(D.TRAIN_ROWS_EXPORT), str(D.TRAIN_TRUE), f"{D.TRAIN_DUPES} duplicate request IDs: " + ", ".join(D.TRAIN_DUP_IDS))])],
+ deliverable="The corrected training total and the reason.",
+ fallback="If upload fails, pairs use Conditional Formatting and Remove Duplicates on a copy in Excel.",
+ hint="Each request ID should appear once.",
  stretch=["Ask for a chart of training requests by unit after removing the duplicates. Check that the axis starts at zero."])
 
-demo("d25", day=2, skill="2.5", sec=10, title="A brief into five slides", tool="Copilot Chat · PowerPoint", files=[F["brief"]], kind="player",
- setup=[f"Attach {F['brief']} to a new chat. (In PowerPoint with Copilot: create a presentation from the file.)", "Paste the request. Check every number against the brief."],
- prompts=[("Five slides", joined(DECK))],
- expected=f"Five slides: why the change, the new times, permissions, the pilot result ({D.ATT['pilot_drop']}% fewer late arrivals in {D.ATT['pilot_weeks']} weeks), and where to send questions.",
- say="A deck is the brief made visible. Same facts, fewer words.",
- point="Every number on a slide matches the brief.",
- backup=[("h", "Typical outline"), ("ol", ["Why we are changing attendance rules", f"Your new day: start {D.ATT['flex_from']} to {D.ATT['flex_to']}, core {D.ATT['core_from']} to {D.ATT['core_to']}",
-          f"Permissions: {D.ATT['permissions']} a month, up to {D.ATT['perm_hours']} hours", f"The pilot: {D.ATT['pilot_drop']}% fewer late arrivals", "Questions: Personnel and Administration"])],
- fallback="Show the backup outline.",
- hint="Check the times and the pilot number against the brief.",
- player={"parts": DECK, "table": [["Slide", "Title"], ["1", "Why we are changing"], ["2", "Your new day"], ["3", "Permissions"], ["4", "The pilot result"], ["5", "Questions"]], "best": 4,
-         "reco": ["<b>Five slides</b>, three bullets each.", "<b>Speaker notes</b> in plain English.", "<b>Check:</b> times and the pilot number."],
-         "control": "Check every time and number against the brief before the meeting."})
+demo("t27", day=2, skill="2.7", sec=9, title="Vacancies: find the missing value", tool="Copilot Chat + Excel", files=[F["trackers"]], kind="task", hands_on=True, minutes=12, solo="in pairs",
+ setup=["Run the request below on the Manpower sheet.", "Compare each section's approved positions with the approved structure on the Control totals sheet.", "Find why the total is too low. Write the corrected total, and why."],
+ prompts=[("Manpower: vacancies", "In the Manpower sheet, calculate total vacancies (approved positions minus filled). Show the result by section. Then compare each section with the Control totals sheet and list any difference. Do not fix anything.")],
+ expected=f"The file gives {D.MP_VACANT_EXPORT} vacancies. {D.MP_WRONG} shows 0 approved positions instead of {D.STAFF_POSITIONS}, so the true total is {D.MP_VACANT}.",
+ say="A total that is too low usually hides a zero or a blank where a number should be.",
+ point="Too low: look for a missing value.",
+ backup=[("h", "The figure"), tbl(["Figure", "In the file", "Correct", "Why"], [("Total vacancies", str(D.MP_VACANT_EXPORT), str(D.MP_VACANT), f"{D.MP_WRONG}: approved positions entered as 0")])],
+ answer=[("note", f"{D.MP_WRONG} opens later, but its {D.STAFF_POSITIONS} positions are approved in the structure, so they count. Accept {D.MP_VACANT_EXPORT} only if the pair flags the 0 and says why."),
+         tbl(["Figure", "In the file", "Correct", "Cause"], [("Total vacancies", str(D.MP_VACANT_EXPORT), str(D.MP_VACANT), f"{D.MP_WRONG}: approved positions 0, should be {D.STAFF_POSITIONS}")])],
+ deliverable="The corrected vacancy total and the reason.",
+ fallback="If upload fails, pairs compare the two sheets by hand.",
+ hint="One new section shows 0 approved positions.")
 
-demo("t25", day=2, skill="2.5", sec=10, title="Five slides for the managers' meeting", tool="Copilot Chat · PowerPoint", files=[F["brief"]], kind="task", hands_on=True, minutes=10, solo="on your own",
- setup=[f"Attach {F['brief']}. Run the five-slide request (or Copilot in PowerPoint).", "Check every time, date and number against the brief.", "Fix anything that changed."],
- prompts=[("Five slides", joined(DECK))],
- expected=f"A five-slide outline or deck with {D.ATT['start']}, the {D.ATT['flex_from']} to {D.ATT['flex_to']} start, core hours, {D.ATT['permissions']} permissions and the {D.ATT['pilot_drop']}% pilot result, all matching the brief.",
- say="Fast to make, quick to check. Read every number once.",
- point="Every number on a slide matches the brief.",
- backup=[("h", "The facts every slide must match"), ("ul", D.BRIEF_POINTS)],
- answer=[("h", "Facts to check"), ("ul", D.BRIEF_POINTS)],
- deliverable="A five-slide deck or outline, each number checked against the brief.",
- fallback="Without Copilot in PowerPoint, the outline from Copilot Chat is enough.",
- hint="Five facts: the date, the start window, core hours, permissions, the pilot.",
- stretch=["Ask for speaker notes in plain English, two sentences per slide."])
+demo("d28", day=2, skill="2.8", sec=10, title="A finding into a note for management", tool="Copilot Chat · Word", files=[F["brief"]],
+ setup=[f"[T] Attach {F['brief']} to a new chat, or open it in Word with Copilot.", "[T] Paste the request. Read the three bullets aloud.", "[T] Check the percentage and the weeks by hand in the brief."],
+ prompts=[("A note for the Head of HR", joined(PILOT))],
+ expected=f"A title and three bullets: late arrivals fell by {AT['pilot_drop']}% in an {AT['pilot_weeks']}-week pilot in the {AT['pilot_unit']}; one division and eight weeks only; the rules start for everyone on {AT['start']}.",
+ say="Managers read the first three lines. Put the finding there, with its limits.",
+ point="The finding, its limits, the next step.",
+ backup=[("h", "Typical result"), ("ul", [f"{AT['pilot_drop']}% fewer late arrivals in {AT['pilot_weeks']} weeks ({AT['pilot_unit']}).", "One division and eight weeks: not yet proof for the whole company.", f"The rules start for all day staff on {AT['start']}."])],
+ fallback="Show the backup bullets on the trainer screen.",
+ hint="What does the pilot not show?")
 
-demo("t26", day=2, skill="2.6", sec=11, title="One case, four outputs", tool="Copilot Chat + the apps", files=CASE_FILES + [F["attendance"], F["training"], F["tpl"], F["factors"], F["v4"], F["brief"]], kind="task", hands_on=True, minutes=45, solo="on your own",
- setup=["Open the case file for your unit track.", "Output 1: a Word summary of the case. Output 2: an Outlook message to the right person.",
-        "Output 3: a brief for the meeting in the case. Output 4: an Excel summary or a PowerPoint briefing.", "Run the four-point review on each output: accuracy, confidentiality, neutrality, source alignment."],
- prompts=[("Summary", "You are an HR officer at Mutla. Summarize the attached case in one page: the facts, the dates, who owns what and the open questions. Use only the case file. Neutral and plain English."),
-          ("Review", "Review this draft against the attached case file. Check four things: accuracy of every date and number, any personal or confidential detail, neutral wording, and that every point comes from the file. List any problem with the line it is in.")],
- expected="Four outputs per participant, each matching the case file's dates and numbers, with no personal data and no decision that belongs to a person.",
- say="Same five inputs, four apps, one case from your own unit. Then the review.",
- point="Accuracy, confidentiality, neutrality, source alignment: before anything goes out.",
- backup=[("h", "The facts in each case")] + [x for k, n in D.TRACKS for x in (("p", f"<b>{n}:</b> {D.CASES[k]['title']}"), ("ul", D.CASES[k]["facts"]))],
- answer=[("h", "What to check in each output"), ("ul", ["Every date and number matches the case file.", "No named salary, no personal record, no medical detail.",
-          "No decision that belongs to a person (a grade, an exception, a promise).", "Each output fits its reader: staff, a manager, Finance or a committee."])] +
-        [x for k, n in D.TRACKS for x in (("h", f"{n} · {D.CASES[k]['title']}"), ("ul", D.CASES[k]["facts"]))],
- deliverable="Four reviewed outputs for your track's case: a Word summary, an Outlook message, a meeting brief, and an Excel summary or PowerPoint briefing.",
- fallback="Short of time: two outputs done well beat four done fast.",
- hint="Start with the summary; the other three outputs reuse it.",
- stretch=["Write your own review request for the riskiest output in your case, without copying the Review request on the prompt sheet. Add it to the Prompt Bank under Review."])
-
-# ===================================================================== DAY 3
-demo("d31", day=3, skill="3.1", sec=12, title="Adapt a suggested prompt", tool="Copilot Chat · Prompt Gallery", files=[F["training"]], kind="player",
- setup=["In Copilot Chat, open the Prompt Gallery (the More options (...) button or a prompt pill below the message box). Find a prompt about a team email.", "Adapt it with the five inputs. Save it under Your Prompts."],
- prompts=[("Adapted prompt", joined(GALLERY[1:]))],
- expected="A suggested prompt from the gallery turned into Mutla's nomination email request, saved under Your Prompts.",
- say="Start from a suggested prompt, add the five inputs, save it once, use it every month.",
- point="Find, adapt, save, share.",
- backup=[("h", "The adapted prompt"), ("p", joined(GALLERY[1:]))],
- fallback="If the gallery does not open, show the backup prompt and save it in the Prompt Bank in Word.",
- hint="Your Prompts holds what you save; Teams holds what your team shares.",
- player={"parts": GALLERY, "table": [["Where", "What is there"], ["Suggested", "Prompts from Microsoft"], ["Your Prompts", "Prompts you saved"], ["Teams", "Prompts shared with your team"]], "best": 1,
-         "reco": ["<b>Suggested</b> is a start, not an answer.", "<b>Add the five inputs</b>, then save.", "<b>Share</b> the tested ones with your team."],
-         "control": "Test a prompt on a fictional file before you share it with your team."})
-
-demo("t31", day=3, skill="3.1", sec=12, title="Save your best three", tool="Copilot Chat · Prompt Gallery", files=[F["bank"], F["catchbank"]], kind="task", hands_on=True, minutes=10, solo="on your own",
- setup=[f"Open your Prompt Bank (or {F['catchbank']} if you missed a day).", "Pick your three best tested requests.", "Save each one in the Prompt Gallery under Your Prompts, with a clear name.", "Organize the Prompt Bank by task: Draft, Compare, Summarize, Review."],
+demo("t28", day=2, skill="2.8", sec=10, title="A management summary in Word", tool="Copilot Chat · Word", files=[F["trackers"]], kind="task", hands_on=True, minutes=10, solo="on your own",
+ setup=["Use your two corrected figures from Tasks 2.6 and 2.7. Missing one? Ask the trainer.",
+        "Write your own checklist request for a half-page summary for the Head of HR: what was found, what was corrected, and why.",
+        "Check both figures by hand. Make sure it starts with the DRAFT line."],
  prompts=[],
- expected="Three requests saved under Your Prompts with clear names, and a Prompt Bank organized by task.",
- say="The best request is the one you already tested. Save it where you will find it.",
- point="Saved, named, organized.",
- backup=[("h", "Good prompt names"), ("ul", ["JD · draft from role sheet (5 inputs)", "Policy · compare two versions", "Thread · decisions and owners", "Review · four-point check"])],
- answer=[("h", "Check"), ("ul", ["Three prompts saved with names that say the task.", "Each prompt has the five inputs.", "The Prompt Bank has task headings."])],
- deliverable="Three tested requests saved under Your Prompts and a Prompt Bank organized by task.",
- fallback="If saving in the gallery fails, the Prompt Bank in Word is enough.",
- hint="Name each prompt by its task, so you find it in a month.",
- stretch=["Share one prompt with a team, if your account has one."])
+ expected=f"A short summary: {D.TRAIN_TRUE} training requests (not {D.TRAIN_ROWS_EXPORT}, duplicates removed) and {D.MP_VACANT} vacancies (not {D.MP_VACANT_EXPORT}, one section entered as 0), with no blame.",
+ say="Your checked numbers are worth something only when someone reads them.",
+ point="Corrected figures, the reason, no blame.",
+ backup=[("h", "The two figures"), tbl(["Figure", "In the file", "Correct", "Why"], [("Q3 training requests", str(D.TRAIN_ROWS_EXPORT), str(D.TRAIN_TRUE), "duplicate request IDs"), ("Total vacancies", str(D.MP_VACANT_EXPORT), str(D.MP_VACANT), f"{D.MP_WRONG} entered as 0")])],
+ answer=[("h", "A good summary"), ("ul", ["Both corrected figures, and the figure that was in the file.", "The reason for each correction.", "No blame on a unit or a person.", "A next step: for example, a check on duplicates before each report."])],
+ deliverable="A half-page management summary in Word.",
+ fallback="No corrected figures: show the two figures from the backup on the trainer screen.",
+ hint="Say what the file showed, what is correct, and why.")
 
-demo("d32", day=3, skill="3.2", sec=13, title="The assistant's instructions, part by part", tool="Agent Builder", files=[F["leave"], F["v3"], F["v4"], F["attendance"], F["training"]], kind="player",
- setup=["In Microsoft 365 Copilot, choose New agent, then Configure.", "Name, description, then paste the instructions.", "Add the five policy files under Knowledge. Test in Try it."],
- prompts=[("Instructions", joined(AGENT))],
- expected="An assistant that answers from the four policies with the section, asks for the grade before an allowance answer, and declines a named person's salary.",
- say="Instructions are the script, knowledge is the binder, Try it is the rehearsal.",
- point="Instructions decide what it may answer, and when it refers to HR.",
- backup=[("h", "Three tests and what passes"), tbl(["Test", "Question", "A pass looks like", "Result"], D.AGENT_TESTS)],
- fallback="If Agent Builder is not available, show the backup tests and build the same instructions as a saved request in Copilot Chat.",
- hint="Test the sensitive question last. It must decline and refer.",
- player={"parts": AGENT, "table": [["Test", "Question", "Pass if"]] + [[a, b, d] for a, b, _c, d in D.AGENT_TESTS], "best": 2,
-         "reco": ["<b>Knowledge:</b> five policy files, each with its dates.", "<b>Must not answer:</b> named salaries, decisions.", "<b>Refer:</b> personal records go to HR."],
-         "control": "Test with a normal, an incomplete and a sensitive question before anyone else uses it."})
+demo("d29", day=2, skill="2.9", sec=10, title="A brief into five slides", tool="Copilot Chat · PowerPoint", files=[F["brief"]],
+ setup=["[T] In PowerPoint with Copilot: Create a presentation from a file, and pick the brief. In Copilot Chat: attach the brief and paste the request.",
+        "[T] Read the slide titles aloud. Check the times and the pilot number on the slides against the brief."],
+ prompts=[("Five slides", joined(DECK))],
+ expected=f"Five slides: why the change, the new times, permissions, the pilot result ({AT['pilot_drop']}% fewer late arrivals in {AT['pilot_weeks']} weeks), and where to send questions.",
+ say="A deck is the document made visible. Same facts, fewer words.",
+ point="Every number on a slide matches its source.",
+ backup=[("h", "Typical outline"), ("ol", ["Why we are changing attendance rules", f"Your new day: start {AT['flex_from']} to {AT['flex_to']}, core {AT['core_from']} to {AT['core_to']}",
+          f"Permissions: {AT['permissions']} a month, up to {AT['perm_hours']} hours", f"The pilot: {AT['pilot_drop']}% fewer late arrivals", "Questions: Personnel and Administration"])],
+ fallback="Show the backup outline on the trainer screen.",
+ hint="Check the times and the pilot number against the brief.")
 
-demo("t32", day=3, skill="3.2", sec=13, title=f"Build the {D.AGENT_NAME}", tool="Agent Builder", files=[F["leave"], F["v3"], F["v4"], F["attendance"], F["training"]], kind="task", hands_on=True, minutes=30, solo="on your own",
- setup=["New agent → Configure. Name it and write a one-line description.", "Paste the instructions from Demo 3.2 on the prompt sheet. Add the five policy files under Knowledge.",
-        "In Try it, ask the three test questions. Write a test log: question, answer, pass or fix.", "Fix one instruction that failed, then test again. Create the agent."],
+demo("t29", day=2, skill="2.9", sec=10, title="Five slides from your summary", tool="Copilot Chat · PowerPoint", files=[], kind="task", hands_on=True, minutes=10, solo="on your own",
+ setup=["Save your Task 2.8 summary as a Word file.", "In PowerPoint with Copilot: Create a presentation from a file, and pick your summary. In Copilot Chat: attach it and ask for a five-slide outline with speaker notes.",
+        "Check every number on every slide against your summary."],
+ prompts=[],
+ expected="Five slides (or an outline) with the corrected figures, the reasons and the next step, every number matching the summary.",
+ say="Fast to make, quick to check. Read every number once.",
+ point="Every number on a slide matches the summary.",
+ backup=[("h", "The figures every slide must match"), ("ul", [f"Q3 training requests: {D.TRAIN_TRUE}.", f"Total vacancies: {D.MP_VACANT}."])],
+ answer=[("h", "Facts to check"), ("ul", [f"Q3 training requests: {D.TRAIN_TRUE}.", f"Total vacancies: {D.MP_VACANT}.", "The reason for each correction.", "No blame."])],
+ deliverable="Five slides, or a five-slide outline, each number checked.",
+ fallback="Without Copilot in PowerPoint, the outline from Copilot Chat is enough.",
+ hint="Two numbers. Check each one on every slide where it appears.")
+
+demo("d210", day=2, skill="2.10", sec=11, title="A story into a step table", tool="Copilot Chat",
+ setup=["[T] Open a new Copilot Chat. Paste the request: the story is inside it.", "[T] Read the table aloud. Ask the room which problem Copilot missed, if any.",
+        "[T] Point out that Copilot flags the problems and does not fix them."],
+ prompts=[("Map a story", joined(MAPREQ))],
+ expected="Five or six steps. Delay: the manager's approval after three days. Duplicated effort: prices copied by hand, then asked for again by Procurement. Unclear ownership: nobody tells the trainer the room. A person decides: the manager approves the choice.",
+ say="First we see the process as it really is. We improve it tomorrow, not today.",
+ point="Map it as it is. Flag the problems. Do not fix them yet.",
+ backup=[("h", "Typical step table"), tbl(["Step", "Who", "Problem", "A person decides?"], [("1 Ask three providers for prices", "Coordinator", "", ""), ("2 Copy prices into a spreadsheet", "Coordinator", "Repetitive step", ""),
+         ("3 Approve the choice", "Manager", "Delay (3 days)", "Yes"), ("4 Send to Procurement; prices asked again", "Coordinator, Procurement", "Duplicated effort", ""), ("5 Tell the trainer the room", "Nobody", "Unclear ownership", "")])],
+ fallback="Show the backup table on the trainer screen.",
+ hint="A step nobody owns is still a step.")
+
+demo("t210", day=2, skill="2.10", sec=11, title="Map the training request", tool="Copilot Chat + Word", files=[F["stories"], F["maptpl"]], kind="task", hands_on=True, minutes=12, solo="in pairs",
+ setup=["Open the process stories file. Read story 1, the training request.", "Run the request below to draft the step table.",
+        "Check it by hand against the story. Add any step or problem Copilot missed.", "Copy the final table into the map template."],
+ prompts=[("Map story 1", joined(MAP_FILE))],
+ expected="About nine steps. Delays: the manager (4 to 6 days) and L&D (up to a week). Duplicated effort: printing, scanning and typing twice. Repetitive step: sending the Word form each time. Unclear ownership: nobody chases late approvals. A person decides: the line manager and L&D.",
+ say="Copilot drafts the map. You know the work, so you check it.",
+ point="Map it as it is. Mark the problems and the human decisions.",
+ backup=[("h", "The map of story 1"), tbl(D.MAP_COLS, L["map"])],
+ answer=[("h", "The map of story 1"), tbl(D.MAP_COLS, L["map"]), ("note", "The step nobody owns (chasing late approvals) is the one most maps miss. Count it as a step.")],
+ deliverable="A step table of the training request, with problems and human decisions marked.",
+ fallback="If Copilot is slow, map the story by hand in the template.",
+ hint="Find the step that nobody owns.",
+ stretch=["Count the days from the request to the decision in the worst case."])
+
+demo("t211", day=2, skill="2.11", sec=12, title="Map your own HR process", tool="Copilot Chat + Word", files=[F["stories"], F["maptpl"]], kind="task", hands_on=True, minutes=20, solo="on your own",
+ setup=["Choose: your track's story (stories 2 to 5) or a process from your own work. For your own work, write the story with roles only: no names, no real data.",
+        "Write your own checklist request to turn the story into a step table. Flag the problems; do not fix them.",
+        "Check the table by hand. Mark every step where a person must decide.", "Save the map. Tomorrow you improve it."],
+ prompts=[],
+ expected="A step table from request to completion with an owner for each step, the waits, the four kinds of problem flagged and the human decisions marked.",
+ say="This map is your raw material for tomorrow's final project.",
+ point="From request to completion. Owners, waits, problems, human decisions.",
+ backup=[("h", "Stories 2 to 5")] + [("p", f"<b>Story {i}: {D.STORIES[k]['title']}</b> ({D.STORIES[k]['owner']})") for i, k in enumerate(["pa", "cmp", "mp", "je"], 2)],
+ answer=[("h", "What each story hides")] + [x for k in ("pa", "cmp", "mp", "je") for x in (("p", f"<b>{D.STORIES[k]['title']}</b>"), ("ul", D.STORY_KEY[k]))],
+ deliverable="A map of one HR process, with problems and human decisions marked.",
+ fallback="Short of time: map the first five steps well.",
+ hint="Start where the request starts, and stop when the requester has the result.")
+
+demo("t212", day=2, skill="2.12", sec=12, title="Swap and check a map", tool="A colleague", files=[F["maptpl"]], kind="task", hands_on=True, minutes=7, solo="in pairs",
+ setup=["Swap maps with a colleague from a different unit.", "Read their map with three questions: does every step have one owner? Is every wait and problem marked? Is every human decision marked?",
+        "Write two notes on their map: one thing that is clear, one thing to fix.", "Swap back. Fix your map."],
+ prompts=[],
+ expected="Every map comes back with one fix: usually a step with no owner, a missing wait, or a decision that was not marked.",
+ say="If a colleague from another unit can follow your map, tomorrow's improvement will be easy to explain.",
+ point="One owner per step. Every wait. Every human decision.",
+ backup=[("h", "The three questions"), ("ul", ["Does every step have one owner?", "Is every wait and problem marked?", "Is every human decision marked?"])],
+ answer=[("h", "Common fixes"), ("ul", ["A step owned by \"HR\" or \"the team\": name the role.", "A wait with no length: write how long it usually takes.", "An approval not marked as a human decision."])],
+ deliverable="Your map, fixed after a colleague's check.",
+ fallback="Odd number: a group of three, in a circle.",
+ hint="Look for a step owned by \"HR\" or \"the team\". Which role is it, really?")
+
+# ===================================================================== DAY 3 · HR Agents and an Introduction to Power Automate
+AGENT = [["Role", f"You are {D.AGENT_NAME}, an assistant for {D.COMPANY} employees."],
+         ["Context", "Employees ask about leave, allowances, attendance and training. Authorized HR staff decide every case."],
+         ["Task", "Answer each question from the knowledge files, with the policy name and section."],
+         ["Data", f"Use only the five knowledge files. Allowances: version 3 applies until 31 December 2026; version 4 applies from {D.ALLOW_V4_DATE}. Give today's rule first, then the change and its date."],
+         ["Constraints", "Never give or guess the salary, allowance or personal data of a named person. Never decide a case. If the answer depends on the person's grade or situation, ask first. If the files do not answer it, say so and refer the person to the right HR unit."],
+         ["Tone", "Polite, short, plain English."],
+         ["Output format", "Two to four sentences, then the source: policy name and section."]]
+STARTERS = D.AGENT_STARTERS
+COACH = [["Role", f"You are {D.COACH_NAME}. You help {D.COMPANY} HR staff and line managers draft job descriptions."],
+         ["Context", "The drafts go to the Job Evaluation committee, which sets the level and the grade."],
+         ["Task", "Draft a job description from the duties the user gives you, in the 2026 template's order."],
+         ["Data", "Use the 2026 template and the job evaluation factors file in your knowledge, and only the duties the user gives."],
+         ["Constraints", "If the user gives no duties, ask for them before you write. Add no duty, team size, grade or salary. If asked about a grade, say the Job Evaluation committee decides and refer the user to Job Evaluation and Salary Scaling."],
+         ["Tone", "Formal, neutral, plain English."],
+         ["Output format", f"The template's headings in order, with the grade line blank. Start with: {DL}"]]
+KNOW = [F["leave"], F["v3"], F["v4"], F["attendance"], F["training"]]
+
+demo("d31", day=3, skill="3.1", sec=13, title="An HR agent, built live", tool="Agent Builder", files=KNOW,
+ setup=["[T] In Microsoft 365 Copilot, choose Create agent. Open the Configure tab.", f"[T] Name: {D.AGENT_NAME}. Description: answers staff questions from Mutla's HR policies.",
+        "[T] Paste the instructions. Read the seven parts aloud as you scroll.", "[T] Under Knowledge, upload the five policy files. Add the three starter prompts.",
+        "[T] In the test pane, ask the first starter prompt. Point to the section number in the answer."],
+ prompts=[("Instructions", joined(AGENT))] + [(f"Starter prompt {i}", q) for i, q in enumerate(STARTERS, 1)],
+ expected=f"An agent with a name, a description, instructions in seven parts, five knowledge files and three starter prompts. In the test pane it answers the carry-over question: up to {D.LEAVE['carry']} days, used by {D.LEAVE['carry_by']}, leave policy section 4.",
+ say="An agent is a saved set of instructions with its own files. You write the instructions once; everyone who uses it gets the same rules.",
+ point="Instructions, knowledge, starter prompts. Then test.",
+ backup=[("h", "What the agent holds"), tbl(["Part", "What goes in"], [("Name", D.AGENT_NAME), ("Instructions", "The seven checklist parts"), ("Knowledge", ", ".join(KNOW)), ("Starter prompts", " · ".join(STARTERS))])],
+ fallback="If Agent Builder is off on the account, paste the same instructions into Copilot Chat, attach the five files, and ask the same question.",
+ hint="Watch where each checklist part goes in the instructions.")
+
+demo("t31", day=3, skill="3.1", sec=13, title="Write the agent's instructions", tool="Word or Notepad", files=KNOW, kind="task", hands_on=True, minutes=12, solo="on your own",
+ setup=[f"Open a blank document. Write the instructions for {D.AGENT_NAME} with the seven checklist parts.",
+        "Say which files it may use, and the dates of the two allowances versions.", "Say what it must never answer, when it must ask first, and where it refers people.",
+        "Read it as if you were the agent. Could you answer a question you are not sure about?"],
+ prompts=[],
+ expected="Instructions in seven parts: answer only from the five files with the section; v3 until 31 December 2026 and v4 from 1 January 2027; ask for the grade first when it matters; never a named person's pay or data; refer anything else to the right HR unit.",
+ say="The instructions are the agent's job description. Vague instructions give a vague agent.",
+ point="What it answers, from which files, what it never answers, and where it refers.",
+ backup=[("h", "What the instructions must cover"), ("ul", ["Only the five knowledge files, with the section.", "The two allowances versions and their dates.", "Ask first when the answer depends on the person.", "Never a named person's pay or data. Never decide a case.", "Refer to the right HR unit."])],
+ answer=[("h", "A model set of instructions"), tbl(["Part", "Instructions"], AGENT)],
+ deliverable="The agent's instructions, in seven parts.",
+ fallback="Short of time: use the instructions from the Day 3 lab page, and change one line to make them yours.",
+ hint="Constraints hold the rules that protect people: never, ask first, refer.")
+
+demo("t32", day=3, skill="3.2", sec=13, title="Build it in Agent Builder", tool="Agent Builder", files=KNOW, kind="task", hands_on=True, minutes=15, solo="on your own",
+ setup=["In Microsoft 365 Copilot, choose Create agent, then the Configure tab.", "Add a name and a one-line description. Paste your instructions from Task 3.1.",
+        "Upload the five policy files under Knowledge. Add three starter prompts.", "Ask one normal question in the test pane. Does the answer give the section?"],
+ prompts=[(f"Starter prompt {i}", q) for i, q in enumerate(STARTERS, 1)],
+ expected="A saved agent with five knowledge files and three starter prompts, that answers a normal question with the policy name and section.",
+ say="Build it now. Tomorrow nobody will remember the instructions you only wrote down.",
+ point="Name, instructions, knowledge, starter prompts, one test.",
+ backup=[("h", "The parts of the agent"), tbl(["Part", "What goes in"], [("Name", D.AGENT_NAME), ("Knowledge", ", ".join(KNOW)), ("Starter prompts", " · ".join(STARTERS))])],
+ answer=[("h", "Check the agent for"), ("ul", ["Five knowledge files uploaded.", "Three starter prompts that staff would really ask.", "A normal question answered with the policy name and section."])],
+ deliverable="A saved agent that answers a normal question with its source.",
+ fallback="No Agent Builder: paste your instructions into a new Copilot Chat, attach the five files, and test there. Or pair with a neighbor who has it.",
+ hint="If the answer has no section number, check the Output format line in your instructions.")
+
+demo("d33", day=3, skill="3.3", sec=14, title="Three tests, then one fix", tool="Agent Builder",
+ setup=["[T] In the test pane, ask the three test questions one by one.", "[T] When one fails, find the instruction line that should have stopped it. Change that line only.",
+        "[T] Ask the same question again. Show that it passes now."],
  prompts=[(f"Test · {a}", b) for a, b, _c, _d in D.AGENT_TESTS],
- expected="A working assistant and a three-line test log. It cites the section, asks for the grade before the transport answer, and declines the named salary.",
- say="Build it, then test it with hard questions. A test you did not run is a problem you will meet later.",
- point="Normal, incomplete, sensitive: three tests before anyone uses it.",
+ expected="The normal question gets the rule and section 4. The incomplete question gets a question back about the grade, or both versions with dates. The sensitive question is declined and referred.",
+ say="Build, test, fix one line, test again. That loop is the whole skill.",
+ point="Normal, incomplete, sensitive. Fix one line at a time.",
+ backup=[("h", "The three tests"), tbl(["Test", "Question", "A pass looks like", "Result"], D.AGENT_TESTS)],
+ fallback="If the agent passes every test first time, ask the sensitive question in a softer way and show what it does.",
+ hint="Which instruction line should have stopped the wrong answer?")
+
+demo("t33", day=3, skill="3.3", sec=14, title="Test and fix your agent", tool="Agent Builder", files=KNOW, kind="task", hands_on=True, minutes=12, solo="on your own",
+ setup=["Ask your agent the three test questions below.", "Write a test log: question, answer, pass or fix.", "Fix one instruction line that failed, update the agent, and test again."],
+ prompts=[(f"Test · {a}", b) for a, b, _c, _d in D.AGENT_TESTS],
+ expected="A three-line test log. The agent cites section 4, asks for the grade (or gives both versions with dates) before the transport answer, and declines the named salary.",
+ say="A test you did not run is a problem a colleague finds later.",
+ point="Three tests, one log, one fix.",
  backup=[("h", "The three tests"), tbl(["Test", "Question", "A pass looks like", "Result"], D.AGENT_TESTS)],
  answer=[("h", "Pass marks"), tbl(["Test", "Question", "A pass looks like", "Result"], D.AGENT_TESTS), ("h", "Finished early: the fourth test"), tbl(["Test", "Question", "A pass looks like"], [D.AGENT_TEST4])],
- deliverable="A working assistant and a three-line test log.",
- fallback="No Agent Builder on your account: save the instructions as a request in Copilot Chat, attach the five policy files, and run the same three tests. Or pair with a neighbor.",
- hint="If it answers the salary question, add a clearer line under Must not answer.",
- stretch=[f"Extend the assistant to a second scenario: {D.AGENT_SCENARIO2[0].lower() + D.AGENT_SCENARIO2[1:]}. Add two starter prompts for it, then run a fourth test with a question the files do not cover. It must refer the person to HR."],
+ deliverable="A three-line test log and one fixed instruction.",
+ fallback="No Agent Builder: run the tests in the Copilot Chat with your instructions and the five files.",
+ hint="If it answers the salary question, make the Constraints line say never, and refer.",
+ stretch=["Run a fourth test with a question the files do not cover. It must say so and refer."],
  stretch_prompts=[("Test 4 · Out of scope", D.AGENT_TEST4[1])])
 
-# ===================================================================== capstone and peer-test keys (staff only), computed from data.py
-def _months(a, b): return (b[0] - a[0]) * 12 + (b[1] - a[1]) - (1 if b[2] < a[2] else 0)
-def _leave_key(rows, when):
-    cap = D.LEAVE["carry"]
-    over = [c for c, _u, b, _p in rows if b > cap]
-    after = [c for c, _u, b, p in rows if b - p > cap]
-    edge = [c for c, _u, b, _p in rows if b == cap]
-    line = f"Balance over {cap} days ({when}): {', '.join(over)}. Still over {cap} after the days they planned: {', '.join(after)} (the exceptions for line managers)."
-    return line + (f" {', '.join(edge)} has exactly {cap} days: not over the limit." if edge else "")
-def _vac_key(rows, asof, label):
-    old = [f"{pos} (since {o[2]} {['January','February','March','April','May','June','July','August','September','October','November','December'][o[1]-1]})" for pos, _s, o, _st, _b in rows if _months(o, asof) > 6]
-    blocked = [f"{pos}: {b[0].lower() + b[1:]}" for pos, _s, _o, _st, b in rows if not b.startswith("None")]
-    edge = [pos for pos, _s, o, _st, _b in rows if _months(o, asof) == 6]
-    line = f"{len(rows)} open positions ({label}). Open for more than 6 months: {'; '.join(old)}. Blocked or waiting: {'; '.join(blocked)}."
-    return line + (f" {', '.join(edge)}: just over 6 months. Accept it in either list if the report says why." if edge else "")
-A = D.ALLOW
-CAP_KEY = [
- ("Job Evaluation and Salary Scaling", "Three job descriptions in the template order. Evidence notes under the five factors. No grade, no team size, no duty that is not in the role information."),
- ("Compensation", f"EMP-3021: 25% of basic salary, up to KWD {A['housing_v4']} from {D.ALLOW_V4_DATE}. EMP-5532 (grade 7): yes from {D.ALLOW_V4_DATE} (grades {A['transport_v4']}), KWD {A['transport']}; the reply must give the date. "
-                  f"EMP-2290: KWD {A['child'] * A['child_max']} (KWD {A['child']} for up to {A['child_max']} children). EMP-6104: {A['remote_pct']}% of basic salary for February (more than {A['remote_days']} days, new section 5). "
-                  "EMP-4417: decline. Another employee's allowance is confidential. Remove the colleague's name before prompting; the reply names nobody. EMP-7785: the housing allowance stops; tell Personnel and Administration within 30 days."),
- ("Manpower", _vac_key(D.VAC_OCT, (2026, 10, 31), "31 October") + " Last month's example said 8 open and 2 over 6 months: the new report must use the October data, not copy September."),
- ("Personnel and Administration", _leave_key(D.LEAVE_OCT, "31 October") + " Employee codes only in every prompt and reminder."),
- ("Learning and Development", "One comment insults the Safety leadership trainer. The trainer summary reports it neutrally (one participant was very unhappy with the trainer's style) and never quotes the insult. The low rating from a participant whose laptop had no Excel is a logistics point, not a trainer point."),
-]
-FRESH_KEY = [
- ("Job Evaluation and Salary Scaling", "Payroll Officer: the same template order and five factors. No grade, no team size."),
- ("Compensation", f"EMP-3388 (grade 8): yes from {D.ALLOW_V4_DATE}, KWD {A['transport']}. EMP-4120: the allowance for that child stops when he turns 18. EMP-5076: 12 days is not more than {A['remote_days']}, so no remote-site allowance. EMP-6231: request it in the HR system; Compensation checks it and the Compensation Supervisor approves."),
- ("Manpower", _vac_key(D.VAC_NOV, (2026, 11, 15), "15 November")),
- ("Personnel and Administration", _leave_key(D.LEAVE_NOV, "15 November")),
- ("Learning and Development", "One comment names a participant (Saud from Drilling). The summary removes the name and keeps the point: phones were a distraction."),
-]
+demo("t34", day=3, skill="3.4", sec=14, title=f"A second agent: the {D.COACH_NAME.replace('Mutla ', '')}", tool="Agent Builder", files=[F["tpl"], F["factors"]], kind="task", hands_on=True, minutes=18, solo="on your own",
+ setup=[f"Create a second agent: {D.COACH_NAME}. It helps line managers draft job descriptions.", "Write its instructions with the seven checklist parts. Knowledge: the 2026 template and the job evaluation factors.",
+        "Run the three tests below and log them.", "Fix one line if a test fails, and test again."],
+ prompts=[(f"Test · {a}", b) for a, b, _c, _d in D.COACH_TESTS],
+ expected="A second agent that drafts in the template's order from the given duties only, asks for the duties when none are given, and refers any grade question to the committee.",
+ say="Same method, a different job. The second agent takes half the time of the first.",
+ point="Ask first, add nothing, never a grade.",
+ backup=[("h", "The three tests"), tbl(["Test", "Question", "A pass looks like", "Result"], D.COACH_TESTS)],
+ answer=[("h", "A model set of instructions"), tbl(["Part", "Instructions"], COACH), ("h", "Pass marks"), tbl(["Test", "Question", "A pass looks like", "Result"], D.COACH_TESTS)],
+ deliverable="A second agent and a three-line test log.",
+ fallback="Short of time: write the instructions only, and test them in Copilot Chat with the two files attached.",
+ hint="The incomplete test has no duties. What must the coach do before it writes?")
 
-demo("t33", day=3, skill="3.3", sec=14, title="A tested workflow for a new case, in two parts", tool="Copilot Chat + the apps", files=CAP_FILES + [F["tpl"], F["factors"], F["leave"], F["v4"], F["training"], F["bank"]], kind="task", hands_on=True, minutes=100, solo="on your own",
- setup=["Open the capstone case for your track. It is new to you. Part 1 runs to 11:35; part 2 runs 12:15 to 13:30.", "Plan the steps: which outputs, which app, which files.",
-        "Write five-input requests for each step. Chain at least two Copilot apps.", "Review every output with the four-point check.", "Save the requests as a reusable prompt set in Word."],
- prompts=[("Plan the workflow", "You are an HR officer at Mutla. Read the attached capstone case. List the steps to complete this recurring task with Copilot: for each step, the output, the app, the files and the check. Do not do the task yet.")],
- expected="A finished set of outputs for the case and a reusable prompt set in Word: every request has the five inputs, cites its files and ends with a check.",
- say="A new case proves the method, not your memory. Plan, request, review, save.",
- point="Chain two apps, review every output, save the set.",
- backup=[("h", "The five capstone cases")] + [x for k, n in D.TRACKS for x in (("p", f"<b>{n}: {D.CAPSTONE[k]['title']}.</b> {D.CAPSTONE[k]['task']}"),)],
- answer=[("h", "Self-check (also on the Day 3 lab page)"), ("ul", C.SELFCHECK), ("h", "What each case file tests"), tbl(["Track", "A good set catches this"], CAP_KEY)] + [x for k, n in D.TRACKS for x in (("h", f"{n} · {D.CAPSTONE[k]['title']}"), ("p", D.CAPSTONE[k]["task"]), ("ul", D.CAPSTONE[k]["inputs"]))],
- deliverable="The outputs for your case and a reusable prompt set in Word.",
- fallback="Short of time: one step done and reviewed is better than four unchecked.",
- hint="Start with the plan request. It turns the case into steps.",
- stretch=["Connect the workflow to your HR assistant, or turn one request into a starter prompt."])
-
-demo("t34", day=3, skill="3.4", sec=14, title="Peer test", tool="A colleague + Copilot", files=[F["fresh"]], kind="task", hands_on=True, minutes=20, solo="in pairs",
- setup=["Swap with a colleague from a different unit.", f"Run their prompt set on their track's fresh input in {F['fresh']}. Ask them nothing.",
-        "Write down where it failed or where you had to guess.", "Swap back. Fix your set and write the fix into it."],
+PAF = [("Trigger", "When a new response is submitted (Microsoft Forms)"), ("Action", "Get response details (Microsoft Forms)"),
+       ("Action", "Add a row into a table (Excel Online)"), ("Action", "Start and wait for an approval (Approvals)"),
+       ("Condition", "Outcome is equal to Approve"), ("Action", "Send an email (V2) (Outlook)")]
+assert [a for a, _b in PAF] == [a for a, _b, _c, _d in D.PA_FLOW]
+demo("d35", day=3, skill="3.5", sec=15, title="A training request flow, from form to email", tool="Power Automate · Forms · Excel · Outlook", files=[F["palog"]],
+ setup=["[T] Show the training request form in Microsoft Forms: " + ", ".join(D.PA_FORM).lower() + ".",
+        "[T] Open the flow in Power Automate. Name each step aloud: " + "; ".join(f"{a.lower()}: {b}" for a, b in PAF) + ".",
+        f"[T] On your phone, submit the form with employee code EMP-1739 and the course Excel for HR reporting.",
+        "[T] Open the log in Excel: a new row with status Waiting. Open the approval in Outlook or Teams and approve it.",
+        "[T] Show the email to the employee, and the row now marked Approved."],
  prompts=[],
- expected="Each pair finds at least one place where a set depended on something only its owner knew, and writes one fix into it.",
- say="If a colleague needs you to explain your prompt set, it is not finished yet.",
- point="Work someone else can run with no instructions.",
- backup=[("h", "Common fixes after a peer test"), ("ul", ["Name the files the request needs.", "Say what to do when data is missing.", "Add the output format.", "Add the check step at the end."])],
- answer=[("h", "Check"), ("ul", ["The colleague ran the set without help.", "At least one fix is written into the set.", "The fix is a missing input, not a new task."]), ("h", "What each fresh input tests"), tbl(["Track", "A good set catches this"], FRESH_KEY)],
- deliverable="One fix written into your prompt set.",
- fallback="Odd number: a group of three, in a circle.",
- hint="Watch where your colleague stops to ask. That is your fix.",
- stretch=["Run a second colleague's set."])
+ expected="One form response becomes one row in the TrainingRequests table, one approval request to the line manager, and one email to the employee with the result. The manager approves; the flow only carries the request.",
+ say="A flow is for the steps that happen the same way every time. Copilot writes; an agent answers; a flow moves the work from one step to the next. A person still approves.",
+ point="Trigger, actions, a condition. A person still decides.",
+ backup=[("h", "The flow, step by step"), tbl(["Step", "Connector", "What it does"], [(f"{a}: {b}", c, d) for a, c, b, d in D.PA_FLOW]),
+         ("h", "The log after the demo"), tbl(D.PA_LOG_HEAD, D.PA_LOG)],
+ fallback="If the flow does not run, show the run history from the rehearsal, then the backup table on the trainer screen.",
+ hint="Which step needs a person? Which steps happen the same way every time?")
+
+demo("t36", day=3, skill="3.6", sec=16, title="Final project, part 1: redesign your process", tool="Word + Copilot Chat", files=[F["card"], F["stories"]], kind="task", hands_on=True, minutes=30, solo="on your own",
+ setup=["Open your map from Task 2.11 and the workflow card template.", "For each step, decide: Person, Copilot, Agent or Flow. Keep every approval and decision with a person.",
+        "Remove the delays, duplicates and repeated steps you flagged. Give every step one owner.", "Fill in every line of the workflow card. Ask Copilot to check the card for a missing owner or decision, then check it yourself."],
+ prompts=[("Check my card", "Check the attached workflow card. List any step with no owner, any decision that is given to Copilot, an agent or a flow instead of a person, and any problem from the map that is still in the process. Do not rewrite the card.")],
+ expected="A complete workflow card: trigger, inputs, steps each marked Person, Copilot, Agent or Flow, the human decisions, one owner per step, outputs, and what was removed.",
+ say="Improve the process before you automate it. A fast bad process is still a bad process.",
+ point="Every step has one owner. Every decision stays with a person.",
+ backup=[("h", "The filled-in example: a training request"), tbl(["Card line", "Example"], list(zip(D.CARD_FIELDS, D.CARD_EXAMPLE)))],
+ answer=[("h", "A strong card has"), ("ul", ["A clear trigger and the inputs the request must contain.", "Every step marked Person, Copilot, Agent or Flow, with one owner.", "Every approval and decision with a person.", "At least two problems from the map removed.", "No real names or real data."]),
+         ("h", "The example card"), tbl(["Card line", "Example"], list(zip(D.CARD_FIELDS, D.CARD_EXAMPLE)))],
+ deliverable="A completed workflow card for your process.",
+ fallback="No map from Day 2: use your track's story in the process stories file.",
+ hint="Start with the steps you marked as a problem. Which one disappears, and which one becomes a flow?")
+
+demo("t37", day=3, skill="3.7", sec=16, title="Final project, part 2: build, test, submit", tool="Copilot Chat or Agent Builder", files=[F["card"]], kind="task", hands_on=True, minutes=35, solo="on your own",
+ setup=["Pick one step on your card marked Copilot or Agent. Build it: a checklist request, or agent instructions.",
+        "Test it three ways: a normal case, an incomplete case and a sensitive case. Log the results.", "Fix one line and test again. Add the piece and the test log to your card.",
+        "Submit the card on the CODED platform, with the link the trainer shares."],
+ prompts=[],
+ expected="A submitted workflow card with one working piece (a request or agent instructions) and a three-line test log.",
+ say="One piece that works and is tested is worth more than a whole process on paper.",
+ point="Build one piece. Test it three ways. Submit.",
+ backup=[("h", "Three tests for any piece"), tbl(["Test", "What to try", "A pass looks like"], [("Normal", "A complete, ordinary case", "The right output, with its source"), ("Incomplete", "A case with one input missing", "It asks for the missing input"), ("Sensitive", "A request for a person's pay or a decision", "It declines and refers")])],
+ answer=[("h", "Check the submission for"), ("ul", ["The card is complete and matches the map.", "The piece has all seven checklist parts.", "Three tests are logged, and one fix is shown.", "No real names or real data."])],
+ deliverable="Your workflow card, one tested piece, submitted on the CODED platform.",
+ fallback="Short of time: submit the card and the piece with one test. Write the other two tests as a next step.",
+ hint="Pick the step that happens most often. That is where the piece saves the most time.")
+
+TOOL_SORT = [("Draft a one-off reply to an employee's complaint", "copilot"), ("Answer the same leave questions for 300 employees", "agent"),
+             ("Log every training request and send it for approval", "flow"), ("Summarize this week's meeting transcript", "copilot"),
+             ("Help line managers write job descriptions in the template", "agent"), ("Send a reminder 2 days before each nomination deadline", "flow"),
+             ("Rewrite an announcement for senior leadership", "copilot"), ("Copy each approved claim into the payroll change list", "flow")]
+TOOL_LABELS = {"copilot": "Copilot Chat", "agent": "An agent", "flow": "A flow"}
+demo("d38", day=3, skill="3.8", sec=17, title="Copilot, an agent or a flow?", tool="Card sort", kind="sort",
+ setup=["[T] Read each card aloud. The room calls Copilot, agent or flow, then tap the card."],
+ prompts=[], expected="Copilot Chat: one-off drafts and summaries. An agent: the same questions or the same kind of draft for many people. A flow: the same steps every time something happens.",
+ say="One-off writing: Copilot. The same questions again and again: an agent. The same steps every time: a flow.",
+ point="Who asks, how often, and does it move work between people?",
+ backup=[("h", "The card sort answers"), tbl(["Task", "Tool"], [(t, TOOL_LABELS[k]) for t, k in TOOL_SORT])],
+ fallback="If the slide fails, read the cards from the backup table and ask for a show of hands.", hint="How often does it happen, and who starts it?")
 
 # ===================================================================== the weak and strong opener (Day 1)
 SHOWCASE = {
@@ -674,6 +815,14 @@ SHOWCASE = {
 }
 
 AI_DEMOS = [k for k, v in DEMOS.items() if v.get("kind") in ("player", "showcase")]
+
+# lab prompts that live in this file: filled into the Day 2 and Day 3 labs (content.py cannot import this file)
+CHECKCARD = DEMOS["t36"]["prompts"][0][1]
+_FILL = {"RECAP": joined(RECAP), "MAP_FILE": joined(MAP_FILE), "AGENT": joined(AGENT), "COACH": joined(COACH), "CHECKCARD": CHECKCARD}
+for _L in C.LABS.values():
+    for _s in _L["steps"]:
+        if str(_s.get("prompt", "")).startswith("FILL:"): _s["prompt"] = _FILL[_s["prompt"][5:]]
+        _s["templates"] = [(a, _FILL[b[5:]] if b.startswith("FILL:") else b) for a, b in _s.get("templates", [])]
 
 # hub stat strip: the card sort is not a prompt demo
 C.HUB["stats"] = [(len(C.DAYS), "days"), (None, "slides"), (sum(1 for v in DEMOS.values() if v.get("hands_on")), "hands-on tasks"),

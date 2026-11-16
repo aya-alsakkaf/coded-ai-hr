@@ -57,46 +57,46 @@ DAYS = {
                  "Write a request with the <b>prompt checklist</b>: role, context, task, data, constraints, tone and output format.",
                  "Improve a weak draft with <b>follow-up instructions</b>, and ask for the source of every line.",
                  "Draft HR documents in Word and messages in Outlook, and <b>change the tone</b> for each reader without changing the facts."]},
-2: {"title": "Copilot Across HR Documents, Communication and Reporting", "claim": "Five inputs, five apps, one review.",
-    "sub": "Policies and job evaluation in Word, a long thread in Outlook, meetings and investigation notes in Teams, HR trackers in Excel, a briefing in PowerPoint.",
-    "brief": "Day 2 puts the five inputs to work where HR spends its day. Each block has a short story, a demo, and a task on a Mutla file. You end with one case from your unit track, turned into four outputs and checked with the four-point review.",
-    "artifact": "One case, four reviewed outputs",
+2: {"title": "Meetings, Reporting and Mapping Your HR Workflow", "claim": "Safe data. Checked figures. A clear map.",
+    "sub": "Protecting employee data, meetings and follow-ups, Excel figures you can check, summaries and slides, and a map of one HR process from request to result.",
+    "brief": "Day 2 starts with the most important habit: what may go into a prompt, and how to redact what may not. Then you prepare a meeting, recap it into actions and follow it up in Outlook. You check Excel figures against a control total, turn them into a management summary and five slides, and end the day with a map of one HR process: every step, every owner, every wait and every human decision.",
+    "artifact": "A redacted case note, a meeting pack and recap, two checked figures in a summary and slides, and a map of one HR process",
     "blocks": [("09:00-09:10", "Callback quiz", "Three questions on Day 1"),
-               ("09:10-10:00", "Block 1 · Word: policies, versions and job evaluation", "Compare versions, organize evidence, no grade · Task 2.1"),
-               ("10:00-10:40", "Block 2 · Outlook: from a long thread to a clear message", "Decisions, owners, tone · Task 2.2"),
-               ("10:40-10:55", "Break", ""),
-               ("10:55-11:35", "Block 3 · Teams: meetings and investigation notes", "Recap into actions; a timeline, not a verdict · Task 2.3"),
+               ("09:10-09:45", "Block 1 · Protecting employee data", "Green, amber, red; redact, then ask · Task 2.1"),
+               ("09:45-10:45", "Block 2 · Before and after the meeting", "Agenda, brief, discussion points; notes into actions · Tasks 2.2 and 2.3"),
+               ("10:45-11:00", "Break", ""),
+               ("11:00-11:35", "Block 3 · Follow-ups and reminders in Outlook", "Same owners, same dates · Tasks 2.4 and 2.5"),
                ("11:35-12:15", "Lunch and Dhuhr prayer", ""),
-               ("12:15-13:00", "Block 4 · Excel: HR trackers you can check", "Ask, see the rows, check the control total · Task 2.4"),
-               ("13:00-13:30", "Block 5 · PowerPoint: a briefing from a document", "Five slides, every number checked · Task 2.5"),
-               ("13:30-13:40", "Break", ""),
-               ("13:40-14:40", "Integration · One case, four outputs", "Your unit track's case · Task 2.6"),
-               ("14:40-15:00", "Wrap and the hook for Day 3", "The Prompt Bank by task")],
-    "outcomes": ["Compare policy versions and organize <b>job-evaluation evidence</b> with no grade.",
-                 "Turn a long thread into <b>decisions and owners</b>, and change tone without changing facts.",
-                 "Recap a meeting into actions, and keep investigation notes to a <b>timeline</b>.",
-                 "Check every Excel figure against a <b>control total</b>, and every slide against its brief."]},
-3: {"title": "Reusable HR Assistants and Applied Capstone", "claim": "Build it once. Test it. Let a colleague run it.",
-    "sub": "Save tested prompts in the Prompt Gallery, build an HR assistant in Agent Builder, then complete a new case and pass a colleague's peer test.",
-    "brief": "Day 3 turns skill into something reusable. You save your best requests, build an HR assistant from five approved policy files and test it three ways. Then you complete a new case from your unit track, and a colleague from another unit runs your work with no instructions.",
-    "artifact": "A tested prompt set and an HR assistant",
+               ("12:15-13:00", "Block 4 · Excel: figures you can check", "Ask, see the rows, check the control total · Tasks 2.6 and 2.7"),
+               ("13:00-13:35", "Block 5 · From findings to a summary and slides", "A management summary in Word, five slides · Tasks 2.8 and 2.9"),
+               ("13:35-13:50", "Break", ""),
+               ("13:50-14:20", "Block 6 · From one task to a workflow", "Delay, duplicated effort, unclear ownership, repetitive steps · Task 2.10"),
+               ("14:20-14:50", "Block 7 · Map your own HR process", "Your track's story or your own work · Tasks 2.11 and 2.12"),
+               ("14:50-15:00", "Which app for which job, and wrap", "Word, Outlook, Teams, Excel, PowerPoint")],
+    "outcomes": ["Sort any HR task as <b>green, amber or red</b>, and redact a note before Copilot sees it.",
+                 "Prepare a meeting, recap it into <b>actions, owners and deadlines</b>, and follow it up in Outlook.",
+                 "Check every Excel figure against a <b>control total</b>, and every slide against its source.",
+                 "Map an HR process from request to result, and mark the <b>delays, duplicates, owners and human decisions</b>."]},
+3: {"title": "HR Agents and an Introduction to Power Automate", "claim": "Build it. Test it. Improve the process.",
+    "sub": "Build and test two HR agents in Agent Builder, watch a Power Automate flow run from form to email, then improve the process you mapped on Day 2.",
+    "brief": "Day 3 turns good requests into tools other people can use. You write an agent's instructions with the prompt checklist, build it in Agent Builder with five policy files, and test it with a normal, an incomplete and a sensitive question. You build a second agent on your own. The trainer then shows a Power Automate flow, so you can see when a flow is the right tool and when it is not. In the final project you improve the process you mapped on Day 2, build and test one piece of it, and submit it on the CODED platform.",
+    "artifact": "Two tested HR agents and an improved workflow card with one tested piece",
     "blocks": [("09:00-09:10", "Callback quiz", "Three questions on Day 2"),
-               ("09:10-09:40", "Block 1 · Reuse before you rebuild: the Prompt Gallery", "Find, adapt, save, share · Task 3.1"),
-               ("09:40-10:40", "Block 2 · Build an HR assistant with Agent Builder", "Instructions, knowledge, three tests · Task 3.2"),
-               ("10:40-10:55", "Break", ""),
-               ("10:55-11:10", "Capstone briefing", "Your new case, core and extension, the self-check"),
-               ("11:10-11:35", "Capstone build, part 1", "Plan and first requests · Task 3.3"),
+               ("09:10-10:05", "Block 1 · Build an HR agent", "Instructions, knowledge, starter prompts · Tasks 3.1 and 3.2"),
+               ("10:05-10:45", "Block 2 · Test, fix and build a second agent", "Normal, incomplete, sensitive · Tasks 3.3 and 3.4"),
+               ("10:45-11:00", "Break", ""),
+               ("11:00-11:35", "Block 3 · Power Automate: a trainer demo", "Trigger, actions, a condition, a person who approves"),
                ("11:35-12:15", "Lunch and Dhuhr prayer", ""),
-               ("12:15-13:30", "Capstone build, part 2", "Outputs, review, the prompt set · Task 3.3"),
-               ("13:30-13:50", "Peer test", "A colleague runs it with no instructions · Task 3.4"),
-               ("13:50-14:05", "Break", ""),
-               ("14:05-14:20", "One-minute share-outs", "What broke and how you fixed it"),
+               ("12:15-13:35", "Final project · Improve your HR process", "Redesign it, build one piece, test it, submit · Tasks 3.6 and 3.7"),
+               ("13:35-13:50", "Break", ""),
+               ("13:50-14:05", "Copilot, agent or flow?", "The tools side by side, and a card sort"),
+               ("14:05-14:20", "One-minute share-outs", "One process, one improvement"),
                ("14:20-14:40", "Post-MAP test, then the final survey", "Two QR codes"),
                ("14:40-15:00", "Close and certificates", "The habit, one last time")],
-    "outcomes": ["Find, adapt and save prompts in the <b>Prompt Gallery</b>.",
-                 "Build an <b>HR assistant</b> and test it with a normal, an incomplete and a sensitive question.",
-                 "Complete a <b>new case</b> by chaining two Copilot apps and reviewing every output.",
-                 "Hand your prompt set to a colleague who can run it <b>with no instructions</b>."]},
+    "outcomes": ["Write an agent's instructions with the <b>prompt checklist</b>, and build it in Agent Builder with approved files.",
+                 "Test an agent with a <b>normal, an incomplete and a sensitive</b> question, and fix one line at a time.",
+                 "Explain what a <b>Power Automate flow</b> does, and when an agent or Copilot cannot do the job.",
+                 "Improve an HR process, keep every decision with a person, and <b>build and test one piece</b> of it."]},
 }
 
 SEGMENTS = {
@@ -104,14 +104,18 @@ SEGMENTS = {
      ("10:45-11:35", "Block 2 · Writing a clear prompt", [("10:45", 3, "Story: the one-line reminder"), ("10:48", 4, "Brief a new colleague"), ("10:52", 12, "The prompt checklist"), ("11:04", 4, "Constraints"), ("11:08", 6, "Demo 1.2"), ("11:14", 2, "Quick check"), ("11:16", 14, "Task 1.2"), ("11:30", 5, "Debrief")]),
      ("12:15-13:20", "Block 3 · Draft, fix and check in Word", [("12:15", 3, "Story: the team of six"), ("12:18", 5, "Follow-up instructions"), ("12:23", 5, "Demo 1.3"), ("12:28", 5, "Source trace, three failures"), ("12:33", 4, "Demo 1.3b"), ("12:37", 22, "Task 1.3"), ("12:59", 15, "Task 1.4"), ("13:14", 6, "Debrief")]),
      ("13:35-14:40", "Block 4 · From policy to people", [("13:35", 3, "Story: version 4 arrives"), ("13:38", 5, "Summaries you can check"), ("13:43", 5, "Demo 1.5"), ("13:48", 15, "Task 1.5"), ("14:03", 4, "The tone dial"), ("14:07", 5, "Demo 1.6"), ("14:12", 17, "Task 1.6"), ("14:29", 2, "Quick check"), ("14:31", 9, "Debrief")])],
- 2: [("09:10-10:00", "Block 1 · Word", [("09:10", 4, "Story: what changed by noon"), ("09:14", 8, "Compare versions, evidence with no grade"), ("09:22", 6, "Demo 2.1"), ("09:28", 7, "Quick checks and recruitment"), ("09:35", 5, "Demo 2.1b: compare two versions"), ("09:40", 15, "Task 2.1"), ("09:55", 5, "Debrief")]),
-     ("10:00-10:40", "Block 2 · Outlook", [("10:00", 5, "Felt problem: 30 messages"), ("10:05", 10, "Thread summary, tone dial"), ("10:15", 7, "Demo 2.2"), ("10:22", 12, "Task 2.2"), ("10:34", 6, "Debrief")]),
-     ("10:55-11:35", "Block 3 · Teams", [("10:55", 4, "Story: the meeting with no actions"), ("10:59", 4, "Before and after a meeting"), ("11:03", 6, "Demo 2.3"), ("11:09", 4, "Quick checks; timeline, not verdict"), ("11:13", 4, "Demo 2.3b: a timeline"), ("11:17", 12, "Task 2.3"), ("11:29", 6, "Debrief")]),
-     ("12:15-13:00", "Block 4 · Excel", [("12:15", 4, "Story: 412 or 398"), ("12:19", 12, "Ask, see the rows, spot-check"), ("12:31", 7, "Demo 2.4"), ("12:38", 3, "Quick check"), ("12:41", 15, "Task 2.4"), ("12:56", 4, "Debrief")]),
-     ("13:00-13:30", "Block 5 · PowerPoint", [("13:00", 8, "Document to deck"), ("13:08", 7, "Demo 2.5"), ("13:15", 10, "Task 2.5"), ("13:25", 5, "Debrief")]),
-     ("13:40-14:40", "Integration · One case, four outputs", [("13:40", 5, "Brief"), ("13:45", 45, "Task 2.6"), ("14:30", 10, "Gallery")])],
- 3: [("09:10-09:40", "Block 1 · Prompt Gallery", [("09:10", 3, "Story: five nomination emails"), ("09:13", 8, "Suggested, Your Prompts, Teams"), ("09:21", 5, "Demo 3.1"), ("09:26", 10, "Task 3.1"), ("09:36", 4, "Debrief")]),
-     ("09:40-10:40", "Block 2 · Agent Builder", [("09:40", 3, "Story: the same 20 questions"), ("09:43", 12, "Instructions, knowledge, Try it, three tests"), ("09:55", 8, "Demo 3.2"), ("10:03", 30, "Task 3.2"), ("10:33", 7, "Debrief")])],
+ 2: [("09:10-09:45", "Block 1 · Protecting employee data", [("09:10", 3, "Story: the note with a civil ID"), ("09:13", 5, "Green, amber, red"), ("09:18", 8, "Demo 2.1 card sort"), ("09:26", 5, "Demo 2.1b: redact, then ask"), ("09:31", 11, "Task 2.1"), ("09:42", 3, "Debrief")]),
+     ("09:45-10:45", "Block 2 · Before and after the meeting", [("09:45", 3, "Story: the meeting with no actions"), ("09:48", 6, "Before, during, after; what Teams needs"), ("09:54", 6, "Demo 2.2"), ("10:00", 15, "Task 2.2"), ("10:15", 5, "Demo 2.3"), ("10:20", 2, "Quick check"), ("10:22", 15, "Task 2.3"), ("10:37", 8, "Debrief")]),
+     ("11:00-11:35", "Block 3 · Follow-ups and reminders", [("11:00", 3, "Story: the deadline nobody chased"), ("11:03", 5, "Demo 2.4"), ("11:08", 12, "Task 2.4"), ("11:20", 10, "Task 2.5"), ("11:30", 5, "Debrief")]),
+     ("12:15-13:00", "Block 4 · Excel", [("12:15", 3, "Story: 412 or 398"), ("12:18", 6, "Ask, see the rows, check"), ("12:24", 6, "Demo 2.6"), ("12:30", 12, "Task 2.6"), ("12:42", 12, "Task 2.7"), ("12:54", 6, "Debrief")]),
+     ("13:00-13:35", "Block 5 · Summary and slides", [("13:00", 4, "Demo 2.8"), ("13:04", 10, "Task 2.8"), ("13:14", 5, "Demo 2.9"), ("13:19", 10, "Task 2.9"), ("13:29", 6, "Quick check and debrief")]),
+     ("13:50-14:20", "Block 6 · From one task to a workflow", [("13:50", 3, "Story: three weeks for one course"), ("13:53", 5, "Four problems"), ("13:58", 3, "The step table"), ("14:01", 5, "Demo 2.10"), ("14:06", 12, "Task 2.10"), ("14:18", 2, "Quick check")]),
+     ("14:20-14:50", "Block 7 · Map your own HR process", [("14:20", 3, "Brief"), ("14:23", 20, "Task 2.11"), ("14:43", 7, "Task 2.12")])],
+ 3: [("09:10-10:05", "Block 1 · Build an HR agent", [("09:10", 3, "Story: the same 20 questions"), ("09:13", 6, "Copilot Chat or an agent"), ("09:19", 5, "The parts of an agent"), ("09:24", 8, "Demo 3.1"), ("09:32", 12, "Task 3.1"), ("09:44", 15, "Task 3.2"), ("09:59", 6, "Debrief")]),
+     ("10:05-10:45", "Block 2 · Test, fix, build again", [("10:05", 5, "Demo 3.3"), ("10:10", 12, "Task 3.3"), ("10:22", 18, "Task 3.4"), ("10:40", 5, "Debrief")]),
+     ("11:00-11:35", "Block 3 · Power Automate demo", [("11:00", 3, "Story: 30 requests a week"), ("11:03", 6, "Trigger, action, condition"), ("11:09", 15, "Demo 3.5"), ("11:24", 5, "What a flow needs"), ("11:29", 4, "Copilot, agent, flow"), ("11:33", 2, "Quick check")]),
+     ("12:15-13:35", "Final project", [("12:15", 10, "Brief and the example card"), ("12:25", 30, "Task 3.6"), ("12:55", 35, "Task 3.7"), ("13:30", 5, "Submit")]),
+     ("13:50-14:05", "Copilot, agent or flow?", [("13:50", 5, "The tools side by side"), ("13:55", 8, "Demo 3.8 card sort"), ("14:03", 2, "Quick check")])],
 }
 
 # ------------------------------------------------------------------ next-word widget: a Mutla sentence about leave carry-over
@@ -151,8 +155,9 @@ RISKS = [("Wrong facts", "Copilot predicts words. It can be fluent and wrong.", 
          ("Decisions handed over", "A draft that sets a grade, blames a person or promises an exception.", "Copilot drafts. Authorized HR staff decide.")]
 
 # ------------------------------------------------------------------ capstone self-check (Day 3 lab, answer key)
-SELFCHECK = ["Every request has the five inputs.", "Every request names its approved files.", "No personal, salary or case detail in any prompt.",
-             "Every figure and date checked against the case file.", "A person decides: no grade, exception or blame in any output."]
+SELFCHECK = ["Every step has one owner, and a role, not \"HR\".", "Every approval and decision about a person is marked Person.",
+             "At least two problems from the map are removed.", "The piece you built has all seven checklist parts.",
+             "Three tests are logged: normal, incomplete, sensitive.", "No real names or real data anywhere on the card."]
 
 # ------------------------------------------------------------------ cheat sheet and take-home guide
 CHEAT = [("Part 1 · Ask well", "The prompt checklist", "Seven parts. Use all seven for anything that matters.",
@@ -188,7 +193,6 @@ GUIDE_META = [("home", "Your own work, safely"), ("list", "First week, first mon
 
 # ------------------------------------------------------------------ MAP test: same 14 questions before and after, 6 confidence items
 CONFIDENCE = OUTCOMES
-CAPSTONE_PART1 = 25   # Task 3.3 is 100 minutes: 25 before lunch (e3task), 75 after (e4build)
 MAP = [
  {"q": f"Copilot tells an employee that a medical certificate is needed only after 5 days of sick leave. Mutla's leave policy says after {D.LEAVE['sick_cert']} days. Why can this happen?",
   "o": ["Copilot copied the number from another employee's chat", "It predicts likely words, and nothing checked the policy", "The question did not say which kind of leave", "The policy file was too long for Copilot to read in full"],
@@ -236,7 +240,7 @@ MAP = [
 MAP_KEY = " · ".join(f"{i} {'abcd'[q['a']]}" for i, q in enumerate(MAP, 1))
 
 # ------------------------------------------------------------------ the approved slide plan (the validator checks the decks against it)
-SLIDES = {1: 64, 2: 64, 3: 40}
+SLIDES = {1: 64, 2: 57, 3: 40}
 
 # ------------------------------------------------------------------ MAP tests and the final survey (CODED portal)
 PORTAL = "https://platform.joincoded.com/sv/"
@@ -253,10 +257,10 @@ MAP_MIN = 10
 # ------------------------------------------------------------------ the workshop home (hub)
 DAYS[1].update({"cat": "Copilot foundations", "icon": "doc", "tag": "prompt checklist · Word · Outlook",
                 "bullets": ["How Copilot writes, and what it can see", "The prompt checklist and follow-up instructions", "Job descriptions, letters, summaries, announcements"]})
-DAYS[2].update({"cat": "Across the apps", "icon": "mail", "tag": "five Microsoft 365 apps",
-                "bullets": ["Policy versions and job-evaluation evidence", "Threads, meetings and investigation notes", "Trackers and briefings you can check"]})
-DAYS[3].update({"cat": "Reuse and capstone", "icon": "flask", "tag": "Agent Builder · peer test",
-                "bullets": ["Save tested prompts in the Prompt Gallery", "Build and test an HR assistant", "A new case, checked by a colleague"]})
+DAYS[2].update({"cat": "Meetings, reporting, workflows", "icon": "mail", "tag": "safe data · Outlook · Excel · process maps",
+                "bullets": ["Green, amber, red, and redact before you ask", "Meetings, follow-ups, figures, summaries and slides", "A map of one HR process"]})
+DAYS[3].update({"cat": "Agents and Power Automate", "icon": "flask", "tag": "Agent Builder · Power Automate demo · final project",
+                "bullets": ["Build and test two HR agents", "Watch a Power Automate flow, and know when to use one", "Improve your process: the final project"]})
 HUB = {
     "headline": ["AI Fundamentals", "for HR"],
     "sub": "A three-day, hands-on Microsoft Copilot workshop for HR employees. Write clear requests, check what comes back, keep people's data safe, map your HR work and build a first HR agent. Decisions about people stay with people.",
@@ -274,6 +278,7 @@ HUB = {
 SHEET = {"howto": ["<b>Watch the trainer first.</b> Then find the same card here.", "<b>Download the file</b> on the card. In Copilot Chat, start a new chat and attach it (the + or paperclip button).",
                    "Click <b>COPY</b>, paste the request into Copilot, then press <code>Enter</code>.", "<b>Check the answer</b> against the file before you trust it: dates, numbers, names and rules."],
          "note": "<b>Answers vary.</b> Copilot may word things differently from the trainer's screen. That is normal, and it is why we check. Requests you write yourself are not on this sheet: write them with the checklist, and use the hints on the day's lab page if you are stuck. Use only the fictional Mutla files here, or green tasks from your own work."}
+DAY_NO_TASKS = True     # day pages show no "Your turn" list: tasks live on the slides and the lab page (engine option, approved 16 Nov 2026)
 TASK_FALLBACK_LINE = "Copilot slow, or a daily limit reached? Continue from the backup on the screen."
 
 # ------------------------------------------------------------------ the safe-use card page
@@ -288,7 +293,8 @@ CARD = {"lede": "<b>Before you type anything into Copilot, sort the task.</b> Yo
 LESSON_INTRO = "CODED Professionals open workshop. 10 to 25 junior and middle-level HR employees, mixed AI familiarity, no coding. Story: Mutla Oil Company (fictional), five HR unit tracks."
 RUNBOOK_PREFLIGHT = ["Sign in to Microsoft 365 Copilot on the presenting laptop with the training account. Test one file upload (the leave policy). Every demo runs live.",
                      "Read the license label under your name on the Microsoft 365 home page: Copilot Chat (Basic), M365 Copilot (Basic) or M365 Copilot (Premium). Day 2 app demos need an M365 Copilot label (Basic or Premium); Teams recaps need Premium.",
-                     "Day 3: open Agent Builder (New agent) once before the day starts. If it is missing, use the fallback in the runbook.",
+                     "Day 3: open Agent Builder (Create agent) once before the day starts. If it is missing, use the fallback in the runbook.",
+                     "Day 3: run the Power Automate demo flow once end to end before 09:00 (submit the form on your phone, approve, check the email and the log). The first approval in a new environment can take a few minutes to set up.",
                      "Open this runbook, the backup results and the answer key on your own screen.",
                      "Copy today's sample files to the presenting laptop and to a USB stick.",
                      "Test the projector with the deck at full screen (F). Open the backup results for today on your own screen, in case Copilot is slow."]
@@ -299,7 +305,7 @@ FACILITATOR = [
     "Ask participants to check the label under their name on the Microsoft 365 home page before Day 1: Copilot Chat (Basic), M365 Copilot (Basic) or M365 Copilot (Premium).",
     "Keep 5 backup laptops with working accounts. Past Copilot rooms had uneven licenses and hit daily limits on Day 2."])]),
  ("room", "Room and laptops", "pre-flight", [("ol", [
-    "Tables of four, by unit track where possible, facing the screen. Pairs sit side by side for Tasks 1.1, 2.1, 2.4 and 3.4.",
+    "Tables of four, by unit track where possible, facing the screen. Pairs sit side by side for Tasks 1.1, 2.6, 2.7, 2.10 and 2.12.",
     "Wi-Fi name and password on the board before 08:45.",
     "Day 1, 09:00: every laptop opens Copilot Chat and is signed in. The pre-MAP QR at 09:10 is also the pre-flight.",
     "Everything is digital: the safe-use card and the cheat sheet are on the workshop site. Nothing is printed."])]),
@@ -309,9 +315,29 @@ FACILITATOR = [
     ["No Copilot in Word, Excel or PowerPoint", "Use Copilot Chat with the file attached.", "Trainer demo only."],
     ["No Agent Builder", "Save the instructions as a request in Copilot Chat with the five policy files.", "Pair with a neighbor who has it."],
     ["No internet", "Phone hotspot.", "The files on the USB stick, the backup results and the decks work offline."]])]),
- ("capstone", "Capstone", "Day 3", [("ul", ["Each participant takes the capstone file for their unit track. It is new to them.", "Core: two Copilot apps, five-input requests, every output reviewed.",
-    "Extension: connect to the HR assistant, or a starter prompt.", "Peer test at 13:30: pairs from different units. No scoring; the self-check is on the Day 3 lab page."])]),
+ ("project", "Final project", "Day 3", [("ul", ["Each participant improves the process they mapped in Task 2.11, or their track's story. Nobody starts from a blank page.",
+    "Part 1 (Task 3.6, 30 minutes): the workflow card. Every step marked Person, Copilot, Agent or Flow; every decision with a person.",
+    "Part 2 (Task 3.7, 35 minutes): one piece built and tested three ways, then submitted on the CODED platform.",
+    "Walk the room in part 1 and ask one question per person: which step did you remove, and who approves now?",
+    "The self-check is on the final project page. The trainer answer key lists what a strong card has."])]),
+ ("pa", "Power Automate demo", "Day 3, 11:09", [("ul", ["Trainer demo only: participants do not build flows.",
+    "Rehearse the flow before 09:00. Keep the run history from the rehearsal as the backup.",
+    "Say it in the room: a flow needs a Microsoft 365 account that includes Power Automate, and the company's IT approval. Approvals use the Approvals connector; the first approval in a new environment sets up a database and can take a few minutes.",
+    "Keep every approval with a person. The flow only moves the request."])]),
 ]
+
+# ------------------------------------------------------------------ the final project page (Day 3 lab): the brief, the options, the example card
+PROJECT_OPTIONS = [(n, D.STORIES[k]["title"]) for k, n in D.TRACKS] + [("Your own task", "A process from your own work, written with roles only")]
+PROJECT_SUBMIT = None   # the CODED platform form for the final project; until it exists, the trainer shares the link in class
+def _row(cells, tag="td"): return "<tr>" + "".join(f"<{tag}>{x}</{tag}>" for x in cells) + "</tr>"
+PROJECT_LEDE = ('<div class="wrap"><div class="sheet">'
+    '<div class="sh-part rvl"><div class="sh-ph">The final project</div>'
+    '<p>Improve one HR process that you mapped on Day 2. Mark each step Person, Copilot, Agent or Flow, remove the problems you found, '
+    'build and test one piece, and submit your workflow card on the CODED platform. Every approval and every decision about a person stays with a person.</p>'
+    '<div class="tblwrap"><table class="tbl"><thead>' + _row(["Track", "Process"], "th") + '</thead><tbody>' + "".join(_row([a, b]) for a, b in PROJECT_OPTIONS) + '</tbody></table></div></div>'
+    '<div class="sh-part rvl"><div class="sh-ph">A filled-in example: a training request</div>'
+    '<div class="tblwrap"><table class="tbl"><thead>' + _row(["Card line", "Example"], "th") + '</thead><tbody>' + "".join(_row([a, b]) for a, b in zip(D.CARD_FIELDS, D.CARD_EXAMPLE)) + '</tbody></table></div></div>'
+    '</div></div>')
 
 # ------------------------------------------------------------------ browser labs: one per day; answers only in the staff lab key
 LABS = {
@@ -358,25 +384,142 @@ LABS = {
          "check": {"kind": "flag", "label": "Type the day and month of the approved start date (for example: 15 March)", "answer": "1 December"},
          "answer": [("p", f"The rules start on {D.ATT['start']} (message 24), not {D.ATT['old_start']} (message 3).")]},
      ]},
- 2: {"title": "Spot-check the HR tracker", "intro": "Use mutla-hr-trackers-q3-2026.xlsx. Check two figures yourself before you trust them.",
+ 2: {"title": "Day 2, step by step, with hints", "intro": "One step for each task of Day 2. Download the files under the step that uses them. Write your own requests first; open a hint only when you are stuck. Your done marks stay in this browser.",
      "steps": [
-        {"title": "Open the tracker", "do": ["Download mutla-hr-trackers-q3-2026.xlsx and open it in Excel.", "Find the Training, Manpower and Control totals sheets."],
-         "hint": "The Control totals sheet holds the checked numbers.", "check": {"kind": "note", "label": "How many rows does the Training sheet have?"},
-         "answer": [("p", f"The Training sheet has {D.TRAIN_ROWS_EXPORT} request rows. The Control totals sheet says {D.TRAIN_TRUE} requests.")]},
-        {"title": "Find why Training is too high", "do": ["Select the Request ID column. Use Conditional Formatting, Duplicate Values, or Remove Duplicates on a copy."],
-         "hint": "Each request ID should appear once.", "check": {"kind": "flag", "label": "Type how many extra rows Remove Duplicates takes out (digits only)", "answer": str(D.TRAIN_DUPES)},
-         "answer": [("p", f"{D.TRAIN_DUPES} request IDs appear twice. Without them, the count is {D.TRAIN_TRUE}.")]},
-        {"title": "Find why vacancies are too low", "do": ["In the Manpower sheet, compare each section's approved positions with the approved structure on the Control totals sheet."],
-         "hint": "One new section shows 0 approved positions.", "check": {"kind": "flag", "label": "Type the name of that section", "answer": D.MP_WRONG},
+        {"title": "Task 2.1 · Redact the case note", "files": ["mutla-case-note-unredacted.docx"],
+         "do": ["Open the case note in Word. Save a copy with -redacted at the end of the name.", "Replace each name with a role. Remove the ID, the phone number, the salary and the medical reason.", "Read it once more: could anyone outside HR tell who this is?"],
+         "hints": ["Six items: two names and four details.", "Look for a civil ID, a mobile number, a salary figure and the medical reason for the absence."],
+         "prompt": "Read the attached note. List any detail that could still identify a person or is sensitive. Do not repeat the detail itself; give its paragraph number.",
+         "check": {"kind": "note", "label": "List the six items you replaced, by type only (for example: civil ID). Never type the real values."},
+         "answer": [("p", "Two names (to Employee A and Colleague B), the civil ID, the mobile number, the salary and the medical reason. Use the prompt only on the redacted copy.")]},
+        {"title": "Task 2.2 · Prepare your track's meeting", "files": [D.CASES[k]["file"] for k, _n in D.TRACKS],
+         "do": ["Open your track's case file. Find the meeting in it.", "Write your checklist request for an agenda, a background brief and three discussion points. Attach the case file.", "Check: an owner for every item, minutes that add up, every fact in the case file."],
+         "hints": ["The case file says who meets, and about what.", "Turn the open question in the case into a discussion point. Constraints: only the case file; an owner and minutes for each item."],
+         "prompt": f"You are an HR officer at {D.COMPANY}. I meet [who] for 30 minutes about [topic]. Prepare an agenda, a one-paragraph background brief and three discussion points. Use only the attached case file. Give each agenda item an owner and minutes that add up to 30. Turn each open question into a discussion point. Short and practical. An agenda table (item, owner, minutes), then the brief, then the discussion points. Start with: {D.DRAFT_LINE}",
+         "check": {"kind": "note", "label": "Paste your request here"},
+         "answer": [("p", "Accept an agenda with owners and minutes, a brief from the case facts only, and the case's open question as a discussion point.")]},
+        {"title": "Task 2.3 · Recap the staffing meeting", "files": ["mutla-meeting-transcript-staffing.docx"],
+         "do": ["Attach the transcript to a new chat.", "Write your checklist request for a recap: decisions, then action, owner and deadline, then open questions.", "Check each owner and deadline against the transcript. Delete anything nobody agreed."],
+         "hints": ["Look for the lines where a person says \"I will\" and gives a day.", "One question in the meeting was not decided. It goes under open questions, not decisions."],
+         "prompt": "FILL:RECAP",
+         "check": {"kind": "flag", "label": "Type the day and month of Khaled's deadline (for example: 1 June)", "answer": D.STAFF_ACTIONS[0][2].split(" ", 1)[1]},
+         "answer": [("p", f"Khaled Al-Ajmi prepares the manpower request by {D.STAFF_ACTIONS[0][2]}. Open question: {D.STAFF_OPEN[0]}.")]},
+        {"title": "Task 2.4 · Follow up, and remind Khaled", "files": ["mutla-meeting-transcript-staffing.docx"],
+         "do": ["Use your recap from Task 2.3.", "Write your checklist request for a follow-up email to everyone at the meeting.", "Then ask for a polite reminder to Khaled, two days before his deadline.", "Check every owner and date against the transcript."],
+         "hints": ["The reminder asks. It does not blame.", "Constraints: keep every owner and date exactly as in the recap. Ask for two emails, each with a subject line."],
+         "prompt": f"From the recap above, write a follow-up email to everyone at the meeting with the action table. Then write a short reminder to Khaled about the manpower request, two days before its deadline. Keep every owner and date exactly as in the recap. No blame. Polite and short. Two emails, each with a subject line, each starting with: {D.DRAFT_LINE}",
+         "check": {"kind": "note", "label": "Paste the subject lines of your two emails"},
+         "answer": [("p", "All four actions with owners and deadlines unchanged; a reminder that names the manpower request and its deadline, with no blame.")]},
+        {"title": "Task 2.5 · Your track's message", "files": [D.CASES[k]["file"] for k, _n in D.TRACKS],
+         "do": ["Open your track's case file again. Find who needs a message, and why.", "Write your checklist request for that message. Attach the case file.", "Check every date and number. No employee names in the message."],
+         "hints": ["Who reads it, and what must they do after reading it?", "Data: the case file. Constraints: every date and number as written; promise nothing the case does not say."],
+         "prompt": f"You are an HR officer at {D.COMPANY}. [Who] needs to know [what] before [date]. Write the message. Use only the attached case file. Keep every date and number as written; promise nothing the case does not say; no employee names. Polite and clear. A subject line and under 150 words, starting with: {D.DRAFT_LINE}",
+         "check": {"kind": "note", "label": "Paste your subject line and first sentence"},
+         "answer": [("p", "Job Evaluation: the reply gives no grade and says only the committee decides. Other tracks: every date and number from the case file.")]},
+        {"title": "Task 2.6 · Training requests: find the duplicates", "files": ["mutla-hr-trackers-q3-2026.xlsx"],
+         "do": ["Attach the tracker. Ask Copilot for every request ID that appears more than once.", "Check in Excel: select the Request ID column, then Conditional Formatting, Highlight Cells Rules, Duplicate Values.", "Write the corrected total, and why it changed."],
+         "hints": ["Compare the Training sheet's row count with the Control totals sheet.", "Each request ID should appear once. Count the IDs that appear twice."],
+         "prompt": "The Training sheet total does not match the Control totals sheet. List every request ID that appears more than once, with its row numbers. Do not delete anything.",
+         "check": {"kind": "flag", "label": "Type the corrected number of Q3 training requests (digits only)", "answer": str(D.TRAIN_TRUE)},
+         "answer": [("p", f"{D.TRAIN_DUPES} request IDs appear twice. Without them, the count is {D.TRAIN_TRUE}, not {D.TRAIN_ROWS_EXPORT}.")]},
+        {"title": "Task 2.7 · Vacancies: find the missing value", "files": ["mutla-hr-trackers-q3-2026.xlsx"],
+         "do": ["Ask Copilot for total vacancies by section on the Manpower sheet.", "Compare each section's approved positions with the Control totals sheet.", "Write the corrected total, and why it changed."],
+         "hints": ["A total that is too low often hides a zero.", "One new section shows 0 approved positions. Find its number on the Control totals sheet."],
+         "prompt": "In the Manpower sheet, calculate total vacancies (approved positions minus filled). Show the result by section. Then compare each section with the Control totals sheet and list any difference. Do not fix anything.",
+         "check": {"kind": "flag", "label": "Type the corrected total of vacancies (digits only)", "answer": str(D.MP_VACANT)},
          "answer": [("p", f"{D.MP_WRONG} shows 0 approved positions; it should be {D.STAFF_POSITIONS}. Total vacancies are {D.MP_VACANT}, not {D.MP_VACANT_EXPORT}.")]},
+        {"title": "Task 2.8 · A management summary in Word", "files": [],
+         "do": ["Use your two corrected figures from Tasks 2.6 and 2.7.", "Write your checklist request for a half-page summary for the Head of HR: what was found, what was corrected, and why.", "Check both figures by hand. It starts with the DRAFT line."],
+         "hints": ["Say what the file showed, what is correct, and why.", "Constraints: no blame on a unit or a person; one next step."],
+         "prompt": f"You are an HR analyst at {D.COMPANY}. The Head of HR reads this before the quarterly report. Write a half-page summary of two corrections in the Q3 HR trackers. Data: [figure 1: in the file, correct, why]; [figure 2: in the file, correct, why]. Keep every number as written. No blame on a unit or a person. Add one next step. Neutral and short. A title, then three short paragraphs, starting with: {D.DRAFT_LINE}",
+         "check": {"kind": "note", "label": "Paste your summary's first line"},
+         "answer": [("p", "Both corrected figures, the figure that was in the file, the reason for each, no blame, one next step.")]},
+        {"title": "Task 2.9 · Five slides from your summary", "files": [],
+         "do": ["Save your summary as a Word file.", "In PowerPoint with Copilot, create a presentation from the file. Or ask Copilot Chat for a five-slide outline with speaker notes.", "Check every number on every slide against your summary."],
+         "hints": ["Two numbers. Check each one on every slide where it appears.", "Ask for a title and three bullets per slide, plus two sentences of speaker notes."],
+         "prompt": "Turn the attached summary into a five-slide outline for the Head of HR's meeting, with speaker notes. Use only the attached summary. Keep every number exactly as written. Clear and practical. Five slides: a title and three bullets each, plus two sentences of speaker notes per slide.",
+         "check": {"kind": "note", "label": "Paste your five slide titles"},
+         "answer": [("p", "Every number on the slides matches the summary; the last slide gives the next step.")]},
+        {"title": "Task 2.10 · Map the training request", "files": ["mutla-process-stories.docx", "mutla-process-map-template.docx"],
+         "do": ["Read story 1 in the process stories file.", "Run the request from the prompt sheet to draft the step table.", "Check it against the story. Add any step or problem Copilot missed.", "Copy the final table into the map template."],
+         "hints": ["Find the step that nobody owns.", "Count the places where the same information is printed, scanned or typed again."],
+         "prompt": "FILL:MAP_FILE",
+         "check": {"kind": "flag", "label": "Type how many working days the line manager usually takes to sign (for example: 1 to 2)", "answer": "4 to 6"},
+         "answer": [("p", "About nine steps. The line manager takes 4 to 6 working days and L&D up to a week. Nobody chases late approvals.")]},
+        {"title": "Task 2.11 · Map your own HR process", "files": ["mutla-process-stories.docx", "mutla-process-map-template.docx"],
+         "do": ["Choose your track's story (2 to 5) or a process from your own work. For your own work, write it with roles only.", "Write your checklist request to turn it into a step table. Flag the problems; do not fix them.", "Check the table yourself. Mark every step where a person must decide. Save the map for Day 3."],
+         "hints": ["Start where the request starts. Stop when the requester has the result.", "Your own work: write the story in five to eight sentences first, roles only, then ask Copilot to map it."],
+         "prompt": "Turn the process story below into a step table. Story: [paste your story, roles only]. Do not improve the process. Only map it. Flag each step that has a delay, duplicated effort, unclear ownership or a repetitive step. Mark every step where a person must decide. A table: step, who, what happens, input, output, wait, problem, a person decides?",
+         "check": {"kind": "note", "label": "Name your process and its biggest problem"},
+         "answer": [("p", "A map from request to result, one owner per step, waits and problems marked, human decisions marked. No real names.")]},
+        {"title": "Task 2.12 · Swap and check a map", "files": ["mutla-process-map-template.docx"],
+         "do": ["Swap maps with a colleague from a different unit.", "Ask three questions: one owner per step? Every wait and problem marked? Every human decision marked?", "Write one thing that is clear and one thing to fix. Swap back and fix your map."],
+         "hints": ["Look for a step owned by \"HR\" or \"the team\".", "An approval is always a human decision. Is it marked?"],
+         "check": {"kind": "note", "label": "What did your colleague ask you to fix?"},
+         "answer": [("p", "Every map comes back with one fix, usually a step with no clear owner.")]},
      ]},
- 3: {"title": "Capstone self-check", "intro": "Use this list before the peer test at 13:30. Mark each step when it is true for your work.",
-     "steps": [{"title": t, "do": [t], "hint": h, "check": {"kind": "note", "label": "Where in your work does this show?"}, "answer": [("p", a)]}
-               for t, h, a in [(SELFCHECK[0], "Instructions, context, data, tone, approved sources.", "Each request in the prompt set has all five inputs."),
-                               (SELFCHECK[1], "A colleague cannot guess which file you meant.", "Each request names the files it needs."),
-                               (SELFCHECK[2], "Use employee codes or roles, never names.", "No civil ID, named salary, medical or case detail anywhere."),
-                               (SELFCHECK[3], "Open the case file and compare.", "Every figure and date matches the case file."),
-                               (SELFCHECK[4], "Look for any grade, exception or blame.", "No output makes a decision that belongs to a person.")]]},
+ 3: {"name": "Final project", "title": "Your agents, then the final project",
+     "intro": "Steps 1 to 4 are the morning's agent tasks. Steps 5 to 10 are the final project: improve the process you mapped on Day 2, build one piece of it, test it and submit it.",
+     "lede_html": PROJECT_LEDE,
+     "steps": [
+        {"title": "Task 3.1 · Write the agent's instructions", "files": ["mutla-leave-policy-2026.docx", "mutla-allowances-policy-v3.docx", "mutla-allowances-policy-v4.docx", "mutla-attendance-rules-2026.docx", "mutla-training-policy-2026.docx"],
+         "do": [f"Write the instructions for {D.AGENT_NAME} with the seven checklist parts.", "Say which files it may use, and the dates of the two allowances versions.", "Say what it must never answer, when it must ask first, and where it refers people."],
+         "hints": ["Constraints hold the rules that protect people: never, ask first, refer.", "Data: version 3 applies until 31 December 2026; version 4 from 1 January 2027. Output format: a short answer, then the policy name and section."],
+         "prompt": "FILL:AGENT",
+         "check": {"kind": "note", "label": "Paste your Constraints line"},
+         "answer": [("p", "Seven parts; only the five files; both allowances dates; ask first; never a named person's pay or data; refer to the right HR unit.")]},
+        {"title": "Task 3.2 · Build it in Agent Builder", "files": ["mutla-leave-policy-2026.docx", "mutla-allowances-policy-v3.docx", "mutla-allowances-policy-v4.docx", "mutla-attendance-rules-2026.docx", "mutla-training-policy-2026.docx"],
+         "do": ["In Microsoft 365 Copilot, choose Create agent, then the Configure tab.", "Add a name, a one-line description and your instructions. Upload the five policy files under Knowledge.", "Add three starter prompts. Ask one normal question in the test pane."],
+         "hints": ["Starter prompts are questions staff would really ask.", "No section number in the answer? Check the Output format line in your instructions."],
+         "templates": [(f"Starter prompt {i}", q) for i, q in enumerate(D.AGENT_STARTERS, 1)],
+         "check": {"kind": "note", "label": "Paste the answer to your normal question"},
+         "answer": [("p", f"Five knowledge files, three starter prompts, and a normal answer with the policy name and section.")]},
+        {"title": "Task 3.3 · Test and fix your agent", "files": [],
+         "do": ["Ask the three test questions below. Write a test log: question, answer, pass or fix.", "Fix one instruction line that failed. Test again."],
+         "hints": ["If it answers the salary question, your Constraints line is not clear enough.", "Change one line at a time, then ask the same question again."],
+         "templates": [(f"Test · {a}", b) for a, b, _c, _d in D.AGENT_TESTS],
+         "check": {"kind": "note", "label": "Paste your three-line test log"},
+         "answer": [("p", "Normal: the rule and section 4. Incomplete: it asks for the grade, or gives both versions with dates. Sensitive: it declines and refers.")]},
+        {"title": f"Task 3.4 · A second agent: {D.COACH_NAME}", "files": ["mutla-jd-template-2026.docx", "mutla-job-evaluation-factors.docx"],
+         "do": ["Create a second agent that helps line managers draft job descriptions.", "Write its instructions with the seven parts. Knowledge: the 2026 template and the evaluation factors.", "Run the three tests below and log them. Fix one line if a test fails."],
+         "hints": ["The incomplete test gives no duties. What must the coach do before it writes?", "Constraints: ask for the duties first; add no duty, team size, grade or salary; refer any grade question to the committee."],
+         "prompt": "FILL:COACH",
+         "templates": [(f"Test · {a}", b) for a, b, _c, _d in D.COACH_TESTS],
+         "check": {"kind": "note", "label": "Paste your three-line test log"},
+         "answer": [("p", "It drafts from the given duties only, asks for duties when none are given, and refers the grade question to the committee.")]},
+        {"title": "Final project · 1. Choose your process", "files": ["mutla-process-stories.docx", "mutla-process-map-template.docx", "mutla-workflow-card-template.docx"],
+         "do": ["Open your map from Task 2.11. No map? Use your track's story in the process stories file.", "Open the workflow card template. Read the filled-in example on page 2."],
+         "hints": ["Pick the process that happens most often. That is where improvement saves the most time.", "Your own work: roles only, no real names or data."],
+         "check": {"kind": "note", "label": "Name your process and your track"},
+         "answer": [("p", "Any process from Day 2, or the track's story.")]},
+        {"title": "Final project · 2. Mark each step", "files": [],
+         "do": ["For each step on your map, write Person, Copilot, Agent or Flow.", "Every approval and every decision about a person stays with a Person."],
+         "hints": ["Copilot: one-off drafting or summarizing. Agent: the same questions or drafts for many people. Flow: the same steps every time something happens.", "Moving a form to an approver, logging a row, sending the same email: those are Flow steps. Approving is a Person step."],
+         "check": {"kind": "note", "label": "How many steps did you mark Person?"},
+         "answer": [("p", "Every approval and decision is marked Person.")]},
+        {"title": "Final project · 3. Remove the problems", "files": [],
+         "do": ["Go back to the problems you flagged: delays, duplicated effort, unclear ownership, repetitive steps.", "Remove or change at least two of them. Give every step one owner."],
+         "hints": ["A step that types the same data again can often disappear.", "A wait with no reminder: who chases it now, and after how many days?"],
+         "check": {"kind": "note", "label": "Which two problems did you remove?"},
+         "answer": [("p", "At least two problems from the map removed; one owner per step.")]},
+        {"title": "Final project · 4. Fill in the card", "files": ["mutla-workflow-card-template.docx"],
+         "do": ["Fill in every line of the card.", "Run the check request below. Then check the card yourself."],
+         "hints": ["Look at the example card on page 2 of the template.", "The Decisions line names who decides, not what Copilot suggests."],
+         "templates": [("Check my card", "FILL:CHECKCARD")],
+         "check": {"kind": "note", "label": "Paste your card's Trigger line"},
+         "answer": [("p", "Every line filled in; no decision given to Copilot, an agent or a flow.")]},
+        {"title": "Final project · 5. Build one piece and test it", "files": [],
+         "do": ["Pick one step marked Copilot or Agent. Build it: a checklist request, or agent instructions.", "Test it three ways: normal, incomplete, sensitive. Log the results in the card.", "Fix one line and test again."],
+         "hints": ["Use the seven checklist parts. Constraints say what it must never do.", "Sensitive test: ask for a named person's pay, or for a decision. It must decline and refer."],
+         "templates": [("Test log", "Normal: [what you tried] · [result] · [fix]\nIncomplete: [what you tried] · [result] · [fix]\nSensitive: [what you tried] · [result] · [fix]")],
+         "check": {"kind": "note", "label": "Paste your test log"},
+         "answer": [("p", "One piece with all seven parts, three tests logged, one fix shown.")]},
+        {"title": "Final project · 6. Submit", "files": [],
+         "do": ["Save the card as a Word file with your name in the file name.", "Submit it on the CODED platform, with the link your trainer shares in class."],
+         "hints": ["Check the card once more: one owner per step, every decision with a person, no real names."],
+         "check": {"kind": "note", "label": "Write the time you submitted"},
+         "answer": [("p", "One submission per participant.")]},
+     ]},
 }
 
 # ------------------------------------------------------------------ portal survey words (Arabic; surveys.py builds the payloads)

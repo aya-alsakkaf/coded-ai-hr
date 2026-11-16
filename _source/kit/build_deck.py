@@ -10,23 +10,25 @@ import data as D
 
 SECTIONS = {
  1: [("Opening", "g-mark", ["open"]), ("How AI works", "g-code", ["b1"]), ("Prompting", "g-frame", ["b2"]), ("Word", "g-impact", ["b3"]), ("Word and Outlook", "g-code", ["b4"]), ("Close", "g-progress", ["b5", "close"])],
- 2: [("Opening", "g-mark", ["open", "c0"]), ("Word", "g-code", ["c1"]), ("Outlook", "g-frame", ["c2"]), ("Teams", "g-impact", ["c3"]), ("Excel", "g-code", ["c4"]), ("PowerPoint", "g-frame", ["c5"]), ("Case", "g-impact", ["c6"]), ("Close", "g-progress", ["c7", "close"])],
- 3: [("Opening", "g-mark", ["open", "e0"]), ("Gallery", "g-code", ["e1"]), ("Agent", "g-frame", ["e2"]), ("Capstone", "g-impact", ["e3", "e4", "e5"]), ("Close", "g-progress", ["e6", "close"])],
+ 2: [("Opening", "g-mark", ["open", "c0"]), ("Safe data", "g-code", ["c1"]), ("Meetings", "g-frame", ["c2", "c3"]), ("Excel", "g-impact", ["c4"]), ("Reports", "g-code", ["c5"]), ("Workflows", "g-frame", ["c6", "c7"]), ("Close", "g-progress", ["c8", "close"])],
+ 3: [("Opening", "g-mark", ["open", "e0"]), ("Agents", "g-code", ["e1", "e2"]), ("Power Automate", "g-frame", ["e3"]), ("Final project", "g-impact", ["e4"]), ("Close", "g-progress", ["e5", "e6", "e7", "close"])],
 }
 FLOW = {
  1: (["AI", "Prompt", "Word", "Outlook", "Save"], {"b1": 0, "b2": 1, "b3": 2, "b4": 3, "b5": 4}),
- 2: (["Word", "Outlook", "Teams", "Excel", "PPT", "Case"], {"c1": 0, "c2": 1, "c3": 2, "c4": 3, "c5": 4, "c6": 5}),
- 3: (["Gallery", "Agent", "Capstone", "Peer test"], {"e1": 0, "e2": 1, "e3": 2, "e4": 3}),
+ 2: (["Data", "Meetings", "Outlook", "Excel", "Reports", "Map"], {"c1": 0, "c2": 1, "c3": 2, "c4": 3, "c5": 4, "c6": 5, "c7": 5}),
+ 3: (["Agent", "Test", "Flow", "Project", "Compare"], {"e1": 0, "e2": 1, "e3": 2, "e4": 3, "e5": 4}),
 }
 COVER_NOTES = {
  1: N(time="09:00-09:10", do="(Before 09:00: helpers walk the room and check that every laptop is signed in to Copilot Chat with a work account.)",
       more=["Housekeeping: breaks at 10:30 and 13:20, lunch and Dhuhr at 11:35. Prayer room and toilets."],
       say="Good morning, everyone. Please open your laptop and sign in to Copilot Chat with your work account while I set up. "
           "If anything does not work, raise your hand and one of us will come to you. We start in two minutes."),
- 2: N(do="Welcome back.", more=["Sign-in check: Copilot Chat open, the tracker and the thread file downloaded.", "The callback quiz comes after today's map."],
-      say="Yesterday you wrote five-input requests and traced every line to its source. Today the same habit goes into five apps.", silent="ask one person which request they tried at work last night.", time="09:00"),
- 3: N(do="Welcome to the last day.", more=["Check: Agent Builder opens on at least the presenting laptop (New agent).", "Remind the room: post-MAP and survey at 14:20, certificates at 14:40."],
-      say="Today your best requests become things a colleague can use without you.", silent="ask who saved a request in the Prompt Bank yesterday.", time="09:00"),
+ 2: N(time="09:00", do="(Before 09:00: check that every laptop has Copilot Chat open, and that people downloaded today's files from the Day 2 page.)",
+      more=["Housekeeping: breaks at 10:45 and 13:35, lunch and Dhuhr at 11:35."],
+      say="Good morning, and welcome back. Yesterday you learned to ask clearly and check everything. Today we protect people's data, run meetings, check numbers, and look at whole processes. Please open Copilot Chat while I start."),
+ 3: N(time="09:00", do="(Before 09:00: open Agent Builder on the presenting laptop, and run the Power Automate demo flow once end to end.)",
+      more=["Remind the room: post-MAP and survey at 14:20, certificates at 14:40.", "Ask everyone to open yesterday's process map."],
+      say="Good morning, and welcome to the last day. Today your best requests become tools that other people can use, and you improve the process you mapped yesterday."),
 }
 OUTCOMES_NOTES = {d: N(expect="Most people pick the checking outcome.", silent="pick the one you use most yourself and say why.",
                        say="These are the four things you will be able to do by the end of today, on fictional Mutla files. "
@@ -37,10 +39,10 @@ ROAD = {d: {"title": "One company. <span class=\"hl\">Five HR units.</span>",
 CLOSE = {
  1: {"big": "Ask clearly. <span class=\"hl\">Check everything.</span>", "next": "Tomorrow: safe data first, then meetings, Excel, PowerPoint, and a map of one HR process.",
      "n": N(say="Thank you for a great first day. Please bring the same laptop tomorrow, and the HR process you want to fix. See you at 9:00.")},
- 2: {"big": "Five apps. <span class=\"hl\">One review.</span>", "next": "Tomorrow: an HR assistant, a new case, and a colleague who tests your work.",
-     "n": N(do="Recap the day in one line.", more=["Ask everyone to finish organizing the Prompt Bank tonight if they did not."], say="Thank you. See you tomorrow at 9:00.")},
+ 2: {"big": "Safe data. <span class=\"hl\">Checked figures.</span>", "next": "Tomorrow: two HR agents, a Power Automate demo, and the final project.",
+     "n": N(say="Thank you for a full day. Please bring your process map tomorrow: the final project starts from it. See you at 9:00.")},
  3: {"big": "Copilot drafts. <span class=\"hl\">People decide.</span>", "next": "Thank you. Copilot drafts. You check. Authorized HR staff decide.",
-     "n": N(do="Recap the three days in one line. Hand out certificates.", more=["Point to the take-home guide and the safe-use card."], say="Start with one green task at work this week.")},
+     "n": N(do="(Hand out the certificates.)", more=["Point to the take-home guide and the safe-use card on the workshop site."], say="Thank you for three great days. Start with one green task at work this week.")},
 }
 
 R = D.ROLES["cmp"]
@@ -344,332 +346,392 @@ def day1():
         n=N(say="Look at what you made today. (Read the three cards.) Tonight, think of one HR process in your unit that annoys you: too many emails, too many steps. We map it tomorrow afternoon.")))
     return s
 
-# ------------------------------------------------------------------ Day 2 · Copilot Across HR Documents, Communication and Reporting
+# ------------------------------------------------------------------ Day 2 · Meetings, Reporting and Mapping Your HR Workflow
 def day2():
     s = opening(2)
-    s.append(rule("c0rule", "c0", "Callback · Day 1", "Five inputs in. <span class=\"hl\">A source for every line out.</span>",
-        "Yesterday: one job description, three ways, every line traced to its source. Today the same habit goes into five apps.",
-        n=N(do="Ask: who tried a five-input request at work last night?", expect="One or two hands.", say="Three quick questions on yesterday. Then Word.", time="09:00-09:10")))
-    s.append(check("c0chk1", "c0", f"Yesterday a draft said: <b>\u201c{D.LEAVE_ERRORS[1][1]}\u201d</b> The policy says {D.LEAVE['emergency']} days. <b>What would have stopped it?</b>",
-        [("A longer request with more detail about the employee", 0, "Length does not check a number."),
-         ("Attaching the policy, then checking", 1, "Right. Ground it, then check it."),
-         ("Asking Copilot to be careful", 0, "Copilot cannot check against a source it does not have.")]))
-    s.append(check("c0chk2", "c0", "Which input gives Copilot <b>the facts of this case</b>?",
-        [("Tone", 0, "Tone is how it sounds."),
-         ("Context", 0, "Context is why and for whom."),
-         ("Data", 1, "Right. Data is the facts; sources are the rules.")]))
-    s.append(check("c0chk3", "c0", "A source trace marks a line <b>NOT IN SOURCE</b>. What do you do?",
-        [("Delete it, or ask the owner", 1, "Right. No source, no line."),
-         ("Keep it if it sounds right and fits the template", 0, "Sounding right is the problem."),
-         ("Ask Copilot again", 0, "The source decides, not Copilot.")]))
-    # Block 1 · Word
-    s.append(story("c1story", "c1", "Block 1 · Word: policies and job evaluation", "Sunday 8 November, 09:15",
-        f"The Allowances Policy version 4 arrives. Yousef asks Abdulaziz one question: <b>what changed from version 3?</b> He needs it by noon, with the section of every change.",
-        "One question. <span class=\"hl\">Two versions.</span>", "Compare policy versions, and organize job-evaluation evidence with no grade.",
-        n=N(do="Ask: how do you find changes between two versions today?", expect="Read both, or Track Changes if someone kept it.", silent="Ask who has been asked “what changed?” this month.", time="09:10-10:00")))
-    s.append(rule("c1an", "c1", "Block 1 · the picture", "Spot the difference <span class=\"hl\">between two photos.</span>",
-        "Slow by eye, and you always miss one. Copilot can list the differences; you confirm each one.",
-        n=N(do="Ask: who has played spot the difference? How many did you miss?", expect="Laughter. Everyone misses one.", say="Copilot finds them fast. You still check each one in both files.")))
-    s.append(term("c1t1", "c1", "Block 1 · the idea", "List every change, <span class=\"hl\">with its section.</span>", "Compare versions",
-        "Ask Copilot to list <b>every change</b> between two files in a table: section, old text, new text. Then open both files and check each row.",
-        "Like spot the difference…", "…a list you can <b>tick against both files</b>.", "Section numbers make every change checkable.",
-        n=N(do="Show a two-row change table.", expect="People ask about renumbered sections: they are not policy changes.", silent="Ask: why insist on section numbers?")))
-    s.append(cards3("c1ever", "c1", "Block 1 · three requests for long policies", "Three requests <span class=\"hl\">you will use every month.</span>",
-        [("Summarize", "With section numbers", "A one-page summary where every point names its section.", ""), ("Compare", "Two versions", "Every change: section, old, new.", ""),
-         ("Answer", "From the policy only", "Answer this question from the policy; if it does not say, say so.", "")],
-        "Each one ends with the same habit: open the section and check.", n=N(do="Ask which of the three their unit needs most.", expect="Compare, before every new version.", silent="Say Compensation uses compare most.")))
-    s.append(rule("c1clerk", "c1", "Block 1 · a second picture", "The clerk prepares the file. <span class=\"hl\">The committee decides.</span>",
-        "A good clerk sorts the evidence so the committee can judge. A clerk who writes the verdict has overstepped.",
-        n=N(do="Ask Job Evaluation participants how the committee works at their company.", expect="Evidence first, then a decision by the committee.", say="Copilot can be an excellent clerk. Never the committee.")))
-    s.append(term("c1t2", "c1", "Block 1 · the idea", "Organize the evidence. <span class=\"hl\">Never the grade.</span>", "Evidence by factor",
-        "Copilot sorts the evidence against the <b>evaluation factors</b>, with the note it came from. The level and grade column stays empty for the committee.",
-        "Like the clerk's case file…", "…evidence in order, <b>the decision left blank</b>.", "If Copilot suggests a grade, delete it.",
-        n=N(do="Point to the empty Level column on the next slide.", expect="People ask what to do if a manager asks for a suggested grade: say the committee decides.", silent="Ask: why does the empty column matter?")))
-    s.append(player("c1pp", "c1", "d21"))
-    s.append(check("c1chk2", "c1", "Copilot's evidence table lists <b>\u201cparking at the head office is full\u201d</b> under Working conditions. What do you do?",
-        [("Remove it: it is not evidence for the job", 1, "Right. Only evidence about the job goes to the committee."),
-         ("Keep it, because the job holder said it in the interview", 0, "Said in the interview is not the same as evidence."),
-         ("Move it to a new factor called Other", 0, "The factors are fixed. Noise stays out.")]))
-    s.append(listslide("c1rec", "c1", "Block 1 · recruitment, at a high level", "Recruitment: <span class=\"hl\">drafts only.</span>",
-        ["<b>Vacancy text</b> from an approved job description, every duty kept.", "<b>Structured interview questions</b> from the approved competencies.",
-         "<b>Never</b> ranking, scoring or selecting candidates.", "<b>Never</b> a CV with personal data in a prompt."],
-        "Copilot drafts the words. People choose the person.", n=N(do="Keep this short: recruitment is not today's focus.", expect="One question about CV screening: the answer is no.", silent="Move on after one minute.")))
-    s.append(check("c1chk1", "c1", "Copilot turns the approved job description into vacancy text. It adds <b>\u201ca fast-growing team\u201d</b>. What do you do?",
-        [("Keep it, because it makes the vacancy more attractive", 0, "Attractive is not approved. It promises something."),
-         ("Ask Copilot to make the whole text more exciting", 0, "More excitement means more invented claims."),
-         ("Remove it: the job description does not say it", 1, "Right. Vacancy text keeps to the approved job description.")]))
-    s.append(player("c1pp2", "c1", "d21c"))
-    s.append(task("c1task", "c1", "t21"))
-    s.append(check("c1chk3", "c1", "Copilot lists a change in <b>section 6</b> that is only a new section number. <b>Is it a policy change?</b>",
-        [("Yes, every new section number is a policy change", 0, "Renumbering moves text; it does not change a rule."),
-         ("No. Section 5 is new, so the text moved", 1, "Right. Report the three rule changes, and note the renumbering."),
-         ("Only if Copilot says so", 0, "The two files decide, not Copilot.")]))
-    # Block 2 · Outlook
-    s.append(story("c2story", "c2", "Block 2 · Outlook: thread to message", "Thursday 12 November, 10:00",
-        "Fatma opens the attendance thread: <b>30 messages</b>, four reply-alls, one early date that changed later. She must write the staff announcement today.",
-        "Thirty messages. <span class=\"hl\">Who decided what?</span>", "Turn a long thread into decisions and owners, and change the tone without changing the facts.",
-        n=N(do="Ask: hands up when you know the start date from the thread. Give them one minute.", expect="Few hands, and two different dates.", silent="Point to message 3 and message 24.", time="10:00-10:40")))
-    s.append(rule("c2an", "c2", "Block 2 · the picture", "A long thread is <span class=\"hl\">a meeting with no minutes.</span>",
-        "Everyone was there, everyone remembers it differently, and the final decision is in message 24.",
-        n=N(do="Ask: who has acted on an old decision from early in a thread?", expect="Several hands.", say="Copilot can write the minutes of the thread, if you ask for decisions, owners and dates.")))
-    s.append(scene("c2scene", "c2", "Block 2 · the picture, drawn", "Thirty emails in. <span class=\"hl\">Four decisions out.</span>",
-        "The thread goes in. Out comes a short list: each decision, its owner, its date and the message that settled it.",
-        "Decisions, owners, dates, and the message number.",
-        [{"ground": 268}, {"mail": (70, 120), "tone": "dim"}, {"mail": (100, 150), "tone": "dim"}, {"mail": (70, 180), "tone": "dim"}, {"mail": (100, 210), "tone": "dim"},
-         {"laptop": (240, 220), "tone": "hot", "label": "Copilot"}, {"doc": (400, 170), "tone": "ok", "label": "4 decisions"},
-         {"move": "mail", "path": [(130, 170), (230, 170), (380, 170)], "dur": 4}],
-        n=N(do="Point to the stack of emails, then the one page.", expect="People ask about attachments in the thread: attach them too.", silent="Ask: what would you lose if the summary skipped message numbers?")))
-    s.append(term("c2t1", "c2", "Block 2 · the idea", "Ask for <span class=\"hl\">decisions, not a summary.</span>", "Thread summary",
-        "A summary that lists <b>each decision, its owner and its date</b>, the message that settled it, and the questions still open.",
-        "Like minutes of the thread…", "…<b>what was decided</b>, by whom, when.", "Later decisions replace earlier ones. Ask Copilot to say which.",
-        n=N(do="Stress the last line: message 3 versus message 24.", expect="People see why the message number matters.", silent="Ask: what if two messages disagree?")))
-    s.append(term("c2t2", "c2", "Block 2 · tone", "Turn the tone dial. <span class=\"hl\">Keep the facts.</span>", "Tone dial",
-        "The same facts can be written for <b>employees, managers or senior stakeholders</b>. Name the facts that must not change.",
-        "“Make it friendlier.”", "“Make it warmer; keep every date, time and rule as written.”", "Name what must not change.",
-        n=N(do="Read both requests. Ask which one is safer.", expect="The second: it names the facts.", silent="Ask: what could “friendlier” change by mistake?")))
-    s.append(player("c2pp", "c2", "d22"))
-    s.append(check("c2chk", "c2", "Fatma rewrites the staff announcement <b>for line managers</b>. What changes?",
-        [("The start date, because managers need more notice", 0, "The facts stay the same for every reader."),
-         ("What managers must do, such as approving permissions", 1, "Right. The reader changes the focus, not the facts."),
-         ("The number of permissions, so managers can plan", 0, "A rule does not change with the reader.")]))
-    s.append(task("c2task", "c2", "t22", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
-    s.append(rule("c2deb", "c2", "Block 2 · debrief", "Warmer, <span class=\"hl\">never different.</span>",
-        "Read your announcement once for tone, and once for every date, time and rule. Two readings, two different checks.",
-        n=N(do="Ask two people to read their reply to Mubarak.", expect="One reply promises an exception: discuss why it should not.", silent="Read the backup reply yourself.", say="The tone is yours to change. The rule is not.")))
-    s.append(check("c2chk2", "c2", f"Message 3 proposes {D.ATT['old_start']}. Message 24 approves {D.ATT['start']}. <b>Which date goes in the announcement?</b>",
-        [(D.ATT["start"], 1, "Right. The later, approved decision stands."),
-         (D.ATT["old_start"], 0, "That was a proposal. A later message replaced it."),
-         ("Both, so staff can choose", 0, "Two dates confuse everyone. Use the approved one.")]))
-    # Block 3 · Teams
-    s.append(story("c3story", "c3", "Block 3 · Teams: meetings and notes", "Monday 16 November, 10:30",
-        f"Yousef's staffing meeting for the new <b>{D.NEW_SECTION}</b> section ended at 10:23. The actions were said aloud, but nobody wrote them down. Two days later, Finance asked <b>who was sending the manpower request.</b>",
-        "No written actions means <span class=\"hl\">no follow-up.</span>", "Recap a meeting into actions, and keep investigation notes to a timeline.",
-        n=N(do="Ask: who writes the actions after your meetings?", expect="Nobody, or the manager, late.", silent="Ask how many have missed an action because of it.", time="10:55-11:35")))
-    s.append(listslide("c3before", "c3", "Block 3 · before the meeting", "Before: <span class=\"hl\">an agenda and a brief.</span>",
-        ["<b>Agenda:</b> items, owner of each item, minutes.", "<b>Background brief:</b> one page of facts from the approved files.", "<b>One question</b> the meeting must answer."],
-        "A good meeting starts with a good page.", n=N(do="Show one agenda request from the prompt sheet.", expect="People ask about calendar invites: Outlook Copilot can draft them too.", silent="Ask: what is the one question for your next meeting?")))
-    s.append(term("c3t1", "c3", "Block 3 · the idea", "After: <span class=\"hl\">action, owner, deadline.</span>", "Meeting recap",
-        "A recap lists <b>decisions</b>, then a table of <b>action, owner and deadline</b>, then the open questions. In Teams, Copilot needs the meeting transcript for this.",
-        "A meeting nobody recaps…", "…becomes <b>a table everyone can act on</b>.", "No transcript in Teams: use the notes or a transcript file.",
-        n=N(do="Say: in class we use a transcript file, so no live meeting is needed.", expect="People ask how to turn on transcription: Teams meeting controls, if their company allows it.", silent="Ask: who owns sending the recap?")))
-    s.append(player("c3pp", "c3", "d23"))
-    s.append(check("c3chk1", "c3", "The recap lists an action <b>nobody agreed in the meeting</b>. What do you do?",
-        [("Keep it; it is a good idea", 0, "Good or not, nobody owns it."),
-         ("Give it to the HR Section Head to approve later", 0, "That assigns work nobody agreed."),
-         ("Delete it, or ask about it", 1, "Right. A recap records what was agreed.")]))
-    s.append(check("c3chk2", "c3", "Hessa wants Copilot to recap her Teams meeting afterwards. <b>What must she do during the meeting?</b>",
-        [("Share her screen for the whole meeting", 0, "Screen sharing does not give Copilot the words."),
-         ("Keep the meeting chat open, with no transcript", 0, "Without a transcript, the recap has little to work with."),
-         ("Start transcription", 1, "Right. Copilot recaps the meeting from the transcript.")]))
-    s.append(rule("c3board", "c3", "Block 3 · a second picture", "A timeline on a whiteboard, <span class=\"hl\">not a verdict.</span>",
-        "Investigators lay out what happened and when. Deciding who is at fault comes later, by people with authority.",
-        n=N(do="Ask: who in your company decides the outcome of an investigation?", expect="A committee or a named manager.", say="Copilot can draw the timeline. It never writes the verdict.")))
-    s.append(term("c3t2", "c3", "Block 3 · the idea", "Organize the notes. <span class=\"hl\">No finding.</span>", "Investigation notes",
-        "Copilot may turn notes into a <b>timeline and open questions</b>. It never writes a finding, blames a person or recommends an action. Use roles, never names.",
-        "Like the whiteboard…", "…<b>what happened and when</b>, and what we still need to ask.", "An opinion in the notes stays an opinion.",
-        n=N(do="Point out: the notes for Task 2.3 already use roles.", expect="People ask about real cases: redact first, and follow the company's investigation policy.", silent="Ask: what is the difference between a fact and an opinion in a note?")))
-    s.append(player("c3pp2", "c3", "d23c"))
-    s.append(task("c3task", "c3", "t23", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
-    s.append(check("c3chk3", "c3", "The notes say a manager thinks <b>Employee C is clearly at fault</b>. Where does that line go in your output?",
-        [("In the findings", 0, "An opinion is not a finding."),
-         ("Nowhere, or only as what someone said", 1, "Right. It stays an opinion, attributed to who said it."),
-         ("In the recommended actions", 0, "Copilot recommends no action about a person.")]))
-    # Block 4 · Excel
-    s.append(story("c4story", "c4", "Block 4 · Excel: HR trackers", "Tuesday 10 November, 12:15",
-        f"Noura's quarterly report says <b>{D.TRAIN_ROWS_EXPORT} training requests</b> for Q3. The training system's control total says <b>{D.TRAIN_TRUE}</b>. The Head of L&D asks which number is right.",
-        "Fast numbers <span class=\"hl\">still need a check.</span>", "Ask Copilot about a tracker, see the rows, and check against the control total.",
-        n=N(do="Ask: how often do two HR numbers for the same thing disagree?", expect="Often.", silent="Ask who has had to explain a wrong number to a manager.", time="12:15-13:00")))
-    s.append(rule("c4an", "c4", "Block 4 · the picture", "A calculator that <span class=\"hl\">shows what it pressed.</span>",
-        "You trust it because you can see every step. Ask Copilot for the rows or the formula behind every number.",
-        n=N(do="Ask: why trust a receipt more than a guess at the total?", expect="You can see the lines.", say="The rows are the receipt.")))
-    s.append(term("c4t1", "c4", "Block 4 · the idea", "Ask, then <span class=\"hl\">see the rows.</span>", "Rows behind the number",
-        "Ask in plain language, then ask Copilot to <b>show the formula or the rows</b> it counted. A number with no rows is a guess.",
-        "Like the calculator's tape…", "…the <b>rows</b> show what was counted.", "Copilot in Excel works on a saved .xlsx workbook; in Copilot Chat, attach it.",
-        n=N(do="Show where Copilot sits in Excel on the presenting laptop, if it has an M365 Copilot label.", expect="Copilot Chat (Basic) users attach the file in Copilot Chat.", silent="Ask: what would you check first in the rows?")))
-    s.append(term("c4t2", "c4", "Block 4 · spot-check", "Check against <span class=\"hl\">the control total.</span>", "Control total",
-        "A <b>control total</b> is a checked figure from the system of record. Compare two figures with it before any number goes in a report.",
-        "Copilot's count…", "…next to the <b>control total</b>. If they differ, find the rows.", "Too high: look for duplicates. Too low: look for a missing value.",
-        n=N(do="Ask: what can make a count too high? Too low?", expect="Rows counted twice; a zero or blank where a number should be.", silent="Give one example: the same request entered twice.")))
-    s.append(player("c4pp", "c4", "d24"))
-    s.append(check("c4chk1", "c4", "Before a Copilot count goes into your report, <b>what do you compare it with?</b>",
-        [("Last year's report", 0, "Last year is a different period."),
-         ("The control total from the system", 1, "Right. The control total is the checked number."),
-         ("A second Copilot answer", 0, "Two unchecked answers are still unchecked.")]))
-    s.append(task("c4task", "c4", "t24"))
-    s.append(check("c4chk2", "c4", "Total vacancies are <b>too low</b>. What is the most likely cause?",
-        [("A section with 0 approved", 1, "Right. A blank or zero where a number should be."),
-         ("Duplicate rows in the Training sheet", 0, "Duplicates usually make a total too high."),
-         ("Copilot's math", 0, "The math was right on the rows it had.")]))
-    s.append(listslide("c4deb", "c4", "Block 4 · debrief", "Two numbers, <span class=\"hl\">two different reasons.</span>",
-        ["<b>Training too high:</b> duplicate request IDs.", "<b>Vacancies too low:</b> one section with 0 approved positions.", "<b>Copilot's sums were right.</b> The file was wrong.", "<b>Your check</b> found both."],
-        "A number goes in a report only after it matches the control total.", n=N(do="Ask two pairs for their corrected figures.", expect="Most find the duplicates; fewer find the zero.", silent="Show the lab page for Day 2.")))
-    # Block 5 · PowerPoint
-    s.append(story("c5story", "c5", "Block 5 · PowerPoint: briefings", "Wednesday 11 November, 13:00",
-        "Line managers meet on Monday 23 November to explain the new attendance rules to their teams. Fatma has a <b>two-page brief</b> and <b>20 minutes</b> to turn it into slides.",
-        "Same facts. <span class=\"hl\">Fewer words.</span>", "Turn a document into a short briefing, every number checked.",
-        n=N(do="Ask: how long does a five-slide briefing take you today?", expect="An hour or more.", silent="Say most of that hour is formatting.", time="13:00-13:30")))
-    s.append(term("c5t1", "c5", "Block 5 · the idea", "From document <span class=\"hl\">to deck.</span>", "Document to deck",
-        "Copilot in PowerPoint can build slides from a Word file (with an M365 Copilot label). In Copilot Chat, ask for a <b>five-slide outline with speaker notes</b>.",
-        "A two-page brief…", "…<b>five slides</b> a busy manager can present.", "The deck is the brief made visible. Check every number.",
-        n=N(do="If the presenting laptop has an M365 Copilot label, show how to build slides from the Word brief: type / in the Copilot box and pick the file.", expect="Copilot Chat (Basic) users use the outline.", silent="Ask: what goes first on a briefing?")))
-    s.append(player("c5pp", "c5", "d25"))
-    s.append(listslide("c5chk", "c5", "Block 5 · check every slide", "Four checks <span class=\"hl\">on every slide.</span>",
-        ["<b>Numbers:</b> each time, date and percentage matches the brief.", "<b>Tone:</b> plain words managers can say aloud.", "<b>Nothing added:</b> no promise the brief does not make.", "<b>Contact:</b> where questions go."],
-        "Fast to make, quick to check.", n=N(do="Read the four checks, then start Task 2.5.", expect="People find the pilot number changed most often.", silent="Ask: which check is easiest to skip?")))
-    s.append(task("c5task", "c5", "t25", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
-    s.append(check("c5q", "c5", f"Your slide says late arrivals fell by 40%. The brief says {D.ATT['pilot_drop']}%. <b>What do you do?</b>",
-        [("Keep 40%; it is close enough for a short briefing", 0, "Close is not the same as correct."),
-         ("Delete the number", 0, "The number is useful; make it right."),
-         (f"Change it to {D.ATT['pilot_drop']}% and check the other numbers", 1, "Right. One changed number means you check them all.")]))
-    # Integration · One case, four outputs
-    s.append(listslide("c6brief", "c6", "Integration · one case, four outputs", "Your unit. <span class=\"hl\">Four outputs. One review.</span>",
-        ["<b>Word:</b> a one-page summary of the case.", "<b>Outlook:</b> a message to the right person.", "<b>Teams:</b> a brief for the meeting in the case.", "<b>Excel or PowerPoint:</b> a summary or a short briefing."],
-        "Then the four-point review on each one.", n=N(do="Ask everyone to open their track's case file now.", expect="People ask whether to do all four: two done well beat four done fast.", silent="Read the five case titles.", time="13:40-14:40")))
-    s.append(tslide("c6cases", "c6", "Integration · the five cases", "Pick <span class=\"hl\">your track's case.</span>", ["Track", "Case", "File"],
-        [[n, D.CASES[k]["title"], D.CASES[k]["file"]] for k, n in D.TRACKS], "Accuracy · Confidentiality · Neutrality · Source alignment.",
-        n=N(do="Ask each table which track they are taking.", expect="Most tracks are covered.", silent="Assign a track to anyone undecided.")))
-    s.append(tslide("c6review", "c6", "Integration · the four-point review", "Four checks <span class=\"hl\">on every output.</span>", ["Check", "What to look for"],
-        [[f"<b>{a}</b>", b] for a, b in C.CHECKS], "Copilot drafts. You check. Authorized HR staff decide.",
-        n=N(do="Ask which check catches the most problems in HR drafts.", expect="Accuracy first, then neutrality.", silent="Say confidentiality is the one you cannot undo.")))
-    s.append(task("c6task", "c6", "t26", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
-    s.append(timer_slide("c6gallery", "c6", "Integration · 14:30", "Gallery: <span class=\"hl\">one output from each track.</span>",
-        "One person per track shows one output and the problem the review caught. 10 minutes.", 10,
-        n=N(do="Pick one volunteer per track. Two minutes each.", expect="Most catches are dates and promises.", silent="Show the backup facts for one case.", fallback="If nobody volunteers, show the case facts and ask what a review would catch.")))
-    # Wrap
-    s.append(listslide("c7bank", "c7", "Wrap · the Prompt Bank by task", "Organize the bank <span class=\"hl\">by task.</span>",
-        ["<b>Draft:</b> job descriptions, announcements, vacancy text.", "<b>Compare:</b> policy versions.", "<b>Summarize:</b> threads, meetings, trackers.", "<b>Review:</b> the four-point check."],
-        "Tomorrow your best entries become a prompt set and an assistant.", n=N(do="Give five minutes to move today's requests into the bank.", expect="Review entries are the most often missing.", silent="Show your own bank.", time="14:40-15:00")))
-    s.append(wrap("w2", "close", "Five apps, <span class=\"hl\">one review.</span>",
-        [(1, "You built", "A change table, an announcement, a timeline, two checked figures, a briefing and a case set."), (2, "You found", "3 policy changes, 1 superseded date, 14 duplicates and 1 missing value."), (3, "The habit", "Copilot drafts. You check. Authorized HR staff decide.")],
-        "Tomorrow: your best requests become an assistant your colleagues can use."))
+    s.append(rule("c0rule", "c0", "Callback · Day 1", "Seven parts in. <span class=\"hl\">A source for every line out.</span>",
+        "Yesterday you wrote with the checklist, fixed drafts with follow-ups and traced lines to their source. Three quick questions, then today.",
+        n=N(time="09:00-09:10", do="(Ask for hands.) Who used Copilot at work after yesterday's session?",
+            say="Good morning. Before anything new, three questions on yesterday. Answer with your hands, and do not look at your notes.", expect="One or two hands.")))
+    s.append(check("c0chk1", "c0", "Copilot's job description adds <b>a team of six</b> that is not in the role information. <b>Which part of the checklist was weak?</b>",
+        [("Tone: it should sound more formal", 0, "Tone changes the voice, not what is added."),
+         ("Constraints: add no duty or team size", 1, "Right. Constraints say what it must not add."),
+         ("Role: write as an HR officer", 0, "The role sets the point of view, not the limits.")],
+        n=N(say="First one. (Wait for hands, then tap.) The fence again: constraints.")))
+    s.append(check("c0chk2", "c0", "The draft is good but runs to two pages. <b>What do you send next?</b>",
+        [("The same request again, in a new chat", 0, "Starting again throws away what was right."),
+         ("“One page. Keep every duty. Change nothing else.”", 1, "Right. Name the problem and what to keep."),
+         ("“Make it better and shorter.”", 0, "Copilot cannot tell what “better” means here.")],
+        n=N(say="Second one. (Tap after hands.) A follow-up names one problem and protects the rest.")))
+    s.append(check("c0chk3", "c0", "A source trace marks a line <b>NOT IN SOURCE</b>. <b>What do you do?</b>",
+        [("Keep it if it fits the template", 0, "Fitting the template does not make it true."),
+         ("Ask Copilot whether it is sure", 0, "The source decides, not Copilot."),
+         ("Delete it, or check it with the owner", 1, "Right. No source, no line.")],
+        n=N(say="Last one. (Tap after hands.) Good. Today starts with the question we left open yesterday: what may go into a prompt at all?")))
+    # Block 1 · Protecting employee data
+    s.append(story("c1story", "c1", "Block 1 · Protecting employee data", "Tuesday 10 November, 09:10",
+        "A line manager emails HR a case note about a technician. Fatma wants a neat summary for the file. She is about to paste the whole note into Copilot: <b>two names, a civil ID, a mobile number, a salary and a medical reason.</b>",
+        "The summary would be fine. <span class=\"hl\">The prompt is not.</span>", "Sort every task as green, amber or red, and redact a note before Copilot sees it.",
+        n=N(time="09:10-09:45", say="Yesterday I asked you to use practice files only. Today you learn why, and what to do with real work. (Read the story.) "
+              "Stop Fatma. What should she do before she presses Send? Call it out.", expect="Remove the names. Do not use Copilot. Ask IT.")))
+    s.append(rule("c1an", "c1", "Block 1 · the picture", "A traffic light <span class=\"hl\">before every prompt.</span>",
+        "Green: go ahead. Amber: only in your company's approved account, with names removed. Red: stop. It never goes into a prompt.",
+        n=N(say="Think of a traffic light at a junction. You do not decide at the last second; you look at the light first. "
+                "We do the same with every task, before we type a single word. Let us see what makes a task green, amber or red.")))
+    s.append(cards3("c1safe", "c1", "Block 1 · green, amber, red", "Look at the light <span class=\"hl\">before you type.</span>",
+        [(t, d, "; ".join(x), "") for _k, t, d, x in C.SAFE], "When you are not sure, treat it as red and ask.",
+        n=N(time="5 min", say="Here are the three lights. (Read one example from each card.) Notice amber: it depends on your company. "
+                "If your company has not approved a Copilot account for HR work, every amber task becomes red. Your company's policy always comes first.",
+            silent="Ask: which light is a salary list with names?")))
+    s.append(sortslide("c1sort", "c1", "Demo 2.1 · card sort", 'Green, amber or red? <span class="hl">Tap a card.</span>', C.SORT, C.SORT_LABELS, did="d21",
+        n=N(say="Eight tasks from real HR work. I read each card, you call the color, then I tap it. If the room disagrees, we stop and talk about it. (Read the first card.)")))
+    s.append(term("c1t1", "c1", "Block 1 · the idea", "Redact first. <span class=\"hl\">Then ask.</span>", "Redaction",
+        "Replacing names with roles, and removing IDs, phone numbers, salaries and medical details, <b>before</b> a document goes anywhere near a prompt.",
+        "A note about Bader and Sara…", "…becomes a note about <b>Employee A and Colleague B</b>.", "Redaction happens before the prompt, not inside it.",
+        n=N(say="Redaction is the skill that turns many red tasks into amber ones. You remove who the person is, and you keep what happened. "
+                "One warning: asking Copilot to keep a secret does not protect anything. The protection is what you never typed.")))
+    s.append(check("c1chk1", "c1", "Your company has an approved Copilot account. A manager asks you to summarize a grievance letter that names two employees. <b>What first?</b>",
+        [("Paste it as it is: the account is approved", 0, "An approved account still gets the minimum data."),
+         ("Replace the names and IDs, then use the approved account", 1, "Right. Redact first, then the approved account."),
+         ("Use your personal Copilot at home tonight", 0, "Never. Work data stays in the approved account.")],
+        n=N(say="Quick check. (Wait for hands, then tap.) Approved account and redaction: you need both.")))
+    s.append(live("c1live", "c1", "d21b", "Redact first. <span class=\"hl\">Then ask.</span>",
+        "A case note redacted on the trainer screen, then a summary request that holds only the redacted text.", "Whether the summary guesses anything that was removed.",
+        n=N(say="(Show the original note on your own screen only.) I am not pasting this anywhere. (Redact it aloud: names, ID, phone, salary, medical reason.) "
+                "Now Copilot sees only roles and facts. (Run the request.) Read the summary with me. Did it invent a reason for the absence? It should not, and if it does, we delete it.")))
+    s.append(task("c1task", "c1", "t21", n=N(say="Your turn. The same kind of note, on your own laptop, in Word. You redact by hand: no Copilot until nothing sensitive is left. "
+                                                "Eleven minutes. (Start the timer.)")))
+    s.append(rule("c1deb", "c1", "Block 1 · debrief", "Six details out. <span class=\"hl\">The case is still clear.</span>",
+        "Redaction removed who the people are, not what happened. A summary of the redacted note is just as useful to the file.",
+        n=N(do="(Ask one person which item was hardest to spot.)", expect="The salary or the medical reason, because they sit inside a sentence.",
+            say="The easy ones are the names. The dangerous ones hide inside a sentence, like a salary in brackets. Read every sentence, not only the headings.")))
+    # Block 2 · Before and after the meeting
+    s.append(story("c2story", "c2", "Block 2 · Before and after the meeting", "Tuesday 3 November, 11:30",
+        "The orientation planning meeting ends. Personnel, IT and L&D agreed on a lot. A week later, IT asks: <b>who said 18 laptops, and by when?</b> Nobody wrote it down.",
+        "A good meeting. <span class=\"hl\">No actions.</span>", "Prepare a meeting with Copilot, then turn notes into actions with owners and deadlines.",
+        n=N(time="09:45-10:45", say="Block 2 is about meetings: the page before, and the page after. (Read the story.) "
+              "Be honest: how many of your meetings last month ended with a written list of who does what by when?", expect="A few hands, some laughter.")))
+    s.append(tslide("c2when", "c2", "Block 2 · before, during, after", "Copilot drafts <span class=\"hl\">the page around the meeting.</span>", ["When", "Copilot drafts", "You check"],
+        [["Before", "An agenda, a background brief, discussion points", "Every fact comes from an approved file"],
+         ["During", "Answers about the meeting so far (Teams, Premium, transcribed)", "Ask before you record; follow your policy"],
+         ["After", "Decisions, actions with owner and deadline, open questions", "Nothing is added that nobody agreed"]],
+        "The meeting is still yours. Copilot writes the pages around it.",
+        n=N(time="6 min", say="Three moments. Before the meeting, Copilot can prepare the paper. After it, Copilot can turn notes or a transcript into actions. "
+                "During the meeting, Copilot in Teams needs a Premium label and a transcript, so most of us will paste the notes or the exported transcript into Copilot Chat instead. "
+                "The result is the same: you check it.", more=["Copilot in Teams meetings needs the M365 Copilot (Premium) label and transcription switched on. Everyone else: Copilot Chat with the transcript or notes."])))
+    s.append(live("c2live1", "c2", "d22", "Agenda, brief <span class=\"hl\">and discussion points.</span>",
+        "A 30-minute planning meeting for new joiners, prepared from five approved facts.", "Whether the minutes add up, and where the open question went.",
+        n=N(say="(Paste and run the request.) Three pieces in under a minute. Now my job. (Add the minutes aloud.) Thirty: good. "
+                "(Point to the discussion points.) The open question about Medical Services became something to discuss, not a decision. That is what we asked for.")))
+    s.append(task("c2task1", "c2", "t22", n=N(say="Your turn. Your unit track's case file has a meeting coming up. Prepare it: agenda, brief, three discussion points. "
+                                                  "Write your own request with the checklist. Fifteen minutes. Hints are on the Day 2 lab page. (Start the timer.)")))
+    s.append(term("c2t1", "c2", "Block 2 · the idea", "What, who, <span class=\"hl\">by when.</span>", "Action item",
+        "An action has three parts: <b>what</b> will be done, <b>who</b> does it, and <b>by when</b>. An idea that nobody agreed to is not an action.",
+        "“Someone will look into the laptops.”", "“Hamad sets up 18 laptop accounts by Wednesday 2 December.”", "Missing an owner or a date? It is not an action yet.",
+        n=N(say="After the meeting, everything depends on this. Read the left side: who will look into it? Nobody. Read the right side: one person, one task, one date. "
+                "When you check a recap, look for those three parts in every line.")))
+    s.append(live("c2live2", "c2", "d23", "Notes into <span class=\"hl\">decisions and actions.</span>",
+        "Rough meeting notes turned into decisions, an action table and open questions.", "The idea nobody agreed to. Does it sneak into the action table?",
+        n=N(say="(Run the request.) Read the table with me. Four actions, and one of them honestly says: no deadline set. "
+                "Now look for the CEO. Somebody had an idea, nobody agreed to it, and it is not in the table. If it were, I would delete it.")))
+    s.append(check("c2chk", "c2", "The notes say: <b>“Someone said we could invite the CEO.”</b> Nobody agreed. <b>Where does it go in the recap?</b>",
+        [("An action for the chair, due next week", 0, "Nobody agreed to it, so nobody owns it."),
+         ("A decision: the CEO is invited", 0, "Nothing was decided."),
+         ("Not in the actions or the decisions", 1, "Right. An idea nobody agreed is neither.")],
+        n=N(say="Quick check before your turn. (Tap after hands.) A recap records the meeting that happened, not the one we wish had happened.")))
+    s.append(task("c2task2", "c2", "t23", n=N(say="Your turn. A real-length transcript: the staffing meeting for a new section. Write your own recap request, then check every owner and deadline against the transcript. "
+                                                  "Fifteen minutes. (Start the timer.)")))
+    s.append(rule("c2deb", "c2", "Block 2 · debrief", "The open question <span class=\"hl\">stays open.</span>",
+        "Two positions could be contract or permanent. Nobody decided. A recap that decides it for the meeting is wrong, however tidy it looks.",
+        n=N(do="(Ask two people to read their open questions.)", expect="Some recaps turned the open question into a decision.",
+            say="Did anyone's recap say the two positions are contract? Copilot likes to finish things. Your job is to keep what is unfinished, unfinished. Break now. (Press the cup button.)")))
+    # Block 3 · Follow-ups and reminders in Outlook
+    s.append(story("c3story", "c3", "Block 3 · Follow-ups and reminders", "Thursday 29 October, 13:00",
+        "Finance asks where last month's cost estimate is. Abdulaziz thought Khaled was preparing it. The recap was clear, but <b>nobody sent it</b>, and nobody sent a reminder.",
+        "A clear recap <span class=\"hl\">that nobody sent.</span>", "Write a follow-up and a polite reminder that keep every owner and date.",
+        n=N(time="11:00-11:35", say="Welcome back. (Read the story.) A recap in a folder helps nobody. Today it goes out, and then we remind people before the deadline, not after.")))
+    s.append(live("c3live", "c3", "d24", "A follow-up <span class=\"hl\">and a reminder.</span>",
+        "The action table from Demo 2.3, turned into a follow-up for everyone and a reminder for one person.", "Every owner and date. Did any of them change?",
+        n=N(say="(Go back to the chat from Demo 2.3 and run the request.) Two emails. Read the reminder to Noura: it names the task, gives the date, and says thank you. "
+                "No blame, no new task. (Point to each owner and date.) All the same as the table.")))
+    s.append(task("c3task1", "c3", "t24", n=N(say="Your turn. Use your recap from the staffing meeting. A follow-up to everyone, then a reminder to Khaled. Twelve minutes. (Start the timer.)")))
+    s.append(task("c3task2", "c3", "t25", n=N(say="Second exercise. Back to your unit track's case: someone needs a message from you. Find who, and why, then write it. Ten minutes. (Start the timer.)")))
+    s.append(check("c3chk", "c3", "Khaled's deadline was yesterday and the request is still missing. <b>Which line belongs in the reminder?</b>",
+        [("“You missed the deadline again. Please hurry.”", 0, "Blame makes people defend, not act."),
+         ("“Please send the request today; Finance is waiting.”", 1, "Right. Polite, specific, and the reason."),
+         ("“No rush. Send it when you can.”", 0, "It removes the deadline that matters.")],
+        n=N(say="One for real life. (Tap after hands.) Polite does not mean vague. Give the task, the day and the reason.")))
+    s.append(rule("c3deb", "c3", "Block 3 · debrief", "Polite. Specific. <span class=\"hl\">On time.</span>",
+        "The best reminders in the room named the task and the date, asked once, and blamed nobody.",
+        n=N(do="(Ask one person to read their reminder to Khaled.)", say="Notice what the strong ones have in common: you could not misread them. Lunch and Dhuhr now. We start again at 12:15.")))
+    # Block 4 · Excel: figures you can check
+    s.append(story("c4story", "c4", "Block 4 · Excel: figures you can check", "Sunday 4 October, 12:15",
+        f"Noura sends the Q3 report: <b>{D.TRAIN_ROWS_EXPORT} training requests.</b> The HR system says <b>{D.TRAIN_TRUE}</b>. The Head of L&D asks which number is right, and why.",
+        f"{D.TRAIN_ROWS_EXPORT} or {D.TRAIN_TRUE}? <span class=\"hl\">Only a check can tell.</span>", "Ask Copilot about a tracker, see the rows, and check the total against a control figure.",
+        n=N(time="12:15-13:00", say="Welcome back. Numbers now. (Read the story.) Hands up if you have ever sent a report and then found the total was wrong. (Pause.) Keep your hand up if you found out from your manager.",
+            expect="Several hands, then laughter.")))
+    s.append(cards3("c4three", "c4", "Block 4 · three steps", "Ask. See the rows. <span class=\"hl\">Check.</span>",
+        [("Ask", "One clear question", "One sheet, one measure, one period.", ""), ("See the rows", "The formula or the rows", "Show the formula, or list what you counted.", ""),
+         ("Check", "Against a control total", "Compare with the checked figure from the HR system.", "")],
+        "Too high: look for duplicates. Too low: look for a missing value.",
+        n=N(time="6 min", say="Three steps for any figure. The middle one is the one people skip: ask Copilot to show its work, so you can see the rows behind the number. "
+                "Then the last step: a control total, a figure you already trust, from the HR system.",
+            more=["Copilot in Excel needs a saved .xlsx workbook in OneDrive or SharePoint and an M365 label. Everyone else: attach the file to Copilot Chat."])))
+    s.append(live("c4live", "c4", "d26", "Ask the tracker, <span class=\"hl\">then see the rows.</span>",
+        "The Q3 training count by unit, then the same total next to the Control totals sheet.", "The difference between the two totals, and what could cause it.",
+        n=N(say="(Run the request.) Copilot counts every row, correctly. (Open the Control totals sheet.) And the system says something else. "
+                "Copilot did not make a mistake here. The rows did. Which kind of problem makes a total too high?", expect="Duplicates.")))
+    s.append(task("c4task1", "c4", "t26", n=N(say="Your turn, in pairs. Find the rows behind the difference with Copilot, then prove it yourself in Excel. Twelve minutes. (Start the timer.)")))
+    s.append(task("c4task2", "c4", "t27", n=N(say="Second exercise, same pairs. This time the total is too low. Twelve minutes. (Start the timer.)")))
+    s.append(check("c4chk", "c4", f"The file gives <b>{D.MP_VACANT_EXPORT}</b> vacancies. One new section's approved positions are entered as 0; the structure says {D.STAFF_POSITIONS}. <b>What do you report?</b>",
+        [(f"{D.MP_VACANT_EXPORT}, because Copilot counted every row", 0, "The count was right; one row was wrong."),
+         (f"{D.MP_VACANT}, and why the file showed {D.MP_VACANT_EXPORT}", 1, "Right. The corrected figure and the reason."),
+         (f"{(D.MP_VACANT + D.MP_VACANT_EXPORT) // 2}, halfway between the two", 0, "A guess between two numbers is still a guess.")],
+        n=N(say="Which figure goes to the Head of HR? (Tap after hands.) The corrected one, and one sentence on why it changed.")))
+    s.append(rule("c4deb", "c4", "Block 4 · debrief", "Copilot counted right. <span class=\"hl\">The rows were wrong.</span>",
+        "Both totals were calculated correctly from bad rows. Only the control total showed the problem.",
+        n=N(do="(Ask each pair for one sentence: what was wrong, and how they proved it.)",
+            say="This is the most important idea of the afternoon. A correct calculation on wrong data gives a wrong answer, and it looks perfect. The control total is your friend.")))
+    # Block 5 · From findings to a summary and slides
+    s.append(term("c5t1", "c5", "Block 5 · the idea", "Three lines <span class=\"hl\">a manager reads.</span>", "Management summary",
+        "A short note that puts <b>the finding, its limits and the next step</b> first, with every number as written in the source.",
+        "Every detail you found…", "…cut to what a manager must <b>know or decide</b>.", "Finding, limits, next step.",
+        n=N(time="13:00-13:35", say="You found two wrong figures. That is only useful if someone reads it. Managers read the first three lines and stop. "
+                "So we put the finding, what it does not show, and the next step right at the top.")))
+    s.append(live("c5live1", "c5", "d28", "A finding into <span class=\"hl\">a note for management.</span>",
+        "The attendance pilot result, turned into a title and three bullets for the Head of HR.", "The line that says what the pilot does not show.",
+        n=N(say="(Run the request.) Three bullets. The second one is the one I like: one division, eight weeks. A result with its limits is a result people can trust. "
+                "(Check the percentage in the brief.) Same as the source.")))
+    s.append(task("c5task1", "c5", "t28", n=N(say="Your turn. The two figures you fixed before lunch now go to the person who signs the report. Write it short. Ten minutes. (Start the timer.)")))
+    s.append(live("c5live2", "c5", "d29", "A brief into <span class=\"hl\">five slides.</span>",
+        "The policy brief turned into a five-slide outline with speaker notes.", "Every time and the pilot result, compared with the brief.",
+        n=N(say="(Run it in PowerPoint, or in Copilot Chat.) Five slides in a minute. Now the slow part, which is my part: (check each time and number against the brief). "
+                "A deck travels further than any document. One wrong number on a slide is seen by everyone in the room.")))
+    s.append(task("c5task2", "c5", "t29", n=N(say="Last exercise of the block. Your summary becomes five slides. Check every number on every slide. Ten minutes. (Start the timer.)")))
+    s.append(check("c5chk", "c5", f"Slide 3 says Q3 training requests: <b>{D.TRAIN_ROWS_EXPORT}</b>. Your checked summary says <b>{D.TRAIN_TRUE}</b>. <b>What do you do?</b>",
+        [("Keep both numbers, with a footnote", 0, "Two numbers confuse the reader."),
+         ("Fix the slide to match the checked summary", 1, "Right. The checked figure wins, everywhere."),
+         ("Ask Copilot to make a new deck", 0, "A new deck can repeat the same mistake.")],
+        n=N(say="(Tap after hands.) The checked figure wins, on every page and every slide. Break now. (Press the cup button.)")))
+    # Block 6 · From one task to a workflow
+    s.append(story("c6story", "c6", "Block 6 · From one task to a workflow", "Thursday 22 October, 10:00",
+        "An engineer asked for a safety course on <b>1 October</b>. His approval arrives today, <b>22 October</b>. The course started on 20 October.",
+        "Three weeks <span class=\"hl\">for one signature.</span>", "See an HR task as a workflow, and find where time and effort are lost.",
+        n=N(time="13:50-14:20", say="Last part of today, and it is a different kind of thinking. Until now we made one document faster. Now we look at the whole road a request travels. "
+              "(Read the story.) Nobody in this story was lazy. So where did three weeks go?", expect="Waiting for signatures, emails, printing.")))
+    s.append(rule("c6an", "c6", "Block 6 · the picture", "Follow one form <span class=\"hl\">from desk to desk.</span>",
+        "Walk behind one training request for three weeks. You would see where it waits, who types it again, and where it gets lost.",
+        n=N(say="Imagine you are invisible and you follow that request around the building. Every time it stops, you write down why. "
+                "That list of stops is a process map, and it is what we build today.")))
+    s.append(tslide("c6prob", "c6", "Block 6 · four problems", "Four problems <span class=\"hl\">to look for.</span>", ["Problem", "What it looks like", "Ask"],
+        [[f"<b>{a}</b>", b, q] for (a, b), q in zip(D.PROBLEMS, ["How long does it wait, and for whom?", "Who types or checks it again?", "Who does the next step? Who chases it?", "Is there any judgment in it?"])],
+        "Find them first. Fix them tomorrow.",
+        n=N(time="5 min", say="Four problems hide in most HR processes. (Go row by row, and ask the room for one example from their own unit for each.) "
+                "The last column is the question you ask at every step of a map.", expect="Approvals for delay, retyping into trackers for duplication.")))
+    s.append(term("c6t1", "c6", "Block 6 · the idea", "Map it <span class=\"hl\">as it is.</span>", "Process map",
+        "A table of every step from request to result: <b>who</b> does it, what goes <b>in</b> and comes <b>out</b>, how long it <b>waits</b>, the <b>problem</b>, and whether a <b>person must decide</b>.",
+        "“The process is slow.”", "“Step 3 waits three days for one approval.”", "Map it as it is. Improve it tomorrow.",
+        n=N(say="A map turns a feeling into facts. Nobody can act on “it is slow”. Everybody can act on “step three waits three days”. "
+                "One rule for today: do not improve anything yet. A map of how it should work hides how it really works.")))
+    s.append(live("c6live", "c6", "d210", "A story into <span class=\"hl\">a step table.</span>",
+        "A five-sentence story about booking an external trainer, turned into a step table.", "The flags in the Problem column, and the step that nobody owns.",
+        n=N(say="(Run the request.) Read the table with me. Copilot flagged the wait for the manager and the prices asked twice. "
+                "Now the last row: who tells the trainer the room? Nobody. A step nobody owns is still a step, and it is often the one that fails.")))
+    s.append(task("c6task", "c6", "t210", n=N(say="Your turn, in pairs. Story 1 in the process stories file: a training request. Copilot drafts the map; you check it against the story. "
+                                                  "Twelve minutes. (Start the timer.)")))
+    s.append(check("c6chk", "c6", "In your map, the line manager signs every training request. <b>What does that step need?</b>",
+        [("Problem: repetitive step", 0, "A signature is a judgment, not a repeated action."),
+         ("“A person decides?”: Yes", 1, "Right. Approvals stay with people."),
+         ("Wait: 0 days", 0, "The story says it waits for days.")],
+        n=N(say="(Tap after hands.) Every approval is a human decision. Mark it, because tomorrow it must stay with a person.")))
+    # Block 7 · Map your own HR process
+    s.append(listslide("c7brief", "c7", "Block 7 · map your own HR process", "Your process, <span class=\"hl\">mapped.</span>",
+        ["<b>Choose:</b> your track's story (2 to 5), or a process from your own work, written with roles only.", "<b>Map:</b> from the request to the result, one row per step.",
+         "<b>Flag:</b> delays, duplicated effort, unclear ownership, repetitive steps.", "<b>Mark:</b> every step where a person must decide."],
+        "Tomorrow your final project starts from this map.",
+        n=N(time="14:20-14:50", say="Now your own. If you have a process at work that wastes your time, map that one, with roles only, no names. "
+              "If not, take your track's story. Either way, keep this map: tomorrow's final project starts from it.")))
+    s.append(task("c7task1", "c7", "t211", n=N(say="Twenty minutes. Map it as it is. (Start the timer, then walk the room and ask each person: where does it wait?)")))
+    s.append(task("c7task2", "c7", "t212", n=N(say="Swap with someone from a different unit. They should understand your process without asking you anything. Seven minutes. (Start the timer.)")))
+    # Wrap · which app for which job
+    s.append(tslide("c8apps", "c8", "Which app for which job", "Five apps. <span class=\"hl\">One habit.</span>", ["HR job", "Where", "Remember"],
+        [["Prepare a meeting", "Copilot Chat or Word", "Only approved facts"], ["Recap a meeting", "Teams (Premium) or Chat with the transcript", "What, who, by when"],
+         ["Follow up and remind", "Outlook", "Same owners, same dates"], ["Check a figure", "Excel, or Chat with the file", "Against a control total"],
+         ["Brief management", "Word, then PowerPoint", "Every number matches"], ["Map a process", "Copilot Chat, then Word", "Map it as it is"]],
+        "Copilot drafts. You check. Authorized HR staff decide.",
+        n=N(time="14:50-15:00", say="Here is today on one slide. Six jobs, the app that fits, and the one check you never skip. "
+              "Take a photo if you like; it is also on the cheat sheet. Which row will you use first at work?", expect="Recaps and follow-ups.")))
+    s.append(wrap("w2", "close", "Safe data, checked figures, <span class=\"hl\">a clear map.</span>",
+        [(1, "You built", "A redacted note, a meeting pack and recap, two checked figures in a summary and slides, and a process map."),
+         (2, "You found", "Six sensitive details, an idea nobody agreed, duplicates, a missing value and a step nobody owns."),
+         (3, "The habit", "Copilot drafts. You check. Authorized HR staff decide.")],
+        "Tomorrow: two HR agents, a Power Automate demo, and the final project.",
+        n=N(say="Look at what you made today. (Read the three cards.) Tomorrow we build tools that other people can use, and you improve the process you just mapped. Bring your map.")))
     return s
 
-# ------------------------------------------------------------------ Day 3 · Reusable HR Assistants and Applied Capstone
+# ------------------------------------------------------------------ Day 3 · HR Agents and an Introduction to Power Automate
 def day3():
     s = opening(3)
-    s.append(rule("e0rule", "e0", "Callback · Day 2", "Five apps. <span class=\"hl\">One review before anything goes out.</span>",
-        "Yesterday: one case, four outputs, every one checked for accuracy, confidentiality, neutrality and source alignment.",
-        n=N(do="Ask: which app saved you the most time yesterday?", expect="Word and Outlook.", say="Three questions on yesterday. Then reuse.", time="09:00-09:10")))
-    s.append(check("e0chk1", "e0", "A draft for the Job Evaluation committee includes a <b>pay figure</b> that Copilot worked out. What do you do?",
-        [("Remove it; people decide pay", 1, "Right. Copilot organizes. People decide pay."),
-         ("Move it to a note at the end of the draft", 0, "A note still puts Copilot's figure in front of the committee."),
-         ("Round it to a clean number", 0, "Rounding does not fix who decides.")]))
-    s.append(check("e0chk2", "e0", "Yesterday the manpower vacancies were too low. <b>Which check found the cause?</b>",
-        [("Sorting the sheet by date", 0, "Dates do not show a missing approval."),
-         ("Comparing approved positions with the structure", 1, "Right. One section had 0 approved positions."),
-         ("Counting the rows in each sheet against last month's file", 0, "The sheets were all there.")]))
-    s.append(check("e0chk3", "e0", "From investigation notes, Copilot writes <b>\u201cEmployee C was careless.\u201d</b> What do you do?",
-        [("Keep it if the manager agrees", 0, "Agreement does not make it an event."),
-         ("Soften it to \u201cmay have been careless\u201d", 0, "A softer judgment is still a judgment."),
-         ("Remove it: it is a judgment, not an event", 1, "Right. Keep events and open questions only.")]))
-    # Block 1 · Prompt Gallery
-    s.append(story("e1story", "e1", "Block 1 · Reuse before you rebuild", "Thursday 12 November, 09:10",
-        "Mutla's L&D team sends course nominations every month. <b>Five people write the same email five different ways</b>, and one always forgets the closing date.",
-        "Write it once. <span class=\"hl\">Test it. Share it.</span>", "Find, adapt and save prompts in the Prompt Gallery.",
-        n=N(do="Ask: which request do you type again and again?", expect="Reports, replies, nominations.", silent="Offer the nomination email as the example.", time="09:10-09:40")))
-    s.append(rule("e1an", "e1", "Block 1 · the picture", "A shared recipe book <span class=\"hl\">for the whole kitchen.</span>",
-        "Every cook makes the dish the same way, because everyone uses the same tested recipe.",
-        n=N(do="Ask: what makes a recipe worth sharing?", expect="It was tested and it works.", say="Share only requests you have tested on a file.")))
-    s.append(term("e1t1", "e1", "Block 1 · the idea", "The Prompt Gallery: <span class=\"hl\">find, save, share.</span>", "Prompt Gallery",
-        "In Copilot, the Prompt Gallery has <b>Suggested</b> prompts from Microsoft, <b>Your Prompts</b> that you saved, and <b>Teams</b>: prompts shared with your team.",
-        "Like the recipe book…", "…a tested request <b>saved for everyone</b>.", "Suggested is a start. Add the five inputs before you save.",
-        n=N(do="Open the Prompt Gallery live (the More options (...) button or a prompt pill below the message box in Copilot Chat).", expect="People find it under the chat box.", silent="Show the three tabs.", fallback="If it does not open, use the player on the next slide.")))
-    s.append(player("e1pp", "e1", "d31"))
-    s.append(check("e1chk", "e1", "Before you share a request in the Prompt Gallery, <b>what must it have?</b>",
-        [("A long title", 0, "A title helps people find it. It does not make it work."),
-         ("The five inputs and a check, tested", 1, "Right. Share only what you have tested."),
-         ("Your name, today's date and the team it is for", 0, "Nice to have. Not what makes it reliable.")]))
-    s.append(listslide("e1names", "e1", "Block 1 · name it so you find it", "Name each prompt <span class=\"hl\">by its task.</span>",
-        ["<b>JD</b> · draft from the role sheet", "<b>Policy</b> · compare two versions", "<b>Thread</b> · decisions and owners", "<b>Review</b> · four-point check"],
-        "A month from now, the name is all you remember.", n=N(do="Ask everyone to rename one saved prompt now.", expect="Names get shorter and clearer.", silent="Show your own saved names.")))
-    s.append(task("e1task", "e1", "t31", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
-    # Block 2 · Agent Builder
-    s.append(story("e2story", "e2", "Block 2 · Build an HR assistant", "Thursday 12 November, 09:40",
-        "Fatma answers the <b>same 20 policy questions</b> every week, by email and by phone. Carry-over days. Transport allowance. Permissions. Nomination deadlines.",
-        "The same answer, <span class=\"hl\">twenty times a week.</span>", "Build an HR assistant from approved policies, and test it three ways.",
-        n=N(do="Ask: which question does your unit answer most often?", expect="Leave balances, allowances, training dates.", silent="Read three of Fatma's 20 questions.", time="09:40-10:40")))
-    s.append(rule("e2an", "e2", "Block 2 · the picture", "A new receptionist <span class=\"hl\">with a binder and a script.</span>",
-        "The binder holds the approved policies. The script says what to answer, what never to answer, and when to call HR.",
-        n=N(do="Ask: what would you put in the receptionist's script?", expect="Be polite, use the binder, never discuss someone's salary.", say="Instructions are the script. Knowledge is the binder.")))
-    s.append(scene("e2scene", "e2", "Block 2 · the picture, drawn", "The script, the binder, <span class=\"hl\">and the phone to HR.</span>",
-        "The assistant answers from the approved binder, follows the script, and passes anything personal to HR.",
-        "Instructions · Knowledge · Refer to HR.",
-        [{"ground": 268}, {"person": (240, 268), "tone": "hot", "label": "Assistant", "anim": "nod"}, {"doc": (110, 170), "tone": "ok", "label": "Policies"},
-         {"doc": (370, 170), "label": "Script"}, {"phone": (420, 250), "label": "HR"}, {"person": (60, 268), "label": "Employee", "anim": "bob", "delay": .4},
-         {"move": "mail", "path": [(90, 220), (230, 200)], "dur": 4}],
-        n=N(do="Point to the binder, the script and the phone.", expect="People connect the phone to the sensitive test.", silent="Ask: when should the assistant pick up the phone?")))
-    s.append(term("e2t1", "e2", "Block 2 · the idea", "Instructions: <span class=\"hl\">the script.</span>", "Instructions",
-        "What the assistant is, what it answers, its tone, <b>what it must not answer</b>, and <b>when to refer the person to HR</b>. Up to 8,000 characters.",
-        "Like the receptionist's script…", "…it decides <b>what may be said</b> and when to pass the call.", "Write the must-not lines first.",
-        n=N(do="Read the Must not answer line from the prompt sheet.", expect="People add their own unit's sensitive topics.", silent="Ask: what must your unit's assistant never answer?")))
-    s.append(term("e2t2", "e2", "Block 2 · the idea", "Knowledge: <span class=\"hl\">the approved binder.</span>", "Knowledge",
-        "The files the assistant answers from. In Agent Builder you can upload <b>up to 20 files</b> from your device, or point to SharePoint. Approved files only.",
-        "Like the binder…", "…every policy goes in <b>with its dates</b>.", "Both allowance versions go in, each with the date it applies.",
-        n=N(do="Show the five Mutla policy files you will upload.", expect=f"People ask about version 3 of allowances: it goes in, because it applies until version 4 starts on {D.ALLOW_V4_DATE}.", silent="Ask: what goes wrong if only version 4 goes in?", more=["Source: Microsoft Learn, Add knowledge sources in Agent Builder (20 embedded files)."])))
-    s.append(listslide("e2steps", "e2", "Block 2 · step by step", "Build it <span class=\"hl\">in six steps.</span>",
-        ["<b>New agent</b> in Microsoft 365 Copilot, then <b>Configure</b>.", "<b>Name and description:</b> " + D.AGENT_NAME + ", one line on what it does.", "<b>Instructions:</b> paste the script from the prompt sheet.",
-         "<b>Knowledge:</b> upload the five approved policy files.", "<b>Starter prompts:</b> two common questions.", "<b>Try it</b>, fix, then <b>Create</b>."],
-        "Agents are limited on a basic label. Use the fallback on the task slide if Agent Builder is missing.",
-        n=N(do="Build it live on the presenting laptop while you talk through the steps.", expect="People switch between Configure and Try it as they build.", silent="Ask: which step would you skip? (None.)", fallback="If the live build fails, use the player on the next slides.")))
-    s.append(tslide("e2tests", "e2", "Block 2 · three tests", "Test it with <span class=\"hl\">hard questions.</span>", ["Test", "Question", "Pass if"],
-        [[a, b, d] for a, b, _c, d in D.AGENT_TESTS], "Normal, incomplete, sensitive. Before anyone else uses it.",
-        n=N(do="Read the sensitive test aloud. Ask what a pass looks like.", expect="It declines and refers to HR.", silent="Ask: which test do people forget?")))
-    s.append(cards3("e2never", "e2", "Block 2 · what it must never do", "Three things <span class=\"hl\">it must never do.</span>",
-        [("red", "Never", "Name a salary", "No pay or allowance of a named person.", ""), ("red", "Never", "Decide a case", "No exception, no approval, no warning.", ""),
-         ("amber", "Ask first", "Guess a situation", "Ask for the grade or the case before answering.", "")],
-        "If it does any of these in Try it, fix the instructions.", n=N(do="Map each card to a line in the instructions.", expect="People see the Ask first line in action.", silent="Ask: which card would the incomplete test catch?")))
-    s.append(player("e2pp", "e2", "d32"))
-    s.append(check("e2chk", "e2", "Which part of the assistant holds the <b>approved policies</b> it answers from?",
-        [("Instructions", 0, "Instructions say how to behave, not which files to use."),
-         ("Description", 0, "The description tells people what it is for."),
-         ("Knowledge", 1, "Right. Knowledge holds the approved files.")]))
-    s.append(task("e2task", "e2", "t32", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
-    s.append(check("e2chk2", "e2", "In Try it, the assistant answers a question about <b>overtime pay</b>. No overtime policy is in Knowledge. What now?",
-        [("Add: answer only from the files, or refer to HR", 1, "Right. Then test it again."),
-         ("Fine. The answer sounds right, so mark it as a pass", 0, "It has no source. It guessed."),
-         ("Add more starter prompts", 0, "Starter prompts do not stop a guess.")]))
-    s.append(rule("e2deb", "e2", "Block 2 · debrief", "A test you did not run <span class=\"hl\">is a problem you meet later.</span>",
-        "Run the three tests again after every change to the instructions or the files. Then let one colleague try it before your unit does.",
-        n=N(do="Ask two people which test failed first and how they fixed it.", expect="The incomplete test fails most: it answers without asking for the grade.", silent="Show the backup test table.", say="Every change means the three tests again.")))
-    # Capstone briefing
-    s.append(story("e3story", "e3", "Capstone", "Thursday 19 November, 10:55",
-        "Your manager asks for <b>one recurring task you will do faster from next month</b>, in a way a colleague could run while you are on leave. You have a new case, Copilot, and 100 minutes.",
-        "A new case <span class=\"hl\">proves the method.</span>", "Complete a new case by chaining two Copilot apps, and save a prompt set a colleague can run.",
-        n=N(do="Hand out the five capstone files by track.", expect="People notice the case is new.", silent="Read one case aloud.", time="10:55-11:10")))
-    s.append(tslide("e3cases", "e3", "Capstone · the five cases", "Your track. <span class=\"hl\">A case you have not seen.</span>", ["Track", "Case", "File"],
-        [[n, D.CAPSTONE[k]["title"], D.CAPSTONE[k]["file"]] for k, n in D.TRACKS], "New to you on purpose: it tests the method, not your memory.",
-        n=N(do="Confirm each person's track.", expect="Tracks match yesterday's.", silent="Assign anyone undecided.")))
-    s.append(listslide("e3core", "e3", "Capstone · core and extension", "Core for everyone. <span class=\"hl\">Extension if you finish.</span>",
-        ["<b>Core:</b> plan the steps, chain at least two Copilot apps, five-input requests grounded in the case files.", "<b>Core:</b> review every output with the four-point check.",
-         "<b>Core:</b> save the requests as a prompt set in Word.", "<b>Extension:</b> connect it to your HR assistant, or add a starter prompt."],
-        "At 13:30 a colleague from another unit runs your set with no instructions.", n=N(do="Stress the 13:30 peer test.", expect="People start writing clearer requests at once.", silent="Ask: what would a colleague need to run your set?")))
-    s.append(listslide("e3self", "e3", "Capstone · the self-check", "Five checks <span class=\"hl\">before the peer test.</span>", C.SELFCHECK,
-        "The same list is on the Day 3 lab page.", n=N(do="Point to the Day 3 lab page on the hub.", expect="People open it on a second tab.", silent="Read the last check aloud.")))
-    _t33 = dict(DEMOS["t33"]); DEMOS["t33"].update(minutes=C.CAPSTONE_PART1, title="A tested workflow, part 1")
-    s.append(task("e3task", "e3", "t33",
-        n=N(expect="A plan and the first requests, ready to continue after lunch.", do="Start the timer. Walk the room. Ask each person what they found so far.", time="11:10-11:35", more=[f"Part 1 is {C.CAPSTONE_PART1} minutes before lunch. Part 2 is {_t33['minutes'] - C.CAPSTONE_PART1} minutes after lunch, on the next slide."])))
-    DEMOS["t33"].update(minutes=_t33["minutes"], title=_t33["title"])
-    # Build part 2 and peer test
-    s.append(timer_slide("e4build", "e4", "Capstone · build, part 2", "Outputs, review, <span class=\"hl\">the prompt set.</span>",
-        "Finish your outputs, review each one, and save the requests as a prompt set. The peer test starts at 13:30.", 75,
-        n=N(do="Start the timer after lunch. Walk the room. Ask each person to show one review.", expect="Most people finish the core by 13:00.", silent="Ask the quietest table what step they are on.", fallback="Anyone stuck uses the plan request on the Task 3.3 slide.", time="12:15-13:30")))
-    s.append(rule("e4rule", "e4", "Peer test", "If a colleague needs you to explain it, <span class=\"hl\">it is not finished.</span>",
-        "Hand your prompt set to someone from another unit. Say nothing. Watch where they stop.",
-        n=N(do="Pair people from different units.", expect="Some pairs ask to explain first: do not allow it.", say="The silence is the test.", time="13:30-13:50")))
-    s.append(task("e4task", "e4", "t34"))
-    s.append(listslide("e4fixes", "e4", "Peer test · common fixes", "The fixes <span class=\"hl\">most sets need.</span>",
-        ["<b>Name the files</b> each request needs.", "<b>Say what to do</b> when data is missing.", "<b>Add the output format.</b>", "<b>End with the check.</b>"],
-        "Each fix is a missing input, not a new task.", n=N(do="Ask which fix each pair made.", expect="Naming the files is the most common.", silent="Show the four fixes and ask for hands.")))
-    s.append(timer_slide("e5share", "e5", "Share-outs · 14:05", "One minute each: <span class=\"hl\">what broke, and the fix.</span>",
-        "Say what your colleague could not do, and what you changed. One minute.", 15,
-        n=N(do="Go round the room fast. Keep to one minute each.", expect="Missing files and missing formats.", silent="Start with your own example.", time="14:05-14:20")))
-    s.append(mapslide("e6map", "e6", "after"))
-    s.append(wrap("w3", "close", "Build it once. <span class=\"hl\">Test it. Let a colleague run it.</span>",
-        [(1, "You built", "An HR assistant, a capstone workflow and a tested prompt set."), (2, "You found", "Where your work depended on you, and fixed it."), (3, "The habit", "Copilot drafts. You check. Authorized HR staff decide.")],
-        "Your first week: one five-input request a day. Your first month: one tested set for your unit."))
+    s.append(rule("e0rule", "e0", "Callback · Day 2", "Safe data. Checked figures. <span class=\"hl\">A clear map.</span>",
+        "Yesterday you redacted a note, recapped a meeting into actions, checked two figures and mapped a process. Three questions, then today.",
+        n=N(time="09:00-09:10", do="(Ask for hands.) Who has their process map from yesterday open?", say="Good morning, and welcome to the last day. Three quick questions on yesterday first.")))
+    s.append(check("e0chk1", "e0", "A colleague wants Copilot to check a salary list <b>with every employee's name</b>. <b>What color is it?</b>",
+        [("Green: it stays inside HR", 0, "Inside HR is not the test. Named salaries are red."),
+         ("Amber: fine in the approved account", 0, "Named salaries never go into a prompt."),
+         ("Red: never in a prompt", 1, "Right. Named salaries are red in any account.")],
+        n=N(say="(Tap after hands.) Red. If the names come out, the task can change color.")))
+    s.append(check("e0chk2", "e0", "Which recap line is <b>ready to send</b>?",
+        [("“Action: send the agenda · Noura · by Monday 30 November”", 1, "Right. What, who and by when."),
+         ("“Action: someone sends the agenda soon”", 0, "No owner and no date."),
+         ("“Action: discuss the agenda again next month”", 0, "That is a meeting, not an action.")],
+        n=N(say="(Tap after hands.) What, who, by when.")))
+    s.append(check("e0chk3", "e0", "Copilot counts <b>412</b> rows. The control total is <b>398</b>. <b>What do you look for first?</b>",
+        [("A missing value in one row", 0, "A missing value makes a total too low."),
+         ("Duplicate request IDs", 1, "Right. Too high: look for duplicates."),
+         ("A formula error in Copilot's count", 0, "The count was right. The rows were wrong.")],
+        n=N(say="(Tap after hands.) Too high, duplicates. Good. Today we stop making one document at a time and start building tools.")))
+    # Block 1 · Build an HR agent
+    s.append(story("e1story", "e1", "Block 1 · Build an HR agent", "Thursday 12 November, 16:00",
+        f"Fatma counts her week: <b>64 emails</b> from staff. Twenty ask how many leave days carry over. She answers each one by hand, from the same section 4.",
+        "The same question, <span class=\"hl\">twenty times a week.</span>", "Build an HR agent that answers from approved policies, and test it before anyone uses it.",
+        n=N(time="09:10-10:05", say="(Read the story.) Which question does your unit answer again and again? Call it out.", expect="Leave balances, allowances, letters, training dates.")))
+    s.append(rule("e1an", "e1", "Block 1 · the picture", "A new colleague with <span class=\"hl\">a binder and a script.</span>",
+        "The script says what to answer, what to ask first and what to refer. The binder holds the approved policies. That is an agent.",
+        n=N(say="Picture a new colleague at the HR counter. You give them a binder with the approved policies, and a script: answer from the binder, ask first when you need more, "
+                "and send anything personal to us. That colleague can answer twenty leave questions a week without you. That is exactly what we build this morning.")))
+    s.append(tslide("e1cmp", "e1", "Block 1 · Copilot Chat or an agent", "Write it once. <span class=\"hl\">Use it many times.</span>", ["", "Copilot Chat", "An agent"],
+        [["Instructions", "You type them each time", "Written once and saved"], ["Files", "You attach them each time", "Saved as its knowledge"],
+         ["Who uses it", "You", "Anyone you share it with"], ["Best for", "One-off drafts", "The same questions, many times"]],
+        "Same engine. An agent remembers the instructions and the files.",
+        n=N(time="6 min", say="Same engine underneath. The difference is what is saved. In a chat, you bring the instructions and the files every time. "
+                "An agent keeps them, so everyone who uses it gets the same rules.", silent="Ask: which of your unit's questions would you put in an agent?")))
+    s.append(listslide("e1parts", "e1", "Block 1 · the parts of an agent", "Five parts. <span class=\"hl\">You know four already.</span>",
+        ["<b>Name and description:</b> what it is for, in one line.", "<b>Instructions:</b> the seven checklist parts, written once.",
+         "<b>Knowledge:</b> the approved files it answers from.", "<b>Starter prompts</b> and the <b>test pane:</b> how people start, and how you test it."],
+        "An agent answers. It does not send, route or approve.",
+        n=N(time="5 min", say="In Microsoft 365 Copilot you choose Create agent, and the Configure tab shows these parts. Instructions are your checklist, nothing new. "
+                "Knowledge is the files you have attached all week. One limit to remember: this agent answers questions. Sending, routing and approving need something else, and I show you that after the break.",
+            more=["Agent Builder: Microsoft 365 Copilot app, Create agent, Configure tab. Actions that send or update data need Copilot Studio (outside this workshop).",
+                  "If Agent Builder is off on some accounts, the fallback is the same instructions pasted into Copilot Chat with the files attached."])))
+    s.append(live("e1live", "e1", "d31", "An HR agent, <span class=\"hl\">built live.</span>",
+        "The Mutla HR Policy Helper: name, instructions, five policy files and three starter prompts.", "Where each checklist part goes, and the section number in the first answer.",
+        n=N(time="8 min, live", say="(Build it step by step, reading each field aloud.) Name. Description. Now the instructions: look, it is the checklist, part by part. "
+                "(Upload the five files.) Knowledge. (Add the starter prompts, then ask the first one.) Fifteen days, the deadline and section 4. Our first agent.")))
+    s.append(check("e1chk", "e1", "Where does the rule <b>“never give a named person's salary”</b> belong?",
+        [("In a starter prompt", 0, "Starter prompts are questions people ask."),
+         ("In the Constraints part of the instructions", 1, "Right. Constraints hold the rules that protect people."),
+         ("In the agent's description", 0, "The description says what it is for, not its limits.")],
+        n=N(say="(Tap after hands.) Constraints. If you remember one thing when you write instructions, write the never-rules there.")))
+    s.append(task("e1task1", "e1", "t31", n=N(say="Your turn. Before you open Agent Builder, write the instructions in a document, all seven parts. Twelve minutes. (Start the timer.)")))
+    s.append(task("e1task2", "e1", "t32", n=N(say="Second exercise: build it. Paste your instructions, upload the five files, add three starter prompts, and ask one normal question. Fifteen minutes. (Start the timer.)",
+                                                  fallback="No Agent Builder on an account: paste the instructions into a new Copilot Chat, attach the five files, and test there.")))
+    s.append(rule("e1deb", "e1", "Block 1 · debrief", "The instructions are <span class=\"hl\">the agent's job description.</span>",
+        "The agents that answered well had clear limits, the dates of both allowances versions, and a place to send what they could not answer.",
+        n=N(do="(Ask two people to read their Constraints line aloud.)", expect="Some forgot to say where to refer people.",
+            say="Vague instructions give a vague agent. The clear ones in the room said what to answer, what never to answer, and where to send people.")))
+    # Block 2 · Test, fix and build a second agent
+    s.append(tslide("e2tests", "e2", "Block 2 · three tests", "Three tests <span class=\"hl\">before anyone uses it.</span>", ["Test", "You ask", "It passes when"],
+        [["Normal", "A complete, ordinary question", "It answers with the policy and section"], ["Incomplete", "A question that depends on the person", "It asks first, or gives both rules with dates"],
+         ["Sensitive", "A named person's pay, or a decision", "It declines and refers to HR"]],
+        "Fix one instruction line at a time, then ask again.",
+        n=N(time="10:05-10:45", say="An agent you have not tested is a risk you share with everyone who uses it. Three tests, every time. The sensitive one matters most.")))
+    s.append(live("e2live", "e2", "d33", "Three tests, <span class=\"hl\">then one fix.</span>",
+        "The three test questions in the test pane, one fix to the instructions, and the same question again.", "The answer to the sensitive question, before and after the fix.",
+        n=N(say="(Ask the three questions.) Normal: section 4. Incomplete: it asks for the grade. Sensitive: (read the answer). "
+                "If it fails, watch me: I change one line in Constraints, not the whole text, and I ask again. One line, one test.")))
+    s.append(task("e2task1", "e2", "t33", n=N(say="Your turn. Test your agent three times, keep a short log, and fix one line. Twelve minutes. (Start the timer.)")))
+    s.append(task("e2task2", "e2", "t34", n=N(say="Second exercise: a second agent, on your own. It helps line managers write job descriptions, and it never gives a grade. Eighteen minutes. (Start the timer.)")))
+    s.append(rule("e2deb", "e2", "Block 2 · debrief", "The second agent <span class=\"hl\">took half the time.</span>",
+        "Same checklist, same three tests. The method is the skill; the agent is only where you use it.",
+        n=N(do="(Ask one person what the coach did with the incomplete test.)", expect="It asked for the duties first.",
+            say="Did your coach ask for the duties, or invent them? If it invented them, you know which line to fix. Break now. (Press the cup button.)")))
+    # Block 3 · Power Automate: a trainer demo
+    s.append(story("e3story", "e3", "Block 3 · Power Automate: a trainer demo", "Sunday 8 November, 08:30",
+        "Noura receives 30 training requests a week. Each one is an email, a form, a signature, a scan and two lines typed into a tracker. <b>Nobody asks a question</b>, so an agent cannot help.",
+        "Not a question. <span class=\"hl\">A process.</span>", "See what a Power Automate flow does, and when you need one instead of Copilot or an agent.",
+        n=N(time="11:00-11:35", say="Welcome back. This block is a demo: you watch, you do not build. (Read the story.) "
+              "Copilot waits for someone to type. An agent waits for a question. Who is waiting here?", expect="The form. The manager. Noura.")))
+    s.append(term("e3t1", "e3", "Block 3 · the idea", "It starts <span class=\"hl\">by itself.</span>", "Flow",
+        "A set of steps in Power Automate that <b>runs on its own</b> when something happens: a <b>trigger</b>, then <b>actions</b>, sometimes a <b>condition</b>.",
+        "Copilot and agents wait for you…", "…a flow <b>starts</b> when the trigger happens.", "Trigger, actions, condition. A person still approves.",
+        n=N(time="6 min", say="A flow is not a chat. Nobody types to it. Something happens, a form is submitted or a date arrives, and the steps run in order. "
+                "Copilot writes. An agent answers. A flow moves the work from one step to the next.")))
+    s.append(tslide("e3parts", "e3", "Block 3 · the words", "Four words <span class=\"hl\">you will hear.</span>", ["Word", "Means", "In the demo"],
+        [["Trigger", "What starts the flow", "A new form response"], ["Action", "One step the flow does", "Add a row; send an email"],
+         ["Condition", "A yes or no that splits the flow", "Approved or not"], ["Connector", "The app a step uses", "Forms, Excel, Approvals, Outlook"]],
+        "Most HR flows are a form, a log, an approval and an email.",
+        n=N(say="Four words, and you can read any flow. Watch for them in the demo: I will say each one aloud when it appears.")))
+    s.append(live("e3live", "e3", "d35", "From a form <span class=\"hl\">to an email.</span>",
+        "A training request flow: a form, a row in the log, an approval, a condition and an email.", "Which step a person does. Everything else runs by itself.",
+        n=N(time="15 min, live", say="(Show the form, then the flow, naming each step.) Now I submit a request on my phone. (Submit.) Look at the log: a new row, waiting. "
+                "(Open the approval and approve it.) The manager decides. The flow only carried the request to him. (Show the email and the updated row.) "
+                "Nothing was typed twice, nothing was printed, and nobody had to chase.",
+            more=["Rehearse before 09:00. The first approval in a new environment can take a few minutes to set up.", "Approvals use the Approvals connector. Forms, Excel Online and Outlook are standard connectors."])))
+    s.append(listslide("e3need", "e3", "Block 3 · what a flow needs", "Before you build one, <span class=\"hl\">ask four questions.</span>",
+        ["<b>License:</b> does your Microsoft 365 account include Power Automate?", "<b>Permission:</b> does your IT team allow these connectors?",
+         "<b>Owner:</b> who fixes it when it breaks, or when someone leaves?", "<b>People:</b> is every approval still made by a person?"],
+        "Ask your IT team first. Then build small.",
+        n=N(time="5 min", say="A flow touches company data and runs without you, so it is not a personal tool. Your IT team decides what is allowed. "
+                "And every flow needs an owner: a flow nobody owns breaks quietly on the day its builder goes on leave.")))
+    s.append(listslide("e3why", "e3", "Block 3 · why a flow here", "Why not Copilot <span class=\"hl\">or an agent?</span>",
+        ["<b>It starts on its own</b> when a form arrives. Copilot and agents wait to be asked.", "<b>It waits</b> for an approval, for days if needed, then continues.",
+         "<b>It writes the log</b> and sends the email the same way every time.", "<b>It decides nothing.</b> The manager approves; the flow carries the request."],
+        "A flow moves work between people. It never replaces their decisions.",
+        n=N(time="4 min", say="So why did we need Power Automate here, and not the agent you built this morning? Because nobody is asking a question. "
+                "The work is moving between people and systems, on its own, every time. That is the signal for a flow.")))
+    s.append(check("e3chk", "e3", "In the training request flow, <b>which step must stay with a person?</b>",
+        [("Adding the request to the log", 0, "The same every time: the flow does it."),
+         ("Approving the request", 1, "Right. A decision about a person stays with a person."),
+         ("Sending the result to the employee", 0, "The flow sends it; a person wrote the text once.")],
+        n=N(say="(Tap after hands.) Approving. Lunch and Dhuhr now. After lunch, you improve your own process.")))
+    # Final project
+    s.append(listslide("e4brief", "e4", "Final project · improve your HR process", "Your map, <span class=\"hl\">made better.</span>",
+        ["<b>Start</b> from your Day 2 map, or your track's story.", "<b>Mark</b> each step: Person, Copilot, Agent or Flow.",
+         "<b>Remove</b> at least two problems. Give every step one owner.", "<b>Build</b> one piece, <b>test</b> it three ways, and <b>submit</b> on the CODED platform."],
+        "Every decision about a person stays with a person.",
+        n=N(time="12:15-13:35", say="This is the final project, and you have already done most of the thinking: yesterday's map. Now you make it better, using everything from the three days. "
+              "Then you build one piece of it and test it. Everything is on the Final project page, with hints.")))
+    s.append(tslide("e4ex", "e4", "Final project · an example", "A training request, <span class=\"hl\">improved.</span>", ["Card line", "Example"],
+        [[D.CARD_FIELDS[i].split(":")[0], D.CARD_EXAMPLE[i]] for i in (1, 3, 4, 7)], "The full example card is on page 2 of the template.",
+        n=N(time="10 min", say="Here is the training request from yesterday, improved. (Read each row.) Look at the steps: two people still approve, a flow carries the form and the log, Copilot drafted the email text once, "
+                "and an agent answers the policy questions. And look at what was removed. That is the shape your card should have.")))
+    s.append(task("e4task1", "e4", "t36", n=N(say="Part 1. Thirty minutes. (Start the timer, then walk the room and ask each person: which step did you remove, and who approves now?)")))
+    s.append(task("e4task2", "e4", "t37", n=N(say="Part 2. Thirty-five minutes. One piece, three tests, then submit. (Start the timer.)",
+                                                  fallback="If the submission link is not working, participants save the card with their name and the trainer collects the files.")))
+    s.append(rule("e4done", "e4", "Final project · submit", "Submitted? <span class=\"hl\">Then get ready to share.</span>",
+        "Use the submission link on the screen. After the break, you have one minute to share one improvement.",
+        n=N(time="13:30-13:35", say="Five minutes to submit. (Show the submission link on the screen. Walk the room and help anyone stuck on it.) Break now. When you come back, think of one sentence: which step did you remove, and why? (Press the cup button.)")))
+    # Copilot, agent or flow?
+    s.append(tslide("e5cmp", "e5", "Copilot, agent or flow?", "Three tools. <span class=\"hl\">Three different jobs.</span>", ["", "Copilot Chat", "An agent", "A flow"],
+        [["Starts when", "You type a request", "Someone asks a question", "Something happens"], ["Best for", "One-off drafts and summaries", "The same questions for many people", "The same steps every time"],
+         ["Knows your policies", "When you attach them", "From its saved knowledge", "No: it moves data"], ["Sends, logs, routes", "No", "No", "Yes"],
+         ["HR example", "A reply to one employee", "Leave questions for 300 staff", "Each training request to approval"]],
+        "Who starts it, how often, and does it move work between people?",
+        n=N(time="13:50-14:05", say="Three days, three tools, side by side. (Go row by row.) The second row is the one to remember: one-off, many questions, same steps. "
+              "When you are unsure, ask who starts it and how often it happens.")))
+    s.append(sortslide("e5sort", "e5", "Demo 3.8 · card sort", 'Copilot, agent or flow? <span class="hl">Tap a card.</span>', CD.TOOL_SORT, CD.TOOL_LABELS, did="d38",
+        n=N(say="Eight HR jobs. I read the card, you call the tool, I tap it. (Read the first card.)")))
+    s.append(check("e5chk", "e5", "Line managers ask Job Evaluation the same five questions about job descriptions every week. <b>Which tool?</b>",
+        [("Copilot Chat, a new chat each time", 0, "It works, but the rules are retyped every time."),
+         ("A flow that emails the answers", 0, "A flow moves work. It does not answer questions."),
+         ("An agent with the template and the rules", 1, "Right. The same questions, many people.")],
+        n=N(say="(Tap after hands.) And you built that agent this morning.")))
+    s.append(timer_slide("e6share", "e6", "Share-outs · 14:05", "One minute each: <span class=\"hl\">one process, one improvement.</span>",
+        "Say which process you chose, which step you removed or changed, and who still decides.", 15,
+        n=N(time="14:05-14:20", do="(Go round the room fast. Keep to one minute each.)", say="One minute each. I will start with mine, so you can see how short it is.",
+            silent="Share your own example first: the training request, the printing step removed, the manager still approves.")))
+    s.append(mapslide("e7map", "e7", "after"))
+    s.append(wrap("w3", "close", "Build it. Test it. <span class=\"hl\">Improve the process.</span>",
+        [(1, "You built", "Two tested HR agents and an improved workflow card with one tested piece."), (2, "You saw", "A flow that carries a request from a form to an email, with a person who approves."),
+         (3, "The habit", "Copilot drafts. You check. Authorized HR staff decide.")],
+        "Your first week: one green task a day. Your first month: one agent or one mapped process for your unit.",
+        n=N(say="Three days ago you typed one short line and got a job description with an invented team. Today you built tools other people can use. "
+                "(Read the three cards.) Please keep the habit. It matters more than any tool.")))
     return s
 
 TOPICS = {1: {"open": "Opening", "b1": "Block 1 · How generative AI and Copilot work", "b2": "Block 2 · Writing a clear prompt", "b3": "Block 3 · Draft, fix and check in Word", "b4": "Block 4 · From policy to people", "b5": "Prompt Bank and wrap", "close": "Close"},
-          2: {"open": "Opening", "c0": "Callback quiz", "c1": "Block 1 · Word", "c2": "Block 2 · Outlook", "c3": "Block 3 · Teams", "c4": "Block 4 · Excel", "c5": "Block 5 · PowerPoint", "c6": "Integration · One case", "c7": "Wrap", "close": "Close"},
-          3: {"open": "Opening", "e0": "Callback quiz", "e1": "Block 1 · Prompt Gallery", "e2": "Block 2 · Agent Builder", "e3": "Capstone", "e4": "Peer test", "e5": "Share-outs", "e6": "Post-MAP and survey", "close": "Close"}}
+          2: {"open": "Opening", "c0": "Callback quiz", "c1": "Block 1 · Protecting employee data", "c2": "Block 2 · Before and after the meeting", "c3": "Block 3 · Follow-ups and reminders",
+              "c4": "Block 4 · Excel: figures you can check", "c5": "Block 5 · Summary and slides", "c6": "Block 6 · From one task to a workflow", "c7": "Block 7 · Map your own HR process", "c8": "Which app for which job", "close": "Close"},
+          3: {"open": "Opening", "e0": "Callback quiz", "e1": "Block 1 · Build an HR agent", "e2": "Block 2 · Test, fix and build a second agent", "e3": "Block 3 · Power Automate: a trainer demo",
+              "e4": "Final project", "e5": "Copilot, agent or flow?", "e6": "Share-outs", "e7": "Post-MAP and survey", "close": "Close"}}
 DAYFN = {1: day1, 2: day2, 3: day3}
