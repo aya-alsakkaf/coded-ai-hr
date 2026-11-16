@@ -132,7 +132,7 @@
 "Opener · one job description",
 "Sunday 1 November, 09:20",
 "Yousef, the HR Section Head, needs a job description for the new Compensation Analyst before the evaluation round. Abdulaziz opens Copilot and types one short line.",
-"Same tool. Same role. Watch what the request changes.",
+"One role, two requests. Watch what changes.",
 "See why the request decides the quality of the draft.",
 "·"
 ],
@@ -145,11 +145,11 @@
 "n": 7,
 "id": "b0live",
 "kind": "list",
-"title": "Same tool. Same role. Two requests.",
+"title": "One role, two requests.",
 "topic": "open",
 "kit": [
 "Demo 1.0 · live in Copilot Chat",
-"Same tool. Same role. Two requests.",
+"One role, two requests.",
 "The request decides the answer. You decide what goes out.",
 "What I will show: One short line in the first tab. The full request, with two files, in the second tab.",
 "Watch for: The duties, the team size and the grade line in each answer.",
@@ -846,7 +846,7 @@
 "kit": [
 "Block 2 · debrief",
 "A full brief works better than one clever sentence.",
-"The best rewrites in the room were not long for the sake of it. Each line answered a question Copilot would otherwise guess."
+"The best rewrites in the room were plain. Each line answered a question Copilot would otherwise guess."
 ],
 "chrome": []
 },
@@ -860,7 +860,7 @@
 "Block 3 · Draft, fix and check in Word",
 "Wednesday 11 November, 12:15",
 "Hessa's checklist draft looks perfect. Then she reads it twice: “Manages a team of six analysts.” and “Grade 8.” Neither is in the role information. And it is two pages.",
-"Good is not finished.",
+"A good draft still needs fixing.",
 "Fix a draft with follow-up instructions, and ask for the source of every line.",
 "03"
 ],
@@ -1398,11 +1398,11 @@
 "n": 63,
 "id": "b4deb",
 "kind": "rule",
-"title": "Warmer, never different.",
+"title": "Change the tone, keep the rules.",
 "topic": "b4",
 "kit": [
 "Block 4 · debrief",
-"Warmer, never different.",
+"Change the tone, keep the rules.",
 "Read each version once for tone, and once for every date, time and rule. Two readings, two different checks."
 ],
 "chrome": []
@@ -1491,7 +1491,7 @@
 "topic": "close",
 "kit": [
 "Ask clearly, check everything: the habit for every HR draft.",
-"Tomorrow: safe data first, then meetings, Excel, PowerPoint and a map of one HR process.",
+"Tomorrow: safe data first, then meetings, Outlook follow-ups, Excel, Word and PowerPoint.",
 "1",
 "You built",
 "A checked job description, an experience letter, a policy summary and one announcement for three readers.",
@@ -1516,7 +1516,7 @@
 "topic": "close",
 "kit": [
 "Ask clearly. Check everything.",
-"Tomorrow: safe data first, then meetings, Excel, PowerPoint, and a map of one HR process."
+"Tomorrow: safe data first, then meetings, Outlook, Excel, Word and PowerPoint."
 ],
 "chrome": [
 "Day",

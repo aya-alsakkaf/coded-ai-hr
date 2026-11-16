@@ -352,7 +352,7 @@ LABS = {
          "answer": [("p", f"Notice: the answer says 7 days; section 3 says {D.LEAVE['notice']}. Emergency leave: the answer says 5 days; section 5 says {D.LEAVE['emergency']}.")]},
         {"title": "Task 1.2 · Rewrite a weak request", "files": [],
          "do": ["Pick the weak request closest to your unit from the Task 1.2 slide.", "Write all five parts: context, task, data, constraints, format.", "Paste your rewrite in the box."],
-         "hint": "Start with the role: who would write this at Mutla?", "hints": ["Start with the role: who would write this at Mutla?", "Constraints are the limits: what must Copilot not add or change?"],
+         "hint": "Start with the context: who writes this at Mutla, and who reads it?", "hints": ["Start with the context: who writes this at Mutla, and who reads it?", "Constraints are the limits: what must Copilot not add or change?"],
          "prompt": f"You are a Compensation officer at {D.COMPANY}. Staff keep asking about allowances. Summarize the attached allowances policy for staff. Use only mutla-allowances-policy-v4.docx. Give the section number for every point, and keep every amount as written. Plain and friendly. One page of bullets, starting with: {D.DRAFT_LINE}",
          "check": {"kind": "note", "label": "Paste your rewrite here"},
          "answer": [("p", "Accept any rewrite with all five parts and a named file. The Task 1.2 answer key has a model rewrite for each weak request.")]},

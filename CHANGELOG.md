@@ -1,5 +1,12 @@
 # Changelog
 
+## 16 November 2026 · Day 1 wording pass (humanizer)
+
+- Day 1 slides and speaker notes rewritten in plainer words: fewer slogans and "not X but Y" lines, no dramatic fragments
+  ("Same tool. Same role." is now "One role, two requests"). Facts, timings, prompts and answers did not change.
+- The Day 1 wrap and closing slide no longer promise a process map tomorrow (it moved to Day 3). The Day 1 lab hint for
+  Task 1.2 starts from Context, not Role.
+
 ## 16 November 2026 · Aya's evening changes (round C)
 
 - The prompt checklist has five parts, not seven: Context (who you are, who reads it, why), Task, Data, Constraints, Format.

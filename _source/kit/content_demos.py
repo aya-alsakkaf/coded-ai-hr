@@ -841,7 +841,7 @@ demo("d39", day=3, skill="3.9", sec=16, title="Copilot, an agent or a flow?", to
 
 # ===================================================================== the weak and strong opener (Day 1)
 SHOWCASE = {
- "eyebrow": "Opener · one job description", "title": "Same tool. Same role. <span class=\"hl\">Two requests.</span>", "tool": "Copilot Chat", "file": F["roles"],
+ "eyebrow": "Opener · one job description", "title": "One role, <span class=\"hl\">two requests.</span>", "tool": "Copilot Chat", "file": F["roles"],
  "weak": f"Write a job description for a {R['title'].lower()}.",
  "weak_answer": ["Leads a team of compensation analysts.", "Designs reward strategy and advises the Board.", "Grade: senior. Competitive package."],
  "weak_flags": ["Invented duties", "Invented team and grade", "Not Mutla's template"],
