@@ -18,7 +18,7 @@ Ask clearly. Check everything. People decide.
 | 11:35-12:15 | Lunch and Dhuhr prayer |  |
 | 12:15-13:20 | Block 3 · Copilot Notebooks: your policies in one place | Build a notebook from three policies, then answer three employees from it · Tasks 1.3 and 1.4 |
 | 13:20-13:35 | Break |  |
-| 13:35-14:40 | Block 4 · From policy to people: Word, then Outlook | A policy summary, then one message for three readers · Tasks 1.5 and 1.6 |
+| 13:35-14:40 | Block 4 · Copilot in Word, then Outlook | Draft a memo, summarize 360 feedback, rewrite a welcome letter, then one message for three readers · Tasks 1.5 to 1.8 |
 | 14:40-15:00 | Prompt Bank and wrap | Save two requests, and where Copilot sits |
 
 **Tasks**
@@ -29,8 +29,10 @@ Ask clearly. Check everything. People decide.
 | Task 1.2 | Rewrite weak requests | 14 | on your own, then swap | mutla-leave-policy-2026.docx, mutla-allowances-policy-v4.docx, mutla-training-policy-2026.docx | Five parts: context, task, data, constraints, format. |
 | Task 1.3 | Build your HR policy notebook | 22 | on your own | mutla-leave-policy-2026.docx, mutla-attendance-rules-2026.docx, mutla-training-policy-2026.docx | Set it up once. Check every answer against its file. |
 | Task 1.4 | Answer three employees from your notebook | 20 | on your own |  | A good answer names its source. A good notebook says when it does not know. |
-| Task 1.5 | The allowances policy for staff | 15 | on your own | mutla-allowances-policy-v4.docx, mutla-allowances-policy-v3.docx | Section numbers, numbers as written, and the date it applies. |
-| Task 1.6 | Announce and reply in Outlook | 17 | on your own | mutla-email-thread-attendance.docx | Change the tone for each reader. Keep every date and rule. |
+| Task 1.5 | The training needs survey memo | 10 | on your own |  | Every fact in the memo comes from your request. Anything else gets deleted. |
+| Task 1.6 | Summarize 360 feedback for a review | 12 | on your own | mutla-360-feedback-emp-4127.docx | Each point says who said it. Private life and ratings stay out. |
+| Task 1.7 | Rewrite the 2019 welcome letter | 12 | on your own | mutla-welcome-letter-2019.docx, mutla-onboarding-checklist-2026.docx | Rewrite the words. The checklist decides the facts. |
+| Task 1.8 | Announce and reply in Outlook | 17 | on your own | mutla-email-thread-attendance.docx | Change the tone for each reader. Keep every date and rule. |
 
 ## Day 2: Meetings, Reporting and Presentations
 

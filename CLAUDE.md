@@ -9,7 +9,7 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
   The last step (`validate_site.py`) must print `PROBLEMS: 0`.
 - `_source/build/` is the CODED workshop engine. Never edit an engine file. Kit-only changes.
 - `_source/kit/data.py` holds every fact (names, numbers, planted errors). `content.py` and `content_demos.py` hold the words.
-  `build_deck.py` orders the slides. `gen_files.py` writes the 34 sample files into `_source/files/`.
+  `build_deck.py` orders the slides. `gen_files.py` writes the 36 sample files into `_source/files/`.
 - Survey payloads: `build.sh` runs `surveys.py`, which overwrites them. Always run `python3 _source/surveys/patch.py` after a build
   (it is safe to run more than once), then push the patched payloads to the portal drafts.
 - A push to `main` redeploys production on Vercel.
@@ -102,3 +102,7 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
     fictional. Day 1 has 70 slides. The animation is a kit slide (`trainslide` in build_deck.py, CSS in content.EXTRA_CSS).
 33. 17 Nov 2026, during Day 1 (Aya): Block 3 is Copilot Notebooks (Tasks 1.3 build, 1.4 answer three employees); the Word
     block and Demo 1.3b are removed; Block 4 uses Copilot in Word first, Copilot Chat as fallback. Day 1 has 66 slides.
+34. 17 Nov 2026, during Day 1 (Aya): Block 4 has three Word exercises (draft from a prompt, summarize, rewrite; Tasks 1.5 to 1.7)
+    using the L&D, performance and onboarding use cases from the "AI In HR" meeting, then the Outlook task (now 1.8), which may
+    move to Day 2 if time runs out. All trainees are assumed to have Copilot in Word; Copilot Chat stays as the fallback.
+    Day 1 has 70 slides.

@@ -680,7 +680,7 @@
 "flat": "7 min. · Do: (Ask two people to read one answer aloud, with the file and section it named.) · Expect: Most answers name the file; some miss the section. · Say: “You built it once, and it will answer the same way next week. The checking is still yours. Break now. (Press the cup button.)”"
 },
 {
-"say": "Last block of the day: from a policy to the people who live with it. (Read the story.) Fourteen emails by lunch. Who in this room answers the same policy question again and again?",
+"say": "Last block of the day, and it is all Word, then Outlook if we have time. (Read the story.) Three jobs most of you do every month. Who wrote a memo to managers this month?",
 "do": null,
 "expect": "Several hands.",
 "silent": null,
@@ -689,57 +689,91 @@
 "time": "13:35-14:40",
 "t": "b4",
 "k": "story",
-"h": "Block 4 · From policy to people",
-"flat": "13:35-14:40. · Expect: Several hands. · Say: “Last block of the day: from a policy to the people who live with it. (Read the story.) Fourteen emails by lunch. Who in this room answers the same policy question again and again?”"
+"h": "Block 4 · Copilot in Word",
+"flat": "13:35-14:40. · Expect: Several hands. · Say: “Last block of the day, and it is all Word, then Outlook if we have time. (Read the story.) Three jobs most of you do every month. Who wrote a memo to managers this month?”"
 },
 {
-"say": "A summary goes to people who will never open the policy. So it must carry its own proof: the section for every point. And one thing people forget: the date from which the rule applies.",
+"say": "(Point to each card.) Draft, summarize, rewrite. One exercise for each. Same checklist, same habit: you check every fact.",
 "do": null,
 "expect": null,
 "silent": null,
 "fallback": null,
-"more": [],
-"time": null,
+"more": [
+"Copilot in Word needs the M365 Copilot (Premium) label. Anyone without it uses Copilot Chat for the same tasks."
+],
+"time": "3 min",
 "t": "b4",
-"k": "term",
-"h": "A summary you can check.",
-"flat": "Say: “A summary goes to people who will never open the policy. So it must carry its own proof: the section for every point. And one thing people forget: the date from which the rule applies.”"
+"k": "cards",
+"h": "Three things Copilot does in Word.",
+"flat": "3 min. · Copilot in Word needs the M365 Copilot (Premium) label. Anyone without it uses Copilot Chat for the same tasks. · Say: “(Point to each card.) Draft, summarize, rewrite. One exercise for each. Same checklist, same habit: you check every fact.”"
 },
 {
-"say": "(Run the request.) Every bullet has its section. Now watch me do the part Copilot cannot do for me. (Open the policy, check two numbers aloud.) A person has checked two numbers, so now the summary can go out.",
+"say": "(Draft with Copilot, paste the request.) No file here, so my request is the only source. (Read the memo.) Is every fact from what I typed? Did it add a link?",
+"do": null,
+"expect": "A short memo: the HSE Induction e-learning by Thursday 31 December 2026, about 45 minutes, in the HR portal, under Learning, questions to Learning and Development, extension 4410. Nothing added.",
+"silent": null,
+"fallback": "Show the backup memo on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.5.",
+"more": [
+"Click steps: (1) Open a blank Word document. Select Draft with Copilot. (No Copilot in Word: the same request in Copilot Chat.) (2) Paste the request. Read the memo aloud. (3) Check the date and the minutes against the request. Look for anything Copilot added: a link, a name, a date."
+],
+"time": "3 min, live",
+"t": "b4",
+"k": "list",
+"h": "Draft from a prompt: a memo.",
+"flat": "3 min, live. · Expect: A short memo: the HSE Induction e-learning by Thursday 31 December 2026, about 45 minutes, in the HR portal, under Learning, questions to Learning and Development, extension 4410. Nothing added. · Click steps: (1) Open a blank Word document. Select Draft with Copilot. (No Copilot in Word: the same request in Copilot Chat.) (2) Paste the request. Read the memo aloud. (3) Check the date and the minutes against the request. Look for anything Copilot added: a link, a name, a date. · Fallback: Show the backup memo on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.5. · Say: “(Draft with Copilot, paste the request.) No file here, so my request is the only source. (Read the memo.) Is every fact from what I typed? Did it add a link?”"
+},
+{
+"say": "Your turn: the memo every line manager will get about the training needs survey. The facts are on the slide. Your request needs all five checklist parts. Ten minutes. (Start the timer.)",
+"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"expect": "A memo to line managers: the survey runs Monday 7 December 2026 to Thursday 17 December 2026 in the HR portal, under Learning; one skill for now and one for two years per team member; the plan by Sunday 31 January 2027; questions to Learning and Development, extension 4410. No link, name or extra date.",
+"silent": null,
+"fallback": "No Copilot in Word: write the same request in Copilot Chat and paste the memo into Word.",
+"more": [
+"Give the hint at about 3 min.",
+"Fast finishers have an extra task on the slide."
+],
+"time": "10 min work, then share",
+"t": "b4",
+"k": "task",
+"h": "Your turn 1.5: The training needs survey memo (10 min, on your own)",
+"flat": "10 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A memo to line managers: the survey runs Monday 7 December 2026 to Thursday 17 December 2026 in the HR portal, under Learning; one skill for now and one for two years per team member; the plan by Sunday 31 January 2027; questions to Learning and Development, extension 4410. No link, name or extra date. · Give the hint at about 3 min. · Fast finishers have an extra task on the slide. · Fallback: No Copilot in Word: write the same request in Copilot Chat and paste the memo into Word. · Say: “Your turn: the memo every line manager will get about the training needs survey. The facts are on the slide. Your request needs all five checklist parts. Ten minutes. (Start the timer.)”"
+},
+{
+"say": "(Copilot, Summarize this document.) A first summary. (Then ask for eight bullets for new joiners with sections.) Now my part: (open the policy and check two numbers aloud).",
 "do": null,
 "expect": "Up to eight bullets, each with its section: 30 days a year (2), request 14 days before (3), carry over up to 15 days used by 31 March (4), 3 days emergency leave (5), a certificate after 2 days of sick leave (6), 21 days Hajj leave once (7), balances from Personnel and Administration (8).",
 "silent": null,
-"fallback": "Show the backup summary on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.5.",
+"fallback": "Show the backup summary on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.6.",
 "more": [
-"Click steps: (1) Open the leave policy in Word and select Copilot. (No Copilot in Word: a new chat with the file attached.) (2) Paste the summary request. Read the bullets aloud. (3) Check two numbers by hand against the policy: the carry-over days and the notice period."
+"Click steps: (1) Open the leave policy in Word. Copilot, then Summarize this document. (No Copilot in Word: a new chat with the file attached.) (2) Paste the summary request. Read the bullets aloud. (3) Check two numbers by hand against the policy: the carry-over days and the notice period."
 ],
-"time": "5 min, live",
+"time": "3 min, live",
 "t": "b4",
 "k": "list",
-"h": "The leave policy, for new joiners.",
-"flat": "5 min, live. · Expect: Up to eight bullets, each with its section: 30 days a year (2), request 14 days before (3), carry over up to 15 days used by 31 March (4), 3 days emergency leave (5), a certificate after 2 days of sick leave (6), 21 days Hajj leave once (7), balances from Personnel and Administration (8). · Click steps: (1) Open the leave policy in Word and select Copilot. (No Copilot in Word: a new chat with the file attached.) (2) Paste the summary request. Read the bullets aloud. (3) Check two numbers by hand against the policy: the carry-over days and the notice period. · Fallback: Show the backup summary on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.5. · Say: “(Run the request.) Every bullet has its section. Now watch me do the part Copilot cannot do for me. (Open the policy, check two numbers aloud.) A person has checked two numbers, so now the summary can go out.”"
+"h": "Summarize: the leave policy.",
+"flat": "3 min, live. · Expect: Up to eight bullets, each with its section: 30 days a year (2), request 14 days before (3), carry over up to 15 days used by 31 March (4), 3 days emergency leave (5), a certificate after 2 days of sick leave (6), 21 days Hajj leave once (7), balances from Personnel and Administration (8). · Click steps: (1) Open the leave policy in Word. Copilot, then Summarize this document. (No Copilot in Word: a new chat with the file attached.) (2) Paste the summary request. Read the bullets aloud. (3) Check two numbers by hand against the policy: the carry-over days and the notice period. · Fallback: Show the backup summary on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.6. · Say: “(Copilot, Summarize this document.) A first summary. (Then ask for eight bullets for new joiners with sections.) Now my part: (open the policy and check two numbers aloud).”"
 },
 {
-"say": "Your turn. Write your own request for a one-page summary of the allowances policy, for staff. Then check three numbers by hand, and find the date this version starts. Fifteen minutes. (Start the timer.)",
+"say": "Your turn: 360 feedback for one employee, before a review meeting. Summarize it, then read the summary against the file. Twelve minutes. (Start the timer.)",
 "do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "A one-page summary with sections 2 to 7: housing 25% of basic salary up to KWD 300; transport KWD 60 for grades 1 to 8; child KWD 50 for up to 3 children; remote-site 20% for more than 15 days; requests in the HR system; changes reported within 30 days. It says version 4 applies from 1 January 2027, and version 3 until then.",
+"expect": "Strengths, development areas and projects for EMP-4127, each point with its reviewer (self, manager, peer, team member). The comment about problems at home and the suggested rating are left out.",
 "silent": null,
-"fallback": "If Copilot is slow, write the three numbers and the date by hand from the policy.",
+"fallback": "No Copilot in Word: attach the file to Copilot Chat and ask for the same summary.",
 "more": [
-"Give the hint at about 5 min.",
-"Fast finishers have an extra task on the slide."
+"Give the hint at about 4 min.",
+"Fast finishers have an extra task on the slide.",
+"The two traps: a comment about private life, and a suggested rating."
 ],
-"time": "15 min work, then share",
+"time": "12 min work, then share",
 "t": "b4",
 "k": "task",
-"h": "Your turn 1.5: The allowances policy for staff (15 min, on your own)",
-"flat": "15 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A one-page summary with sections 2 to 7: housing 25% of basic salary up to KWD 300; transport KWD 60 for grades 1 to 8; child KWD 50 for up to 3 children; remote-site 20% for more than 15 days; requests in the HR system; changes reported within 30 days. It says version 4 applies from 1 January 2027, and version 3 until then. · Give the hint at about 5 min. · Fast finishers have an extra task on the slide. · Fallback: If Copilot is slow, write the three numbers and the date by hand from the policy. · Say: “Your turn. Write your own request for a one-page summary of the allowances policy, for staff. Then check three numbers by hand, and find the date this version starts. Fifteen minutes. (Start the timer.)”"
+"h": "Your turn 1.6: Summarize 360 feedback for a review (12 min, on your own)",
+"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Strengths, development areas and projects for EMP-4127, each point with its reviewer (self, manager, peer, team member). The comment about problems at home and the suggested rating are left out. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · The two traps: a comment about private life, and a suggested rating. · Fallback: No Copilot in Word: attach the file to Copilot Chat and ask for the same summary. · Say: “Your turn: 360 feedback for one employee, before a review meeting. Summarize it, then read the summary against the file. Twelve minutes. (Start the timer.)”"
 },
 {
-"say": "Who found the date? (Tap after hands.) A summary with the right number and no date can still mislead every reader.",
+"say": "Quick check. (Tap after hands.) A rating is a decision about a person, so it is never Copilot's, and never only one peer's.",
 "do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
-"expect": "Option A.",
+"expect": "Option C.",
 "silent": "ask one table to choose together, then tap their choice.",
 "fallback": null,
 "more": [],
@@ -747,27 +781,59 @@
 "t": "b4",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option A. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “Who found the date? (Tap after hands.) A summary with the right number and no date can still mislead every reader.”"
+"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option C. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “Quick check. (Tap after hands.) A rating is a decision about a person, so it is never Copilot's, and never only one peer's.”"
 },
 {
-"say": "Now Outlook. The same facts often go to three different readers: staff, their managers, and senior leadership. Each needs a different order and a different voice. Nobody gets different facts.",
+"say": "(Select the first paragraph, Copilot, Rewrite.) Three versions. (Pick one.) Before I press Replace: (read the date and the minutes). Same? Then it can go in.",
+"do": null,
+"expect": "A shorter, warmer paragraph with the same date (Thursday 31 December 2026) and the same 45 minutes.",
+"silent": null,
+"fallback": "No Copilot in Word: paste the paragraph into Copilot Chat with the same request. The backup is on the Day 1 backup results page, Demo 1.7.",
+"more": [
+"Click steps: (1) Go back to the memo from Demo 1.5. Select the first paragraph. (2) Copilot, then Rewrite. Show the versions. Pick one, then Replace. (3) Read the date and the minutes again. Did they change?"
+],
+"time": "3 min, live",
+"t": "b4",
+"k": "list",
+"h": "Rewrite: new words, same facts.",
+"flat": "3 min, live. · Expect: A shorter, warmer paragraph with the same date (Thursday 31 December 2026) and the same 45 minutes. · Click steps: (1) Go back to the memo from Demo 1.5. Select the first paragraph. (2) Copilot, then Rewrite. Show the versions. Pick one, then Replace. (3) Read the date and the minutes again. Did they change? · Fallback: No Copilot in Word: paste the paragraph into Copilot Chat with the same request. The backup is on the Day 1 backup results page, Demo 1.7. · Say: “(Select the first paragraph, Copilot, Rewrite.) Three versions. (Pick one.) Before I press Replace: (read the date and the minutes). Same? Then it can go in.”"
+},
+{
+"say": "Your turn: the 2019 welcome letter, rewritten for a new graduate. Rewrite one paragraph at a time, then check it against the 2026 onboarding checklist. Twelve minutes. (Start the timer.)",
+"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"expect": "A short, warm letter. First day, documents and probation follow the 2026 checklist, not the 2019 letter.",
+"silent": null,
+"fallback": "Without the Word app: Copilot Chat, one paragraph at a time, with your rewrite request.",
+"more": [
+"Give the hint at about 4 min.",
+"Fast finishers have an extra task on the slide.",
+"The 2019 letter has three facts that the checklist changed: the first day, the documents and the probation period."
+],
+"time": "12 min work, then share",
+"t": "b4",
+"k": "task",
+"h": "Your turn 1.7: Rewrite the 2019 welcome letter (12 min, on your own)",
+"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A short, warm letter. First day, documents and probation follow the 2026 checklist, not the 2019 letter. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · The 2019 letter has three facts that the checklist changed: the first day, the documents and the probation period. · Fallback: Without the Word app: Copilot Chat, one paragraph at a time, with your rewrite request. · Say: “Your turn: the 2019 welcome letter, rewritten for a new graduate. Rewrite one paragraph at a time, then check it against the 2026 onboarding checklist. Twelve minutes. (Start the timer.)”"
+},
+{
+"say": "Now Outlook, if we have time; if not, we start here tomorrow. The same facts often go to three different readers: staff, their managers, and senior leadership. Each needs a different order and a different voice. Nobody gets different facts.",
 "do": null,
 "expect": null,
 "silent": null,
 "fallback": null,
 "more": [],
-"time": "14:03",
+"time": "14:25",
 "t": "b4",
 "k": "term",
 "h": "Turn the tone dial. Keep the facts.",
-"flat": "14:03. · Say: “Now Outlook. The same facts often go to three different readers: staff, their managers, and senior leadership. Each needs a different order and a different voice. Nobody gets different facts.”"
+"flat": "14:25. · Say: “Now Outlook, if we have time; if not, we start here tomorrow. The same facts often go to three different readers: staff, their managers, and senior leadership. Each needs a different order and a different voice. Nobody gets different facts.”"
 },
 {
 "say": "(Go back to the chat from Demo 1.2 and send the tone request.) Read the version for managers: it tells them what to do. The one for leadership is three lines. (Point to the number and the date in each.) The number and the date did not move.",
 "do": null,
 "expect": "A version for line managers (remind your team, approve leave plans before 31 March) and three lines for senior leadership. Both keep 15 days and 31 March exactly.",
 "silent": null,
-"fallback": "Show the backup versions on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.6.",
+"fallback": "Show the backup versions on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.8.",
 "more": [
 "Click steps: (1) Go back to the chat from Demo 1.2, with the carry-over reminder. (2) Paste the tone request. Read both versions aloud. (3) Point to the number and the date in each version: they did not change. (4) Where the account allows it, open a new email in Outlook and use Draft with Copilot (the Copilot button) with the same request."
 ],
@@ -775,7 +841,7 @@
 "t": "b4",
 "k": "list",
 "h": "One reminder, three readers.",
-"flat": "5 min, live. · Expect: A version for line managers (remind your team, approve leave plans before 31 March) and three lines for senior leadership. Both keep 15 days and 31 March exactly. · Click steps: (1) Go back to the chat from Demo 1.2, with the carry-over reminder. (2) Paste the tone request. Read both versions aloud. (3) Point to the number and the date in each version: they did not change. (4) Where the account allows it, open a new email in Outlook and use Draft with Copilot (the Copilot button) with the same request. · Fallback: Show the backup versions on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.6. · Say: “(Go back to the chat from Demo 1.2 and send the tone request.) Read the version for managers: it tells them what to do. The one for leadership is three lines. (Point to the number and the date in each.) The number and the date did not move.”"
+"flat": "5 min, live. · Expect: A version for line managers (remind your team, approve leave plans before 31 March) and three lines for senior leadership. Both keep 15 days and 31 March exactly. · Click steps: (1) Go back to the chat from Demo 1.2, with the carry-over reminder. (2) Paste the tone request. Read both versions aloud. (3) Point to the number and the date in each version: they did not change. (4) Where the account allows it, open a new email in Outlook and use Draft with Copilot (the Copilot button) with the same request. · Fallback: Show the backup versions on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.8. · Say: “(Go back to the chat from Demo 1.2 and send the tone request.) Read the version for managers: it tells them what to do. The one for leadership is three lines. (Point to the number and the date in each.) The number and the date did not move.”"
 },
 {
 "say": "Your turn. A real thread: thirty messages about new attendance rules. First find the decisions. Then write the announcement for staff, a version for managers and three lines for leadership, and a reply to Mubarak. Seventeen minutes. (Start the timer.)",
@@ -790,7 +856,7 @@
 "time": "17 min work, then share",
 "t": "b4",
 "k": "task",
-"h": "Your turn 1.6: Announce and reply in Outlook (17 min, on your own)",
+"h": "Your turn 1.8: Announce and reply in Outlook (17 min, on your own)",
 "flat": "17 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Announcements with Tuesday 1 December 2026, the 6:30 to 8:00 start, core hours 8:00 to 13:00 and the 3 permissions, in three tones with the same facts. A reply to Mubarak: The earliest start under the new rules is 6:30. He can use one of his 3 monthly permissions of up to 2 hours, with his line manager's approval. · Give the hint at about 5 min. · Fast finishers have an extra task on the slide. · Fallback: If the thread file will not open, use the decisions table in the backup on the trainer screen. · Say: “Your turn. A real thread: thirty messages about new attendance rules. First find the decisions. Then write the announcement for staff, a version for managers and three lines for leadership, and a reply to Mubarak. Seventeen minutes. (Start the timer.)”"
 },
 {

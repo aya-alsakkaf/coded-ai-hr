@@ -803,6 +803,16 @@ def messydeck(path):
     chk = Presentation(path); assert len(chk.slides) == 9 and not any(s.has_notes_slide and s.notes_slide.notes_text_frame.text.strip() for s in chk.slides)
 messydeck(os.path.join(OUT, F["messydeck"])); WRITTEN.append(F["messydeck"])
 
+# 36 · 360 feedback (Day 1, Task 1.6): two planted traps in data.py R360_TRAPS
+_b = [("i", f"Performance review 2026 · {D.R360_EMP} · Senior HR Officer, Manpower Planning · confidential")]
+for who, role, lines in D.R360:
+    _b.append(("h", f"{who}: {role}"))
+    _b += [("p", ln) for ln in lines]
+doc(F["r360"], f"360 feedback: {D.R360_EMP}", _b)
+
+# 37 · the 2019 welcome letter (Day 1, Task 1.7): three facts that the 2026 onboarding checklist changed (data.py WELCOME_FIXES)
+doc(F["welcome"], "Welcome letter for new graduates (2019 template)", [("i", "Personnel and Administration · template last updated March 2019")] + D.WELCOME_OLD)
+
 # ------------------------------------------------------------------ every file in ALL_FILES, nothing more
 assert sorted(WRITTEN) == sorted(ALL_FILES), f"gen_files: wrote {sorted(set(WRITTEN) ^ set(ALL_FILES))} out of step with ALL_FILES"
 for f in ALL_FILES: print(f"{os.path.getsize(os.path.join(OUT, f)):>8}  {f}")

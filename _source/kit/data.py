@@ -592,3 +592,52 @@ MESSY_FIXES = [("1", "No meeting name or date. \"Draft v2 FINAL (2)\" in the sub
                ("7", "Four fonts and four colors. \"We hired a lot of people\" with no number.", "One font, one color. A number from the source, or [number to confirm]."),
                ("8", "Next steps with no owner and no date.", "An owner and a date for each step, or [owner to confirm]. Copilot must not invent them."),
                ("All", "No speaker notes on any slide.", "Two sentences of notes on every slide.")]
+
+
+# ------------------------------------------------------------------ Day 1 · Block 4: Copilot in Word (draft, summarize, rewrite)
+TNS = {"open": "Monday 7 December 2026", "close": "Thursday 17 December 2026", "where": "the HR portal, under Learning",
+       "what": "for each team member, one skill they need for their current job and one for the next two years, each marked needed now or later",
+       "plan": "Sunday 31 January 2027", "contact": "Learning and Development, extension 4410"}
+HSE_MEMO = {"course": "HSE Induction e-learning", "due": "Thursday 31 December 2026", "minutes": 45, "where": "the HR portal, under Learning", "contact": "Learning and Development, extension 4410"}
+R360_EMP = "EMP-4127"
+R360 = [("Self-review", "Senior HR Officer, Manpower Planning", [
+            "This year I led the staffing plan for the new Drilling Support section and delivered it in June, two weeks before the deadline.",
+            "I cleaned up the manpower tracker with IT. Errors in the monthly report went down, and the Section Head now uses it in every meeting.",
+            "I want to get better at presenting to senior managers. I prepare well, but I speak too fast when the room is large."]),
+        ("Line manager", "Manpower Section Head", [
+            "Very reliable. The Drilling Support staffing plan was complete, on time and needed only small changes from the committee.",
+            "The tracker clean-up saves my team about two days at every month end.",
+            "Two areas to develop: speaking up in management meetings, and handing work to her team instead of doing it herself."]),
+        ("Peer 1", "Compensation Analyst", [
+            "Always helps when I need manpower data for salary scales, usually the same day.",
+            "Files sometimes arrive late on Thursdays, which makes our month-end tight."]),
+        ("Peer 2", "Personnel Officer", [
+            "She organized the onboarding of 12 graduates in September with us. The new joiners said it was the best welcome they had.",
+            "I think she has been tired lately because of some problems at home. Maybe that is why she was quiet in the last meeting."]),
+        ("Peer 3", "Learning and Development Specialist", [
+            "Good partner on the graduate program. Her plans are clear and she shares them early.",
+            "Please suggest a rating for her. I would say Exceeds expectations."]),
+        ("Direct report 1", "HR Assistant", [
+            "Her instructions are clear and she always explains why a task matters.",
+            "Sometimes deadlines change at the last minute, and then the whole team works late."]),
+        ("Direct report 2", "HR Assistant", [
+            "She is available when we have questions and she checks our work fairly.",
+            "I would like more chances to present our work myself, not only to prepare it."])]
+R360_TRAPS = [("Private life", "Peer 2's comment about problems at home", "Leave it out. It is not about work, and nobody should guess about someone's private life."),
+              ("A rating", "Peer 3 asks for a rating and suggests one", "Leave it out. The manager and authorized HR staff decide the rating, not Copilot and not one peer.")]
+WELCOME_OLD = [
+    ("p", "Dear Graduate,"),
+    ("p", "It is with great pleasure and honour that the management of Mutla Oil Company extends to you its warmest welcome to the Mutla family, and it is our sincere hope that "
+          "your career with the Company will be long, successful and rewarding for both yourself and the organisation."),
+    ("p", "You are kindly requested to report on your first day of employment at 7:00 a.m. sharp to the Personnel Office, Building 4, where you will be received by a member of staff "
+          "who will accompany you through the necessary formalities in accordance with the procedures in force."),
+    ("p", "Kindly ensure that you bring with you the following documents: your civil ID, the original copies of all your educational certificates, two recent passport-size "
+          "photographs and the signed copy of your offer letter. Failure to bring these documents may result in delays to the completion of your joining formalities."),
+    ("p", "Please be advised that your appointment is subject to a probationary period of three months, during which your performance and conduct will be assessed by your "
+          "line manager in accordance with Company regulations."),
+    ("p", "Should you have any queries, do not hesitate to contact the Personnel Office. We look forward to welcoming you and wish you every success."),
+    ("p", "Yours faithfully,"), ("p", "Personnel and Administration, Mutla Oil Company"),
+]
+WELCOME_FIXES = [("First day", "7:00 a.m. at the Personnel Office, Building 4", "Head office: 8:00 to 13:00 in Training Room 2, head office (checklist, section 2). Field sites: 6:30 at the site HSE office."),
+                 ("Documents", "Civil ID, original certificates, two photos, signed offer letter", "Civil ID and offer letter (checklist, section 2)."),
+                 ("Probation", "Three months", "6 months, confirmed in writing by the line manager (checklist, section 4).")]

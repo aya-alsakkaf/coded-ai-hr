@@ -109,8 +109,8 @@
 "Block 3 · Copilot Notebooks: your policies in one place",
 "Build a notebook from three policies, then answer three employees from it · Tasks 1.3 and 1.4",
 "13:35-14:40",
-"Block 4 · From policy to people: Word, then Outlook",
-"A policy summary, then one message for three readers · Tasks 1.5 and 1.6",
+"Block 4 · Copilot in Word, then Outlook",
+"Draft a memo, summarize 360 feedback, rewrite a welcome letter, then one message for three readers · Tasks 1.5 to 1.8",
 "14:40-15:00",
 "Prompt Bank and wrap",
 "Save two requests, and where Copilot sits"
@@ -1107,14 +1107,14 @@
 "n": 50,
 "id": "b4story",
 "kind": "story",
-"title": "Block 4 · From policy to people",
+"title": "Block 4 · Copilot in Word",
 "topic": "b4",
 "kit": [
-"Block 4 · From policy to people",
+"Block 4 · Copilot in Word",
 "Thursday 12 November, 13:35",
-"The Allowances Policy version 4 is approved. By lunch, Abdulaziz has 14 emails from staff asking what it means for them. Yousef wants a one-page summary for staff today, and an announcement after that.",
-"One policy. Hundreds of readers.",
-"Summarize a policy you can check, then write one message for three readers.",
+"Three jobs land on the same afternoon: a memo to every line manager about the training needs survey, a 360 summary for a review meeting, and a welcome letter for new graduates that still sounds like 2019.",
+"Three jobs, one app.",
+"Draft, summarize and rewrite with Copilot in Word, and check every fact before it leaves you.",
 "04"
 ],
 "chrome": [
@@ -1124,36 +1124,40 @@
 },
 {
 "n": 51,
-"id": "b4t1",
-"kind": "term",
-"title": "A summary you can check.",
+"id": "b4can",
+"kind": "cards",
+"title": "Three things Copilot does in Word.",
 "topic": "b4",
 "kit": [
-"Block 4 · the idea",
-"A summary you can check.",
-"Summary with sections",
-"Every point names the section it came from, keeps every number as written, and says from when the rule applies.",
-"A summary with no sections…",
-"…is a rumor nobody can check.",
-"Section, number, date. Then check two numbers yourself."
+"Block 4 · three features",
+"Three things Copilot does in Word.",
+"No Copilot in Word? Do the same in Copilot Chat: type, attach or paste.",
+"Source: Microsoft Support, Welcome to Copilot in Word",
+"Draft",
+"A blank page",
+"Describe what you need. Copilot writes a first draft in the document.",
+"Summarize",
+"A long document",
+"Copilot lists the main points of the file you have open.",
+"Rewrite",
+"Your own text",
+"Select a paragraph. Copilot offers versions: shorter, warmer, more formal."
 ],
-"chrome": [
-"The idea"
-]
+"chrome": []
 },
 {
 "n": 52,
 "id": "b4live1",
 "kind": "list",
-"title": "The leave policy, for new joiners.",
+"title": "Draft from a prompt: a memo.",
 "topic": "b4",
 "kit": [
 "Demo 1.5 · live in Word · Copilot",
-"The leave policy, for new joiners.",
-"Every point gives its section. You check two numbers yourself.",
-"What I will show: Eight bullets for new joiners, each with its section.",
-"Watch for: Two numbers I check by hand, live, against the policy.",
-"Files: mutla-leave-policy-2026.docx"
+"Draft from a prompt: a memo.",
+"Draft from a prompt: the facts in your request are the only facts.",
+"What I will show: A short memo to all staff from one request, in a blank Word document.",
+"Watch for: Anything in the memo that was not in the request: a link, a name, a date.",
+"Files: none: the request is on the prompt sheet"
 ],
 "chrome": []
 },
@@ -1167,118 +1171,16 @@
 "Task 1.5",
 "on your own",
 "Word · Copilot",
-"Look at the title of the policy. From which date does it apply?",
-"Compare version 3 and version 4: list every change with its section number.",
-"mutla-allowances-policy-v4.docx",
-"mutla-allowances-policy-v3.docx",
-"Open mutla-allowances-policy-v4.docx in Word and select Copilot. No Copilot in Word? Attach it to a new chat.",
-"Write your own checklist request: a one-page summary of the policy for staff, every point with its section number.",
-"Check three numbers by hand against the policy: the housing maximum, the transport grades and the remote-site days.",
-"Check the date: from when does version 4 apply? Does your summary say so?",
-"A one-page summary for staff, with section numbers and the date version 4 starts.",
-"Your turn: the allowances policy for staff.",
-"Block 4 · From policy to people"
-],
-"chrome": [
-"Your turn",
-"Finished early?",
-"What to look for",
-"Weak prompt",
-"Your rewrite",
-"points",
-"+1 min",
-"Reset",
-"Your time",
-"min",
-"Time",
-"You hand in",
-"Where we are",
-"AI",
-"Prompt",
-"Notebook",
-"Word, Outlook",
-"Save"
-]
-},
-{
-"n": 54,
-"id": "b4chk",
-"kind": "check",
-"title": "Quick check",
-"topic": "b4",
-"kit": [
-"Your summary says the housing maximum is KWD 300. Version 4 starts on 1 January 2027. What else must it say?",
-"That version 3 applies until then",
-"Nothing: KWD 300 is in the policy",
-"That the amount may change again"
-],
-"chrome": [
-"Quick check",
-"A",
-"B",
-"C",
-"Correct",
-"Not quite"
-]
-},
-{
-"n": 55,
-"id": "b4t2",
-"kind": "term",
-"title": "Turn the tone dial. Keep the facts.",
-"topic": "b4",
-"kit": [
-"Block 4 · tone",
-"Turn the tone dial. Keep the facts.",
-"Tone dial",
-"The same facts written for employees, line managers or senior leadership. You name the facts that must not change.",
-"“Make it friendlier.”",
-"“Rewrite it for managers; keep every date and rule.”",
-"The reader changes the order and the voice, never the facts."
-],
-"chrome": [
-"The idea"
-]
-},
-{
-"n": 56,
-"id": "b4live2",
-"kind": "list",
-"title": "One reminder, three readers.",
-"topic": "b4",
-"kit": [
-"Demo 1.6 · live in Copilot Chat · Outlook",
-"One reminder, three readers.",
-"Change the tone. Keep the facts.",
-"What I will show: The carry-over reminder from Demo 1.2, rewritten for line managers and for senior leadership.",
-"Watch for: The number and the date. They must be the same in every version.",
-"Files: mutla-leave-policy-2026.docx"
-],
-"chrome": []
-},
-{
-"n": 57,
-"id": "b4task2",
-"kind": "task",
-"title": "Your turn 1.6",
-"topic": "b4",
-"kit": [
-"Task 1.6",
-"on your own",
-"Copilot Chat · Outlook",
-"The start date changed during the thread. The approved one is in message 24.",
-"Ask Copilot to check your three versions against each other: list any date, time or number that differs.",
-"mutla-email-thread-attendance.docx",
-"Attach mutla-email-thread-attendance.docx to a new chat, or open the thread in Outlook with Copilot.",
-"Run the decisions request below. Find the approved start date.",
-"Write your own checklist request for the staff announcement. Then ask for a version for line managers and a three-line version for senior leadership. The facts stay the same.",
-"Write a reply to Mubarak's request in message 29. Do not promise an exception.",
-"Check every date and time by hand against message 24.",
-"Decisions first (step 2)",
-"I am writing the staff announcement and must not miss a decision. Summarize the attached email thread: every decision, then the open questions. Use only mutla-email-thread-attendance.docx. If a later message changed an earlier one, use the later decision and say so. Leave out personal notes that are not decisions. A table: decision, owner, date, message number. Then a list of open questions.",
+"Copilot likes to add a link or a contact name. Neither is in the facts.",
+"Select one paragraph and use Rewrite: make it shorter. Check the dates did not move.",
+"Open a blank Word document. Select Draft with Copilot. (No Copilot in Word? Use Copilot Chat.)",
+"Write your own request with all five parts. Paste the facts below as your Data.",
+"Check every date in the memo against the facts. Delete anything Copilot added.",
+"The facts for your memo",
+"The 2027 training needs survey opens on Monday 7 December 2026 and closes on Thursday 17 December 2026. It is in the HR portal, under Learning. Line managers add for each team member, one skill they need for their current job and one for the next two years, each marked needed now or later. L&D shares the 2027 training plan by Sunday 31 January 2027. Questions: Learning and Development, extension 4410.",
 "Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
-"Your turn: announce and reply in Outlook.",
-"Block 4 · From policy to people"
+"Your turn: the training needs survey memo.",
+"Block 4 · Copilot in Word, then Outlook"
 ],
 "chrome": [
 "Your turn",
@@ -1306,7 +1208,227 @@
 ]
 },
 {
+"n": 54,
+"id": "b4live3",
+"kind": "list",
+"title": "Summarize: the leave policy.",
+"topic": "b4",
+"kit": [
+"Demo 1.6 · live in Word · Copilot",
+"Summarize: the leave policy.",
+"Every point gives its section. You check two numbers yourself.",
+"What I will show: Summarize this document on the leave policy, then the same summary for new joiners.",
+"Watch for: The section for every point, and two numbers I check by hand.",
+"Files: mutla-leave-policy-2026.docx"
+],
+"chrome": []
+},
+{
+"n": 55,
+"id": "b4task3",
+"kind": "task",
+"title": "Your turn 1.6",
+"topic": "b4",
+"kit": [
+"Task 1.6",
+"on your own",
+"Word · Copilot",
+"Two lines in the file should not reach a review meeting. Which ones, and why?",
+"Ask Copilot: which comments disagree with each other? Check its answer in the file.",
+"mutla-360-feedback-emp-4127.docx",
+"Open the 360 feedback file in Word. Copilot, then Summarize this document. (No Copilot in Word? Attach it to Copilot Chat.)",
+"Then ask for strengths, development areas and projects, with who said each point.",
+"Read the summary against the file. Is anything there that should not be? Is anything missing?",
+"A one-page summary with three headings, each point with its reviewer.",
+"Your turn: summarize 360 feedback for a review.",
+"Block 4 · Copilot in Word, then Outlook"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"You hand in",
+"Where we are",
+"AI",
+"Prompt",
+"Notebook",
+"Word, Outlook",
+"Save"
+]
+},
+{
+"n": 56,
+"id": "b4chk",
+"kind": "check",
+"title": "Quick check",
+"topic": "b4",
+"kit": [
+"Your 360 summary ends with Suggested rating: Exceeds expectations. What do you do?",
+"Keep it: a peer suggested it",
+"Change it to the rating you think is fair",
+"Delete it; the manager and HR decide ratings"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 57,
+"id": "b4live4",
+"kind": "list",
+"title": "Rewrite: new words, same facts.",
+"topic": "b4",
+"kit": [
+"Demo 1.7 · live in Word · Copilot",
+"Rewrite: new words, same facts.",
+"New words, same facts.",
+"What I will show: One paragraph of the memo from Demo 1.5, rewritten shorter and warmer.",
+"Watch for: The date and the minutes, before and after.",
+"Files: none: the request is on the prompt sheet"
+],
+"chrome": []
+},
+{
 "n": 58,
+"id": "b4task4",
+"kind": "task",
+"title": "Your turn 1.7",
+"topic": "b4",
+"kit": [
+"Task 1.7",
+"on your own",
+"Word · Copilot",
+"Rewrite keeps the old facts. Read the checklist's section 2 and section 4.",
+"Ask Copilot for a version for field site staff. Check the time and place against the checklist.",
+"mutla-welcome-letter-2019.docx",
+"mutla-onboarding-checklist-2026.docx",
+"Open the 2019 letter in Word. Select one paragraph at a time, then Copilot, Rewrite. (No Copilot in Word? Paste each paragraph into Copilot Chat.)",
+"Make it warm, short and clear for a new graduate. The first day goes in a short list.",
+"Check every time, place and document against the onboarding checklist. Where the letter is out of date, the checklist wins.",
+"A rewritten welcome letter with the first day, documents and probation from the checklist.",
+"Your turn: rewrite the 2019 welcome letter.",
+"Block 4 · Copilot in Word, then Outlook"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"You hand in",
+"Where we are",
+"AI",
+"Prompt",
+"Notebook",
+"Word, Outlook",
+"Save"
+]
+},
+{
+"n": 59,
+"id": "b4t2",
+"kind": "term",
+"title": "Turn the tone dial. Keep the facts.",
+"topic": "b4",
+"kit": [
+"Block 4 · tone",
+"Turn the tone dial. Keep the facts.",
+"Tone dial",
+"The same facts written for employees, line managers or senior leadership. You name the facts that must not change.",
+"“Make it friendlier.”",
+"“Rewrite it for managers; keep every date and rule.”",
+"The reader changes the order and the voice, never the facts."
+],
+"chrome": [
+"The idea"
+]
+},
+{
+"n": 60,
+"id": "b4live2",
+"kind": "list",
+"title": "One reminder, three readers.",
+"topic": "b4",
+"kit": [
+"Demo 1.8 · live in Copilot Chat · Outlook",
+"One reminder, three readers.",
+"Change the tone. Keep the facts.",
+"What I will show: The carry-over reminder from Demo 1.2, rewritten for line managers and for senior leadership.",
+"Watch for: The number and the date. They must be the same in every version.",
+"Files: mutla-leave-policy-2026.docx"
+],
+"chrome": []
+},
+{
+"n": 61,
+"id": "b4task2",
+"kind": "task",
+"title": "Your turn 1.8",
+"topic": "b4",
+"kit": [
+"Task 1.8",
+"on your own",
+"Copilot Chat · Outlook",
+"The start date changed during the thread. The approved one is in message 24.",
+"Ask Copilot to check your three versions against each other: list any date, time or number that differs.",
+"mutla-email-thread-attendance.docx",
+"Attach mutla-email-thread-attendance.docx to a new chat, or open the thread in Outlook with Copilot.",
+"Run the decisions request below. Find the approved start date.",
+"Write your own checklist request for the staff announcement. Then ask for a version for line managers and a three-line version for senior leadership. The facts stay the same.",
+"Write a reply to Mubarak's request in message 29. Do not promise an exception.",
+"Check every date and time by hand against message 24.",
+"Decisions first (step 2)",
+"I am writing the staff announcement and must not miss a decision. Summarize the attached email thread: every decision, then the open questions. Use only mutla-email-thread-attendance.docx. If a later message changed an earlier one, use the later decision and say so. Leave out personal notes that are not decisions. A table: decision, owner, date, message number. Then a list of open questions.",
+"Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
+"Your turn: announce and reply in Outlook.",
+"Block 4 · Copilot in Word, then Outlook"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"Copy",
+"copy, paste, then check",
+"is on your",
+"prompt sheet",
+"If the tool is slow, continue from the backup on the screen.",
+"Where we are",
+"AI",
+"Prompt",
+"Notebook",
+"Word, Outlook",
+"Save"
+]
+},
+{
+"n": 62,
 "id": "b4chk2",
 "kind": "check",
 "title": "Quick check",
@@ -1327,7 +1449,7 @@
 ]
 },
 {
-"n": 59,
+"n": 63,
 "id": "b4chk3",
 "kind": "check",
 "title": "Quick check",
@@ -1348,7 +1470,7 @@
 ]
 },
 {
-"n": 60,
+"n": 64,
 "id": "b4deb",
 "kind": "rule",
 "title": "Change the tone, keep the rules.",
@@ -1361,7 +1483,7 @@
 "chrome": []
 },
 {
-"n": 61,
+"n": 65,
 "id": "b5bank",
 "kind": "list",
 "title": "A request you checked is worth saving.",
@@ -1378,7 +1500,7 @@
 "chrome": []
 },
 {
-"n": 62,
+"n": 66,
 "id": "b5go",
 "kind": "timer",
 "title": "Save two entries, then read one to a neighbor.",
@@ -1386,7 +1508,7 @@
 "kit": [
 "Prompt Bank · 8 minutes",
 "Save two entries, then read one to a neighbor.",
-"Fill two entries in mutla-prompt-bank-template.docx: your job description request and your announcement request. Then read one to the person next to you."
+"Fill two entries in mutla-prompt-bank-template.docx: your memo request and your notebook instruction. Then read one to the person next to you."
 ],
 "chrome": [
 "+1 min",
@@ -1397,7 +1519,7 @@
 ]
 },
 {
-"n": 63,
+"n": 67,
 "id": "b5seats",
 "kind": "list",
 "title": "One checklist, many seats.",
@@ -1414,7 +1536,7 @@
 "chrome": []
 },
 {
-"n": 64,
+"n": 68,
 "id": "b5gcse",
 "kind": "table",
 "title": "The same idea, in Microsoft's words.",
@@ -1437,7 +1559,7 @@
 "chrome": []
 },
 {
-"n": 65,
+"n": 69,
 "id": "w1",
 "kind": "wrap",
 "title": "Wrap-up",
@@ -1462,7 +1584,7 @@
 ]
 },
 {
-"n": 66,
+"n": 70,
 "id": "close1",
 "kind": "close",
 "title": "Close",

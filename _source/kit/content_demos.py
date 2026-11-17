@@ -22,11 +22,12 @@ F = {
  "payroll": "mutla-payroll-check-oct-nov-2026.xlsx", "onboard": "mutla-onboarding-checklist-2026.docx",
  "overtime": "mutla-overtime-export-oct-2026.xlsx", "otmemo": "mutla-overtime-memo-draft.docx",
  "q3report": "mutla-hr-quarterly-report-q3-2026.docx", "messydeck": "mutla-q3-hr-update-messy.pptx",
+ "r360": "mutla-360-feedback-emp-4127.docx", "welcome": "mutla-welcome-letter-2019.docx",
 }
 CASE_FILES = [D.CASES[k]["file"] for k, _n in D.TRACKS]
 CAP_FILES = [D.CAPSTONE[k]["file"] for k, _n in D.TRACKS]
 ALL_FILES = [F["leave"], F["answer"], F["case"], F["oldjd"], F["tpl"], F["roles"], F["catchjd"], F["bank"], F["letters"],
-             F["v3"], F["v4"], F["thread"], F["transcript"], F["trackers"], F["payroll"], F["overtime"], F["brief"], F["otmemo"], F["q3report"], F["messydeck"]] + CASE_FILES + [F["stories"], F["maptpl"],
+             F["r360"], F["welcome"], F["v3"], F["v4"], F["thread"], F["transcript"], F["trackers"], F["payroll"], F["overtime"], F["brief"], F["otmemo"], F["q3report"], F["messydeck"]] + CASE_FILES + [F["stories"], F["maptpl"],
              F["attendance"], F["training"], F["factors"], F["onboard"], F["card"], F["palog"], F["catchbank"]]
 assert len(ALL_FILES) == len(set(ALL_FILES))
 
@@ -41,9 +42,11 @@ FILE_ABOUT = {
  F["catchjd"]: ("A job description Copilot drafted. It looks finished but has not been checked.", "Anyone who needs to check a draft.", "Extra practice: check it line by line against the role information."),
  F["bank"]: ("An empty Prompt Bank: four columns for the requests you want to keep.", "You, after the workshop.", "End of Day 1."),
  F["letters"]: ("Three experience letter requests, the HR system record for each person and the letter rules.", "Personnel and Administration.", "Extra practice: check each request against the HR system record."),
- F["v3"]: ("The allowances policy in force today, version 3.", "Compensation, and every employee who gets an allowance.", "Task 1.5; the HR assistant's knowledge on Day 3."),
- F["v4"]: ("The new allowances policy, version 4, approved this year.", "Compensation, and every employee who gets an allowance.", "Task 1.5; the HR assistant's knowledge on Day 3."),
- F["thread"]: ("Thirty emails in which managers agreed the new attendance rules. Some early ideas were changed later.", "Personnel and Administration, before the staff announcement.", "Task 1.6."),
+ F["v3"]: ("The allowances policy in force today, version 3.", "Compensation, and every employee who gets an allowance.", "The HR assistant's knowledge on Day 3."),
+ F["v4"]: ("The new allowances policy, version 4, approved this year.", "Compensation, and every employee who gets an allowance.", "The HR assistant's knowledge on Day 3."),
+ F["r360"]: (f"360 feedback for one Senior HR Officer ({D.R360_EMP}): a self-review and comments from the manager, three peers and two team members.", "The line manager and HR, before the review meeting.", "Task 1.6: summarize it in Word."),
+ F["welcome"]: ("The welcome letter Personnel sent to new graduates in 2019. Long, formal and partly out of date.", "Personnel and Administration, for every new joiner.", "Task 1.7: rewrite it in Word."),
+ F["thread"]: ("Thirty emails in which managers agreed the new attendance rules. Some early ideas were changed later.", "Personnel and Administration, before the staff announcement.", "Task 1.8."),
  F["transcript"]: ("The Teams transcript of a staffing meeting about the new Drilling Support section.", "The people at the meeting, and Manpower.", "Tasks 2.3 and 2.4: recap and follow up."),
  F["trackers"]: ("The Q3 HR trackers exported from the HR system: training requests, manpower and control totals.", "L&D and Manpower, before the quarterly report.", "Demo 2.6 and Task 2.6."),
  F["payroll"]: ("October and November payroll for one payroll group, and the list of approved changes for November.", "Compensation and Personnel, before the bank file is sent.", "Task 2.7, option A."),
@@ -59,7 +62,7 @@ FILE_ABOUT = {
  F["attendance"]: ("The approved attendance rules: start times, core hours and permissions.", "Every employee; Personnel answers questions from it.", "The Block 3 notebook on Day 1; the HR assistant's knowledge on Day 3."),
  F["training"]: ("The training policy: how employees request and attend training.", "Learning and Development, line managers and employees.", "Day 1 Task 1.2 and the Block 3 notebook; the HR assistant's knowledge on Day 3."),
  F["factors"]: ("The five factors the Job Evaluation committee uses to compare jobs.", "Job Evaluation and Salary Scaling.", "Task 3.4: the Job Description Coach's knowledge."),
- F["onboard"]: ("The checklist for a new joiner's first day, first week and first month.", "Personnel and Administration, and every new joiner.", "Task 3.4: the Onboarding Buddy's knowledge."),
+ F["onboard"]: ("The checklist for a new joiner's first day, first week and first month.", "Personnel and Administration, and every new joiner.", "Task 1.7 (the source for the welcome letter) and Task 3.4 (the Onboarding Buddy's knowledge)."),
  F["catchbank"]: ("Eight requests that were tested in class, ready to copy.", "Anyone who missed a task or wants a model.", "Catch-up file for every day."),
 }
 for _k, _n in D.TRACKS: FILE_ABOUT[D.CASES[_k]["file"]] = (f"The {_n} case: {D.CASES[_k]['title'].lower()}. The facts, the people, the meeting and the open question.", f"{_n}.", "Tasks 2.2, 2.5 and 2.11.")
@@ -287,8 +290,48 @@ demo("t14", day=1, skill="1.4", sec=4, title="Answer three employees from your n
  hint="If an answer has no file or section, ask for them. Then open the file yourself.",
  stretch=["Ask the notebook for a one-page FAQ for new joiners from the three files. Check five answers."])
 
-demo("d15", day=1, skill="1.5", sec=5, title="A policy summary with section numbers", tool="Word · Copilot", files=[F["leave"]],
- setup=["[T] Open the leave policy in Word and select Copilot. (No Copilot in Word: a new chat with the file attached.)", "[T] Paste the summary request. Read the bullets aloud.",
+HSE = D.HSE_MEMO
+MEMO_DEMO = five([("Role", f"You are the Head of Learning and Development at {D.COMPANY}."), ("Context", "The memo goes to all staff."),
+    ("Task", "Write a short memo about the HSE Induction e-learning."),
+    ("Data", f"Every employee must complete the {HSE['course']} by {HSE['due']}. It takes about {HSE['minutes']} minutes. It is in {HSE['where']}. Questions: {HSE['contact']}."),
+    ("Constraints", "Use only these facts. Add no link, no name and no date."), ("Tone", "Clear and friendly."),
+    ("Output format", f"A subject line, then under 120 words, starting with: {D.DRAFT_LINE}")])
+TNS = D.TNS
+TNS_FACTS = (f"The 2027 training needs survey opens on {TNS['open']} and closes on {TNS['close']}. It is in {TNS['where']}. Line managers add {TNS['what']}. "
+             f"L&D shares the 2027 training plan by {TNS['plan']}. Questions: {TNS['contact']}.")
+MEMO_TASK = five([("Role", f"You are the Head of Learning and Development at {D.COMPANY}."), ("Context", "The memo goes to all line managers."),
+    ("Task", "Write a memo asking them to complete the 2027 training needs survey."), ("Data", TNS_FACTS),
+    ("Constraints", "Use only these facts. Add no link, no name and no date. Keep every date as written."), ("Tone", "Formal and clear."),
+    ("Output format", f"A subject line, the steps as numbered points, under 200 words, starting with: {D.DRAFT_LINE}")])
+demo("d15", day=1, skill="1.5", sec=5, title="Draft a memo from a prompt", tool="Word · Copilot", files=[],
+ setup=["[T] Open a blank Word document. Select Draft with Copilot. (No Copilot in Word: the same request in Copilot Chat.)",
+        "[T] Paste the request. Read the memo aloud.", "[T] Check the date and the minutes against the request. Look for anything Copilot added: a link, a name, a date."],
+ prompts=[("A memo from a prompt", joined(MEMO_DEMO))],
+ expected=f"A short memo: the {HSE['course']} by {HSE['due']}, about {HSE['minutes']} minutes, in {HSE['where']}, questions to {HSE['contact']}. Nothing added.",
+ say="With no file, your prompt is the only source. Every fact in the memo must come from what you typed.",
+ point="Draft from a prompt: the facts in your request are the only facts.",
+ backup=[("h", "Typical memo"), ("p", f"Subject: Complete the {HSE['course']} by {HSE['due']}"), ("p", f"Every employee must complete the {HSE['course']} by {HSE['due']}. It takes about {HSE['minutes']} minutes and you will find it in {HSE['where']}. Questions: {HSE['contact']}.")],
+ fallback="Show the backup memo on the trainer screen.",
+ hint="Did Copilot add a link, a name or a date that was not in the request?")
+
+demo("t15", day=1, skill="1.5", sec=5, title="The training needs survey memo", tool="Word · Copilot", files=[], kind="task", hands_on=True, minutes=10, solo="on your own",
+ setup=["Open a blank Word document. Select Draft with Copilot. (No Copilot in Word? Use Copilot Chat.)",
+        "Write your own request with all five parts. Paste the facts below as your Data.",
+        "Check every date in the memo against the facts. Delete anything Copilot added."],
+ prompts=[("The facts for your memo", TNS_FACTS)],
+ expected=f"A memo to line managers: the survey runs {TNS['open']} to {TNS['close']} in {TNS['where']}; one skill for now and one for two years per team member; the plan by {TNS['plan']}; questions to {TNS['contact']}. No link, name or extra date.",
+ say="A memo you send to every line manager. With no file, your request is the only source.",
+ point="Every fact in the memo comes from your request. Anything else gets deleted.",
+ backup=[("h", "A model request"), ("p", joined(MEMO_TASK))],
+ answer=[("h", "Check the memo for"), ("ul", [f"Opens {TNS['open']}, closes {TNS['close']}.", f"Where: {TNS['where']}.", f"What managers add: {TNS['what']}.",
+         f"The 2027 plan by {TNS['plan']}.", f"Questions: {TNS['contact']}.", "No link, no person's name, no extra date or deadline.", "The DRAFT line at the top."])],
+ deliverable="A one-page memo to line managers, every date as in the facts.",
+ fallback="No Copilot in Word: write the same request in Copilot Chat and paste the memo into Word.",
+ hint="Copilot likes to add a link or a contact name. Neither is in the facts.",
+ stretch=["Select one paragraph and use Rewrite: make it shorter. Check the dates did not move."])
+
+demo("d17", day=1, skill="1.6", sec=5, title="Summarize the leave policy for new joiners", tool="Word · Copilot", files=[F["leave"]],
+ setup=["[T] Open the leave policy in Word. Copilot, then Summarize this document. (No Copilot in Word: a new chat with the file attached.)", "[T] Paste the summary request. Read the bullets aloud.",
         "[T] Check two numbers by hand against the policy: the carry-over days and the notice period."],
  prompts=[("Summary for new joiners", joined(SUM_LEAVE))],
  expected=f"Up to eight bullets, each with its section: {D.LEAVE['annual']} days a year (2), request {D.LEAVE['notice']} days before (3), carry over up to {D.LEAVE['carry']} days used by {D.LEAVE['carry_by']} (4), "
@@ -299,26 +342,55 @@ demo("d15", day=1, skill="1.5", sec=5, title="A policy summary with section numb
  fallback="Show the backup summary on the trainer screen.",
  hint="Pick two numbers and find them in the policy yourself.")
 
-demo("t15", day=1, skill="1.5", sec=5, title="The allowances policy for staff", tool="Word · Copilot", files=[F["v4"], F["v3"]], kind="task", hands_on=True, minutes=15, solo="on your own",
- setup=[f"Open {F['v4']} in Word and select Copilot. No Copilot in Word? Attach it to a new chat.",
-        "Write your own checklist request: a one-page summary of the policy for staff, every point with its section number.",
-        "Check three numbers by hand against the policy: the housing maximum, the transport grades and the remote-site days.",
-        "Check the date: from when does version 4 apply? Does your summary say so?"],
+R360Q = five([("Role", f"You are a Senior HR Officer at {D.COMPANY}."), ("Context", "The line manager reads this before the review meeting."),
+    ("Task", f"Summarize the attached 360 feedback for {D.R360_EMP}."), ("Data", "Use only the attached file."),
+    ("Constraints", "Group it into strengths, development areas and projects. Name who said each point, by role. Leave out anything about private life. Do not suggest a rating."),
+    ("Tone", "Neutral and fair."), ("Output format", f"Three short headings with bullets, one page at most, starting with: {D.DRAFT_LINE}")])
+demo("t17", day=1, skill="1.6", sec=5, title="Summarize 360 feedback for a review", tool="Word · Copilot", files=[F["r360"]], kind="task", hands_on=True, minutes=12, solo="on your own",
+ setup=["Open the 360 feedback file in Word. Copilot, then Summarize this document. (No Copilot in Word? Attach it to Copilot Chat.)",
+        "Then ask for strengths, development areas and projects, with who said each point.",
+        "Read the summary against the file. Is anything there that should not be? Is anything missing?"],
  prompts=[],
- expected=f"A one-page summary with sections 2 to 7: housing 25% of basic salary up to KWD {A['housing_v4']}; transport KWD {A['transport']} for grades {A['transport_v4']}; child KWD {A['child']} for up to {A['child_max']} children; "
-          f"remote-site {A['remote_pct']}% for more than {A['remote_days']} days; requests in the HR system; changes reported within 30 days. It says version 4 applies from {D.ALLOW_V4_DATE}, and version 3 until then.",
- say="Your summary will be read by people who never open the policy. Every number and date must be right.",
- point="Section numbers, numbers as written, and the date it applies.",
- backup=[("h", "The facts the summary must match")] + [("p", f"Section {n}. {t}: {s}") for n, t, s in D.allowances_sections(4)[1:]] + [("p", f"Version 4 applies from {D.ALLOW_V4_DATE}. Until then, version 3 applies.")],
- answer=[("h", "The planted problem"), ("p", f"The policy title says version 4 applies from {D.ALLOW_V4_DATE}. A summary that says \"the housing maximum is KWD {A['housing_v4']}\" with no date is wrong today: version 3 (KWD {A['housing_v3']}) applies until then. Accept a summary that gives both, with the date."),
-         ("h", "Numbers to check"), ("ul", [f"Housing: 25% of basic salary, up to KWD {A['housing_v4']} (section 2).", f"Transport: KWD {A['transport']} for grades {A['transport_v4']} (section 3).", f"Remote site: {A['remote_pct']}% for more than {A['remote_days']} days in a month (section 5)."])],
- deliverable=f"A one-page summary for staff, with section numbers and the date version 4 starts.",
- fallback="If Copilot is slow, write the three numbers and the date by hand from the policy.",
- hint="Look at the title of the policy. From which date does it apply?",
- stretch=["Compare version 3 and version 4: list every change with its section number."],
- stretch_prompts=[COMPARE])
+ expected=f"Strengths, development areas and projects for {D.R360_EMP}, each point with its reviewer (self, manager, peer, team member). The comment about problems at home and the suggested rating are left out.",
+ say="A summary that goes to a review meeting. Fair to the person, and only about work.",
+ point="Each point says who said it. Private life and ratings stay out.",
+ backup=[("h", "What a good summary covers"), ("ul", ["Strengths: reliable, delivers on time (manager); helpful with data (peer 1); clear instructions (team).",
+          "Development: presenting to senior managers (self, manager); delegating (manager); Thursday deadlines (peer 1, team).",
+          "Projects: the Drilling Support staffing plan; the manpower tracker clean-up; onboarding 12 graduates."])],
+ answer=[("h", "The two planted traps"), tbl(["Trap", "Where", "What to do"], D.R360_TRAPS), ("h", "A model request"), ("p", joined(R360Q))],
+ deliverable="A one-page summary with three headings, each point with its reviewer.",
+ fallback="No Copilot in Word: attach the file to Copilot Chat and ask for the same summary.",
+ hint="Two lines in the file should not reach a review meeting. Which ones, and why?",
+ stretch=["Ask Copilot: which comments disagree with each other? Check its answer in the file."])
 
-demo("d16", day=1, skill="1.6", sec=5, title="Turn the tone dial, keep the facts", tool="Copilot Chat · Outlook", files=[F["leave"]],
+demo("d18", day=1, skill="1.7", sec=5, title="Rewrite a paragraph, keep the facts", tool="Word · Copilot", files=[],
+ setup=["[T] Go back to the memo from Demo 1.5. Select the first paragraph.", "[T] Copilot, then Rewrite. Show the versions. Pick one, then Replace.",
+        "[T] Read the date and the minutes again. Did they change?"],
+ prompts=[("A rewrite with a rule", "Rewrite this paragraph for new joiners: shorter and warmer. Keep the date and the time exactly as written.")],
+ expected=f"A shorter, warmer paragraph with the same date ({HSE['due']}) and the same {HSE['minutes']} minutes.",
+ say="Rewrite changes how it sounds. You check that it did not change what it says.",
+ point="New words, same facts.",
+ backup=[("h", "Typical rewrite"), ("p", f"Welcome to Mutla. Please finish the {HSE['course']} by {HSE['due']}. It takes about {HSE['minutes']} minutes.")],
+ fallback="No Copilot in Word: paste the paragraph into Copilot Chat with the same request.",
+ hint="Compare the numbers before and after.")
+
+demo("t18", day=1, skill="1.7", sec=5, title="Rewrite the 2019 welcome letter", tool="Word · Copilot", files=[F["welcome"], F["onboard"]], kind="task", hands_on=True, minutes=12, solo="on your own",
+ setup=["Open the 2019 letter in Word. Select one paragraph at a time, then Copilot, Rewrite. (No Copilot in Word? Paste each paragraph into Copilot Chat.)",
+        "Make it warm, short and clear for a new graduate. The first day goes in a short list.",
+        "Check every time, place and document against the onboarding checklist. Where the letter is out of date, the checklist wins."],
+ prompts=[],
+ expected="A short, warm letter. First day, documents and probation follow the 2026 checklist, not the 2019 letter.",
+ say="An old letter, a new joiner. Rewrite gives you new words fast. The checklist decides the facts.",
+ point="Rewrite the words. The checklist decides the facts.",
+ backup=[("h", "What the checklist says")] + [("p", f"<b>{a}:</b> {c}") for a, _b, c in D.WELCOME_FIXES],
+ answer=[("h", "Three things the 2019 letter gets wrong"), tbl(["Topic", "The 2019 letter", "The 2026 checklist"], D.WELCOME_FIXES),
+         ("note", "Rewrite alone keeps the old facts in new words. Accept a letter only when all three follow the checklist.")],
+ deliverable="A rewritten welcome letter with the first day, documents and probation from the checklist.",
+ fallback="Without the Word app: Copilot Chat, one paragraph at a time, with your rewrite request.",
+ hint="Rewrite keeps the old facts. Read the checklist's section 2 and section 4.",
+ stretch=["Ask Copilot for a version for field site staff. Check the time and place against the checklist."])
+
+demo("d16", day=1, skill="1.8", sec=5, title="Turn the tone dial, keep the facts", tool="Copilot Chat · Outlook", files=[F["leave"]],
  setup=["[T] Go back to the chat from Demo 1.2, with the carry-over reminder.", "[T] Paste the tone request. Read both versions aloud.",
         "[T] Point to the number and the date in each version: they did not change.", "[T] Where the account allows it, open a new email in Outlook and use Draft with Copilot (the Copilot button) with the same request."],
  prompts=[("Two more readers", joined(TONE))],
@@ -330,7 +402,7 @@ demo("d16", day=1, skill="1.6", sec=5, title="Turn the tone dial, keep the facts
  fallback="Show the backup versions on the trainer screen.",
  hint="Find the number and the date in every version.")
 
-demo("t16", day=1, skill="1.6", sec=5, title="Announce and reply in Outlook", tool="Copilot Chat · Outlook", files=[F["thread"]], kind="task", hands_on=True, minutes=17, solo="on your own",
+demo("t16", day=1, skill="1.8", sec=5, title="Announce and reply in Outlook", tool="Copilot Chat · Outlook", files=[F["thread"]], kind="task", hands_on=True, minutes=17, solo="on your own",
  setup=[f"Attach {F['thread']} to a new chat, or open the thread in Outlook with Copilot.", "Run the decisions request below. Find the approved start date.",
         "Write your own checklist request for the staff announcement. Then ask for a version for line managers and a three-line version for senior leadership. The facts stay the same.",
         "Write a reply to Mubarak's request in message 29. Do not promise an exception.", "Check every date and time by hand against message 24."],
@@ -924,7 +996,7 @@ AI_DEMOS = [k for k, v in DEMOS.items() if v.get("kind") in ("player", "showcase
 # lab prompts that live in this file: filled into the Day 2 and Day 3 labs (content.py cannot import this file)
 CHECKCARD = DEMOS["t38"]["prompts"][0][1]
 assert " a flow " not in CHECKCARD
-_FILL = {"RECAP": joined(RECAP), "MAP_FILE": joined(MAP_FILE), "AGENT": joined(AGENT), "COACH": joined(COACH), "CHECKCARD": CHECKCARD, "PAYREQ": PAYREQ, "OTREQ": OTREQ,
+_FILL = {"RECAP": joined(RECAP), "MAP_FILE": joined(MAP_FILE), "AGENT": joined(AGENT), "COACH": joined(COACH), "CHECKCARD": CHECKCARD, "PAYREQ": PAYREQ, "OTREQ": OTREQ, "MEMO": joined(MEMO_TASK), "R360": joined(R360Q),
          "COACH_BUDDY": "Job Description Coach: " + joined(COACH) + "\n\nOnboarding Buddy: " + joined(BUDDY)}
 for _L in C.LABS.values():
     for _s in _L["steps"]:

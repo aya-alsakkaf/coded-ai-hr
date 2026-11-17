@@ -1,5 +1,15 @@
 # Changelog
 
+## 17 November 2026 · Day 1 Block 4: three Word exercises, then Outlook
+
+- Block 4 is "Copilot in Word, then Outlook": Demo and Task 1.5 draft from a prompt (an HSE e-learning memo; the training
+  needs survey memo), Demo and Task 1.6 summarize (the leave policy; 360 feedback for EMP-4127 with two traps: private life and
+  a suggested rating), Demo and Task 1.7 rewrite (a memo paragraph; the 2019 welcome letter against the onboarding checklist).
+  The Outlook part is now Demo and Task 1.8 at 14:25, or the start of Day 2 if time runs out. Copilot Chat is the fallback in
+  every step. The allowances summary task is gone (the files stay for Day 3).
+- Two new files: `mutla-360-feedback-emp-4127.docx`, `mutla-welcome-letter-2019.docx` (36 sample files). The Prompt Bank asks
+  for the memo request and the notebook instruction. Day 1 has 70 slides.
+
 ## 17 November 2026 · Day 1 Block 3 is now Copilot Notebooks
 
 - Block 3 (12:15-13:20) "Draft, fix and check in Word" is replaced by "Copilot Notebooks: your policies in one place":
