@@ -100,3 +100,5 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
     removed; a real-cases slide (b1real) after "Fluent and wrong"; an animated slide (b1train) before the keycard on personal
     chatbots training on chats vs Copilot with a work account. Real public cases are allowed on slides; practice data stays
     fictional. Day 1 has 70 slides. The animation is a kit slide (`trainslide` in build_deck.py, CSS in content.EXTRA_CSS).
+33. 17 Nov 2026, during Day 1 (Aya): Block 3 is Copilot Notebooks (Tasks 1.3 build, 1.4 answer three employees); the Word
+    block and Demo 1.3b are removed; Block 4 uses Copilot in Word first, Copilot Chat as fallback. Day 1 has 66 slides.

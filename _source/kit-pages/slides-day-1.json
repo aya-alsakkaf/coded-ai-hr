@@ -106,8 +106,8 @@
 "Block 2 · Writing a clear prompt",
 "The prompt checklist: five parts · Task 1.2",
 "12:15-13:20",
-"Block 3 · Draft, fix and check in Word",
-"Follow-up instructions and the source of every line · Tasks 1.3 and 1.4",
+"Block 3 · Copilot Notebooks: your policies in one place",
+"Build a notebook from three policies, then answer three employees from it · Tasks 1.3 and 1.4",
 "13:35-14:40",
 "Block 4 · From policy to people: Word, then Outlook",
 "A policy summary, then one message for three readers · Tasks 1.5 and 1.6",
@@ -573,8 +573,8 @@
 "Where we are",
 "AI",
 "Prompt",
-"Word",
-"Outlook",
+"Notebook",
+"Word, Outlook",
 "Save"
 ]
 },
@@ -853,8 +853,8 @@
 "Where we are",
 "AI",
 "Prompt",
-"Word",
-"Outlook",
+"Notebook",
+"Word, Outlook",
 "Save"
 ]
 },
@@ -875,14 +875,14 @@
 "n": 41,
 "id": "b3story",
 "kind": "story",
-"title": "Block 3 · Draft, fix and check in Word",
+"title": "Block 3 · Copilot Notebooks",
 "topic": "b3",
 "kit": [
-"Block 3 · Draft, fix and check in Word",
+"Block 3 · Copilot Notebooks",
 "Wednesday 11 November, 12:15",
-"Hessa's checklist draft looks perfect. Then she reads it twice: “Manages a team of six analysts.” and “Grade 8.” Neither is in the role information. And it is two pages.",
-"A good draft still needs fixing.",
-"Fix a draft with follow-up instructions, and ask for the source of every line.",
+"Every week Personnel gets the same questions: carry-over, start times, how to ask for training. Each time, Fatma opens three policies and starts from zero.",
+"Same questions, same three files.",
+"Build a Copilot Notebook from the policies, then use it to answer real questions and check every answer.",
 "03"
 ],
 "chrome": [
@@ -894,16 +894,16 @@
 "n": 42,
 "id": "b3t1",
 "kind": "term",
-"title": "Fix it. Do not start again.",
+"title": "Your files and your rules, in one place.",
 "topic": "b3",
 "kit": [
 "Block 3 · the idea",
-"Fix it. Do not start again.",
-"Follow-up instruction",
-"A short message in the same chat that names one problem, says how to fix it, and says what must not change.",
-"“Make it better.”",
-"“Add the missing duty, word for word. Change nothing else.”",
-"Name the problem. Name what to keep."
+"Your files and your rules, in one place.",
+"Copilot Notebook",
+"A workspace in Copilot that keeps your files, your instructions and your chats together. It answers only from the files you add, not from the web.",
+"Three policies open in three windows, every week.",
+"One notebook with the three policies and your rules for answering.",
+"Set it up once. Check every answer."
 ],
 "chrome": [
 "The idea"
@@ -913,21 +913,21 @@
 "n": 43,
 "id": "b3fu",
 "kind": "cards",
-"title": "Three follow-ups you will use every week.",
+"title": "Three parts of every notebook.",
 "topic": "b3",
 "kit": [
-"Block 3 · three follow-ups",
-"Three follow-ups you will use every week.",
-"One problem per follow-up.",
-"Fix what is missing",
-"Add or correct one thing",
-"Add the missing duty, word for word.",
-"Fix the shape",
-"Length, order, format",
-"One page. Keep every duty.",
-"Show the guesses",
-"Ask what it assumed",
-"List every assumption that is not in the files."
+"Block 3 · three parts",
+"Three parts of every notebook.",
+"The instructions are your prompt checklist, written once.",
+"References",
+"The files",
+"The policies it may answer from. Nothing else: no web, no other files.",
+"Instructions",
+"The rules",
+"How it answers: name the file and section, never guess, say when it does not know.",
+"Chats",
+"The questions",
+"Every question you ask stays in the notebook, so the next answer starts from the same files."
 ],
 "chrome": []
 },
@@ -935,111 +935,20 @@
 "n": 44,
 "id": "b3live1",
 "kind": "list",
-"title": "One draft, three follow-ups.",
+"title": "A notebook in four steps.",
 "topic": "b3",
 "kit": [
-"Demo 1.3 · live in Copilot Chat",
-"One draft, three follow-ups.",
-"A follow-up names the problem and what to keep.",
-"What I will show: The job description for the Compensation Analyst, then three short follow-ups in the same chat.",
-"Watch for: What changes after each follow-up, and what stays the same.",
-"Files: mutla-role-information-2026.docx, mutla-jd-template-2026.docx"
+"Demo 1.3 · live in Copilot Notebooks",
+"A notebook in four steps.",
+"Copilot answers only from the files you add. It names the file and the section, and you open it.",
+"What I will show: Notebooks, a new notebook, three policies, the instruction, then one test question.",
+"Watch for: The file and the section in the answer, and whether the number matches.",
+"Files: mutla-leave-policy-2026.docx, mutla-attendance-rules-2026.docx, mutla-training-policy-2026.docx"
 ],
 "chrome": []
 },
 {
 "n": 45,
-"id": "b3an",
-"kind": "rule",
-"title": "An auditor ticks every line against a receipt.",
-"topic": "b3",
-"kit": [
-"Block 3 · the picture",
-"An auditor ticks every line against a receipt.",
-"A line with no receipt is not paid. A line in a draft with no source is not sent."
-],
-"chrome": []
-},
-{
-"n": 46,
-"id": "b3t2",
-"kind": "term",
-"title": "Ask Copilot to show its receipts.",
-"topic": "b3",
-"kit": [
-"Block 3 · the idea",
-"Ask Copilot to show its receipts.",
-"Source trace",
-"A table where every line of the draft shows the line of the source it came from, or says NOT IN SOURCE.",
-"Like the auditor's receipts…",
-"…every line has its source, or it goes.",
-"No source, no line."
-],
-"chrome": [
-"The idea"
-]
-},
-{
-"n": 47,
-"id": "b3fail",
-"kind": "cards",
-"title": "Three failures to look for.",
-"topic": "b3",
-"kit": [
-"Block 3 · three ways a draft fails",
-"Three failures to look for.",
-"The source trace catches the first. Reading the source catches the other two.",
-"Unsupported claim",
-"A line with no source",
-"“Manages a team of six.”",
-"Missing information",
-"A source line left out",
-"A duty from the role sheet is gone.",
-"Confident mistake",
-"A source line changed",
-"15 days became 30."
-],
-"chrome": []
-},
-{
-"n": 48,
-"id": "b3live2",
-"kind": "list",
-"title": "Every line, with its source.",
-"topic": "b3",
-"kit": [
-"Demo 1.3b · live in Copilot Chat",
-"Every line, with its source.",
-"No source, no line.",
-"What I will show: A finished-looking draft, checked line by line against the role sheet.",
-"Watch for: The NOT IN SOURCE lines. Then the role sheet, to prove they are not there.",
-"Files: mutla-catchup-jd-draft.docx, mutla-role-information-2026.docx, mutla-jd-template-2026.docx"
-],
-"chrome": []
-},
-{
-"n": 49,
-"id": "b3chk",
-"kind": "check",
-"title": "Quick check",
-"topic": "b3",
-"kit": [
-"The source trace marks one duty NOT IN SOURCE. What now?",
-"Delete it, or check it with the owner",
-"Keep it, because it sounds right for the role",
-"Ask Copilot if it is sure"
-],
-"chrome": [
-"Quick check",
-"A",
-"B",
-"C",
-"Correct",
-"Not quite"
-]
-},
-{
-"n": 50,
 "id": "b3task",
 "kind": "task",
 "title": "Your turn 1.3",
@@ -1047,22 +956,21 @@
 "kit": [
 "Task 1.3",
 "on your own",
-"Copilot Chat · Word",
-"Data names both files. Constraints say what Copilot must not add: duties, a team size, a grade.",
-"Turn your job description into vacancy text for a job board. Keep every duty. Add no promise, salary or grade.",
-"mutla-role-information-2026.docx",
-"mutla-jd-template-2026.docx",
-"mutla-jd-hr-officer-2019.docx",
-"Pick your unit track. Find your track's role in the role information file.",
-"Write your own checklist request (all five parts). Attach the role information and the 2026 template.",
-"Read the draft. Send two follow-up instructions that fix what is weak.",
-"Run the source-trace request below. Delete or fix every NOT IN SOURCE line.",
-"Check by hand: count the duties against the role sheet. Is the grade blank? Does it start with DRAFT · Reviewed by: ___?",
-"Source trace (step 4)",
-"Check the attached job description line by line. Use only the attached mutla-role-information-2026.docx and mutla-jd-template-2026.docx. Do not fix anything. Only check. A table: the line of the draft, then the line of the role information it comes from, or NOT IN SOURCE.",
+"Copilot Notebooks",
+"Can't find a file under Add references? Check it is in OneDrive, or upload it in the same panel.",
+"Add the allowances policies (version 3 and version 4). Ask: will my housing allowance change in January?",
+"mutla-leave-policy-2026.docx",
+"mutla-attendance-rules-2026.docx",
+"mutla-training-policy-2026.docx",
+"Save the three policies to OneDrive. In m365.cloud.microsoft, select Notebooks, then New notebook.",
+"Name it Mutla HR policies (practice). Add the three files as references, then Create.",
+"Paste the notebook instruction into the notebook's instructions.",
+"Test it: one question for each file. Check the file and section in every answer.",
+"Notebook instruction",
+"You answer employees' questions about Mutla Oil Company's HR policies. Use only the files in this notebook. For every answer, name the file and the section. If the files do not answer the question, say so and suggest the employee asks Personnel. Never guess a number or a date. Plain English, short sentences.",
 "Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
-"Your turn: your job description: draft, fix, check.",
-"Block 3 · Draft, fix and check in Word"
+"Your turn: build your HR policy notebook.",
+"Block 3 · Copilot Notebooks: your policies in one place"
 ],
 "chrome": [
 "Your turn",
@@ -1084,22 +992,22 @@
 "Where we are",
 "AI",
 "Prompt",
-"Word",
-"Outlook",
+"Notebook",
+"Word, Outlook",
 "Save"
 ]
 },
 {
-"n": 51,
-"id": "b3chk2",
+"n": 46,
+"id": "b3chk",
 "kind": "check",
 "title": "Quick check",
 "topic": "b3",
 "kit": [
-"Your draft still ends with “Grade 7”. What do you do?",
-"Keep it, since Copilot used the template",
-"Change it to the grade you think is right",
-"Delete it; the grade is the committee's"
+"Your notebook gives a number but names no file or section. What do you do?",
+"Trust it: the notebook only uses your files",
+"Ask for the file and section, then open it",
+"Delete the notebook and start again"
 ],
 "chrome": [
 "Quick check",
@@ -1111,7 +1019,7 @@
 ]
 },
 {
-"n": 52,
+"n": 47,
 "id": "b3task2",
 "kind": "task",
 "title": "Your turn 1.4",
@@ -1119,19 +1027,22 @@
 "kit": [
 "Task 1.4",
 "on your own",
-"Copilot Chat · Word",
-"Two things in Ali's request do not belong in the letter.",
-"Do Dana Al-Khaldi's letter (EMP-4250). Write one sentence to tell her where to ask for a salary certificate.",
-"mutla-experience-letter-requests.docx",
-"Open mutla-experience-letter-requests.docx. Read the template rules, the HR system record and the three requests.",
-"Write a checklist request for Ali Al-Harbi's letter (EMP-3108). Attach the file.",
-"Run the flag request below. Copilot lists the problems; it does not fix them. You decide.",
-"Fix the draft with one follow-up instruction. Then check the dates and the job title by hand against the HR record.",
-"Flag, do not fix",
-"Compare Ali Al-Harbi's request with his HR system record and the template rules in the attached file. List every point where the request differs from the record, or asks for something the rules do not allow. Do not change the letter. Only list the points.",
+"Copilot Notebooks · Outlook",
+"If an answer has no file or section, ask for them. Then open the file yourself.",
+"Ask the notebook for a one-page FAQ for new joiners from the three files. Check five answers.",
+"Ask your notebook each question, one at a time. Open each file at the section named and check it.",
+"Draft a reply to one employee in Outlook or Word with Copilot. Start with the DRAFT line.",
+"Noura, Drilling",
+"I still have 22 days of annual leave. How many can I carry into next year, and by when must I use them?",
+"Saad, Finance",
+"When the new rules start, can I come in at 6:45 and leave earlier? What hours must I be at work?",
+"Mariam, HSE",
+"How do I ask for a training course, and who has to approve it?",
+"Not in the files",
+"What are the working hours in Ramadan?",
 "Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
-"Your turn: an experience letter: draft, fix, check.",
-"Block 3 · Draft, fix and check in Word"
+"Your turn: answer three employees from your notebook.",
+"Block 3 · Copilot Notebooks: your policies in one place"
 ],
 "chrome": [
 "Your turn",
@@ -1153,26 +1064,47 @@
 "Where we are",
 "AI",
 "Prompt",
-"Word",
-"Outlook",
+"Notebook",
+"Word, Outlook",
 "Save"
 ]
 },
 {
-"n": 53,
+"n": 48,
+"id": "b3chk2",
+"kind": "check",
+"title": "Quick check",
+"topic": "b3",
+"kit": [
+"An employee asks about Ramadan hours. The notebook says the files do not cover it. What do you reply?",
+"Last year's hours; they are probably the same",
+"Ask Copilot again without the notebook",
+"Personnel will confirm, and when"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 49,
 "id": "b3deb",
 "kind": "rule",
-"title": "The record decides the dates. You decide the letter.",
+"title": "One place for the files. One habit for every answer.",
 "topic": "b3",
 "kit": [
 "Block 3 · debrief",
-"The record decides the dates. You decide the letter.",
-"Copilot found the problems in Ali's request in seconds. Deciding what goes into the letter was still your job."
+"One place for the files. One habit for every answer.",
+"Name the file and section. Open it. Check the number. Say when you do not know."
 ],
 "chrome": []
 },
 {
-"n": 54,
+"n": 50,
 "id": "b4story",
 "kind": "story",
 "title": "Block 4 · From policy to people",
@@ -1191,7 +1123,7 @@
 ]
 },
 {
-"n": 55,
+"n": 51,
 "id": "b4t1",
 "kind": "term",
 "title": "A summary you can check.",
@@ -1210,13 +1142,13 @@
 ]
 },
 {
-"n": 56,
+"n": 52,
 "id": "b4live1",
 "kind": "list",
 "title": "The leave policy, for new joiners.",
 "topic": "b4",
 "kit": [
-"Demo 1.5 · live in Copilot Chat · Word",
+"Demo 1.5 · live in Word · Copilot",
 "The leave policy, for new joiners.",
 "Every point gives its section. You check two numbers yourself.",
 "What I will show: Eight bullets for new joiners, each with its section.",
@@ -1226,7 +1158,7 @@
 "chrome": []
 },
 {
-"n": 57,
+"n": 53,
 "id": "b4task1",
 "kind": "task",
 "title": "Your turn 1.5",
@@ -1234,12 +1166,12 @@
 "kit": [
 "Task 1.5",
 "on your own",
-"Copilot Chat · Word",
+"Word · Copilot",
 "Look at the title of the policy. From which date does it apply?",
 "Compare version 3 and version 4: list every change with its section number.",
 "mutla-allowances-policy-v4.docx",
 "mutla-allowances-policy-v3.docx",
-"Attach mutla-allowances-policy-v4.docx to a new chat, or open it in Word with Copilot.",
+"Open mutla-allowances-policy-v4.docx in Word and select Copilot. No Copilot in Word? Attach it to a new chat.",
 "Write your own checklist request: a one-page summary of the policy for staff, every point with its section number.",
 "Check three numbers by hand against the policy: the housing maximum, the transport grades and the remote-site days.",
 "Check the date: from when does version 4 apply? Does your summary say so?",
@@ -1263,13 +1195,13 @@
 "Where we are",
 "AI",
 "Prompt",
-"Word",
-"Outlook",
+"Notebook",
+"Word, Outlook",
 "Save"
 ]
 },
 {
-"n": 58,
+"n": 54,
 "id": "b4chk",
 "kind": "check",
 "title": "Quick check",
@@ -1290,7 +1222,7 @@
 ]
 },
 {
-"n": 59,
+"n": 55,
 "id": "b4t2",
 "kind": "term",
 "title": "Turn the tone dial. Keep the facts.",
@@ -1309,7 +1241,7 @@
 ]
 },
 {
-"n": 60,
+"n": 56,
 "id": "b4live2",
 "kind": "list",
 "title": "One reminder, three readers.",
@@ -1325,7 +1257,7 @@
 "chrome": []
 },
 {
-"n": 61,
+"n": 57,
 "id": "b4task2",
 "kind": "task",
 "title": "Your turn 1.6",
@@ -1368,13 +1300,13 @@
 "Where we are",
 "AI",
 "Prompt",
-"Word",
-"Outlook",
+"Notebook",
+"Word, Outlook",
 "Save"
 ]
 },
 {
-"n": 62,
+"n": 58,
 "id": "b4chk2",
 "kind": "check",
 "title": "Quick check",
@@ -1395,7 +1327,7 @@
 ]
 },
 {
-"n": 63,
+"n": 59,
 "id": "b4chk3",
 "kind": "check",
 "title": "Quick check",
@@ -1416,7 +1348,7 @@
 ]
 },
 {
-"n": 64,
+"n": 60,
 "id": "b4deb",
 "kind": "rule",
 "title": "Change the tone, keep the rules.",
@@ -1429,7 +1361,7 @@
 "chrome": []
 },
 {
-"n": 65,
+"n": 61,
 "id": "b5bank",
 "kind": "list",
 "title": "A request you checked is worth saving.",
@@ -1446,7 +1378,7 @@
 "chrome": []
 },
 {
-"n": 66,
+"n": 62,
 "id": "b5go",
 "kind": "timer",
 "title": "Save two entries, then read one to a neighbor.",
@@ -1465,7 +1397,7 @@
 ]
 },
 {
-"n": 67,
+"n": 63,
 "id": "b5seats",
 "kind": "list",
 "title": "One checklist, many seats.",
@@ -1482,7 +1414,7 @@
 "chrome": []
 },
 {
-"n": 68,
+"n": 64,
 "id": "b5gcse",
 "kind": "table",
 "title": "The same idea, in Microsoft's words.",
@@ -1505,7 +1437,7 @@
 "chrome": []
 },
 {
-"n": 69,
+"n": 65,
 "id": "w1",
 "kind": "wrap",
 "title": "Wrap-up",
@@ -1515,10 +1447,10 @@
 "Tomorrow: safe data first, then meetings, Outlook follow-ups, Excel, Word and PowerPoint.",
 "1",
 "You built",
-"A checked job description, an experience letter, a policy summary and one announcement for three readers.",
+"A policy notebook with checked answers, a policy summary and one announcement for three readers.",
 "2",
 "You found",
-"Three wrong numbers, two lines with no source, and a date that changed.",
+"Three wrong numbers, a question the files could not answer, and a date that changed.",
 "3",
 "The habit",
 "Copilot drafts. You check. Authorized HR staff decide."
@@ -1530,7 +1462,7 @@
 ]
 },
 {
-"n": 70,
+"n": 66,
 "id": "close1",
 "kind": "close",
 "title": "Close",

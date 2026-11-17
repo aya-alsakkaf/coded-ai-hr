@@ -553,117 +553,80 @@
 "flat": "Do: (Ask two people to read a rewrite aloud. Ask the room which part is strongest and which is missing.) · Expect: Most rewrites miss constraints or the output format at first. · Say: “The strongest rewrites used plain words, and every part had a job. Lunch now, and Dhuhr. We start again at 12:15 sharp.”"
 },
 {
-"say": "Welcome back. Even a good request gives you a draft, not a final document. (Read the story.) What would most people do now? (Pause.) They delete everything and start again. Today we learn a faster way.",
+"say": "Welcome back. (Read the story.) Same questions, same three files, every week. You saw the notebook before lunch. Now each of you builds one, and then uses it to answer real questions.",
 "do": null,
-"expect": "Start again, or fix it by hand.",
+"expect": null,
 "silent": null,
 "fallback": null,
 "more": [],
 "time": "12:15-13:20",
 "t": "b3",
 "k": "story",
-"h": "Block 3 · Draft, fix and check in Word",
-"flat": "12:15-13:20. · Expect: Start again, or fix it by hand. · Say: “Welcome back. Even a good request gives you a draft, not a final document. (Read the story.) What would most people do now? (Pause.) They delete everything and start again. Today we learn a faster way.”"
+"h": "Block 3 · Copilot Notebooks",
+"flat": "12:15-13:20. · Say: “Welcome back. (Read the story.) Same questions, same three files, every week. You saw the notebook before lunch. Now each of you builds one, and then uses it to answer real questions.”"
 },
 {
-"say": "A follow-up is a short message in the same chat. Compare the two on the slide. The first one gives Copilot nothing. The second names the problem, says how to fix it, and protects everything that was already right.",
+"say": "A notebook is like a shared folder that can answer questions. You choose the files. You write the rules for how it answers. Everything stays together for next week.",
 "do": null,
 "expect": null,
 "silent": null,
 "fallback": null,
 "more": [],
-"time": null,
+"time": "2 min",
 "t": "b3",
 "k": "term",
-"h": "Fix it. Do not start again.",
-"flat": "Say: “A follow-up is a short message in the same chat. Compare the two on the slide. The first one gives Copilot nothing. The second names the problem, says how to fix it, and protects everything that was already right.”"
+"h": "Your files and your rules, in one place.",
+"flat": "2 min. · Say: “A notebook is like a shared folder that can answer questions. You choose the files. You write the rules for how it answers. Everything stays together for next week.”"
 },
 {
-"say": "These three cover most of what goes wrong. The third one is my favorite: you ask Copilot to confess its guesses. Anything it assumed is something you check or delete.",
+"say": "(Point to each card.) References, instructions, chats. Look at the instructions: it is the checklist from this morning, saved so you never type it again.",
 "do": null,
 "expect": null,
-"silent": "Ask: which of the three would fix Hessa's two pages?",
+"silent": null,
 "fallback": null,
 "more": [],
-"time": null,
+"time": "2 min",
 "t": "b3",
 "k": "cards",
-"h": "Three follow-ups you will use every week.",
-"flat": "If the room is silent: Ask: which of the three would fix Hessa's two pages? · Say: “These three cover most of what goes wrong. The third one is my favorite: you ask Copilot to confess its guesses. Anything it assumed is something you check or delete.”"
+"h": "Three parts of every notebook.",
+"flat": "2 min. · Say: “(Point to each card.) References, instructions, chats. Look at the instructions: it is the checklist from this morning, saved so you never type it again.”"
 },
 {
-"say": "(Run the request, then read the draft aloud.) Now I name one problem at a time. (Send each follow-up.) Look: the duty is added, the length is right, and everything else stayed where it was. That took three short messages, and I did not start again.",
+"say": "(Build it on screen, step by step.) Notice the instruction goes into the notebook, not into one chat. (Ask the test question.) It says fifteen days and names section 4. Now my part: (open the leave policy at section 4) and check.",
 "do": null,
-"expect": "After the follow-ups: a one-page job description with the six duties from the role sheet, no introduction, the grade blank. The assumption list shows anything Copilot added on its own, for example a system name or years of experience.",
+"expect": "The answer gives 15 days, used by 31 March, and names the leave policy, section 4.",
 "silent": null,
-"fallback": "Show the backup list on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.3.",
+"fallback": "No Notebooks on the left: attach the three files to Copilot Chat and paste the instruction first. The backup is on the Day 1 backup results page, Demo 1.3.",
 "more": [
-"Click steps: (1) Open a new Copilot Chat. Attach mutla-role-information-2026.docx and mutla-jd-template-2026.docx. Paste the checklist request for the Compensation Analyst. (2) Read the draft aloud. Name one thing that is weak. (3) Send the follow-up that fixes it. Say which part of the draft you want kept. (4) Send the third follow-up: the list of assumptions. Delete what has no source."
+"Click steps: (1) m365.cloud.microsoft, then Notebooks, then New notebook. Name it Mutla HR policies (practice). (2) Add the three policies as references, then Create. (3) Paste the notebook instruction into the notebook's instructions. (4) Ask the test question. Open the leave policy at the section it names and check the number."
 ],
 "time": "5 min, live",
 "t": "b3",
 "k": "list",
-"h": "One draft, three follow-ups.",
-"flat": "5 min, live. · Expect: After the follow-ups: a one-page job description with the six duties from the role sheet, no introduction, the grade blank. The assumption list shows anything Copilot added on its own, for example a system name or years of experience. · Click steps: (1) Open a new Copilot Chat. Attach mutla-role-information-2026.docx and mutla-jd-template-2026.docx. Paste the checklist request for the Compensation Analyst. (2) Read the draft aloud. Name one thing that is weak. (3) Send the follow-up that fixes it. Say which part of the draft you want kept. (4) Send the third follow-up: the list of assumptions. Delete what has no source. · Fallback: Show the backup list on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.3. · Say: “(Run the request, then read the draft aloud.) Now I name one problem at a time. (Send each follow-up.) Look: the duty is added, the length is right, and everything else stayed where it was. That took three short messages, and I did not start again.”"
+"h": "A notebook in four steps.",
+"flat": "5 min, live. · Expect: The answer gives 15 days, used by 31 March, and names the leave policy, section 4. · Click steps: (1) m365.cloud.microsoft, then Notebooks, then New notebook. Name it Mutla HR policies (practice). (2) Add the three policies as references, then Create. (3) Paste the notebook instruction into the notebook's instructions. (4) Ask the test question. Open the leave policy at the section it names and check the number. · Fallback: No Notebooks on the left: attach the three files to Copilot Chat and paste the instruction first. The backup is on the Day 1 backup results page, Demo 1.3. · Say: “(Build it on screen, step by step.) Notice the instruction goes into the notebook, not into one chat. (Ask the test question.) It says fifteen days and names section 4. Now my part: (open the leave policy at section 4) and check.”"
 },
 {
-"say": "Follow-ups fix what you can see. But how do you find a problem you cannot see? Think of an auditor with a pile of expense claims. What happens to a claim with no receipt?",
-"do": null,
-"expect": "Rejected, or the auditor asks for proof.",
+"say": "Your turn. Build your own notebook with the same three policies and the instruction from the prompt sheet. Then test it with one question for each file. Twenty-two minutes. The steps are on the Day 1 lab page. (Start the timer.)",
+"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"expect": "A notebook with three references and the instruction. Each test answer names a file and a section, and every number matches the policy.",
 "silent": null,
-"fallback": null,
-"more": [],
-"time": null,
-"t": "b3",
-"k": "rule",
-"h": "An auditor ticks every line against a receipt.",
-"flat": "Expect: Rejected, or the auditor asks for proof. · Say: “Follow-ups fix what you can see. But how do you find a problem you cannot see? Think of an auditor with a pile of expense claims. What happens to a claim with no receipt?”"
-},
-{
-"say": "We ask Copilot to do the auditor's job for us: next to each line of the draft, the matching line from the role sheet. When there is no source, it must say so in capital letters. Then you decide.",
-"do": null,
-"expect": null,
-"silent": null,
-"fallback": null,
-"more": [],
-"time": null,
-"t": "b3",
-"k": "term",
-"h": "Ask Copilot to show its receipts.",
-"flat": "Say: “We ask Copilot to do the auditor's job for us: next to each line of the draft, the matching line from the role sheet. When there is no source, it must say so in capital letters. Then you decide.”"
-},
-{
-"say": "Three failures to hunt for. The source trace finds the first one for you. For the other two, you open the source and read it yourself, so the last step is always yours.",
-"do": null,
-"expect": null,
-"silent": null,
-"fallback": null,
-"more": [],
-"time": null,
-"t": "b3",
-"k": "cards",
-"h": "Three failures to look for.",
-"flat": "Say: “Three failures to hunt for. The source trace finds the first one for you. For the other two, you open the source and read it yourself, so the last step is always yours.”"
-},
-{
-"say": "(Run the source trace.) Two lines come back with no source: the team of six and the grade. (Open the role sheet.) I do not trust Copilot on this either: I check the role sheet myself. They are not there, so I delete them.",
-"do": null,
-"expect": "A table with one row per line of the draft. Two lines come back NOT IN SOURCE: manages a team of six analysts, and Grade 8.",
-"silent": null,
-"fallback": "Show the backup table on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.3b.",
+"fallback": "No Notebooks on the left: Copilot Chat with the three files attached and the instruction as the first message.",
 "more": [
-"Click steps: (1) Open a new chat. Attach the three files listed on the slide. (2) Paste the source-trace request. Scroll to every NOT IN SOURCE line. (3) Open the role sheet and show that the line really is not there."
+"Give the hint at about 7 min.",
+"Fast finishers have an extra task on the slide.",
+"If Notebooks is not on someone's account, they use Copilot Chat with the three files attached and the instruction as the first message."
 ],
-"time": "5 min, live",
+"time": "22 min work, then share",
 "t": "b3",
-"k": "list",
-"h": "Every line, with its source.",
-"flat": "5 min, live. · Expect: A table with one row per line of the draft. Two lines come back NOT IN SOURCE: manages a team of six analysts, and Grade 8. · Click steps: (1) Open a new chat. Attach the three files listed on the slide. (2) Paste the source-trace request. Scroll to every NOT IN SOURCE line. (3) Open the role sheet and show that the line really is not there. · Fallback: Show the backup table on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.3b. · Say: “(Run the source trace.) Two lines come back with no source: the team of six and the grade. (Open the role sheet.) I do not trust Copilot on this either: I check the role sheet myself. They are not there, so I delete them.”"
+"k": "task",
+"h": "Your turn 1.3: Build your HR policy notebook (22 min, on your own)",
+"flat": "22 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A notebook with three references and the instruction. Each test answer names a file and a section, and every number matches the policy. · Give the hint at about 7 min. · Fast finishers have an extra task on the slide. · If Notebooks is not on someone's account, they use Copilot Chat with the three files attached and the instruction as the first message. · Fallback: No Notebooks on the left: Copilot Chat with the three files attached and the instruction as the first message. · Say: “Your turn. Build your own notebook with the same three policies and the instruction from the prompt sheet. Then test it with one question for each file. Twenty-two minutes. The steps are on the Day 1 lab page. (Start the timer.)”"
 },
 {
-"say": "Quick check. (Tap after hands.) Sounding right is exactly what a hallucination looks like.",
+"say": "Quick check. (Tap after hands.) Your own files can still give a wrong answer if nobody opens them.",
 "do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
-"expect": "Option A.",
+"expect": "Option B.",
 "silent": "ask one table to choose together, then tap their choice.",
 "fallback": null,
 "more": [],
@@ -671,26 +634,27 @@
 "t": "b3",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option A. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “Quick check. (Tap after hands.) Sounding right is exactly what a hallucination looks like.”"
+"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “Quick check. (Tap after hands.) Your own files can still give a wrong answer if nobody opens them.”"
 },
 {
-"say": "Your turn, with your own unit's role. Write your own request: all five parts, both files attached. Fix the draft with two follow-ups. Then run the source trace and check by hand. Twenty-two minutes. Hints are on the Day 1 lab page. (Start the timer.)",
+"say": "Now use it. Three employees asked questions this week, and one more question is not in any file. Ask your notebook, check every answer, then draft one reply. Twenty minutes. (Start the timer.)",
 "do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "A one-page job description in the template's order: only the role sheet's six duties, no team size, a blank grade line, and the DRAFT line at the top. Two follow-ups that each name a problem and what to keep.",
+"expect": "Noura: up to 15 days, used by 31 March (leave policy, section 4). Saad: from Tuesday 1 December 2026, start between 6:30 and 8:00, be at work 8:00 to 13:00, 7 hours a day (attendance rules). Mariam: the steps and the approval as written in the training policy, with its section. Ramadan: the files do not say, so the notebook says it does not know.",
 "silent": null,
-"fallback": "Anyone whose draft fails can check mutla-catchup-jd-draft.docx instead, from step 4.",
+"fallback": "No notebook: Copilot Chat with the three files attached and the notebook instruction as the first message.",
 "more": [
-"Give the hint at about 7 min.",
-"Fast finishers have an extra task on the slide."
+"Give the hint at about 6 min.",
+"Fast finishers have an extra task on the slide.",
+"The Ramadan question is the test: a good notebook says the files do not answer it."
 ],
-"time": "22 min work, then share",
+"time": "20 min work, then share",
 "t": "b3",
 "k": "task",
-"h": "Your turn 1.3: Your job description: draft, fix, check (22 min, on your own)",
-"flat": "22 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A one-page job description in the template's order: only the role sheet's six duties, no team size, a blank grade line, and the DRAFT line at the top. Two follow-ups that each name a problem and what to keep. · Give the hint at about 7 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone whose draft fails can check mutla-catchup-jd-draft.docx instead, from step 4. · Say: “Your turn, with your own unit's role. Write your own request: all five parts, both files attached. Fix the draft with two follow-ups. Then run the source trace and check by hand. Twenty-two minutes. Hints are on the Day 1 lab page. (Start the timer.)”"
+"h": "Your turn 1.4: Answer three employees from your notebook (20 min, on your own)",
+"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Noura: up to 15 days, used by 31 March (leave policy, section 4). Saad: from Tuesday 1 December 2026, start between 6:30 and 8:00, be at work 8:00 to 13:00, 7 hours a day (attendance rules). Mariam: the steps and the approval as written in the training policy, with its section. Ramadan: the files do not say, so the notebook says it does not know. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · The Ramadan question is the test: a good notebook says the files do not answer it. · Fallback: No notebook: Copilot Chat with the three files attached and the notebook instruction as the first message. · Say: “Now use it. Three employees asked questions this week, and one more question is not in any file. Ask your notebook, check every answer, then draft one reply. Twenty minutes. (Start the timer.)”"
 },
 {
-"say": "Before the next task, one check. (Tap after hands.) Even your own best guess is still a guess about a grade.",
+"say": "One more. (Tap after hands.) The notebook did its job when it said it did not know.",
 "do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option C.",
 "silent": "ask one table to choose together, then tap their choice.",
@@ -700,36 +664,20 @@
 "t": "b3",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option C. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “Before the next task, one check. (Tap after hands.) Even your own best guess is still a guess about a grade.”"
+"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option C. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “One more. (Tap after hands.) The notebook did its job when it said it did not know.”"
 },
 {
-"say": "Same method, a different document. Three employees asked for experience letters. Do Ali's. Write your request, then ask Copilot to flag, not fix, anything that breaks the rules. You decide what goes in the letter. Fifteen minutes. (Start the timer.)",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "A letter for Ali Al-Harbi, EMP-3108, Drilling Technician in Drilling Operations, from 10 September 2015 to 30 June 2026. No opinion and no salary. Two points flagged: start date: He writes 2014. The HR system record says 10 September 2015. The letter uses the record.; opinion: \"The best technician in my team\" is an opinion. The template does not allow it.",
-"silent": null,
-"fallback": "If Copilot misses a point, compare the request with the HR record row by hand.",
-"more": [
-"Give the hint at about 5 min.",
-"Fast finishers have an extra task on the slide."
-],
-"time": "15 min work, then share",
-"t": "b3",
-"k": "task",
-"h": "Your turn 1.4: An experience letter: draft, fix, check (15 min, on your own)",
-"flat": "15 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A letter for Ali Al-Harbi, EMP-3108, Drilling Technician in Drilling Operations, from 10 September 2015 to 30 June 2026. No opinion and no salary. Two points flagged: start date: He writes 2014. The HR system record says 10 September 2015. The letter uses the record.; opinion: \"The best technician in my team\" is an opinion. The template does not allow it. · Give the hint at about 5 min. · Fast finishers have an extra task on the slide. · Fallback: If Copilot misses a point, compare the request with the HR record row by hand. · Say: “Same method, a different document. Three employees asked for experience letters. Do Ali's. Write your request, then ask Copilot to flag, not fix, anything that breaks the rules. You decide what goes in the letter. Fifteen minutes. (Start the timer.)”"
-},
-{
-"say": "Two documents, one method: draft with the checklist, fix with follow-ups, check every line. Break now. (Press the cup button.)",
-"do": "(Ask one person what Copilot flagged in Ali's request, and what they did about it.)",
-"expect": "The 2014 start date and the “best technician” line.",
+"say": "You built it once, and it will answer the same way next week. The checking is still yours. Break now. (Press the cup button.)",
+"do": "(Ask two people to read one answer aloud, with the file and section it named.)",
+"expect": "Most answers name the file; some miss the section.",
 "silent": null,
 "fallback": null,
 "more": [],
-"time": null,
+"time": "7 min",
 "t": "b3",
 "k": "rule",
-"h": "The record decides the dates. You decide the letter.",
-"flat": "Do: (Ask one person what Copilot flagged in Ali's request, and what they did about it.) · Expect: The 2014 start date and the “best technician” line. · Say: “Two documents, one method: draft with the checklist, fix with follow-ups, check every line. Break now. (Press the cup button.)”"
+"h": "One place for the files. One habit for every answer.",
+"flat": "7 min. · Do: (Ask two people to read one answer aloud, with the file and section it named.) · Expect: Most answers name the file; some miss the section. · Say: “You built it once, and it will answer the same way next week. The checking is still yours. Break now. (Press the cup button.)”"
 },
 {
 "say": "Last block of the day: from a policy to the people who live with it. (Read the story.) Fourteen emails by lunch. Who in this room answers the same policy question again and again?",
@@ -764,13 +712,13 @@
 "silent": null,
 "fallback": "Show the backup summary on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.5.",
 "more": [
-"Click steps: (1) Open a new chat, or the leave policy in Word with Copilot. (2) Paste the summary request. Read the bullets aloud. (3) Check two numbers by hand against the policy: the carry-over days and the notice period."
+"Click steps: (1) Open the leave policy in Word and select Copilot. (No Copilot in Word: a new chat with the file attached.) (2) Paste the summary request. Read the bullets aloud. (3) Check two numbers by hand against the policy: the carry-over days and the notice period."
 ],
 "time": "5 min, live",
 "t": "b4",
 "k": "list",
 "h": "The leave policy, for new joiners.",
-"flat": "5 min, live. · Expect: Up to eight bullets, each with its section: 30 days a year (2), request 14 days before (3), carry over up to 15 days used by 31 March (4), 3 days emergency leave (5), a certificate after 2 days of sick leave (6), 21 days Hajj leave once (7), balances from Personnel and Administration (8). · Click steps: (1) Open a new chat, or the leave policy in Word with Copilot. (2) Paste the summary request. Read the bullets aloud. (3) Check two numbers by hand against the policy: the carry-over days and the notice period. · Fallback: Show the backup summary on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.5. · Say: “(Run the request.) Every bullet has its section. Now watch me do the part Copilot cannot do for me. (Open the policy, check two numbers aloud.) A person has checked two numbers, so now the summary can go out.”"
+"flat": "5 min, live. · Expect: Up to eight bullets, each with its section: 30 days a year (2), request 14 days before (3), carry over up to 15 days used by 31 March (4), 3 days emergency leave (5), a certificate after 2 days of sick leave (6), 21 days Hajj leave once (7), balances from Personnel and Administration (8). · Click steps: (1) Open the leave policy in Word and select Copilot. (No Copilot in Word: a new chat with the file attached.) (2) Paste the summary request. Read the bullets aloud. (3) Check two numbers by hand against the policy: the carry-over days and the notice period. · Fallback: Show the backup summary on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.5. · Say: “(Run the request.) Every bullet has its section. Now watch me do the part Copilot cannot do for me. (Open the policy, check two numbers aloud.) A person has checked two numbers, so now the summary can go out.”"
 },
 {
 "say": "Your turn. Write your own request for a one-page summary of the allowances policy, for staff. Then check three numbers by hand, and find the date this version starts. Fifteen minutes. (Start the timer.)",

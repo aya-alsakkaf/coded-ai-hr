@@ -9,12 +9,12 @@ from content_demos import DEMOS
 import data as D
 
 SECTIONS = {
- 1: [("Opening", "g-mark", ["open"]), ("How AI works", "g-code", ["b1"]), ("Prompting", "g-frame", ["b2"]), ("Word", "g-impact", ["b3"]), ("Word and Outlook", "g-code", ["b4"]), ("Close", "g-progress", ["b5", "close"])],
+ 1: [("Opening", "g-mark", ["open"]), ("How AI works", "g-code", ["b1"]), ("Prompting", "g-frame", ["b2"]), ("Notebooks", "g-impact", ["b3"]), ("Word and Outlook", "g-code", ["b4"]), ("Close", "g-progress", ["b5", "close"])],
  2: [("Opening", "g-mark", ["open", "c0"]), ("Safe data", "g-code", ["c1"]), ("Meetings", "g-frame", ["c2", "c3"]), ("Excel", "g-impact", ["c4"]), ("Word", "g-code", ["c5"]), ("PowerPoint", "g-frame", ["c6"]), ("Close", "g-progress", ["c8", "close"])],
  3: [("Opening", "g-mark", ["open", "e0"]), ("Agents", "g-code", ["e1", "e2"]), ("Power Automate", "g-frame", ["e3"]), ("Workflows", "g-impact", ["e4"]), ("Close", "g-progress", ["e5", "e6", "e7", "close"])],
 }
 FLOW = {
- 1: (["AI", "Prompt", "Word", "Outlook", "Save"], {"b1": 0, "b2": 1, "b3": 2, "b4": 3, "b5": 4}),
+ 1: (["AI", "Prompt", "Notebook", "Word, Outlook", "Save"], {"b1": 0, "b2": 1, "b3": 2, "b4": 3, "b5": 4}),
  2: (["Data", "Meetings", "Outlook", "Excel", "Word", "PowerPoint"], {"c1": 0, "c2": 1, "c3": 2, "c4": 3, "c5": 4, "c6": 5}),
  3: (["Agent", "Test", "Flow", "Map", "Compare"], {"e1": 0, "e2": 1, "e3": 2, "e4": 3, "e5": 4}),
 }
@@ -293,64 +293,45 @@ def day1():
         n=N(do="(Ask two people to read a rewrite aloud. Ask the room which part is strongest and which is missing.)",
             say="The strongest rewrites used plain words, and every part had a job. Lunch now, and Dhuhr. We start again at 12:15 sharp.",
             expect="Most rewrites miss constraints or the output format at first.")))
-    # Block 3 · Draft, fix and check in Word
-    s.append(story("b3story", "b3", "Block 3 · Draft, fix and check in Word", "Wednesday 11 November, 12:15",
-        "Hessa's checklist draft looks perfect. Then she reads it twice: <b>“Manages a team of six analysts.”</b> and <b>“Grade 8.”</b> Neither is in the role information. And it is two pages.",
-        "A good draft <span class=\"hl\">still needs fixing.</span>", "Fix a draft with follow-up instructions, and ask for the source of every line.",
-        n=N(time="12:15-13:20", say="Welcome back. Even a good request gives you a draft, not a final document. (Read the story.) "
-              "What would most people do now? (Pause.) They delete everything and start again. Today we learn a faster way.",
-            expect="Start again, or fix it by hand.")))
-    s.append(term("b3t1", "b3", "Block 3 · the idea", "Fix it. <span class=\"hl\">Do not start again.</span>", "Follow-up instruction",
-        "A short message in the <b>same chat</b> that names one problem, says how to fix it, and says what must not change.",
-        "“Make it better.”", "“Add the missing duty, word for word. Change nothing else.”", "Name the problem. Name what to keep.",
-        n=N(say="A follow-up is a short message in the same chat. Compare the two on the slide. The first one gives Copilot nothing. "
-                "The second names the problem, says how to fix it, and protects everything that was already right.")))
-    s.append(cards3("b3fu", "b3", "Block 3 · three follow-ups", "Three follow-ups <span class=\"hl\">you will use every week.</span>",
-        [("Fix what is missing", "Add or correct one thing", "Add the missing duty, word for word.", ""), ("Fix the shape", "Length, order, format", "One page. Keep every duty.", ""),
-         ("Show the guesses", "Ask what it assumed", "List every assumption that is not in the files.", "")],
-        "One problem per follow-up.",
-        n=N(say="These three cover most of what goes wrong. The third one is my favorite: you ask Copilot to confess its guesses. "
-                "Anything it assumed is something you check or delete.", silent="Ask: which of the three would fix Hessa's two pages?")))
-    s.append(live("b3live1", "b3", "d13", "One draft, <span class=\"hl\">three follow-ups.</span>",
-        f"The job description for the {R['title']}, then three short follow-ups in the same chat.", "What changes after each follow-up, and what stays the same.",
-        n=N(say="(Run the request, then read the draft aloud.) Now I name one problem at a time. (Send each follow-up.) "
-                "Look: the duty is added, the length is right, and everything else stayed where it was. That took three short messages, and I did not start again.")))
-    s.append(rule("b3an", "b3", "Block 3 · the picture", "An auditor ticks <span class=\"hl\">every line against a receipt.</span>",
-        "A line with no receipt is not paid. A line in a draft with no source is not sent.",
-        n=N(say="Follow-ups fix what you can see. But how do you find a problem you cannot see? Think of an auditor with a pile of expense claims. "
-                "What happens to a claim with no receipt?", expect="Rejected, or the auditor asks for proof.")))
-    s.append(term("b3t2", "b3", "Block 3 · the idea", "Ask Copilot <span class=\"hl\">to show its receipts.</span>", "Source trace",
-        "A table where <b>every line of the draft</b> shows the line of the source it came from, or says <b>NOT IN SOURCE</b>.",
-        "Like the auditor's receipts…", "…every line has its source, or it goes.", "No source, no line.",
-        n=N(say="We ask Copilot to do the auditor's job for us: next to each line of the draft, the matching line from the role sheet. "
-                "When there is no source, it must say so in capital letters. Then you decide.")))
-    s.append(cards3("b3fail", "b3", "Block 3 · three ways a draft fails", "Three failures <span class=\"hl\">to look for.</span>",
-        [("Unsupported claim", "A line with no source", "“Manages a team of six.”", ""), ("Missing information", "A source line left out", "A duty from the role sheet is gone.", ""),
-         ("Confident mistake", "A source line changed", "15 days became 30.", "")],
-        "The source trace catches the first. Reading the source catches the other two.",
-        n=N(say="Three failures to hunt for. The source trace finds the first one for you. For the other two, you open the source and read it yourself, so the last step is always yours.")))
-    s.append(live("b3live2", "b3", "d13b", "Every line, <span class=\"hl\">with its source.</span>",
-        "A finished-looking draft, checked line by line against the role sheet.", "The NOT IN SOURCE lines. Then the role sheet, to prove they are not there.",
-        n=N(say="(Run the source trace.) Two lines come back with no source: the team of six and the grade. (Open the role sheet.) "
-                "I do not trust Copilot on this either: I check the role sheet myself. They are not there, so I delete them.")))
-    s.append(check("b3chk", "b3", "The source trace marks one duty <b>NOT IN SOURCE</b>. What now?",
-        [("Delete it, or check it with the owner", 1, "Right. No source, no line."),
-         ("Keep it, because it sounds right for the role", 0, "Sounding right is how hallucinations look."),
-         ("Ask Copilot if it is sure", 0, "It may say yes again. The role sheet decides.")],
-        n=N(say="Quick check. (Tap after hands.) Sounding right is exactly what a hallucination looks like.")))
-    s.append(task("b3task", "b3", "t13", n=N(say="Your turn, with your own unit's role. Write your own request: all five parts, both files attached. Fix the draft with two follow-ups. "
-                                                 "Then run the source trace and check by hand. Twenty-two minutes. Hints are on the Day 1 lab page. (Start the timer.)")))
-    s.append(check("b3chk2", "b3", "Your draft still ends with <b>“Grade 7”</b>. What do you do?",
-        [("Keep it, since Copilot used the template", 0, "The template says the grade stays blank."),
-         ("Change it to the grade you think is right", 0, "That is still a decision for the committee."),
-         ("Delete it; the grade is the committee's", 1, "Right. The committee sets grades.")],
-        n=N(say="Before the next task, one check. (Tap after hands.) Even your own best guess is still a guess about a grade.")))
-    s.append(task("b3task2", "b3", "t14", n=N(say="Same method, a different document. Three employees asked for experience letters. Do Ali's. "
-                                                  "Write your request, then ask Copilot to flag, not fix, anything that breaks the rules. You decide what goes in the letter. Fifteen minutes. (Start the timer.)")))
-    s.append(rule("b3deb", "b3", "Block 3 · debrief", "The record decides the dates. <span class=\"hl\">You decide the letter.</span>",
-        "Copilot found the problems in Ali's request in seconds. Deciding what goes into the letter was still your job.",
-        n=N(do="(Ask one person what Copilot flagged in Ali's request, and what they did about it.)", expect="The 2014 start date and the “best technician” line.",
-            say="Two documents, one method: draft with the checklist, fix with follow-ups, check every line. Break now. (Press the cup button.)")))
+    # Block 3 · Copilot Notebooks: your policies in one place
+    s.append(story("b3story", "b3", "Block 3 · Copilot Notebooks", "Wednesday 11 November, 12:15",
+        "Every week Personnel gets the same questions: carry-over, start times, how to ask for training. Each time, Fatma opens three policies and starts from zero.",
+        "Same questions, <span class=\"hl\">same three files.</span>", "Build a Copilot Notebook from the policies, then use it to answer real questions and check every answer.",
+        n=N(time="12:15-13:20", say="Welcome back. (Read the story.) Same questions, same three files, every week. You saw the notebook before lunch. Now each of you builds one, and then uses it to answer real questions.")))
+    s.append(term("b3t1", "b3", "Block 3 · the idea", "Your files and your rules, <span class=\"hl\">in one place.</span>", "Copilot Notebook",
+        "A workspace in Copilot that keeps your files, your instructions and your chats together. It answers only from the files you add, not from the web.",
+        "Three policies open in three windows, every week.", "One notebook with the three policies and your rules for answering.", "Set it up once. Check every answer.",
+        n=N(time="2 min", say="A notebook is like a shared folder that can answer questions. You choose the files. You write the rules for how it answers. Everything stays together for next week.")))
+    s.append(cards3("b3fu", "b3", "Block 3 · three parts", "Three parts <span class=\"hl\">of every notebook.</span>",
+        [("References", "The files", "The policies it may answer from. Nothing else: no web, no other files.", ""),
+         ("Instructions", "The rules", "How it answers: name the file and section, never guess, say when it does not know.", ""),
+         ("Chats", "The questions", "Every question you ask stays in the notebook, so the next answer starts from the same files.", "")],
+        "The instructions are your prompt checklist, written once.",
+        n=N(time="2 min", say="(Point to each card.) References, instructions, chats. Look at the instructions: it is the checklist from this morning, saved so you never type it again.")))
+    s.append(live("b3live1", "b3", "d13", "A notebook <span class=\"hl\">in four steps.</span>",
+        "Notebooks, a new notebook, three policies, the instruction, then one test question.", "The file and the section in the answer, and whether the number matches.",
+        n=N(time="5 min, live", say="(Build it on screen, step by step.) Notice the instruction goes into the notebook, not into one chat. (Ask the test question.) "
+                "It says fifteen days and names section 4. Now my part: (open the leave policy at section 4) and check.")))
+    s.append(task("b3task", "b3", "t13", n=N(say="Your turn. Build your own notebook with the same three policies and the instruction from the prompt sheet. Then test it with one question for each file. "
+                                                 "Twenty-two minutes. The steps are on the Day 1 lab page. (Start the timer.)",
+                                             more=["If Notebooks is not on someone's account, they use Copilot Chat with the three files attached and the instruction as the first message."])))
+    s.append(check("b3chk", "b3", "Your notebook gives a number but names <b>no file or section</b>. What do you do?",
+        [("Trust it: the notebook only uses your files", 0, "Only your files, but it can still pick the wrong line."),
+         ("Ask for the file and section, then open it", 1, "Right. The source decides, not the answer."),
+         ("Delete the notebook and start again", 0, "The notebook is fine. The answer needs a check.")],
+        n=N(say="Quick check. (Tap after hands.) Your own files can still give a wrong answer if nobody opens them.")))
+    s.append(task("b3task2", "b3", "t14", n=N(say="Now use it. Three employees asked questions this week, and one more question is not in any file. "
+                                                  "Ask your notebook, check every answer, then draft one reply. Twenty minutes. (Start the timer.)",
+                                              more=["The Ramadan question is the test: a good notebook says the files do not answer it."])))
+    s.append(check("b3chk2", "b3", "An employee asks about <b>Ramadan hours</b>. The notebook says the files do not cover it. What do you reply?",
+        [("Last year's hours; they are probably the same", 0, "That is a guess, and HR cannot send guesses."),
+         ("Ask Copilot again without the notebook", 0, "Without the files, it will guess from the web."),
+         ("Personnel will confirm, and when", 1, "Right. Saying you do not know yet is a correct answer.")],
+        n=N(say="One more. (Tap after hands.) The notebook did its job when it said it did not know.")))
+    s.append(rule("b3deb", "b3", "Block 3 · debrief", "One place for the files. <span class=\"hl\">One habit for every answer.</span>",
+        "Name the file and section. Open it. Check the number. Say when you do not know.",
+        n=N(time="7 min", do="(Ask two people to read one answer aloud, with the file and section it named.)", expect="Most answers name the file; some miss the section.",
+            say="You built it once, and it will answer the same way next week. The checking is still yours. Break now. (Press the cup button.)")))
     # Block 4 · From policy to people: Word, then Outlook
     s.append(story("b4story", "b4", "Block 4 · From policy to people", "Thursday 12 November, 13:35",
         "The Allowances Policy version 4 is approved. By lunch, Abdulaziz has <b>14 emails</b> from staff asking what it means for them. Yousef wants a one-page summary for staff today, and an announcement after that.",
@@ -418,7 +399,7 @@ def day1():
         [[a, b] for a, b in D.GCSE], "Use whichever words you remember. Give Copilot all of it.",
         n=N(say="If you read Microsoft's own guidance, you will see four words: goal, context, source, expectations. Same idea, grouped differently. Use whichever you remember.")))
     s.append(wrap("w1", "close", "Ask clearly, check everything: <span class=\"hl\">the habit for every HR draft.</span>",
-        [(1, "You built", "A checked job description, an experience letter, a policy summary and one announcement for three readers."), (2, "You found", "Three wrong numbers, two lines with no source, and a date that changed."), (3, "The habit", "Copilot drafts. You check. Authorized HR staff decide.")],
+        [(1, "You built", "A policy notebook with checked answers, a policy summary and one announcement for three readers."), (2, "You found", "Three wrong numbers, a question the files could not answer, and a date that changed."), (3, "The habit", "Copilot drafts. You check. Authorized HR staff decide.")],
         "Tomorrow: safe data first, then meetings, Outlook follow-ups, Excel, Word and PowerPoint.",
         n=N(say="Look at what you made today. (Read the three cards.) Tomorrow starts with what you may and may not put into Copilot. Then you use it on meetings, figures and slides.")))
     return s
@@ -427,7 +408,7 @@ def day1():
 def day2():
     s = opening(2)
     s.append(rule("c0rule", "c0", "Callback · Day 1", "A full brief in, <span class=\"hl\">a source for every line out.</span>",
-        "Yesterday you wrote with the checklist, fixed drafts with follow-ups and traced lines to their source. Three quick questions, then today.",
+        "Yesterday you wrote with the checklist, built a policy notebook and checked every answer against its source. Three quick questions, then today.",
         n=N(time="09:00-09:10", do="(Ask for hands.) Who used Copilot at work after yesterday's session?",
             say="Good morning. Before anything new, three questions on yesterday. Answer with your hands, and do not look at your notes.", expect="One or two hands.")))
     s.append(check("c0chk1", "c0", "Copilot's job description adds <b>a team of six</b> that is not in the role information. <b>Which part of the checklist was weak?</b>",
@@ -843,7 +824,7 @@ def day3():
                 "(Read the three cards.) Please keep the habit. It matters more than any tool.")))
     return s
 
-TOPICS = {1: {"open": "Opening", "b1": "Block 1 · How generative AI and Copilot work", "b2": "Block 2 · Writing a clear prompt", "b3": "Block 3 · Draft, fix and check in Word", "b4": "Block 4 · From policy to people", "b5": "Prompt Bank and wrap", "close": "Close"},
+TOPICS = {1: {"open": "Opening", "b1": "Block 1 · How generative AI and Copilot work", "b2": "Block 2 · Writing a clear prompt", "b3": "Block 3 · Copilot Notebooks: your policies in one place", "b4": "Block 4 · From policy to people", "b5": "Prompt Bank and wrap", "close": "Close"},
           2: {"open": "Opening", "c0": "Callback quiz", "c1": "Block 1 · Protecting employee data", "c2": "Block 2 · Before and after the meeting", "c3": "Block 3 · Follow-ups and reminders",
               "c4": "Block 4 · Excel: figures you can check", "c5": "Block 5 · Word summaries", "c6": "Block 6 · PowerPoint: from document to deck", "c8": "Which app for which job", "close": "Close"},
           3: {"open": "Opening", "e0": "Callback quiz", "e1": "Block 1 · Build an HR agent", "e2": "Block 2 · Test, fix and build a second agent", "e3": "Block 3 · Power Automate: a trainer demo",

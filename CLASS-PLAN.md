@@ -16,7 +16,7 @@ Ask clearly. Check everything. People decide.
 | 10:30-10:45 | Break |  |
 | 10:45-11:35 | Block 2 · Writing a clear prompt | The prompt checklist: five parts · Task 1.2 |
 | 11:35-12:15 | Lunch and Dhuhr prayer |  |
-| 12:15-13:20 | Block 3 · Draft, fix and check in Word | Follow-up instructions and the source of every line · Tasks 1.3 and 1.4 |
+| 12:15-13:20 | Block 3 · Copilot Notebooks: your policies in one place | Build a notebook from three policies, then answer three employees from it · Tasks 1.3 and 1.4 |
 | 13:20-13:35 | Break |  |
 | 13:35-14:40 | Block 4 · From policy to people: Word, then Outlook | A policy summary, then one message for three readers · Tasks 1.5 and 1.6 |
 | 14:40-15:00 | Prompt Bank and wrap | Save two requests, and where Copilot sits |
@@ -27,8 +27,8 @@ Ask clearly. Check everything. People decide.
 | --- | --- | --- | --- | --- | --- |
 | Task 1.1 | Spot the confident mistakes | 10 | in pairs | mutla-leave-policy-2026.docx, mutla-copilot-leave-answer.docx | Check every number against the approved source before it reaches an employee. |
 | Task 1.2 | Rewrite weak requests | 14 | on your own, then swap | mutla-leave-policy-2026.docx, mutla-allowances-policy-v4.docx, mutla-training-policy-2026.docx | Five parts: context, task, data, constraints, format. |
-| Task 1.3 | Your job description: draft, fix, check | 22 | on your own | mutla-role-information-2026.docx, mutla-jd-template-2026.docx, mutla-jd-hr-officer-2019.docx | Draft with the checklist. Fix with follow-ups. Check every line. |
-| Task 1.4 | An experience letter: draft, fix, check | 15 | on your own | mutla-experience-letter-requests.docx | Flag, then decide. Copilot lists the problem; a person fixes it. |
+| Task 1.3 | Build your HR policy notebook | 22 | on your own | mutla-leave-policy-2026.docx, mutla-attendance-rules-2026.docx, mutla-training-policy-2026.docx | Set it up once. Check every answer against its file. |
+| Task 1.4 | Answer three employees from your notebook | 20 | on your own |  | A good answer names its source. A good notebook says when it does not know. |
 | Task 1.5 | The allowances policy for staff | 15 | on your own | mutla-allowances-policy-v4.docx, mutla-allowances-policy-v3.docx | Section numbers, numbers as written, and the date it applies. |
 | Task 1.6 | Announce and reply in Outlook | 17 | on your own | mutla-email-thread-attendance.docx | Change the tone for each reader. Keep every date and rule. |
 

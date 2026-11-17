@@ -1,5 +1,14 @@
 # Changelog
 
+## 17 November 2026 · Day 1 Block 3 is now Copilot Notebooks
+
+- Block 3 (12:15-13:20) "Draft, fix and check in Word" is replaced by "Copilot Notebooks: your policies in one place":
+  Demo 1.3 builds a notebook from the leave, attendance and training policies; Task 1.3 builds your own; Task 1.4 answers
+  three employees from it, plus a Ramadan question the files cannot answer, and drafts one reply. Demo 1.3b, the job
+  description task and the experience letter task are gone (their files stay as extra practice). The step 8 guide is removed.
+- Block 4 demos and tasks start in Word with Copilot, with Copilot Chat as the fallback.
+- Day 1 has 66 slides. The Day 1 MAP questions were not changed (PRE was taken this morning).
+
 ## 17 November 2026 · Copilot Notebook guide (Day 1 lab, step 8)
 
 - New guide step on the Day 1 lab: build a Copilot Notebook with three Mutla policies, paste a notebook instruction (COPY),
