@@ -44,8 +44,7 @@ DAYS = {
     "artifact": "A checked job description, an experience letter, a policy summary, an announcement for three readers, and two Prompt Bank entries",
     "blocks": [("09:00-09:10", "Welcome and sign-in check", "CODED, your trainer, and the label under your name"),
                ("09:10-09:20", "Pre-MAP test", "10 minutes. Scan the QR code on the screen"),
-               ("09:20-09:30", "Opener: one job description, two requests", "The same role, a one-line request and a full one, live"),
-               ("09:30-10:30", "Block 1 · How generative AI and Copilot work", "What AI is, where LLMs fit, next-word prediction, what Copilot can see, what stays with people · Task 1.1"),
+               ("09:20-10:30", "Block 1 · How generative AI and Copilot work", "What AI is, where LLMs fit, next-word prediction, real cases, where your chat goes, what Copilot can see, then Copilot live: one job description, two requests · Task 1.1"),
                ("10:30-10:45", "Break", ""),
                ("10:45-11:35", "Block 2 · Writing a clear prompt", "The prompt checklist: five parts · Task 1.2"),
                ("11:35-12:15", "Lunch and Dhuhr prayer", ""),
@@ -99,7 +98,7 @@ DAYS = {
 }
 
 SEGMENTS = {
- 1: [("09:30-10:30", "Block 1 · How generative AI and Copilot work", [("09:30", 3, "Who used AI this week?"), ("09:33", 5, "What AI is; AI you already use"), ("09:38", 5, "Where LLMs fit; what LLM means"), ("09:43", 2, "Story: the 30-day answer"), ("09:45", 10, "Next-word prediction and hallucination"), ("09:55", 6, "What Copilot can see; your label"), ("10:01", 4, "Demo 1.1"), ("10:05", 10, "Task 1.1"), ("10:15", 3, "Debrief"), ("10:18", 8, "What stays with people; Demo 1.1b card sort"), ("10:26", 2, "Quick check"), ("10:28", 2, "Practice files only today")]),
+ 1: [("09:20-10:30", "Block 1 · How generative AI and Copilot work", [("09:20", 3, "Who used AI this week?"), ("09:23", 4, "What AI is; AI you already use"), ("09:27", 5, "Where LLMs fit; what LLM means"), ("09:32", 9, "Next-word prediction and hallucination"), ("09:41", 4, "Real cases; quick check"), ("09:45", 4, "Where your chat goes"), ("09:49", 6, "What Copilot can see; your label"), ("09:55", 8, "Meet Copilot: Demo 1.0"), ("10:03", 4, "Demo 1.1"), ("10:07", 10, "Task 1.1"), ("10:17", 3, "Debrief"), ("10:20", 8, "What stays with people; Demo 1.1b card sort"), ("10:28", 1, "Quick check"), ("10:29", 1, "Practice files only today")]),
      ("10:45-11:35", "Block 2 · Writing a clear prompt", [("10:45", 3, "Story: the one-line reminder"), ("10:48", 4, "Brief a new colleague"), ("10:52", 12, "The prompt checklist"), ("11:04", 4, "Constraints"), ("11:08", 6, "Demo 1.2"), ("11:14", 2, "Quick check"), ("11:16", 14, "Task 1.2"), ("11:30", 5, "Debrief")]),
      ("12:15-13:20", "Block 3 · Draft, fix and check in Word", [("12:15", 3, "Story: the team of six"), ("12:18", 5, "Follow-up instructions"), ("12:23", 5, "Demo 1.3"), ("12:28", 5, "Source trace, three failures"), ("12:33", 4, "Demo 1.3b"), ("12:37", 22, "Task 1.3"), ("12:59", 15, "Task 1.4"), ("13:14", 6, "Debrief")]),
      ("13:35-14:40", "Block 4 · From policy to people", [("13:35", 3, "Story: version 4 arrives"), ("13:38", 5, "Summaries you can check"), ("13:43", 5, "Demo 1.5"), ("13:48", 15, "Task 1.5"), ("14:03", 4, "The tone dial"), ("14:07", 5, "Demo 1.6"), ("14:12", 17, "Task 1.6"), ("14:29", 2, "Quick check"), ("14:31", 9, "Debrief")])],
@@ -238,7 +237,7 @@ MAP = [
 MAP_KEY = " · ".join(f"{i} {'abcd'[q['a']]}" for i, q in enumerate(MAP, 1))
 
 # ------------------------------------------------------------------ the approved slide plan (the validator checks the decks against it)
-SLIDES = {1: 69, 2: 55, 3: 46}
+SLIDES = {1: 70, 2: 55, 3: 46}
 
 # ------------------------------------------------------------------ MAP tests and the final survey (CODED portal)
 PORTAL = "https://platform.joincoded.com/sv/"
@@ -589,3 +588,36 @@ SURVEY = {
                "كانت مواد ورشة العمل (الموقع وورقة المراجعة السريعة وبطاقة الاستخدام الآمن ودليل ما بعد ورشة العمل) واضحةً ومفيدة."),
  "logistics": ("The venue, the daily timing and access to Microsoft Copilot worked well for me.", "كان المكان والتوقيت اليومي وإمكانية الوصول إلى Microsoft Copilot مناسباً لي."),
 }
+
+# The kit's own slide CSS: the "where your chat goes" animation on Day 1 (build_deck.trainslide)
+EXTRA_CSS = """
+.wtc-slide .wtc-lede{max-width:1180px;margin:2px 0 8px}
+.wtc{display:grid;gap:10px;margin:0 0 8px;width:100%;max-width:1320px;align-self:stretch;align-content:start;flex:0 0 auto;box-sizing:border-box}
+.wtc-lane,.wtc-track,.wtc-box{min-width:0;box-sizing:border-box}
+.wtc-lane{border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:12px 22px 10px;background:rgba(255,255,255,.035)}
+.wtc-bad{border-color:rgba(255,138,138,.45)}.wtc-ok{border-color:rgba(127,224,168,.45)}
+.wtc-tag{font-family:var(--cd-font-mono);font-size:15px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.wtc-bad .wtc-tag{color:#FF8A8A}.wtc-ok .wtc-tag{color:#7FE0A8}
+.wtc-track{position:relative;display:grid;grid-template-columns:1fr 90px 1fr 90px 1fr;align-items:center;padding-top:30px}
+.wtc-ok .wtc-track{grid-template-columns:2.25fr 90px 1fr}
+.wtc-box{position:relative;display:grid;grid-template-columns:1fr 90px 1fr;align-items:center;border:2px dashed rgba(127,224,168,.7);border-radius:14px;padding:8px 12px 22px}
+.wtc-boxl{position:absolute;bottom:3px;left:14px;font-family:var(--cd-font-mono);font-size:12px;color:#7FE0A8}
+.wtc-node{background:var(--cd-surf-2);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:8px 14px;text-align:center}
+.wtc-node b{display:block;font-size:24px}.wtc-node span{display:block;font-size:17px;opacity:.8;margin-top:2px}
+.wtc-bad .wtc-model{border-color:#FF8A8A;animation:wtcGlow 4s ease-in-out infinite}
+.wtc-off{opacity:.45;border-style:dashed}
+.wtc-line{height:3px;margin:0 8px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.55) 0 10px,transparent 10px 18px);background-size:36px 3px;animation:wtcDash 1.2s linear infinite}
+.wtc-cut{position:relative;background:repeating-linear-gradient(90deg,rgba(255,138,138,.5) 0 10px,transparent 10px 18px);animation:none}
+.wtc-cut i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-style:normal;font-weight:800;font-size:30px;color:#FF8A8A;line-height:1}
+.wtc-pkt{position:absolute;top:14px;left:0;transform:translate(-50%,-50%);padding:5px 12px;border-radius:999px;font-size:16px;font-weight:700;white-space:nowrap;pointer-events:none}
+.wtc-go{background:#FF8A8A;color:#2a0b0b;animation:wtcGo 5s ease-in-out infinite}
+.wtc-there{background:#7FE0A8;color:#082a18;animation:wtcThere 5s ease-in-out infinite}
+.wtc-back{background:#7FE0A8;color:#082a18;animation:wtcBack 5s ease-in-out infinite}
+.wtc-cap{margin:8px 0 2px;font-size:19px;opacity:.92}
+@keyframes wtcDash{to{background-position:36px 0}}
+@keyframes wtcGlow{0%,60%{box-shadow:none}80%{box-shadow:0 0 0 4px rgba(255,138,138,.35)}100%{box-shadow:none}}
+@keyframes wtcGo{0%{left:16%;opacity:0}8%{opacity:1}40%{left:50%}55%{left:50%}85%{left:84%;opacity:1}100%{left:84%;opacity:0}}
+@keyframes wtcThere{0%{left:12%;opacity:0}8%{opacity:1}42%{left:44%;opacity:1}50%{left:44%;opacity:0}100%{left:44%;opacity:0}}
+@keyframes wtcBack{0%,50%{left:44%;opacity:0}58%{opacity:1}92%{left:12%;opacity:1}100%{left:12%;opacity:0}}
+@media (prefers-reduced-motion:reduce){.wtc *{animation:none!important}.wtc-pkt{display:none}}
+"""

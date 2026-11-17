@@ -12,8 +12,7 @@ Ask clearly. Check everything. People decide.
 | --- | --- | --- |
 | 09:00-09:10 | Welcome and sign-in check | CODED, your trainer, and the label under your name |
 | 09:10-09:20 | Pre-MAP test | 10 minutes. Scan the QR code on the screen |
-| 09:20-09:30 | Opener: one job description, two requests | The same role, a one-line request and a full one, live |
-| 09:30-10:30 | Block 1 · How generative AI and Copilot work | What AI is, where LLMs fit, next-word prediction, what Copilot can see, what stays with people · Task 1.1 |
+| 09:20-10:30 | Block 1 · How generative AI and Copilot work | What AI is, where LLMs fit, next-word prediction, real cases, where your chat goes, what Copilot can see, then Copilot live: one job description, two requests · Task 1.1 |
 | 10:30-10:45 | Break |  |
 | 10:45-11:35 | Block 2 · Writing a clear prompt | The prompt checklist: five parts · Task 1.2 |
 | 11:35-12:15 | Lunch and Dhuhr prayer |  |

@@ -96,3 +96,7 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
     `FILE_ABOUT` describes every file; lab steps open with the description; working files from Day 2 and 3 open with an
     "About this file" box (Word) or sheet (Excel). Day 1 files and the agent knowledge files did not change, so Copilot does not
     read the box. This replaces Decision 9: Excel now includes one chart, checked against a control total.
+32. 17 Nov 2026 (Aya, before Day 1): Demo 1.0 moved after the theory, before Demo 1.1; the "Fast, confident and wrong" slide
+    removed; a real-cases slide (b1real) after "Fluent and wrong"; an animated slide (b1train) before the keycard on personal
+    chatbots training on chats vs Copilot with a work account. Real public cases are allowed on slides; practice data stays
+    fictional. Day 1 has 70 slides. The animation is a kit slide (`trainslide` in build_deck.py, CSS in content.EXTRA_CSS).

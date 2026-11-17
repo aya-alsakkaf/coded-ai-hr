@@ -2707,6 +2707,36 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
 .llm-note{font-size:13.5px;color:var(--w7);margin-top:8px;min-height:1.3em}
 .llm-note b{color:var(--rose-lt)}
 .llm-foot{font-family:var(--mono);font-size:11px;color:var(--w6);margin-top:6px}
+
+.wtc-slide .wtc-lede{max-width:1180px;margin:2px 0 8px}
+.wtc{display:grid;gap:10px;margin:0 0 8px;width:100%;max-width:1320px;align-self:stretch;align-content:start;flex:0 0 auto;box-sizing:border-box}
+.wtc-lane,.wtc-track,.wtc-box{min-width:0;box-sizing:border-box}
+.wtc-lane{border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:12px 22px 10px;background:rgba(255,255,255,.035)}
+.wtc-bad{border-color:rgba(255,138,138,.45)}.wtc-ok{border-color:rgba(127,224,168,.45)}
+.wtc-tag{font-family:var(--cd-font-mono);font-size:15px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.wtc-bad .wtc-tag{color:#FF8A8A}.wtc-ok .wtc-tag{color:#7FE0A8}
+.wtc-track{position:relative;display:grid;grid-template-columns:1fr 90px 1fr 90px 1fr;align-items:center;padding-top:30px}
+.wtc-ok .wtc-track{grid-template-columns:2.25fr 90px 1fr}
+.wtc-box{position:relative;display:grid;grid-template-columns:1fr 90px 1fr;align-items:center;border:2px dashed rgba(127,224,168,.7);border-radius:14px;padding:8px 12px 22px}
+.wtc-boxl{position:absolute;bottom:3px;left:14px;font-family:var(--cd-font-mono);font-size:12px;color:#7FE0A8}
+.wtc-node{background:var(--cd-surf-2);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:8px 14px;text-align:center}
+.wtc-node b{display:block;font-size:24px}.wtc-node span{display:block;font-size:17px;opacity:.8;margin-top:2px}
+.wtc-bad .wtc-model{border-color:#FF8A8A;animation:wtcGlow 4s ease-in-out infinite}
+.wtc-off{opacity:.45;border-style:dashed}
+.wtc-line{height:3px;margin:0 8px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.55) 0 10px,transparent 10px 18px);background-size:36px 3px;animation:wtcDash 1.2s linear infinite}
+.wtc-cut{position:relative;background:repeating-linear-gradient(90deg,rgba(255,138,138,.5) 0 10px,transparent 10px 18px);animation:none}
+.wtc-cut i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-style:normal;font-weight:800;font-size:30px;color:#FF8A8A;line-height:1}
+.wtc-pkt{position:absolute;top:14px;left:0;transform:translate(-50%,-50%);padding:5px 12px;border-radius:999px;font-size:16px;font-weight:700;white-space:nowrap;pointer-events:none}
+.wtc-go{background:#FF8A8A;color:#2a0b0b;animation:wtcGo 5s ease-in-out infinite}
+.wtc-there{background:#7FE0A8;color:#082a18;animation:wtcThere 5s ease-in-out infinite}
+.wtc-back{background:#7FE0A8;color:#082a18;animation:wtcBack 5s ease-in-out infinite}
+.wtc-cap{margin:8px 0 2px;font-size:19px;opacity:.92}
+@keyframes wtcDash{to{background-position:36px 0}}
+@keyframes wtcGlow{0%,60%{box-shadow:none}80%{box-shadow:0 0 0 4px rgba(255,138,138,.35)}100%{box-shadow:none}}
+@keyframes wtcGo{0%{left:16%;opacity:0}8%{opacity:1}40%{left:50%}55%{left:50%}85%{left:84%;opacity:1}100%{left:84%;opacity:0}}
+@keyframes wtcThere{0%{left:12%;opacity:0}8%{opacity:1}42%{left:44%;opacity:1}50%{left:44%;opacity:0}100%{left:44%;opacity:0}}
+@keyframes wtcBack{0%,50%{left:44%;opacity:0}58%{opacity:1}92%{left:12%;opacity:1}100%{left:12%;opacity:0}}
+@media (prefers-reduced-motion:reduce){.wtc *{animation:none!important}.wtc-pkt{display:none}}
 </style>
 </head>
 <body>

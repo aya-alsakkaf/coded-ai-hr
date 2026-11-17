@@ -1,5 +1,16 @@
 # Changelog
 
+## 17 November 2026 · Day 1 order, real cases, where your chat goes
+
+- Demo 1.0 (one job description, two requests) moved from the opener to the end of the theory, right before Demo 1.1:
+  Block 1 now runs 09:20 to 10:30 and meets Copilot after what AI is, LLMs, prediction, hallucination and permissions.
+- Removed the "Fast, confident and wrong" story slide (Fatma's 30 days). The hallucination note now points to the widget.
+- New slide after "Fluent and wrong": three real cases (Mata v. Avianca 2023, Moffatt v. Air Canada 2024, Deloitte
+  Australia 2025), with sources on the slide and details in the notes.
+- New animated slide before the keycard: a personal-account chatbot can train on your chats; Copilot Chat with a work
+  account does not (Microsoft enterprise data protection; OpenAI Data Controls FAQ). Kit CSS in `content.EXTRA_CSS`.
+- Day 1 has 70 slides.
+
 ## 17 November 2026 · App features on Day 2, file descriptions
 
 - Four new fictional files: `mutla-overtime-export-oct-2026.xlsx` (40 claims with six kinds of cleaning problem and approved

@@ -147,7 +147,7 @@ A = D.ALLOW
 ALI = D.LETTER_ALI
 
 # ===================================================================== DAY 1 · Copilot Foundations for HR Documents and Communication
-demo("d10", day=1, skill="1.0", sec=1, title="One job description, two requests", tool="Copilot Chat", files=[F["tpl"], F["roles"]],
+demo("d10", day=1, skill="1.0", sec=2, title="One job description, two requests", tool="Copilot Chat", files=[F["tpl"], F["roles"]],
  setup=["[T] Open Copilot Chat in two browser tabs, signed in with the training account.", "[T] Tab 1: paste the one-line request, with no file.",
         f"[T] Tab 2: attach {F['tpl']} and {F['roles']}, then paste the checklist request.", "[T] Put the two answers side by side. Read the duties and the grade line aloud."],
  prompts=[("One line", f"Write a job description for a {R['title'].lower()}."), ("The checklist", joined(JD_CMP))],

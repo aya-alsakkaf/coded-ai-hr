@@ -99,12 +99,9 @@
 "09:10-09:20",
 "Pre-MAP test",
 "10 minutes. Scan the QR code on the screen",
-"09:20-09:30",
-"Opener: one job description, two requests",
-"The same role, a one-line request and a full one, live",
-"09:30-10:30",
+"09:20-10:30",
 "Block 1 · How generative AI and Copilot work",
-"What AI is, where LLMs fit, next-word prediction, what Copilot can see, what stays with people · Task 1.1",
+"What AI is, where LLMs fit, next-word prediction, real cases, where your chat goes, what Copilot can see, then Copilot live: one job description, two requests · Task 1.1",
 "10:45-11:35",
 "Block 2 · Writing a clear prompt",
 "The prompt checklist: five parts · Task 1.2",
@@ -124,41 +121,6 @@
 },
 {
 "n": 6,
-"id": "b0story",
-"kind": "story",
-"title": "Opener · one job description",
-"topic": "open",
-"kit": [
-"Opener · one job description",
-"Sunday 1 November, 09:20",
-"Yousef, the HR Section Head, needs a job description for the new Compensation Analyst before the evaluation round. Abdulaziz opens Copilot and types one short line.",
-"One role, two requests. Watch what changes.",
-"See why the request decides the quality of the draft.",
-"·"
-],
-"chrome": [
-"The starting point",
-"By the end of this block:"
-]
-},
-{
-"n": 7,
-"id": "b0live",
-"kind": "list",
-"title": "One role, two requests.",
-"topic": "open",
-"kit": [
-"Demo 1.0 · live in Copilot Chat",
-"One role, two requests.",
-"The request decides the answer. You decide what goes out.",
-"What I will show: One short line in the first tab. The full request, with two files, in the second tab.",
-"Watch for: The duties, the team size and the grade line in each answer.",
-"Files: mutla-jd-template-2026.docx, mutla-role-information-2026.docx"
-],
-"chrome": []
-},
-{
-"n": 8,
 "id": "b1story",
 "kind": "story",
 "title": "Block 1 · How generative AI and Copilot work",
@@ -177,7 +139,7 @@
 ]
 },
 {
-"n": 9,
+"n": 7,
 "id": "b1ai",
 "kind": "term",
 "title": "First: what is AI?",
@@ -196,7 +158,7 @@
 ]
 },
 {
-"n": 10,
+"n": 8,
 "id": "b1ex",
 "kind": "list",
 "title": "AI you used before Copilot.",
@@ -213,7 +175,7 @@
 "chrome": []
 },
 {
-"n": 11,
+"n": 9,
 "id": "b1fam",
 "kind": "cards",
 "title": "So where do ChatGPT, Claude and Copilot fit?",
@@ -235,7 +197,7 @@
 "chrome": []
 },
 {
-"n": 12,
+"n": 10,
 "id": "b1llmdef",
 "kind": "term",
 "title": "LLM: Large Language Model.",
@@ -254,20 +216,7 @@
 ]
 },
 {
-"n": 13,
-"id": "b1fatma",
-"kind": "rule",
-"title": "Fast, confident and wrong.",
-"topic": "b1",
-"kit": [
-"Block 1 · a story",
-"Fast, confident and wrong.",
-"Monday 2 November, 08:40. Fatma in Personnel asks Copilot how many days of leave staff can carry over. The answer comes at once: 30 days. Mutla's policy says 15."
-],
-"chrome": []
-},
-{
-"n": 14,
+"n": 11,
 "id": "b1an",
 "kind": "rule",
 "title": "Your phone keyboard guesses your next word.",
@@ -280,7 +229,7 @@
 "chrome": []
 },
 {
-"n": 15,
+"n": 12,
 "id": "b1t1",
 "kind": "term",
 "title": "What Copilot really does.",
@@ -299,7 +248,7 @@
 ]
 },
 {
-"n": 16,
+"n": 13,
 "id": "b1llm",
 "kind": "llm",
 "title": "It writes by guessing the next word.",
@@ -354,7 +303,7 @@
 ]
 },
 {
-"n": 17,
+"n": 14,
 "id": "b1t2",
 "kind": "term",
 "title": "Fluent and wrong.",
@@ -373,7 +322,30 @@
 ]
 },
 {
-"n": 18,
+"n": 15,
+"id": "b1real",
+"kind": "cards",
+"title": "Fluent, wrong, and sent.",
+"topic": "b1",
+"kit": [
+"Block 1 · it happened for real",
+"Fluent, wrong, and sent.",
+"In each case, a person sent it without checking the source.",
+"Sources: Mata v. Avianca, US District Court, New York, 22 June 2023 · Moffatt v. Air Canada, 2024 BCCRT 149 · Associated Press, 7 October 2025",
+"New York court · 2023",
+"Lawyers fined $5,000",
+"Two lawyers filed a court brief with six cases that ChatGPT made up. They had asked ChatGPT if the cases were real, and it said yes. The judge fined them and their firm.",
+"Air Canada · 2024",
+"A chatbot invented a refund rule",
+"The website chatbot told a passenger he could claim a bereavement discount after his flight. The real policy said before. A tribunal made the airline pay.",
+"Deloitte Australia · 2025",
+"Part of the fee paid back",
+"A A$440,000 report for a government department had made-up references and a made-up quote from a court judgment. The firm refunded part of the fee."
+],
+"chrome": []
+},
+{
+"n": 16,
 "id": "b1chk1",
 "kind": "check",
 "title": "Quick check",
@@ -394,7 +366,21 @@
 ]
 },
 {
-"n": 19,
+"n": 17,
+"id": "b1train",
+"kind": "scene",
+"title": "Where your chat goes after you press Send.",
+"topic": "b1",
+"kit": [
+"Block 1 · after you press Send",
+"Where your chat goes after you press Send.",
+"For work, use Copilot with your work account. You still decide what goes in.",
+"Free chatbot · personal account You a prompt and a file The chatbot company keeps the chat Its next model can learn from chats like yours Your chat Your chat can become training data, unless you switch it off. Copilot Chat · work account Your organization's Microsoft 365 You a prompt and a file Copilot answers you ✕ Its next model not trained on your chat Your chat Answer Your prompts and answers are not used to train the models."
+],
+"chrome": []
+},
+{
+"n": 18,
 "id": "b1key",
 "kind": "rule",
 "title": "A colleague with your keycard.",
@@ -407,7 +393,7 @@
 "chrome": []
 },
 {
-"n": 20,
+"n": 19,
 "id": "b1t3",
 "kind": "term",
 "title": "What Copilot can see.",
@@ -426,7 +412,7 @@
 ]
 },
 {
-"n": 21,
+"n": 20,
 "id": "b1lic",
 "kind": "table",
 "title": "Read the label under your name.",
@@ -451,7 +437,7 @@
 "chrome": []
 },
 {
-"n": 22,
+"n": 21,
 "id": "b1chk2",
 "kind": "check",
 "title": "Quick check",
@@ -472,7 +458,42 @@
 ]
 },
 {
+"n": 22,
+"id": "b0story",
+"kind": "story",
+"title": "Block 1 · meet Copilot",
+"topic": "b1",
+"kit": [
+"Block 1 · meet Copilot",
+"Sunday 1 November, 09:20",
+"Yousef, the HR Section Head, needs a job description for the new Compensation Analyst before the evaluation round. Abdulaziz opens Copilot and types one short line.",
+"One role, two requests. Watch what changes.",
+"See why the request decides the quality of the draft.",
+"01"
+],
+"chrome": [
+"The starting point",
+"By the end of this block:"
+]
+},
+{
 "n": 23,
+"id": "b0live",
+"kind": "list",
+"title": "One role, two requests.",
+"topic": "b1",
+"kit": [
+"Demo 1.0 · live in Copilot Chat",
+"One role, two requests.",
+"The request decides the answer. You decide what goes out.",
+"What I will show: One short line in the first tab. The full request, with two files, in the second tab.",
+"Watch for: The duties, the team size and the grade line in each answer.",
+"Files: mutla-jd-template-2026.docx, mutla-role-information-2026.docx"
+],
+"chrome": []
+},
+{
+"n": 24,
 "id": "b1live",
 "kind": "list",
 "title": "The same question, with and without the policy.",
@@ -488,7 +509,7 @@
 "chrome": []
 },
 {
-"n": 24,
+"n": 25,
 "id": "b1chk3",
 "kind": "check",
 "title": "Quick check",
@@ -509,7 +530,7 @@
 ]
 },
 {
-"n": 25,
+"n": 26,
 "id": "b1task",
 "kind": "task",
 "title": "Your turn 1.1",
@@ -558,7 +579,7 @@
 ]
 },
 {
-"n": 26,
+"n": 27,
 "id": "b1deb",
 "kind": "rule",
 "title": "Fluent is not the same as correct.",
@@ -571,7 +592,7 @@
 "chrome": []
 },
 {
-"n": 27,
+"n": 28,
 "id": "b1groups",
 "kind": "cards",
 "title": "Sort the task before you type.",
@@ -593,7 +614,7 @@
 "chrome": []
 },
 {
-"n": 28,
+"n": 29,
 "id": "b1t4",
 "kind": "term",
 "title": "Some decisions stay with people.",
@@ -612,7 +633,7 @@
 ]
 },
 {
-"n": 29,
+"n": 30,
 "id": "b1sort",
 "kind": "sort",
 "title": "Which group? Tap a card.",
@@ -637,7 +658,7 @@
 ]
 },
 {
-"n": 30,
+"n": 31,
 "id": "b1chk4",
 "kind": "check",
 "title": "Quick check",
@@ -658,7 +679,7 @@
 ]
 },
 {
-"n": 31,
+"n": 32,
 "id": "b1files",
 "kind": "rule",
 "title": "Today: practice files only.",
@@ -671,7 +692,7 @@
 "chrome": []
 },
 {
-"n": 32,
+"n": 33,
 "id": "b2story",
 "kind": "story",
 "title": "Block 2 · Writing a clear prompt",
@@ -690,7 +711,7 @@
 ]
 },
 {
-"n": 33,
+"n": 34,
 "id": "b2an",
 "kind": "rule",
 "title": "Brief Copilot like a new colleague.",
@@ -703,7 +724,7 @@
 "chrome": []
 },
 {
-"n": 34,
+"n": 35,
 "id": "b2check",
 "kind": "table",
 "title": "Five parts before you press Send.",
@@ -734,7 +755,7 @@
 "chrome": []
 },
 {
-"n": 35,
+"n": 36,
 "id": "b2t1",
 "kind": "term",
 "title": "Constraints: the limits.",
@@ -753,7 +774,7 @@
 ]
 },
 {
-"n": 36,
+"n": 37,
 "id": "b2live",
 "kind": "list",
 "title": "Five short parts, typed live.",
@@ -769,7 +790,7 @@
 "chrome": []
 },
 {
-"n": 37,
+"n": 38,
 "id": "b2chk",
 "kind": "check",
 "title": "Quick check",
@@ -790,7 +811,7 @@
 ]
 },
 {
-"n": 38,
+"n": 39,
 "id": "b2task",
 "kind": "task",
 "title": "Your turn 1.2",
@@ -838,7 +859,7 @@
 ]
 },
 {
-"n": 39,
+"n": 40,
 "id": "b2deb",
 "kind": "rule",
 "title": "A full brief works better than one clever sentence.",
@@ -851,7 +872,7 @@
 "chrome": []
 },
 {
-"n": 40,
+"n": 41,
 "id": "b3story",
 "kind": "story",
 "title": "Block 3 · Draft, fix and check in Word",
@@ -870,7 +891,7 @@
 ]
 },
 {
-"n": 41,
+"n": 42,
 "id": "b3t1",
 "kind": "term",
 "title": "Fix it. Do not start again.",
@@ -889,7 +910,7 @@
 ]
 },
 {
-"n": 42,
+"n": 43,
 "id": "b3fu",
 "kind": "cards",
 "title": "Three follow-ups you will use every week.",
@@ -911,7 +932,7 @@
 "chrome": []
 },
 {
-"n": 43,
+"n": 44,
 "id": "b3live1",
 "kind": "list",
 "title": "One draft, three follow-ups.",
@@ -927,7 +948,7 @@
 "chrome": []
 },
 {
-"n": 44,
+"n": 45,
 "id": "b3an",
 "kind": "rule",
 "title": "An auditor ticks every line against a receipt.",
@@ -940,7 +961,7 @@
 "chrome": []
 },
 {
-"n": 45,
+"n": 46,
 "id": "b3t2",
 "kind": "term",
 "title": "Ask Copilot to show its receipts.",
@@ -959,7 +980,7 @@
 ]
 },
 {
-"n": 46,
+"n": 47,
 "id": "b3fail",
 "kind": "cards",
 "title": "Three failures to look for.",
@@ -981,7 +1002,7 @@
 "chrome": []
 },
 {
-"n": 47,
+"n": 48,
 "id": "b3live2",
 "kind": "list",
 "title": "Every line, with its source.",
@@ -997,7 +1018,7 @@
 "chrome": []
 },
 {
-"n": 48,
+"n": 49,
 "id": "b3chk",
 "kind": "check",
 "title": "Quick check",
@@ -1018,7 +1039,7 @@
 ]
 },
 {
-"n": 49,
+"n": 50,
 "id": "b3task",
 "kind": "task",
 "title": "Your turn 1.3",
@@ -1069,7 +1090,7 @@
 ]
 },
 {
-"n": 50,
+"n": 51,
 "id": "b3chk2",
 "kind": "check",
 "title": "Quick check",
@@ -1090,7 +1111,7 @@
 ]
 },
 {
-"n": 51,
+"n": 52,
 "id": "b3task2",
 "kind": "task",
 "title": "Your turn 1.4",
@@ -1138,7 +1159,7 @@
 ]
 },
 {
-"n": 52,
+"n": 53,
 "id": "b3deb",
 "kind": "rule",
 "title": "The record decides the dates. You decide the letter.",
@@ -1151,7 +1172,7 @@
 "chrome": []
 },
 {
-"n": 53,
+"n": 54,
 "id": "b4story",
 "kind": "story",
 "title": "Block 4 · From policy to people",
@@ -1170,7 +1191,7 @@
 ]
 },
 {
-"n": 54,
+"n": 55,
 "id": "b4t1",
 "kind": "term",
 "title": "A summary you can check.",
@@ -1189,7 +1210,7 @@
 ]
 },
 {
-"n": 55,
+"n": 56,
 "id": "b4live1",
 "kind": "list",
 "title": "The leave policy, for new joiners.",
@@ -1205,7 +1226,7 @@
 "chrome": []
 },
 {
-"n": 56,
+"n": 57,
 "id": "b4task1",
 "kind": "task",
 "title": "Your turn 1.5",
@@ -1248,7 +1269,7 @@
 ]
 },
 {
-"n": 57,
+"n": 58,
 "id": "b4chk",
 "kind": "check",
 "title": "Quick check",
@@ -1269,7 +1290,7 @@
 ]
 },
 {
-"n": 58,
+"n": 59,
 "id": "b4t2",
 "kind": "term",
 "title": "Turn the tone dial. Keep the facts.",
@@ -1288,7 +1309,7 @@
 ]
 },
 {
-"n": 59,
+"n": 60,
 "id": "b4live2",
 "kind": "list",
 "title": "One reminder, three readers.",
@@ -1304,7 +1325,7 @@
 "chrome": []
 },
 {
-"n": 60,
+"n": 61,
 "id": "b4task2",
 "kind": "task",
 "title": "Your turn 1.6",
@@ -1353,7 +1374,7 @@
 ]
 },
 {
-"n": 61,
+"n": 62,
 "id": "b4chk2",
 "kind": "check",
 "title": "Quick check",
@@ -1374,7 +1395,7 @@
 ]
 },
 {
-"n": 62,
+"n": 63,
 "id": "b4chk3",
 "kind": "check",
 "title": "Quick check",
@@ -1395,7 +1416,7 @@
 ]
 },
 {
-"n": 63,
+"n": 64,
 "id": "b4deb",
 "kind": "rule",
 "title": "Change the tone, keep the rules.",
@@ -1408,7 +1429,7 @@
 "chrome": []
 },
 {
-"n": 64,
+"n": 65,
 "id": "b5bank",
 "kind": "list",
 "title": "A request you checked is worth saving.",
@@ -1425,7 +1446,7 @@
 "chrome": []
 },
 {
-"n": 65,
+"n": 66,
 "id": "b5go",
 "kind": "timer",
 "title": "Save two entries, then read one to a neighbor.",
@@ -1444,7 +1465,7 @@
 ]
 },
 {
-"n": 66,
+"n": 67,
 "id": "b5seats",
 "kind": "list",
 "title": "One checklist, many seats.",
@@ -1461,7 +1482,7 @@
 "chrome": []
 },
 {
-"n": 67,
+"n": 68,
 "id": "b5gcse",
 "kind": "table",
 "title": "The same idea, in Microsoft's words.",
@@ -1484,7 +1505,7 @@
 "chrome": []
 },
 {
-"n": 68,
+"n": 69,
 "id": "w1",
 "kind": "wrap",
 "title": "Wrap-up",
@@ -1509,7 +1530,7 @@
 ]
 },
 {
-"n": 69,
+"n": 70,
 "id": "close1",
 "kind": "close",
 "title": "Close",

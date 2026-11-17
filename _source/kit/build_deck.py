@@ -61,6 +61,32 @@ def live(sid, topic, did, title, show, watch, n=None):
     return listslide(sid, topic, f"{d['card']} · live in {d['tool']}", title, items, d["point"], n=base)
 
 # ------------------------------------------------------------------ Day 1 · Copilot Foundations for HR Documents and Communication
+# ------------------------------------------------------------------ kit slide: where a chat goes (animated, CSS in content.EXTRA_CSS)
+import deck as _DK
+EXTRA_CSS = C.EXTRA_CSS                                         # the engine reads EXTRA_CSS from this module
+def trainslide(sid, topic, tag, title, text, take, n=None):
+    """Two lanes. Top: a personal-account chatbot, the chat travels on into the next model. Bottom: Copilot with a work account,
+    the chat goes to Copilot and comes back as an answer; the road to the model is cut."""
+    _DK._t(topic)
+    lane = lambda cls, tagline, nodes, cap, pk: (
+        f'<div class="wtc-lane {cls}"><div class="wtc-tag">{tagline}</div><div class="wtc-track">{nodes}{pk}</div><p class="wtc-cap">{cap}</p></div>')
+    node = lambda b, s, cls="": f'<div class="wtc-node {cls}"><b>{b}</b><span>{s}</span></div>'
+    bad = lane("wtc-bad", "Free chatbot · personal account",
+               node("You", "a prompt and a file") + '<div class="wtc-line"></div>' + node("The chatbot company", "keeps the chat")
+               + '<div class="wtc-line"></div>' + node("Its next model", "can learn from chats like yours", "wtc-model"),
+               "Your chat can become training data, unless you switch it off.",
+               '<div class="wtc-pkt wtc-go">Your chat</div>')
+    ok = lane("wtc-ok", "Copilot Chat · work account",
+              '<div class="wtc-box"><span class="wtc-boxl">Your organization\'s Microsoft 365</span>' + node("You", "a prompt and a file")
+              + '<div class="wtc-line"></div>' + node("Copilot", "answers you") + '</div>'
+              + '<div class="wtc-line wtc-cut"><i>&#10005;</i></div>' + node("Its next model", "not trained on your chat", "wtc-model wtc-off"),
+              "Your prompts and answers are not used to train the models.",
+              '<div class="wtc-pkt wtc-there">Your chat</div><div class="wtc-pkt wtc-back">Answer</div>')
+    html = f'<div class="wtc">{bad}{ok}</div>'
+    inner = head(e(tag), title) + (f'\n  <p class="cd-lede wtc-lede">{text}</p>' if text else '') + f'\n  {html}\n  ' + key(take)
+    return _DK._slide(section("cd-slide--stage wtc-slide", inner, title, sid=sid), sid, "scene", title, topic, title,
+                      [tag, title, text, take, _DK._text(html)], [], _DK._merge({}, n))
+
 def day1():
     welcome = listslide("b0welcome", "open", "Welcome to CODED", "CODED Professionals: <span class=\"hl\">learn it by doing it.</span>",
         ["<b>CODED</b> is a Kuwaiti tech education company. CODED Professionals trains teams from companies across Kuwait.",
@@ -73,36 +99,24 @@ def day1():
                 "you will spend most of the time on your own laptop. Everything we use belongs to a company that does not exist, so nothing you type can hurt anyone. "
                 "(Point to the last line.) Remember this sentence. You will hear it every day."))
     s = opening(1, opener=[welcome])
-    # Opener · one job description, live
-    s.append(story("b0story", "open", "Opener · one job description", "Sunday 1 November, 09:20",
-        f"Yousef, the HR Section Head, needs a job description for the new <b>{R['title']}</b> before the evaluation round. Abdulaziz opens Copilot and types one short line.",
-        "One role, two requests. <span class=\"hl\">Watch what changes.</span>", "See why the request decides the quality of the draft.",
-        n=N(time="09:20-09:30", say="Here is our first story. (Read the story aloud.) Before I show you anything: what would you type? Call it out. "
-              "(Wait for two or three answers.) Most of us type one short line. Let us see what that gives us.",
-            expect="Short answers like “write a JD for a compensation analyst”.")))
-    s.append(live("b0live", "open", "d10", "One role, <span class=\"hl\">two requests.</span>",
-        "One short line in the first tab. The full request, with two files, in the second tab.", "The duties, the team size and the grade line in each answer.",
-        n=N(say="(Run the one-line request in tab 1.) Look at this. It sounds professional. Now read it slowly: a team to manage, a senior grade, duties nobody approved. "
-                "(Run the full request in tab 2.) Same tool, same role. This one follows our template, uses only the six approved duties, and leaves the grade for the committee. "
-                "The only thing that changed is what we gave Copilot, and that is what we practice today.")))
     # Block 1 · How generative AI and Copilot work
     s.append(story("b1story", "b1", "Block 1 · How generative AI and Copilot work", "This week",
         "Hands up: <b>how many of you used an AI tool this week?</b> At work or at home. What did you use it for, and which tool was it?",
         "AI is already <span class=\"hl\">in your week.</span>", "Say what AI is, where Copilot fits, and why it can write a confident sentence that is wrong.",
-        n=N(time="09:30-10:30", do="(Count the hands. Ask three people: what for, and which tool?)",
+        n=N(time="09:20-10:30", do="(Count the hands. Ask three people: what for, and which tool?)",
             say="Block 1. Before we write a single request, I want to know where you are. (Read the question.) Keep your hand up if you used it for work. "
                 "Now tell me, in a few words: what did you use it for?",
             expect="Most hands go up. ChatGPT, Copilot, translation, a photo app, maybe Google search.", silent="Write the tools they name on a sticky note. You come back to them on the next slides.")))
     s.append(term("b1ai", "b1", "Block 1 · the word", "First: <span class=\"hl\">what is AI?</span>", "Artificial intelligence (AI)",
         "Computer systems that do tasks which usually need a person's judgment: they <b>recognize</b>, <b>predict</b>, <b>sort</b> or <b>create</b>.",
         "Normal software follows rules a person wrote…", "…AI <b>learns patterns from examples</b>.", "AI is a big family of tools, and Copilot is one member of it.",
-        n=N(time="3 min", say="Here is a simple definition. Normal software follows rules that a programmer wrote, step by step. "
+        n=N(time="2 min", say="Here is a simple definition. Normal software follows rules that a programmer wrote, step by step. "
                 "AI learns from many examples. Show it thousands of junk emails, and it learns what junk looks like. Nobody writes the rule by hand.")))
     s.append(listslide("b1ex", "b1", "Block 1 · AI you already use", "AI you used <span class=\"hl\">before Copilot.</span>",
         ["<b>Email:</b> the spam filter decides which messages are junk.", "<b>Phone:</b> face unlock recognizes your face.",
          "<b>Maps:</b> the app predicts traffic and your arrival time.", "<b>Bank:</b> an alert flags an unusual card payment as possible fraud."],
         "These tools sort, recognize and predict. None of them writes you a letter.",
-        n=N(time="3 min", say="None of these is new. Your spam filter learned from millions of junk emails. Face unlock learned your face. "
+        n=N(time="2 min", say="None of these is new. Your spam filter learned from millions of junk emails. Face unlock learned your face. "
                 "Maps learned from traffic data. (Ask:) What else on your phone learns from you?", expect="Photo search, keyboard suggestions, streaming recommendations.")))
     s.append(cards3("b1fam", "b1", "Block 1 · where LLMs fit", "So where do ChatGPT, Claude <span class=\"hl\">and Copilot fit?</span>",
         [("Artificial intelligence", "The whole family", "Spam filters, face unlock, maps, fraud alerts, and everything below.", ""),
@@ -115,13 +129,9 @@ def day1():
     s.append(term("b1llmdef", "b1", "Block 1 · the name", "LLM: <span class=\"hl\">Large Language Model.</span>", "LLM",
         "<b>Large:</b> it learned from a huge amount of text. <b>Language:</b> it works with words. <b>Model:</b> a program that learned patterns from examples.",
         "A spam filter sorts the email you have…", "…an LLM <b>writes new text</b>, one word at a time.", "Each kind of AI makes its own kind of mistake, so each needs its own check.",
-        n=N(time="3 min", say="LLM stands for large language model. The difference matters because each kind of AI goes wrong in its own way. When someone says the AI did it, ask which AI. "
+        n=N(time="2 min", say="LLM stands for large language model. The difference matters because each kind of AI goes wrong in its own way. When someone says the AI did it, ask which AI. "
                 "A fraud filter can block your card by mistake. An LLM can write a wrong rule that sounds right, and you catch that only by reading the source. "
                 "For Copilot, the check is always the source document.")))
-    s.append(rule("b1fatma", "b1", "Block 1 · a story", "Fast, confident <span class=\"hl\">and wrong.</span>",
-        f"Monday 2 November, 08:40. Fatma in Personnel asks Copilot how many days of leave staff can carry over. The answer comes at once: 30 days. Mutla's policy says {D.LEAVE['carry']}.",
-        n=N(time="2 min", say="Now a real-looking story from HR. (Read it.) Has an AI tool ever given you a wrong number at work? One sentence each, two people.",
-            expect="Two short stories.", silent="Share one of your own wrong-number stories if the room is quiet.")))
     s.append(rule("b1an", "b1", "Block 1 · the picture", "Your phone keyboard guesses <span class=\"hl\">your next word.</span>",
         "Copilot does the same thing with a much bigger memory. Its guesses sound right because it learned from a huge amount of text.",
         n=N(do="(Ask two people to type “I will be there in” on their phone and read the suggestions.)",
@@ -135,7 +145,7 @@ def day1():
             silent="Ask: is the most common number always Mutla's number?")))
     s.append(llmslide("b1llm", "b1", "Block 1 · live widget", "It writes by guessing <span class=\"hl\">the next word.</span>",
         "At each step, every possible next word gets a score. The model picks one and repeats.", f"It predicts <b>likely</b> words. Mutla's policy says {D.LEAVE['carry']}, but 30 is more common.",
-        n=N(time="7 min", do="(Read the start of the sentence. Ask the room for the next word, then click it.)",
+        n=N(time="6 min", do="(Read the start of the sentence. Ask the room for the next word, then click it.)",
             more=["Click Pick the top word: 30 wins, because it is common in policies everywhere.", "Start again and pick 15: Mutla's real number is only the second guess.", "Pick camel (1%). The sentence still sounds confident.", "The percentages are illustrative."],
             say="Watch what wins. (Click the top word.) Thirty, because thirty follows these words most often in policies around the world. Our rule says fifteen. "
                 "(Start again, pick camel.) And even nonsense comes out sounding confident. The tone tells you nothing about the truth.")))
@@ -143,16 +153,41 @@ def day1():
         "When Copilot writes something that <b>sounds right but is not true</b>: a wrong number, date, rule or name.",
         "A likely next word…", "…is not always a <b>true</b> one. Nothing checks it for you.", "Check every number, date and rule against the approved source.",
         n=N(say="This has a name: hallucination. Many people think it means Copilot is broken. In fact Copilot did what it always does: it predicted a likely word, and the likely word was wrong. "
-                "Fatma's thirty days was a likely answer and a wrong one.", silent="Ask: what would have caught Fatma's 30 days?")))
+                "The thirty on the widget was a likely answer and a wrong one. Next, three times this happened for real.", silent="Ask: what would have caught the 30 days?")))
+    s.append(cards3("b1real", "b1", "Block 1 · it happened for real", "Fluent, wrong, <span class=\"hl\">and sent.</span>",
+        [("New York court · 2023", "Lawyers fined $5,000", "Two lawyers filed a court brief with six cases that ChatGPT made up. They had asked ChatGPT if the cases were real, and it said yes. The judge fined them and their firm.", ""),
+         ("Air Canada · 2024", "A chatbot invented a refund rule", "The website chatbot told a passenger he could claim a bereavement discount after his flight. The real policy said before. A tribunal made the airline pay.", ""),
+         ("Deloitte Australia · 2025", "Part of the fee paid back", "A A$440,000 report for a government department had made-up references and a made-up quote from a court judgment. The firm refunded part of the fee.", "")],
+        "In each case, a person sent it without checking the source.",
+        src="Sources: Mata v. Avianca, US District Court, New York, 22 June 2023 · Moffatt v. Air Canada, 2024 BCCRT 149 · Associated Press, 7 October 2025",
+        n=N(time="3 min", say="These are real. (Read the three headings.) In New York, the lawyers even asked ChatGPT to confirm the cases. A second guess is not a check. "
+                "Air Canada told the tribunal its chatbot was responsible for its own words. The tribunal said no: the chatbot is part of the airline's website. "
+                "(Ask:) If Copilot drafts an answer to an employee and you send it, whose answer is it?",
+            expect="Ours. HR's. The person who sent it.", silent="Point to the take line. Every story ends with a person who did not open the source.",
+            more=["Mata v. Avianca: Judge P. Kevin Castel fined the two lawyers and their firm $5,000 on 22 June 2023 and dismissed the case.",
+                  "Moffatt v. Air Canada: the tribunal ordered the airline to pay about CA$812 in damages, interest and fees (February 2024).",
+                  "Deloitte Australia: the revised report says it used Azure OpenAI; the amount refunded was part of the A$440,000 fee."])))
     s.append(check("b1chk1", "b1", "An employee forwards you Copilot's answer: <b>Hajj leave is 30 days.</b> <b>What do you check before you reply?</b>",
         [("How sure Copilot sounded in its answer", 0, "Sounding sure is not evidence. Check the source."),
          ("A second answer from a new Copilot chat", 0, "A second prediction is not a check. Read the policy."),
          ("The Hajj section of the leave policy", 1, f"Right. The policy says {D.LEAVE['hajj']} days. The approved policy decides.")],
         n=N(say="Quick check. Hands up for A. For B. For C. (Tap the most popular.) A second chat is just a second guess. Only the policy can answer this.")))
+    s.append(trainslide("b1train", "b1", "Block 1 · after you press Send", "Where your chat goes <span class=\"hl\">after you press Send.</span>",
+        "",
+        "For work, use Copilot with your work account. You still decide what goes in.",
+        n=N(time="4 min", say="One more question before we talk about what Copilot can see: where does your chat go after you press Send? "
+                "(Point to the top half.) With many free chatbots on a personal account, the conversation can become training data for the next version of the model, unless you turn that setting off. "
+                "Whatever you pasted goes with it: a salary, a medical note, a complaint. "
+                "(Point to the bottom half.) Signed in with your work account, Microsoft's terms say Copilot does not use your prompts and answers to train the models. "
+                "(Ask:) The last time you pasted something from work into a chatbot, which account were you using?",
+            expect="Some people used a personal ChatGPT account for work text.", silent="No blame. The point is the habit from today: work text, work account.",
+            more=["Microsoft: Copilot Chat signed in with a work or school (Entra) account has enterprise data protection. Prompts and responses are not used to train foundation models. Source: Microsoft Learn, Enterprise data protection in Microsoft 365 Copilot and Copilot Chat.",
+                  "OpenAI: on ChatGPT Free, Plus and Pro, data sharing is on by default. To stop it: Settings, Data controls, turn off Improve the model for everyone. Source: OpenAI Help Center, Data Controls FAQ.",
+                  "A work account does not make every piece of data safe to paste. Day 2 starts with what may go in and what may not."])))
     s.append(rule("b1key", "b1", "Block 1 · a second picture", "A colleague with <span class=\"hl\">your keycard.</span>",
         "They can open every door you can open, and no other door. That is how Copilot reaches your work files.",
         n=N(do="(Hold up your own badge or keycard.)",
-            say="Second question: what can Copilot see? Imagine a colleague borrows this card. Which rooms can they enter? Only the rooms I can enter. Keep this card in mind for the next slide.",
+            say="Next question: what can Copilot see? Imagine a colleague borrows this card. Which rooms can they enter? Only the rooms I can enter. Keep this card in mind for the next slide.",
             expect="Only the rooms I can enter.")))
     s.append(term("b1t3", "b1", "Block 1 · the idea", "What Copilot <span class=\"hl\">can see.</span>", "Permissions",
         "With a Microsoft 365 Copilot license (the M365 Copilot (Premium) label), Copilot uses <b>only what you can already open</b>. On Copilot Chat (Basic), it uses <b>the web and the files you upload</b>, and you also get Copilot in Outlook. M365 Copilot (Basic) adds Copilot in Word, Excel and PowerPoint.",
@@ -172,6 +207,18 @@ def day1():
          ("Yes, if he names the folder in his prompt to Copilot", 0, "Asking does not change his permissions."),
          ("No. It uses only what he can already open", 1, "Right. His permissions are the limit.")],
         n=N(say="Think of the keycard. (Wait for hands.) Asking nicely does not open a locked door, for Khaled or for Copilot.")))
+    # Meet Copilot: Demo 1.0, after the theory and before Demo 1.1
+    s.append(story("b0story", "b1", "Block 1 · meet Copilot", "Sunday 1 November, 09:20",
+        f"Yousef, the HR Section Head, needs a job description for the new <b>{R['title']}</b> before the evaluation round. Abdulaziz opens Copilot and types one short line.",
+        "One role, two requests. <span class=\"hl\">Watch what changes.</span>", "See why the request decides the quality of the draft.",
+        n=N(time="8 min", say="That was the theory. Now let us meet Copilot properly, with a real HR job. (Read the story aloud.) Before I show you anything: what would you type? Call it out. "
+              "(Wait for two or three answers.) Most of us type one short line. Let us see what that gives us.",
+            expect="Short answers like “write a JD for a compensation analyst”.")))
+    s.append(live("b0live", "b1", "d10", "One role, <span class=\"hl\">two requests.</span>",
+        "One short line in the first tab. The full request, with two files, in the second tab.", "The duties, the team size and the grade line in each answer.",
+        n=N(say="(Run the one-line request in tab 1.) Look at this. It sounds professional. Now read it slowly: a team to manage, a senior grade, duties nobody approved. "
+                "(Run the full request in tab 2.) Same tool, same role. This one follows our template, uses only the six approved duties, and leaves the grade for the committee. "
+                "The only thing that changed is what we gave Copilot, and that is what we practice today.")))
     s.append(live("b1live", "b1", "d11", "The same question, <span class=\"hl\">with and without the policy.</span>",
         "The carry-over question asked twice: once with no file, once with the leave policy attached.", "The number, the deadline, and whether the answer names its section.",
         n=N(say="Now let us test what we just learned. (Ask with no file.) A number, said with full confidence. (Ask with the policy attached.) "
@@ -206,7 +253,7 @@ def day1():
         n=N(say="One for the L&D people in the room. (Wait for hands, then tap.) Choosing people is a decision about people.")))
     s.append(rule("b1files", "b1", "Block 1 · today's rule", "Today: <span class=\"hl\">practice files only.</span>",
         "Tomorrow morning we learn exactly what may go into a prompt. Until then, use only the Mutla files and your own drafting. No names, salaries or cases from work.",
-        n=N(time="10:26-10:30", say="One rule for today, before we start writing. We learn how to protect employee data first thing tomorrow. "
+        n=N(time="10:29-10:30", say="One rule for today, before we start writing. We learn how to protect employee data first thing tomorrow. "
               "Until then, please practice on the fictional company's files and on your own writing. Nothing from a real employee. Break now: fifteen minutes. (Press the cup button.)")))
     # Block 2 · Writing a clear prompt
     s.append(story("b2story", "b2", "Block 2 · Writing a clear prompt", "Monday 9 November, 10:45",

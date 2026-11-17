@@ -71,45 +71,17 @@
 "flat": "Do: (Point to each block, then to the breaks.) · If the room is silent: ask which block they expect to be hardest. · Say: “This is our day. Mutla Oil Company has five HR units, the same as many real HR departments. Pick the unit closest to your own job: you will use it in the tasks. When I press the cup button, the break clock starts.”"
 },
 {
-"say": "Here is our first story. (Read the story aloud.) Before I show you anything: what would you type? Call it out. (Wait for two or three answers.) Most of us type one short line. Let us see what that gives us.",
-"do": null,
-"expect": "Short answers like “write a JD for a compensation analyst”.",
-"silent": null,
-"fallback": null,
-"more": [],
-"time": "09:20-09:30",
-"t": "open",
-"k": "story",
-"h": "Opener · one job description",
-"flat": "09:20-09:30. · Expect: Short answers like “write a JD for a compensation analyst”. · Say: “Here is our first story. (Read the story aloud.) Before I show you anything: what would you type? Call it out. (Wait for two or three answers.) Most of us type one short line. Let us see what that gives us.”"
-},
-{
-"say": "(Run the one-line request in tab 1.) Look at this. It sounds professional. Now read it slowly: a team to manage, a senior grade, duties nobody approved. (Run the full request in tab 2.) Same tool, same role. This one follows our template, uses only the six approved duties, and leaves the grade for the committee. The only thing that changed is what we gave Copilot, and that is what we practice today.",
-"do": null,
-"expect": "One line: a generic job description with invented duties, a team to manage and a senior grade. The checklist: Mutla's template order, the six duties from the role sheet, the grade left blank, and the DRAFT line at the top.",
-"silent": null,
-"fallback": "Show the backup results on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.0.",
-"more": [
-"Click steps: (1) Open Copilot Chat in two browser tabs, signed in with the training account. (2) Tab 1: paste the one-line request, with no file. (3) Tab 2: attach mutla-jd-template-2026.docx and mutla-role-information-2026.docx, then paste the checklist request. (4) Put the two answers side by side. Read the duties and the grade line aloud."
-],
-"time": "5 min, live",
-"t": "open",
-"k": "list",
-"h": "One role, two requests.",
-"flat": "5 min, live. · Expect: One line: a generic job description with invented duties, a team to manage and a senior grade. The checklist: Mutla's template order, the six duties from the role sheet, the grade left blank, and the DRAFT line at the top. · Click steps: (1) Open Copilot Chat in two browser tabs, signed in with the training account. (2) Tab 1: paste the one-line request, with no file. (3) Tab 2: attach mutla-jd-template-2026.docx and mutla-role-information-2026.docx, then paste the checklist request. (4) Put the two answers side by side. Read the duties and the grade line aloud. · Fallback: Show the backup results on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.0. · Say: “(Run the one-line request in tab 1.) Look at this. It sounds professional. Now read it slowly: a team to manage, a senior grade, duties nobody approved. (Run the full request in tab 2.) Same tool, same role. This one follows our template, uses only the six approved duties, and leaves the grade for the committee. The only thing that changed is what we gave Copilot, and that is what we practice today.”"
-},
-{
 "say": "Block 1. Before we write a single request, I want to know where you are. (Read the question.) Keep your hand up if you used it for work. Now tell me, in a few words: what did you use it for?",
 "do": "(Count the hands. Ask three people: what for, and which tool?)",
 "expect": "Most hands go up. ChatGPT, Copilot, translation, a photo app, maybe Google search.",
 "silent": "Write the tools they name on a sticky note. You come back to them on the next slides.",
 "fallback": null,
 "more": [],
-"time": "09:30-10:30",
+"time": "09:20-10:30",
 "t": "b1",
 "k": "story",
 "h": "Block 1 · How generative AI and Copilot work",
-"flat": "09:30-10:30. · Do: (Count the hands. Ask three people: what for, and which tool?) · Expect: Most hands go up. ChatGPT, Copilot, translation, a photo app, maybe Google search. · If the room is silent: Write the tools they name on a sticky note. You come back to them on the next slides. · Say: “Block 1. Before we write a single request, I want to know where you are. (Read the question.) Keep your hand up if you used it for work. Now tell me, in a few words: what did you use it for?”"
+"flat": "09:20-10:30. · Do: (Count the hands. Ask three people: what for, and which tool?) · Expect: Most hands go up. ChatGPT, Copilot, translation, a photo app, maybe Google search. · If the room is silent: Write the tools they name on a sticky note. You come back to them on the next slides. · Say: “Block 1. Before we write a single request, I want to know where you are. (Read the question.) Keep your hand up if you used it for work. Now tell me, in a few words: what did you use it for?”"
 },
 {
 "say": "Here is a simple definition. Normal software follows rules that a programmer wrote, step by step. AI learns from many examples. Show it thousands of junk emails, and it learns what junk looks like. Nobody writes the rule by hand.",
@@ -118,11 +90,11 @@
 "silent": null,
 "fallback": null,
 "more": [],
-"time": "3 min",
+"time": "2 min",
 "t": "b1",
 "k": "term",
 "h": "First: what is AI?",
-"flat": "3 min. · Say: “Here is a simple definition. Normal software follows rules that a programmer wrote, step by step. AI learns from many examples. Show it thousands of junk emails, and it learns what junk looks like. Nobody writes the rule by hand.”"
+"flat": "2 min. · Say: “Here is a simple definition. Normal software follows rules that a programmer wrote, step by step. AI learns from many examples. Show it thousands of junk emails, and it learns what junk looks like. Nobody writes the rule by hand.”"
 },
 {
 "say": "None of these is new. Your spam filter learned from millions of junk emails. Face unlock learned your face. Maps learned from traffic data. (Ask:) What else on your phone learns from you?",
@@ -131,11 +103,11 @@
 "silent": null,
 "fallback": null,
 "more": [],
-"time": "3 min",
+"time": "2 min",
 "t": "b1",
 "k": "list",
 "h": "AI you used before Copilot.",
-"flat": "3 min. · Expect: Photo search, keyboard suggestions, streaming recommendations. · Say: “None of these is new. Your spam filter learned from millions of junk emails. Face unlock learned your face. Maps learned from traffic data. (Ask:) What else on your phone learns from you?”"
+"flat": "2 min. · Expect: Photo search, keyboard suggestions, streaming recommendations. · Say: “None of these is new. Your spam filter learned from millions of junk emails. Face unlock learned your face. Maps learned from traffic data. (Ask:) What else on your phone learns from you?”"
 },
 {
 "say": "Picture three circles, one inside the other. AI is the biggest. Inside it, machine learning: AI that learns from data. Inside that, the newest circle: large language models. ChatGPT, Claude, Gemini and the models behind Copilot all live in this small circle.",
@@ -157,24 +129,11 @@
 "silent": null,
 "fallback": null,
 "more": [],
-"time": "3 min",
+"time": "2 min",
 "t": "b1",
 "k": "term",
 "h": "LLM: Large Language Model.",
-"flat": "3 min. · Say: “LLM stands for large language model. The difference matters because each kind of AI goes wrong in its own way. When someone says the AI did it, ask which AI. A fraud filter can block your card by mistake. An LLM can write a wrong rule that sounds right, and you catch that only by reading the source. For Copilot, the check is always the source document.”"
-},
-{
-"say": "Now a real-looking story from HR. (Read it.) Has an AI tool ever given you a wrong number at work? One sentence each, two people.",
-"do": null,
-"expect": "Two short stories.",
-"silent": "Share one of your own wrong-number stories if the room is quiet.",
-"fallback": null,
-"more": [],
-"time": "2 min",
-"t": "b1",
-"k": "rule",
-"h": "Fast, confident and wrong.",
-"flat": "2 min. · Expect: Two short stories. · If the room is silent: Share one of your own wrong-number stories if the room is quiet. · Say: “Now a real-looking story from HR. (Read it.) Has an AI tool ever given you a wrong number at work? One sentence each, two people.”"
+"flat": "2 min. · Say: “LLM stands for large language model. The difference matters because each kind of AI goes wrong in its own way. When someone says the AI did it, ask which AI. A fraud filter can block your card by mistake. An LLM can write a wrong rule that sounds right, and you catch that only by reading the source. For Copilot, the check is always the source document.”"
 },
 {
 "say": "Your keyboard does not know where you are. It only knows what people usually type after those words. Hold on to that idea.",
@@ -214,24 +173,41 @@
 "Pick camel (1%). The sentence still sounds confident.",
 "The percentages are illustrative."
 ],
-"time": "7 min",
+"time": "6 min",
 "t": "b1",
 "k": "llm",
 "h": "It writes by guessing the next word.",
-"flat": "7 min. · Do: (Read the start of the sentence. Ask the room for the next word, then click it.) · Click Pick the top word: 30 wins, because it is common in policies everywhere. · Start again and pick 15: Mutla's real number is only the second guess. · Pick camel (1%). The sentence still sounds confident. · The percentages are illustrative. · Say: “Watch what wins. (Click the top word.) Thirty, because thirty follows these words most often in policies around the world. Our rule says fifteen. (Start again, pick camel.) And even nonsense comes out sounding confident. The tone tells you nothing about the truth.”"
+"flat": "6 min. · Do: (Read the start of the sentence. Ask the room for the next word, then click it.) · Click Pick the top word: 30 wins, because it is common in policies everywhere. · Start again and pick 15: Mutla's real number is only the second guess. · Pick camel (1%). The sentence still sounds confident. · The percentages are illustrative. · Say: “Watch what wins. (Click the top word.) Thirty, because thirty follows these words most often in policies around the world. Our rule says fifteen. (Start again, pick camel.) And even nonsense comes out sounding confident. The tone tells you nothing about the truth.”"
 },
 {
-"say": "This has a name: hallucination. Many people think it means Copilot is broken. In fact Copilot did what it always does: it predicted a likely word, and the likely word was wrong. Fatma's thirty days was a likely answer and a wrong one.",
+"say": "This has a name: hallucination. Many people think it means Copilot is broken. In fact Copilot did what it always does: it predicted a likely word, and the likely word was wrong. The thirty on the widget was a likely answer and a wrong one. Next, three times this happened for real.",
 "do": null,
 "expect": null,
-"silent": "Ask: what would have caught Fatma's 30 days?",
+"silent": "Ask: what would have caught the 30 days?",
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b1",
 "k": "term",
 "h": "Fluent and wrong.",
-"flat": "If the room is silent: Ask: what would have caught Fatma's 30 days? · Say: “This has a name: hallucination. Many people think it means Copilot is broken. In fact Copilot did what it always does: it predicted a likely word, and the likely word was wrong. Fatma's thirty days was a likely answer and a wrong one.”"
+"flat": "If the room is silent: Ask: what would have caught the 30 days? · Say: “This has a name: hallucination. Many people think it means Copilot is broken. In fact Copilot did what it always does: it predicted a likely word, and the likely word was wrong. The thirty on the widget was a likely answer and a wrong one. Next, three times this happened for real.”"
+},
+{
+"say": "These are real. (Read the three headings.) In New York, the lawyers even asked ChatGPT to confirm the cases. A second guess is not a check. Air Canada told the tribunal its chatbot was responsible for its own words. The tribunal said no: the chatbot is part of the airline's website. (Ask:) If Copilot drafts an answer to an employee and you send it, whose answer is it?",
+"do": null,
+"expect": "Ours. HR's. The person who sent it.",
+"silent": "Point to the take line. Every story ends with a person who did not open the source.",
+"fallback": null,
+"more": [
+"Mata v. Avianca: Judge P. Kevin Castel fined the two lawyers and their firm $5,000 on 22 June 2023 and dismissed the case.",
+"Moffatt v. Air Canada: the tribunal ordered the airline to pay about CA$812 in damages, interest and fees (February 2024).",
+"Deloitte Australia: the revised report says it used Azure OpenAI; the amount refunded was part of the A$440,000 fee."
+],
+"time": "3 min",
+"t": "b1",
+"k": "cards",
+"h": "Fluent, wrong, and sent.",
+"flat": "3 min. · Expect: Ours. HR's. The person who sent it. · Mata v. Avianca: Judge P. Kevin Castel fined the two lawyers and their firm $5,000 on 22 June 2023 and dismissed the case. · Moffatt v. Air Canada: the tribunal ordered the airline to pay about CA$812 in damages, interest and fees (February 2024). · Deloitte Australia: the revised report says it used Azure OpenAI; the amount refunded was part of the A$440,000 fee. · If the room is silent: Point to the take line. Every story ends with a person who did not open the source. · Say: “These are real. (Read the three headings.) In New York, the lawyers even asked ChatGPT to confirm the cases. A second guess is not a check. Air Canada told the tribunal its chatbot was responsible for its own words. The tribunal said no: the chatbot is part of the airline's website. (Ask:) If Copilot drafts an answer to an employee and you send it, whose answer is it?”"
 },
 {
 "say": "Quick check. Hands up for A. For B. For C. (Tap the most popular.) A second chat is just a second guess. Only the policy can answer this.",
@@ -247,7 +223,24 @@
 "flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option C. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “Quick check. Hands up for A. For B. For C. (Tap the most popular.) A second chat is just a second guess. Only the policy can answer this.”"
 },
 {
-"say": "Second question: what can Copilot see? Imagine a colleague borrows this card. Which rooms can they enter? Only the rooms I can enter. Keep this card in mind for the next slide.",
+"say": "One more question before we talk about what Copilot can see: where does your chat go after you press Send? (Point to the top half.) With many free chatbots on a personal account, the conversation can become training data for the next version of the model, unless you turn that setting off. Whatever you pasted goes with it: a salary, a medical note, a complaint. (Point to the bottom half.) Signed in with your work account, Microsoft's terms say Copilot does not use your prompts and answers to train the models. (Ask:) The last time you pasted something from work into a chatbot, which account were you using?",
+"do": null,
+"expect": "Some people used a personal ChatGPT account for work text.",
+"silent": "No blame. The point is the habit from today: work text, work account.",
+"fallback": null,
+"more": [
+"Microsoft: Copilot Chat signed in with a work or school (Entra) account has enterprise data protection. Prompts and responses are not used to train foundation models. Source: Microsoft Learn, Enterprise data protection in Microsoft 365 Copilot and Copilot Chat.",
+"OpenAI: on ChatGPT Free, Plus and Pro, data sharing is on by default. To stop it: Settings, Data controls, turn off Improve the model for everyone. Source: OpenAI Help Center, Data Controls FAQ.",
+"A work account does not make every piece of data safe to paste. Day 2 starts with what may go in and what may not."
+],
+"time": "4 min",
+"t": "b1",
+"k": "scene",
+"h": "Where your chat goes after you press Send.",
+"flat": "4 min. · Expect: Some people used a personal ChatGPT account for work text. · Microsoft: Copilot Chat signed in with a work or school (Entra) account has enterprise data protection. Prompts and responses are not used to train foundation models. Source: Microsoft Learn, Enterprise data protection in Microsoft 365 Copilot and Copilot Chat. · OpenAI: on ChatGPT Free, Plus and Pro, data sharing is on by default. To stop it: Settings, Data controls, turn off Improve the model for everyone. Source: OpenAI Help Center, Data Controls FAQ. · A work account does not make every piece of data safe to paste. Day 2 starts with what may go in and what may not. · If the room is silent: No blame. The point is the habit from today: work text, work account. · Say: “One more question before we talk about what Copilot can see: where does your chat go after you press Send? (Point to the top half.) With many free chatbots on a personal account, the conversation can become training data for the next version of the model, unless you turn that setting off. Whatever you pasted goes with it: a salary, a medical note, a complaint. (Point to the bottom half.) Signed in with your work account, Microsoft's terms say Copilot does not use your prompts and answers to train the models. (Ask:) The last time you pasted something from work into a chatbot, which account were you using?”"
+},
+{
+"say": "Next question: what can Copilot see? Imagine a colleague borrows this card. Which rooms can they enter? Only the rooms I can enter. Keep this card in mind for the next slide.",
 "do": "(Hold up your own badge or keycard.)",
 "expect": "Only the rooms I can enter.",
 "silent": null,
@@ -257,7 +250,7 @@
 "t": "b1",
 "k": "rule",
 "h": "A colleague with your keycard.",
-"flat": "Do: (Hold up your own badge or keycard.) · Expect: Only the rooms I can enter. · Say: “Second question: what can Copilot see? Imagine a colleague borrows this card. Which rooms can they enter? Only the rooms I can enter. Keep this card in mind for the next slide.”"
+"flat": "Do: (Hold up your own badge or keycard.) · Expect: Only the rooms I can enter. · Say: “Next question: what can Copilot see? Imagine a colleague borrows this card. Which rooms can they enter? Only the rooms I can enter. Keep this card in mind for the next slide.”"
 },
 {
 "say": "Copilot works with your permissions. If a folder is closed to you, it is closed to Copilot. Now look at the label under your own name, please. We will read it together on the next slide.",
@@ -299,6 +292,34 @@
 "k": "check",
 "h": "Quick check",
 "flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option C. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “Think of the keycard. (Wait for hands.) Asking nicely does not open a locked door, for Khaled or for Copilot.”"
+},
+{
+"say": "That was the theory. Now let us meet Copilot properly, with a real HR job. (Read the story aloud.) Before I show you anything: what would you type? Call it out. (Wait for two or three answers.) Most of us type one short line. Let us see what that gives us.",
+"do": null,
+"expect": "Short answers like “write a JD for a compensation analyst”.",
+"silent": null,
+"fallback": null,
+"more": [],
+"time": "8 min",
+"t": "b1",
+"k": "story",
+"h": "Block 1 · meet Copilot",
+"flat": "8 min. · Expect: Short answers like “write a JD for a compensation analyst”. · Say: “That was the theory. Now let us meet Copilot properly, with a real HR job. (Read the story aloud.) Before I show you anything: what would you type? Call it out. (Wait for two or three answers.) Most of us type one short line. Let us see what that gives us.”"
+},
+{
+"say": "(Run the one-line request in tab 1.) Look at this. It sounds professional. Now read it slowly: a team to manage, a senior grade, duties nobody approved. (Run the full request in tab 2.) Same tool, same role. This one follows our template, uses only the six approved duties, and leaves the grade for the committee. The only thing that changed is what we gave Copilot, and that is what we practice today.",
+"do": null,
+"expect": "One line: a generic job description with invented duties, a team to manage and a senior grade. The checklist: Mutla's template order, the six duties from the role sheet, the grade left blank, and the DRAFT line at the top.",
+"silent": null,
+"fallback": "Show the backup results on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.0.",
+"more": [
+"Click steps: (1) Open Copilot Chat in two browser tabs, signed in with the training account. (2) Tab 1: paste the one-line request, with no file. (3) Tab 2: attach mutla-jd-template-2026.docx and mutla-role-information-2026.docx, then paste the checklist request. (4) Put the two answers side by side. Read the duties and the grade line aloud."
+],
+"time": "5 min, live",
+"t": "b1",
+"k": "list",
+"h": "One role, two requests.",
+"flat": "5 min, live. · Expect: One line: a generic job description with invented duties, a team to manage and a senior grade. The checklist: Mutla's template order, the six duties from the role sheet, the grade left blank, and the DRAFT line at the top. · Click steps: (1) Open Copilot Chat in two browser tabs, signed in with the training account. (2) Tab 1: paste the one-line request, with no file. (3) Tab 2: attach mutla-jd-template-2026.docx and mutla-role-information-2026.docx, then paste the checklist request. (4) Put the two answers side by side. Read the duties and the grade line aloud. · Fallback: Show the backup results on the trainer screen. The backup is on the Day 1 backup results page, Demo 1.0. · Say: “(Run the one-line request in tab 1.) Look at this. It sounds professional. Now read it slowly: a team to manage, a senior grade, duties nobody approved. (Run the full request in tab 2.) Same tool, same role. This one follows our template, uses only the six approved duties, and leaves the grade for the committee. The only thing that changed is what we gave Copilot, and that is what we practice today.”"
 },
 {
 "say": "Now let us test what we just learned. (Ask with no file.) A number, said with full confidence. (Ask with the policy attached.) Fifteen days, the deadline, and a section number I can open in ten seconds. Which of the two would you send to an employee?",
@@ -416,11 +437,11 @@
 "silent": null,
 "fallback": null,
 "more": [],
-"time": "10:26-10:30",
+"time": "10:29-10:30",
 "t": "b1",
 "k": "rule",
 "h": "Today: practice files only.",
-"flat": "10:26-10:30. · Say: “One rule for today, before we start writing. We learn how to protect employee data first thing tomorrow. Until then, please practice on the fictional company's files and on your own writing. Nothing from a real employee. Break now: fifteen minutes. (Press the cup button.)”"
+"flat": "10:29-10:30. · Say: “One rule for today, before we start writing. We learn how to protect employee data first thing tomorrow. Until then, please practice on the fictional company's files and on your own writing. Nothing from a real employee. Break now: fifteen minutes. (Press the cup button.)”"
 },
 {
 "say": "Welcome back. You now know why Copilot guesses. This block is about how to stop it guessing. (Read the story.) Three problems from one line. Who has sent a one-line request like this?",
