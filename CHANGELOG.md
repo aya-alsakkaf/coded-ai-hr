@@ -1,5 +1,11 @@
 # Changelog
 
+## 17 November 2026 · Copilot Notebook guide (Day 1 lab, step 8)
+
+- New guide step on the Day 1 lab: build a Copilot Notebook with three Mutla policies, paste a notebook instruction (COPY),
+  ask three questions and one the files cannot answer. Fallback: Copilot Chat with the files attached. Notebooks are rolling
+  out to Copilot Chat users (Microsoft Support, Get started with Microsoft Copilot Notebooks).
+
 ## 17 November 2026 · Day 1 order, real cases, where your chat goes
 
 - Demo 1.0 (one job description, two requests) moved from the opener to the end of the theory, right before Demo 1.1:
