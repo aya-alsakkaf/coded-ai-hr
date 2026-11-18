@@ -559,7 +559,7 @@ def palog(path):
     t.tableStyleInfo = TableStyleInfo(name="TableStyleMedium2", showRowStripes=True); ws.add_table(t)
     for col, w in zip("ABCDEFGH", (13, 18, 15, 26, 17, 11, 14, 18)): ws.column_dimensions[col].width = w
     ws.freeze_panes = "A2"
-    _about_first(wb, F["palog"], ["The Power Automate flow adds one row to the table TrainingRequests (sheet Log) for each form response.",
+    _about_first(wb, F["palog"], ["The Power Automate flow adds one row to the table TrainingRequests (sheet Log) for each form response, after the approver decides.",
                  "Employee codes only. No names, salaries or personal data."])
     for sh in wb.worksheets: sh.oddHeader.center.text = HEADER
     wb.properties.creator = "CODED"; wb.properties.lastModifiedBy = "CODED"; wb.properties.title = "Training request log"
@@ -568,6 +568,14 @@ def palog(path):
     chk = openpyxl.load_workbook(path)
     assert "TrainingRequests" in chk["Log"].tables and chk["Log"].max_row == len(D.PA_LOG) + 1
 palog(os.path.join(OUT, F["palog"])); WRITTEN.append(F["palog"])
+
+# 39 to 41 · the three Power Automate demo videos (Day 3, Block 3): recorded on the CODED training account, copied as they are
+import shutil
+VIDEO_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "videos")
+for _k in ("vid1", "vid2", "vid3"):
+    _src = os.path.join(VIDEO_DIR, F[_k])
+    assert os.path.exists(_src), f"gen_files: {F[_k]} is missing from {VIDEO_DIR}"
+    shutil.copyfile(_src, os.path.join(OUT, F[_k])); WRITTEN.append(F[_k])
 
 # 30 · the payroll cross-check (Day 2, Task 2.7): October, November and the approved movements; employee codes only
 def payroll(path):

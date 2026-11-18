@@ -9,7 +9,8 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
   The last step (`validate_site.py`) must print `PROBLEMS: 0`.
 - `_source/build/` is the CODED workshop engine. Never edit an engine file. Kit-only changes.
 - `_source/kit/data.py` holds every fact (names, numbers, planted errors). `content.py` and `content_demos.py` hold the words.
-  `build_deck.py` orders the slides. `gen_files.py` writes the 36 sample files into `_source/files/`.
+  `build_deck.py` orders the slides. `gen_files.py` writes the 38 sample files into `_source/files/` and copies the three
+  Power Automate demo videos from `_source/kit/videos/` (41 files in all).
 - Survey payloads: `build.sh` runs `surveys.py`, which overwrites them. Always run `python3 _source/surveys/patch.py` after a build
   (it is safe to run more than once), then push the patched payloads to the portal drafts.
 - A push to `main` redeploys production on Vercel.
@@ -117,3 +118,15 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
 36. 18 Nov 2026 (Aya): the demo runbook shows, for each Day 2 demo, what it must prove, a script with stage directions and questions
     for the room. Kit fields `prove`, `script`, `discuss` (content_demos.RUNGUIDE); the small engine change in staff.py renders them
     only when present. Aya's request is the approval for that engine change.
+37. 18 Nov 2026, evening of Day 2 (Aya): Day 3 morning is rebuilt. Block 1 (09:10-09:40) uses agents Microsoft built: Demo and
+    Task 3.1, Prompt Coach on a Prompt Bank request, and Researcher on a public HR question with two sources checked (Researcher and
+    Analyst need the Microsoft 365 Copilot license; Copilot Chat is the fallback). Block 2 (09:40-10:45) builds and tests your own
+    agent: Demo and Task 3.2 (write the instructions, then build; the old Tasks 3.1 and 3.2 are merged), Demo and Task 3.3 (three
+    tests), Task 3.4 a second agent, now optional. Block 3 (11:00-11:35) is "Power Automate: when to automate": what automation
+    means, four questions before you automate, the four parts (trigger, actions, connectors, output), then three recorded flows the
+    trainer narrates (no sound): Demo 3.5 training request approval, 3.5b weekly training demand to a DRAFT vendor brief (an AI
+    prompt step), 3.5c a vendor quotation email read and scored by AI into a Vendor Quotations row (fictional vendor). No exercise.
+    The videos were recorded on the CODED training account and are sample files (hub, Day 3 page), played in the deck from
+    `vidslide` (kit CSS and EXTRA_JS: the source works on the site and from a folder copy; Space plays a focused video).
+    The runbook has a narration script for Demos 3.1, 3.5, 3.5b and 3.5c. Block 4 and the afternoon did not change. Day 3 has
+    52 slides, 41 sample files. MAP questions, the OUTCOMES and the survey payloads did not change.

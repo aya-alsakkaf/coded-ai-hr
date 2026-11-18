@@ -19,6 +19,7 @@ F = {
  "fresh": "mutla-capstone-fresh-input.docx", "letters": "mutla-experience-letter-requests.docx",
  "stories": "mutla-process-stories.docx", "maptpl": "mutla-process-map-template.docx",
  "card": "mutla-workflow-card-template.docx", "palog": "mutla-training-request-log.xlsx",
+ "vid1": "power-automate-demo-1-training-request.mp4", "vid2": "power-automate-demo-2-weekly-vendor-brief.mp4", "vid3": "power-automate-demo-3-vendor-quotation.mp4",
  "payroll": "mutla-payroll-check-oct-nov-2026.xlsx", "onboard": "mutla-onboarding-checklist-2026.docx",
  "overtime": "mutla-overtime-export-oct-2026.xlsx", "otmemo": "mutla-overtime-memo-draft.docx",
  "q3report": "mutla-hr-quarterly-report-q3-2026.docx", "messydeck": "mutla-q3-hr-update-messy.pptx",
@@ -29,7 +30,7 @@ CASE_FILES = [D.CASES[k]["file"] for k, _n in D.TRACKS]
 CAP_FILES = [D.CAPSTONE[k]["file"] for k, _n in D.TRACKS]
 ALL_FILES = [F["leave"], F["answer"], F["case"], F["oldjd"], F["tpl"], F["roles"], F["catchjd"], F["bank"], F["letters"],
              F["r360"], F["welcome"], F["v3"], F["v4"], F["thread"], F["transcript"], F["trackers"], F["payroll"], F["overtime"], F["tnbrief"], F["tnresp"], F["brief"], F["otmemo"], F["q3report"], F["messydeck"]] + CASE_FILES + [F["stories"], F["maptpl"],
-             F["attendance"], F["training"], F["factors"], F["onboard"], F["card"], F["palog"], F["catchbank"]]
+             F["attendance"], F["training"], F["factors"], F["onboard"], F["card"], F["palog"], F["vid1"], F["vid2"], F["vid3"], F["catchbank"]]
 assert len(ALL_FILES) == len(set(ALL_FILES))
 
 # What each file is for: what it is, who uses it at Mutla, and where it is used in the workshop. Lab steps and the "About this file" box use it.
@@ -41,7 +42,7 @@ FILE_ABOUT = {
  F["tpl"]: ("The approved 2026 job description template: the headings, in order, and the rules.", "Everyone who writes a job description.", "Demo 1.0 and Task 3.4."),
  F["roles"]: ("The approved duties for one role in each HR unit. The source for every job description.", "Job Evaluation and line managers.", "Demo 1.0."),
  F["catchjd"]: ("A job description Copilot drafted. It looks finished but has not been checked.", "Anyone who needs to check a draft.", "Extra practice: check it line by line against the role information."),
- F["bank"]: ("An empty Prompt Bank: four columns for the requests you want to keep.", "You, after the workshop.", "End of Day 1."),
+ F["bank"]: ("An empty Prompt Bank: four columns for the requests you want to keep.", "You, after the workshop.", "End of Day 1, and Task 3.1 (Prompt Coach)."),
  F["letters"]: ("Three experience letter requests, the HR system record for each person and the letter rules.", "Personnel and Administration.", "Extra practice: check each request against the HR system record."),
  F["v3"]: ("The allowances policy in force today, version 3.", "Compensation, and every employee who gets an allowance.", "The HR assistant's knowledge on Day 3."),
  F["v4"]: ("The new allowances policy, version 4, approved this year.", "Compensation, and every employee who gets an allowance.", "The HR assistant's knowledge on Day 3."),
@@ -61,7 +62,10 @@ FILE_ABOUT = {
  F["stories"]: ("Five short stories of how HR work is done today, one for each HR unit.", "You, to practice mapping a process.", "Demo 3.6 and Tasks 3.6 and 3.7."),
  F["maptpl"]: ("An empty table for a process map: step, who, in, out, wait, problem.", "You, to map a process.", "Tasks 3.6 and 3.7."),
  F["card"]: ("An empty card for an improved workflow: trigger, inputs, steps, approvals, what you removed.", "You, to plan a better process.", "Task 3.8 (optional)."),
- F["palog"]: ("The training request log that the Power Automate flow fills in, one row per request.", "Learning and Development.", "The Power Automate video (Demo 3.5)."),
+ F["palog"]: ("The training request log that the Power Automate flow fills in, one row per request.", "Learning and Development.", "Demo 3.5, the approval flow."),
+ F["vid1"]: ("A recorded Power Automate demo with no sound (2:16): a training request goes from a form to an approval, a row in Excel and an email.", "Learning and Development and line managers.", "Demo 3.5. Watch it again after the workshop."),
+ F["vid2"]: ("A recorded Power Automate demo with no sound (1:50): every Sunday, the week's training requests become a DRAFT vendor brief for L&D.", "Learning and Development.", "Demo 3.5b. Watch it again after the workshop."),
+ F["vid3"]: ("A recorded Power Automate demo with no sound (1:42): a vendor quotation email is read, scored by AI and added to Excel as a row to review.", "Learning and Development.", "Demo 3.5c. Watch it again after the workshop."),
  F["attendance"]: ("The approved attendance rules: start times, core hours and permissions.", "Every employee; Personnel answers questions from it.", "The Block 3 notebook on Day 1; the HR assistant's knowledge on Day 3."),
  F["training"]: ("The training policy: how employees request and attend training.", "Learning and Development, line managers and employees.", "Day 1 Task 1.2 and the Block 3 notebook; the HR assistant's knowledge on Day 3."),
  F["factors"]: ("The five factors the Job Evaluation committee uses to compare jobs.", "Job Evaluation and Salary Scaling.", "Task 3.4: the Job Description Coach's knowledge."),
@@ -80,7 +84,7 @@ BLOCK = {1: (1, "Opener"), 2: (1, "Block 1 · How Copilot works"), 3: (1, "Block
          4: (1, "Block 3 · Word: draft, fix, check"), 5: (1, "Block 4 · Word, then Outlook"),
          6: (2, "Block 1 · Prepare and recap"), 7: (2, "Block 2 · Outlook follow-ups"), 8: (2, "Block 3 · Excel: check figures"),
          9: (2, "Block 4 · Forms: training needs"), 10: (2, "Block 5 · PowerPoint"), 11: (2, "Block 6 · Protect employee data"),
-         12: (3, "Block 1 · Build an HR agent"), 13: (3, "Block 2 · Test, fix, build again"), 14: (3, "Block 3 · Power Automate demo"),
+         12: (3, "Block 1 · Built-in agents"), 13: (3, "Block 2 · Build your own agent"), 14: (3, "Block 3 · Power Automate: when to automate"),
          15: (3, "Block 4 · Map a workflow"), 16: (3, "Copilot, agent or flow?")}
 
 DEMOS = {}
@@ -914,10 +918,55 @@ BUDDY = five([["Role", f"You are the {D.BUDDY_NAME}. You help new joiners at {D.
          ["Output format", "Two to four sentences, then the checklist section."]])
 KNOW = [F["leave"], F["v3"], F["v4"], F["attendance"], F["training"]]
 
-demo("d31", day=3, skill="3.1", sec=12, title="An HR agent, built live", tool="Agent Builder", files=KNOW,
+# Block 1 · built-in agents (Prompt Coach for everyone; Researcher and Analyst need the Microsoft 365 Copilot license)
+COACH_ASK = (f"Here is a request I use at work: \"{D.BUILTIN_WEAK}\" Review it. Tell me what is missing, "
+             f"then suggest a better request for an HR officer at {D.COMPANY}.")
+COACH_BETTER = five([["Role", f"You are an L&D officer at {D.COMPANY}."],
+         ["Context", "Line managers must nominate staff for the January courses. Many forget the deadline."],
+         ["Task", "Write a short reminder email to line managers."],
+         ["Data", "Use only the course list and the nomination deadline I paste below."],
+         ["Constraints", "No employee names. Do not promise anyone a place: L&D confirms places."],
+         ["Tone", "Polite and short."],
+         ["Output format", "A subject line and at most 120 words, with the deadline in the first sentence."]])
+demo("d30", day=3, skill="3.1", sec=12, title="Two built-in agents, live", tool="Copilot Chat · Agents",
+ setup=["[T] In Microsoft 365 Copilot, open Agents, then All agents. Show the Built by Microsoft list for ten seconds.",
+        "[T] Open Prompt Coach. Paste the first request below. Read its feedback aloud: which checklist parts does it say are missing?",
+        "[T] Copy the better request it suggests and run it in Copilot Chat. Compare the two answers in one sentence.",
+        "[T] Open Researcher. Paste the research question. While it works (a few minutes), go back to the slides.",
+        "[T] Open the report. Click two sources and check one fact in each against the report."],
+ prompts=[("Prompt Coach · review a weak request", COACH_ASK), ("Researcher · a public HR question", D.BUILTIN_RESEARCH)],
+ expected="Prompt Coach says the request has no context, data, constraints or format, asks a question or two, and suggests a fuller request. Researcher returns a report with numbered sources after a few minutes. The trainer opens two sources and checks one fact in each.",
+ say="Microsoft already built some agents for you. Each one is Copilot with saved instructions for one job. You still check what comes back.",
+ point="Built-in agents save you the instructions. They do not save you the check.",
+ backup=[("h", "Built-in agents in Microsoft 365 Copilot"), tbl(["Agent", "What it does", "Try it on", "Who has it"], D.BUILTIN),
+         ("h", "A better version of the weak request"), tbl(["Part", "Request"], COACH_BETTER)],
+ fallback="If Prompt Coach is not in the list, paste the same request into Copilot Chat and add: answer as a prompt coach. If Researcher is missing (no license), ask Copilot Chat the research question and ask for a source for each point.",
+ hint="Which of the five checklist parts does Prompt Coach say are missing?")
+
+demo("t30", day=3, skill="3.1", sec=12, title="Use an agent Microsoft built", tool="Prompt Coach, and Researcher if you have it", kind="task", hands_on=True, minutes=12, solo="on your own",
+ setup=["In Microsoft 365 Copilot, open Agents, then All agents. Find Prompt Coach under Built by Microsoft. If you see Add, add it.",
+        "Give Prompt Coach one request from your Prompt Bank (Day 1), or the weak request below. Read what it says is missing.",
+        "Run its better request in Copilot Chat. Is the answer better? Save the best version in your Prompt Bank.",
+        "If you have Researcher, ask it the research question below. When the report is ready, open two sources and check one fact in each."],
+ prompts=[("Prompt Coach · review my request", COACH_ASK), ("Researcher · a public HR question", D.BUILTIN_RESEARCH)],
+ expected="A better request in the Prompt Bank, with the missing parts added: context, data, constraints and format. With Researcher: a report with sources, and two facts checked against their sources.",
+ say="Use the agent, then judge it. Did it make your request better? Can you trace each fact to a source you opened?",
+ point="A better request in your Prompt Bank. Two sources checked.",
+ backup=[("h", "A better version of the weak request"), tbl(["Part", "Request"], COACH_BETTER)],
+ answer=[("h", "A good result"), ("ul", ["Prompt Coach names what is missing: who it is for, the facts, the limits and the format.",
+                                         "The better request has all five checklist parts and no real names or data.",
+                                         "Researcher: every point you keep has a source you opened. Remove any point with no source."]),
+         ("h", "A better version of the weak request"), tbl(["Part", "Request"], COACH_BETTER)],
+ deliverable="One improved request saved in your Prompt Bank and, with Researcher, two checked sources.",
+ fallback="No Prompt Coach: paste the request into Copilot Chat and add: answer as a prompt coach. No Researcher: ask Copilot Chat the research question and ask for a source for each point.",
+ hint="Put the better request next to the five checklist parts. Which part did your first request miss?",
+ stretch=["Ask Prompt Coach what good instructions for an HR policy agent must say. Keep the answer for Task 3.2."])
+
+demo("d31", day=3, skill="3.2", sec=13, title="An HR agent, built live", tool="Agent Builder", files=KNOW,
  setup=["[T] In Microsoft 365 Copilot, choose Create agent. Open the Configure tab.", f"[T] Name: {D.AGENT_NAME}. Description: answers staff questions from Mutla's HR policies.",
         "[T] Paste the instructions. Read the five parts aloud as you scroll.", "[T] Under Knowledge, upload the five policy files. Add the three starter prompts.",
-        "[T] In the test pane, ask the first starter prompt. Point to the section number in the answer."],
+        "[T] In the test pane, ask the first starter prompt. Point to the section number in the answer.",
+        "[T] Say: Prompt Coach was built the same way, with instructions and a name. Microsoft offers it as a template in Agent Builder too."],
  prompts=[("Instructions", joined(AGENT))] + [(f"Starter prompt {i}", q) for i, q in enumerate(STARTERS, 1)],
  expected=f"An agent with a name, a description, instructions in five parts, five knowledge files and three starter prompts. In the test pane it answers the carry-over question: up to {D.LEAVE['carry']} days, used by {D.LEAVE['carry_by']}, leave policy section 4.",
  say="An agent is a saved set of instructions with its own files. You write the instructions once; everyone who uses it gets the same rules.",
@@ -926,32 +975,21 @@ demo("d31", day=3, skill="3.1", sec=12, title="An HR agent, built live", tool="A
  fallback="If Agent Builder is off on the account, paste the same instructions into Copilot Chat, attach the five files, and ask the same question.",
  hint="Watch where each checklist part goes in the instructions.")
 
-demo("t31", day=3, skill="3.1", sec=12, title="Write the agent's instructions", tool="Word or Notepad", files=KNOW, kind="task", hands_on=True, minutes=12, solo="on your own",
- setup=[f"Open a blank document. Write the instructions for {D.AGENT_NAME} with the five checklist parts.",
-        "Say which files it may use, and the dates of the two allowances versions.", "Say what it must never answer, when it must ask first, and where it refers people.",
-        "Read it as if you were the agent. Could you answer a question you are not sure about?"],
- prompts=[],
- expected="Instructions in five parts: answer only from the five files with the section; v3 until 31 December 2026 and v4 from 1 January 2027; ask for the grade first when it matters; never a named person's pay or data; refer anything else to the right HR unit.",
- say="The instructions are the agent's job description. Vague instructions give a vague agent.",
- point="What it answers, from which files, what it never answers, and where it refers.",
- backup=[("h", "What the instructions must cover"), ("ul", ["Only the five knowledge files, with the section.", "The two allowances versions and their dates.", "Ask first when the answer depends on the person.", "Never a named person's pay or data. Never decide a case.", "Refer to the right HR unit."])],
- answer=[("h", "A model set of instructions"), tbl(["Part", "Instructions"], AGENT)],
- deliverable="The agent's instructions, in five parts.",
- fallback="Short of time: use the instructions from the Day 3 lab page, and change one line to make them yours.",
- hint="Constraints hold the rules that protect people: never, ask first, refer.")
-
-demo("t32", day=3, skill="3.2", sec=12, title="Build it in Agent Builder", tool="Agent Builder", files=KNOW, kind="task", hands_on=True, minutes=15, solo="on your own",
- setup=["In Microsoft 365 Copilot, choose Create agent, then the Configure tab.", "Add a name and a one-line description. Paste your instructions from Task 3.1.",
+demo("t32", day=3, skill="3.2", sec=13, title="Write and build your agent", tool="Word, then Agent Builder", files=KNOW, kind="task", hands_on=True, minutes=20, solo="on your own",
+ setup=[f"In a blank document, write the instructions for {D.AGENT_NAME} with the five checklist parts: which files it uses, the dates of the two allowances versions, what it never answers, when it asks first, and where it refers people.",
+        "In Microsoft 365 Copilot, choose Create agent, then the Configure tab. Add a name, a one-line description and your instructions.",
         "Upload the five policy files under Knowledge. Add three starter prompts.", "Ask one normal question in the test pane. Does the answer give the section?"],
  prompts=[(f"Starter prompt {i}", q) for i, q in enumerate(STARTERS, 1)],
- expected="A saved agent with five knowledge files and three starter prompts, that answers a normal question with the policy name and section.",
- say="Build it now. Tomorrow nobody will remember the instructions you only wrote down.",
- point="Name, instructions, knowledge, starter prompts, one test.",
- backup=[("h", "The parts of the agent"), tbl(["Part", "What goes in"], [("Name", D.AGENT_NAME), ("Knowledge", ", ".join(KNOW)), ("Starter prompts", " · ".join(STARTERS))])],
- answer=[("h", "Check the agent for"), ("ul", ["Five knowledge files uploaded.", "Three starter prompts that staff would really ask.", "A normal question answered with the policy name and section."])],
- deliverable="A saved agent that answers a normal question with its source.",
- fallback="No Agent Builder: paste your instructions into a new Copilot Chat, attach the five files, and test there. Or pair with a neighbor who has it.",
- hint="If the answer has no section number, check the Format line in your instructions.")
+ expected="Instructions in five parts: answer only from the five files with the section; v3 until 31 December 2026 and v4 from 1 January 2027; ask for the grade first when it matters; never a named person's pay or data; refer anything else to the right HR unit. A saved agent with five knowledge files and three starter prompts that answers a normal question with the policy name and section.",
+ say="The instructions are the agent's job description. Write them first, then build. Vague instructions give a vague agent.",
+ point="What it answers, from which files, what it never answers, and where it refers.",
+ backup=[("h", "What the instructions must cover"), ("ul", ["Only the five knowledge files, with the section.", "The two allowances versions and their dates.", "Ask first when the answer depends on the person.", "Never a named person's pay or data. Never decide a case.", "Refer to the right HR unit."]),
+         ("h", "The parts of the agent"), tbl(["Part", "What goes in"], [("Name", D.AGENT_NAME), ("Knowledge", ", ".join(KNOW)), ("Starter prompts", " · ".join(STARTERS))])],
+ answer=[("h", "A model set of instructions"), tbl(["Part", "Instructions"], AGENT),
+         ("h", "Check the agent for"), ("ul", ["Five knowledge files uploaded.", "Three starter prompts that staff would really ask.", "A normal question answered with the policy name and section."])],
+ deliverable="A saved agent with your instructions, five knowledge files and three starter prompts, that answers a normal question with its source.",
+ fallback="No Agent Builder: paste your instructions into a new Copilot Chat, attach the five files, and test there. Or pair with a neighbor who has it. Short of time: use the instructions from the Day 3 lab page and change one line.",
+ hint="Constraints hold the rules that protect people: never, ask first, refer. No section number in the answer? Check the Format line.")
 
 demo("d33", day=3, skill="3.3", sec=13, title="Three tests, then one fix", tool="Agent Builder",
  setup=["[T] In the test pane, ask the three test questions one by one.", "[T] When one fails, find the instruction line that should have stopped it. Change that line only.",
@@ -964,7 +1002,7 @@ demo("d33", day=3, skill="3.3", sec=13, title="Three tests, then one fix", tool=
  fallback="If the agent passes every test first time, ask the sensitive question in a softer way and show what it does.",
  hint="Which instruction line should have stopped the wrong answer?")
 
-demo("t33", day=3, skill="3.3", sec=13, title="Test and fix your agent", tool="Agent Builder", files=KNOW, kind="task", hands_on=True, minutes=12, solo="on your own",
+demo("t33", day=3, skill="3.3", sec=13, title="Test and fix your agent", tool="Agent Builder", files=KNOW, kind="task", hands_on=True, minutes=10, solo="on your own",
  setup=["Ask your agent the three test questions below.", "Write a test log: question, answer, pass or fix.", "Fix one instruction line that failed, update the agent, and test again."],
  prompts=[(f"Test · {a}", b) for a, b, _c, _d in D.AGENT_TESTS],
  expected="A three-line test log. The agent cites section 4, asks for the grade (or gives both versions with dates) before the transport answer, and declines the named salary.",
@@ -978,7 +1016,7 @@ demo("t33", day=3, skill="3.3", sec=13, title="Test and fix your agent", tool="A
  stretch=["Run a fourth test with a question the files do not cover. It must say so and refer."],
  stretch_prompts=[("Test 4 · Out of scope", D.AGENT_TEST4[1])])
 
-demo("t34", day=3, skill="3.4", sec=13, title="A second agent: choose one", tool="Agent Builder", files=[F["tpl"], F["factors"], F["onboard"]], kind="task", hands_on=True, minutes=18, solo="on your own",
+demo("t34", day=3, skill="3.4", sec=13, title="Optional: a second agent", tool="Agent Builder", files=[F["tpl"], F["factors"], F["onboard"]], kind="task", hands_on=True, minutes=12, solo="on your own",
  setup=[f"Choose one. The {D.COACH_NAME.replace('Mutla ', '')} helps line managers draft job descriptions. The {D.BUDDY_NAME.replace('Mutla ', '')} answers new joiners from the onboarding checklist.",
         "Write its instructions with the checklist. Knowledge: the 2026 template and the evaluation factors, or the onboarding checklist.",
         "Run its three tests (on the prompt sheet and the Day 3 lab page) and log them.", "Fix one line if a test fails, and test again."],
@@ -991,24 +1029,52 @@ demo("t34", day=3, skill="3.4", sec=13, title="A second agent: choose one", tool
  answer=[("h", "Job Description Coach: model instructions"), tbl(["Part", "Instructions"], COACH), ("h", "Pass marks"), tbl(["Test", "Question", "A pass looks like", "Result"], D.COACH_TESTS),
          ("h", "Onboarding Buddy: model instructions"), tbl(["Part", "Instructions"], BUDDY), ("h", "Pass marks"), tbl(["Test", "Question", "A pass looks like", "Result"], D.BUDDY_TESTS)],
  deliverable="A second agent and a three-line test log.",
- fallback="Short of time: write the instructions only, and test them in Copilot Chat with the knowledge files attached.",
+ fallback="Short of time: skip it in class and build it at work this week. The tests are on the Day 3 lab page.",
  hint="The incomplete test leaves something out. What must your agent ask before it answers?")
 
-PAF = [("Trigger", "When a new response is submitted (Microsoft Forms)"), ("Action", "Get response details (Microsoft Forms)"),
-       ("Action", "Add a row into a table (Excel Online)"), ("Action", "Start and wait for an approval (Approvals)"),
-       ("Condition", "Outcome is equal to Approve"), ("Action", "Send an email (V2) (Outlook)")]
-assert [a for a, _b in PAF] == [a for a, _b, _c, _d in D.PA_FLOW]
-demo("d35", day=3, skill="3.5", sec=14, title="A training request flow, from form to email (video)", tool="Power Automate · video demo", files=[F["palog"]],
- setup=["[T] Play the demo video of the flow: " + "; ".join(f"{a.lower()}: {b}" for a, b in PAF) + ".",
-        "[T] Pause after the approval step. Ask the room which step a person did.", "[T] Placeholder until the video is recorded: walk through the six steps on the slide."],
+def _vsteps(flow): return "; ".join(f"{a.lower()}: {c}" for a, _b, c, _d in flow)
+def _vparts(k): return tbl(["Part", "Means", "In this flow"], [(a, m, x) for a, m, x in zip(D.PA_PARTS, D.PA_MEANS, D.PA_DEMOS[k]["parts"])])
+VIDFALL = "If the video does not play, open it from the Day 3 page (sample files) or the USB stick. If that fails too, walk through the four parts on the slide and the step table in the backup."
+demo("d35", day=3, skill="3.5", sec=14, title="A training request approval (recorded flow)", tool="Power Automate · recorded demo", files=[F["vid1"], F["palog"]],
+ setup=["[T] Click play on the video (no sound). Pause on each step card and name the part: trigger, action, connector, output.",
+        "[T] Pause after Start and wait for an approval. Ask the room which step a person does.",
+        "[T] Play to the end: the run took seconds except the approval. Point to the new Excel row and the email."],
  prompts=[],
- expected="One form response becomes one row in the TrainingRequests table, one approval request to the line manager, and one email to the employee with the result. The manager approves; the flow only carries the request.",
- say="A flow is for the steps that happen the same way every time. Copilot writes; an agent answers; a flow moves the work from one step to the next. A person still approves.",
- point="Trigger, actions, a condition. A person still decides.",
- backup=[("h", "The flow, step by step"), tbl(["Step", "Connector", "What it does"], [(f"{a}: {b}", c, d) for a, c, b, d in D.PA_FLOW]),
-         ("h", "The log after the demo"), tbl(D.PA_LOG_HEAD, D.PA_LOG)],
- fallback="If the video does not play, walk through the six steps on the slide and the backup table.",
+ expected="The steps: " + _vsteps(D.PA_FLOW) + ". One form response becomes one approval, one row in the log and one email. The approver decides; the flow only carries the request.",
+ say="A flow starts on its own and does the same steps every time. When a decision is needed, it stops and waits for a person.",
+ point="The flow carries the request. A person decides.",
+ backup=[("h", "The four parts"), _vparts(0), ("h", "The flow, step by step"), tbl(["Step", "Connector", "What it does"], [(f"{a}: {c}", b, d) for a, b, c, d in D.PA_FLOW]),
+         ("h", "The log"), tbl(D.PA_LOG_HEAD, D.PA_LOG)],
+ fallback=VIDFALL,
  hint="Which step needs a person? Which steps happen the same way every time?")
+
+demo("d35b", day=3, skill="3.5b", sec=14, title="Weekly training demand to a vendor brief (recorded flow)", tool="Power Automate · recorded demo", files=[F["vid2"]],
+ setup=["[T] Click play. Pause on the schedule: this flow starts on a date, not an event.",
+        "[T] Pause on Create CSV table: the flow keeps only four columns, so the AI step sees only what it needs.",
+        "[T] Pause on Run a prompt: AI is one step inside the flow. Play to the email: DRAFT for review, in L&D's inbox."],
+ prompts=[],
+ expected="The steps: " + _vsteps(D.PA_FLOW2) + ". Every Sunday at 8:00, L&D gets a draft that groups the week's training demand and outlines what to ask vendors for. Nothing goes to a vendor on its own.",
+ say="A flow can start on a schedule, and one of its steps can be AI. The AI drafts the brief; a person in L&D checks it and decides what goes out.",
+ point="AI drafts inside the flow. L&D decides.",
+ backup=[("h", "The four parts"), _vparts(1), ("h", "The flow, step by step"), tbl(["Step", "Connector", "What it does"], [(f"{a}: {c}", b, d) for a, b, c, d in D.PA_FLOW2])],
+ fallback=VIDFALL,
+ hint="What starts this flow? Who reads the draft before a vendor sees it?")
+
+demo("d35c", day=3, skill="3.5c", sec=14, title="A vendor quotation, read and scored (recorded flow)", tool="Power Automate · recorded demo", files=[F["vid3"]],
+ setup=["[T] Click play. Pause on the quotation email: price, dates, duration and learners, all inside one long message.",
+        "[T] Pause on Run a prompt: the AI reads the offer and this term's requests, then scores the fit against " + str(len(D.PA_GOALS)) + " company goals.",
+        f"[T] Pause on the Excel row: {D.PA_QUOTE['total']:,} KWD for {D.PA_QUOTE['learners']} learners is {D.PA_QUOTE['per']} KWD each, so the score is {D.PA_QUOTE['score']} out of 10. Status: {D.PA_QUOTE['status']}.",
+        "[T] Play to the DRAFT email. Say: the flow does not answer the vendor. L&D decides."],
+ prompts=[],
+ expected="The steps: " + _vsteps(D.PA_FLOW3) + f". The fictional offer from {D.PA_QUOTE['vendor']} ({D.PA_QUOTE['course']}, {D.PA_QUOTE['duration']}, {D.PA_QUOTE['dates']}) becomes one row with a score of {D.PA_QUOTE['score']} out of 10: {D.PA_QUOTE['per']} KWD per learner is above the 150 KWD goal.",
+ say="The flow does the copying: it reads the offer, pulls out the numbers and puts them in a row. The score helps L&D compare offers. L&D still decides.",
+ point="AI reads and scores. L&D decides.",
+ backup=[("h", "The four parts"), _vparts(2), ("h", "The flow, step by step"), tbl(["Step", "Connector", "What it does"], [(f"{a}: {c}", b, d) for a, b, c, d in D.PA_FLOW3]),
+         ("h", "The goals the AI scores against"), ("ul", D.PA_GOALS),
+         ("h", "The row it adds"), tbl(["Vendor", "Course", "Total", "Learners", "Per learner", "Duration", "Dates", "Score", "Status"],
+                                       [(D.PA_QUOTE["vendor"], D.PA_QUOTE["course"], f"{D.PA_QUOTE['total']:,} KWD", D.PA_QUOTE["learners"], f"{D.PA_QUOTE['per']} KWD", D.PA_QUOTE["duration"], D.PA_QUOTE["dates"], f"{D.PA_QUOTE['score']} / 10", D.PA_QUOTE["status"])])],
+ fallback=VIDFALL,
+ hint="Which number made the score low? Who decides which vendor to use?")
 
 demo("d36", day=3, skill="3.6", sec=15, title="A story into a step table", tool="Copilot Chat",
  setup=["[T] Open a new Copilot Chat. Paste the request: the story is inside it.", "[T] Read the table aloud. Ask the room which problem Copilot missed, if any.",
@@ -1180,6 +1246,40 @@ RUNGUIDE = {
           "discuss": [("Where do sensitive details hide in a document?", "Inside sentences: a salary in brackets, a reason for absence, an ID in a signature."),
                       ("Is redaction enough to make a red task amber?", "Only with an approved account and your company's policy. When unsure, treat it as red and ask.")]},
 }
+# Day 3 runbook guide (Aya, 18 Nov 2026): the built-in agents demo and the three recorded flows she narrates (the videos have no sound)
+RUNGUIDE.update({
+ "d30": {"prove": "A built-in agent is Copilot with saved instructions for one job. It saves you the instructions, not the check.",
+         "script": ["(Open Agents, then All agents.) Microsoft already built these. Each one has instructions for one job.",
+                    "(Open Prompt Coach. Paste the weak request.) This is the kind of one-line request we fixed on Day 1. Let us see what the coach says.",
+                    "(Read the feedback aloud.) Context, data, limits, format: the same checklist we learned. (Run the better request.) Same Copilot, a better answer.",
+                    "(Open Researcher. Paste the question.) Researcher reads many sources, so it takes a few minutes. We come back to it.",
+                    "(Open the report.) A report with sources. Before I trust it, I open two sources and check one fact in each."],
+         "discuss": [("What did Prompt Coach add that your Day 1 request missed?", "Context, the limits, the format."),
+                     ("Would you send the Researcher report to your manager as it is?", "No. Open the sources first, and remove any point with no source.")]},
+ "d35": {"prove": "A flow starts on its own, does the same steps every time, and stops to wait when a person must decide.",
+         "script": ["(Play. Pause on the first card.) Four parts, the same in every flow: trigger, actions, connectors, output.",
+                    "(Pause on 1 · TRIGGER.) What starts it: a new answer in the training request form. Nobody presses a button.",
+                    "(Pause on Start and wait for an approval.) The flow stops here, for hours or days if needed, until a person decides.",
+                    "(Pause on the condition.) Approve takes one path. Reject takes the other.",
+                    "(Play to RESULT.) The approval took a minute and a half. Every other step took seconds. (Play to the end.) A row in Excel that nobody typed, and an email to the employee."],
+         "discuss": [("Which step did a person do?", "The approval. Everything else is the same every time."),
+                     ("Where does a request like this wait in your unit today?", "Signatures, email, printing and scanning.")]},
+ "d35b": {"prove": "A flow can start on a date and use AI as one of its steps. The AI drafts; L&D reviews before anything goes to a vendor.",
+          "script": ["(Play.) Demo 1 started when a form arrived. This one starts on a date: every Sunday at 8:00.",
+                     "(Pause on the data.) These are the week's training requests from the form. The flow keeps only four columns, so the AI sees only what it needs.",
+                     "(Pause on Run a prompt.) This is AI inside the flow: a prompt that groups the demand and drafts an outline for vendors. I wrote and tested the prompt once.",
+                     "(Play to the email.) It lands in L&D's inbox, marked DRAFT for review. Nothing goes to a vendor on its own."],
+          "discuss": [("Why does the email say DRAFT?", "AI drafts. A person checks it and decides what goes out."),
+                      ("Which weekly summary in your unit could start like this?", "Training demand, vacancies, overtime, attendance exceptions.")]},
+ "d35c": {"prove": "A flow can read an email, pull the facts into Excel and score the offer against company goals. The score helps L&D compare; L&D decides.",
+          "script": ["(Play.) The trigger this time is an email: any message with Quotation in the subject.",
+                     "(Pause on the quotation.) A vendor offer as vendors really send it: price, dates, duration and learners, all in one long email. The vendor is fictional.",
+                     "(Pause on Run a prompt.) The AI reads the offer and our requests, then scores the fit against four goals. One goal: 150 KWD or less per learner.",
+                     "(Play to the Excel row.) One row per offer: price, duration, dates, score, strengths, concerns. Status: To review.",
+                     f"(Play to the email.) Score {D.PA_QUOTE['score']} out of 10: {D.PA_QUOTE['total']:,} KWD for {D.PA_QUOTE['learners']} learners is {D.PA_QUOTE['per']} KWD each, above our limit. The flow does not answer the vendor. L&D decides."],
+          "discuss": [("Would you accept the score as it is?", "No. Check the price per learner and the dates yourself, then decide."),
+                      ("What else arrives by email that you copy into Excel by hand?", "CVs, invoices, timesheets, certificates, course feedback.")]},
+})
 for _k, _v in RUNGUIDE.items(): DEMOS[_k].update(_v)
 
 # ===================================================================== Day 2 teaching order (Aya, 18 Nov 2026): meetings, Outlook, Excel, Forms, PowerPoint, then safe data last
@@ -1191,6 +1291,7 @@ _items = [(k, DEMOS[k]) for k in _order]; DEMOS.clear(); DEMOS.update(_items)
 CHECKCARD = DEMOS["t38"]["prompts"][0][1]
 assert " a flow " not in CHECKCARD
 _FILL = {"RECAP": joined(RECAP), "MAP_FILE": joined(MAP_FILE), "AGENT": joined(AGENT), "COACH": joined(COACH), "CHECKCARD": CHECKCARD, "REQS": joined(REQS), "FORMQ": FORMQ, "TNPROB": TNPROB, "TNCLEAN": TNCLEAN, "PAYREQ": PAYREQ, "OTREQ": OTREQ, "MEMO": joined(MEMO_TASK), "R360": joined(R360Q),
+         "COACH_ASK": COACH_ASK, "RESEARCH": D.BUILTIN_RESEARCH,
          "COACH_BUDDY": "Job Description Coach: " + joined(COACH) + "\n\nOnboarding Buddy: " + joined(BUDDY)}
 for _L in C.LABS.values():
     for _s in _L["steps"]:
@@ -1203,5 +1304,5 @@ for _L in C.LABS.values():
 
 # hub stat strip: the card sort is not a prompt demo
 C.HUB["stats"] = [(len(C.DAYS), "days"), (None, "slides"), (sum(1 for v in DEMOS.values() if v.get("hands_on")), "hands-on tasks"),
-                  (sum(1 for v in DEMOS.values() if not v.get("hands_on") and v.get("kind") != "sort"), "prompt demos"),
+                  (sum(1 for v in DEMOS.values() if not v.get("hands_on") and v.get("kind") != "sort" and "recorded demo" not in v["tool"]), "prompt demos"),
                   (len(ALL_FILES), "sample files"), (len(C.MAP), "MAP questions")]

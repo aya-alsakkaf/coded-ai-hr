@@ -1,5 +1,19 @@
 # Changelog
 
+## 18 November 2026 · Day 3: built-in agents, your own agent, three recorded Power Automate flows
+
+- Block 1 (09:10-09:40) is new: built-in agents. Demo and Task 3.1 use Prompt Coach on a Prompt Bank request and Researcher on a
+  public HR question, then check two sources. A slide lists Prompt Coach, Researcher and Analyst and who has each.
+- Block 2 (09:40-10:45) builds your own agent: Demo 3.2, Task 3.2 (write the instructions, then build in Agent Builder), Demo and
+  Task 3.3 (three tests), Task 3.4 (a second agent, optional).
+- Block 3 (11:00-11:35) is "Power Automate: when to automate": what automation means, four questions before you automate, the
+  four parts of a flow, and three recorded demos with a narration script in the runbook: a training request approval (3.5),
+  a weekly AI vendor brief (3.5b) and a vendor quotation scored by AI into Excel (3.5c). Participants watch; no exercise.
+- Three new files: `power-automate-demo-1-training-request.mp4`, `power-automate-demo-2-weekly-vendor-brief.mp4`,
+  `power-automate-demo-3-vendor-quotation.mp4` (41 sample files). The training request log now has no Waiting row, because
+  the flow logs after the decision. Day 3 has 52 slides. The lab, the prompt sheet, the cheat sheet, the take-home guide, the
+  lesson plan and the facilitator kit follow the new plan. MAP questions and surveys did not change.
+
 ## 18 November 2026 · Day 2: Microsoft Forms replaces Word, protecting employee data moves to the end
 
 - New order: meetings (Tasks 2.1, 2.2), Outlook (2.3, 2.4), Excel (2.5, 2.6), Microsoft Forms (2.7 to 2.9), PowerPoint (2.10, 2.11),

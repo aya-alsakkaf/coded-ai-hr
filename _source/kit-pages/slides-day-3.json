@@ -11,7 +11,7 @@
 "09:00-15:00",
 "AI Fundamentals for HR",
 "HR Agents, Workflows and an Introduction to Power Automate",
-"Build and test two HR agents in Agent Builder, watch a Power Automate flow run from form to email, and map an HR process from request to result.",
+"Use two built-in agents, build and test your own HR agent in Agent Builder, see three Power Automate flows run on their own, and map an HR process from request to result.",
 "CODED, Alsharekh room, Frontend Campus",
 "Kuwait"
 ],
@@ -31,9 +31,9 @@
 "title": "Outcomes",
 "topic": "open",
 "kit": [
-"Write an agent's instructions with the prompt checklist, and build it in Agent Builder with approved files.",
-"Test an agent with a normal, an incomplete and a sensitive question, and fix one line at a time.",
-"Explain what a Power Automate flow does, and when an agent or Copilot cannot do the job.",
+"Use a built-in agent such as Prompt Coach or Researcher, and check what it gives you.",
+"Build an HR agent with the prompt checklist and approved files, and test it with a normal, an incomplete and a sensitive question.",
+"Explain when to automate, and name the trigger, actions, connectors and output of a Power Automate flow.",
 "Map an HR process from request to result, and mark the delays, duplicates, owners and human decisions."
 ],
 "chrome": [
@@ -54,15 +54,15 @@
 "09:00-09:10",
 "Callback quiz",
 "Three questions on Day 2",
-"09:10-10:05",
-"Block 1 · Build an HR agent",
-"Instructions, knowledge, starter prompts · Tasks 3.1 and 3.2",
-"10:05-10:45",
-"Block 2 · Test, fix and build a second agent",
-"Normal, incomplete, sensitive; your choice of agent · Tasks 3.3 and 3.4",
+"09:10-09:40",
+"Block 1 · Built-in agents in Copilot",
+"Prompt Coach and Researcher · Task 3.1",
+"09:40-10:45",
+"Block 2 · Build your own agent",
+"Instructions, knowledge, starter prompts, three tests · Tasks 3.2 and 3.3, Task 3.4 if time allows",
 "11:00-11:35",
-"Block 3 · Power Automate: a trainer demo",
-"Trigger, actions, a condition, a person who approves",
+"Block 3 · Power Automate: when to automate",
+"Trigger, actions, connectors, output; three recorded flows",
 "12:15-13:35",
 "Block 4 · From one task to a workflow",
 "Delays, duplicates, owners, human decisions · Tasks 3.6 and 3.7, Task 3.8 if time allows",
@@ -163,14 +163,14 @@
 "n": 8,
 "id": "e1story",
 "kind": "story",
-"title": "Block 1 · Build an HR agent",
+"title": "Block 1 · Built-in agents in Copilot",
 "topic": "e1",
 "kit": [
-"Block 1 · Build an HR agent",
-"Thursday 12 November, 16:00",
-"Fatma counts her week: 64 emails from staff. Twenty ask how many leave days carry over. She answers each one by hand, from the same section 4.",
-"The same question, twenty times a week.",
-"Build an HR agent that answers from approved policies, and test it before anyone uses it.",
+"Block 1 · Built-in agents in Copilot",
+"Monday 16 November, 10:00",
+"Noura in L&D has two jobs before lunch. Her one-line reminder request still gives vague emails. Her manager asks what Gulf energy companies do for new supervisors, with sources.",
+"Two jobs. Microsoft already built an agent for each.",
+"Use a built-in agent, then check what it gives you.",
 "01"
 ],
 "chrome": [
@@ -180,172 +180,91 @@
 },
 {
 "n": 9,
-"id": "e1an",
-"kind": "rule",
-"title": "A new colleague with a binder and a script.",
+"id": "e1t1",
+"kind": "term",
+"title": "Copilot with a saved job.",
 "topic": "e1",
 "kit": [
-"Block 1 · the picture",
-"A new colleague with a binder and a script.",
-"The script says what to answer, what to ask first and what to refer. The binder holds the approved policies. That is an agent."
+"Block 1 · the idea",
+"Copilot with a saved job.",
+"Agent",
+"Copilot with saved instructions, and sometimes its own knowledge, for one job. Microsoft built some. You can build your own.",
+"In Copilot Chat you explain the job every time…",
+"…an agent already knows its job.",
+"Same Copilot. The instructions are saved."
 ],
-"chrome": []
+"chrome": [
+"The idea"
+]
 },
 {
 "n": 10,
-"id": "e1cmp",
+"id": "e1list",
 "kind": "table",
-"title": "Write it once. Use it many times.",
+"title": "Three agents you may already have.",
 "topic": "e1",
 "kit": [
-"Block 1 · Copilot Chat or an agent",
-"Write it once. Use it many times.",
-"Same engine. An agent remembers the instructions and the files.",
-"Copilot Chat",
-"An agent",
-"Instructions",
-"You type them each time",
-"Written once and saved",
-"Files",
-"You attach them each time",
-"Saved as its knowledge",
-"Who uses it",
-"You",
-"Anyone you share it with",
-"Best for",
-"One-off drafts",
-"The same questions, many times"
+"Block 1 · built by Microsoft",
+"Three agents you may already have.",
+"In Microsoft 365 Copilot: Agents, then All agents.",
+"Agent",
+"What it does",
+"Try it on",
+"Who has it",
+"Prompt Coach",
+"Reads your request, says what is missing, and suggests a clearer one.",
+"A request from your Prompt Bank",
+"Copilot Chat and Microsoft 365 Copilot. Your admin may need to switch it on.",
+"Researcher",
+"Searches the web and the work files you can open, then writes a report with sources. It takes a few minutes.",
+"A public HR question",
+"Microsoft 365 Copilot license, with a monthly limit",
+"Analyst",
+"Reads a data file and works through the numbers step by step.",
+"A practice Excel file",
+"Microsoft 365 Copilot license, with a monthly limit"
 ],
 "chrome": []
 },
 {
 "n": 11,
-"id": "e1parts",
+"id": "e1live",
 "kind": "list",
-"title": "Five parts. You know four already.",
+"title": "Two built-in agents, live.",
 "topic": "e1",
 "kit": [
-"Block 1 · the parts of an agent",
-"Five parts. You know four already.",
-"An agent answers. It does not send, route or approve.",
-"Name and description: what it is for, in one line.",
-"Instructions: the five checklist parts, written once.",
-"Knowledge: the approved files it answers from.",
-"Starter prompts and the test pane: how people start, and how you test it."
+"Demo 3.1 · live in Copilot Chat · Agents",
+"Two built-in agents, live.",
+"Built-in agents save you the instructions. They do not save you the check.",
+"What I will show: Prompt Coach improves a one-line request, then Researcher answers a public HR question with sources.",
+"Watch for: What Prompt Coach says is missing, and the sources at the end of the report.",
+"Files: none: the request is on the prompt sheet"
 ],
 "chrome": []
 },
 {
 "n": 12,
-"id": "e1live",
-"kind": "list",
-"title": "An HR agent, built live.",
-"topic": "e1",
-"kit": [
-"Demo 3.1 · live in Agent Builder",
-"An HR agent, built live.",
-"Instructions, knowledge, starter prompts. Then test.",
-"What I will show: The Mutla HR Policy Helper: name, instructions, five policy files and three starter prompts.",
-"Watch for: Where each checklist part goes, and the section number in the first answer.",
-"Files: mutla-leave-policy-2026.docx, mutla-allowances-policy-v3.docx, mutla-allowances-policy-v4.docx, mutla-attendance-rules-2026.docx, mutla-training-policy-2026.docx"
-],
-"chrome": []
-},
-{
-"n": 13,
-"id": "e1chk",
-"kind": "check",
-"title": "Quick check",
-"topic": "e1",
-"kit": [
-"Where does the rule “never give a named person's salary” belong?",
-"In a starter prompt",
-"In the Constraints part of the instructions",
-"In the agent's description"
-],
-"chrome": [
-"Quick check",
-"A",
-"B",
-"C",
-"Correct",
-"Not quite"
-]
-},
-{
-"n": 14,
-"id": "e1task1",
+"id": "e1task",
 "kind": "task",
 "title": "Your turn 3.1",
 "topic": "e1",
 "kit": [
 "Task 3.1",
 "on your own",
-"Word or Notepad",
-"Constraints hold the rules that protect people: never, ask first, refer.",
-"mutla-leave-policy-2026.docx",
-"mutla-allowances-policy-v3.docx",
-"mutla-allowances-policy-v4.docx",
-"mutla-attendance-rules-2026.docx",
-"mutla-training-policy-2026.docx",
-"Open a blank document. Write the instructions for Mutla HR Policy Helper with the five checklist parts.",
-"Say which files it may use, and the dates of the two allowances versions.",
-"Say what it must never answer, when it must ask first, and where it refers people.",
-"Read it as if you were the agent. Could you answer a question you are not sure about?",
-"The agent's instructions, in five parts.",
-"Your turn: write the agent&#x27;s instructions.",
-"Block 1 · Build an HR agent"
-],
-"chrome": [
-"Your turn",
-"Finished early?",
-"What to look for",
-"Weak prompt",
-"Your rewrite",
-"points",
-"+1 min",
-"Reset",
-"Your time",
-"min",
-"Time",
-"You hand in",
-"Where we are",
-"Agent",
-"Test",
-"Flow",
-"Map",
-"Compare"
-]
-},
-{
-"n": 15,
-"id": "e1task2",
-"kind": "task",
-"title": "Your turn 3.2",
-"topic": "e1",
-"kit": [
-"Task 3.2",
-"on your own",
-"Agent Builder",
-"If the answer has no section number, check the Format line in your instructions.",
-"mutla-leave-policy-2026.docx",
-"mutla-allowances-policy-v3.docx",
-"mutla-allowances-policy-v4.docx",
-"mutla-attendance-rules-2026.docx",
-"mutla-training-policy-2026.docx",
-"In Microsoft 365 Copilot, choose Create agent, then the Configure tab.",
-"Add a name and a one-line description. Paste your instructions from Task 3.1.",
-"Upload the five policy files under Knowledge. Add three starter prompts.",
-"Ask one normal question in the test pane. Does the answer give the section?",
-"Starter prompt 1",
-"How many days of leave can I carry over?",
-"Starter prompt 2",
-"When does allowances version 4 start?",
-"Starter prompt 3",
-"How do I ask for a training course?",
+"Prompt Coach, and Researcher if you have it",
+"Put the better request next to the five checklist parts. Which part did your first request miss?",
+"Ask Prompt Coach what good instructions for an HR policy agent must say. Keep the answer for Task 3.2.",
+"In Microsoft 365 Copilot, open Agents, then All agents. Find Prompt Coach under Built by Microsoft. If you see Add, add it.",
+"Give Prompt Coach one request from your Prompt Bank (Day 1), or the weak request below. Read what it says is missing.",
+"Run its better request in Copilot Chat. Is the answer better? Save the best version in your Prompt Bank.",
+"If you have Researcher, ask it the research question below. When the report is ready, open two sources and check one fact in each.",
+"Prompt Coach · review my request",
+"Here is a request I use at work: \"Write an email reminding managers about training.\" Review it. Tell me what is missing, then suggest a better request for an HR officer at Mutla Oil Company.",
+"Researcher · a public HR question",
+"What do large energy companies in the Gulf do to prepare new supervisors in their first year? Give five common practices, one example for each, and a source for each. Public sources only.",
 "Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
-"Your turn: build it in Agent Builder.",
-"Block 1 · Build an HR agent"
+"Your turn: use an agent Microsoft built.",
+"Block 1 · Built-in agents in Copilot"
 ],
 "chrome": [
 "Your turn",
@@ -365,28 +284,196 @@
 "prompt sheet",
 "If the tool is slow, continue from the backup on the screen.",
 "Where we are",
-"Agent",
-"Test",
-"Flow",
+"Built-in",
+"Your agent",
+"Automate",
 "Map",
 "Compare"
 ]
 },
 {
-"n": 16,
-"id": "e1deb",
-"kind": "rule",
-"title": "The instructions are the agent's job description.",
+"n": 13,
+"id": "e1chk",
+"kind": "check",
+"title": "Quick check",
 "topic": "e1",
 "kit": [
-"Block 1 · debrief",
-"The instructions are the agent's job description.",
-"The agents that answered well had clear limits, the dates of both allowances versions, and a place to send what they could not answer."
+"Researcher gives you a report with eight sources. What do you do before you share it?",
+"Share it: every point has a source",
+"Open two sources and check one fact in each",
+"Ask Researcher if it is sure"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 14,
+"id": "e2story",
+"kind": "story",
+"title": "Block 2 · Build your own agent",
+"topic": "e2",
+"kit": [
+"Block 2 · Build your own agent",
+"Thursday 12 November, 16:00",
+"Fatma counts her week: 64 emails from staff. Twenty ask how many leave days carry over. She answers each one by hand, from the same section 4.",
+"The same question, twenty times a week.",
+"Build an HR agent that answers from approved policies, and test it before anyone uses it.",
+"02"
+],
+"chrome": [
+"The starting point",
+"By the end of this block:"
+]
+},
+{
+"n": 15,
+"id": "e2cmp",
+"kind": "table",
+"title": "Microsoft's agent, or yours?",
+"topic": "e2",
+"kit": [
+"Block 2 · built-in or your own",
+"Microsoft's agent, or yours?",
+"Same engine. Your own agent knows your policies and your rules.",
+"Copilot Chat",
+"A built-in agent",
+"Your own agent",
+"Instructions",
+"You type them each time",
+"Microsoft wrote them",
+"You write them once",
+"Knowledge",
+"Files you attach each time",
+"The web and your work files",
+"The approved files you choose",
+"Who uses it",
+"You",
+"Anyone with Copilot",
+"Anyone you share it with",
+"Best for",
+"One-off drafts",
+"Common jobs: requests, research",
+"Your unit's questions, many times"
+],
+"chrome": []
+},
+{
+"n": 16,
+"id": "e2parts",
+"kind": "list",
+"title": "Five parts. You know four already.",
+"topic": "e2",
+"kit": [
+"Block 2 · the parts of an agent",
+"Five parts. You know four already.",
+"An agent answers. It does not send, route or approve.",
+"Name and description: what it is for, in one line.",
+"Instructions: the five checklist parts, written once.",
+"Knowledge: the approved files it answers from.",
+"Starter prompts and the test pane: how people start, and how you test it."
 ],
 "chrome": []
 },
 {
 "n": 17,
+"id": "e2live",
+"kind": "list",
+"title": "An HR agent, built live.",
+"topic": "e2",
+"kit": [
+"Demo 3.2 · live in Agent Builder",
+"An HR agent, built live.",
+"Instructions, knowledge, starter prompts. Then test.",
+"What I will show: The Mutla HR Policy Helper: name, instructions, five policy files and three starter prompts.",
+"Watch for: Where each checklist part goes, and the section number in the first answer.",
+"Files: mutla-leave-policy-2026.docx, mutla-allowances-policy-v3.docx, mutla-allowances-policy-v4.docx, mutla-attendance-rules-2026.docx, mutla-training-policy-2026.docx"
+],
+"chrome": []
+},
+{
+"n": 18,
+"id": "e2chk",
+"kind": "check",
+"title": "Quick check",
+"topic": "e2",
+"kit": [
+"Where does the rule “never give a named person's salary” belong?",
+"In a starter prompt",
+"In the Constraints part of the instructions",
+"In the agent's description"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 19,
+"id": "e2task1",
+"kind": "task",
+"title": "Your turn 3.2",
+"topic": "e2",
+"kit": [
+"Task 3.2",
+"on your own",
+"Word, then Agent Builder",
+"Constraints hold the rules that protect people: never, ask first, refer. No section number in the answer? Check the Format line.",
+"mutla-leave-policy-2026.docx",
+"mutla-allowances-policy-v3.docx",
+"mutla-allowances-policy-v4.docx",
+"mutla-attendance-rules-2026.docx",
+"mutla-training-policy-2026.docx",
+"In a blank document, write the instructions for Mutla HR Policy Helper with the five checklist parts: which files it uses, the dates of the two allowances versions, what it never answers, when it asks first, and where it refers people.",
+"In Microsoft 365 Copilot, choose Create agent, then the Configure tab. Add a name, a one-line description and your instructions.",
+"Upload the five policy files under Knowledge. Add three starter prompts.",
+"Ask one normal question in the test pane. Does the answer give the section?",
+"Starter prompt 1",
+"How many days of leave can I carry over?",
+"Starter prompt 2",
+"When does allowances version 4 start?",
+"Starter prompt 3",
+"How do I ask for a training course?",
+"Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
+"Your turn: write and build your agent.",
+"Block 2 · Build your own agent"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"Copy",
+"copy, paste, then check",
+"is on your",
+"prompt sheet",
+"If the tool is slow, continue from the backup on the screen.",
+"Where we are",
+"Built-in",
+"Your agent",
+"Automate",
+"Map",
+"Compare"
+]
+},
+{
+"n": 20,
 "id": "e2tests",
 "kind": "table",
 "title": "Three tests before anyone uses it.",
@@ -411,8 +498,8 @@
 "chrome": []
 },
 {
-"n": 18,
-"id": "e2live",
+"n": 21,
+"id": "e2live2",
 "kind": "list",
 "title": "Three tests, then one fix.",
 "topic": "e2",
@@ -427,8 +514,8 @@
 "chrome": []
 },
 {
-"n": 19,
-"id": "e2task1",
+"n": 22,
+"id": "e2task2",
 "kind": "task",
 "title": "Your turn 3.3",
 "topic": "e2",
@@ -454,7 +541,7 @@
 "What is Ahmad's salary?",
 "Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
 "Your turn: test and fix your agent.",
-"Block 2 · Test, fix and build a second agent"
+"Block 2 · Build your own agent"
 ],
 "chrome": [
 "Your turn",
@@ -474,16 +561,16 @@
 "prompt sheet",
 "If the tool is slow, continue from the backup on the screen.",
 "Where we are",
-"Agent",
-"Test",
-"Flow",
+"Built-in",
+"Your agent",
+"Automate",
 "Map",
 "Compare"
 ]
 },
 {
-"n": 20,
-"id": "e2task2",
+"n": 23,
+"id": "e2task3",
 "kind": "task",
 "title": "Your turn 3.4",
 "topic": "e2",
@@ -504,8 +591,8 @@
 "Buddy: three tests, one at a time",
 "What do I need to bring on my first day? | Where do I go on my first day? | How much will my housing allowance be in my first month?",
 "Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
-"Your turn: a second agent: choose one.",
-"Block 2 · Test, fix and build a second agent"
+"Your turn: optional: a second agent.",
+"Block 2 · Build your own agent"
 ],
 "chrome": [
 "Your turn",
@@ -525,38 +612,38 @@
 "prompt sheet",
 "If the tool is slow, continue from the backup on the screen.",
 "Where we are",
-"Agent",
-"Test",
-"Flow",
+"Built-in",
+"Your agent",
+"Automate",
 "Map",
 "Compare"
 ]
 },
 {
-"n": 21,
+"n": 24,
 "id": "e2deb",
 "kind": "rule",
-"title": "The second agent took half the time.",
+"title": "The instructions are the agent's job description.",
 "topic": "e2",
 "kit": [
 "Block 2 · debrief",
-"The second agent took half the time.",
-"Same checklist, same three tests. Once you know the method, each new agent is quicker to build."
+"The instructions are the agent's job description.",
+"The agents that answered well had clear limits, the dates of both allowances versions, and a place to send what they could not answer. Same checklist, same three tests for every new agent."
 ],
 "chrome": []
 },
 {
-"n": 22,
+"n": 25,
 "id": "e3story",
 "kind": "story",
-"title": "Block 3 · Power Automate: a trainer demo",
+"title": "Block 3 · Power Automate: when to automate",
 "topic": "e3",
 "kit": [
-"Block 3 · Power Automate: a trainer demo",
+"Block 3 · Power Automate: when to automate",
 "Sunday 8 November, 08:30",
-"Noura receives 30 training requests a week. Each one is an email, a form, a signature, a scan and two lines typed into a tracker. Nobody asks a question, so an agent cannot help.",
+"Noura receives 30 training requests a week, and a vendor quotation every few days. Each request is a form, a signature and two lines typed into a tracker. Each quotation is copied into a spreadsheet by hand. Nobody asks a question, so an agent cannot help.",
 "Not a question. A process.",
-"See what a Power Automate flow does, and when you need one instead of Copilot or an agent.",
+"See what automation means, when to automate, and three flows that run on their own.",
 "03"
 ],
 "chrome": [
@@ -565,88 +652,137 @@
 ]
 },
 {
-"n": 23,
+"n": 26,
 "id": "e3t1",
 "kind": "term",
-"title": "It starts by itself.",
+"title": "Work that starts by itself.",
 "topic": "e3",
 "kit": [
 "Block 3 · the idea",
-"It starts by itself.",
-"Flow",
-"A set of steps in Power Automate that runs on its own when something happens: a trigger, then actions, sometimes a condition.",
-"Copilot and agents wait for you…",
-"…a flow starts when the trigger happens.",
-"Trigger, actions, condition. A person still approves."
+"Work that starts by itself.",
+"Automation",
+"Steps that run on their own when something happens, the same way every time. In Power Automate this is a flow.",
+"You do each step by hand, every time…",
+"…a flow does the steps when the trigger happens.",
+"Automate the moving. Keep the deciding."
 ],
 "chrome": [
 "The idea"
 ]
 },
 {
-"n": 24,
+"n": 27,
+"id": "e3when",
+"kind": "table",
+"title": "Four questions before you automate.",
+"topic": "e3",
+"kit": [
+"Block 3 · when to automate",
+"Four questions before you automate.",
+"Most answers under Automate it? Build a flow. A person keeps every decision.",
+"Ask",
+"Automate it",
+"Keep it by hand",
+"How often?",
+"Every week, or more",
+"A few times a year",
+"The steps?",
+"The same every time",
+"Different each time",
+"What starts it?",
+"A form, an email or a date",
+"Someone has an idea",
+"Any judgment?",
+"None, or a person keeps that step",
+"The whole task is a judgment"
+],
+"chrome": []
+},
+{
+"n": 28,
 "id": "e3parts",
 "kind": "table",
-"title": "Four words you will hear.",
+"title": "Four parts in every flow.",
 "topic": "e3",
 "kit": [
-"Block 3 · the words",
-"Four words you will hear.",
-"Most HR flows are a form, a log, an approval and an email.",
-"Word",
+"Block 3 · the four parts",
+"Four parts in every flow.",
+"Connectors are the apps a flow uses. Some flows have an AI step.",
+"Part",
 "Means",
-"In the demo",
+"Demo 1",
+"Demo 2",
+"Demo 3",
 "Trigger",
-"What starts the flow",
-"A new form response",
-"Action",
-"One step the flow does",
-"Add a row; send an email",
-"Condition",
-"A yes or no that splits the flow",
-"Approved or not",
-"Connector",
-"The app a step uses",
-"Forms, Excel, Approvals, Outlook"
+"What starts it",
+"A form is sent",
+"Every Sunday, 8:00",
+"A quotation email arrives",
+"Actions",
+"The steps, in order",
+"Read, approve, log, email",
+"Read, tidy, AI prompt, email",
+"Read, AI prompt, log, email",
+"Connectors",
+"The apps it uses",
+"Forms, Approvals, Excel, Outlook",
+"Excel, AI prompt, Outlook",
+"Outlook, AI prompt, Excel",
+"Output",
+"What you get",
+"A row and an email",
+"A DRAFT brief for L&D",
+"A row and a DRAFT email"
 ],
 "chrome": []
 },
 {
-"n": 25,
-"id": "e3live",
-"kind": "table",
-"title": "From a form to an email.",
+"n": 29,
+"id": "e3v1",
+"kind": "widget",
+"title": "Demo 3.5",
 "topic": "e3",
 "kit": [
-"Demo 3.5 · video demo in Power Automate",
-"From a form to an email.",
-"Video: the recorded demo plays here.",
-"Step",
-"App",
-"What it does",
-"Trigger: When a new response is submitted",
-"Microsoft Forms",
-"The training request form",
-"Action: Get response details",
-"Microsoft Forms",
-"Reads the answers",
-"Action: Add a row into a table",
-"Excel Online",
-"Logs the request in TrainingRequests",
-"Action: Start and wait for an approval",
-"Approvals",
-"Sends it to the line manager and waits",
-"Condition: Outcome is equal to Approve",
-"Control",
-"Splits the flow: approved or not",
-"Action: Send an email (V2)",
-"Outlook",
-"Tells the employee the result"
+"Demo 3.5 · recorded in Power Automate",
+"From a form to an approval.",
+"The flow carries the request. A person decides.",
+"Power Automate · recorded demo",
+"Recorded demo · 2:16 · no sound, the trainer explains each step Trigger A new response in the training request form Actions Read the answers, ask for approval, log the row, email the result Connectors Forms, Approvals, Excel, Outlook Output A row in Excel and an email to the employee A person The approver approves or rejects. The flow only carries the request."
 ],
 "chrome": []
 },
 {
-"n": 26,
+"n": 30,
+"id": "e3v2",
+"kind": "widget",
+"title": "Demo 3.5b",
+"topic": "e3",
+"kit": [
+"Demo 3.5b · recorded in Power Automate",
+"Every Sunday, a draft for vendors.",
+"AI drafts inside the flow. L&D decides.",
+"Power Automate · recorded demo",
+"Recorded demo · 1:50 · no sound, the trainer explains each step Trigger A schedule: every Sunday at 8:00 Actions Read the week's requests, keep four columns, run an AI prompt, send an email Connectors Excel, AI prompt, Outlook Output A DRAFT vendor brief in L&D's inbox A person L&D reads the draft, fixes it and decides what goes to vendors."
+],
+"chrome": []
+},
+{
+"n": 31,
+"id": "e3v3",
+"kind": "widget",
+"title": "Demo 3.5c",
+"topic": "e3",
+"kit": [
+"Demo 3.5c · recorded in Power Automate",
+"A quotation, read and scored.",
+"AI reads and scores. L&D decides.",
+"Power Automate · recorded demo",
+"Recorded demo · 1:42 · no sound, the trainer explains each step Trigger An email with Quotation in the subject Actions Read the requests, run an AI prompt, add a row, send an email Connectors Outlook, AI prompt, Excel Output A row in Vendor Quotations and a DRAFT email to L&D A person L&D checks the score and the offer, and decides. The flow never replies to the vendor."
+],
+"chrome": []
+},
+{
+"n": 32,
 "id": "e3need",
 "kind": "list",
 "title": "Before you build one, ask four questions.",
@@ -655,15 +791,15 @@
 "Block 3 · what a flow needs",
 "Before you build one, ask four questions.",
 "Ask your IT team first. Then build small.",
-"License: does your Microsoft 365 account include Power Automate?",
+"License: does your Microsoft 365 account include Power Automate, and AI steps?",
 "Permission: does your IT team allow these connectors?",
 "Owner: who fixes it when it breaks, or when someone leaves?",
-"People: is every approval still made by a person?"
+"People: is every decision still made by a person, and does a person check what the AI step writes?"
 ],
 "chrome": []
 },
 {
-"n": 27,
+"n": 33,
 "id": "e3why",
 "kind": "list",
 "title": "Why not Copilot or an agent?",
@@ -672,24 +808,24 @@
 "Block 3 · why a flow here",
 "Why not Copilot or an agent?",
 "A flow moves work between people. It never replaces their decisions.",
-"It starts on its own when a form arrives. Copilot and agents wait to be asked.",
+"It starts on its own when a form, an email or a date arrives. Copilot and agents wait to be asked.",
 "It waits for an approval, for days if needed, then continues.",
-"It writes the log and sends the email the same way every time.",
-"It decides nothing. The manager approves; the flow carries the request."
+"It logs and sends the same way every time: the row, the email, the draft.",
+"Its AI step drafts and scores. A person reviews and decides."
 ],
 "chrome": []
 },
 {
-"n": 28,
+"n": 34,
 "id": "e3chk",
 "kind": "check",
 "title": "Quick check",
 "topic": "e3",
 "kit": [
-"In the training request flow, which step must stay with a person?",
-"Adding the request to the log",
-"Approving the request",
-"Sending the result to the employee"
+"In the quotation flow, which step must stay with a person?",
+"Pulling the price and dates out of the email",
+"Choosing the vendor",
+"Adding the offer to Vendor Quotations"
 ],
 "chrome": [
 "Quick check",
@@ -701,7 +837,7 @@
 ]
 },
 {
-"n": 29,
+"n": 35,
 "id": "e4story",
 "kind": "story",
 "title": "Block 4 · From one task to a workflow",
@@ -720,7 +856,7 @@
 ]
 },
 {
-"n": 30,
+"n": 36,
 "id": "e4an",
 "kind": "rule",
 "title": "Follow one form from desk to desk.",
@@ -733,7 +869,7 @@
 "chrome": []
 },
 {
-"n": 31,
+"n": 37,
 "id": "e4prob",
 "kind": "table",
 "title": "Four problems to look for.",
@@ -761,7 +897,7 @@
 "chrome": []
 },
 {
-"n": 32,
+"n": 38,
 "id": "e4t1",
 "kind": "term",
 "title": "Map it as it is.",
@@ -780,7 +916,7 @@
 ]
 },
 {
-"n": 33,
+"n": 39,
 "id": "e4live",
 "kind": "list",
 "title": "A story into a step table.",
@@ -796,7 +932,7 @@
 "chrome": []
 },
 {
-"n": 34,
+"n": 40,
 "id": "e4task1",
 "kind": "task",
 "title": "Your turn 3.6",
@@ -837,15 +973,15 @@
 "prompt sheet",
 "If the tool is slow, continue from the backup on the screen.",
 "Where we are",
-"Agent",
-"Test",
-"Flow",
+"Built-in",
+"Your agent",
+"Automate",
 "Map",
 "Compare"
 ]
 },
 {
-"n": 35,
+"n": 41,
 "id": "e4chk",
 "kind": "check",
 "title": "Quick check",
@@ -866,7 +1002,7 @@
 ]
 },
 {
-"n": 36,
+"n": 42,
 "id": "e4brief",
 "kind": "list",
 "title": "Your process, mapped.",
@@ -883,7 +1019,7 @@
 "chrome": []
 },
 {
-"n": 37,
+"n": 43,
 "id": "e4task2",
 "kind": "task",
 "title": "Your turn 3.7",
@@ -917,15 +1053,15 @@
 "Time",
 "You hand in",
 "Where we are",
-"Agent",
-"Test",
-"Flow",
+"Built-in",
+"Your agent",
+"Automate",
 "Map",
 "Compare"
 ]
 },
 {
-"n": 38,
+"n": 44,
 "id": "e4task3",
 "kind": "task",
 "title": "Your turn 3.8",
@@ -964,15 +1100,15 @@
 "prompt sheet",
 "If the tool is slow, continue from the backup on the screen.",
 "Where we are",
-"Agent",
-"Test",
-"Flow",
+"Built-in",
+"Your agent",
+"Automate",
 "Map",
 "Compare"
 ]
 },
 {
-"n": 39,
+"n": 45,
 "id": "e4deb",
 "kind": "rule",
 "title": "One owner per step. A person for every decision.",
@@ -985,7 +1121,7 @@
 "chrome": []
 },
 {
-"n": 40,
+"n": 46,
 "id": "e5cmp",
 "kind": "table",
 "title": "Three tools. Three different jobs.",
@@ -1008,7 +1144,7 @@
 "Knows your policies",
 "When you attach them",
 "From its saved knowledge",
-"No: it moves data",
+"No. Its AI step sees only what the flow gives it",
 "Sends, logs, routes",
 "No",
 "No",
@@ -1021,7 +1157,7 @@
 "chrome": []
 },
 {
-"n": 41,
+"n": 47,
 "id": "e5sort",
 "kind": "sort",
 "title": "Copilot, agent or flow? Tap a card.",
@@ -1046,7 +1182,7 @@
 ]
 },
 {
-"n": 42,
+"n": 48,
 "id": "e5chk",
 "kind": "check",
 "title": "Quick check",
@@ -1067,7 +1203,7 @@
 ]
 },
 {
-"n": 43,
+"n": 49,
 "id": "e6share",
 "kind": "timer",
 "title": "One minute each: one agent or one map.",
@@ -1086,7 +1222,7 @@
 ]
 },
 {
-"n": 44,
+"n": 50,
 "id": "e7map",
 "kind": "map",
 "title": "MAP test · after",
@@ -1113,7 +1249,7 @@
 ]
 },
 {
-"n": 45,
+"n": 51,
 "id": "w3",
 "kind": "wrap",
 "title": "Wrap-up",
@@ -1123,10 +1259,10 @@
 "Your first week: one green task a day. Your first month: one agent or one mapped process for your unit.",
 "1",
 "You built",
-"Two tested HR agents and a map of one HR process.",
+"A better request with Prompt Coach, a tested HR agent and a map of one HR process.",
 "2",
 "You saw",
-"A flow that carries a request from a form to an email, with a person who approves.",
+"Three flows: an approval, a weekly AI brief and a scored quotation. A person decides in each one.",
 "3",
 "The habit",
 "Copilot drafts. You check. Authorized HR staff decide."
@@ -1138,7 +1274,7 @@
 ]
 },
 {
-"n": 46,
+"n": 52,
 "id": "close3",
 "kind": "close",
 "title": "Close",

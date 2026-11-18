@@ -439,14 +439,58 @@ COACH_TESTS = [("Normal", "Help me write the job description for a Payroll Offic
 PA_FORM = ["Employee code", "Course name", "Course start date", "Reason (one sentence)", "Line manager's work email"]
 PA_FLOW = [("Trigger", "Microsoft Forms", "When a new response is submitted", "The training request form"),
            ("Action", "Microsoft Forms", "Get response details", "Reads the answers"),
-           ("Action", "Excel Online", "Add a row into a table", "Logs the request in TrainingRequests"),
-           ("Action", "Approvals", "Start and wait for an approval", "Sends it to the line manager and waits"),
+           ("Action", "Approvals", "Start and wait for an approval", "Sends it to the approver and waits"),
+           ("Action", "Excel Online", "Add a row into a table", "Logs the request and the decision"),
            ("Condition", "Control", "Outcome is equal to Approve", "Splits the flow: approved or not"),
            ("Action", "Outlook", "Send an email (V2)", "Tells the employee the result")]
 PA_LOG = [("TR-27-0001", "16 November 2026", "EMP-1043", "Safety leadership", "11 January 2027", "Approved", "Line manager", "17 November 2026"),
-          ("TR-27-0002", "16 November 2026", "EMP-1739", "Excel for HR reporting", "18 January 2027", "Waiting", "", ""),
+          ("TR-27-0002", "16 November 2026", "EMP-1739", "Excel for HR reporting", "18 January 2027", "Approved", "Line manager", "18 November 2026"),
           ("TR-27-0003", "17 November 2026", "EMP-2148", "Report writing in English", "25 January 2027", "Rejected", "Line manager", "18 November 2026")]
 PA_LOG_HEAD = ["Request ID", "Submitted", "Employee code", "Course", "Course start", "Status", "Decided by", "Decided on"]
+# Day 3 · Block 3: the three recorded Power Automate demos (the trainer narrates; no audio). The parts of each flow.
+PA_PARTS = ["Trigger", "Actions", "Connectors", "Output"]
+PA_DEMOS = [
+ {"n": 1, "name": "Training request approval", "len": "2:16",
+  "parts": ["A new response in the training request form", "Read the answers, ask for approval, log the row, email the result",
+            "Forms, Approvals, Excel, Outlook", "A row in Excel and an email to the employee"],
+  "short": ["A form is sent", "Read, approve, log, email", "Forms, Approvals, Excel, Outlook", "A row and an email"],
+  "person": "The approver approves or rejects. The flow only carries the request."},
+ {"n": 2, "name": "Weekly training demand to a vendor brief", "len": "1:50",
+  "parts": ["A schedule: every Sunday at 8:00", "Read the week's requests, keep four columns, run an AI prompt, send an email",
+            "Excel, AI prompt, Outlook", "A DRAFT vendor brief in L&D's inbox"],
+  "short": ["Every Sunday, 8:00", "Read, tidy, AI prompt, email", "Excel, AI prompt, Outlook", "A DRAFT brief for L&D"],
+  "person": "L&D reads the draft, fixes it and decides what goes to vendors."},
+ {"n": 3, "name": "Vendor quotation, read and scored", "len": "1:42",
+  "parts": ["An email with Quotation in the subject", "Read the requests, run an AI prompt, add a row, send an email",
+            "Outlook, AI prompt, Excel", "A row in Vendor Quotations and a DRAFT email to L&D"],
+  "short": ["A quotation email arrives", "Read, AI prompt, log, email", "Outlook, AI prompt, Excel", "A row and a DRAFT email"],
+  "person": "L&D checks the score and the offer, and decides. The flow never replies to the vendor."},
+]
+PA_MEANS = ["What starts it", "The steps, in order", "The apps it uses", "What you get"]
+PA_FLOW2 = [("Trigger", "Schedule", "Recurrence: every week, Sunday at 8:00 (Kuwait time)", "Starts the flow on a date, not an event"),
+            ("Action", "Excel Online", "List rows present in a table", "Reads the training requests from the form's workbook"),
+            ("Action", "Data operation", "Create CSV table", "Keeps four columns: employee, course, start date, reason"),
+            ("Action", "AI prompt", "Run a prompt: Training demand to vendor brief", "Groups the demand and drafts an outline for vendors"),
+            ("Action", "Outlook", "Send an email (V2)", "Sends the draft to L&D, marked DRAFT for review")]
+PA_FLOW3 = [("Trigger", "Outlook", "When a new email arrives (V3), subject contains Quotation", "Starts the flow when a vendor sends an offer"),
+            ("Action", "Excel Online", "List rows present in a table", "Reads this term's training requests"),
+            ("Action", "Data operation", "Create CSV table", "Keeps three columns: course, start date, reason (no names)"),
+            ("Action", "AI prompt", "Run a prompt: Score a vendor quotation", "Pulls out price, learners, duration, dates and format, then scores the fit from 1 to 10"),
+            ("Action", "Excel Online", "Add a row into a table", "Adds one row to Vendor Quotations, status To review"),
+            ("Action", "Outlook", "Send an email (V2)", "Sends L&D a DRAFT with the score and the row")]
+# Demo 3 (fictional): the quotation the flow reads, the goals the AI scores against, and the row it writes
+PA_GOALS = ["Build data and reporting skills in HR", "Prepare new supervisors to lead people",
+            "Keep the cost per learner at 150 KWD or less", "Prefer training in Kuwait or live online, in English, with hands-on practice"]
+PA_QUOTE = {"vendor": "Sadeem Training Partners", "course": "Advanced Excel and Power BI for HR Teams", "duration": "3 days (18 hours)",
+            "dates": "10 to 12 January 2027", "learners": 12, "total": 2400, "per": 200, "score": 3, "status": "To review"}
+assert PA_QUOTE["total"] // PA_QUOTE["learners"] == PA_QUOTE["per"]
+# Day 3 · Block 1: built-in agents (Demo and Task 3.1)
+BUILTIN = [("Prompt Coach", "Reads your request, says what is missing, and suggests a clearer one.", "A request from your Prompt Bank", "Copilot Chat and Microsoft 365 Copilot. Your admin may need to switch it on."),
+           ("Researcher", "Searches the web and the work files you can open, then writes a report with sources. It takes a few minutes.", "A public HR question", "Microsoft 365 Copilot license, with a monthly limit"),
+           ("Analyst", "Reads a data file and works through the numbers step by step.", "A practice Excel file", "Microsoft 365 Copilot license, with a monthly limit")]
+BUILTIN_WEAK = "Write an email reminding managers about training."
+BUILTIN_RESEARCH = ("What do large energy companies in the Gulf do to prepare new supervisors in their first year? "
+                    "Give five common practices, one example for each, and a source for each. Public sources only.")
 # Day 2 · a short meeting for Demo 2.2 and Demo 2.3 (pasted, not a file): the new joiners' orientation day
 ORIENT = {"date": "Sunday 6 December 2026", "joiners": 18, "room": "Training Room 2, head office",
           "facts": ["18 new joiners start on Sunday 6 December 2026.", "The orientation day runs from 8:00 to 13:00 in Training Room 2, head office.",

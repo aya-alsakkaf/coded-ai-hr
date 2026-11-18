@@ -36,37 +36,38 @@ Ask clearly. Check everything. People decide.
 
 ## Day 2: Meetings, Reporting and Presentations
 
-Safe data, checked figures and clear slides.
+Clear meetings, checked figures, safe data.
 
 | Time | Block | What happens |
 | --- | --- | --- |
 | 09:00-09:10 | Callback quiz | Three questions on Day 1, and the old way and the AI way |
-| 09:10-09:45 | Block 1 · Protecting employee data | Green, amber, red; redact, then ask · Task 2.1 |
-| 09:45-10:45 | Block 2 · Before and after the meeting | Agenda, brief, discussion points; notes into actions · Tasks 2.2 and 2.3 |
+| 09:10-10:10 | Block 1 · Before and after the meeting | Agenda, brief, discussion points; notes into actions · Tasks 2.1 and 2.2 |
+| 10:10-10:45 | Block 2 · Follow-ups and reminders in Outlook | Same owners, same dates · Tasks 2.3 and 2.4 |
 | 10:45-11:00 | Break |  |
-| 11:00-11:35 | Block 3 · Follow-ups and reminders in Outlook | Same owners, same dates · Tasks 2.4 and 2.5 |
+| 11:00-11:35 | Block 3 · Excel: figures you can check | A control total, a chart, payroll or cleaning data · Tasks 2.5 and 2.6 |
 | 11:35-12:15 | Lunch and Dhuhr prayer |  |
-| 12:15-13:00 | Block 4 · Excel: figures you can check | A control total, a chart, payroll or cleaning data · Tasks 2.6 and 2.7 |
-| 13:00-13:35 | Block 5 · Word: a summary for management | Draft, rewrite, summarize · Tasks 2.8 and 2.9 |
-| 13:35-13:50 | Break |  |
-| 13:50-14:50 | Block 6 · PowerPoint: from document to deck | From a prompt, from a document, fix a messy deck · Tasks 2.10 and 2.11 |
-| 14:50-15:00 | Which app for which job, and wrap | Word, Outlook, Teams, Excel, PowerPoint |
+| 12:15-13:20 | Block 4 · Microsoft Forms: find the training needs | Requirements first, a form with Copilot, then the answers in Excel or Forms · Tasks 2.7, 2.8 and 2.9 |
+| 13:20-13:35 | Break |  |
+| 13:35-14:20 | Block 5 · PowerPoint: present what you found | From a prompt, from your findings, fix a messy deck · Tasks 2.10 and 2.11 |
+| 14:20-14:50 | Block 6 · Protecting employee data | Green, amber, red; redact, then ask · Task 2.12 |
+| 14:50-15:00 | Which app for which job, and wrap | Outlook, Teams, Excel, Forms, PowerPoint |
 
 **Tasks**
 
 | Task | Title | Minutes | Who | Files | Point |
 | --- | --- | --- | --- | --- | --- |
-| Task 2.1 | Redact a case note | 11 | on your own | mutla-case-note-unredacted.docx | Replace names with roles. Remove IDs, numbers, salaries and medical details. |
-| Task 2.2 | Prepare your track's meeting | 15 | on your own | mutla-case-je-reevaluation-request.docx, mutla-case-compensation-allowance-update.docx, mutla-case-manpower-new-section.docx, mutla-case-personnel-attendance-change.docx, mutla-case-ld-training-requests.docx | A good meeting starts with a good page. |
-| Task 2.3 | Recap the staffing meeting | 15 | on your own | mutla-meeting-transcript-staffing.docx | Every action has an owner and a deadline from the transcript. |
-| Task 2.4 | Follow up the staffing meeting | 12 | on your own | mutla-meeting-transcript-staffing.docx | Follow up today. Remind before the deadline, not after. |
-| Task 2.5 | Your track's message | 10 | on your own | mutla-case-je-reevaluation-request.docx, mutla-case-compensation-allowance-update.docx, mutla-case-manpower-new-section.docx, mutla-case-personnel-attendance-change.docx, mutla-case-ld-training-requests.docx | The right reader, the facts as written, nothing promised. |
-| Task 2.6 | Training requests: find the duplicates | 12 | in pairs | mutla-hr-trackers-q3-2026.xlsx | Too high: look for duplicates. Then check them yourself. |
-| Task 2.7 | Payroll, or clean and chart | 12 | in pairs | mutla-payroll-check-oct-nov-2026.xlsx, mutla-overtime-export-oct-2026.xlsx | Clean it, count it, check it against a reference. Never fix a number yourself. |
-| Task 2.8 | A management summary in Word | 12 | on your own | mutla-hr-trackers-q3-2026.xlsx, mutla-payroll-check-oct-nov-2026.xlsx, mutla-overtime-export-oct-2026.xlsx | Corrected figures, the reason, no blame. |
-| Task 2.9 | Rewrite or summarize | 10 | on your own | mutla-overtime-memo-draft.docx, mutla-hr-quarterly-report-q3-2026.docx | Rewrite the words. Keep the facts. |
-| Task 2.10 | From a prompt, then from your summary | 14 | on your own |  | Every number on a slide matches the summary. |
+| Task 2.1 | Prepare your track's meeting | 15 | on your own | mutla-case-je-reevaluation-request.docx, mutla-case-compensation-allowance-update.docx, mutla-case-manpower-new-section.docx, mutla-case-personnel-attendance-change.docx, mutla-case-ld-training-requests.docx | A good meeting starts with a good page. |
+| Task 2.2 | Recap the staffing meeting | 15 | on your own | mutla-meeting-transcript-staffing.docx | Every action has an owner and a deadline from the transcript. |
+| Task 2.3 | Follow up the staffing meeting | 12 | on your own | mutla-meeting-transcript-staffing.docx | Follow up today. Remind before the deadline, not after. |
+| Task 2.4 | Your track's message | 10 | on your own | mutla-case-je-reevaluation-request.docx, mutla-case-compensation-allowance-update.docx, mutla-case-manpower-new-section.docx, mutla-case-personnel-attendance-change.docx, mutla-case-ld-training-requests.docx | The right reader, the facts as written, nothing promised. |
+| Task 2.5 | Training requests: find the duplicates | 12 | in pairs | mutla-hr-trackers-q3-2026.xlsx | Too high: look for duplicates. Then check them yourself. |
+| Task 2.6 | Payroll, or clean and chart | 12 | in pairs | mutla-payroll-check-oct-nov-2026.xlsx, mutla-overtime-export-oct-2026.xlsx | Clean it, count it, check it against a reference. Never fix a number yourself. |
+| Task 2.7 | Brainstorm the requirements | 12 | in pairs | mutla-training-needs-brief-2027.docx | Every question serves a decision. Nothing asks about one person. |
+| Task 2.8 | Build your form | 15 | on your own | mutla-training-needs-brief-2027.docx | The form matches the plan. Nothing extra, nothing personal. |
+| Task 2.9 | Analyze the 2027 responses | 15 | in pairs | mutla-training-needs-responses-2027.xlsx | Clean, then count. Personal comments never travel. |
+| Task 2.10 | From a prompt, then from your findings | 12 | on your own | mutla-training-needs-responses-2027.xlsx | Every number on a slide matches the findings. |
 | Task 2.11 | Fix a messy deck, or build your own | 18 | on your own | mutla-q3-hr-update-messy.pptx, mutla-case-je-reevaluation-request.docx, mutla-case-compensation-allowance-update.docx, mutla-case-manpower-new-section.docx, mutla-case-personnel-attendance-change.docx, mutla-case-ld-training-requests.docx | Fix in rounds. Check every number after each round. |
+| Task 2.12 | Redact a case note | 11 | on your own | mutla-case-note-unredacted.docx | Replace names with roles. Remove IDs, numbers, salaries and medical details. |
 
 ## Day 3: HR Agents, Workflows and an Introduction to Power Automate
 
@@ -75,10 +76,10 @@ Build it, test it, then look at the whole process.
 | Time | Block | What happens |
 | --- | --- | --- |
 | 09:00-09:10 | Callback quiz | Three questions on Day 2 |
-| 09:10-10:05 | Block 1 · Build an HR agent | Instructions, knowledge, starter prompts · Tasks 3.1 and 3.2 |
-| 10:05-10:45 | Block 2 · Test, fix and build a second agent | Normal, incomplete, sensitive; your choice of agent · Tasks 3.3 and 3.4 |
+| 09:10-09:40 | Block 1 · Built-in agents in Copilot | Prompt Coach and Researcher · Task 3.1 |
+| 09:40-10:45 | Block 2 · Build your own agent | Instructions, knowledge, starter prompts, three tests · Tasks 3.2 and 3.3, Task 3.4 if time allows |
 | 10:45-11:00 | Break |  |
-| 11:00-11:35 | Block 3 · Power Automate: a trainer demo | Trigger, actions, a condition, a person who approves |
+| 11:00-11:35 | Block 3 · Power Automate: when to automate | Trigger, actions, connectors, output; three recorded flows |
 | 11:35-12:15 | Lunch and Dhuhr prayer |  |
 | 12:15-13:35 | Block 4 · From one task to a workflow | Delays, duplicates, owners, human decisions · Tasks 3.6 and 3.7, Task 3.8 if time allows |
 | 13:35-13:50 | Break |  |
@@ -91,10 +92,10 @@ Build it, test it, then look at the whole process.
 
 | Task | Title | Minutes | Who | Files | Point |
 | --- | --- | --- | --- | --- | --- |
-| Task 3.1 | Write the agent's instructions | 12 | on your own | mutla-leave-policy-2026.docx, mutla-allowances-policy-v3.docx, mutla-allowances-policy-v4.docx, mutla-attendance-rules-2026.docx, mutla-training-policy-2026.docx | What it answers, from which files, what it never answers, and where it refers. |
-| Task 3.2 | Build it in Agent Builder | 15 | on your own | mutla-leave-policy-2026.docx, mutla-allowances-policy-v3.docx, mutla-allowances-policy-v4.docx, mutla-attendance-rules-2026.docx, mutla-training-policy-2026.docx | Name, instructions, knowledge, starter prompts, one test. |
-| Task 3.3 | Test and fix your agent | 12 | on your own | mutla-leave-policy-2026.docx, mutla-allowances-policy-v3.docx, mutla-allowances-policy-v4.docx, mutla-attendance-rules-2026.docx, mutla-training-policy-2026.docx | Three tests, one log, one fix. |
-| Task 3.4 | A second agent: choose one | 18 | on your own | mutla-jd-template-2026.docx, mutla-job-evaluation-factors.docx, mutla-onboarding-checklist-2026.docx | Ask first, add nothing, refer the personal questions. |
+| Task 3.1 | Use an agent Microsoft built | 12 | on your own |  | A better request in your Prompt Bank. Two sources checked. |
+| Task 3.2 | Write and build your agent | 20 | on your own | mutla-leave-policy-2026.docx, mutla-allowances-policy-v3.docx, mutla-allowances-policy-v4.docx, mutla-attendance-rules-2026.docx, mutla-training-policy-2026.docx | What it answers, from which files, what it never answers, and where it refers. |
+| Task 3.3 | Test and fix your agent | 10 | on your own | mutla-leave-policy-2026.docx, mutla-allowances-policy-v3.docx, mutla-allowances-policy-v4.docx, mutla-attendance-rules-2026.docx, mutla-training-policy-2026.docx | Three tests, one log, one fix. |
+| Task 3.4 | Optional: a second agent | 12 | on your own | mutla-jd-template-2026.docx, mutla-job-evaluation-factors.docx, mutla-onboarding-checklist-2026.docx | Ask first, add nothing, refer the personal questions. |
 | Task 3.6 | Map the training request | 12 | in pairs | mutla-process-stories.docx, mutla-process-map-template.docx | Map it as it is. Mark the problems and the human decisions. |
 | Task 3.7 | Map your own HR process | 20 | on your own | mutla-process-stories.docx, mutla-process-map-template.docx | From request to completion. Owners, waits, problems, human decisions. |
 | Task 3.8 | Optional: improve your map | 25 | on your own | mutla-workflow-card-template.docx | One owner per step. Every decision with a person. |
