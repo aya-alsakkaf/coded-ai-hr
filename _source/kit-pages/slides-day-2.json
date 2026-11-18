@@ -11,7 +11,7 @@
 "09:00-15:00",
 "AI Fundamentals for HR",
 "Meetings, Reporting and Presentations",
-"Protecting employee data, meetings and follow-ups, Excel figures you can check, summaries in Word, and decks in PowerPoint.",
+"Meetings and follow-ups, Excel figures you can check, a training needs form in Microsoft Forms, decks in PowerPoint, and protecting employee data.",
 "CODED, Alsharekh room, Frontend Campus",
 "Kuwait"
 ],
@@ -31,10 +31,10 @@
 "title": "Outcomes",
 "topic": "open",
 "kit": [
-"Sort any HR task as green, amber or red, and redact a note before Copilot sees it.",
 "Prepare a meeting, recap it into actions, owners and deadlines, and follow it up in Outlook.",
 "Check Excel figures against a control total or a list of approved changes.",
-"Turn checked facts into a Word summary and a PowerPoint deck, and check every number on every slide."
+"Turn a training question into requirements, build the form with Copilot in Forms, and clean before you count the answers.",
+"Present checked findings in PowerPoint, and sort any HR task as green, amber or red before Copilot sees it."
 ],
 "chrome": [
 "Outcomes for today",
@@ -54,27 +54,27 @@
 "09:00-09:10",
 "Callback quiz",
 "Three questions on Day 1, and the old way and the AI way",
-"09:10-09:45",
-"Block 1 · Protecting employee data",
-"Green, amber, red; redact, then ask · Task 2.1",
-"09:45-10:45",
-"Block 2 · Before and after the meeting",
-"Agenda, brief, discussion points; notes into actions · Tasks 2.2 and 2.3",
+"09:10-10:10",
+"Block 1 · Before and after the meeting",
+"Agenda, brief, discussion points; notes into actions · Tasks 2.1 and 2.2",
+"10:10-10:45",
+"Block 2 · Follow-ups and reminders in Outlook",
+"Same owners, same dates · Tasks 2.3 and 2.4",
 "11:00-11:35",
-"Block 3 · Follow-ups and reminders in Outlook",
-"Same owners, same dates · Tasks 2.4 and 2.5",
-"12:15-13:00",
-"Block 4 · Excel: figures you can check",
-"A control total, a chart, payroll or cleaning data · Tasks 2.6 and 2.7",
-"13:00-13:35",
-"Block 5 · Word: a summary for management",
-"Draft, rewrite, summarize · Tasks 2.8 and 2.9",
-"13:50-14:50",
-"Block 6 · PowerPoint: from document to deck",
-"From a prompt, from a document, fix a messy deck · Tasks 2.10 and 2.11",
+"Block 3 · Excel: figures you can check",
+"A control total, a chart, payroll or cleaning data · Tasks 2.5 and 2.6",
+"12:15-13:20",
+"Block 4 · Microsoft Forms: find the training needs",
+"Requirements first, a form with Copilot, then the answers in Excel or Forms · Tasks 2.7, 2.8 and 2.9",
+"13:35-14:20",
+"Block 5 · PowerPoint: present what you found",
+"From a prompt, from your findings, fix a messy deck · Tasks 2.10 and 2.11",
+"14:20-14:50",
+"Block 6 · Protecting employee data",
+"Green, amber, red; redact, then ask · Task 2.12",
 "14:50-15:00",
 "Which app for which job, and wrap",
-"Word, Outlook, Teams, Excel, PowerPoint"
+"Outlook, Teams, Excel, Forms, PowerPoint"
 ],
 "chrome": [
 "The shape of Day"
@@ -199,16 +199,16 @@
 },
 {
 "n": 9,
-"id": "c1story",
+"id": "c2story",
 "kind": "story",
-"title": "Block 1 · Protecting employee data",
-"topic": "c1",
+"title": "Block 1 · Before and after the meeting",
+"topic": "c2",
 "kit": [
-"Block 1 · Protecting employee data",
-"Tuesday 10 November, 09:10",
-"A line manager emails HR a case note about a technician. Fatma wants a neat summary for the file. She is about to paste the whole note into Copilot: two names, a civil ID, a mobile number, a salary and a medical reason.",
-"The summary would be fine. The prompt is not.",
-"Sort every task as green, amber or red, and redact a note before Copilot sees it.",
+"Block 1 · Before and after the meeting",
+"Tuesday 3 November, 11:30",
+"The orientation planning meeting ends. Personnel, IT and L&D agreed on a lot. A week later, IT asks: who said 18 laptops, and by when? Nobody wrote it down.",
+"A good meeting. No actions.",
+"Prepare a meeting with Copilot, then turn notes into actions with owners and deadlines.",
 "01"
 ],
 "chrome": [
@@ -218,209 +218,12 @@
 },
 {
 "n": 10,
-"id": "c1an",
-"kind": "rule",
-"title": "A traffic light before every prompt.",
-"topic": "c1",
-"kit": [
-"Block 1 · the picture",
-"A traffic light before every prompt.",
-"Green: go ahead. Amber: only in your company's approved account, with names removed. Red: stop. It never goes into a prompt."
-],
-"chrome": []
-},
-{
-"n": 11,
-"id": "c1safe",
-"kind": "cards",
-"title": "Look at the light before you type.",
-"topic": "c1",
-"kit": [
-"Block 1 · green, amber, red",
-"Look at the light before you type.",
-"When you are not sure, treat it as red and ask.",
-"Green: go ahead",
-"Fictional or public data, and your own drafting.",
-"Practice on the Mutla files; Improve the tone of your own announcement; Explain a COUNTIF formula",
-"Amber: approved account, minimum data",
-"Internal HR information, only in your company's approved Copilot account, with names removed.",
-"Summarize an approved policy; Count training requests by unit with employee codes, no names",
-"Red: never in a prompt",
-"Civil IDs, named salaries, medical details, case details that name people, personal files.",
-"A case note with names; A salary list with names; A sick-leave certificate"
-],
-"chrome": []
-},
-{
-"n": 12,
-"id": "c1sort",
-"kind": "sort",
-"title": "Green, amber or red? Tap a card.",
-"topic": "c1",
-"kit": [
-"Demo 2.1 · card sort",
-"Green, amber or red? Tap a card.",
-"Practice on the Mutla sample files",
-"Paste a case note that names the employee and the witness",
-"Make your own announcement warmer and clearer",
-"Summarize the approved leave policy in your company's Copilot",
-"Upload a salary list with names to check a formula",
-"Count training requests by unit, employee codes only, in your company's Copilot",
-"Ask Copilot to explain a COUNTIF formula",
-"Paste a medical certificate to draft a sick-leave letter",
-"Green · go ahead",
-"Amber · approved account, no names",
-"Red · never in a prompt"
-],
-"chrome": [
-"tap to reveal"
-]
-},
-{
-"n": 13,
-"id": "c1t1",
-"kind": "term",
-"title": "Redact first. Then ask.",
-"topic": "c1",
-"kit": [
-"Block 1 · the idea",
-"Redact first. Then ask.",
-"Redaction",
-"Replacing names with roles, and removing IDs, phone numbers, salaries and medical details, before a document goes anywhere near a prompt.",
-"A note about Bader and Sara…",
-"…becomes a note about Employee A and Colleague B.",
-"Redaction happens before the prompt, not inside it."
-],
-"chrome": [
-"The idea"
-]
-},
-{
-"n": 14,
-"id": "c1chk1",
-"kind": "check",
-"title": "Quick check",
-"topic": "c1",
-"kit": [
-"Your company has an approved Copilot account. A manager asks you to summarize a grievance letter that names two employees. What first?",
-"Paste it as it is: the account is approved",
-"Replace the names and IDs, then use the approved account",
-"Use your personal Copilot at home tonight"
-],
-"chrome": [
-"Quick check",
-"A",
-"B",
-"C",
-"Correct",
-"Not quite"
-]
-},
-{
-"n": 15,
-"id": "c1live",
-"kind": "list",
-"title": "Redact first. Then ask.",
-"topic": "c1",
-"kit": [
-"Demo 2.1b · live in Copilot Chat",
-"Redact first. Then ask.",
-"Redact first. Then ask.",
-"What I will show: A case note redacted on the trainer screen, then a summary request that holds only the redacted text.",
-"Watch for: Whether the summary guesses anything that was removed.",
-"Files: none: the request is on the prompt sheet"
-],
-"chrome": []
-},
-{
-"n": 16,
-"id": "c1task",
-"kind": "task",
-"title": "Your turn 2.1",
-"topic": "c1",
-"kit": [
-"Task 2.1",
-"on your own",
-"Your eyes + Word",
-"Six items: two names, an ID number, a phone number, a salary and a medical reason.",
-"On the redacted copy only, ask Copilot whether any personal detail is left.",
-"mutla-case-note-unredacted.docx",
-"Open mutla-case-note-unredacted.docx in Word. Save a copy with -redacted at the end of the name.",
-"Find every detail that identifies a person or is sensitive.",
-"Replace names with roles (Employee A, Colleague B). Remove the civil ID, phone number, salary and medical reason.",
-"Read it once more. Could anyone outside HR tell who this is?",
-"Only on the redacted copy",
-"Read the attached note. List any detail that could still identify a person or is sensitive. Do not repeat the detail itself; give its paragraph number.",
-"Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
-"Your turn: redact a case note.",
-"Block 1 · Protecting employee data"
-],
-"chrome": [
-"Your turn",
-"Finished early?",
-"What to look for",
-"Weak prompt",
-"Your rewrite",
-"points",
-"+1 min",
-"Reset",
-"Your time",
-"min",
-"Time",
-"Copy",
-"copy, paste, then check",
-"is on your",
-"prompt sheet",
-"If the tool is slow, continue from the backup on the screen.",
-"Where we are",
-"Data",
-"Meetings",
-"Outlook",
-"Excel",
-"Word",
-"PowerPoint"
-]
-},
-{
-"n": 17,
-"id": "c1deb",
-"kind": "rule",
-"title": "Six details out. The case is still clear.",
-"topic": "c1",
-"kit": [
-"Block 1 · debrief",
-"Six details out. The case is still clear.",
-"Redaction removed who the people are, not what happened. A summary of the redacted note is just as useful to the file."
-],
-"chrome": []
-},
-{
-"n": 18,
-"id": "c2story",
-"kind": "story",
-"title": "Block 2 · Before and after the meeting",
-"topic": "c2",
-"kit": [
-"Block 2 · Before and after the meeting",
-"Tuesday 3 November, 11:30",
-"The orientation planning meeting ends. Personnel, IT and L&D agreed on a lot. A week later, IT asks: who said 18 laptops, and by when? Nobody wrote it down.",
-"A good meeting. No actions.",
-"Prepare a meeting with Copilot, then turn notes into actions with owners and deadlines.",
-"02"
-],
-"chrome": [
-"The starting point",
-"By the end of this block:"
-]
-},
-{
-"n": 19,
 "id": "c2when",
 "kind": "table",
 "title": "Copilot drafts the page around the meeting.",
 "topic": "c2",
 "kit": [
-"Block 2 · before, during, after",
+"Block 1 · before, during, after",
 "Copilot drafts the page around the meeting.",
 "The meeting is still yours. Copilot writes the pages around it.",
 "When",
@@ -439,13 +242,13 @@
 "chrome": []
 },
 {
-"n": 20,
+"n": 11,
 "id": "c2live1",
 "kind": "list",
 "title": "Agenda, brief and discussion points.",
 "topic": "c2",
 "kit": [
-"Demo 2.2 · live in Copilot Chat · Word",
+"Demo 2.1 · live in Copilot Chat · Word",
 "Agenda, brief and discussion points.",
 "Agenda, brief, discussion points: from approved facts only.",
 "What I will show: A 30-minute planning meeting for new joiners, prepared from five approved facts.",
@@ -455,13 +258,13 @@
 "chrome": []
 },
 {
-"n": 21,
+"n": 12,
 "id": "c2task1",
 "kind": "task",
-"title": "Your turn 2.2",
+"title": "Your turn 2.1",
 "topic": "c2",
 "kit": [
-"Task 2.2",
+"Task 2.1",
 "on your own",
 "Copilot Chat · Word",
 "Turn the open question in your case into a discussion point.",
@@ -476,7 +279,7 @@
 "Check by hand: does every agenda item have an owner? Do the minutes add up? Is every fact in the case file?",
 "An agenda, a background brief and three discussion points for your track's meeting.",
 "Your turn: prepare your track&#x27;s meeting.",
-"Block 2 · Before and after the meeting"
+"Block 1 · Before and after the meeting"
 ],
 "chrome": [
 "Your turn",
@@ -492,22 +295,22 @@
 "Time",
 "You hand in",
 "Where we are",
-"Data",
 "Meetings",
 "Outlook",
 "Excel",
-"Word",
-"PowerPoint"
+"Forms",
+"PowerPoint",
+"Safe data"
 ]
 },
 {
-"n": 22,
+"n": 13,
 "id": "c2t1",
 "kind": "term",
 "title": "What, who, by when.",
 "topic": "c2",
 "kit": [
-"Block 2 · the idea",
+"Block 1 · the idea",
 "What, who, by when.",
 "Action item",
 "An action has three parts: what will be done, who does it, and by when. An idea that nobody agreed to is not an action.",
@@ -520,13 +323,13 @@
 ]
 },
 {
-"n": 23,
+"n": 14,
 "id": "c2live2",
 "kind": "list",
 "title": "Notes into decisions and actions.",
 "topic": "c2",
 "kit": [
-"Demo 2.3 · live in Copilot Chat",
+"Demo 2.2 · live in Copilot Chat",
 "Notes into decisions and actions.",
 "Action, owner, deadline. Nothing nobody agreed.",
 "What I will show: Rough meeting notes turned into decisions, an action table and open questions.",
@@ -536,7 +339,7 @@
 "chrome": []
 },
 {
-"n": 24,
+"n": 15,
 "id": "c2chk",
 "kind": "check",
 "title": "Quick check",
@@ -557,13 +360,13 @@
 ]
 },
 {
-"n": 25,
+"n": 16,
 "id": "c2task2",
 "kind": "task",
-"title": "Your turn 2.3",
+"title": "Your turn 2.2",
 "topic": "c2",
 "kit": [
-"Task 2.3",
+"Task 2.2",
 "on your own",
 "Copilot Chat · Teams",
 "One question in the meeting was not decided. It belongs in the open questions.",
@@ -574,7 +377,7 @@
 "Check every owner and deadline by hand against the transcript. Delete anything nobody agreed.",
 "A recap: decisions, an action table with owners and deadlines, and the open question.",
 "Your turn: recap the staffing meeting.",
-"Block 2 · Before and after the meeting"
+"Block 1 · Before and after the meeting"
 ],
 "chrome": [
 "Your turn",
@@ -590,40 +393,40 @@
 "Time",
 "You hand in",
 "Where we are",
-"Data",
 "Meetings",
 "Outlook",
 "Excel",
-"Word",
-"PowerPoint"
+"Forms",
+"PowerPoint",
+"Safe data"
 ]
 },
 {
-"n": 26,
+"n": 17,
 "id": "c2deb",
 "kind": "rule",
 "title": "The open question stays open.",
 "topic": "c2",
 "kit": [
-"Block 2 · debrief",
+"Block 1 · debrief",
 "The open question stays open.",
 "Two positions could be contract or permanent. Nobody decided. A recap that decides it for the meeting is wrong, however tidy it looks."
 ],
 "chrome": []
 },
 {
-"n": 27,
+"n": 18,
 "id": "c3story",
 "kind": "story",
-"title": "Block 3 · Follow-ups and reminders",
+"title": "Block 2 · Follow-ups and reminders",
 "topic": "c3",
 "kit": [
-"Block 3 · Follow-ups and reminders",
+"Block 2 · Follow-ups and reminders",
 "Thursday 29 October, 13:00",
 "Finance asks where last month's cost estimate is. Abdulaziz thought Khaled was preparing it. The recap was clear, but nobody sent it, and nobody sent a reminder.",
 "A clear recap that nobody sent.",
 "Write a follow-up and a polite reminder that keep every owner and date.",
-"03"
+"02"
 ],
 "chrome": [
 "The starting point",
@@ -631,13 +434,13 @@
 ]
 },
 {
-"n": 28,
+"n": 19,
 "id": "c3live",
 "kind": "list",
 "title": "A follow-up and a reminder.",
 "topic": "c3",
 "kit": [
-"Demo 2.4 · live in Copilot Chat · Outlook",
+"Demo 2.3 · live in Copilot Chat · Outlook",
 "A follow-up and a reminder.",
 "Same owners, same dates. Polite, never blaming.",
 "What I will show: The action table from Demo 2.3, turned into a follow-up for everyone and a reminder for one person.",
@@ -647,25 +450,25 @@
 "chrome": []
 },
 {
-"n": 29,
+"n": 20,
 "id": "c3task1",
 "kind": "task",
-"title": "Your turn 2.4",
+"title": "Your turn 2.3",
 "topic": "c3",
 "kit": [
-"Task 2.4",
+"Task 2.3",
 "on your own",
 "Copilot Chat · Outlook",
 "The reminder asks politely and gives the deadline. It does not blame.",
 "Write the same reminder for a manager who has already missed a deadline. Keep it polite.",
 "mutla-meeting-transcript-staffing.docx",
-"Use your recap from Task 2.3. No recap? Copy the action table the trainer shows.",
+"Use your recap from Task 2.2. No recap? Copy the action table the trainer shows.",
 "Write your own checklist request for a follow-up email to everyone at the meeting, with the action table.",
 "Then write a polite reminder to Khaled about the action he owns, two days before its deadline.",
 "Check every owner and date by hand against the transcript.",
 "A follow-up email to the meeting and a reminder to Khaled.",
 "Your turn: follow up the staffing meeting.",
-"Block 3 · Follow-ups and reminders"
+"Block 2 · Follow-ups and reminders"
 ],
 "chrome": [
 "Your turn",
@@ -681,22 +484,22 @@
 "Time",
 "You hand in",
 "Where we are",
-"Data",
 "Meetings",
 "Outlook",
 "Excel",
-"Word",
-"PowerPoint"
+"Forms",
+"PowerPoint",
+"Safe data"
 ]
 },
 {
-"n": 30,
+"n": 21,
 "id": "c3task2",
 "kind": "task",
-"title": "Your turn 2.5",
+"title": "Your turn 2.4",
 "topic": "c3",
 "kit": [
-"Task 2.5",
+"Task 2.4",
 "on your own",
 "Copilot Chat · Outlook",
 "Who reads it, and what must they do after reading it?",
@@ -710,7 +513,7 @@
 "Check every date and number by hand against the case file. No names of employees in the message.",
 "One message for your track's case, checked against the case file.",
 "Your turn: your track&#x27;s message.",
-"Block 3 · Follow-ups and reminders"
+"Block 2 · Follow-ups and reminders"
 ],
 "chrome": [
 "Your turn",
@@ -726,16 +529,16 @@
 "Time",
 "You hand in",
 "Where we are",
-"Data",
 "Meetings",
 "Outlook",
 "Excel",
-"Word",
-"PowerPoint"
+"Forms",
+"PowerPoint",
+"Safe data"
 ]
 },
 {
-"n": 31,
+"n": 22,
 "id": "c3chk",
 "kind": "check",
 "title": "Quick check",
@@ -756,31 +559,31 @@
 ]
 },
 {
-"n": 32,
+"n": 23,
 "id": "c3deb",
 "kind": "rule",
 "title": "Polite, specific and on time.",
 "topic": "c3",
 "kit": [
-"Block 3 · debrief",
+"Block 2 · debrief",
 "Polite, specific and on time.",
 "The best reminders in the room named the task and the date, asked once, and blamed nobody."
 ],
 "chrome": []
 },
 {
-"n": 33,
+"n": 24,
 "id": "c4story",
 "kind": "story",
-"title": "Block 4 · Excel: figures you can check",
+"title": "Block 3 · Excel: figures you can check",
 "topic": "c4",
 "kit": [
-"Block 4 · Excel: figures you can check",
-"Sunday 4 October, 12:15",
+"Block 3 · Excel: figures you can check",
+"Sunday 4 October, 11:00",
 "Noura sends the Q3 report: 412 training requests. The HR system says 398. The Head of L&D asks which number is right, and why.",
 "412 or 398? Only a check can tell.",
 "Ask Copilot about a tracker, see the rows, and check the total against a control figure.",
-"04"
+"03"
 ],
 "chrome": [
 "The starting point",
@@ -788,13 +591,13 @@
 ]
 },
 {
-"n": 34,
+"n": 25,
 "id": "c4three",
 "kind": "cards",
 "title": "Ask. See the rows. Check.",
 "topic": "c4",
 "kit": [
-"Block 4 · three steps",
+"Block 3 · three steps",
 "Ask. See the rows. Check.",
 "Always check against a reference: a control total, or the list of approved changes.",
 "Ask",
@@ -810,13 +613,13 @@
 "chrome": []
 },
 {
-"n": 35,
+"n": 26,
 "id": "c4live",
 "kind": "list",
 "title": "Ask the tracker, then see the rows.",
 "topic": "c4",
 "kit": [
-"Demo 2.6 · live in Copilot Chat · Excel",
+"Demo 2.5 · live in Copilot Chat · Excel",
 "Ask the tracker, then see the rows.",
 "Ask, see the rows, then check against the control total.",
 "What I will show: The Q3 training count by unit, the Control totals next to it, then a chart of both.",
@@ -826,13 +629,13 @@
 "chrome": []
 },
 {
-"n": 36,
+"n": 27,
 "id": "c4task1",
 "kind": "task",
-"title": "Your turn 2.6",
+"title": "Your turn 2.5",
 "topic": "c4",
 "kit": [
-"Task 2.6",
+"Task 2.5",
 "in pairs",
 "Copilot Chat + Excel",
 "Each request ID should appear once.",
@@ -845,7 +648,7 @@
 "The Training sheet total does not match the Control totals sheet. List every request ID that appears more than once, with its row numbers. Do not delete anything.",
 "Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
 "Your turn: training requests: find the duplicates.",
-"Block 4 · Excel: figures you can check"
+"Block 3 · Excel: figures you can check"
 ],
 "chrome": [
 "Your turn",
@@ -865,22 +668,22 @@
 "prompt sheet",
 "If the tool is slow, continue from the backup on the screen.",
 "Where we are",
-"Data",
 "Meetings",
 "Outlook",
 "Excel",
-"Word",
-"PowerPoint"
+"Forms",
+"PowerPoint",
+"Safe data"
 ]
 },
 {
-"n": 37,
+"n": 28,
 "id": "c4task2",
 "kind": "task",
-"title": "Your turn 2.7",
+"title": "Your turn 2.6",
 "topic": "c4",
 "kit": [
-"Task 2.7",
+"Task 2.6",
 "in pairs",
 "Copilot Chat + Excel",
 "A: the Movements sheet finds two of the three. B: a unit written two ways becomes two bars.",
@@ -896,7 +699,7 @@
 "List every cleaning problem in the Overtime sheet: unit names written in more than one way, hours stored as text, dates in other formats, blank or repeated rows, and any day above 4 hours. Give the row numbers. Do not change anything.",
 "Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
 "Your turn: payroll, or clean and chart.",
-"Block 4 · Excel: figures you can check"
+"Block 3 · Excel: figures you can check"
 ],
 "chrome": [
 "Your turn",
@@ -916,16 +719,16 @@
 "prompt sheet",
 "If the tool is slow, continue from the backup on the screen.",
 "Where we are",
-"Data",
 "Meetings",
 "Outlook",
 "Excel",
-"Word",
-"PowerPoint"
+"Forms",
+"PowerPoint",
+"Safe data"
 ]
 },
 {
-"n": 38,
+"n": 29,
 "id": "c4chk",
 "kind": "check",
 "title": "Quick check",
@@ -946,73 +749,172 @@
 ]
 },
 {
-"n": 39,
+"n": 30,
 "id": "c4deb",
 "kind": "rule",
 "title": "Copilot finds the change. A person confirms the reason.",
 "topic": "c4",
 "kit": [
-"Block 4 · debrief",
+"Block 3 · debrief",
 "Copilot finds the change. A person confirms the reason.",
 "Every check needed a reference: a control total, the approved changes, or the approved hours. Without one, a correct count of wrong rows looks perfect, and a missing joiner looks like nothing at all."
 ],
 "chrome": []
 },
 {
-"n": 40,
-"id": "c5t1",
-"kind": "term",
-"title": "Three lines a manager reads.",
+"n": 31,
+"id": "c5story",
+"kind": "story",
+"title": "Block 4 · Microsoft Forms: find the training needs",
 "topic": "c5",
 "kit": [
-"Block 5 · the idea",
-"Three lines a manager reads.",
-"Management summary",
-"A short note that puts the finding, its limits and the next step first, with every number as written in the source.",
-"Every detail you found…",
-"…cut to what a manager must know or decide.",
-"Finding, limits, next step."
+"Block 4 · Microsoft Forms: find the training needs",
+"Monday 16 November, 12:15",
+"Last year L&D emailed a Word form to 52 line managers. 31 answered, by email, on paper and in meetings. Noura typed every answer into Excel by hand and found the same course written five ways. This year the survey opens on Monday 7 December 2026.",
+"52 managers. 31 answers. A week of typing.",
+"Turn a training question into requirements, build the form with Copilot, then clean and count the answers.",
+"04"
 ],
 "chrome": [
-"The idea"
+"The starting point",
+"By the end of this block:"
 ]
 },
 {
-"n": 41,
-"id": "c5live1",
+"n": 32,
+"id": "c5can",
 "kind": "list",
-"title": "A finding into a note for management.",
+"title": "What Copilot can do in Forms.",
 "topic": "c5",
 "kit": [
-"Demo 2.8 · live in Copilot Chat · Word",
-"A finding into a note for management.",
-"The finding, its limits, the next step.",
-"What I will show: The attendance pilot result as a title and three bullets for the Head of HR. Then one bullet, rewritten in Word.",
-"Watch for: The line that says what the pilot does not show, and whether Rewrite changed a number.",
-"Files: mutla-policy-change-brief.docx"
+"Block 4 · Copilot in Forms",
+"What Copilot can do in Forms.",
+"Copilot builds the form. You decide what it asks.",
+"Draft a whole form from a description: questions, types and choices.",
+"Review your form in the Copilot pane and suggest fixes, including settings.",
+"Analyze the answers on the Responses page, or open them in Excel.",
+"Without it: Copilot Chat writes the questions, then Quick import from Word, or build it by hand."
 ],
 "chrome": []
 },
 {
-"n": 42,
+"n": 33,
+"id": "c5tests",
+"kind": "cards",
+"title": "Three tests for every question.",
+"topic": "c5",
+"kit": [
+"Block 4 · requirements first",
+"Three tests for every question.",
+"Decisions first. Then the information. Then the questions.",
+"Decision",
+"Which decision does it serve?",
+"No decision behind it? Delete it.",
+"One minute",
+"Can a manager answer it quickly?",
+"Choices where you have a list. One idea per question.",
+"People",
+"Does it ask about one person?",
+"No names, IDs, ratings, salaries or health. Not even in a comment box."
+],
+"chrome": []
+},
+{
+"n": 34,
+"id": "c5live1",
+"kind": "list",
+"title": "From a vague ask to requirements.",
+"topic": "c5",
+"kit": [
+"Demo 2.7 · live in Copilot Chat",
+"From a vague ask to requirements.",
+"Decisions first. Then the information. Then the questions.",
+"What I will show: A one-line survey request with no file, then a requirements request with the L&D brief attached.",
+"Watch for: Which questions serve a decision, and which ones collect personal data.",
+"Files: mutla-training-needs-brief-2027.docx"
+],
+"chrome": []
+},
+{
+"n": 35,
 "id": "c5task1",
+"kind": "task",
+"title": "Your turn 2.7",
+"topic": "c5",
+"kit": [
+"Task 2.7",
+"in pairs",
+"Copilot Chat",
+"Start from the five decisions in the brief. Which question does each one need?",
+"Ask Copilot: which of my questions could a manager misread? Rewrite the two weakest.",
+"mutla-training-needs-brief-2027.docx",
+"Choose one. A: the company's 2027 training needs survey, from mutla-training-needs-brief-2027.docx. B: a training needs form for your own unit or department.",
+"Write your own checklist request: the decisions first, then the information each decision needs, then one question for each. A: attach the brief. B: write three or four facts about your unit as your Data.",
+"Test every question three ways: Which decision does it serve? Can a manager answer it in under a minute? Does it ask for anyone's personal data? Delete what fails.",
+"Keep eight questions or fewer. Write your question plan: question, type (choice, number or text), the choices, required or not.",
+"A question plan of eight questions or fewer: question, type, choices, required.",
+"Your turn: brainstorm the requirements.",
+"Block 4 · Microsoft Forms: find the training needs"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"You hand in",
+"Where we are",
+"Meetings",
+"Outlook",
+"Excel",
+"Forms",
+"PowerPoint",
+"Safe data"
+]
+},
+{
+"n": 36,
+"id": "c5live2",
+"kind": "list",
+"title": "Draft the form with Copilot in Forms.",
+"topic": "c5",
+"kit": [
+"Demo 2.8 · live in Microsoft Forms · Copilot",
+"Draft the form with Copilot in Forms.",
+"Copilot drafts the form. You check every question against the plan.",
+"What I will show: The question plan pasted into Draft with Copilot, checked question by question, then shared with the room.",
+"Watch for: Any question Copilot added that is not in the plan.",
+"Files: mutla-training-needs-brief-2027.docx"
+],
+"chrome": []
+},
+{
+"n": 37,
+"id": "c5task2",
 "kind": "task",
 "title": "Your turn 2.8",
 "topic": "c5",
 "kit": [
 "Task 2.8",
 "on your own",
-"Copilot Chat · Word",
-"Say what the file showed, what is correct, and who must confirm what is still open.",
-"mutla-hr-trackers-q3-2026.xlsx",
-"mutla-payroll-check-oct-nov-2026.xlsx",
-"mutla-overtime-export-oct-2026.xlsx",
-"Use your results from Tasks 2.6 and 2.7: the corrected training count, and the payroll or overtime items to confirm. Missing one? Ask the trainer.",
-"Write your own checklist request for a half-page summary for the Head of HR: what you found, what you corrected, and what still needs a person to confirm.",
-"Check every number and employee code by hand. Make sure it starts with the DRAFT line.",
-"A half-page management summary in Word.",
-"Your turn: a management summary in Word.",
-"Block 5 · Word summaries"
+"Microsoft Forms · Copilot",
+"Copilot follows a list best. Give it every question, its type and its choices.",
+"Ask Copilot in Forms to review your form. Accept only the suggestions that serve your plan.",
+"mutla-training-needs-brief-2027.docx",
+"Open forms.cloud.microsoft (or forms.office.com) and select New Form.",
+"In the Draft with Copilot box, write a request from your Task 2.7 plan: the title, who answers, every question with its type and choices, which are required. Select Keep it.",
+"Check every question against your plan. Delete what you did not ask for. Fix types and choices by hand.",
+"Settings: only people in your organization can respond. Preview it on your phone.",
+"Send the link to your partner. Answer each other's form twice, with made-up answers.",
+"A working form, shared with your partner, with at least two test answers.",
+"Your turn: build your form.",
+"Block 4 · Microsoft Forms: find the training needs"
 ],
 "chrome": [
 "Your turn",
@@ -1028,34 +930,53 @@
 "Time",
 "You hand in",
 "Where we are",
-"Data",
 "Meetings",
 "Outlook",
 "Excel",
-"Word",
-"PowerPoint"
+"Forms",
+"PowerPoint",
+"Safe data"
 ]
 },
 {
-"n": 43,
-"id": "c5task2",
+"n": 38,
+"id": "c5live3",
+"kind": "list",
+"title": "From answers to findings.",
+"topic": "c5",
+"kit": [
+"Demo 2.9 · live in Forms · Excel · Copilot",
+"From answers to findings.",
+"Clean, then count. Then check against who was invited.",
+"What I will show: The room's answers with Copilot in Forms, then the closed 2027 survey in Excel: count, find the problems, count again.",
+"Watch for: Which skill comes first before cleaning, and which comes first after.",
+"Files: mutla-training-needs-responses-2027.xlsx"
+],
+"chrome": []
+},
+{
+"n": 39,
+"id": "c5task3",
 "kind": "task",
 "title": "Your turn 2.9",
 "topic": "c5",
 "kit": [
 "Task 2.9",
-"on your own",
-"Copilot Chat · Word",
-"A: who reads a team channel? B: the approved rules win. C: every bullet needs its section.",
-"mutla-overtime-memo-draft.docx",
-"mutla-hr-quarterly-report-q3-2026.docx",
-"Choose one. A: your Task 2.8 summary as three lines for the HR team channel. B: rewrite the overtime memo for staff. C: summarize the Q3 HR report.",
-"A: keep every number. Take out every employee code: a team channel is wider than the Head of HR.",
-"B: in Word, select one paragraph at a time and use Rewrite, or use Copilot Chat. The approved rules at the end of the file win.",
-"C: ask Copilot for five bullets for the HR Director, each with its section number. Check three numbers by hand.",
-"A: three lines with no employee codes. B: the memo rewritten, with the two differences flagged. C: five bullets with section numbers.",
-"Your turn: rewrite or summarize.",
-"Block 5 · Word summaries"
+"in pairs",
+"Excel · Forms · Copilot",
+"A unit with more answers than managers has a problem. So does a skill written in five ways.",
+"Ask for a chart of the top five needs, cleaned, with the axis from zero. Check one bar against your count.",
+"mutla-training-needs-responses-2027.xlsx",
+"Choose one. A (recommended): the practice export, mutla-training-needs-responses-2027.xlsx, in Excel with Copilot or in Copilot Chat. B: your own form's answers, with Copilot in Forms.",
+"A: find the rows not to count and the skills written more than one way. Change nothing yet.",
+"A: count again, cleaned. Write the top three skills with answers and people, and the answers by unit against the Invited sheet.",
+"B: on the Responses page, ask Copilot for the main needs. Check two numbers against the answers (Open results in Excel).",
+"Write your findings in five lines for the Head of L&D, starting with the DRAFT line. You use them in Task 2.10.",
+"A · Find the problems",
+"Before we trust these counts, list every row that should not be counted (a test, or a manager who answered twice) and every skill that is written in more than one way. Give the row ID for each. Also list any comment that names a person or gives a health detail, by row ID only: do not repeat it. Do not change or delete anything.",
+"Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
+"Your turn: analyze the 2027 responses.",
+"Block 4 · Microsoft Forms: find the training needs"
 ],
 "chrome": [
 "Your turn",
@@ -1069,27 +990,31 @@
 "Your time",
 "min",
 "Time",
-"You hand in",
+"Copy",
+"copy, paste, then check",
+"is on your",
+"prompt sheet",
+"If the tool is slow, continue from the backup on the screen.",
 "Where we are",
-"Data",
 "Meetings",
 "Outlook",
 "Excel",
-"Word",
-"PowerPoint"
+"Forms",
+"PowerPoint",
+"Safe data"
 ]
 },
 {
-"n": 44,
+"n": 40,
 "id": "c5chk",
 "kind": "check",
 "title": "Quick check",
 "topic": "c5",
 "kit": [
-"Your three-line update for the HR team channel still names EMP-3346. What do you do?",
-"Keep it: the channel is inside HR",
-"Take the code out; Compensation already has it",
-"Add the name too, so it is clearer"
+"The first count ranks Excel third. Then you see “Excel”, “Advanced Excel” and “MS Excel” under Other. What do you do?",
+"Report the first count: it came from Copilot",
+"Group the spellings, count again, and say you did",
+"Delete the Other answers"
 ],
 "chrome": [
 "Quick check",
@@ -1101,18 +1026,31 @@
 ]
 },
 {
-"n": 45,
+"n": 41,
+"id": "c5deb",
+"kind": "rule",
+"title": "Clean, then count. The ranking changed.",
+"topic": "c5",
+"kit": [
+"Block 4 · debrief",
+"Clean, then count. The ranking changed.",
+"Before cleaning, Safety leadership looked first. After, Excel for HR reporting was first with 11 answers. A form with choices prevents most of this; checking against who was invited catches the rest."
+],
+"chrome": []
+},
+{
+"n": 42,
 "id": "c6story",
 "kind": "story",
-"title": "Block 6 · PowerPoint: from document to deck",
+"title": "Block 5 · PowerPoint: present what you found",
 "topic": "c6",
 "kit": [
-"Block 6 · PowerPoint: from document to deck",
-"Thursday 5 November, 13:50",
+"Block 5 · PowerPoint: present what you found",
+"Thursday 5 November, 13:35",
 "The Head of HR asks for the attendance update as slides for Sunday's managers' meeting. Noura has the brief in Word. Building ten slides by hand takes her the whole afternoon.",
 "The facts are ready. The slides are not.",
 "Build slides from a prompt and from a document, fix a messy deck, and check every number on every slide.",
-"06"
+"05"
 ],
 "chrome": [
 "The starting point",
@@ -1120,13 +1058,13 @@
 ]
 },
 {
-"n": 46,
+"n": 43,
 "id": "c6can",
 "kind": "list",
 "title": "What Copilot can do in PowerPoint.",
 "topic": "c6",
 "kit": [
-"Block 6 · Copilot in PowerPoint",
+"Block 5 · Copilot in PowerPoint",
 "What Copilot can do in PowerPoint.",
 "Copilot builds the slides. You check every number on every slide.",
 "Create a deck from a Word file or a request.",
@@ -1137,7 +1075,7 @@
 "chrome": []
 },
 {
-"n": 47,
+"n": 44,
 "id": "c6live1",
 "kind": "list",
 "title": "From a prompt, then from a document.",
@@ -1153,7 +1091,7 @@
 "chrome": []
 },
 {
-"n": 48,
+"n": 45,
 "id": "c6task1",
 "kind": "task",
 "title": "Your turn 2.10",
@@ -1162,13 +1100,14 @@
 "Task 2.10",
 "on your own",
 "Copilot Chat · PowerPoint",
-"Check the training count and every Task 2.7 figure on every slide where they appear.",
-"From a prompt: ask for five slides on Q3 training requests and your Task 2.7 check, with no file. Circle every number it made up.",
-"From a document: save your Task 2.8 summary as a Word file. Create a presentation from it, or ask Copilot Chat for a five-slide outline with speaker notes.",
-"Check every number on every slide against your summary. Delete the first deck.",
-"Five slides, or a five-slide outline, each number checked.",
-"Your turn: from a prompt, then from your summary.",
-"Block 6 · PowerPoint: from document to deck"
+"Check the top three and the response rate on every slide where they appear.",
+"mutla-training-needs-responses-2027.xlsx",
+"From a prompt: ask PowerPoint (or Copilot Chat) for five slides on Mutla's 2027 training needs, with no file. Circle every number it made up.",
+"From a document: paste your five findings from Task 2.9 into a Word file and save it. Create a presentation from it, or ask Copilot Chat for a five-slide outline with speaker notes.",
+"Check every number on every slide against your findings. No comment from a manager goes on a slide. Delete the first deck.",
+"Five slides, or a five-slide outline, each number checked against your findings.",
+"Your turn: from a prompt, then from your findings.",
+"Block 5 · PowerPoint: present what you found"
 ],
 "chrome": [
 "Your turn",
@@ -1184,16 +1123,16 @@
 "Time",
 "You hand in",
 "Where we are",
-"Data",
 "Meetings",
 "Outlook",
 "Excel",
-"Word",
-"PowerPoint"
+"Forms",
+"PowerPoint",
+"Safe data"
 ]
 },
 {
-"n": 49,
+"n": 46,
 "id": "c6live2",
 "kind": "list",
 "title": "Edit the deck in rounds.",
@@ -1209,7 +1148,7 @@
 "chrome": []
 },
 {
-"n": 50,
+"n": 47,
 "id": "c6task2",
 "kind": "task",
 "title": "Your turn 2.11",
@@ -1226,13 +1165,13 @@
 "mutla-case-manpower-new-section.docx",
 "mutla-case-personnel-attendance-change.docx",
 "mutla-case-ld-training-requests.docx",
-"Choose one. A: fix the messy Q3 HR update. B: slides for your track's meeting, from your Task 2.2 agenda and brief.",
+"Choose one. A: fix the messy Q3 HR update. B: slides for your track's meeting, from your Task 2.1 agenda and brief.",
 "A: delete the About box on slide 1. Ask Copilot for a fix list, slide by slide. Then fix in rounds: merge, cut text, remove personal data, add notes.",
 "A: check every number against your checked figures and the brief. Mark anything with no source.",
 "B: four slides with speaker notes, and one slide that asks the open question. Check every date and number against the case file.",
 "A: the fixed deck, with notes on every slide. B: four or five slides with speaker notes for your track's meeting.",
 "Your turn: fix a messy deck, or build your own.",
-"Block 6 · PowerPoint: from document to deck"
+"Block 5 · PowerPoint: present what you found"
 ],
 "chrome": [
 "Your turn",
@@ -1248,16 +1187,16 @@
 "Time",
 "You hand in",
 "Where we are",
-"Data",
 "Meetings",
 "Outlook",
 "Excel",
-"Word",
-"PowerPoint"
+"Forms",
+"PowerPoint",
+"Safe data"
 ]
 },
 {
-"n": 51,
+"n": 48,
 "id": "c6chk",
 "kind": "check",
 "title": "Quick check",
@@ -1278,20 +1217,217 @@
 ]
 },
 {
-"n": 52,
+"n": 49,
 "id": "c6deb",
 "kind": "rule",
 "title": "Copilot builds the deck. You check every slide.",
 "topic": "c6",
 "kit": [
-"Block 6 · debrief",
+"Block 5 · debrief",
 "Copilot builds the deck. You check every slide.",
 "The decks that were ready to present had every number from the source, the open question asked on screen, and notes a colleague could present from."
 ],
 "chrome": []
 },
 {
+"n": 50,
+"id": "c1story",
+"kind": "story",
+"title": "Block 6 · Protecting employee data",
+"topic": "c1",
+"kit": [
+"Block 6 · Protecting employee data",
+"Tuesday 10 November, 14:20",
+"A line manager emails HR a case note about a technician. Fatma wants a neat summary for the file. She is about to paste the whole note into Copilot: two names, a civil ID, a mobile number, a salary and a medical reason.",
+"The summary would be fine. The prompt is not.",
+"Sort every task as green, amber or red, and redact a note before Copilot sees it.",
+"06"
+],
+"chrome": [
+"The starting point",
+"By the end of this block:"
+]
+},
+{
+"n": 51,
+"id": "c1an",
+"kind": "rule",
+"title": "A traffic light before every prompt.",
+"topic": "c1",
+"kit": [
+"Block 6 · the picture",
+"A traffic light before every prompt.",
+"Green: go ahead. Amber: only in your company's approved account, with names removed. Red: stop. It never goes into a prompt."
+],
+"chrome": []
+},
+{
+"n": 52,
+"id": "c1safe",
+"kind": "cards",
+"title": "Look at the light before you type.",
+"topic": "c1",
+"kit": [
+"Block 6 · green, amber, red",
+"Look at the light before you type.",
+"When you are not sure, treat it as red and ask.",
+"Green: go ahead",
+"Fictional or public data, and your own drafting.",
+"Practice on the Mutla files; Improve the tone of your own announcement; Explain a COUNTIF formula",
+"Amber: approved account, minimum data",
+"Internal HR information, only in your company's approved Copilot account, with names removed.",
+"Summarize an approved policy; Count training requests by unit with employee codes, no names",
+"Red: never in a prompt",
+"Civil IDs, named salaries, medical details, case details that name people, personal files.",
+"A case note with names; A salary list with names; A sick-leave certificate"
+],
+"chrome": []
+},
+{
 "n": 53,
+"id": "c1sort",
+"kind": "sort",
+"title": "Green, amber or red? Tap a card.",
+"topic": "c1",
+"kit": [
+"Demo 2.12 · card sort",
+"Green, amber or red? Tap a card.",
+"Practice on the Mutla sample files",
+"Paste a case note that names the employee and the witness",
+"Make your own announcement warmer and clearer",
+"Summarize the approved leave policy in your company's Copilot",
+"Upload a salary list with names to check a formula",
+"Count training requests by unit, employee codes only, in your company's Copilot",
+"Ask Copilot to explain a COUNTIF formula",
+"Paste a medical certificate to draft a sick-leave letter",
+"Green · go ahead",
+"Amber · approved account, no names",
+"Red · never in a prompt"
+],
+"chrome": [
+"tap to reveal"
+]
+},
+{
+"n": 54,
+"id": "c1t1",
+"kind": "term",
+"title": "Redact first. Then ask.",
+"topic": "c1",
+"kit": [
+"Block 6 · the idea",
+"Redact first. Then ask.",
+"Redaction",
+"Replacing names with roles, and removing IDs, phone numbers, salaries and medical details, before a document goes anywhere near a prompt.",
+"A note about Bader and Sara…",
+"…becomes a note about Employee A and Colleague B.",
+"Redaction happens before the prompt, not inside it."
+],
+"chrome": [
+"The idea"
+]
+},
+{
+"n": 55,
+"id": "c1chk1",
+"kind": "check",
+"title": "Quick check",
+"topic": "c1",
+"kit": [
+"Your company has an approved Copilot account. A manager asks you to summarize a grievance letter that names two employees. What first?",
+"Paste it as it is: the account is approved",
+"Replace the names and IDs, then use the approved account",
+"Use your personal Copilot at home tonight"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 56,
+"id": "c1live",
+"kind": "list",
+"title": "Redact first. Then ask.",
+"topic": "c1",
+"kit": [
+"Demo 2.12b · live in Copilot Chat",
+"Redact first. Then ask.",
+"Redact first. Then ask.",
+"What I will show: A case note redacted on the trainer screen, then a summary request that holds only the redacted text.",
+"Watch for: Whether the summary guesses anything that was removed.",
+"Files: none: the request is on the prompt sheet"
+],
+"chrome": []
+},
+{
+"n": 57,
+"id": "c1task",
+"kind": "task",
+"title": "Your turn 2.12",
+"topic": "c1",
+"kit": [
+"Task 2.12",
+"on your own",
+"Your eyes + Word",
+"Six items: two names, an ID number, a phone number, a salary and a medical reason.",
+"On the redacted copy only, ask Copilot whether any personal detail is left.",
+"mutla-case-note-unredacted.docx",
+"Open mutla-case-note-unredacted.docx in Word. Save a copy with -redacted at the end of the name.",
+"Find every detail that identifies a person or is sensitive.",
+"Replace names with roles (Employee A, Colleague B). Remove the civil ID, phone number, salary and medical reason.",
+"Read it once more. Could anyone outside HR tell who this is?",
+"Only on the redacted copy",
+"Read the attached note. List any detail that could still identify a person or is sensitive. Do not repeat the detail itself; give its paragraph number.",
+"Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
+"Your turn: redact a case note.",
+"Block 6 · Protecting employee data"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"Copy",
+"copy, paste, then check",
+"is on your",
+"prompt sheet",
+"If the tool is slow, continue from the backup on the screen.",
+"Where we are",
+"Meetings",
+"Outlook",
+"Excel",
+"Forms",
+"PowerPoint",
+"Safe data"
+]
+},
+{
+"n": 58,
+"id": "c1deb",
+"kind": "rule",
+"title": "Six details out. The case is still clear.",
+"topic": "c1",
+"kit": [
+"Block 6 · debrief",
+"Six details out. The case is still clear.",
+"Redaction removed who the people are, not what happened. A summary of the redacted note is just as useful to the file."
+],
+"chrome": []
+},
+{
+"n": 59,
 "id": "c8apps",
 "kind": "table",
 "title": "Five apps. One habit.",
@@ -1315,30 +1451,33 @@
 "Check a figure",
 "Excel, or Chat with the file",
 "Against a control total",
-"Brief management",
-"Word",
-"Finding, limits, next step",
+"Find training needs",
+"Forms, then Excel or Forms",
+"Every question serves a decision; clean, then count",
 "Present to managers",
 "PowerPoint, or Chat for the outline",
-"Every number matches its source"
+"Every number matches its source",
+"Anything with people's data",
+"Any app",
+"Green, amber or red first; redact, then ask"
 ],
 "chrome": []
 },
 {
-"n": 54,
+"n": 60,
 "id": "w2",
 "kind": "wrap",
 "title": "Wrap-up",
 "topic": "close",
 "kit": [
-"Safe data, checked figures, clear slides.",
+"Clear meetings, checked figures, safe data.",
 "Tomorrow: two HR agents, a Power Automate demo, and how to map and improve an HR workflow.",
 "1",
 "You built",
-"A redacted note, a meeting pack and recap, checked figures and a chart, a summary and two decks.",
+"A meeting pack and recap, follow-ups, checked figures and a chart, a training needs form and its findings, two decks and a redacted note.",
 "2",
 "You found",
-"Six sensitive details, an idea nobody agreed, duplicate requests, and payroll or overtime items to confirm.",
+"An idea nobody agreed, duplicate requests, payroll or overtime items to confirm, a ranking that changed after cleaning, and six sensitive details.",
 "3",
 "The habit",
 "Copilot drafts. You check. Authorized HR staff decide."
@@ -1350,7 +1489,7 @@
 ]
 },
 {
-"n": 55,
+"n": 61,
 "id": "close2",
 "kind": "close",
 "title": "Close",

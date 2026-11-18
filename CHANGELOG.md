@@ -1,5 +1,17 @@
 # Changelog
 
+## 18 November 2026 · Day 2: Microsoft Forms replaces Word, protecting employee data moves to the end
+
+- New order: meetings (Tasks 2.1, 2.2), Outlook (2.3, 2.4), Excel (2.5, 2.6), Microsoft Forms (2.7 to 2.9), PowerPoint (2.10, 2.11),
+  protecting employee data (2.12). Excel runs 35 minutes and PowerPoint 45.
+- Block 4, Microsoft Forms: Demo and Task 2.7 brainstorm requirements (decisions first; company survey or your own unit), Demo and
+  Task 2.8 build the form with Draft with Copilot (Quick import fallback), Demo and Task 2.9 analyze the answers in Excel or with
+  Copilot in Forms. Task 2.10 now builds slides from the Task 2.9 findings.
+- Two new files: `mutla-training-needs-brief-2027.docx` and `mutla-training-needs-responses-2027.xlsx` (46 answers, 52 managers
+  invited; the top need changes from Safety leadership to Excel after cleaning). 38 sample files. Day 2 has 61 slides.
+- The Day 2 demo runbook now has, for every demo, what it must prove, a script and questions for the room. Demo 2.3 uses the
+  Outlook practice thread in the training mailbox (Summarize, then Draft with Copilot).
+
 ## 17 November 2026 · Day 1 Block 4: three Word exercises, then Outlook
 
 - Block 4 is "Copilot in Word, then Outlook": Demo and Task 1.5 draft from a prompt (an HSE e-learning memo; the training

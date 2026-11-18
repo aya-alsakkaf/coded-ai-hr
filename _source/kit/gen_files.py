@@ -468,11 +468,11 @@ CASE_OUT = {
 }
 for k, n in D.TRACKS:
     cs_, co = D.CASES[k], CASE_OUT[k]
-    blocks = [("i", f"Case for Tasks 2.2 and 2.5 · {n} track"), ("h", "The facts")] + [("p", f"{i}. {x}") for i, x in enumerate(cs_["facts"], 1)]
+    blocks = [("i", f"Case for Tasks 2.1 and 2.4 · {n} track"), ("h", "The facts")] + [("p", f"{i}. {x}") for i, x in enumerate(cs_["facts"], 1)]
     if co["table"]: blocks += [("t", co["table"])]
     blocks += [("h", "Your two outputs"),
-               ("p", f"1. Task 2.2: an agenda, a background brief and three discussion points for {co['meet']}."),
-               ("p", f"2. Task 2.5: a message to {co['to']}."),
+               ("p", f"1. Task 2.1: an agenda, a background brief and three discussion points for {co['meet']}."),
+               ("p", f"2. Task 2.4: a message to {co['to']}."),
                ("h", "Before anything goes out"),
                ("p", "Check every date and number against this file. No employee names. Start each output with: " + D.DRAFT_LINE),
                ("kv", ("Approved files to attach", ", ".join(["this case file"] + co["files"])))]
@@ -812,6 +812,57 @@ doc(F["r360"], f"360 feedback: {D.R360_EMP}", _b)
 
 # 37 · the 2019 welcome letter (Day 1, Task 1.7): three facts that the 2026 onboarding checklist changed (data.py WELCOME_FIXES)
 doc(F["welcome"], "Welcome letter for new graduates (2019 template)", [("i", "Personnel and Administration · template last updated March 2019")] + D.WELCOME_OLD)
+
+# 38 · the 2027 training needs brief (Day 2, Block 4, Tasks 2.7 and 2.8): the requirements, before any question is written
+doc(F["tnbrief"], "2027 training needs survey: what L&D needs to know", [
+    ("kv", ("From", f"{D.P['ld']}, Learning and Development")), ("kv", ("To", "L&D team")), ("kv", ("Date", "Monday 16 November 2026")),
+    ("h", "Why we run this survey"),
+    ("p", f"L&D must share the 2027 training plan by {D.TNS['plan']}. The plan needs facts from line managers: what their teams need, how many people, how and when. "
+          f"The survey is open from {D.TNS['open']} to {D.TNS['close']}. {D.TN_INVITED_TOTAL} line managers in {len(D.TN_INVITED)} units will answer it."),
+    ("h", "The decisions L&D must make from the answers"),
+    ("t", [["Decision", "What we need to know"]] + [list(x) for x in D.TN_DECISIONS], (6, 10)),
+    ("h", "Rules for the form"), *[("b", x) for x in D.TN_RULES],
+    ("h", "The lists to use as choices"),
+    ("kv", ("Units", ", ".join(D.TN_INVITED))),
+    ("kv", ("Courses L&D can run in 2027", ", ".join(D.TN_NOW))),
+    ("kv", ("Skills for the next two years", ", ".join(D.TN_LATER))),
+    ("kv", ("Ways to learn", ", ".join(D.TN_HOW))),
+    ("h", "What went wrong last year"), *[("b", x) for x in D.TN_LAST_YEAR],
+    ("h", "Line managers invited, by unit"),
+    ("t", [["Unit", "Line managers"]] + [[u, str(n)] for u, n in D.TN_INVITED.items()] + [["All units", str(D.TN_INVITED_TOTAL)]], (6, 4)),
+    ("kv", ("Questions", D.TNS["contact"])),
+])
+
+# 39 · the practice Forms export (Day 2, Demo and Task 2.9): 46 rows as Microsoft Forms exports them, and the managers invited
+def tnresp(path):
+    wb = openpyxl.Workbook(); ws = wb.active; ws.title = "Form1"
+    head = ["ID", "Start time", "Completion time", "Email", "Name", "Your unit", "Your section", "How many people do you manage?",
+            "The one skill your team needs most now", "How many of your team need it now?", "One skill your team will need in the next two years",
+            "How should they learn it?", "Best quarter for this training in 2027", "Anything else L&D should know? (Please do not write names or personal details.)"]
+    ws.append(head); _head(ws, 1)
+    for r in D.TN_EXPORT:
+        ws.append([r["id"], dt.datetime(*r["start"]), dt.datetime(*r["end"]), "anonymous", None, r["unit"], r["section"], r["team"], r["now"], r["need"],
+                   r["later"], r["how"], r["when"].split(" ")[0], r["note"] or None])
+    for row in ws.iter_rows(min_row=2):
+        for c in row[1:3]: c.number_format = "m/d/yy h:mm"
+    for col, w in zip("ABCDEFGHIJKLMN", (6, 15, 15, 11, 8, 14, 20, 12, 30, 12, 32, 14, 12, 70)): ws.column_dimensions[col].width = w
+    ws.freeze_panes = "A2"
+    iv = wb.create_sheet("Invited")
+    iv.append(["Line managers invited to the survey, by unit (from the HR system)"]); iv["A1"].font = Font(bold=True, size=13)
+    iv.append([]); iv.append(["Unit", "Line managers invited"]); _head(iv, 3)
+    for u, n in D.TN_INVITED.items(): iv.append([u, n])
+    iv.append(["All units", D.TN_INVITED_TOTAL]); iv.cell(iv.max_row, 1).font = Font(bold=True); iv.cell(iv.max_row, 2).font = Font(bold=True)
+    for col, w in zip("AB", (24, 22)): iv.column_dimensions[col].width = w
+    _about_first(wb, F["tnresp"], ["Form1: one row per answer, in the layout Microsoft Forms uses when you select Open results in Excel. The form did not record names.",
+                 "Invited: how many line managers in each unit were asked to answer. Use it to check the answers.",
+                 f"Imagine the survey closed on {D.TNS['close']}. These answers are made up for the workshop."])
+    for sh in wb.worksheets: sh.oddHeader.center.text = HEADER
+    wb.properties.creator = "CODED"; wb.properties.lastModifiedBy = "CODED"; wb.properties.title = "2027 training needs survey: responses (practice export)"
+    wb.properties.created = FIXED; wb.properties.modified = FIXED
+    wb.save(path); _stable(path)
+    chk = openpyxl.load_workbook(path)
+    assert chk.sheetnames == ["About this file", "Form1", "Invited"] and chk["Form1"].max_row == len(D.TN_EXPORT) + 1
+tnresp(os.path.join(OUT, F["tnresp"])); WRITTEN.append(F["tnresp"])
 
 # ------------------------------------------------------------------ every file in ALL_FILES, nothing more
 assert sorted(WRITTEN) == sorted(ALL_FILES), f"gen_files: wrote {sorted(set(WRITTEN) ^ set(ALL_FILES))} out of step with ALL_FILES"

@@ -118,6 +118,10 @@ def runbook(d):
               f'<span class="pts">{("Your turn · " + str(v["minutes"]) + " min · " + e(v["solo"]) + pts) if v.get("hands_on") else "In the slide"}</span></div><h3>{e(v["title"])}</h3>'
               f'<div class="scn">{("Files: " + ", ".join(e(f) for f in v["files"])) if v["files"] else "No file needed."}</div>'
               + (f'<div class="say"><span class="ic">▶</span><span class="t"><span class="lbl">Say</span>“{e(v["say"])}”</span></div>' if v["say"] else "")
+              + (f'<div class="expect"><span class="lbl">This demo must prove</span>{e(v["prove"])}</div>' if v.get("prove") else "")
+              + (('<div class="plabel">Script (stage directions in brackets)</div><ol class="steps">' + "".join(f"<li>{e(x)}</li>" for x in v["script"]) + "</ol>") if v.get("script") else "")
+              + (('<div class="plabel">Discuss with the room</div><ul class="steps">' + "".join(f"<li><b>{e(q)}</b> Listen for: {e(a)}</li>" for q, a in v["discuss"]) + "</ul>") if v.get("discuss") else "")
+              + ('<div class="plabel">Click steps</div>' if v.get("script") else "")
               + f'<ol class="steps">{steps}</ol>' + (f'<div class="plabel">{"Prompts: paste in this order" if wk.AI else "Templates"}</div>{chips}' if chips else "")
               + f'<div class="expect"><span class="lbl">What you should see</span>{e(v["expected"])}</div>'
               + (f'<div class="point"><span class="ic">+</span><span class="t"><span class="lbl">Finished early</span>{" · ".join(e(x) for x in v["stretch"])}</span></div>' if v["stretch"] else "")

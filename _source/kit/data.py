@@ -641,3 +641,102 @@ WELCOME_OLD = [
 WELCOME_FIXES = [("First day", "7:00 a.m. at the Personnel Office, Building 4", "Head office: 8:00 to 13:00 in Training Room 2, head office (checklist, section 2). Field sites: 6:30 at the site HSE office."),
                  ("Documents", "Civil ID, original certificates, two photos, signed offer letter", "Civil ID and offer letter (checklist, section 2)."),
                  ("Probation", "Three months", "6 months, confirmed in writing by the line manager (checklist, section 4).")]
+
+# ------------------------------------------------------------------ Day 2 · Block 4: Microsoft Forms, the 2027 training needs survey (Aya, 18 Nov 2026)
+# The brief (requirements) and a practice Forms export with planted problems: a test answer, a manager who answered twice,
+# "Excel" written five ways under Other, a comment that names a person and a health detail, and a comment that asks for a decision.
+TN_INVITED = {"Production": 10, "Drilling": 9, "Engineering": 8, "HSE": 5, "Finance": 5, "HR": 5, "IT": 6, "Supply Chain": 4}
+TN_INVITED_TOTAL = sum(TN_INVITED.values())                     # 52 line managers
+TN_SECTIONS = {"Production": ["Plant Operations", "Well Testing", "Maintenance", "Shift Control", "Process Safety"],
+               "Drilling": ["Rig Operations", "Drilling Engineering", "Rig Maintenance", "Logistics Base"],
+               "Engineering": ["Projects", "Design", "Inspection", "Facilities"], "HSE": ["Safety", "Environment", "Occupational Health", "Emergency Response", "HSE Training"],
+               "Finance": ["Accounts", "Budget", "Treasury", "Cost Control"], "HR": ["Payroll", "Personnel", "Recruitment", "Learning", "Job Evaluation"],
+               "IT": ["Service Desk", "Networks", "Applications"], "Supply Chain": ["Procurement", "Warehouse", "Contracts", "Materials Planning"]}
+TN_NOW = ["Safety leadership", "Excel for HR reporting", "Supervisory skills", "Well control refresher", "Report writing in English",
+          "Project management basics", "Data protection awareness", "Business Arabic correspondence"]
+TN_EXCEL_OTHER = ["Excel", "Advanced Excel", "MS Excel (pivot tables)", "excel for reports", "Excel formulas"]
+TN_LATER = ["Data analysis with AI tools", "Digital skills for field work", "Leadership for new supervisors", "Contract management", "Energy transition basics"]
+TN_HOW = ["Classroom", "E-learning", "On the job", "A mix"]
+TN_WHEN = ["Q1 (January to March)", "Q2 (April to June)", "Q3 (July to September)", "Q4 (October to December)"]
+TN_DECISIONS = [("Which courses to plan, and how many seats", "The skill each team needs most now, and how many people need it"),
+                ("Which units come first", "The unit of each answer, and how many managers answered in each unit"),
+                ("How to deliver each course", "How managers want their team to learn: classroom, e-learning, on the job or a mix"),
+                ("When to run each course", "The best quarter in 2027 for each team"),
+                ("What to prepare for later", "One skill each team will need in the next two years")]
+TN_RULES = ["At most 10 questions. A manager finishes in under 5 minutes.", "Every question serves one of the decisions in this brief.",
+            "One answer per line manager, for the whole team. Not a form about one person.",
+            "No employee names, civil IDs, performance ratings, salaries or health details. Not even in a comment box.",
+            "Choices, not free text, wherever L&D has a list: the 8 units and the course list below. Add Other only where L&D has no full list.",
+            "Only people in Mutla's organization can answer."]
+TN_LAST_YEAR = ["L&D emailed a Word form to 52 line managers. 31 replied: some by email, some on paper, some in a meeting.",
+                "Noura typed every answer into Excel by hand. It took most of a week.",
+                "The same course was written in many ways, so the counts were wrong the first time.",
+                "Three managers listed employees by name, with personal reasons. L&D had to delete them."]
+
+def _tn_rows():
+    """44 valid answers, then a test answer and an earlier answer from a manager who answered twice: 46 rows in the export."""
+    import random as _r
+    rnd = _r.Random(2027)
+    plan = {"Production": ["Safety leadership"] * 4 + ["Supervisory skills"] * 3 + ["X:Excel formulas", "Report writing in English"],
+            "Drilling": ["Well control refresher"] * 5 + ["Safety leadership"] * 2 + ["Supervisory skills"],
+            "Engineering": ["Project management basics"] * 3 + ["Excel for HR reporting", "Safety leadership", "Supervisory skills", "Report writing in English"],
+            "HSE": ["Safety leadership"] * 3 + ["Supervisory skills", "Report writing in English"],
+            "Finance": ["Excel for HR reporting"] * 2 + ["X:MS Excel (pivot tables)", "Business Arabic correspondence"],
+            "HR": ["Excel for HR reporting", "X:Advanced Excel", "X:excel for reports", "Data protection awareness", "Data protection awareness"],
+            "IT": ["X:Excel", "Supervisory skills"],
+            "Supply Chain": ["Excel for HR reporting"] * 2 + ["Supervisory skills", "Report writing in English"]}
+    rows = []
+    for u, skills in plan.items():
+        secs = TN_SECTIONS[u]
+        for i, s in enumerate(skills):
+            team = rnd.randint(6, 18); need = rnd.randint(2, min(9, team))
+            rows.append({"unit": u, "section": secs[i % len(secs)], "team": team, "now": s[2:] if s.startswith("X:") else s,
+                         "group": "Excel for HR reporting" if s.startswith("X:") else s, "need": need,
+                         "later": rnd.choice(TN_LATER), "how": rnd.choice(TN_HOW), "when": rnd.choice(TN_WHEN), "note": ""})
+    rnd.shuffle(rows)
+    # the comments, put on fixed answers so the answer key can name them
+    dr = [r for r in rows if r["unit"] == "Drilling"]
+    dr[0]["note"] = "Two of my team cannot join field courses this year. One of them, Saad (EMP-2290), had back surgery in September and is still on light duty."
+    wc = [r for r in dr if r["now"] == "Well control refresher"][0]; wc["need"] = 9; wc["team"] = max(wc["team"], 12)
+    wc["note"] = "Please approve the Well control refresher for my whole team (9 people) in Q1. It is urgent."
+    pr = [r for r in rows if r["unit"] == "Production"][1]; pr["note"] = "The Excel course last year was too basic for my supervisors."
+    hr2 = [r for r in rows if r["unit"] == "HR" and r["now"] == "Advanced Excel"][0]
+    hr2["section"] = "Payroll"; hr2["note"] = "This is my second answer. Please use this one, not my first."
+    test = {"unit": "HR", "section": "TEST", "team": 1, "now": "test", "group": None, "need": 1, "later": TN_LATER[0], "how": TN_HOW[0], "when": TN_WHEN[0], "note": "test, please ignore", "flag": "test"}
+    first = {"unit": "HR", "section": "Payroll", "team": hr2["team"], "now": "Data protection awareness", "group": None, "need": 3, "later": hr2["later"],
+             "how": hr2["how"], "when": hr2["when"], "note": "", "flag": "first"}
+    out = [test] + rows
+    out.insert(out.index(hr2), first)                            # the first answer sits just before the second one
+    # IDs and times: 7 to 17 December 2026, in order
+    day, minute = 7, 8 * 60 - 2
+    for i, r in enumerate(out, 1):
+        r["id"] = i
+        if r is hr2: minute += 19
+        elif r is not test: minute += rnd.randint(25, 160)
+        if minute > 16 * 60: day += 1; minute = 7 * 60 + rnd.randint(30, 90)
+        if day in (11, 12): day = 13                             # Friday 11 and Saturday 12 are the weekend; Sunday 13 is a working day
+        r["start"] = (2026, 12, day, minute // 60, minute % 60); dur = rnd.randint(2, 6)
+        r["end"] = (2026, 12, day, (minute + dur) // 60, (minute + dur) % 60)
+    return out
+TN_EXPORT = _tn_rows()
+TN_VALID = [r for r in TN_EXPORT if not r.get("flag")]
+assert len(TN_EXPORT) == 46 and len(TN_VALID) == 44
+TN_TEST_ID = [r["id"] for r in TN_EXPORT if r.get("flag") == "test"][0]
+TN_FIRST_ID = [r["id"] for r in TN_EXPORT if r.get("flag") == "first"][0]
+TN_SECOND_ID = TN_FIRST_ID + 1
+TN_RED_ID = [r["id"] for r in TN_EXPORT if "surgery" in r["note"]][0]
+TN_ASK_ID = [r["id"] for r in TN_EXPORT if "approve" in r["note"]][0]
+TN_BY_UNIT = {u: sum(1 for r in TN_VALID if r["unit"] == u) for u in TN_INVITED}
+TN_RAW_BY_UNIT = {u: sum(1 for r in TN_EXPORT if r["unit"] == u) for u in TN_INVITED}
+TN_RATE = round(100 * len(TN_VALID) / TN_INVITED_TOTAL)          # 85
+TN_LOW_UNIT = min(TN_INVITED, key=lambda u: TN_BY_UNIT[u] / TN_INVITED[u])
+TN_COUNT = {s: sum(1 for r in TN_VALID if r["group"] == s) for s in TN_NOW}
+TN_SEATS = {s: sum(r["need"] for r in TN_VALID if r["group"] == s) for s in TN_NOW}
+TN_RAW_COUNT = {s: sum(1 for r in TN_EXPORT if r["now"] == s) for s in TN_NOW}  # before cleaning: the export as it is
+TN_TOP = sorted(TN_NOW, key=lambda s: -TN_COUNT[s])[:3]
+TN_RAW_TOP = sorted(TN_NOW, key=lambda s: -TN_RAW_COUNT[s])[:3]
+TN_LATER_TOP = max(TN_LATER, key=lambda s: sum(1 for r in TN_VALID if r["later"] == s))
+TN_LATER_N = sum(1 for r in TN_VALID if r["later"] == TN_LATER_TOP)
+assert TN_TOP == ["Excel for HR reporting", "Safety leadership", "Supervisory skills"], TN_TOP
+assert TN_RAW_TOP[0] == "Safety leadership" and TN_COUNT["Excel for HR reporting"] == 11 and TN_RAW_COUNT["Excel for HR reporting"] == 6
+assert TN_LOW_UNIT == "IT" and TN_RATE == 85 and TN_RAW_BY_UNIT["HR"] == 7

@@ -106,3 +106,14 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
     using the L&D, performance and onboarding use cases from the "AI In HR" meeting, then the Outlook task (now 1.8), which may
     move to Day 2 if time runs out. All trainees are assumed to have Copilot in Word; Copilot Chat stays as the fallback.
     Day 1 has 70 slides.
+35. 18 Nov 2026, morning of Day 2 (Aya): Day 2 order is meetings (Block 1, Tasks 2.1 and 2.2), Outlook (Block 2, 2.3 and 2.4), Excel (Block 3,
+    2.5 and 2.6, now 35 minutes), Microsoft Forms (Block 4, 12:15-13:20: 2.7 requirements, 2.8 build the form with Copilot in Forms,
+    2.9 analyze the answers in Excel or Forms), PowerPoint (Block 5, 45 minutes; Task 2.10 builds slides from the Task 2.9 findings),
+    then protecting employee data last (Block 6, 14:20-14:50, Task 2.12). The Word block is removed; the overtime memo and the Q3
+    report stay as extra practice files. Demo and task keys did not change (d21, t21 are now Demo and Task 2.12). Two new files:
+    the training needs brief and a practice Forms export (planted: a test answer, a manager who answered twice, Excel written five
+    ways, a comment with a name and a health detail, a comment asking for an approval). Day 2 has 61 slides, 38 sample files.
+    MAP questions and survey payloads did not change.
+36. 18 Nov 2026 (Aya): the demo runbook shows, for each Day 2 demo, what it must prove, a script with stage directions and questions
+    for the room. Kit fields `prove`, `script`, `discuss` (content_demos.RUNGUIDE); the small engine change in staff.py renders them
+    only when present. Aya's request is the approval for that engine change.
