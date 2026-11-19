@@ -484,6 +484,15 @@ PA_GOALS = ["Build data and reporting skills in HR", "Prepare new supervisors to
 PA_QUOTE = {"vendor": "Sadeem Training Partners", "course": "Advanced Excel and Power BI for HR Teams", "duration": "3 days (18 hours)",
             "dates": "10 to 12 January 2027", "learners": 12, "total": 2400, "per": 200, "score": 3, "status": "To review"}
 assert PA_QUOTE["total"] // PA_QUOTE["learners"] == PA_QUOTE["per"]
+# Day 3 · Block 1 opens with scheduled prompts (Demo 3.0). Microsoft 365 Copilot license only; up to 10 per person.
+SCHED_PROMPT = ("Look at my email and Teams messages from the last 7 days about training requests and vendor quotations. "
+                "Make a table: who asked or who sent it, the course, the date, and what is still waiting for my reply. "
+                "Then list my three most urgent actions. Leave out anything about pay, health or a named person's performance.")
+SCHED_WHEN = "Every week, Sunday at 8:00"
+SCHED_FACTS = [("License", "Microsoft 365 Copilot only. Copilot Chat without the license has no Schedule option."),
+               ("How many", "Up to 10 scheduled prompts per person. Edit, pause or delete them in Scheduled prompts."),
+               ("Who sees it", "Only you. The answer waits in your Copilot chats; nobody else gets it."),
+               ("What it does", "It writes an answer from what you can already see. It does not send, route or approve.")]
 # Day 3 · Block 1: built-in agents (Demo and Task 3.1)
 BUILTIN = [("Prompt Coach", "Reads your request, says what is missing, and suggests a clearer one.", "A request from your Prompt Bank", "Copilot Chat and Microsoft 365 Copilot. Your admin may need to switch it on."),
            ("Researcher", "Searches the web and the work files you can open, then writes a report with sources. It takes a few minutes.", "A public HR question", "Microsoft 365 Copilot license, with a monthly limit"),

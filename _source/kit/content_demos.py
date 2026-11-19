@@ -918,6 +918,20 @@ BUDDY = five([["Role", f"You are the {D.BUDDY_NAME}. You help new joiners at {D.
          ["Output format", "Two to four sentences, then the checklist section."]])
 KNOW = [F["leave"], F["v3"], F["v4"], F["attendance"], F["training"]]
 
+# Block 1 opens with scheduled prompts: a tested request that Copilot runs on a timer (Microsoft 365 Copilot license only)
+demo("d3s", day=3, skill="3.0", sec=12, title="A request on a timer: a scheduled prompt", tool="Copilot Chat · Schedule this prompt",
+ setup=["[T] In Copilot Chat on your work account, paste the request below and run it once. Read the answer: is it worth getting every week?",
+        "[T] Hover over your request and select Schedule this prompt. Set it to " + D.SCHED_WHEN.lower() + ". Save.",
+        "[T] Open Settings, then Scheduled prompts. Show where to edit, pause or delete it.",
+        "[T] Say: it runs for me only, from what I can already see. The answer waits in my Copilot chats, and I still check it."],
+ prompts=[("A weekly request to schedule", D.SCHED_PROMPT)],
+ expected="One run now: a table of training requests and quotations with what is waiting, and three actions, with nothing about pay or health. Then the same request saved in Scheduled prompts, " + D.SCHED_WHEN.lower() + ".",
+ say="You already have good requests in your Prompt Bank. A scheduled prompt runs one of them for you, at the time you choose, so the answer is waiting when you arrive.",
+ point="Your best request, on a timer. You still check the answer.",
+ backup=[("h", "Before you schedule"), tbl(["Question", "Answer"], D.SCHED_FACTS)],
+ fallback="No Schedule this prompt option: the account has no Microsoft 365 Copilot license, or the admin turned it off. Show the steps on the slide and the Scheduled prompts list on the trainer laptop.",
+ hint="Which request in your Prompt Bank would you like waiting for you every Sunday morning?")
+
 # Block 1 · built-in agents (Prompt Coach for everyone; Researcher and Analyst need the Microsoft 365 Copilot license)
 COACH_ASK = (f"Here is a request I use at work: \"{D.BUILTIN_WEAK}\" Review it. Tell me what is missing, "
              f"then suggest a better request for an HR officer at {D.COMPANY}.")
@@ -943,7 +957,7 @@ demo("d30", day=3, skill="3.1", sec=12, title="Two built-in agents, live", tool=
  fallback="If Prompt Coach is not in the list, paste the same request into Copilot Chat and add: answer as a prompt coach. If Researcher is missing (no license), ask Copilot Chat the research question and ask for a source for each point.",
  hint="Which of the five checklist parts does Prompt Coach say are missing?")
 
-demo("t30", day=3, skill="3.1", sec=12, title="Use an agent Microsoft built", tool="Prompt Coach, and Researcher if you have it", kind="task", hands_on=True, minutes=12, solo="on your own",
+demo("t30", day=3, skill="3.1", sec=12, title="Use an agent Microsoft built", tool="Prompt Coach, and Researcher if you have it", kind="task", hands_on=True, minutes=10, solo="on your own",
  setup=["In Microsoft 365 Copilot, open Agents, then All agents. Find Prompt Coach under Built by Microsoft. If you see Add, add it.",
         "Give Prompt Coach one request from your Prompt Bank (Day 1), or the weak request below. Read what it says is missing.",
         "Run its better request in Copilot Chat. Is the answer better? Save the best version in your Prompt Bank.",
@@ -960,7 +974,8 @@ demo("t30", day=3, skill="3.1", sec=12, title="Use an agent Microsoft built", to
  deliverable="One improved request saved in your Prompt Bank and, with Researcher, two checked sources.",
  fallback="No Prompt Coach: paste the request into Copilot Chat and add: answer as a prompt coach. No Researcher: ask Copilot Chat the research question and ask for a source for each point.",
  hint="Put the better request next to the five checklist parts. Which part did your first request miss?",
- stretch=["Ask Prompt Coach what good instructions for an HR policy agent must say. Keep the answer for Task 3.2."])
+ stretch=["Ask Prompt Coach what good instructions for an HR policy agent must say. Keep the answer for Task 3.2.",
+          "Have the Microsoft 365 Copilot license? Hover over your better request and choose Schedule this prompt: weekly."])
 
 demo("d31", day=3, skill="3.2", sec=13, title="An HR agent, built live", tool="Agent Builder", files=KNOW,
  setup=["[T] In Microsoft 365 Copilot, choose Create agent. Open the Configure tab.", f"[T] Name: {D.AGENT_NAME}. Description: answers staff questions from Mutla's HR policies.",
@@ -1016,7 +1031,7 @@ demo("t33", day=3, skill="3.3", sec=13, title="Test and fix your agent", tool="A
  stretch=["Run a fourth test with a question the files do not cover. It must say so and refer."],
  stretch_prompts=[("Test 4 · Out of scope", D.AGENT_TEST4[1])])
 
-demo("t34", day=3, skill="3.4", sec=13, title="Optional: a second agent", tool="Agent Builder", files=[F["tpl"], F["factors"], F["onboard"]], kind="task", hands_on=True, minutes=12, solo="on your own",
+demo("t34", day=3, skill="3.4", sec=13, title="Optional: a second agent", tool="Agent Builder", files=[F["tpl"], F["factors"], F["onboard"]], kind="task", hands_on=True, minutes=7, solo="on your own",
  setup=[f"Choose one. The {D.COACH_NAME.replace('Mutla ', '')} helps line managers draft job descriptions. The {D.BUDDY_NAME.replace('Mutla ', '')} answers new joiners from the onboarding checklist.",
         "Write its instructions with the checklist. Knowledge: the 2026 template and the evaluation factors, or the onboarding checklist.",
         "Run its three tests (on the prompt sheet and the Day 3 lab page) and log them.", "Fix one line if a test fails, and test again."],
@@ -1248,6 +1263,13 @@ RUNGUIDE = {
 }
 # Day 3 runbook guide (Aya, 18 Nov 2026): the built-in agents demo and the three recorded flows she narrates (the videos have no sound)
 RUNGUIDE.update({
+ "d3s": {"prove": "A tested request can run on its own at a set time. It writes for you only; it does not send, route or approve.",
+         "script": ["(Paste the weekly request and run it once.) Before I schedule anything, I check the answer is worth getting every week.",
+                    "(Hover over the request. Select Schedule this prompt.) Weekly, Sunday, 8:00. Save.",
+                    "(Open Settings, then Scheduled prompts.) Here I can edit, pause or delete it. Up to ten per person.",
+                    "It runs for me only, from what I can already see. On Sunday the answer is waiting in my Copilot chats, and I still check it."],
+         "discuss": [("Which request from your Prompt Bank would you schedule, and when?", "A weekly summary of requests, a Monday reminder draft, a monthly policy update check."),
+                     ("Can a scheduled prompt approve a training request?", "No. It only writes an answer for you. Moving work between people needs a flow: you see that before lunch.")]},
  "d30": {"prove": "A built-in agent is Copilot with saved instructions for one job. It saves you the instructions, not the check.",
          "script": ["(Open Agents, then All agents.) Microsoft already built these. Each one has instructions for one job.",
                     "(Open Prompt Coach. Paste the weak request.) This is the kind of one-line request we fixed on Day 1. Let us see what the coach says.",

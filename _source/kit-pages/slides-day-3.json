@@ -11,7 +11,7 @@
 "09:00-15:00",
 "AI Fundamentals for HR",
 "HR Agents, Workflows and an Introduction to Power Automate",
-"Use two built-in agents, build and test your own HR agent in Agent Builder, see three Power Automate flows run on their own, and map an HR process from request to result.",
+"Put a request on a timer, use two built-in agents, build and test your own HR agent in Agent Builder, see three Power Automate flows run on their own, and map an HR process from request to result.",
 "CODED, Alsharekh room, Frontend Campus",
 "Kuwait"
 ],
@@ -31,7 +31,7 @@
 "title": "Outcomes",
 "topic": "open",
 "kit": [
-"Use a built-in agent such as Prompt Coach or Researcher, and check what it gives you.",
+"Explain what a scheduled prompt does, and use a built-in agent such as Prompt Coach or Researcher, checking what it gives you.",
 "Build an HR agent with the prompt checklist and approved files, and test it with a normal, an incomplete and a sensitive question.",
 "Explain when to automate, and name the trigger, actions, connectors and output of a Power Automate flow.",
 "Map an HR process from request to result, and mark the delays, duplicates, owners and human decisions."
@@ -54,10 +54,10 @@
 "09:00-09:10",
 "Callback quiz",
 "Three questions on Day 2",
-"09:10-09:40",
-"Block 1 · Built-in agents in Copilot",
-"Prompt Coach and Researcher · Task 3.1",
-"09:40-10:45",
+"09:10-09:45",
+"Block 1 · Scheduled prompts and built-in agents",
+"A request on a timer; Prompt Coach and Researcher · Demo 3.0, Task 3.1",
+"09:45-10:45",
 "Block 2 · Build your own agent",
 "Instructions, knowledge, starter prompts, three tests · Tasks 3.2 and 3.3, Task 3.4 if time allows",
 "11:00-11:35",
@@ -161,12 +161,70 @@
 },
 {
 "n": 8,
-"id": "e1story",
-"kind": "story",
-"title": "Block 1 · Built-in agents in Copilot",
+"id": "e1sp",
+"kind": "term",
+"title": "Your best request, on a timer.",
 "topic": "e1",
 "kit": [
-"Block 1 · Built-in agents in Copilot",
+"Block 1 · Scheduled prompts and built-in agents",
+"Your best request, on a timer.",
+"Scheduled prompt",
+"A request you tested once that Copilot runs for you at a set time: once, daily, weekly or monthly. The answer waits in your Copilot chats.",
+"Every Sunday you open Copilot and type the same request…",
+"…now it runs at 8:00 and the answer is waiting.",
+"Copilot works on a timer. You still check."
+],
+"chrome": [
+"The idea"
+]
+},
+{
+"n": 9,
+"id": "e1splive",
+"kind": "list",
+"title": "A weekly request, scheduled live.",
+"topic": "e1",
+"kit": [
+"Demo 3.0 · live in Copilot Chat · Schedule this prompt",
+"A weekly request, scheduled live.",
+"Your best request, on a timer. You still check the answer.",
+"What I will show: One request run once, then Schedule this prompt: every Sunday at 8:00.",
+"Watch for: Where the Schedule option is, and where you edit, pause or delete it.",
+"Files: none: the request is on the prompt sheet"
+],
+"chrome": []
+},
+{
+"n": 10,
+"id": "e1spfacts",
+"kind": "table",
+"title": "Four things to know before you schedule.",
+"topic": "e1",
+"kit": [
+"Block 1 · before you schedule",
+"Four things to know before you schedule.",
+"It writes on a timer. Moving work between people needs a flow.",
+"Question",
+"Answer",
+"License",
+"Microsoft 365 Copilot only. Copilot Chat without the license has no Schedule option.",
+"How many",
+"Up to 10 scheduled prompts per person. Edit, pause or delete them in Scheduled prompts.",
+"Who sees it",
+"Only you. The answer waits in your Copilot chats; nobody else gets it.",
+"What it does",
+"It writes an answer from what you can already see. It does not send, route or approve."
+],
+"chrome": []
+},
+{
+"n": 11,
+"id": "e1story",
+"kind": "story",
+"title": "Block 1 · built-in agents",
+"topic": "e1",
+"kit": [
+"Block 1 · built-in agents",
 "Monday 16 November, 10:00",
 "Noura in L&D has two jobs before lunch. Her one-line reminder request still gives vague emails. Her manager asks what Gulf energy companies do for new supervisors, with sources.",
 "Two jobs. Microsoft already built an agent for each.",
@@ -179,7 +237,7 @@
 ]
 },
 {
-"n": 9,
+"n": 12,
 "id": "e1t1",
 "kind": "term",
 "title": "Copilot with a saved job.",
@@ -198,7 +256,7 @@
 ]
 },
 {
-"n": 10,
+"n": 13,
 "id": "e1list",
 "kind": "table",
 "title": "Three agents you may already have.",
@@ -227,7 +285,7 @@
 "chrome": []
 },
 {
-"n": 11,
+"n": 14,
 "id": "e1live",
 "kind": "list",
 "title": "Two built-in agents, live.",
@@ -243,7 +301,7 @@
 "chrome": []
 },
 {
-"n": 12,
+"n": 15,
 "id": "e1task",
 "kind": "task",
 "title": "Your turn 3.1",
@@ -253,7 +311,7 @@
 "on your own",
 "Prompt Coach, and Researcher if you have it",
 "Put the better request next to the five checklist parts. Which part did your first request miss?",
-"Ask Prompt Coach what good instructions for an HR policy agent must say. Keep the answer for Task 3.2.",
+"Ask Prompt Coach what good instructions for an HR policy agent must say. Keep the answer for Task 3.2. Have the Microsoft 365 Copilot license? Hover over your better request and choose Schedule this prompt: weekly.",
 "In Microsoft 365 Copilot, open Agents, then All agents. Find Prompt Coach under Built by Microsoft. If you see Add, add it.",
 "Give Prompt Coach one request from your Prompt Bank (Day 1), or the weak request below. Read what it says is missing.",
 "Run its better request in Copilot Chat. Is the answer better? Save the best version in your Prompt Bank.",
@@ -264,7 +322,7 @@
 "What do large energy companies in the Gulf do to prepare new supervisors in their first year? Give five common practices, one example for each, and a source for each. Public sources only.",
 "Copilot slow, or a daily limit reached? Continue from the backup on the screen.",
 "Your turn: use an agent Microsoft built.",
-"Block 1 · Built-in agents in Copilot"
+"Block 1 · Scheduled prompts and built-in agents"
 ],
 "chrome": [
 "Your turn",
@@ -284,7 +342,7 @@
 "prompt sheet",
 "If the tool is slow, continue from the backup on the screen.",
 "Where we are",
-"Built-in",
+"Ready-made",
 "Your agent",
 "Automate",
 "Map",
@@ -292,7 +350,7 @@
 ]
 },
 {
-"n": 13,
+"n": 16,
 "id": "e1chk",
 "kind": "check",
 "title": "Quick check",
@@ -313,7 +371,7 @@
 ]
 },
 {
-"n": 14,
+"n": 17,
 "id": "e2story",
 "kind": "story",
 "title": "Block 2 · Build your own agent",
@@ -332,7 +390,7 @@
 ]
 },
 {
-"n": 15,
+"n": 18,
 "id": "e2cmp",
 "kind": "table",
 "title": "Microsoft's agent, or yours?",
@@ -364,7 +422,7 @@
 "chrome": []
 },
 {
-"n": 16,
+"n": 19,
 "id": "e2parts",
 "kind": "list",
 "title": "Five parts. You know four already.",
@@ -381,7 +439,7 @@
 "chrome": []
 },
 {
-"n": 17,
+"n": 20,
 "id": "e2live",
 "kind": "list",
 "title": "An HR agent, built live.",
@@ -397,7 +455,7 @@
 "chrome": []
 },
 {
-"n": 18,
+"n": 21,
 "id": "e2chk",
 "kind": "check",
 "title": "Quick check",
@@ -418,7 +476,7 @@
 ]
 },
 {
-"n": 19,
+"n": 22,
 "id": "e2task1",
 "kind": "task",
 "title": "Your turn 3.2",
@@ -465,7 +523,7 @@
 "prompt sheet",
 "If the tool is slow, continue from the backup on the screen.",
 "Where we are",
-"Built-in",
+"Ready-made",
 "Your agent",
 "Automate",
 "Map",
@@ -473,7 +531,7 @@
 ]
 },
 {
-"n": 20,
+"n": 23,
 "id": "e2tests",
 "kind": "table",
 "title": "Three tests before anyone uses it.",
@@ -498,7 +556,7 @@
 "chrome": []
 },
 {
-"n": 21,
+"n": 24,
 "id": "e2live2",
 "kind": "list",
 "title": "Three tests, then one fix.",
@@ -514,7 +572,7 @@
 "chrome": []
 },
 {
-"n": 22,
+"n": 25,
 "id": "e2task2",
 "kind": "task",
 "title": "Your turn 3.3",
@@ -561,7 +619,7 @@
 "prompt sheet",
 "If the tool is slow, continue from the backup on the screen.",
 "Where we are",
-"Built-in",
+"Ready-made",
 "Your agent",
 "Automate",
 "Map",
@@ -569,7 +627,7 @@
 ]
 },
 {
-"n": 23,
+"n": 26,
 "id": "e2task3",
 "kind": "task",
 "title": "Your turn 3.4",
@@ -612,7 +670,7 @@
 "prompt sheet",
 "If the tool is slow, continue from the backup on the screen.",
 "Where we are",
-"Built-in",
+"Ready-made",
 "Your agent",
 "Automate",
 "Map",
@@ -620,7 +678,7 @@
 ]
 },
 {
-"n": 24,
+"n": 27,
 "id": "e2deb",
 "kind": "rule",
 "title": "The instructions are the agent's job description.",
@@ -633,7 +691,7 @@
 "chrome": []
 },
 {
-"n": 25,
+"n": 28,
 "id": "e3story",
 "kind": "story",
 "title": "Block 3 · Power Automate: when to automate",
@@ -652,7 +710,7 @@
 ]
 },
 {
-"n": 26,
+"n": 29,
 "id": "e3t1",
 "kind": "term",
 "title": "Work that starts by itself.",
@@ -671,7 +729,7 @@
 ]
 },
 {
-"n": 27,
+"n": 30,
 "id": "e3when",
 "kind": "table",
 "title": "Four questions before you automate.",
@@ -699,7 +757,7 @@
 "chrome": []
 },
 {
-"n": 28,
+"n": 31,
 "id": "e3parts",
 "kind": "table",
 "title": "Four parts in every flow.",
@@ -737,7 +795,7 @@
 "chrome": []
 },
 {
-"n": 29,
+"n": 32,
 "id": "e3v1",
 "kind": "widget",
 "title": "Demo 3.5",
@@ -752,7 +810,7 @@
 "chrome": []
 },
 {
-"n": 30,
+"n": 33,
 "id": "e3v2",
 "kind": "widget",
 "title": "Demo 3.5b",
@@ -767,7 +825,7 @@
 "chrome": []
 },
 {
-"n": 31,
+"n": 34,
 "id": "e3v3",
 "kind": "widget",
 "title": "Demo 3.5c",
@@ -782,7 +840,7 @@
 "chrome": []
 },
 {
-"n": 32,
+"n": 35,
 "id": "e3need",
 "kind": "list",
 "title": "Before you build one, ask four questions.",
@@ -799,7 +857,7 @@
 "chrome": []
 },
 {
-"n": 33,
+"n": 36,
 "id": "e3why",
 "kind": "list",
 "title": "Why not Copilot or an agent?",
@@ -808,7 +866,7 @@
 "Block 3 · why a flow here",
 "Why not Copilot or an agent?",
 "A flow moves work between people. It never replaces their decisions.",
-"It starts on its own when a form, an email or a date arrives. Copilot and agents wait to be asked.",
+"It starts on its own when a form, an email or a date arrives. A scheduled prompt runs on a timer too, but it only writes an answer for you.",
 "It waits for an approval, for days if needed, then continues.",
 "It logs and sends the same way every time: the row, the email, the draft.",
 "Its AI step drafts and scores. A person reviews and decides."
@@ -816,7 +874,7 @@
 "chrome": []
 },
 {
-"n": 34,
+"n": 37,
 "id": "e3chk",
 "kind": "check",
 "title": "Quick check",
@@ -837,7 +895,7 @@
 ]
 },
 {
-"n": 35,
+"n": 38,
 "id": "e4story",
 "kind": "story",
 "title": "Block 4 · From one task to a workflow",
@@ -856,7 +914,7 @@
 ]
 },
 {
-"n": 36,
+"n": 39,
 "id": "e4an",
 "kind": "rule",
 "title": "Follow one form from desk to desk.",
@@ -869,7 +927,7 @@
 "chrome": []
 },
 {
-"n": 37,
+"n": 40,
 "id": "e4prob",
 "kind": "table",
 "title": "Four problems to look for.",
@@ -897,7 +955,7 @@
 "chrome": []
 },
 {
-"n": 38,
+"n": 41,
 "id": "e4t1",
 "kind": "term",
 "title": "Map it as it is.",
@@ -916,7 +974,7 @@
 ]
 },
 {
-"n": 39,
+"n": 42,
 "id": "e4live",
 "kind": "list",
 "title": "A story into a step table.",
@@ -932,7 +990,7 @@
 "chrome": []
 },
 {
-"n": 40,
+"n": 43,
 "id": "e4task1",
 "kind": "task",
 "title": "Your turn 3.6",
@@ -973,7 +1031,7 @@
 "prompt sheet",
 "If the tool is slow, continue from the backup on the screen.",
 "Where we are",
-"Built-in",
+"Ready-made",
 "Your agent",
 "Automate",
 "Map",
@@ -981,7 +1039,7 @@
 ]
 },
 {
-"n": 41,
+"n": 44,
 "id": "e4chk",
 "kind": "check",
 "title": "Quick check",
@@ -1002,7 +1060,7 @@
 ]
 },
 {
-"n": 42,
+"n": 45,
 "id": "e4brief",
 "kind": "list",
 "title": "Your process, mapped.",
@@ -1019,7 +1077,7 @@
 "chrome": []
 },
 {
-"n": 43,
+"n": 46,
 "id": "e4task2",
 "kind": "task",
 "title": "Your turn 3.7",
@@ -1053,7 +1111,7 @@
 "Time",
 "You hand in",
 "Where we are",
-"Built-in",
+"Ready-made",
 "Your agent",
 "Automate",
 "Map",
@@ -1061,7 +1119,7 @@
 ]
 },
 {
-"n": 44,
+"n": 47,
 "id": "e4task3",
 "kind": "task",
 "title": "Your turn 3.8",
@@ -1100,7 +1158,7 @@
 "prompt sheet",
 "If the tool is slow, continue from the backup on the screen.",
 "Where we are",
-"Built-in",
+"Ready-made",
 "Your agent",
 "Automate",
 "Map",
@@ -1108,7 +1166,7 @@
 ]
 },
 {
-"n": 45,
+"n": 48,
 "id": "e4deb",
 "kind": "rule",
 "title": "One owner per step. A person for every decision.",
@@ -1121,7 +1179,7 @@
 "chrome": []
 },
 {
-"n": 46,
+"n": 49,
 "id": "e5cmp",
 "kind": "table",
 "title": "Three tools. Three different jobs.",
@@ -1134,7 +1192,7 @@
 "An agent",
 "A flow",
 "Starts when",
-"You type a request",
+"You type a request, or at a time you schedule",
 "Someone asks a question",
 "Something happens",
 "Best for",
@@ -1157,7 +1215,7 @@
 "chrome": []
 },
 {
-"n": 47,
+"n": 50,
 "id": "e5sort",
 "kind": "sort",
 "title": "Copilot, agent or flow? Tap a card.",
@@ -1182,7 +1240,7 @@
 ]
 },
 {
-"n": 48,
+"n": 51,
 "id": "e5chk",
 "kind": "check",
 "title": "Quick check",
@@ -1203,7 +1261,7 @@
 ]
 },
 {
-"n": 49,
+"n": 52,
 "id": "e6share",
 "kind": "timer",
 "title": "One minute each: one agent or one map.",
@@ -1222,7 +1280,7 @@
 ]
 },
 {
-"n": 50,
+"n": 53,
 "id": "e7map",
 "kind": "map",
 "title": "MAP test · after",
@@ -1249,7 +1307,7 @@
 ]
 },
 {
-"n": 51,
+"n": 54,
 "id": "w3",
 "kind": "wrap",
 "title": "Wrap-up",
@@ -1274,7 +1332,7 @@
 ]
 },
 {
-"n": 52,
+"n": 55,
 "id": "close3",
 "kind": "close",
 "title": "Close",

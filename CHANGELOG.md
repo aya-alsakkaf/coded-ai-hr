@@ -1,5 +1,12 @@
 # Changelog
 
+## 19 November 2026 · Day 3 opens with scheduled prompts
+
+- Block 1 (09:10-09:45) starts with scheduled prompts: what they are, Demo 3.0 (schedule a weekly request live) and four things to
+  know before you schedule. Then the built-in agents as before. Task 3.1 is 10 minutes; Task 3.4 (optional) is 7 minutes.
+- The cheat sheet, lab hint, runbook script, facilitator kit and the Copilot, agent or flow comparison mention scheduled prompts.
+  Day 3 has 55 slides. MAP questions and surveys did not change.
+
 ## 18 November 2026 · Day 3: built-in agents, your own agent, three recorded Power Automate flows
 
 - Block 1 (09:10-09:40) is new: built-in agents. Demo and Task 3.1 use Prompt Coach on a Prompt Bank request and Researcher on a

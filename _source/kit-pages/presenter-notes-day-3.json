@@ -1,7 +1,7 @@
 [
 {
-"say": "Good morning, and welcome to the last day. This morning: agents, the ones Microsoft built and one you build yourself. Then three automations that run on their own. After lunch we look at a whole HR process.",
-"do": "(Before 09:00: open Agents and Agent Builder on the presenting laptop, start one Researcher run, and play the first seconds of the three demo videos in this deck.)",
+"say": "Good morning, and welcome to the last day. This morning: a request that runs on a timer, then agents, the ones Microsoft built and one you build yourself. Then three automations that run on their own. After lunch we look at a whole HR process.",
+"do": "(Before 09:00: check Schedule this prompt in Copilot Chat, open Agents and Agent Builder on the presenting laptop, start one Researcher run, and play the first seconds of the three demo videos in this deck.)",
 "expect": null,
 "silent": null,
 "fallback": null,
@@ -13,7 +13,7 @@
 "t": "open",
 "k": "cover",
 "h": "Cover: welcome",
-"flat": "09:00. · Do: (Before 09:00: open Agents and Agent Builder on the presenting laptop, start one Researcher run, and play the first seconds of the three demo videos in this deck.) · Remind the room: post-MAP and survey at 14:20, certificates at 14:40. · Ask everyone to download today's files from the Day 3 page. · Say: “Good morning, and welcome to the last day. This morning: agents, the ones Microsoft built and one you build yourself. Then three automations that run on their own. After lunch we look at a whole HR process.”"
+"flat": "09:00. · Do: (Before 09:00: check Schedule this prompt in Copilot Chat, open Agents and Agent Builder on the presenting laptop, start one Researcher run, and play the first seconds of the three demo videos in this deck.) · Remind the room: post-MAP and survey at 14:20, certificates at 14:40. · Ask everyone to download today's files from the Day 3 page. · Say: “Good morning, and welcome to the last day. This morning: a request that runs on a timer, then agents, the ones Microsoft built and one you build yourself. Then three automations that run on their own. After lunch we look at a whole HR process.”"
 },
 {
 "say": "These are the four things you will be able to do by the end of today, on fictional Mutla files. Which one matters most for your own job? Tell your neighbor in one sentence.",
@@ -94,17 +94,61 @@
 "flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “(Tap after hands.) Too high, duplicates. Good. Today we stop making one document at a time and start building tools.”"
 },
 {
+"say": "Good morning. Before agents, one small feature that saves time every week. On Day 1 you saved your best requests in the Prompt Bank. What if Copilot ran one of them for you, every Sunday at 8:00, before you even arrive? That is a scheduled prompt.",
+"do": null,
+"expect": null,
+"silent": null,
+"fallback": null,
+"more": [
+"Microsoft 365 Copilot license only: Copilot Chat, Copilot in Teams, or Outlook. Up to 10 per person.",
+"If the admin turned off optional connected experiences, the Schedule option is missing."
+],
+"time": "09:10-09:45",
+"t": "e1",
+"k": "term",
+"h": "Your best request, on a timer.",
+"flat": "09:10-09:45. · Microsoft 365 Copilot license only: Copilot Chat, Copilot in Teams, or Outlook. Up to 10 per person. · If the admin turned off optional connected experiences, the Schedule option is missing. · Say: “Good morning. Before agents, one small feature that saves time every week. On Day 1 you saved your best requests in the Prompt Bank. What if Copilot ran one of them for you, every Sunday at 8:00, before you even arrive? That is a scheduled prompt.”"
+},
+{
+"say": "(Run the request once and read the table.) Worth getting every week? Yes. (Hover. Schedule this prompt. Weekly, Sunday, 8:00. Save.) (Open Settings, then Scheduled prompts.) Here I can change it or stop it. On Sunday the answer is waiting for me.",
+"do": null,
+"expect": "One run now: a table of training requests and quotations with what is waiting, and three actions, with nothing about pay or health. Then the same request saved in Scheduled prompts, every week, sunday at 8:00.",
+"silent": null,
+"fallback": "No Schedule this prompt option: the account has no Microsoft 365 Copilot license, or the admin turned it off. Show the steps on the slide and the Scheduled prompts list on the trainer laptop. The backup is on the Day 3 backup results page, Demo 3.0.",
+"more": [
+"Click steps: (1) In Copilot Chat on your work account, paste the request below and run it once. Read the answer: is it worth getting every week? (2) Hover over your request and select Schedule this prompt. Set it to every week, sunday at 8:00. Save. (3) Open Settings, then Scheduled prompts. Show where to edit, pause or delete it. (4) Say: it runs for me only, from what I can already see. The answer waits in my Copilot chats, and I still check it."
+],
+"time": "5 min, live",
+"t": "e1",
+"k": "list",
+"h": "A weekly request, scheduled live.",
+"flat": "5 min, live. · Expect: One run now: a table of training requests and quotations with what is waiting, and three actions, with nothing about pay or health. Then the same request saved in Scheduled prompts, every week, sunday at 8:00. · Click steps: (1) In Copilot Chat on your work account, paste the request below and run it once. Read the answer: is it worth getting every week? (2) Hover over your request and select Schedule this prompt. Set it to every week, sunday at 8:00. Save. (3) Open Settings, then Scheduled prompts. Show where to edit, pause or delete it. (4) Say: it runs for me only, from what I can already see. The answer waits in my Copilot chats, and I still check it. · Fallback: No Schedule this prompt option: the account has no Microsoft 365 Copilot license, or the admin turned it off. Show the steps on the slide and the Scheduled prompts list on the trainer laptop. The backup is on the Day 3 backup results page, Demo 3.0. · Say: “(Run the request once and read the table.) Worth getting every week? Yes. (Hover. Schedule this prompt. Weekly, Sunday, 8:00. Save.) (Open Settings, then Scheduled prompts.) Here I can change it or stop it. On Sunday the answer is waiting for me.”"
+},
+{
+"say": "Four facts. It needs the full Microsoft 365 Copilot license. It is personal: only you see the answer. And it only writes. It cannot send the training request to your manager or wait for an approval. Keep that question in mind: you get the answer before lunch, with Power Automate.",
+"do": null,
+"expect": "Someone asks whether it can email the answer to the team. Not by itself: that needs a flow.",
+"silent": null,
+"fallback": null,
+"more": [],
+"time": "2 min",
+"t": "e1",
+"k": "table",
+"h": "Four things to know before you schedule.",
+"flat": "2 min. · Expect: Someone asks whether it can email the answer to the team. Not by itself: that needs a flow. · Say: “Four facts. It needs the full Microsoft 365 Copilot license. It is personal: only you see the answer. And it only writes. It cannot send the training request to your manager or wait for an approval. Keep that question in mind: you get the answer before lunch, with Power Automate.”"
+},
+{
 "say": "(Read the story.) Who has opened the Agents list in Copilot? (Hands.) Most people never do. This morning we start with agents that are already there, then you build your own.",
 "do": null,
 "expect": "Few hands. Some saw Researcher or Analyst at the top of the Copilot app.",
 "silent": null,
 "fallback": null,
 "more": [],
-"time": "09:10-09:40",
+"time": "09:19",
 "t": "e1",
 "k": "story",
-"h": "Block 1 · Built-in agents in Copilot",
-"flat": "09:10-09:40. · Expect: Few hands. Some saw Researcher or Analyst at the top of the Copilot app. · Say: “(Read the story.) Who has opened the Agents list in Copilot? (Hands.) Most people never do. This morning we start with agents that are already there, then you build your own.”"
+"h": "Block 1 · built-in agents",
+"flat": "09:19. · Expect: Few hands. Some saw Researcher or Analyst at the top of the Copilot app. · Say: “(Read the story.) Who has opened the Agents list in Copilot? (Hands.) Most people never do. This morning we start with agents that are already there, then you build your own.”"
 },
 {
 "say": "An agent is not a new kind of AI. It is the same Copilot with instructions that someone wrote once and saved. Remember the checklist from Day 1? An agent is a checklist request that nobody has to type again.",
@@ -151,20 +195,20 @@
 "flat": "8 min, live. · Expect: Prompt Coach says the request has no context, data, constraints or format, asks a question or two, and suggests a fuller request. Researcher returns a report with numbered sources after a few minutes. The trainer opens two sources and checks one fact in each. · Click steps: (1) In Microsoft 365 Copilot, open Agents, then All agents. Show the Built by Microsoft list for ten seconds. (2) Open Prompt Coach. Paste the first request below. Read its feedback aloud: which checklist parts does it say are missing? (3) Copy the better request it suggests and run it in Copilot Chat. Compare the two answers in one sentence. (4) Open Researcher. Paste the research question. While it works (a few minutes), go back to the slides. (5) Open the report. Click two sources and check one fact in each against the report. · Fallback: If Prompt Coach is not in the list, paste the same request into Copilot Chat and add: answer as a prompt coach. If Researcher is missing (no license), ask Copilot Chat the research question and ask for a source for each point. The backup is on the Day 3 backup results page, Demo 3.1. · Say: “(Run Prompt Coach first, then start Researcher and come back to it.) Look at what the coach asks for: context, data, limits, format. It is our checklist. (Open the report.) Sources at the end. I open two before I believe any of it.”"
 },
 {
-"say": "Your turn. Everyone uses Prompt Coach on one request from your Prompt Bank. If you have Researcher, start the research question too. Twelve minutes. (Start the timer.)",
+"say": "Your turn. Everyone uses Prompt Coach on one request from your Prompt Bank. If you have Researcher, start the research question too. Ten minutes. (Start the timer.)",
 "do": "Start the timer. Walk the room. Ask each pair what they found so far.",
 "expect": "A better request in the Prompt Bank, with the missing parts added: context, data, constraints and format. With Researcher: a report with sources, and two facts checked against their sources.",
 "silent": null,
 "fallback": "No Prompt Coach: paste the request into Copilot Chat and add: answer as a prompt coach.",
 "more": [
-"Give the hint at about 4 min.",
+"Give the hint at about 3 min.",
 "Fast finishers have an extra task on the slide."
 ],
-"time": "12 min work, then share",
+"time": "10 min work, then share",
 "t": "e1",
 "k": "task",
-"h": "Your turn 3.1: Use an agent Microsoft built (12 min, on your own)",
-"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A better request in the Prompt Bank, with the missing parts added: context, data, constraints and format. With Researcher: a report with sources, and two facts checked against their sources. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: No Prompt Coach: paste the request into Copilot Chat and add: answer as a prompt coach. · Say: “Your turn. Everyone uses Prompt Coach on one request from your Prompt Bank. If you have Researcher, start the research question too. Twelve minutes. (Start the timer.)”"
+"h": "Your turn 3.1: Use an agent Microsoft built (10 min, on your own)",
+"flat": "10 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A better request in the Prompt Bank, with the missing parts added: context, data, constraints and format. With Researcher: a report with sources, and two facts checked against their sources. · Give the hint at about 3 min. · Fast finishers have an extra task on the slide. · Fallback: No Prompt Coach: paste the request into Copilot Chat and add: answer as a prompt coach. · Say: “Your turn. Everyone uses Prompt Coach on one request from your Prompt Bank. If you have Researcher, start the research question too. Ten minutes. (Start the timer.)”"
 },
 {
 "say": "(Tap after hands.) Open and check. Built-in agents save you the instructions, not the check. Now: an agent that knows your policies, built by you.",
@@ -186,11 +230,11 @@
 "silent": null,
 "fallback": null,
 "more": [],
-"time": "09:40-10:45",
+"time": "09:45-10:45",
 "t": "e2",
 "k": "story",
 "h": "Block 2 · Build your own agent",
-"flat": "09:40-10:45. · Expect: Leave balances, allowances, letters, training dates. · Say: “(Read the story.) No built-in agent knows Mutla's leave policy. Which question does your unit answer again and again? Call it out.”"
+"flat": "09:45-10:45. · Expect: Leave balances, allowances, letters, training dates. · Say: “(Read the story.) No built-in agent knows Mutla's leave policy. Which question does your unit answer again and again? Call it out.”"
 },
 {
 "say": "Picture a new colleague at the HR counter. You give them a binder with the approved policies, and a script: answer from the binder, ask first when you need more, and send anything personal to us. That is your own agent. The binder is the knowledge; the script is the instructions.",
@@ -310,19 +354,19 @@
 "flat": "10 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A three-line test log. The agent cites section 4, asks for the grade (or gives both versions with dates) before the transport answer, and declines the named salary. · Give the hint at about 3 min. · Fast finishers have an extra task on the slide. · Fallback: No Agent Builder: run the tests in the Copilot Chat with your instructions and the five files. · Say: “Your turn. Test your agent three times, keep a short log, and fix one line. Ten minutes. (Start the timer.)”"
 },
 {
-"say": "Optional, if the block is on time: a second agent. The coach helps line managers draft job descriptions and never gives a grade. The buddy helps people in their first month. Twelve minutes. (Start the timer.)",
+"say": "Optional, if the block is on time: start a second agent now and finish it at work. The coach helps line managers draft job descriptions and never gives a grade. The buddy helps people in their first month. Seven minutes. (Start the timer.)",
 "do": "Start the timer. Walk the room. Ask each pair what they found so far.",
 "expect": "A second agent that drafts or answers only from its knowledge, asks first when the question leaves something out, and refers grades, salaries and allowances to the right unit.",
 "silent": "Running late? Skip this slide: it is on the Day 3 lab page to do at work this week.",
 "fallback": "Short of time: skip it in class and build it at work this week. The tests are on the Day 3 lab page.",
 "more": [
-"Give the hint at about 4 min."
+"Give the hint at about 3 min."
 ],
-"time": "12 min work, then share",
+"time": "7 min work, then share",
 "t": "e2",
 "k": "task",
-"h": "Your turn 3.4: Optional: a second agent (12 min, on your own)",
-"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A second agent that drafts or answers only from its knowledge, asks first when the question leaves something out, and refers grades, salaries and allowances to the right unit. · Give the hint at about 4 min. · If the room is silent: Running late? Skip this slide: it is on the Day 3 lab page to do at work this week. · Fallback: Short of time: skip it in class and build it at work this week. The tests are on the Day 3 lab page. · Say: “Optional, if the block is on time: a second agent. The coach helps line managers draft job descriptions and never gives a grade. The buddy helps people in their first month. Twelve minutes. (Start the timer.)”"
+"h": "Your turn 3.4: Optional: a second agent (7 min, on your own)",
+"flat": "7 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A second agent that drafts or answers only from its knowledge, asks first when the question leaves something out, and refers grades, salaries and allowances to the right unit. · Give the hint at about 3 min. · If the room is silent: Running late? Skip this slide: it is on the Day 3 lab page to do at work this week. · Fallback: Short of time: skip it in class and build it at work this week. The tests are on the Day 3 lab page. · Say: “Optional, if the block is on time: start a second agent now and finish it at work. The coach helps line managers draft job descriptions and never gives a grade. The buddy helps people in their first month. Seven minutes. (Start the timer.)”"
 },
 {
 "say": "Vague instructions give a vague agent. The clear ones in the room said what to answer, what never to answer, and where to send people. Break now. (Press the cup button.)",

@@ -76,12 +76,12 @@ DAYS = {
                  "Turn a training question into <b>requirements</b>, build the form with Copilot in Forms, and <b>clean before you count</b> the answers.",
                  "Present checked findings in <b>PowerPoint</b>, and sort any HR task as <b>green, amber or red</b> before Copilot sees it."]},
 3: {"title": "HR Agents, Workflows and an Introduction to Power Automate", "claim": "Build it, test it, then look at the whole process.",
-    "sub": "Use two built-in agents, build and test your own HR agent in Agent Builder, see three Power Automate flows run on their own, and map an HR process from request to result.",
-    "brief": "Day 3 starts with agents. First you use agents that Microsoft built: Prompt Coach improves one of your Prompt Bank requests, and Researcher answers a public HR question with sources that you check. Then you build your own HR agent in Agent Builder with five policy files, and test it with a normal, an incomplete and a sensitive question. Before lunch the trainer explains what automation means and when to automate, then talks you through three recorded Power Automate flows: a training request approval, a weekly AI brief for vendors, and a vendor quotation that AI reads and scores. After lunch you map a whole HR process: every step, every owner, every wait and every human decision.",
+    "sub": "Put a request on a timer, use two built-in agents, build and test your own HR agent in Agent Builder, see three Power Automate flows run on their own, and map an HR process from request to result.",
+    "brief": "Day 3 starts with Copilot working for you on a timer: the trainer schedules a tested request to run every week. Then you use agents that Microsoft built: Prompt Coach improves one of your Prompt Bank requests, and Researcher answers a public HR question with sources that you check. Then you build your own HR agent in Agent Builder with five policy files, and test it with a normal, an incomplete and a sensitive question. Before lunch the trainer explains what automation means and when to automate, then talks you through three recorded Power Automate flows: a training request approval, a weekly AI brief for vendors, and a vendor quotation that AI reads and scores. After lunch you map a whole HR process: every step, every owner, every wait and every human decision.",
     "artifact": "A better request from Prompt Coach, a tested HR agent and a map of one HR process",
     "blocks": [("09:00-09:10", "Callback quiz", "Three questions on Day 2"),
-               ("09:10-09:40", "Block 1 · Built-in agents in Copilot", "Prompt Coach and Researcher · Task 3.1"),
-               ("09:40-10:45", "Block 2 · Build your own agent", "Instructions, knowledge, starter prompts, three tests · Tasks 3.2 and 3.3, Task 3.4 if time allows"),
+               ("09:10-09:45", "Block 1 · Scheduled prompts and built-in agents", "A request on a timer; Prompt Coach and Researcher · Demo 3.0, Task 3.1"),
+               ("09:45-10:45", "Block 2 · Build your own agent", "Instructions, knowledge, starter prompts, three tests · Tasks 3.2 and 3.3, Task 3.4 if time allows"),
                ("10:45-11:00", "Break", ""),
                ("11:00-11:35", "Block 3 · Power Automate: when to automate", "Trigger, actions, connectors, output; three recorded flows"),
                ("11:35-12:15", "Lunch and Dhuhr prayer", ""),
@@ -91,7 +91,7 @@ DAYS = {
                ("14:05-14:20", "One-minute share-outs", "One agent or one map"),
                ("14:20-14:40", "Post-MAP test, then the final survey", "Two QR codes"),
                ("14:40-15:00", "Close and certificates", "The habit, one last time")],
-    "outcomes": ["Use a <b>built-in agent</b> such as Prompt Coach or Researcher, and check what it gives you.",
+    "outcomes": ["Explain what a <b>scheduled prompt</b> does, and use a <b>built-in agent</b> such as Prompt Coach or Researcher, checking what it gives you.",
                  "Build an HR agent with the <b>prompt checklist</b> and approved files, and test it with a <b>normal, an incomplete and a sensitive</b> question.",
                  "Explain <b>when to automate</b>, and name the trigger, actions, connectors and output of a Power Automate flow.",
                  "Map an HR process from request to result, and mark the <b>delays, duplicates, owners and human decisions</b>."]},
@@ -108,8 +108,8 @@ SEGMENTS = {
      ("12:15-13:20", "Block 4 · Microsoft Forms", [("12:15", 2, "Story: 52 managers, 31 answers"), ("12:17", 3, "What Copilot does in Forms"), ("12:20", 4, "Demo 2.7"), ("12:24", 12, "Task 2.7"), ("12:36", 5, "Demo 2.8"), ("12:41", 13, "Task 2.8"), ("12:54", 5, "Demo 2.9"), ("12:59", 15, "Task 2.9"), ("13:14", 6, "Quick check and debrief")]),
      ("13:35-14:20", "Block 5 · PowerPoint", [("13:35", 2, "Story: the deck for Sunday"), ("13:37", 3, "What Copilot does in PowerPoint"), ("13:40", 5, "Demo 2.10"), ("13:45", 12, "Task 2.10"), ("13:57", 4, "Demo 2.11"), ("14:01", 14, "Task 2.11"), ("14:15", 5, "Quick check and debrief")]),
      ("14:20-14:50", "Block 6 · Protecting employee data", [("14:20", 2, "Story: the comment with a name"), ("14:22", 4, "Green, amber, red"), ("14:26", 6, "Demo 2.12 card sort"), ("14:32", 4, "Demo 2.12b: redact, then ask"), ("14:36", 10, "Task 2.12"), ("14:46", 4, "Quick check and debrief")])],
- 3: [("09:10-09:40", "Block 1 · Built-in agents", [("09:10", 3, "Story: two jobs before lunch"), ("09:13", 4, "What an agent is; agents built by Microsoft"), ("09:17", 8, "Demo 3.1"), ("09:25", 12, "Task 3.1"), ("09:37", 3, "Quick check")]),
-     ("09:40-10:45", "Block 2 · Build your own agent", [("09:40", 3, "Story: the same 20 questions"), ("09:43", 4, "Built-in or your own; the parts of an agent"), ("09:47", 6, "Demo 3.2"), ("09:53", 20, "Task 3.2"), ("10:13", 5, "Three tests; Demo 3.3"), ("10:18", 10, "Task 3.3"), ("10:28", 12, "Task 3.4 (if time allows)"), ("10:40", 5, "Debrief")]),
+ 3: [("09:10-09:45", "Block 1 · Scheduled prompts and built-in agents", [("09:10", 2, "Scheduled prompts: the idea"), ("09:12", 5, "Demo 3.0"), ("09:17", 2, "Before you schedule"), ("09:19", 2, "Story: two jobs before lunch"), ("09:21", 3, "What an agent is; agents built by Microsoft"), ("09:24", 8, "Demo 3.1"), ("09:32", 10, "Task 3.1"), ("09:42", 3, "Quick check")]),
+     ("09:45-10:45", "Block 2 · Build your own agent", [("09:45", 3, "Story: the same 20 questions"), ("09:48", 4, "Built-in or your own; the parts of an agent"), ("09:52", 6, "Demo 3.2"), ("09:58", 20, "Task 3.2"), ("10:18", 5, "Three tests; Demo 3.3"), ("10:23", 10, "Task 3.3"), ("10:33", 7, "Task 3.4 (if time allows)"), ("10:40", 5, "Debrief")]),
      ("11:00-11:35", "Block 3 · Power Automate: when to automate", [("11:00", 2, "Story: requests and quotations"), ("11:02", 3, "What automation means"), ("11:05", 4, "When to automate"), ("11:09", 3, "Trigger, actions, connectors, output"), ("11:12", 5, "Demo 3.5: approval"), ("11:17", 5, "Demo 3.5b: weekly brief"), ("11:22", 5, "Demo 3.5c: quotation"), ("11:27", 3, "What a flow needs"), ("11:30", 3, "Why a flow"), ("11:33", 2, "Quick check")]),
      ("12:15-13:35", "Block 4 · From one task to a workflow", [("12:15", 3, "Story: three weeks for one course"), ("12:18", 5, "Four problems"), ("12:23", 3, "The step table"), ("12:26", 5, "Demo 3.6"), ("12:31", 12, "Task 3.6"), ("12:43", 20, "Task 3.7"), ("13:03", 25, "Task 3.8 (if time allows)"), ("13:28", 7, "Debrief")]),
      ("13:50-14:05", "Copilot, agent or flow?", [("13:50", 5, "The tools side by side"), ("13:55", 8, "Demo 3.9 card sort"), ("14:03", 2, "Quick check")])],
@@ -173,6 +173,7 @@ CHEAT = [("Part 1 · Ask well", "The prompt checklist", "Five parts. Use all fiv
           "Copilot drafts. You check. Authorized HR staff decide."),
          ("Part 4 · Where Copilot sits", "Know your tools", "Read the label under your name first.",
           [("Copilot Chat", "Every license", "Upload files, ask, draft. Your work files only when you upload them on a Basic label.", "Copilot Chat (Basic), M365 Copilot (Basic) or M365 Copilot (Premium)."),
+           ("Scheduled prompts", "Hover over a request, then Schedule this prompt", "Runs a tested request at a set time. The answer waits in your Copilot chats. It does not send or approve.", "Microsoft 365 Copilot license; up to 10 per person."),
            ("Built-in agents", "Agents, then All agents", "Agents Microsoft built for one job: Prompt Coach for better requests, Researcher for reports with sources.", "Researcher and Analyst need the Microsoft 365 Copilot license."),
            ("Copilot in the apps", "Word, Outlook, Excel, PowerPoint", "Draft, summarize and analyze inside the app.", "What you get depends on your license."),
            ("Agent Builder", "Create agent, Configure, Test", "An agent with your instructions and approved files that answers the same questions for many people.", "It answers. It does not send, route or approve."),
@@ -239,7 +240,7 @@ MAP = [
 MAP_KEY = " · ".join(f"{i} {'abcd'[q['a']]}" for i, q in enumerate(MAP, 1))
 
 # ------------------------------------------------------------------ the approved slide plan (the validator checks the decks against it)
-SLIDES = {1: 70, 2: 61, 3: 52}
+SLIDES = {1: 70, 2: 61, 3: 55}
 
 # ------------------------------------------------------------------ MAP tests and the final survey (CODED portal)
 PORTAL = "https://platform.joincoded.com/sv/"
@@ -258,8 +259,8 @@ DAYS[1].update({"cat": "Copilot foundations", "icon": "doc", "tag": "prompt chec
                 "bullets": ["How Copilot writes, and what it can see", "The prompt checklist and follow-up instructions", "Job descriptions, letters, summaries, announcements"]})
 DAYS[2].update({"cat": "Meetings, reporting, presentations", "icon": "mail", "tag": "Outlook · Excel · Forms · PowerPoint · safe data",
                 "bullets": ["Meetings, follow-ups and checked figures", "A training needs form with Copilot, and its findings", "Decks in PowerPoint, then green, amber, red"]})
-DAYS[3].update({"cat": "Agents, workflows, Power Automate", "icon": "flask", "tag": "Built-in agents · Agent Builder · Power Automate demos · process maps",
-                "bullets": ["Use built-in agents, then build and test your own", "See three Power Automate flows, and know when to automate", "Map an HR process from request to result"]})
+DAYS[3].update({"cat": "Agents, workflows, Power Automate", "icon": "flask", "tag": "Scheduled prompts · built-in agents · Agent Builder · Power Automate demos · process maps",
+                "bullets": ["Schedule a request, use built-in agents, then build and test your own", "See three Power Automate flows, and know when to automate", "Map an HR process from request to result"]})
 HUB = {
     "headline": ["AI Fundamentals", "for HR"],
     "sub": "A three-day, hands-on Microsoft Copilot workshop for HR employees. Write clear requests, check what comes back, keep people's data safe, map your HR work and build a first HR agent. Decisions about people stay with people.",
@@ -294,6 +295,7 @@ RUNBOOK_PREFLIGHT = ["Sign in to Microsoft 365 Copilot on the presenting laptop 
                      "Read the license label under your name on the Microsoft 365 home page: Copilot Chat (Basic), M365 Copilot (Basic) or M365 Copilot (Premium). Day 2 app demos need an M365 Copilot label (Basic or Premium); Teams recaps need Premium.",
                      "Day 2: open forms.cloud.microsoft with the training account and check that New Form shows the Draft with Copilot box. If it does not, prepare the Quick import fallback (a Word file with the nine questions).",
                      "Day 2: open the training mailbox in Outlook and check that the thread Orientation day for new joiners, Sunday 6 December is there, with three messages.",
+                     "Day 3: in Copilot Chat on the presenting laptop, check that Schedule this prompt appears when you hover over a request (Microsoft 365 Copilot license).",
                      "Day 3: open Agents on the presenting laptop and check that Prompt Coach and Researcher open. Start one Researcher run before 09:00: it takes a few minutes and has a monthly limit.",
                      "Day 3: open Agent Builder (Create agent) once before the day starts. If it is missing, use the fallback in the runbook.",
                      "Day 3: open the deck on the workshop site and play the first seconds of the three Power Automate videos (no sound: you narrate). Copy the three video files from the Day 3 page to the laptop and the USB stick.",
@@ -315,6 +317,7 @@ FACILITATOR = [
     ["Copilot is slow or busy", "Wait one minute, then send the request again.", "Show the backup result on your own screen."],
     ["A daily limit is reached", "Pair with a neighbor.", "Continue from the backup result."],
     ["No Copilot in Word, Excel or PowerPoint", "Use Copilot Chat with the file attached.", "Trainer demo only."],
+    ["No Schedule this prompt option", "No Microsoft 365 Copilot license, or the admin turned it off: watch the trainer's demo.", "Show the steps on the slide."],
     ["No Prompt Coach or Researcher", "Paste the request into Copilot Chat and ask it to answer as a prompt coach, or to give a source for each point.", "Watch the trainer's demo."],
     ["No Agent Builder", "Save the instructions as a request in Copilot Chat with the five policy files.", "Pair with a neighbor who has it."],
     ["A demo video does not play", "Open the video file from the Day 3 page or the USB stick.", "Walk through the four parts on the slide."],
@@ -539,7 +542,8 @@ LABS = {
      "steps": [
         {"title": "Task 3.1 · Use an agent Microsoft built", "files": [],
          "do": ["In Microsoft 365 Copilot, open Agents, then All agents. Find Prompt Coach under Built by Microsoft.", "Give it one request from your Prompt Bank, or the weak request below. Run the better request it suggests.", "If you have Researcher, ask it the research question below. Open two sources and check one fact in each."],
-         "hints": ["Put the better request next to the five checklist parts. Which part did your first request miss?", "Researcher and Analyst need the Microsoft 365 Copilot license. No Researcher: ask Copilot Chat and ask for a source for each point."],
+         "hints": ["Put the better request next to the five checklist parts. Which part did your first request miss?", "Researcher and Analyst need the Microsoft 365 Copilot license. No Researcher: ask Copilot Chat and ask for a source for each point.",
+                   "Have the Microsoft 365 Copilot license? Hover over your better request and choose Schedule this prompt."],
          "prompt": "FILL:COACH_ASK",
          "templates": [("Researcher · a public HR question", "FILL:RESEARCH")],
          "check": {"kind": "note", "label": "Paste your better request"},

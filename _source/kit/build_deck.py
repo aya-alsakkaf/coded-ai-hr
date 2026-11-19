@@ -16,7 +16,7 @@ SECTIONS = {
 FLOW = {
  1: (["AI", "Prompt", "Notebook", "Word, Outlook", "Save"], {"b1": 0, "b2": 1, "b3": 2, "b4": 3, "b5": 4}),
  2: (["Meetings", "Outlook", "Excel", "Forms", "PowerPoint", "Safe data"], {"c2": 0, "c3": 1, "c4": 2, "c5": 3, "c6": 4, "c1": 5}),
- 3: (["Built-in", "Your agent", "Automate", "Map", "Compare"], {"e1": 0, "e2": 1, "e3": 2, "e4": 3, "e5": 4}),
+ 3: (["Ready-made", "Your agent", "Automate", "Map", "Compare"], {"e1": 0, "e2": 1, "e3": 2, "e4": 3, "e5": 4}),
 }
 COVER_NOTES = {
  1: N(time="09:00-09:10", do="(Before 09:00: helpers walk the room and check that every laptop is signed in to Copilot Chat with a work account.)",
@@ -26,9 +26,9 @@ COVER_NOTES = {
  2: N(time="09:00", do="(Before 09:00: check that every laptop has Copilot Chat open, and that people downloaded today's files from the Day 2 page.)",
       more=["Housekeeping: breaks at 10:45 and 13:20, lunch and Dhuhr at 11:35.", "Block 4 needs Microsoft Forms: ask people to open forms.cloud.microsoft once before lunch and check they can sign in."],
       say="Good morning, and welcome back. Yesterday you learned to ask clearly and check everything. Today we run meetings, check numbers, build a training needs form, make slides, and finish with the most important habit: protecting people's data. Please open Copilot Chat while I start."),
- 3: N(time="09:00", do="(Before 09:00: open Agents and Agent Builder on the presenting laptop, start one Researcher run, and play the first seconds of the three demo videos in this deck.)",
+ 3: N(time="09:00", do="(Before 09:00: check Schedule this prompt in Copilot Chat, open Agents and Agent Builder on the presenting laptop, start one Researcher run, and play the first seconds of the three demo videos in this deck.)",
       more=["Remind the room: post-MAP and survey at 14:20, certificates at 14:40.", "Ask everyone to download today's files from the Day 3 page."],
-      say="Good morning, and welcome to the last day. This morning: agents, the ones Microsoft built and one you build yourself. Then three automations that run on their own. After lunch we look at a whole HR process."),
+      say="Good morning, and welcome to the last day. This morning: a request that runs on a timer, then agents, the ones Microsoft built and one you build yourself. Then three automations that run on their own. After lunch we look at a whole HR process."),
 }
 OUTCOMES_NOTES = {d: N(expect="Most people pick the checking outcome.", silent="pick the one you use most yourself and say why.",
                        say="These are the four things you will be able to do by the end of today, on fictional Mutla files. "
@@ -710,11 +710,28 @@ def day3():
          ("Duplicate request IDs", 1, "Right. Too high: look for duplicates."),
          ("A formula error in Copilot's count", 0, "The count was right. The rows were wrong.")],
         n=N(say="(Tap after hands.) Too high, duplicates. Good. Today we stop making one document at a time and start building tools.")))
-    # Block 1 · Built-in agents in Copilot
-    s.append(story("e1story", "e1", "Block 1 · Built-in agents in Copilot", "Monday 16 November, 10:00",
+    # Block 1 · Scheduled prompts first (Demo 3.0), then built-in agents
+    s.append(term("e1sp", "e1", "Block 1 · Scheduled prompts and built-in agents", "Your best request, <span class=\"hl\">on a timer.</span>", "Scheduled prompt",
+        "A request you tested once that <b>Copilot runs for you</b> at a set time: once, daily, weekly or monthly. The answer <b>waits in your Copilot chats</b>.",
+        "Every Sunday you open Copilot and type the same request…", "…now it runs at 8:00 and the answer is waiting.", "Copilot works on a timer. You still check.",
+        n=N(time="09:10-09:45", say="Good morning. Before agents, one small feature that saves time every week. On Day 1 you saved your best requests in the Prompt Bank. "
+                "What if Copilot ran one of them for you, every Sunday at 8:00, before you even arrive? That is a scheduled prompt.",
+            more=["Microsoft 365 Copilot license only: Copilot Chat, Copilot in Teams, or Outlook. Up to 10 per person.",
+                  "If the admin turned off optional connected experiences, the Schedule option is missing."])))
+    s.append(live("e1splive", "e1", "d3s", "A weekly request, <span class=\"hl\">scheduled live.</span>",
+        "One request run once, then Schedule this prompt: every Sunday at 8:00.", "Where the Schedule option is, and where you edit, pause or delete it.",
+        n=N(time="5 min, live", say="(Run the request once and read the table.) Worth getting every week? Yes. (Hover. Schedule this prompt. Weekly, Sunday, 8:00. Save.) "
+                "(Open Settings, then Scheduled prompts.) Here I can change it or stop it. On Sunday the answer is waiting for me.")))
+    s.append(tslide("e1spfacts", "e1", "Block 1 · before you schedule", "Four things to know <span class=\"hl\">before you schedule.</span>", ["Question", "Answer"],
+        [[f"<b>{a}</b>", b] for a, b in D.SCHED_FACTS],
+        "It writes on a timer. Moving work between people needs a flow.",
+        n=N(time="2 min", say="Four facts. It needs the full Microsoft 365 Copilot license. It is personal: only you see the answer. And it only writes. "
+                "It cannot send the training request to your manager or wait for an approval. Keep that question in mind: you get the answer before lunch, with Power Automate.",
+            expect="Someone asks whether it can email the answer to the team. Not by itself: that needs a flow.")))
+    s.append(story("e1story", "e1", "Block 1 · built-in agents", "Monday 16 November, 10:00",
         "Noura in L&D has two jobs before lunch. Her one-line reminder request still gives vague emails. Her manager asks what Gulf energy companies do for new supervisors, <b>with sources</b>.",
         "Two jobs. <span class=\"hl\">Microsoft already built an agent for each.</span>", "Use a built-in agent, then check what it gives you.",
-        n=N(time="09:10-09:40", say="(Read the story.) Who has opened the Agents list in Copilot? (Hands.) Most people never do. This morning we start with agents that are already there, then you build your own.",
+        n=N(time="09:19", say="(Read the story.) Who has opened the Agents list in Copilot? (Hands.) Most people never do. This morning we start with agents that are already there, then you build your own.",
             expect="Few hands. Some saw Researcher or Analyst at the top of the Copilot app.")))
     s.append(term("e1t1", "e1", "Block 1 · the idea", "Copilot with <span class=\"hl\">a saved job.</span>", "Agent",
         "Copilot with <b>saved instructions</b>, and sometimes its own <b>knowledge</b>, for <b>one job</b>. Microsoft built some. You can build your own.",
@@ -731,7 +748,7 @@ def day3():
         "Prompt Coach improves a one-line request, then Researcher answers a public HR question with sources.", "What Prompt Coach says is missing, and the sources at the end of the report.",
         n=N(time="8 min, live", say="(Run Prompt Coach first, then start Researcher and come back to it.) Look at what the coach asks for: context, data, limits, format. "
                 "It is our checklist. (Open the report.) Sources at the end. I open two before I believe any of it.")))
-    s.append(task("e1task", "e1", "t30", n=N(say="Your turn. Everyone uses Prompt Coach on one request from your Prompt Bank. If you have Researcher, start the research question too. Twelve minutes. (Start the timer.)",
+    s.append(task("e1task", "e1", "t30", n=N(say="Your turn. Everyone uses Prompt Coach on one request from your Prompt Bank. If you have Researcher, start the research question too. Ten minutes. (Start the timer.)",
                                                  fallback="No Prompt Coach: paste the request into Copilot Chat and add: answer as a prompt coach.")))
     s.append(check("e1chk", "e1", "Researcher gives you a report with eight sources. <b>What do you do before you share it?</b>",
         [("Share it: every point has a source", 0, "A source can be wrong, old or say something else."),
@@ -742,7 +759,7 @@ def day3():
     s.append(story("e2story", "e2", "Block 2 · Build your own agent", "Thursday 12 November, 16:00",
         f"Fatma counts her week: <b>64 emails</b> from staff. Twenty ask how many leave days carry over. She answers each one by hand, from the same section 4.",
         "The same question, <span class=\"hl\">twenty times a week.</span>", "Build an HR agent that answers from approved policies, and test it before anyone uses it.",
-        n=N(time="09:40-10:45", say="(Read the story.) No built-in agent knows Mutla's leave policy. Which question does your unit answer again and again? Call it out.", expect="Leave balances, allowances, letters, training dates.")))
+        n=N(time="09:45-10:45", say="(Read the story.) No built-in agent knows Mutla's leave policy. Which question does your unit answer again and again? Call it out.", expect="Leave balances, allowances, letters, training dates.")))
     s.append(tslide("e2cmp", "e2", "Block 2 · built-in or your own", "Microsoft's agent, <span class=\"hl\">or yours?</span>", ["", "Copilot Chat", "A built-in agent", "Your own agent"],
         [["Instructions", "You type them each time", "Microsoft wrote them", "You write them once"], ["Knowledge", "Files you attach each time", "The web and your work files", "The approved files you choose"],
          ["Who uses it", "You", "Anyone with Copilot", "Anyone you share it with"], ["Best for", "One-off drafts", "Common jobs: requests, research", "Your unit's questions, many times"]],
@@ -780,7 +797,7 @@ def day3():
         n=N(time="3 min, live", say="(Ask the three questions.) Normal: section 4. Incomplete: it asks for the grade. Sensitive: (read the answer). "
                 "If it fails, watch me: I change one line in Constraints, not the whole text, and I ask again. One line, one test.")))
     s.append(task("e2task2", "e2", "t33", n=N(say="Your turn. Test your agent three times, keep a short log, and fix one line. Ten minutes. (Start the timer.)")))
-    s.append(task("e2task3", "e2", "t34", n=N(say="Optional, if the block is on time: a second agent. The coach helps line managers draft job descriptions and never gives a grade. The buddy helps people in their first month. Twelve minutes. (Start the timer.)",
+    s.append(task("e2task3", "e2", "t34", n=N(say="Optional, if the block is on time: start a second agent now and finish it at work. The coach helps line managers draft job descriptions and never gives a grade. The buddy helps people in their first month. Seven minutes. (Start the timer.)",
                                                   silent="Running late? Skip this slide: it is on the Day 3 lab page to do at work this week.")))
     s.append(rule("e2deb", "e2", "Block 2 · debrief", "The instructions are <span class=\"hl\">the agent's job description.</span>",
         "The agents that answered well had clear limits, the dates of both allowances versions, and a place to send what they could not answer. Same checklist, same three tests for every new agent.",
@@ -824,7 +841,7 @@ def day3():
         n=N(time="3 min", say="A flow touches company data and runs without you, so it is not a personal tool. Your IT team decides what is allowed. "
                 "And every flow needs an owner: a flow nobody owns breaks quietly on the day its builder goes on leave.")))
     s.append(listslide("e3why", "e3", "Block 3 · why a flow here", "Why not Copilot <span class=\"hl\">or an agent?</span>",
-        ["<b>It starts on its own</b> when a form, an email or a date arrives. Copilot and agents wait to be asked.", "<b>It waits</b> for an approval, for days if needed, then continues.",
+        ["<b>It starts on its own</b> when a form, an email or a date arrives. A scheduled prompt runs on a timer too, but it only writes an answer for you.", "<b>It waits</b> for an approval, for days if needed, then continues.",
          "<b>It logs and sends</b> the same way every time: the row, the email, the draft.", "<b>Its AI step drafts and scores.</b> A person reviews and decides."],
         "A flow moves work between people. It never replaces their decisions.",
         n=N(time="3 min", say="So why Power Automate here, and not the agent you built this morning? Because nobody is asking a question. "
@@ -881,7 +898,7 @@ def day3():
             say="Look at the steps you marked Copilot or Agent. Each one is a step you know how to build now, with this morning's agents. Break now. (Press the cup button.)")))
     # Copilot, agent or flow?
     s.append(tslide("e5cmp", "e5", "Copilot, agent or flow?", "Three tools. <span class=\"hl\">Three different jobs.</span>", ["", "Copilot Chat", "An agent", "A flow"],
-        [["Starts when", "You type a request", "Someone asks a question", "Something happens"], ["Best for", "One-off drafts and summaries", "The same questions for many people", "The same steps every time"],
+        [["Starts when", "You type a request, or at a time you schedule", "Someone asks a question", "Something happens"], ["Best for", "One-off drafts and summaries", "The same questions for many people", "The same steps every time"],
          ["Knows your policies", "When you attach them", "From its saved knowledge", "No. Its AI step sees only what the flow gives it"], ["Sends, logs, routes", "No", "No", "Yes"],
          ["HR example", "A reply to one employee", "Leave questions for 300 staff", "Each training request to approval"]],
         "Who starts it, how often, and does it move work between people?",
@@ -911,6 +928,6 @@ TOPICS = {1: {"open": "Opening", "b1": "Block 1 · How generative AI and Copilot
           2: {"open": "Opening", "c0": "Callback quiz", "c2": "Block 1 · Before and after the meeting", "c3": "Block 2 · Follow-ups and reminders",
               "c4": "Block 3 · Excel: figures you can check", "c5": "Block 4 · Microsoft Forms: find the training needs", "c6": "Block 5 · PowerPoint: present what you found",
               "c1": "Block 6 · Protecting employee data", "c8": "Which app for which job", "close": "Close"},
-          3: {"open": "Opening", "e0": "Callback quiz", "e1": "Block 1 · Built-in agents in Copilot", "e2": "Block 2 · Build your own agent", "e3": "Block 3 · Power Automate: when to automate",
+          3: {"open": "Opening", "e0": "Callback quiz", "e1": "Block 1 · Scheduled prompts and built-in agents", "e2": "Block 2 · Build your own agent", "e3": "Block 3 · Power Automate: when to automate",
               "e4": "Block 4 · From one task to a workflow", "e5": "Copilot, agent or flow?", "e6": "Share-outs", "e7": "Post-MAP and survey", "close": "Close"}}
 DAYFN = {1: day1, 2: day2, 3: day3}

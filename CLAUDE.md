@@ -130,3 +130,8 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
     `vidslide` (kit CSS and EXTRA_JS: the source works on the site and from a folder copy; Space plays a focused video).
     The runbook has a narration script for Demos 3.1, 3.5, 3.5b and 3.5c. Block 4 and the afternoon did not change. Day 3 has
     52 slides, 41 sample files. MAP questions, the OUTCOMES and the survey payloads did not change.
+38. 19 Nov 2026, morning of Day 3 (Aya): Block 1 (09:10-09:45) opens with scheduled prompts before the built-in agents: a term
+    slide, Demo 3.0 (a weekly request on training requests and quotations, run once, then Schedule this prompt, Sunday 8:00) and
+    four facts (Microsoft 365 Copilot license, up to 10 per person, only you see it, it writes but does not send or approve).
+    Task 3.1 is 10 minutes; Block 2 is 09:45-10:45 and the optional Task 3.4 is 7 minutes. Day 3 has 55 slides.
+    MAP questions and survey payloads did not change.
