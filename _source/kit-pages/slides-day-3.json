@@ -73,8 +73,8 @@
 "One-minute share-outs",
 "One agent or one map",
 "14:20-14:40",
-"Post-MAP test, then the final survey",
-"Two QR codes",
+"Post-MAP test and final survey",
+"One QR code, one form",
 "14:40-15:00",
 "Close and certificates",
 "The habit, one last time"
@@ -1345,11 +1345,9 @@
 "title": "MAP test · after",
 "topic": "e7",
 "kit": [
-"Post-MAP test",
-"Final satisfaction survey",
+"Post-MAP test and final survey",
 "Day 3 · Thu 19 Nov · 14:20",
-"Day 3 · Thu 19 Nov · 14:30",
-"14 questions, the same as on Day 1. Not graded. Phone only: no notes, no search, no AI. Then scan the second code for the final survey.",
+"First the test: 14 questions, the same as on Day 1, in 10 minutes. Then 5 minutes of feedback in the same form. Not graded. Phone only: no notes, no search, no AI.",
 "after"
 ],
 "chrome": [

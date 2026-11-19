@@ -758,13 +758,15 @@
 "fallback": "read out the short link (/post) if a phone cannot scan.",
 "more": [
 "Leave the slide up. Code 1 is the MAP test; code 2 is the final survey, right after it.",
-"Check the response count in the portal before you move on."
+"Check the response count in the portal before you move on.",
+"One code now: the test and the final survey are one form (19 Nov). Ignore any note about a second code.",
+"The form is about 15 minutes: Parts 1 and 2 are the test, Part 3 is the feedback."
 ],
 "time": "10 min",
 "t": "e7",
 "k": "map",
 "h": "MAP test (after) and the final survey",
-"flat": "10 min. · Do: Phones only. No notes, no search, no AI. It is not graded. · Leave the slide up. Code 1 is the MAP test; code 2 is the final survey, right after it. · Check the response count in the portal before you move on. · Fallback: read out the short link (/post) if a phone cannot scan. · Say: “Answer honestly. If you are not sure, pick your best guess. This measures the workshop, not you.”"
+"flat": "10 min. · Do: Phones only. No notes, no search, no AI. It is not graded. · Leave the slide up. Code 1 is the MAP test; code 2 is the final survey, right after it. · Check the response count in the portal before you move on. · One code now: the test and the final survey are one form (19 Nov). Ignore any note about a second code. · The form is about 15 minutes: Parts 1 and 2 are the test, Part 3 is the feedback. · Fallback: read out the short link (/post) if a phone cannot scan. · Say: “Answer honestly. If you are not sure, pick your best guess. This measures the workshop, not you.”"
 },
 {
 "say": "Three days ago you typed one short line and got a job description with an invented team. Today you built tools other people can use. (Read the three cards.) Please keep the habit. It matters more than any tool.",

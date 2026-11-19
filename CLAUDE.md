@@ -149,3 +149,11 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
     housing allowance). The optional Task 3.4 is the JD and Interview Generator (HIRE, HIRE_TESTS) with a new hiring guide
     (tone, inclusive language rules, competency framework, structured interviews) and the 2026 template. This is Aya's call and
     widens Decision 10 (recruitment) for this one optional task. 41 sample files plus 3 videos. MAP and surveys did not change.
+42. 19 Nov 2026, Day 3 (Aya): the final survey is merged into the POST form in the portal (id 310d6449, slug unchanged, still
+    published): Parts 1 and 2 are the MAP test (ids unchanged), Part 3 is the final survey with ids prefixed fs_ (fs_intro to fs_8),
+    without its company field and its 6 "I can" items, because Part 1 rates them. 42 questions, 9 sections. The separate final
+    survey (b84d43f1) stays published but is no longer linked. Kit: content.FORMS is a `_Forms` dict that hides "survey" from `in`
+    checks, so the slides, pages and validator show one QR code (the POST form, now "Post-MAP test and final survey"); REDIRECTS
+    sends /survey to the POST form; MAP_LEDE explains the one form. The repo's payloads post.json and final.json are still the two
+    separate forms: do not push them to the portal.
+

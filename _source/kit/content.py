@@ -89,7 +89,7 @@ DAYS = {
                ("13:35-13:50", "Break", ""),
                ("13:50-14:05", "Copilot, agent or flow?", "The tools side by side, and a card sort"),
                ("14:05-14:20", "One-minute share-outs", "One agent or one map"),
-               ("14:20-14:40", "Post-MAP test, then the final survey", "Two QR codes"),
+               ("14:20-14:40", "Post-MAP test and final survey", "One QR code, one form"),
                ("14:40-15:00", "Close and certificates", "The habit, one last time")],
     "outcomes": ["Explain what a <b>scheduled prompt</b> does, and use a <b>built-in agent</b> such as Prompt Coach or Researcher, checking what it gives you.",
                  "Build an HR agent with the <b>prompt checklist</b> and approved files, and test it with a <b>normal, an incomplete and a sensitive</b> question.",
@@ -244,15 +244,26 @@ SLIDES = {1: 70, 2: 61, 3: 57}
 
 # ------------------------------------------------------------------ MAP tests and the final survey (CODED portal)
 PORTAL = "https://platform.joincoded.com/sv/"
-FORMS = {
+class _Forms(dict):
+    """19 Nov 2026 (Aya): the final survey is merged into the POST form in the portal, so trainees scan one QR code.
+    "survey" stays readable as FORMS["survey"] for the engine's payload step (surveys.py), but `"survey" in FORMS` is False,
+    so the slides, day pages, hub, staff page and validator show and check one code: the POST form."""
+    HIDDEN = ("survey",)
+    def __contains__(self, k): return k not in self.HIDDEN and dict.__contains__(self, k)
+
+FORMS = _Forms({
     "pre":    {"name": "Pre-MAP test", "when": "Day 1 · Tue 17 Nov · 09:10", "slug": "coded-ai-fundamentals-for-hr-map-test-pre-day-1",
                "url": PORTAL + "coded-ai-fundamentals-for-hr-map-test-pre-day-1", "id": "57d00a52-7a47-47e3-be99-0632b171174e"},
-    "post":   {"name": "Post-MAP test", "when": "Day 3 · Thu 19 Nov · 14:20", "slug": "coded-ai-fundamentals-for-hr-map-test-post-day-3",
+    "post":   {"name": "Post-MAP test and final survey", "when": "Day 3 · Thu 19 Nov · 14:20", "slug": "coded-ai-fundamentals-for-hr-map-test-post-day-3",
                "url": PORTAL + "coded-ai-fundamentals-for-hr-map-test-post-day-3", "id": "310d6449-0665-4781-b5bc-f2c10c07b263"},
     "survey": {"name": "Final satisfaction survey", "when": "Day 3 · Thu 19 Nov · 14:30", "slug": "coded-ai-fundamentals-for-hr-final-satisfaction-survey",
                "url": PORTAL + "coded-ai-fundamentals-for-hr-final-satisfaction-survey", "id": "b84d43f1-d405-42f7-8ba0-d4f0c5e2183c"},
-}
+})
 MAP_MIN = 10
+# Day 3: one form, the test then the final survey (19 Nov 2026). /survey still works and opens the same form.
+MAP_LEDE = {"after": "First the test: 14 questions, the same as on Day 1, in 10 minutes. Then 5 minutes of feedback in the same form. "
+                     "Not graded. Phone only: no notes, no search, no AI."}
+REDIRECTS = globals().get("REDIRECTS", []) + [("/survey", FORMS["post"]["url"])]
 
 # ------------------------------------------------------------------ the workshop home (hub)
 DAYS[1].update({"cat": "Copilot foundations", "icon": "doc", "tag": "prompt checklist · Word · Outlook",
@@ -271,7 +282,7 @@ HUB = {
     "habit_text": "Copilot drafts. You check. Authorized HR staff decide. Run the four-point review before anything goes out:", "habit_list": CHECKS,
     "files_title": "One company. Five HR units. Three days.",
     "takeaway_text": "The cheat sheet: the prompt checklist, six HR requests that work, the four-point review and where Copilot sits. The safe-use card says what never goes into a prompt. The take-home guide says what to do in your first week and your first month. Every request from each day is on that day's prompt sheet with a COPY button.",
-    "map_text": "14 questions. The same on Day 1 and Day 3. Not graded. It measures what this workshop changes. Phone only, no AI. Scan the QR code on the screen, or open the link on your phone. On Day 3, the final survey comes right after.",
+    "map_text": "14 questions. The same on Day 1 and Day 3. Not graded. It measures what this workshop changes. Phone only, no AI. Scan the QR code on the screen, or open the link on your phone. On Day 3, the final survey is in the same form, right after the test.",
     "about": "AI Fundamentals for HR is a CODED Professionals open workshop.",
     "day_tool_note": "Use Microsoft 365 Copilot, signed in with your work account.",
 }

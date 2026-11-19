@@ -1,5 +1,11 @@
 # Changelog
 
+## 19 November 2026 · Day 3: one QR code for the post-MAP test and the final survey
+
+- The portal's POST form now holds the test and the final survey: Parts 1 and 2 are the test, Part 3 is the feedback. The 6
+  "I can" statements are asked once, in Part 1. Same link as before.
+- The Day 3 MAP slide, the Day 3 page and the hub show one QR code. /survey opens the same form.
+
 ## 19 November 2026 · Day 3: the Onboarding Buddy and the JD and Interview Generator
 
 - Task 3.2 builds the New Hire Onboarding Buddy (shared agent: checklist, IT setup guide, first-week FAQ); Task 3.3 tests it.

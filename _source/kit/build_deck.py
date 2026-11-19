@@ -937,7 +937,8 @@ def day3():
         "Show your agent's best test, or the biggest problem in your map and who still decides.", 15,
         n=N(time="14:05-14:20", do="(Go round the room fast. Keep to one minute each.)", say="One minute each. I will start with mine, so you can see how short it is.",
             silent="Share your own example first: the training request map, the printing step, and the manager who still approves.")))
-    s.append(mapslide("e7map", "e7", "after"))
+    s.append(mapslide("e7map", "e7", "after", n=N(more=["One code now: the test and the final survey are one form (19 Nov). Ignore any note about a second code.",
+                                                        "The form is about 15 minutes: Parts 1 and 2 are the test, Part 3 is the feedback."])))
     s.append(wrap("w3", "close", "Build it. Test it. <span class=\"hl\">Improve the process.</span>",
         [(1, "You built", "A scheduled request, a better request with Prompt Coach, and a tested Onboarding Buddy."), (2, "You saw", "Three flows: an approval, a weekly AI brief and a scored quotation. A person decides in each one."),
          (3, "The habit", "Copilot drafts. You check. Authorized HR staff decide.")],

@@ -85,7 +85,7 @@ Build it, test it, then look at the whole process.
 | 13:35-13:50 | Break |  |
 | 13:50-14:05 | Copilot, agent or flow? | The tools side by side, and a card sort |
 | 14:05-14:20 | One-minute share-outs | One agent or one map |
-| 14:20-14:40 | Post-MAP test, then the final survey | Two QR codes |
+| 14:20-14:40 | Post-MAP test and final survey | One QR code, one form |
 | 14:40-15:00 | Close and certificates | The habit, one last time |
 
 **Tasks**

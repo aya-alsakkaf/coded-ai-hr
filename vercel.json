@@ -20,11 +20,6 @@
    "permanent": false
   },
   {
-   "source": "/survey",
-   "destination": "https://platform.joincoded.com/sv/coded-ai-fundamentals-for-hr-final-satisfaction-survey",
-   "permanent": false
-  },
-  {
    "source": "/day1",
    "destination": "/coded-ai-hr-day-1",
    "permanent": false
@@ -187,6 +182,11 @@
   {
    "source": "/workshop-index",
    "destination": "/staff",
+   "permanent": false
+  },
+  {
+   "source": "/survey",
+   "destination": "https://platform.joincoded.com/sv/coded-ai-fundamentals-for-hr-map-test-post-day-3",
    "permanent": false
   }
  ],
