@@ -632,6 +632,68 @@ doc(F["onboard"], "New joiner onboarding checklist 2026", [
     ("box", ("Not in this checklist", ["Salary, grade, allowance amounts and contract terms. Ask Personnel and Administration or Compensation."])),
 ])
 
+# 31b · the IT setup guide (Day 3, Tasks 3.2 and 3.3: the Onboarding Buddy's knowledge)
+doc(F["itguide"], "IT setup guide for new joiners 2026", [
+    ("i", "IT Service Desk · Approved 1 September 2026 · Version 3"),
+    ("h", "1. Before your first day"),
+    ("b", "IT creates your account and prepares your laptop 2 working days before your start date."),
+    ("b", "Your user name is firstname.lastname. Your line manager gives you a one-time sign-in code on your first day."),
+    ("h", "2. Your first day: sign in"),
+    ("b", "Step 1. Turn on the laptop. At head office, connect to the Mutla-Staff Wi-Fi. At a field site, use the network cable in the site office."),
+    ("b", "Step 2. Sign in with your user name and the one-time sign-in code."),
+    ("b", "Step 3. Set a new password: at least 14 characters. Never write it down or share it."),
+    ("b", "Step 4. Install Microsoft Authenticator on your phone and scan the code on the screen. You need it every time you sign in from a new place."),
+    ("b", "Step 5. Open Outlook and Teams. Check that you can send an email to your line manager."),
+    ("h", "3. Your first week"),
+    ("b", "Do not install software yourself. Ask for it in the IT Service Desk portal; your line manager approves it."),
+    ("b", "Your line manager adds you to your unit's Teams channels."),
+    ("b", "Lock your screen when you leave your desk: Windows key and L."),
+    ("h", "4. If something goes wrong"),
+    ("t", [["Problem", "What to do"], ["You cannot sign in", "Call the IT Service Desk on extension 4357, or ask your line manager to open a ticket."],
+           ["You lost your laptop or phone", "Call the IT Service Desk on extension 4357 at once."],
+           ["A strange email asks for your password", "Do not click. Report it with the Report button in Outlook."]], [6.0, 10.0]),
+    ("box", ("Not in this guide", ["Access to payroll, finance or other systems: your line manager asks for it in the IT Service Desk portal.", "IT never asks for your password. Never type it into a chat, an email or an agent."])),
+])
+
+# 31c · the first-week FAQ (Day 3, Tasks 3.2 and 3.3: the Onboarding Buddy's knowledge)
+doc(F["faq"], "Your first week at Mutla: questions and answers", [
+    ("i", "Personnel and Administration · Updated 1 November 2026"),
+    ("qa", ("What are my working hours?", "Head office: the attendance rules give the flexible start and the core hours. Field sites: your site administrator gives you your shift pattern on day 1.")),
+    ("qa", ("Where do I park at head office?", "In car park B. Collect your parking permit with your ID card at the Personnel counter.")),
+    ("qa", ("What do I wear?", "Head office: business dress. Field sites: the protective equipment you receive at the site safety induction.")),
+    ("qa", ("When is my first salary paid?", "Salaries are paid on the 25th of each month. Give the bank details form to Payroll within 3 working days, so that your first salary is paid on time. For the amount, ask Compensation.")),
+    ("qa", ("Who helps me in my first month?", "Your line manager names a colleague as your buddy on your first day. Ask them anything about the team and the building.")),
+    ("qa", ("I am sick in my first week. What do I do?", "Tell your line manager before your start time, and follow the attendance rules for a medical certificate.")),
+    ("qa", ("Where can I pray and eat?", "Head office has a prayer room on every floor. The canteen is on the ground floor, open 11:30 to 13:30.")),
+    ("qa", ("Who do I ask about my contract?", "Personnel and Administration. The onboarding checklist, section 5, lists who to ask for each topic.")),
+    ("box", ("Not in this FAQ", ["Salary, grade, allowance amounts and contract terms. Ask Personnel and Administration or Compensation."])),
+])
+
+# 31d · the hiring guide (Day 3, Task 3.4 optional: the JD and Interview Generator's knowledge)
+doc(F["hireguide"], "Mutla hiring guide 2026: tone, inclusive language and competencies", [
+    ("i", "Personnel and Administration · Approved 1 October 2026 · Version 1"),
+    ("h", "1. Our tone"),
+    ("b", "Clear, warm and direct. Short sentences. Speak to the candidate as you."),
+    ("b", "Describe the work and why it matters. No slogans, and no words like rockstar or ninja."),
+    ("h", "2. Inclusive language"),
+    ("b", "Describe the job, not the person: skills, duties and results. Never age, gender, marital status or appearance."),
+    ("b", "Write fluent in English, not native speaker. Write 3 years of experience, not young or energetic."),
+    ("b", "Use you or they. Never he or she."),
+    ("b", "Split requirements into Required (at most 6) and Good to have."),
+    ("b", "End every posting with: Mutla welcomes applications from all qualified candidates. Tell us if you need any adjustment for the interview."),
+    ("h", "3. The competency framework"),
+    ("t", [["Competency", "What it means", "Level 1 (developing)", "Level 4 (role model)"]] + [list(r) for r in D.HIRE_COMP], [3.0, 4.5, 4.0, 4.5]),
+    ("h", "4. Structured interviews"),
+    ("b", "Every candidate for the same role gets the same questions, in the same order."),
+    ("b", "Choose 3 or 4 competencies for the role. Ask 2 questions for each. Ask for a real example: the situation, what the candidate did, and the result."),
+    ("b", "Rate each answer from 1 to 4: 1 no example, 2 a weak example, 3 a clear example, 4 a strong example with a result."),
+    ("b", "Two interviewers rate on their own first, then agree a score."),
+    ("b", "Never ask about age, family, marriage plans, pregnancy, religion, health or nationality."),
+    ("h", "5. Who approves"),
+    ("b", "Personnel and Administration approves every posting before it is published. Job Evaluation and Salary Scaling sets the grade."),
+    ("box", ("Not in this guide", ["Grades and salaries. Ask Job Evaluation and Salary Scaling, or Compensation."])),
+])
+
 # 32 · the overtime export (Day 2, Task 2.7 option B): as the system exported it, with the approved totals
 def overtime(path):
     from openpyxl.worksheet.table import Table, TableStyleInfo

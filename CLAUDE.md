@@ -9,8 +9,8 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
   The last step (`validate_site.py`) must print `PROBLEMS: 0`.
 - `_source/build/` is the CODED workshop engine. Never edit an engine file. Kit-only changes.
 - `_source/kit/data.py` holds every fact (names, numbers, planted errors). `content.py` and `content_demos.py` hold the words.
-  `build_deck.py` orders the slides. `gen_files.py` writes the 38 sample files into `_source/files/` and copies the three
-  Power Automate demo videos from `_source/kit/videos/` (41 files in all).
+  `build_deck.py` orders the slides. `gen_files.py` writes the 41 sample files into `_source/files/` and copies the three
+  Power Automate demo videos from `_source/kit/videos/` (44 files in all).
 - Survey payloads: `build.sh` runs `surveys.py`, which overwrites them. Always run `python3 _source/surveys/patch.py` after a build
   (it is safe to run more than once), then push the patched payloads to the portal drafts.
 - A push to `main` redeploys production on Vercel.
@@ -143,3 +143,9 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
     from the Prompt Bank, or the weekly or monthly request on the prompt sheet; no license: test it in Copilot Chat and write the
     schedule in the Prompt Bank. Block 1 is 09:10-09:50 (Demo 3.1 7 minutes); Block 2 is 09:50-10:45 with Task 3.3 and the
     optional Task 3.4 in one 12-minute slot. The lab has a Task 3.0 step. Day 3 has 57 slides. MAP and surveys did not change.
+41. 19 Nov 2026, morning of Day 3 (Aya): participants build the Mutla Onboarding Buddy, not the policy agent (the trainer still
+    demos the HR Policy Helper in Demos 3.2 and 3.3). Task 3.2 builds it from three files: the onboarding checklist and two new
+    ones, the IT setup guide and the first-week FAQ; Task 3.3 tests it (BUDDY_TESTS: sign-in steps, where to go on day 1, the
+    housing allowance). The optional Task 3.4 is the JD and Interview Generator (HIRE, HIRE_TESTS) with a new hiring guide
+    (tone, inclusive language rules, competency framework, structured interviews) and the 2026 template. This is Aya's call and
+    widens Decision 10 (recruitment) for this one optional task. 41 sample files plus 3 videos. MAP and surveys did not change.

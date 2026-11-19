@@ -1,5 +1,13 @@
 # Changelog
 
+## 19 November 2026 · Day 3: the Onboarding Buddy and the JD and Interview Generator
+
+- Task 3.2 builds the New Hire Onboarding Buddy (shared agent: checklist, IT setup guide, first-week FAQ); Task 3.3 tests it.
+  The trainer's demo is still the HR Policy Helper.
+- Task 3.4 (optional) builds the JD and Interview Generator: tone, inclusive language rules and the competency framework from a
+  new hiring guide, with structured interview rubrics.
+- Three new files: `mutla-it-setup-guide-2026.docx`, `mutla-first-week-faq-2026.docx`, `mutla-hiring-guide-2026.docx`.
+
 ## 19 November 2026 · Day 3: Task 3.0, schedule one of your requests
 
 - After the scheduled prompts demo, participants schedule one tested request (6 minutes). Without the Microsoft 365 Copilot

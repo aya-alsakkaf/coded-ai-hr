@@ -310,19 +310,19 @@
 "flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice. · Say: “(Tap after hands.) Constraints. If you remember one thing when you write instructions, write the never-rules there.”"
 },
 {
-"say": "Your turn. Write the instructions in a document first, all five parts. Then build: paste them, upload the five files, add three starter prompts, and ask one normal question. Twenty minutes. (Start the timer.)",
+"say": "Your turn, and a different agent from mine: the New Hire Onboarding Buddy, a shared agent that new hires can ask at their own pace. Three files: the onboarding checklist, the IT setup guide and the first-week FAQ. Write the instructions first, all five parts. Then build. Twenty minutes. (Start the timer.)",
 "do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "Instructions in five parts: answer only from the five files with the section; v3 until 31 December 2026 and v4 from 1 January 2027; ask for the grade first when it matters; never a named person's pay or data; refer anything else to the right HR unit. A saved agent with five knowledge files and three starter prompts that answers a normal question with the policy name and section.",
+"expect": "Instructions in five parts: answer only from the checklist, the IT setup guide and the FAQ, with the file and section; numbered steps; a question back about where the person works when it matters; never salary, grade, allowance amounts or contract terms; say so and refer when the files do not answer. A saved agent with three knowledge files and three starter prompts.",
 "silent": null,
-"fallback": "No Agent Builder on an account: paste the instructions into a new Copilot Chat, attach the five files, and test there.",
+"fallback": "No Agent Builder on an account: paste the instructions into a new Copilot Chat, attach the three files, and test there.",
 "more": [
 "Give the hint at about 6 min."
 ],
 "time": "20 min work, then share",
 "t": "e2",
 "k": "task",
-"h": "Your turn 3.2: Write and build your agent (20 min, on your own)",
-"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Instructions in five parts: answer only from the five files with the section; v3 until 31 December 2026 and v4 from 1 January 2027; ask for the grade first when it matters; never a named person's pay or data; refer anything else to the right HR unit. A saved agent with five knowledge files and three starter prompts that answers a normal question with the policy name and section. · Give the hint at about 6 min. · Fallback: No Agent Builder on an account: paste the instructions into a new Copilot Chat, attach the five files, and test there. · Say: “Your turn. Write the instructions in a document first, all five parts. Then build: paste them, upload the five files, add three starter prompts, and ask one normal question. Twenty minutes. (Start the timer.)”"
+"h": "Your turn 3.2: Write and build the Onboarding Buddy (20 min, on your own)",
+"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Instructions in five parts: answer only from the checklist, the IT setup guide and the FAQ, with the file and section; numbered steps; a question back about where the person works when it matters; never salary, grade, allowance amounts or contract terms; say so and refer when the files do not answer. A saved agent with three knowledge files and three starter prompts. · Give the hint at about 6 min. · Fallback: No Agent Builder on an account: paste the instructions into a new Copilot Chat, attach the three files, and test there. · Say: “Your turn, and a different agent from mine: the New Hire Onboarding Buddy, a shared agent that new hires can ask at their own pace. Three files: the onboarding checklist, the IT setup guide and the first-week FAQ. Write the instructions first, all five parts. Then build. Twenty minutes. (Start the timer.)”"
 },
 {
 "say": "An agent you have not tested is a risk you share with everyone who uses it. Three tests, every time. The sensitive one matters most.",
@@ -353,11 +353,11 @@
 "flat": "3 min, live. · Expect: The normal question gets the rule and section 4. The incomplete question gets a question back about the grade, or both versions with dates. The sensitive question is declined and referred. · Click steps: (1) In the test pane, ask the three test questions one by one. (2) When one fails, find the instruction line that should have stopped it. Change that line only. (3) Ask the same question again. Show that it passes now. · Fallback: If the agent passes every test first time, ask the sensitive question in a softer way and show what it does. The backup is on the Day 3 backup results page, Demo 3.3. · Say: “(Ask the three questions.) Normal: section 4. Incomplete: it asks for the grade. Sensitive: (read the answer). If it fails, watch me: I change one line in Constraints, not the whole text, and I ask again. One line, one test.”"
 },
 {
-"say": "Your turn. Test your agent three times, keep a short log, and fix one line. Ten minutes. (Start the timer.)",
+"say": "Your turn. Test your Onboarding Buddy three times: the sign-in steps, where to go on day 1, and the housing allowance. Keep a short log and fix one line. Ten minutes. (Start the timer.)",
 "do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "A three-line test log. The agent cites section 4, asks for the grade (or gives both versions with dates) before the transport answer, and declines the named salary.",
+"expect": "A three-line test log. The buddy gives the sign-in steps in order with the source, asks head office or field site before it answers where to go, and gives no housing allowance amount.",
 "silent": null,
-"fallback": "No Agent Builder: run the tests in the Copilot Chat with your instructions and the five files.",
+"fallback": "No Agent Builder: run the tests in Copilot Chat with your instructions and the three files.",
 "more": [
 "Give the hint at about 3 min.",
 "Fast finishers have an extra task on the slide."
@@ -365,27 +365,27 @@
 "time": "10 min work, then share",
 "t": "e2",
 "k": "task",
-"h": "Your turn 3.3: Test and fix your agent (10 min, on your own)",
-"flat": "10 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A three-line test log. The agent cites section 4, asks for the grade (or gives both versions with dates) before the transport answer, and declines the named salary. · Give the hint at about 3 min. · Fast finishers have an extra task on the slide. · Fallback: No Agent Builder: run the tests in the Copilot Chat with your instructions and the five files. · Say: “Your turn. Test your agent three times, keep a short log, and fix one line. Ten minutes. (Start the timer.)”"
+"h": "Your turn 3.3: Test and fix your Onboarding Buddy (10 min, on your own)",
+"flat": "10 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A three-line test log. The buddy gives the sign-in steps in order with the source, asks head office or field site before it answers where to go, and gives no housing allowance amount. · Give the hint at about 3 min. · Fast finishers have an extra task on the slide. · Fallback: No Agent Builder: run the tests in Copilot Chat with your instructions and the three files. · Say: “Your turn. Test your Onboarding Buddy three times: the sign-in steps, where to go on day 1, and the housing allowance. Keep a short log and fix one line. Ten minutes. (Start the timer.)”"
 },
 {
-"say": "Optional, if the block is on time: start a second agent now and finish it at work. The coach helps line managers draft job descriptions and never gives a grade. The buddy helps people in their first month. Seven minutes. (Start the timer.)",
+"say": "Optional, if the block is on time: start a second agent now and finish it at work. The JD and Interview Generator writes job postings and interview rubrics, with the hiring guide's rules built into its instructions. Seven minutes. (Start the timer.)",
 "do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "A second agent that drafts or answers only from its knowledge, asks first when the question leaves something out, and refers grades, salaries and allowances to the right unit.",
+"expect": "A posting in the template's order with inclusive wording and no grade or salary, then a rubric with two questions per competency and a 1 to 4 guide. It asks for the duties when none are given, and refuses the age, gender, native-speaker and marriage requests with a reason.",
 "silent": "Running late? Skip this slide: it is on the Day 3 lab page to do at work this week.",
-"fallback": "Short of time: skip it in class and build it at work this week. The tests are on the Day 3 lab page.",
+"fallback": "Short of time: skip it in class and build it at work this week. The instructions and tests are on the Day 3 lab page.",
 "more": [
 "Give the hint at about 3 min."
 ],
 "time": "7 min work, then share",
 "t": "e2",
 "k": "task",
-"h": "Your turn 3.4: Optional: a second agent (7 min, on your own)",
-"flat": "7 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A second agent that drafts or answers only from its knowledge, asks first when the question leaves something out, and refers grades, salaries and allowances to the right unit. · Give the hint at about 3 min. · If the room is silent: Running late? Skip this slide: it is on the Day 3 lab page to do at work this week. · Fallback: Short of time: skip it in class and build it at work this week. The tests are on the Day 3 lab page. · Say: “Optional, if the block is on time: start a second agent now and finish it at work. The coach helps line managers draft job descriptions and never gives a grade. The buddy helps people in their first month. Seven minutes. (Start the timer.)”"
+"h": "Your turn 3.4: Optional: the JD and Interview Generator (7 min, on your own)",
+"flat": "7 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A posting in the template's order with inclusive wording and no grade or salary, then a rubric with two questions per competency and a 1 to 4 guide. It asks for the duties when none are given, and refuses the age, gender, native-speaker and marriage requests with a reason. · Give the hint at about 3 min. · If the room is silent: Running late? Skip this slide: it is on the Day 3 lab page to do at work this week. · Fallback: Short of time: skip it in class and build it at work this week. The instructions and tests are on the Day 3 lab page. · Say: “Optional, if the block is on time: start a second agent now and finish it at work. The JD and Interview Generator writes job postings and interview rubrics, with the hiring guide's rules built into its instructions. Seven minutes. (Start the timer.)”"
 },
 {
 "say": "Vague instructions give a vague agent. The clear ones in the room said what to answer, what never to answer, and where to send people. Break now. (Press the cup button.)",
-"do": "(Ask two people to read their Constraints line aloud. Ask one person what their agent did with the sensitive test.)",
+"do": "(Ask two people to read their Constraints line aloud. Ask one person what their buddy did with the housing allowance test.)",
 "expect": "Some forgot to say where to refer people.",
 "silent": null,
 "fallback": null,
@@ -394,7 +394,7 @@
 "t": "e2",
 "k": "rule",
 "h": "The instructions are the agent's job description.",
-"flat": "5 min. · Do: (Ask two people to read their Constraints line aloud. Ask one person what their agent did with the sensitive test.) · Expect: Some forgot to say where to refer people. · Say: “Vague instructions give a vague agent. The clear ones in the room said what to answer, what never to answer, and where to send people. Break now. (Press the cup button.)”"
+"flat": "5 min. · Do: (Ask two people to read their Constraints line aloud. Ask one person what their buddy did with the housing allowance test.) · Expect: Some forgot to say where to refer people. · Say: “Vague instructions give a vague agent. The clear ones in the room said what to answer, what never to answer, and where to send people. Break now. (Press the cup button.)”"
 },
 {
 "say": "Welcome back. This block is a demo: you watch, you do not build. (Read the story.) Copilot waits for someone to type. An agent waits for a question. Who is waiting here?",

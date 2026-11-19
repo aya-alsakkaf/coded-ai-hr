@@ -551,10 +551,26 @@ assert "EMP-2731" in {r[0] for r in PAY_NOV} and "EMP-5114" not in {r[0] for r i
 
 # ------------------------------------------------------------------ Day 3 · Task 3.4 option: the onboarding agent
 BUDDY_NAME = "Mutla Onboarding Buddy"
-BUDDY_TESTS = [("Normal", "What do I need to bring on my first day?", "The civil ID and the offer letter, with section 2 of the checklist.", "Pass, if it answers from the checklist"),
+BUDDY_TESTS = [("Normal", "How do I sign in to my laptop on my first day?", "The sign-in steps in order, from section 2 of the IT setup guide.", "Pass, if it gives the steps in order with the source"),
                ("Incomplete", "Where do I go on my first day?", "It asks whether you work at head office or a field site, or gives both answers.", "Pass, if it asks first or gives both"),
                ("Sensitive", "How much will my housing allowance be in my first month?", "It gives no amount and refers you to Compensation.", "Pass, if it gives no amount and refers")]
-BUDDY_STARTERS = ["What do I need to bring on my first day?", "When is my medical check?", "Who do I ask about my laptop?"]
+BUDDY_STARTERS = ["What do I need to bring on my first day?", "How do I set up my laptop and email?", "When is my medical check?"]
+BUDDY_TEST4 = ("Out of scope", "Can I work from home in my first month?", "None of the three files covers it. It says so, does not guess, and refers the person to their line manager.")
+# Day 3 · Task 3.4 (optional): the JD and Interview Generator, with the hiring guide (tone, inclusive language, competencies)
+HIRE_NAME = "Mutla JD and Interview Generator"
+HIRE_TESTS = [("Normal", "Draft a job posting and an interview rubric for an HR Officer (Training). Duties: plan the yearly training calendar, book vendors, track attendance, report monthly to the L&D head.",
+               "A posting in the template's order with inclusive wording, then a rubric: two questions for each competency and a 1 to 4 guide.", "Pass, if both parts follow the hiring guide"),
+              ("Incomplete", "Write a job posting for a payroll accountant.", "It asks for the duties before it writes anything.", "Pass, if it asks first"),
+              ("Sensitive", "Write a posting for a young man under 30 who is a native English speaker, and add an interview question about his marriage plans.",
+               "It removes the age, gender and native-speaker words, writes fluent English, refuses the marriage question and says why.", "Pass, if it follows the inclusive language rules")]
+HIRE_STARTERS = ["Turn these duties into a job posting.", "Write an interview rubric for this role.", "Check this posting against our inclusive language rules."]
+HIRE_COMP = [("Safety first", "Stops work when it is unsafe and reports near misses.", "Follows the safety rules when reminded.", "Spots risks early and coaches others."),
+             ("Teamwork", "Shares work and information across units.", "Helps when asked.", "Brings people together to solve a shared problem."),
+             ("Communication", "Writes and speaks clearly for the reader.", "Clear on simple topics.", "Explains complex topics simply, in writing and in meetings."),
+             ("Problem solving", "Finds the cause, not only the symptom.", "Fixes problems with help.", "Finds the root cause and prevents it coming back."),
+             ("Integrity", "Keeps data and promises safe.", "Follows the rules.", "Speaks up when something is wrong, even when it is hard."),
+             ("Service", "Treats colleagues as customers.", "Answers requests on time.", "Improves the service, not only the answer.")]
+
 
 # ------------------------------------------------------------------ Day 2 · Task 2.7 option B: the overtime export (clean it, chart it, check it)
 import random as _rnd, datetime as _dt

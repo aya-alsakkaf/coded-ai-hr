@@ -21,6 +21,7 @@ F = {
  "card": "mutla-workflow-card-template.docx", "palog": "mutla-training-request-log.xlsx",
  "vid1": "power-automate-demo-1-training-request.mp4", "vid2": "power-automate-demo-2-weekly-vendor-brief.mp4", "vid3": "power-automate-demo-3-vendor-quotation.mp4",
  "payroll": "mutla-payroll-check-oct-nov-2026.xlsx", "onboard": "mutla-onboarding-checklist-2026.docx",
+ "itguide": "mutla-it-setup-guide-2026.docx", "faq": "mutla-first-week-faq-2026.docx", "hireguide": "mutla-hiring-guide-2026.docx",
  "overtime": "mutla-overtime-export-oct-2026.xlsx", "otmemo": "mutla-overtime-memo-draft.docx",
  "q3report": "mutla-hr-quarterly-report-q3-2026.docx", "messydeck": "mutla-q3-hr-update-messy.pptx",
  "r360": "mutla-360-feedback-emp-4127.docx", "welcome": "mutla-welcome-letter-2019.docx",
@@ -30,7 +31,7 @@ CASE_FILES = [D.CASES[k]["file"] for k, _n in D.TRACKS]
 CAP_FILES = [D.CAPSTONE[k]["file"] for k, _n in D.TRACKS]
 ALL_FILES = [F["leave"], F["answer"], F["case"], F["oldjd"], F["tpl"], F["roles"], F["catchjd"], F["bank"], F["letters"],
              F["r360"], F["welcome"], F["v3"], F["v4"], F["thread"], F["transcript"], F["trackers"], F["payroll"], F["overtime"], F["tnbrief"], F["tnresp"], F["brief"], F["otmemo"], F["q3report"], F["messydeck"]] + CASE_FILES + [F["stories"], F["maptpl"],
-             F["attendance"], F["training"], F["factors"], F["onboard"], F["card"], F["palog"], F["vid1"], F["vid2"], F["vid3"], F["catchbank"]]
+             F["attendance"], F["training"], F["factors"], F["onboard"], F["itguide"], F["faq"], F["hireguide"], F["card"], F["palog"], F["vid1"], F["vid2"], F["vid3"], F["catchbank"]]
 assert len(ALL_FILES) == len(set(ALL_FILES))
 
 # What each file is for: what it is, who uses it at Mutla, and where it is used in the workshop. Lab steps and the "About this file" box use it.
@@ -68,8 +69,11 @@ FILE_ABOUT = {
  F["vid3"]: ("A recorded Power Automate demo with no sound (1:42): a vendor quotation email is read, scored by AI and added to Excel as a row to review.", "Learning and Development.", "Demo 3.5c. Watch it again after the workshop."),
  F["attendance"]: ("The approved attendance rules: start times, core hours and permissions.", "Every employee; Personnel answers questions from it.", "The Block 3 notebook on Day 1; the HR assistant's knowledge on Day 3."),
  F["training"]: ("The training policy: how employees request and attend training.", "Learning and Development, line managers and employees.", "Day 1 Task 1.2 and the Block 3 notebook; the HR assistant's knowledge on Day 3."),
- F["factors"]: ("The five factors the Job Evaluation committee uses to compare jobs.", "Job Evaluation and Salary Scaling.", "Task 3.4: the Job Description Coach's knowledge."),
- F["onboard"]: ("The checklist for a new joiner's first day, first week and first month.", "Personnel and Administration, and every new joiner.", "Task 1.7 (the source for the welcome letter) and Task 3.4 (the Onboarding Buddy's knowledge)."),
+ F["factors"]: ("The five factors the Job Evaluation committee uses to compare jobs.", "Job Evaluation and Salary Scaling.", "Extra practice: what the committee looks at when it grades a job."),
+ F["onboard"]: ("The checklist for a new joiner's first day, first week and first month.", "Personnel and Administration, and every new joiner.", "Task 1.7 (the source for the welcome letter), and Tasks 3.2 and 3.3 (the Onboarding Buddy's knowledge)."),
+ F["itguide"]: ("Step-by-step IT setup for a new joiner: signing in, the password, the sign-in app, Outlook and Teams, and the rules.", "IT Service Desk, and every new joiner.", "Tasks 3.2 and 3.3: the Onboarding Buddy's knowledge."),
+ F["faq"]: ("Answers to the questions new joiners ask in their first week: hours, parking, dress, salary day, prayer rooms, who to ask.", "Personnel and Administration, and every new joiner.", "Tasks 3.2 and 3.3: the Onboarding Buddy's knowledge."),
+ F["hireguide"]: ("Mutla's hiring guide: our tone, the inclusive language rules, the competency framework and how to run a structured interview.", "Hiring managers and Personnel and Administration.", "Task 3.4 (optional): the JD and Interview Generator's knowledge."),
  F["catchbank"]: ("Eight requests that were tested in class, ready to copy.", "Anyone who missed a task or wants a model.", "Catch-up file for every day."),
 }
 for _k, _n in D.TRACKS: FILE_ABOUT[D.CASES[_k]["file"]] = (f"The {_n} case: {D.CASES[_k]['title'].lower()}. The facts, the people, the meeting and the open question.", f"{_n}.", "Tasks 2.1, 2.4 and 2.11.")
@@ -909,13 +913,21 @@ COACH = five([["Role", f"You are {D.COACH_NAME}. You help {D.COMPANY} HR staff a
          ["Constraints", "If the user gives no duties, ask for them before you write. Add no duty, team size, grade or salary. If asked about a grade, say the Job Evaluation committee decides and refer the user to Job Evaluation and Salary Scaling."],
          ["Tone", "Formal, neutral, plain English."],
          ["Output format", f"The template's headings in order, with the grade line blank. Start with: {DL}"]])
-BUDDY = five([["Role", f"You are the {D.BUDDY_NAME}. You help new joiners at {D.COMPANY} in their first month."],
-         ["Context", "New joiners ask practical questions before and after their first day. Personnel and Administration owns the onboarding checklist."],
-         ["Task", "Answer each question from the onboarding checklist, with the section."],
-         ["Data", "Use only the onboarding checklist in your knowledge."],
+BUDDY = five([["Role", f"You are the {D.BUDDY_NAME}, a shared agent for new joiners at {D.COMPANY} in their first month."],
+         ["Context", "New joiners ask practical questions at their own pace, before and after their first day. Personnel and Administration owns the checklist and the FAQ; IT owns the setup guide."],
+         ["Task", "Answer each question from the three onboarding files. Give steps in order when there are steps. Name the file and the section."],
+         ["Data", "Use only the onboarding checklist, the IT setup guide and the first-week FAQ in your knowledge."],
          ["Constraints", "If the answer depends on where the person works (head office or a field site), ask first. Never answer about salary, grade, allowance amounts or contract terms: refer the person to Personnel and Administration or Compensation. If the checklist does not answer it, say so and name the unit to ask."],
          ["Tone", "Friendly, short, plain English."],
-         ["Output format", "Two to four sentences, then the checklist section."]])
+         ["Output format", "Numbered steps when the answer has steps, otherwise two to four sentences. Then the file and the section."]])
+ONB = [F["onboard"], F["itguide"], F["faq"]]
+HIRE = five([["Role", f"You are the {D.HIRE_NAME}. You help {D.COMPANY} hiring managers write job postings and structured interview rubrics."],
+         ["Context", "Every posting and interview follows the Mutla hiring guide: our tone, the inclusive language rules and the competency framework. HR approves every posting; Job Evaluation sets the grade."],
+         ["Task", "From the duties the hiring manager gives, draft a job posting in the 2026 template's order, then an interview rubric: two questions for each competency the role needs, with a 1 to 4 rating guide."],
+         ["Data", "Use only the hiring guide and the 2026 job description template in your knowledge, and the duties the user gives."],
+         ["Constraints", "If no duties are given, ask for them first. Follow the inclusive language rules: no age, gender, marital status or appearance; write fluent, not native. Add no duty, grade or salary. Never write questions about age, family, pregnancy, religion, health or nationality: say why, and refer the user to Personnel and Administration."],
+         ["Tone", "Mutla's tone from the hiring guide: clear, warm and direct."],
+         ["Output format", f"The posting with the template's headings, then the rubric as a table: competency, question, what a 4 looks like, what a 1 looks like. Start with: {DL}"]])
 KNOW = [F["leave"], F["v3"], F["v4"], F["attendance"], F["training"]]
 
 # Block 1 opens with scheduled prompts: a tested request that Copilot runs on a timer (Microsoft 365 Copilot license only)
@@ -1006,21 +1018,21 @@ demo("d31", day=3, skill="3.2", sec=13, title="An HR agent, built live", tool="A
  fallback="If Agent Builder is off on the account, paste the same instructions into Copilot Chat, attach the five files, and ask the same question.",
  hint="Watch where each checklist part goes in the instructions.")
 
-demo("t32", day=3, skill="3.2", sec=13, title="Write and build your agent", tool="Word, then Agent Builder", files=KNOW, kind="task", hands_on=True, minutes=20, solo="on your own",
- setup=[f"In a blank document, write the instructions for {D.AGENT_NAME} with the five checklist parts: which files it uses, the dates of the two allowances versions, what it never answers, when it asks first, and where it refers people.",
+demo("t32", day=3, skill="3.2", sec=13, title="Write and build the Onboarding Buddy", tool="Word, then Agent Builder", files=ONB, kind="task", hands_on=True, minutes=20, solo="on your own",
+ setup=[f"In a blank document, write the instructions for the {D.BUDDY_NAME} with the five checklist parts: its three files, steps in order, ask head office or field site first, never pay or contract answers, and where it refers people.",
         "In Microsoft 365 Copilot, choose Create agent, then the Configure tab. Add a name, a one-line description and your instructions.",
-        "Upload the five policy files under Knowledge. Add three starter prompts.", "Ask one normal question in the test pane. Does the answer give the section?"],
- prompts=[(f"Starter prompt {i}", q) for i, q in enumerate(STARTERS, 1)],
- expected="Instructions in five parts: answer only from the five files with the section; v3 until 31 December 2026 and v4 from 1 January 2027; ask for the grade first when it matters; never a named person's pay or data; refer anything else to the right HR unit. A saved agent with five knowledge files and three starter prompts that answers a normal question with the policy name and section.",
- say="The instructions are the agent's job description. Write them first, then build. Vague instructions give a vague agent.",
+        "Upload the three onboarding files under Knowledge. Add three starter prompts.", "Ask one normal question in the test pane. Does it give the steps and the source?"],
+ prompts=[(f"Starter prompt {i}", q) for i, q in enumerate(D.BUDDY_STARTERS, 1)],
+ expected="Instructions in five parts: answer only from the checklist, the IT setup guide and the FAQ, with the file and section; numbered steps; a question back about where the person works when it matters; never salary, grade, allowance amounts or contract terms; say so and refer when the files do not answer. A saved agent with three knowledge files and three starter prompts.",
+ say="You watched me build a policy agent. Now you build a different one with the same method: a buddy that new hires can ask at their own pace.",
  point="What it answers, from which files, what it never answers, and where it refers.",
- backup=[("h", "What the instructions must cover"), ("ul", ["Only the five knowledge files, with the section.", "The two allowances versions and their dates.", "Ask first when the answer depends on the person.", "Never a named person's pay or data. Never decide a case.", "Refer to the right HR unit."]),
-         ("h", "The parts of the agent"), tbl(["Part", "What goes in"], [("Name", D.AGENT_NAME), ("Knowledge", ", ".join(KNOW)), ("Starter prompts", " · ".join(STARTERS))])],
- answer=[("h", "A model set of instructions"), tbl(["Part", "Instructions"], AGENT),
-         ("h", "Check the agent for"), ("ul", ["Five knowledge files uploaded.", "Three starter prompts that staff would really ask.", "A normal question answered with the policy name and section."])],
- deliverable="A saved agent with your instructions, five knowledge files and three starter prompts, that answers a normal question with its source.",
- fallback="No Agent Builder: paste your instructions into a new Copilot Chat, attach the five files, and test there. Or pair with a neighbor who has it. Short of time: use the instructions from the Day 3 lab page and change one line.",
- hint="Constraints hold the rules that protect people: never, ask first, refer. No section number in the answer? Check the Format line.")
+ backup=[("h", "What the instructions must cover"), ("ul", ["Only the three onboarding files, with the file and section.", "Steps in order when there are steps (the IT setup).", "Ask head office or field site first when the answer depends on it.", "Never salary, grade, allowance amounts or contract terms.", "Refer to the right unit: Personnel, Compensation, IT Service Desk."]),
+         ("h", "The parts of the agent"), tbl(["Part", "What goes in"], [("Name", D.BUDDY_NAME), ("Knowledge", ", ".join(ONB)), ("Starter prompts", " · ".join(D.BUDDY_STARTERS))])],
+ answer=[("h", "A model set of instructions"), tbl(["Part", "Instructions"], BUDDY),
+         ("h", "Check the agent for"), ("ul", ["Three knowledge files uploaded.", "Three starter prompts a new joiner would really ask.", "A normal question answered with steps and the file and section."])],
+ deliverable="A saved Onboarding Buddy with your instructions, three knowledge files and three starter prompts.",
+ fallback="No Agent Builder: paste your instructions into a new Copilot Chat, attach the three files, and test there. Or pair with a neighbor who has it. Short of time: use the instructions from the Day 3 lab page and change one line.",
+ hint="Constraints hold the rules that protect people: never, ask first, refer. No source in the answer? Check the Format line.")
 
 demo("d33", day=3, skill="3.3", sec=13, title="Three tests, then one fix", tool="Agent Builder",
  setup=["[T] In the test pane, ask the three test questions one by one.", "[T] When one fails, find the instruction line that should have stopped it. Change that line only.",
@@ -1033,35 +1045,34 @@ demo("d33", day=3, skill="3.3", sec=13, title="Three tests, then one fix", tool=
  fallback="If the agent passes every test first time, ask the sensitive question in a softer way and show what it does.",
  hint="Which instruction line should have stopped the wrong answer?")
 
-demo("t33", day=3, skill="3.3", sec=13, title="Test and fix your agent", tool="Agent Builder", files=KNOW, kind="task", hands_on=True, minutes=10, solo="on your own",
+demo("t33", day=3, skill="3.3", sec=13, title="Test and fix your Onboarding Buddy", tool="Agent Builder", files=ONB, kind="task", hands_on=True, minutes=10, solo="on your own",
  setup=["Ask your agent the three test questions below.", "Write a test log: question, answer, pass or fix.", "Fix one instruction line that failed, update the agent, and test again."],
- prompts=[(f"Test · {a}", b) for a, b, _c, _d in D.AGENT_TESTS],
- expected="A three-line test log. The agent cites section 4, asks for the grade (or gives both versions with dates) before the transport answer, and declines the named salary.",
- say="A test you did not run is a problem a colleague finds later.",
+ prompts=[(f"Test · {a}", b) for a, b, _c, _d in D.BUDDY_TESTS],
+ expected="A three-line test log. The buddy gives the sign-in steps in order with the source, asks head office or field site before it answers where to go, and gives no housing allowance amount.",
+ say="A test you did not run is a problem a new joiner finds on their first day.",
  point="Three tests, one log, one fix.",
- backup=[("h", "The three tests"), tbl(["Test", "Question", "A pass looks like", "Result"], D.AGENT_TESTS)],
- answer=[("h", "Pass marks"), tbl(["Test", "Question", "A pass looks like", "Result"], D.AGENT_TESTS), ("h", "Finished early: the fourth test"), tbl(["Test", "Question", "A pass looks like"], [D.AGENT_TEST4])],
+ backup=[("h", "The three tests"), tbl(["Test", "Question", "A pass looks like", "Result"], D.BUDDY_TESTS)],
+ answer=[("h", "Pass marks"), tbl(["Test", "Question", "A pass looks like", "Result"], D.BUDDY_TESTS), ("h", "Finished early: the fourth test"), tbl(["Test", "Question", "A pass looks like"], [D.BUDDY_TEST4])],
  deliverable="A three-line test log and one fixed instruction.",
- fallback="No Agent Builder: run the tests in the Copilot Chat with your instructions and the five files.",
- hint="If it answers the salary question, make the Constraints line say never, and refer.",
+ fallback="No Agent Builder: run the tests in Copilot Chat with your instructions and the three files.",
+ hint="If it gives an allowance amount, make the Constraints line say never, and refer.",
  stretch=["Run a fourth test with a question the files do not cover. It must say so and refer."],
- stretch_prompts=[("Test 4 · Out of scope", D.AGENT_TEST4[1])])
+ stretch_prompts=[("Test 4 · Out of scope", D.BUDDY_TEST4[1])])
 
-demo("t34", day=3, skill="3.4", sec=13, title="Optional: a second agent", tool="Agent Builder", files=[F["tpl"], F["factors"], F["onboard"]], kind="task", hands_on=True, minutes=7, solo="on your own",
- setup=[f"Choose one. The {D.COACH_NAME.replace('Mutla ', '')} helps line managers draft job descriptions. The {D.BUDDY_NAME.replace('Mutla ', '')} answers new joiners from the onboarding checklist.",
-        "Write its instructions with the checklist. Knowledge: the 2026 template and the evaluation factors, or the onboarding checklist.",
-        "Run its three tests (on the prompt sheet and the Day 3 lab page) and log them.", "Fix one line if a test fails, and test again."],
- prompts=[("Coach: three tests, one at a time", " | ".join(b for _a, b, _c, _d in D.COACH_TESTS)), ("Buddy: three tests, one at a time", " | ".join(b for _a, b, _c, _d in D.BUDDY_TESTS))],
- expected="A second agent that drafts or answers only from its knowledge, asks first when the question leaves something out, and refers grades, salaries and allowances to the right unit.",
- say="Same method, a different job. Pick the agent your unit would use first.",
- point="Ask first, add nothing, refer the personal questions.",
- backup=[("h", "Job Description Coach: three tests"), tbl(["Test", "Question", "A pass looks like", "Result"], D.COACH_TESTS),
-         ("h", "Onboarding Buddy: three tests"), tbl(["Test", "Question", "A pass looks like", "Result"], D.BUDDY_TESTS)],
- answer=[("h", "Job Description Coach: model instructions"), tbl(["Part", "Instructions"], COACH), ("h", "Pass marks"), tbl(["Test", "Question", "A pass looks like", "Result"], D.COACH_TESTS),
-         ("h", "Onboarding Buddy: model instructions"), tbl(["Part", "Instructions"], BUDDY), ("h", "Pass marks"), tbl(["Test", "Question", "A pass looks like", "Result"], D.BUDDY_TESTS)],
+demo("t34", day=3, skill="3.4", sec=13, title="Optional: the JD and Interview Generator", tool="Agent Builder", files=[F["hireguide"], F["tpl"]], kind="task", hands_on=True, minutes=7, solo="on your own",
+ setup=[f"Build the {D.HIRE_NAME}: it writes job postings and structured interview rubrics for hiring managers.",
+        "Write its instructions with the five checklist parts. Bake in the hiring guide: Mutla's tone, the inclusive language rules and the competency framework.",
+        "Knowledge: the hiring guide and the 2026 job description template. Then run the three tests below."],
+ prompts=[(f"Test · {a}", b) for a, b, _c, _d in D.HIRE_TESTS],
+ expected="A posting in the template's order with inclusive wording and no grade or salary, then a rubric with two questions per competency and a 1 to 4 guide. It asks for the duties when none are given, and refuses the age, gender, native-speaker and marriage requests with a reason.",
+ say="Same method, a different job. The rules live in the instructions, so every hiring manager gets a compliant posting and the same structured questions every time.",
+ point="Tone, inclusive language and competencies, baked in once.",
+ backup=[("h", "The three tests"), tbl(["Test", "Question", "A pass looks like", "Result"], D.HIRE_TESTS),
+         ("h", "The competency framework"), tbl(["Competency", "What it means", "Level 1", "Level 4"], D.HIRE_COMP)],
+ answer=[("h", "A model set of instructions"), tbl(["Part", "Instructions"], HIRE), ("h", "Pass marks"), tbl(["Test", "Question", "A pass looks like", "Result"], D.HIRE_TESTS)],
  deliverable="A second agent and a three-line test log.",
- fallback="Short of time: skip it in class and build it at work this week. The tests are on the Day 3 lab page.",
- hint="The incomplete test leaves something out. What must your agent ask before it answers?")
+ fallback="Short of time: skip it in class and build it at work this week. The instructions and tests are on the Day 3 lab page.",
+ hint="The sensitive test asks for things the inclusive language rules forbid. What must your Constraints line say?")
 
 def _vsteps(flow): return "; ".join(f"{a.lower()}: {c}" for a, _b, c, _d in flow)
 def _vparts(k): return tbl(["Part", "Means", "In this flow"], [(a, m, x) for a, m, x in zip(D.PA_PARTS, D.PA_MEANS, D.PA_DEMOS[k]["parts"])])
@@ -1330,6 +1341,7 @@ CHECKCARD = DEMOS["t38"]["prompts"][0][1]
 assert " a flow " not in CHECKCARD
 _FILL = {"RECAP": joined(RECAP), "MAP_FILE": joined(MAP_FILE), "AGENT": joined(AGENT), "COACH": joined(COACH), "CHECKCARD": CHECKCARD, "REQS": joined(REQS), "FORMQ": FORMQ, "TNPROB": TNPROB, "TNCLEAN": TNCLEAN, "PAYREQ": PAYREQ, "OTREQ": OTREQ, "MEMO": joined(MEMO_TASK), "R360": joined(R360Q),
          "SCHED": D.SCHED_PROMPT, "SCHED_M": D.SCHED_MONTHLY, "COACH_ASK": COACH_ASK, "RESEARCH": D.BUILTIN_RESEARCH,
+         "BUDDY": joined(BUDDY), "HIRE": joined(HIRE),
          "COACH_BUDDY": "Job Description Coach: " + joined(COACH) + "\n\nOnboarding Buddy: " + joined(BUDDY)}
 for _L in C.LABS.values():
     for _s in _L["steps"]:

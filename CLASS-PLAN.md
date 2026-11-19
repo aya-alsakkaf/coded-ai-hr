@@ -94,9 +94,9 @@ Build it, test it, then look at the whole process.
 | --- | --- | --- | --- | --- | --- |
 | Task 3.0 | Schedule one of your requests | 6 | on your own |  | Test it once. Then put it on a timer. |
 | Task 3.1 | Use an agent Microsoft built | 10 | on your own |  | A better request in your Prompt Bank. Two sources checked. |
-| Task 3.2 | Write and build your agent | 20 | on your own | mutla-leave-policy-2026.docx, mutla-allowances-policy-v3.docx, mutla-allowances-policy-v4.docx, mutla-attendance-rules-2026.docx, mutla-training-policy-2026.docx | What it answers, from which files, what it never answers, and where it refers. |
-| Task 3.3 | Test and fix your agent | 10 | on your own | mutla-leave-policy-2026.docx, mutla-allowances-policy-v3.docx, mutla-allowances-policy-v4.docx, mutla-attendance-rules-2026.docx, mutla-training-policy-2026.docx | Three tests, one log, one fix. |
-| Task 3.4 | Optional: a second agent | 7 | on your own | mutla-jd-template-2026.docx, mutla-job-evaluation-factors.docx, mutla-onboarding-checklist-2026.docx | Ask first, add nothing, refer the personal questions. |
+| Task 3.2 | Write and build the Onboarding Buddy | 20 | on your own | mutla-onboarding-checklist-2026.docx, mutla-it-setup-guide-2026.docx, mutla-first-week-faq-2026.docx | What it answers, from which files, what it never answers, and where it refers. |
+| Task 3.3 | Test and fix your Onboarding Buddy | 10 | on your own | mutla-onboarding-checklist-2026.docx, mutla-it-setup-guide-2026.docx, mutla-first-week-faq-2026.docx | Three tests, one log, one fix. |
+| Task 3.4 | Optional: the JD and Interview Generator | 7 | on your own | mutla-hiring-guide-2026.docx, mutla-jd-template-2026.docx | Tone, inclusive language and competencies, baked in once. |
 | Task 3.6 | Map the training request | 12 | in pairs | mutla-process-stories.docx, mutla-process-map-template.docx | Map it as it is. Mark the problems and the human decisions. |
 | Task 3.7 | Map your own HR process | 20 | on your own | mutla-process-stories.docx, mutla-process-map-template.docx | From request to completion. Owners, waits, problems, human decisions. |
 | Task 3.8 | Optional: improve your map | 25 | on your own | mutla-workflow-card-template.docx | One owner per step. Every decision with a person. |

@@ -799,8 +799,9 @@ def day3():
          ("In the Constraints part of the instructions", 1, "Right. Constraints hold the rules that protect people."),
          ("In the agent's description", 0, "The description says what it is for, not its limits.")],
         n=N(say="(Tap after hands.) Constraints. If you remember one thing when you write instructions, write the never-rules there.")))
-    s.append(task("e2task1", "e2", "t32", n=N(say="Your turn. Write the instructions in a document first, all five parts. Then build: paste them, upload the five files, add three starter prompts, and ask one normal question. Twenty minutes. (Start the timer.)",
-                                                  fallback="No Agent Builder on an account: paste the instructions into a new Copilot Chat, attach the five files, and test there.")))
+    s.append(task("e2task1", "e2", "t32", n=N(say="Your turn, and a different agent from mine: the New Hire Onboarding Buddy, a shared agent that new hires can ask at their own pace. "
+                                                      "Three files: the onboarding checklist, the IT setup guide and the first-week FAQ. Write the instructions first, all five parts. Then build. Twenty minutes. (Start the timer.)",
+                                                  fallback="No Agent Builder on an account: paste the instructions into a new Copilot Chat, attach the three files, and test there.")))
     s.append(tslide("e2tests", "e2", "Block 2 · three tests", "Three tests <span class=\"hl\">before anyone uses it.</span>", ["Test", "You ask", "It passes when"],
         [["Normal", "A complete, ordinary question", "It answers with the policy and section"], ["Incomplete", "A question that depends on the person", "It asks first, or gives both rules with dates"],
          ["Sensitive", "A named person's pay, or a decision", "It declines and refers to HR"]],
@@ -810,12 +811,12 @@ def day3():
         "The three test questions in the test pane, one fix to the instructions, and the same question again.", "The answer to the sensitive question, before and after the fix.",
         n=N(time="3 min, live", say="(Ask the three questions.) Normal: section 4. Incomplete: it asks for the grade. Sensitive: (read the answer). "
                 "If it fails, watch me: I change one line in Constraints, not the whole text, and I ask again. One line, one test.")))
-    s.append(task("e2task2", "e2", "t33", n=N(say="Your turn. Test your agent three times, keep a short log, and fix one line. Ten minutes. (Start the timer.)")))
-    s.append(task("e2task3", "e2", "t34", n=N(say="Optional, if the block is on time: start a second agent now and finish it at work. The coach helps line managers draft job descriptions and never gives a grade. The buddy helps people in their first month. Seven minutes. (Start the timer.)",
+    s.append(task("e2task2", "e2", "t33", n=N(say="Your turn. Test your Onboarding Buddy three times: the sign-in steps, where to go on day 1, and the housing allowance. Keep a short log and fix one line. Ten minutes. (Start the timer.)")))
+    s.append(task("e2task3", "e2", "t34", n=N(say="Optional, if the block is on time: start a second agent now and finish it at work. The JD and Interview Generator writes job postings and interview rubrics, with the hiring guide's rules built into its instructions. Seven minutes. (Start the timer.)",
                                                   silent="Running late? Skip this slide: it is on the Day 3 lab page to do at work this week.")))
     s.append(rule("e2deb", "e2", "Block 2 · debrief", "The instructions are <span class=\"hl\">the agent's job description.</span>",
-        "The agents that answered well had clear limits, the dates of both allowances versions, and a place to send what they could not answer. Same checklist, same three tests for every new agent.",
-        n=N(time="5 min", do="(Ask two people to read their Constraints line aloud. Ask one person what their agent did with the sensitive test.)", expect="Some forgot to say where to refer people.",
+        "The buddies that answered well gave the IT steps in order, asked head office or field site first, and sent pay questions to Compensation. Same checklist, same three tests for every new agent.",
+        n=N(time="5 min", do="(Ask two people to read their Constraints line aloud. Ask one person what their buddy did with the housing allowance test.)", expect="Some forgot to say where to refer people.",
             say="Vague instructions give a vague agent. The clear ones in the room said what to answer, what never to answer, and where to send people. Break now. (Press the cup button.)")))
     # Block 3 · Power Automate: when to automate (three recorded flows, the trainer narrates)
     s.append(story("e3story", "e3", "Block 3 · Power Automate: when to automate", "Sunday 8 November, 08:30",
@@ -938,7 +939,7 @@ def day3():
             silent="Share your own example first: the training request map, the printing step, and the manager who still approves.")))
     s.append(mapslide("e7map", "e7", "after"))
     s.append(wrap("w3", "close", "Build it. Test it. <span class=\"hl\">Improve the process.</span>",
-        [(1, "You built", "A better request with Prompt Coach, a tested HR agent and a map of one HR process."), (2, "You saw", "Three flows: an approval, a weekly AI brief and a scored quotation. A person decides in each one."),
+        [(1, "You built", "A scheduled request, a better request with Prompt Coach, and a tested Onboarding Buddy."), (2, "You saw", "Three flows: an approval, a weekly AI brief and a scored quotation. A person decides in each one."),
          (3, "The habit", "Copilot drafts. You check. Authorized HR staff decide.")],
         "Your first week: one green task a day. Your first month: one agent or one mapped process for your unit.",
         n=N(say="Three days ago you typed one short line and got a job description with an invented team. Today you built tools other people can use. "
