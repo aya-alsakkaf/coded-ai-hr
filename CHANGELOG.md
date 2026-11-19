@@ -1,5 +1,10 @@
 # Changelog
 
+## 19 November 2026 · Day 3: Task 3.0, schedule one of your requests
+
+- After the scheduled prompts demo, participants schedule one tested request (6 minutes). Without the Microsoft 365 Copilot
+  license they test it in Copilot Chat and write the schedule in their Prompt Bank. Block 1 ends at 09:50. Day 3 has 57 slides.
+
 ## 19 November 2026 · Day 3: "Automate it, or not?"
 
 - Block 3 adds an interactive slide after the four questions: six HR tasks, the room votes, and a click on each card shows the

@@ -496,6 +496,8 @@ SCHED_PROMPT = ("Look at my email and Teams messages from the last 7 days about 
                 "Make a table: who asked or who sent it, the course, the date, and what is still waiting for my reply. "
                 "Then list my three most urgent actions. Leave out anything about pay, health or a named person's performance.")
 SCHED_WHEN = "Every week, Sunday at 8:00"
+SCHED_MONTHLY = ("List the HR policies, circulars and announcements I received last month by email or Teams, with the date and one line "
+                 "on what changed. Mark anything that changes leave, allowances or training. Leave out anything about a named person.")
 SCHED_FACTS = [("License", "Microsoft 365 Copilot only. Copilot Chat without the license has no Schedule option."),
                ("How many", "Up to 10 scheduled prompts per person. Edit, pause or delete them in Scheduled prompts."),
                ("Who sees it", "Only you. The answer waits in your Copilot chats; nobody else gets it."),

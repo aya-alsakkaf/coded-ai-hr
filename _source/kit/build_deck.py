@@ -726,7 +726,7 @@ def day3():
     s.append(term("e1sp", "e1", "Block 1 · Scheduled prompts and built-in agents", "Your best request, <span class=\"hl\">on a timer.</span>", "Scheduled prompt",
         "A request you tested once that <b>Copilot runs for you</b> at a set time: once, daily, weekly or monthly. The answer <b>waits in your Copilot chats</b>.",
         "Every Sunday you open Copilot and type the same request…", "…now it runs at 8:00 and the answer is waiting.", "Copilot works on a timer. You still check.",
-        n=N(time="09:10-09:45", say="Good morning. Before agents, one small feature that saves time every week. On Day 1 you saved your best requests in the Prompt Bank. "
+        n=N(time="09:10-09:50", say="Good morning. Before agents, one small feature that saves time every week. On Day 1 you saved your best requests in the Prompt Bank. "
                 "What if Copilot ran one of them for you, every Sunday at 8:00, before you even arrive? That is a scheduled prompt.",
             more=["Microsoft 365 Copilot license only: Copilot Chat, Copilot in Teams, or Outlook. Up to 10 per person.",
                   "If the admin turned off optional connected experiences, the Schedule option is missing."])))
@@ -740,10 +740,12 @@ def day3():
         n=N(time="2 min", say="Four facts. It needs the full Microsoft 365 Copilot license. It is personal: only you see the answer. And it only writes. "
                 "It cannot send the training request to your manager or wait for an approval. Keep that question in mind: you get the answer before lunch, with Power Automate.",
             expect="Someone asks whether it can email the answer to the team. Not by itself: that needs a flow.")))
+    s.append(task("e1sptask", "e1", "t3s", n=N(say="Your turn. Schedule one request: one from your Prompt Bank, or one of the two on the prompt sheet. Run it once first. Six minutes. (Start the timer.)",
+                                                   fallback="No Schedule this prompt option (no license): test the request in Copilot Chat and write the schedule next to it in your Prompt Bank.")))
     s.append(story("e1story", "e1", "Block 1 · built-in agents", "Monday 16 November, 10:00",
         "Noura in L&D has two jobs before lunch. Her one-line reminder request still gives vague emails. Her manager asks what Gulf energy companies do for new supervisors, <b>with sources</b>.",
         "Two jobs. <span class=\"hl\">Microsoft already built an agent for each.</span>", "Use a built-in agent, then check what it gives you.",
-        n=N(time="09:19", say="(Read the story.) Who has opened the Agents list in Copilot? (Hands.) Most people never do. This morning we start with agents that are already there, then you build your own.",
+        n=N(time="09:25", say="(Read the story.) Who has opened the Agents list in Copilot? (Hands.) Most people never do. This morning we start with agents that are already there, then you build your own.",
             expect="Few hands. Some saw Researcher or Analyst at the top of the Copilot app.")))
     s.append(term("e1t1", "e1", "Block 1 · the idea", "Copilot with <span class=\"hl\">a saved job.</span>", "Agent",
         "Copilot with <b>saved instructions</b>, and sometimes its own <b>knowledge</b>, for <b>one job</b>. Microsoft built some. You can build your own.",
@@ -758,7 +760,7 @@ def day3():
                   "If the Add button is grey, the admin has not deployed the agent for that account. Use the Copilot Chat fallback on the prompt sheet."])))
     s.append(live("e1live", "e1", "d30", "Two built-in agents, <span class=\"hl\">live.</span>",
         "Prompt Coach improves a one-line request, then Researcher answers a public HR question with sources.", "What Prompt Coach says is missing, and the sources at the end of the report.",
-        n=N(time="8 min, live", say="(Run Prompt Coach first, then start Researcher and come back to it.) Look at what the coach asks for: context, data, limits, format. "
+        n=N(time="7 min, live", say="(Run Prompt Coach first, then start Researcher and come back to it.) Look at what the coach asks for: context, data, limits, format. "
                 "It is our checklist. (Open the report.) Sources at the end. I open two before I believe any of it.")))
     s.append(task("e1task", "e1", "t30", n=N(say="Your turn. Everyone uses Prompt Coach on one request from your Prompt Bank. If you have Researcher, start the research question too. Ten minutes. (Start the timer.)",
                                                  fallback="No Prompt Coach: paste the request into Copilot Chat and add: answer as a prompt coach.")))
@@ -771,7 +773,7 @@ def day3():
     s.append(story("e2story", "e2", "Block 2 · Build your own agent", "Thursday 12 November, 16:00",
         f"Fatma counts her week: <b>64 emails</b> from staff. Twenty ask how many leave days carry over. She answers each one by hand, from the same section 4.",
         "The same question, <span class=\"hl\">twenty times a week.</span>", "Build an HR agent that answers from approved policies, and test it before anyone uses it.",
-        n=N(time="09:45-10:45", say="(Read the story.) No built-in agent knows Mutla's leave policy. Which question does your unit answer again and again? Call it out.", expect="Leave balances, allowances, letters, training dates.")))
+        n=N(time="09:50-10:45", say="(Read the story.) No built-in agent knows Mutla's leave policy. Which question does your unit answer again and again? Call it out.", expect="Leave balances, allowances, letters, training dates.")))
     s.append(tslide("e2cmp", "e2", "Block 2 · built-in or your own", "Microsoft's agent, <span class=\"hl\">or yours?</span>", ["", "Copilot Chat", "A built-in agent", "Your own agent"],
         [["Instructions", "You type them each time", "Microsoft wrote them", "You write them once"], ["Knowledge", "Files you attach each time", "The web and your work files", "The approved files you choose"],
          ["Who uses it", "You", "Anyone with Copilot", "Anyone you share it with"], ["Best for", "One-off drafts", "Common jobs: requests, research", "Your unit's questions, many times"]],

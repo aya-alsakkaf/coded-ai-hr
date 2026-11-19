@@ -139,3 +139,7 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
     `aonslide`; data.AUTO_OR_NOT): six HR tasks, the room votes thumbs up or down, a click on a card shows the answer and reason.
     Block 3 timings are 11:05 when to automate (3), 11:08 the vote (5), then the parts and the three videos (5, 4, 4).
     Day 3 has 56 slides. MAP questions and survey payloads did not change.
+40. 19 Nov 2026, morning of Day 3 (Aya): Task 3.0 (t3s, 6 minutes) after the scheduled prompts facts: schedule one tested request
+    from the Prompt Bank, or the weekly or monthly request on the prompt sheet; no license: test it in Copilot Chat and write the
+    schedule in the Prompt Bank. Block 1 is 09:10-09:50 (Demo 3.1 7 minutes); Block 2 is 09:50-10:45 with Task 3.3 and the
+    optional Task 3.4 in one 12-minute slot. The lab has a Task 3.0 step. Day 3 has 57 slides. MAP and surveys did not change.

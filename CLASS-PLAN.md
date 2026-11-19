@@ -76,8 +76,8 @@ Build it, test it, then look at the whole process.
 | Time | Block | What happens |
 | --- | --- | --- |
 | 09:00-09:10 | Callback quiz | Three questions on Day 2 |
-| 09:10-09:45 | Block 1 · Scheduled prompts and built-in agents | A request on a timer; Prompt Coach and Researcher · Demo 3.0, Task 3.1 |
-| 09:45-10:45 | Block 2 · Build your own agent | Instructions, knowledge, starter prompts, three tests · Tasks 3.2 and 3.3, Task 3.4 if time allows |
+| 09:10-09:50 | Block 1 · Scheduled prompts and built-in agents | A request on a timer; Prompt Coach and Researcher · Tasks 3.0 and 3.1 |
+| 09:50-10:45 | Block 2 · Build your own agent | Instructions, knowledge, starter prompts, three tests · Tasks 3.2 and 3.3, Task 3.4 if time allows |
 | 10:45-11:00 | Break |  |
 | 11:00-11:35 | Block 3 · Power Automate: when to automate | Trigger, actions, connectors, output; three recorded flows |
 | 11:35-12:15 | Lunch and Dhuhr prayer |  |
@@ -92,6 +92,7 @@ Build it, test it, then look at the whole process.
 
 | Task | Title | Minutes | Who | Files | Point |
 | --- | --- | --- | --- | --- | --- |
+| Task 3.0 | Schedule one of your requests | 6 | on your own |  | Test it once. Then put it on a timer. |
 | Task 3.1 | Use an agent Microsoft built | 10 | on your own |  | A better request in your Prompt Bank. Two sources checked. |
 | Task 3.2 | Write and build your agent | 20 | on your own | mutla-leave-policy-2026.docx, mutla-allowances-policy-v3.docx, mutla-allowances-policy-v4.docx, mutla-attendance-rules-2026.docx, mutla-training-policy-2026.docx | What it answers, from which files, what it never answers, and where it refers. |
 | Task 3.3 | Test and fix your agent | 10 | on your own | mutla-leave-policy-2026.docx, mutla-allowances-policy-v3.docx, mutla-allowances-policy-v4.docx, mutla-attendance-rules-2026.docx, mutla-training-policy-2026.docx | Three tests, one log, one fix. |

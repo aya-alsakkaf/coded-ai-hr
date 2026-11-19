@@ -932,6 +932,22 @@ demo("d3s", day=3, skill="3.0", sec=12, title="A request on a timer: a scheduled
  fallback="No Schedule this prompt option: the account has no Microsoft 365 Copilot license, or the admin turned it off. Show the steps on the slide and the Scheduled prompts list on the trainer laptop.",
  hint="Which request in your Prompt Bank would you like waiting for you every Sunday morning?")
 
+demo("t3s", day=3, skill="3.0", sec=12, title="Schedule one of your requests", tool="Copilot Chat · Schedule this prompt", kind="task", hands_on=True, minutes=6, solo="on your own",
+ setup=["Pick one request from your Prompt Bank, or one below, that you want every week or month.",
+        "Run it once in Copilot Chat. Is the answer worth getting again?",
+        "Hover over it, select Schedule this prompt, choose how often and the time, and save.",
+        "Check it in Settings, then Scheduled prompts."],
+ prompts=[("A weekly request to schedule", D.SCHED_PROMPT), ("A monthly request to schedule", D.SCHED_MONTHLY)],
+ expected="A request that ran once with a useful answer, then shows in Scheduled prompts with how often and the time. Without the license: the request tested in Copilot Chat and saved in the Prompt Bank with the schedule written next to it.",
+ say="Schedule only what you tested. One request, on a timer, that you would really read every week.",
+ point="Test it once. Then put it on a timer.",
+ backup=[("h", "Before you schedule"), tbl(["Question", "Answer"], D.SCHED_FACTS)],
+ answer=[("h", "A good result"), ("ul", ["The request ran once and the answer was worth reading again.", "Weekly or monthly, not daily, unless the person truly needs it every day.",
+                                         "The request leaves out pay, health and named people's performance.", "It shows in Settings, then Scheduled prompts, and the person knows how to pause it."])],
+ deliverable="One scheduled prompt, or a Prompt Bank request with its schedule.",
+ fallback="No Schedule this prompt option (no Microsoft 365 Copilot license): test the request in Copilot Chat, save it in your Prompt Bank, and write the schedule next to it, for example Weekly, Sunday 8:00. Watch a neighbor who has the license.",
+ hint="Pick something you do every week: a summary, a reminder, a list of what is still waiting. Daily is often too much.")
+
 # Block 1 · built-in agents (Prompt Coach for everyone; Researcher and Analyst need the Microsoft 365 Copilot license)
 COACH_ASK = (f"Here is a request I use at work: \"{D.BUILTIN_WEAK}\" Review it. Tell me what is missing, "
              f"then suggest a better request for an HR officer at {D.COMPANY}.")
@@ -1313,7 +1329,7 @@ _items = [(k, DEMOS[k]) for k in _order]; DEMOS.clear(); DEMOS.update(_items)
 CHECKCARD = DEMOS["t38"]["prompts"][0][1]
 assert " a flow " not in CHECKCARD
 _FILL = {"RECAP": joined(RECAP), "MAP_FILE": joined(MAP_FILE), "AGENT": joined(AGENT), "COACH": joined(COACH), "CHECKCARD": CHECKCARD, "REQS": joined(REQS), "FORMQ": FORMQ, "TNPROB": TNPROB, "TNCLEAN": TNCLEAN, "PAYREQ": PAYREQ, "OTREQ": OTREQ, "MEMO": joined(MEMO_TASK), "R360": joined(R360Q),
-         "COACH_ASK": COACH_ASK, "RESEARCH": D.BUILTIN_RESEARCH,
+         "SCHED": D.SCHED_PROMPT, "SCHED_M": D.SCHED_MONTHLY, "COACH_ASK": COACH_ASK, "RESEARCH": D.BUILTIN_RESEARCH,
          "COACH_BUDDY": "Job Description Coach: " + joined(COACH) + "\n\nOnboarding Buddy: " + joined(BUDDY)}
 for _L in C.LABS.values():
     for _s in _L["steps"]:
