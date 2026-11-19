@@ -135,3 +135,7 @@ AI Fundamentals for HR: a three-day CODED Professionals open workshop on Microso
     four facts (Microsoft 365 Copilot license, up to 10 per person, only you see it, it writes but does not send or approve).
     Task 3.1 is 10 minutes; Block 2 is 09:45-10:45 and the optional Task 3.4 is 7 minutes. Day 3 has 55 slides.
     MAP questions and survey payloads did not change.
+39. 19 Nov 2026, morning of Day 3 (Aya): Block 3 has an "Automate it, or not?" slide after the four questions (e3aon, a kit slide
+    `aonslide`; data.AUTO_OR_NOT): six HR tasks, the room votes thumbs up or down, a click on a card shows the answer and reason.
+    Block 3 timings are 11:05 when to automate (3), 11:08 the vote (5), then the parts and the three videos (5, 4, 4).
+    Day 3 has 56 slides. MAP questions and survey payloads did not change.

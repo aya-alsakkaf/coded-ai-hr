@@ -447,6 +447,13 @@ PA_LOG = [("TR-27-0001", "16 November 2026", "EMP-1043", "Safety leadership", "1
           ("TR-27-0002", "16 November 2026", "EMP-1739", "Excel for HR reporting", "18 January 2027", "Approved", "Line manager", "18 November 2026"),
           ("TR-27-0003", "17 November 2026", "EMP-2148", "Report writing in English", "25 January 2027", "Rejected", "Line manager", "18 November 2026")]
 PA_LOG_HEAD = ["Request ID", "Submitted", "Employee code", "Course", "Course start", "Status", "Decided by", "Decided on"]
+# Day 3 · Block 3: "Automate it or not?" The room votes on each task, then the trainer reveals the answer (kind: auto, person, both, chat)
+AUTO_OR_NOT = [("Send a welcome email when a new hire's start date is entered.", "auto", "Automate it", "A clear trigger, and the same steps every time."),
+               ("Decide whether an employee deserves a promotion.", "person", "Keep it with a person", "It is a judgment. A person decides."),
+               ("Remind managers every month about leave requests still waiting for approval.", "auto", "Automate it", "It starts on a date and follows one rule."),
+               ("Handle an employee's complaint about their manager.", "person", "Keep it with a person", "It is sensitive, and different every time."),
+               ("Collect training requests, send each one for approval, and log the result.", "both", "Automate it, with a person", "The flow moves the request. The manager approves. That is Demo 1."),
+               ("Write the CEO's speech for one town hall.", "chat", "Just ask Copilot", "It happens once. A prompt is faster than building a flow.")]
 # Day 3 · Block 3: the three recorded Power Automate demos (the trainer narrates; no audio). The parts of each flow.
 PA_PARTS = ["Trigger", "Actions", "Connectors", "Output"]
 PA_DEMOS = [

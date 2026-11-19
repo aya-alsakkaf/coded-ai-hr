@@ -421,6 +421,21 @@
 "flat": "4 min. · Do: (Ask for one HR task from the room and run it through the four questions.) · Expect: Training requests, leave requests, onboarding checklists: left. A disciplinary case: right. · Say: “Automation pays when the same steps happen often and something clear starts them. If the task is a judgment, a person keeps it. You can still automate the steps around it.”"
 },
 {
+"say": "Your turn. Six HR tasks. For each one, use the four questions: how often, the same steps, what starts it, any judgment. Thumbs up if a flow should do it, thumbs down if not.",
+"do": "(Show one card at a time. Read it aloud. Count thumbs up and down, ask one person why, then click the card.)",
+"expect": "Card 5 splits the room: it is both. The flow moves the request and a person approves. Card 6 surprises people: no flow, just ask Copilot.",
+"silent": null,
+"fallback": null,
+"more": [
+"If the room is quick, ask for one task from their own unit and vote on it the same way."
+],
+"time": "5 min",
+"t": "e3",
+"k": "scene",
+"h": "Automate it, or not?",
+"flat": "5 min. · Do: (Show one card at a time. Read it aloud. Count thumbs up and down, ask one person why, then click the card.) · Expect: Card 5 splits the room: it is both. The flow moves the request and a person approves. Card 6 surprises people: no flow, just ask Copilot. · If the room is quick, ask for one task from their own unit and vote on it the same way. · Say: “Your turn. Six HR tasks. For each one, use the four questions: how often, the same steps, what starts it, any judgment. Thumbs up if a flow should do it, thumbs down if not.”"
+},
+{
 "say": "Four words, and you can read any flow. Trigger: what starts it. Actions: the steps. Connectors: the apps it uses, like Forms, Excel and Outlook. Output: what you get at the end. Read the three columns: these are the three flows you are about to see.",
 "do": null,
 "expect": null,

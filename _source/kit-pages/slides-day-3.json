@@ -758,6 +758,21 @@
 },
 {
 "n": 31,
+"id": "e3aon",
+"kind": "scene",
+"title": "Automate it, or not?",
+"topic": "e3",
+"kit": [
+"Block 3 · your turn to judge",
+"Automate it, or not?",
+"Read each task. Thumbs up: automate it. Thumbs down: keep it by hand. Then click the card.",
+"Automate the moving. Keep the deciding. Some jobs only need a prompt.",
+"1 Send a welcome email when a new hire's start date is entered. Automate it A clear trigger, and the same steps every time. 2 Decide whether an employee deserves a promotion. Keep it with a person It is a judgment. A person decides. 3 Remind managers every month about leave requests still waiting for approval. Automate it It starts on a date and follows one rule. 4 Handle an employee's complaint about their manager. Keep it with a person It is sensitive, and different every time. 5 Collect training requests, send each one for approval, and log the result. Automate it, with a person The flow moves the request. The manager approves. That is Demo 1. 6 Write the CEO's speech for one town hall. Just ask Copilot It happens once. A prompt is faster than building a flow."
+],
+"chrome": []
+},
+{
+"n": 32,
 "id": "e3parts",
 "kind": "table",
 "title": "Four parts in every flow.",
@@ -795,7 +810,7 @@
 "chrome": []
 },
 {
-"n": 32,
+"n": 33,
 "id": "e3v1",
 "kind": "widget",
 "title": "Demo 3.5",
@@ -810,7 +825,7 @@
 "chrome": []
 },
 {
-"n": 33,
+"n": 34,
 "id": "e3v2",
 "kind": "widget",
 "title": "Demo 3.5b",
@@ -825,7 +840,7 @@
 "chrome": []
 },
 {
-"n": 34,
+"n": 35,
 "id": "e3v3",
 "kind": "widget",
 "title": "Demo 3.5c",
@@ -840,7 +855,7 @@
 "chrome": []
 },
 {
-"n": 35,
+"n": 36,
 "id": "e3need",
 "kind": "list",
 "title": "Before you build one, ask four questions.",
@@ -857,7 +872,7 @@
 "chrome": []
 },
 {
-"n": 36,
+"n": 37,
 "id": "e3why",
 "kind": "list",
 "title": "Why not Copilot or an agent?",
@@ -874,7 +889,7 @@
 "chrome": []
 },
 {
-"n": 37,
+"n": 38,
 "id": "e3chk",
 "kind": "check",
 "title": "Quick check",
@@ -895,7 +910,7 @@
 ]
 },
 {
-"n": 38,
+"n": 39,
 "id": "e4story",
 "kind": "story",
 "title": "Block 4 · From one task to a workflow",
@@ -914,7 +929,7 @@
 ]
 },
 {
-"n": 39,
+"n": 40,
 "id": "e4an",
 "kind": "rule",
 "title": "Follow one form from desk to desk.",
@@ -927,7 +942,7 @@
 "chrome": []
 },
 {
-"n": 40,
+"n": 41,
 "id": "e4prob",
 "kind": "table",
 "title": "Four problems to look for.",
@@ -955,7 +970,7 @@
 "chrome": []
 },
 {
-"n": 41,
+"n": 42,
 "id": "e4t1",
 "kind": "term",
 "title": "Map it as it is.",
@@ -974,7 +989,7 @@
 ]
 },
 {
-"n": 42,
+"n": 43,
 "id": "e4live",
 "kind": "list",
 "title": "A story into a step table.",
@@ -990,7 +1005,7 @@
 "chrome": []
 },
 {
-"n": 43,
+"n": 44,
 "id": "e4task1",
 "kind": "task",
 "title": "Your turn 3.6",
@@ -1039,7 +1054,7 @@
 ]
 },
 {
-"n": 44,
+"n": 45,
 "id": "e4chk",
 "kind": "check",
 "title": "Quick check",
@@ -1060,7 +1075,7 @@
 ]
 },
 {
-"n": 45,
+"n": 46,
 "id": "e4brief",
 "kind": "list",
 "title": "Your process, mapped.",
@@ -1077,7 +1092,7 @@
 "chrome": []
 },
 {
-"n": 46,
+"n": 47,
 "id": "e4task2",
 "kind": "task",
 "title": "Your turn 3.7",
@@ -1119,7 +1134,7 @@
 ]
 },
 {
-"n": 47,
+"n": 48,
 "id": "e4task3",
 "kind": "task",
 "title": "Your turn 3.8",
@@ -1166,7 +1181,7 @@
 ]
 },
 {
-"n": 48,
+"n": 49,
 "id": "e4deb",
 "kind": "rule",
 "title": "One owner per step. A person for every decision.",
@@ -1179,7 +1194,7 @@
 "chrome": []
 },
 {
-"n": 49,
+"n": 50,
 "id": "e5cmp",
 "kind": "table",
 "title": "Three tools. Three different jobs.",
@@ -1215,7 +1230,7 @@
 "chrome": []
 },
 {
-"n": 50,
+"n": 51,
 "id": "e5sort",
 "kind": "sort",
 "title": "Copilot, agent or flow? Tap a card.",
@@ -1240,7 +1255,7 @@
 ]
 },
 {
-"n": 51,
+"n": 52,
 "id": "e5chk",
 "kind": "check",
 "title": "Quick check",
@@ -1261,7 +1276,7 @@
 ]
 },
 {
-"n": 52,
+"n": 53,
 "id": "e6share",
 "kind": "timer",
 "title": "One minute each: one agent or one map.",
@@ -1280,7 +1295,7 @@
 ]
 },
 {
-"n": 53,
+"n": 54,
 "id": "e7map",
 "kind": "map",
 "title": "MAP test · after",
@@ -1307,7 +1322,7 @@
 ]
 },
 {
-"n": 54,
+"n": 55,
 "id": "w3",
 "kind": "wrap",
 "title": "Wrap-up",
@@ -1332,7 +1347,7 @@
 ]
 },
 {
-"n": 55,
+"n": 56,
 "id": "close3",
 "kind": "close",
 "title": "Close",

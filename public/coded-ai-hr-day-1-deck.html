@@ -2737,6 +2737,21 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
 @keyframes wtcThere{0%{left:12%;opacity:0}8%{opacity:1}42%{left:44%;opacity:1}50%{left:44%;opacity:0}100%{left:44%;opacity:0}}
 @keyframes wtcBack{0%,50%{left:44%;opacity:0}58%{opacity:1}92%{left:12%;opacity:1}100%{left:12%;opacity:0}}
 @media (prefers-reduced-motion:reduce){.wtc *{animation:none!important}.wtc-pkt{display:none}}
+.aon-slide .aon-lede{max-width:1180px;margin:2px 0 8px}
+.aon{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:100%;max-width:1180px;margin:0 0 8px;box-sizing:border-box}
+.aon-card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:8px;min-height:150px;padding:12px 16px;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:rgba(255,255,255,.04);color:inherit;font:inherit;text-align:left}
+.aon-card:hover{border-color:rgba(255,255,255,.32)}
+.aon-card:focus-visible{outline:2px solid var(--cd-accent);outline-offset:2px}
+.aon-n{font-family:var(--cd-font-mono);font-size:13px;opacity:.6}
+.aon-task{font-size:19px;line-height:1.3}
+.aon-ans{margin-top:auto;visibility:hidden;padding-top:8px;border-top:1px solid rgba(255,255,255,.14)}
+.aon-ans b{display:block;font-family:var(--cd-font-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.aon-ans span{display:block;font-size:15px;line-height:1.3;opacity:.9;margin-top:2px}
+.aon-card.aon-open .aon-ans{visibility:visible}
+.aon-card.aon-open.aon-auto{border-color:rgba(127,224,168,.6)}.aon-auto .aon-ans b{color:#7FE0A8}
+.aon-card.aon-open.aon-person{border-color:rgba(245,194,107,.6)}.aon-person .aon-ans b{color:#F5C26B}
+.aon-card.aon-open.aon-both{border-color:rgba(127,224,168,.6)}.aon-both .aon-ans b{color:#7FE0A8}
+.aon-card.aon-open.aon-chat{border-color:rgba(160,180,255,.6)}.aon-chat .aon-ans b{color:#A9B9FF}
 .pa-vid{display:grid;grid-template-columns:auto minmax(280px,440px);justify-content:start;gap:24px;align-items:start;width:100%;max-width:1320px;margin:4px 0 8px;box-sizing:border-box}
 .pa-vid-play{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:0}
 .pa-vid-play video{display:block;height:min(50vh,470px);width:auto;max-width:100%;aspect-ratio:16/9;background:#000;border:1px solid rgba(255,255,255,.18);border-radius:14px;object-fit:contain}
@@ -3784,6 +3799,15 @@ function llmReset(){llm.step=0;llm.words=[];var t=document.getElementById('llm-t
     var io = new IntersectionObserver(function (es) { es.forEach(function (x) { if (!x.isIntersecting && !x.target.paused) x.target.pause(); }); });
     vids.forEach(function (v) { io.observe(v); });
   }
+})();
+// "Automate it or not?" (Day 3, build_deck.aonslide): a click on a card shows or hides its answer
+(function () {
+  document.addEventListener('click', function (ev) {
+    var c = ev.target && ev.target.closest ? ev.target.closest('.aon-card') : null;
+    if (!c) return;
+    var open = c.classList.toggle('aon-open');
+    c.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
 })();
 
 </script>

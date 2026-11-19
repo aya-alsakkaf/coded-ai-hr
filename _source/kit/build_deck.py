@@ -60,6 +60,18 @@ def live(sid, topic, did, title, show, watch, n=None):
             if n.get(k): base[k] = n[k]
     return listslide(sid, topic, f"{d['card']} · live in {d['tool']}", title, items, d["point"], n=base)
 
+# ------------------------------------------------------------------ kit slide: "Automate it or not?" (CSS in content.EXTRA_CSS, JS in EXTRA_JS)
+def aonslide(sid, topic, tag, title, text, take, n=None):
+    """Six HR tasks as cards. The room votes, then the trainer clicks a card to show the answer and the reason."""
+    _DK._t(topic)
+    cards = "".join(f'<button type="button" class="aon-card aon-{k}" aria-expanded="false"><span class="aon-n">{i}</span>'
+                    f'<span class="aon-task">{e(t)}</span><span class="aon-ans"><b>{e(v)}</b><span>{e(why)}</span></span></button>'
+                    for i, (t, k, v, why) in enumerate(D.AUTO_OR_NOT, 1))
+    html = f'<div class="aon">{cards}</div>'
+    inner = head(e(tag), title) + (f'\n  <p class="cd-lede aon-lede">{text}</p>' if text else '') + f'\n  {html}\n  ' + key(take)
+    return _DK._slide(section("cd-slide--stage aon-slide", inner, title, sid=sid), sid, "scene", title, topic, title,
+                      [tag, title, text, take, _DK._text(html)], [], _DK._merge({}, n))
+
 # ------------------------------------------------------------------ kit slide: a recorded Power Automate demo (CSS in content.EXTRA_CSS, JS in EXTRA_JS)
 def vidslide(sid, topic, did, k, title, take, n=None):
     """A recorded flow: the video (no sound, the trainer narrates) and its four parts. The file is a sample file, so it is on the site and the hub."""
@@ -820,6 +832,13 @@ def day3():
         "Most answers under Automate it? Build a flow. A person keeps every decision.",
         n=N(time="4 min", do="(Ask for one HR task from the room and run it through the four questions.)", expect="Training requests, leave requests, onboarding checklists: left. A disciplinary case: right.",
             say="Automation pays when the same steps happen often and something clear starts them. If the task is a judgment, a person keeps it. You can still automate the steps around it.")))
+    s.append(aonslide("e3aon", "e3", "Block 3 · your turn to judge", "Automate it, <span class=\"hl\">or not?</span>",
+        "Read each task. Thumbs up: automate it. Thumbs down: keep it by hand. Then click the card.",
+        "Automate the moving. Keep the deciding. Some jobs only need a prompt.",
+        n=N(time="5 min", do="(Show one card at a time. Read it aloud. Count thumbs up and down, ask one person why, then click the card.)",
+            say="Your turn. Six HR tasks. For each one, use the four questions: how often, the same steps, what starts it, any judgment. Thumbs up if a flow should do it, thumbs down if not.",
+            expect="Card 5 splits the room: it is both. The flow moves the request and a person approves. Card 6 surprises people: no flow, just ask Copilot.",
+            more=["If the room is quick, ask for one task from their own unit and vote on it the same way."])))
     s.append(tslide("e3parts", "e3", "Block 3 · the four parts", "Four parts <span class=\"hl\">in every flow.</span>", ["Part", "Means"] + [f"Demo {p['n']}" for p in D.PA_DEMOS],
         [[f"<b>{a}</b>", m] + [p["short"][k] for p in D.PA_DEMOS] for k, (a, m) in enumerate(zip(D.PA_PARTS, D.PA_MEANS))],
         "Connectors are the apps a flow uses. Some flows have an AI step.",

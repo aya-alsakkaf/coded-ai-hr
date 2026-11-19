@@ -1,5 +1,10 @@
 # Changelog
 
+## 19 November 2026 · Day 3: "Automate it, or not?"
+
+- Block 3 adds an interactive slide after the four questions: six HR tasks, the room votes, and a click on each card shows the
+  answer (automate it, keep it with a person, automate it with a person, or just ask Copilot) and why. Day 3 has 56 slides.
+
 ## 19 November 2026 · Day 3 opens with scheduled prompts
 
 - Block 1 (09:10-09:45) starts with scheduled prompts: what they are, Demo 3.0 (schedule a weekly request live) and four things to

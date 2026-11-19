@@ -110,7 +110,7 @@ SEGMENTS = {
      ("14:20-14:50", "Block 6 · Protecting employee data", [("14:20", 2, "Story: the comment with a name"), ("14:22", 4, "Green, amber, red"), ("14:26", 6, "Demo 2.12 card sort"), ("14:32", 4, "Demo 2.12b: redact, then ask"), ("14:36", 10, "Task 2.12"), ("14:46", 4, "Quick check and debrief")])],
  3: [("09:10-09:45", "Block 1 · Scheduled prompts and built-in agents", [("09:10", 2, "Scheduled prompts: the idea"), ("09:12", 5, "Demo 3.0"), ("09:17", 2, "Before you schedule"), ("09:19", 2, "Story: two jobs before lunch"), ("09:21", 3, "What an agent is; agents built by Microsoft"), ("09:24", 8, "Demo 3.1"), ("09:32", 10, "Task 3.1"), ("09:42", 3, "Quick check")]),
      ("09:45-10:45", "Block 2 · Build your own agent", [("09:45", 3, "Story: the same 20 questions"), ("09:48", 4, "Built-in or your own; the parts of an agent"), ("09:52", 6, "Demo 3.2"), ("09:58", 20, "Task 3.2"), ("10:18", 5, "Three tests; Demo 3.3"), ("10:23", 10, "Task 3.3"), ("10:33", 7, "Task 3.4 (if time allows)"), ("10:40", 5, "Debrief")]),
-     ("11:00-11:35", "Block 3 · Power Automate: when to automate", [("11:00", 2, "Story: requests and quotations"), ("11:02", 3, "What automation means"), ("11:05", 4, "When to automate"), ("11:09", 3, "Trigger, actions, connectors, output"), ("11:12", 5, "Demo 3.5: approval"), ("11:17", 5, "Demo 3.5b: weekly brief"), ("11:22", 5, "Demo 3.5c: quotation"), ("11:27", 3, "What a flow needs"), ("11:30", 3, "Why a flow"), ("11:33", 2, "Quick check")]),
+     ("11:00-11:35", "Block 3 · Power Automate: when to automate", [("11:00", 2, "Story: requests and quotations"), ("11:02", 3, "What automation means"), ("11:05", 3, "When to automate"), ("11:08", 5, "Automate it or not? The room votes"), ("11:13", 3, "Trigger, actions, connectors, output"), ("11:16", 5, "Demo 3.5: approval"), ("11:21", 4, "Demo 3.5b: weekly brief"), ("11:25", 4, "Demo 3.5c: quotation"), ("11:29", 2, "What a flow needs"), ("11:31", 2, "Why a flow"), ("11:33", 2, "Quick check")]),
      ("12:15-13:35", "Block 4 · From one task to a workflow", [("12:15", 3, "Story: three weeks for one course"), ("12:18", 5, "Four problems"), ("12:23", 3, "The step table"), ("12:26", 5, "Demo 3.6"), ("12:31", 12, "Task 3.6"), ("12:43", 20, "Task 3.7"), ("13:03", 25, "Task 3.8 (if time allows)"), ("13:28", 7, "Debrief")]),
      ("13:50-14:05", "Copilot, agent or flow?", [("13:50", 5, "The tools side by side"), ("13:55", 8, "Demo 3.9 card sort"), ("14:03", 2, "Quick check")])],
 }
@@ -240,7 +240,7 @@ MAP = [
 MAP_KEY = " · ".join(f"{i} {'abcd'[q['a']]}" for i, q in enumerate(MAP, 1))
 
 # ------------------------------------------------------------------ the approved slide plan (the validator checks the decks against it)
-SLIDES = {1: 70, 2: 61, 3: 55}
+SLIDES = {1: 70, 2: 61, 3: 56}
 
 # ------------------------------------------------------------------ MAP tests and the final survey (CODED portal)
 PORTAL = "https://platform.joincoded.com/sv/"
@@ -674,6 +674,21 @@ EXTRA_CSS = """
 @keyframes wtcThere{0%{left:12%;opacity:0}8%{opacity:1}42%{left:44%;opacity:1}50%{left:44%;opacity:0}100%{left:44%;opacity:0}}
 @keyframes wtcBack{0%,50%{left:44%;opacity:0}58%{opacity:1}92%{left:12%;opacity:1}100%{left:12%;opacity:0}}
 @media (prefers-reduced-motion:reduce){.wtc *{animation:none!important}.wtc-pkt{display:none}}
+.aon-slide .aon-lede{max-width:1180px;margin:2px 0 8px}
+.aon{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:100%;max-width:1180px;margin:0 0 8px;box-sizing:border-box}
+.aon-card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:8px;min-height:150px;padding:12px 16px;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:rgba(255,255,255,.04);color:inherit;font:inherit;text-align:left}
+.aon-card:hover{border-color:rgba(255,255,255,.32)}
+.aon-card:focus-visible{outline:2px solid var(--cd-accent);outline-offset:2px}
+.aon-n{font-family:var(--cd-font-mono);font-size:13px;opacity:.6}
+.aon-task{font-size:19px;line-height:1.3}
+.aon-ans{margin-top:auto;visibility:hidden;padding-top:8px;border-top:1px solid rgba(255,255,255,.14)}
+.aon-ans b{display:block;font-family:var(--cd-font-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.aon-ans span{display:block;font-size:15px;line-height:1.3;opacity:.9;margin-top:2px}
+.aon-card.aon-open .aon-ans{visibility:visible}
+.aon-card.aon-open.aon-auto{border-color:rgba(127,224,168,.6)}.aon-auto .aon-ans b{color:#7FE0A8}
+.aon-card.aon-open.aon-person{border-color:rgba(245,194,107,.6)}.aon-person .aon-ans b{color:#F5C26B}
+.aon-card.aon-open.aon-both{border-color:rgba(127,224,168,.6)}.aon-both .aon-ans b{color:#7FE0A8}
+.aon-card.aon-open.aon-chat{border-color:rgba(160,180,255,.6)}.aon-chat .aon-ans b{color:#A9B9FF}
 .pa-vid{display:grid;grid-template-columns:auto minmax(280px,440px);justify-content:start;gap:24px;align-items:start;width:100%;max-width:1320px;margin:4px 0 8px;box-sizing:border-box}
 .pa-vid-play{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:0}
 .pa-vid-play video{display:block;height:min(50vh,470px);width:auto;max-width:100%;aspect-ratio:16/9;background:#000;border:1px solid rgba(255,255,255,.18);border-radius:14px;object-fit:contain}
@@ -704,5 +719,14 @@ EXTRA_JS = r"""
     var io = new IntersectionObserver(function (es) { es.forEach(function (x) { if (!x.isIntersecting && !x.target.paused) x.target.pause(); }); });
     vids.forEach(function (v) { io.observe(v); });
   }
+})();
+// "Automate it or not?" (Day 3, build_deck.aonslide): a click on a card shows or hides its answer
+(function () {
+  document.addEventListener('click', function (ev) {
+    var c = ev.target && ev.target.closest ? ev.target.closest('.aon-card') : null;
+    if (!c) return;
+    var open = c.classList.toggle('aon-open');
+    c.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
 })();
 """
